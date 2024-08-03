@@ -42,6 +42,7 @@ Further details about these json files are mentioned [here](error_categorization
 └── <current_project>/
 ```
 4. Make sure you've successfully unzipped the `possible-flaky-repos` as explained [here](../dataset/flake4dock/README.md).
+5. Make sure you've successfully unzipped the json files inside `error-analysis/dataset`.
 
 ### Run FlakiDock with LLM & RAG
 
