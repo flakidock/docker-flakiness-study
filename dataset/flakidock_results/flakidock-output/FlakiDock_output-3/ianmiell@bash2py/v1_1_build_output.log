@@ -1,0 +1,139 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 332B done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/debian:latest
+#3 DONE 1.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#5 resolve docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#5 resolve docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 0.2s done
+#5 sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 1.85kB / 1.85kB done
+#5 sha256:b1ae8b5bfaa9afa86b50c2a151a442d832c4449cf3731bddf8a728e5628ebb59 529B / 529B done
+#5 sha256:2e5b8d3ef33ebde2b2a943fadb241a63de1535a007a7bd185e7037abfff99f63 1.46kB / 1.46kB done
+#5 DONE 0.7s
+
+#4 [internal] load build context
+#4 transferring context: 12.44MB 0.1s done
+#4 DONE 0.5s
+
+#6 [2/8] RUN apt-get -y update &&     apt-get -y install zip build-essential autoconf bison python-is-python3 vim git &&     apt-get clean
+#6 0.515 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#6 0.546 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#6 0.558 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#6 0.629 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#6 0.746 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#6 0.758 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#6 2.060 Fetched 9225 kB in 2s (5884 kB/s)
+#6 2.060 Reading package lists...
+#6 2.750 Reading package lists...
+#6 3.453 Building dependency tree...
+#6 3.583 Reading state information...
+#6 3.752 The following additional packages will be installed:
+#6 3.752   automake autotools-dev binutils binutils-common binutils-x86-64-linux-gnu
+#6 3.752   bzip2 ca-certificates cpp cpp-12 dirmngr dpkg-dev fakeroot fontconfig-config
+#6 3.752   fonts-dejavu-core g++ g++-12 gcc gcc-12 git-man gnupg gnupg-l10n gnupg-utils
+#6 3.752   gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm krb5-locales less
+#6 3.752   libabsl20220623 libalgorithm-diff-perl libalgorithm-diff-xs-perl
+#6 3.752   libalgorithm-merge-perl libaom3 libasan8 libassuan0 libatomic1 libavif15
+#6 3.752   libbinutils libbrotli1 libbsd0 libc-dev-bin libc-devtools libc6-dev
+#6 3.752   libcbor0.8 libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libcurl3-gnutls
+#6 3.752   libdav1d6 libde265-0 libdeflate0 libdpkg-perl libedit2 liberror-perl
+#6 3.753   libexpat1 libfakeroot libfido2-1 libfile-fcntllock-perl libfontconfig1
+#6 3.753   libfreetype6 libgav1-1 libgcc-12-dev libgd3 libgdbm-compat4 libgdbm6
+#6 3.753   libgomp1 libgpm2 libgprofng0 libgssapi-krb5-2 libheif1 libisl23 libitm1
+#6 3.753   libjansson4 libjbig0 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3
+#6 3.753   libkrb5support0 libksba8 libldap-2.5-0 libldap-common liblerc4
+#6 3.753   liblocale-gettext-perl liblsan0 libmpc3 libmpfr6 libncursesw6 libnghttp2-14
+#6 3.753   libnpth0 libnsl-dev libnsl2 libnuma1 libperl5.36 libpng16-16 libpsl5
+#6 3.753   libpython3-stdlib libpython3.11-minimal libpython3.11-stdlib libquadmath0
+#6 3.753   librav1e0 libreadline8 librtmp1 libsasl2-2 libsasl2-modules
+#6 3.753   libsasl2-modules-db libsodium23 libsqlite3-0 libssh2-1 libssl3
+#6 3.753   libstdc++-12-dev libsvtav1enc1 libtiff6 libtirpc-common libtirpc-dev
+#6 3.753   libtirpc3 libtsan2 libubsan1 libwebp7 libx11-6 libx11-data libx265-199
+#6 3.753   libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1 libxpm4 libyuv0 linux-libc-dev
+#6 3.753   m4 make manpages manpages-dev media-types netbase openssh-client openssl
+#6 3.753   patch perl perl-modules-5.36 pinentry-curses publicsuffix python3
+#6 3.753   python3-minimal python3.11 python3.11-minimal readline-common rpcsvc-proto
+#6 3.753   unzip vim-common vim-runtime xauth xxd xz-utils
+#6 3.755 Suggested packages:
+#6 3.755   autoconf-archive gnu-standards autoconf-doc libtool gettext binutils-doc
+#6 3.755   bison-doc bzip2-doc cpp-doc gcc-12-locales cpp-12-doc dbus-user-session
+#6 3.755   libpam-systemd pinentry-gnome3 tor debian-keyring g++-multilib
+#6 3.755   g++-12-multilib gcc-12-doc gcc-multilib flex gdb gcc-doc gcc-12-multilib
+#6 3.755   gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui
+#6 3.755   gitk gitweb git-cvs git-mediawiki git-svn parcimonie xloadimage scdaemon
+#6 3.755   glibc-doc sensible-utils bzr libgd-tools gdbm-l10n gpm krb5-doc krb5-user
+#6 3.755   libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal
+#6 3.755   libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql
+#6 3.755   libstdc++-12-doc m4-doc make-doc man-browser keychain libpam-ssh
+#6 3.755   monkeysphere ssh-askpass ed diffutils-doc perl-doc libterm-readline-gnu-perl
+#6 3.755   | libterm-readline-perl-perl libtap-harness-archive-perl pinentry-doc
+#6 3.755   python3-doc python3-tk python3-venv python3.11-venv python3.11-doc
+#6 3.755   binfmt-support readline-doc ctags vim-doc vim-scripts
+#6 4.831 The following NEW packages will be installed:
+#6 4.831   autoconf automake autotools-dev binutils binutils-common
+#6 4.831   binutils-x86-64-linux-gnu bison build-essential bzip2 ca-certificates cpp
+#6 4.831   cpp-12 dirmngr dpkg-dev fakeroot fontconfig-config fonts-dejavu-core g++
+#6 4.831   g++-12 gcc gcc-12 git git-man gnupg gnupg-l10n gnupg-utils gpg gpg-agent
+#6 4.831   gpg-wks-client gpg-wks-server gpgconf gpgsm krb5-locales less
+#6 4.831   libabsl20220623 libalgorithm-diff-perl libalgorithm-diff-xs-perl
+#6 4.831   libalgorithm-merge-perl libaom3 libasan8 libassuan0 libatomic1 libavif15
+#6 4.831   libbinutils libbrotli1 libbsd0 libc-dev-bin libc-devtools libc6-dev
+#6 4.831   libcbor0.8 libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libcurl3-gnutls
+#6 4.831   libdav1d6 libde265-0 libdeflate0 libdpkg-perl libedit2 liberror-perl
+#6 4.831   libexpat1 libfakeroot libfido2-1 libfile-fcntllock-perl libfontconfig1
+#6 4.831   libfreetype6 libgav1-1 libgcc-12-dev libgd3 libgdbm-compat4 libgdbm6
+#6 4.831   libgomp1 libgpm2 libgprofng0 libgssapi-krb5-2 libheif1 libisl23 libitm1
+#6 4.831   libjansson4 libjbig0 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3
+#6 4.831   libkrb5support0 libksba8 libldap-2.5-0 libldap-common liblerc4
+#6 4.831   liblocale-gettext-perl liblsan0 libmpc3 libmpfr6 libncursesw6 libnghttp2-14
+#6 4.832   libnpth0 libnsl-dev libnsl2 libnuma1 libperl5.36 libpng16-16 libpsl5
+#6 4.832   libpython3-stdlib libpython3.11-minimal libpython3.11-stdlib libquadmath0
+#6 4.832   librav1e0 libreadline8 librtmp1 libsasl2-2 libsasl2-modules
+#6 4.832   libsasl2-modules-db libsodium23 libsqlite3-0 libssh2-1 libssl3
+#6 4.832   libstdc++-12-dev libsvtav1enc1 libtiff6 libtirpc-common libtirpc-dev
+#6 4.832   libtirpc3 libtsan2 libubsan1 libwebp7 libx11-6 libx11-data libx265-199
+#6 4.832   libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1 libxpm4 libyuv0 linux-libc-dev
+#6 4.832   m4 make manpages manpages-dev media-types netbase openssh-client openssl
+#6 4.832   patch perl perl-modules-5.36 pinentry-curses publicsuffix python-is-python3
+#6 4.832   python3 python3-minimal python3.11 python3.11-minimal readline-common
+#6 4.832   rpcsvc-proto unzip vim vim-common vim-runtime xauth xxd xz-utils zip
+#6 4.844 0 upgraded, 165 newly installed, 0 to remove and 0 not upgraded.
+#6 4.844 Need to get 133 MB of archives.
+#6 4.844 After this operation, 534 MB of additional disk space will be used.
+#6 4.844 E: You don't have enough free space in /var/cache/apt/archives/.
+#6 ERROR: process "/bin/sh -c apt-get -y update &&     apt-get -y install zip build-essential autoconf bison python-is-python3 vim git &&     apt-get clean" did not complete successfully: exit code: 100
+------
+ > [2/8] RUN apt-get -y update &&     apt-get -y install zip build-essential autoconf bison python-is-python3 vim git &&     apt-get clean:
+4.832   libtirpc3 libtsan2 libubsan1 libwebp7 libx11-6 libx11-data libx265-199
+4.832   libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1 libxpm4 libyuv0 linux-libc-dev
+4.832   m4 make manpages manpages-dev media-types netbase openssh-client openssl
+4.832   patch perl perl-modules-5.36 pinentry-curses publicsuffix python-is-python3
+4.832   python3 python3-minimal python3.11 python3.11-minimal readline-common
+4.832   rpcsvc-proto unzip vim vim-common vim-runtime xauth xxd xz-utils zip
+4.844 0 upgraded, 165 newly installed, 0 to remove and 0 not upgraded.
+4.844 Need to get 133 MB of archives.
+4.844 After this operation, 534 MB of additional disk space will be used.
+4.844 E: You don't have enough free space in /var/cache/apt/archives/.
+------
+v1_Dockerfile:2
+--------------------
+   1 |     FROM debian
+   2 | >>> RUN apt-get -y update && \
+   3 | >>>     apt-get -y install zip build-essential autoconf bison python-is-python3 vim git && \
+   4 | >>>     apt-get clean
+   5 |     WORKDIR /opt
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get -y update &&     apt-get -y install zip build-essential autoconf bison python-is-python3 vim git &&     apt-get clean" did not complete successfully: exit code: 100
+Duration: 0:8.03

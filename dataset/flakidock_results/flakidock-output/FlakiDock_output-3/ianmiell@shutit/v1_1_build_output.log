@@ -1,0 +1,128 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 222B done
+#1 DONE 0.3s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.0s
+
+#4 [1/4] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#4 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#4 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#4 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#4 DONE 0.5s
+
+#5 [2/4] RUN apk add --update python3 py3-pip
+#5 0.438 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#5 0.816 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#5 1.411 (1/25) Installing libbz2 (1.0.8-r6)
+#5 1.416 (2/25) Installing libexpat (2.6.2-r0)
+#5 1.421 (3/25) Installing libffi (3.4.6-r0)
+#5 1.425 (4/25) Installing gdbm (1.23-r1)
+#5 1.450 (5/25) Installing xz-libs (5.6.1-r3)
+#5 1.460 (6/25) Installing libgcc (13.2.1_git20240309-r0)
+#5 1.465 (7/25) Installing libstdc++ (13.2.1_git20240309-r0)
+#5 1.491 (8/25) Installing mpdecimal (4.0.0-r0)
+#5 1.497 (9/25) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#5 1.526 (10/25) Installing libncursesw (6.4_p20240420-r0)
+#5 1.535 (11/25) Installing libpanelw (6.4_p20240420-r0)
+#5 1.539 (12/25) Installing readline (8.2.10-r0)
+#5 1.547 (13/25) Installing sqlite-libs (3.45.3-r1)
+#5 1.571 (14/25) Installing python3 (3.12.3-r1)
+#5 1.893 (15/25) Installing python3-pycache-pyc0 (3.12.3-r1)
+#5 2.134 (16/25) Installing pyc (3.12.3-r1)
+#5 2.136 (17/25) Installing py3-setuptools-pyc (69.5.1-r0)
+#5 2.255 (18/25) Installing py3-pip-pyc (24.0-r2)
+#5 2.489 (19/25) Installing py3-parsing (3.1.2-r1)
+#5 2.497 (20/25) Installing py3-parsing-pyc (3.1.2-r1)
+#5 2.516 (21/25) Installing py3-packaging-pyc (24.0-r1)
+#5 2.523 (22/25) Installing python3-pyc (3.12.3-r1)
+#5 2.526 (23/25) Installing py3-packaging (24.0-r1)
+#5 2.541 (24/25) Installing py3-setuptools (69.5.1-r0)
+#5 2.653 (25/25) Installing py3-pip (24.0-r2)
+#5 2.864 Executing busybox-1.36.1-r29.trigger
+#5 2.871 OK: 75 MiB in 39 packages
+#5 DONE 4.4s
+
+#6 [3/4] RUN python3 -m venv /venv
+#6 DONE 6.4s
+
+#7 [4/4] RUN pip install shutit
+#7 1.843 Collecting shutit
+#7 1.944   Downloading shutit-1.0.173.tar.gz (165 kB)
+#7 1.999      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 165.6/165.6 kB 3.1 MB/s eta 0:00:00
+#7 2.027   Installing build dependencies: started
+#7 5.269   Installing build dependencies: finished with status 'done'
+#7 5.270   Getting requirements to build wheel: started
+#7 5.547   Getting requirements to build wheel: finished with status 'done'
+#7 5.549   Preparing metadata (pyproject.toml): started
+#7 5.854   Preparing metadata (pyproject.toml): finished with status 'done'
+#7 5.920 Collecting pexpect>=4.0 (from shutit)
+#7 5.928   Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+#7 6.030 Collecting jinja2>=0.1 (from shutit)
+#7 6.038   Downloading jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
+#7 6.132 Collecting texttable>=0.1 (from shutit)
+#7 6.140   Downloading texttable-1.7.0-py2.py3-none-any.whl.metadata (9.8 kB)
+#7 6.229 Collecting six>=1.10 (from shutit)
+#7 6.237   Downloading six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+#7 6.331 Collecting future>=0.15 (from shutit)
+#7 6.338   Downloading future-1.0.0-py3-none-any.whl.metadata (4.0 kB)
+#7 6.501 Collecting curtsies>=0.3.0 (from shutit)
+#7 6.510   Downloading curtsies-0.4.2-py3-none-any.whl.metadata (4.3 kB)
+#7 6.664 Collecting cjkwrap (from shutit)
+#7 6.674   Downloading CJKwrap-2.2-py2.py3-none-any.whl.metadata (1.1 kB)
+#7 6.871 Collecting blessed>=1.5 (from curtsies>=0.3.0->shutit)
+#7 6.882   Downloading blessed-1.20.0-py2.py3-none-any.whl.metadata (13 kB)
+#7 7.060 Collecting cwcwidth (from curtsies>=0.3.0->shutit)
+#7 7.130   Downloading cwcwidth-0.1.9-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (2.0 kB)
+#7 7.295 Collecting MarkupSafe>=2.0 (from jinja2>=0.1->shutit)
+#7 7.305   Downloading MarkupSafe-2.1.5-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (3.0 kB)
+#7 7.395 Collecting ptyprocess>=0.5 (from pexpect>=4.0->shutit)
+#7 7.403   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+#7 7.512 Collecting wcwidth>=0.1.4 (from blessed>=1.5->curtsies>=0.3.0->shutit)
+#7 7.520   Downloading wcwidth-0.2.13-py2.py3-none-any.whl.metadata (14 kB)
+#7 7.587 Downloading curtsies-0.4.2-py3-none-any.whl (35 kB)
+#7 7.635 Downloading future-1.0.0-py3-none-any.whl (491 kB)
+#7 7.713    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 491.3/491.3 kB 6.6 MB/s eta 0:00:00
+#7 7.722 Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+#7 7.780    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.3/133.3 kB 2.2 MB/s eta 0:00:00
+#7 7.788 Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+#7 7.830    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.8/63.8 kB 1.4 MB/s eta 0:00:00
+#7 7.839 Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#7 7.887 Downloading texttable-1.7.0-py2.py3-none-any.whl (10 kB)
+#7 7.930 Downloading CJKwrap-2.2-py2.py3-none-any.whl (4.3 kB)
+#7 7.979 Downloading blessed-1.20.0-py2.py3-none-any.whl (58 kB)
+#7 8.041    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.4/58.4 kB 820.4 kB/s eta 0:00:00
+#7 8.050 Downloading MarkupSafe-2.1.5-cp312-cp312-musllinux_1_1_x86_64.whl (33 kB)
+#7 8.098 Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+#7 8.224 Downloading cwcwidth-0.1.9-cp312-cp312-musllinux_1_1_x86_64.whl (108 kB)
+#7 8.276    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.6/108.6 kB 2.0 MB/s eta 0:00:00
+#7 8.284 Downloading wcwidth-0.2.13-py2.py3-none-any.whl (34 kB)
+#7 8.367 Building wheels for collected packages: shutit
+#7 8.369   Building wheel for shutit (pyproject.toml): started
+#7 8.759   Building wheel for shutit (pyproject.toml): finished with status 'done'
+#7 8.761   Created wheel for shutit: filename=shutit-1.0.173-py3-none-any.whl size=175150 sha256=1ec8418e8ec16c1e6653794109e7bc232ab6edbc4706d9bc9924cd4180f87313
+#7 8.762   Stored in directory: /root/.cache/pip/wheels/17/7b/02/d7f5b981b6779e6c354c366ead7c279a024923faab9e42854d
+#7 8.765 Successfully built shutit
+#7 8.812 Installing collected packages: wcwidth, texttable, ptyprocess, cjkwrap, six, pexpect, MarkupSafe, future, cwcwidth, jinja2, blessed, curtsies, shutit
+#7 10.69 Successfully installed MarkupSafe-2.1.5 blessed-1.20.0 cjkwrap-2.2 curtsies-0.4.2 cwcwidth-0.1.9 future-1.0.0 jinja2-3.1.4 pexpect-4.9.0 ptyprocess-0.7.0 shutit-1.0.173 six-1.16.0 texttable-1.7.0 wcwidth-0.2.13
+#7 10.71 
+#7 10.71 [notice] A new release of pip is available: 24.0 -> 24.2
+#7 10.71 [notice] To update, run: pip install --upgrade pip
+#7 DONE 11.3s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 1.4s done
+#8 writing image sha256:e471aa234885f7ce48b3b6e4a82cf8a361a45f5aeb17133ed77213e3f15b2a51 0.0s done
+#8 naming to docker.io/library/image_name_v1_1 0.0s done
+#8 DONE 1.4s
+Duration: 0:25.95

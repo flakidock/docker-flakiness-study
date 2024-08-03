@@ -1,0 +1,233 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 515B done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 125B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/node:10
+#3 DONE 1.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/node:10@sha256:59531d2835edd5161c8f9512f9e095b1836f7a1fcb0ab73e005ec46047384911
+#5 resolve docker.io/library/node:10@sha256:59531d2835edd5161c8f9512f9e095b1836f7a1fcb0ab73e005ec46047384911 0.1s done
+#5 sha256:59531d2835edd5161c8f9512f9e095b1836f7a1fcb0ab73e005ec46047384911 776B / 776B done
+#5 sha256:28dca6642db82aaecbed18101d9966f001e8de6691e1a1718c2927c124d81262 7.83kB / 7.83kB done
+#5 sha256:686e0e859358f28bfe1641e1627549b9cd0ad74f222b953d74209213488c6858 2.21kB / 2.21kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 393.73kB 0.0s done
+#4 DONE 0.4s
+
+#5 [1/8] FROM docker.io/library/node:10@sha256:59531d2835edd5161c8f9512f9e095b1836f7a1fcb0ab73e005ec46047384911
+#5 DONE 2.7s
+
+#6 [2/8] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update && apt-get -y install cron
+#6 0.470 Ign:1 http://archive.debian.org/debian stretch InRelease
+#6 0.472 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#6 0.482 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#6 0.487 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#6 0.736 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
+#6 0.822 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [7080 kB]
+#6 2.108 Fetched 8042 kB in 1s (4909 kB/s)
+#6 2.108 Reading package lists...
+#6 2.817 Reading package lists...
+#6 3.515 Building dependency tree...
+#6 3.621 Reading state information...
+#6 3.706 The following additional packages will be installed:
+#6 3.706   exim4 exim4-base exim4-config exim4-daemon-light guile-2.0-libs libfribidi0
+#6 3.707   libgc1c2 libgsasl7 libkyotocabinet16v5 libmailutils5 libntlm0 libpython2.7
+#6 3.707   libpython2.7-minimal libpython2.7-stdlib libwrap0 mailutils mailutils-common
+#6 3.707   psmisc python2.7 python2.7-minimal tcpd
+#6 3.707 Suggested packages:
+#6 3.707   anacron logrotate checksecurity eximon4 exim4-doc-html | exim4-doc-info
+#6 3.707   spf-tools-perl swaks mailutils-mh mailutils-doc python2.7-doc binfmt-support
+#6 3.818 The following NEW packages will be installed:
+#6 3.818   cron exim4 exim4-base exim4-config exim4-daemon-light guile-2.0-libs
+#6 3.818   libfribidi0 libgc1c2 libgsasl7 libkyotocabinet16v5 libmailutils5 libntlm0
+#6 3.818   libpython2.7 libwrap0 mailutils mailutils-common psmisc tcpd
+#6 3.819 The following packages will be upgraded:
+#6 3.819   libpython2.7-minimal libpython2.7-stdlib python2.7 python2.7-minimal
+#6 3.837 4 upgraded, 18 newly installed, 0 to remove and 113 not upgraded.
+#6 3.837 Need to get 12.4 MB of archives.
+#6 3.837 After this operation, 27.5 MB of additional disk space will be used.
+#6 3.837 Get:1 http://archive.debian.org/debian-security stretch/updates/main amd64 cron amd64 3.0pl1-128+deb9u2 [96.6 kB]
+#6 3.842 Get:2 http://archive.debian.org/debian-security stretch/updates/main amd64 python2.7 amd64 2.7.13-2+deb9u6 [286 kB]
+#6 3.849 Get:3 http://archive.debian.org/debian-security stretch/updates/main amd64 libpython2.7-stdlib amd64 2.7.13-2+deb9u6 [1898 kB]
+#6 3.885 Get:4 http://archive.debian.org/debian-security stretch/updates/main amd64 python2.7-minimal amd64 2.7.13-2+deb9u6 [1382 kB]
+#6 3.908 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 libpython2.7-minimal amd64 2.7.13-2+deb9u6 [390 kB]
+#6 3.914 Get:6 http://archive.debian.org/debian-security stretch/updates/main amd64 exim4-config all 4.89-2+deb9u8 [377 kB]
+#6 3.921 Get:7 http://archive.debian.org/debian-security stretch/updates/main amd64 exim4-base amd64 4.89-2+deb9u8 [1094 kB]
+#6 3.939 Get:8 http://archive.debian.org/debian-security stretch/updates/main amd64 exim4-daemon-light amd64 4.89-2+deb9u8 [546 kB]
+#6 3.948 Get:9 http://archive.debian.org/debian-security stretch/updates/main amd64 exim4 all 4.89-2+deb9u8 [7868 B]
+#6 3.948 Get:10 http://archive.debian.org/debian-security stretch/updates/main amd64 libgc1c2 amd64 1:7.4.2-8+deb9u1 [209 kB]
+#6 3.952 Get:11 http://archive.debian.org/debian stretch/main amd64 libwrap0 amd64 7.6.q-26 [58.2 kB]
+#6 3.953 Get:12 http://archive.debian.org/debian stretch/main amd64 guile-2.0-libs amd64 2.0.13+1-4 [2232 kB]
+#6 3.981 Get:13 http://archive.debian.org/debian-security stretch/updates/main amd64 libfribidi0 amd64 0.19.7-1+deb9u2 [45.7 kB]
+#6 3.982 Get:14 http://archive.debian.org/debian-security stretch/updates/main amd64 libntlm0 amd64 1.4-8+deb9u1 [21.6 kB]
+#6 3.983 Get:15 http://archive.debian.org/debian stretch/main amd64 libgsasl7 amd64 1.8.0-8+b2 [207 kB]
+#6 3.985 Get:16 http://archive.debian.org/debian stretch/main amd64 libkyotocabinet16v5 amd64 1.2.76-4.2+b1 [298 kB]
+#6 3.989 Get:17 http://archive.debian.org/debian stretch/main amd64 mailutils-common all 1:3.1.1-1 [642 kB]
+#6 3.997 Get:18 http://archive.debian.org/debian-security stretch/updates/main amd64 libpython2.7 amd64 2.7.13-2+deb9u6 [1072 kB]
+#6 4.014 Get:19 http://archive.debian.org/debian stretch/main amd64 libmailutils5 amd64 1:3.1.1-1 [817 kB]
+#6 4.024 Get:20 http://archive.debian.org/debian stretch/main amd64 mailutils amd64 1:3.1.1-1 [573 kB]
+#6 4.031 Get:21 http://archive.debian.org/debian stretch/main amd64 psmisc amd64 22.21-2.1+b2 [123 kB]
+#6 4.033 Get:22 http://archive.debian.org/debian stretch/main amd64 tcpd amd64 7.6.q-26 [23.3 kB]
+#6 4.391 debconf: delaying package configuration, since apt-utils is not installed
+#6 4.499 Fetched 12.4 MB in 0s (60.7 MB/s)
+#6 4.750 Selecting previously unselected package cron.
+#6 4.750 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 29964 files and directories currently installed.)
+#6 4.763 Preparing to unpack .../00-cron_3.0pl1-128+deb9u2_amd64.deb ...
+#6 4.805 Unpacking cron (3.0pl1-128+deb9u2) ...
+#6 5.066 Preparing to unpack .../01-python2.7_2.7.13-2+deb9u6_amd64.deb ...
+#6 5.164 Unpacking python2.7 (2.7.13-2+deb9u6) over (2.7.13-2+deb9u4) ...
+#6 5.895 Preparing to unpack .../02-libpython2.7-stdlib_2.7.13-2+deb9u6_amd64.deb ...
+#6 6.145 Unpacking libpython2.7-stdlib:amd64 (2.7.13-2+deb9u6) over (2.7.13-2+deb9u4) ...
+#6 20.15 Preparing to unpack .../03-python2.7-minimal_2.7.13-2+deb9u6_amd64.deb ...
+#6 20.24 Unpacking python2.7-minimal (2.7.13-2+deb9u6) over (2.7.13-2+deb9u4) ...
+#6 20.93 Preparing to unpack .../04-libpython2.7-minimal_2.7.13-2+deb9u6_amd64.deb ...
+#6 21.16 Unpacking libpython2.7-minimal:amd64 (2.7.13-2+deb9u6) over (2.7.13-2+deb9u4) ...
+#6 27.91 Selecting previously unselected package exim4-config.
+#6 27.91 Preparing to unpack .../05-exim4-config_4.89-2+deb9u8_all.deb ...
+#6 27.95 Unpacking exim4-config (4.89-2+deb9u8) ...
+#6 28.28 Selecting previously unselected package exim4-base.
+#6 28.28 Preparing to unpack .../06-exim4-base_4.89-2+deb9u8_amd64.deb ...
+#6 28.31 Unpacking exim4-base (4.89-2+deb9u8) ...
+#6 28.75 Selecting previously unselected package exim4-daemon-light.
+#6 28.75 Preparing to unpack .../07-exim4-daemon-light_4.89-2+deb9u8_amd64.deb ...
+#6 28.77 Unpacking exim4-daemon-light (4.89-2+deb9u8) ...
+#6 29.47 Selecting previously unselected package exim4.
+#6 29.47 Preparing to unpack .../08-exim4_4.89-2+deb9u8_all.deb ...
+#6 29.49 Unpacking exim4 (4.89-2+deb9u8) ...
+#6 29.68 Selecting previously unselected package libgc1c2:amd64.
+#6 29.68 Preparing to unpack .../09-libgc1c2_1%3a7.4.2-8+deb9u1_amd64.deb ...
+#6 29.72 Unpacking libgc1c2:amd64 (1:7.4.2-8+deb9u1) ...
+#6 29.98 Selecting previously unselected package libwrap0:amd64.
+#6 29.98 Preparing to unpack .../10-libwrap0_7.6.q-26_amd64.deb ...
+#6 30.00 Unpacking libwrap0:amd64 (7.6.q-26) ...
+#6 30.26 Selecting previously unselected package guile-2.0-libs:amd64.
+#6 30.26 Preparing to unpack .../11-guile-2.0-libs_2.0.13+1-4_amd64.deb ...
+#6 30.29 Unpacking guile-2.0-libs:amd64 (2.0.13+1-4) ...
+#6 31.49 Selecting previously unselected package libfribidi0:amd64.
+#6 31.49 Preparing to unpack .../12-libfribidi0_0.19.7-1+deb9u2_amd64.deb ...
+#6 31.52 Unpacking libfribidi0:amd64 (0.19.7-1+deb9u2) ...
+#6 31.73 Selecting previously unselected package libntlm0:amd64.
+#6 31.73 Preparing to unpack .../13-libntlm0_1.4-8+deb9u1_amd64.deb ...
+#6 31.76 Unpacking libntlm0:amd64 (1.4-8+deb9u1) ...
+#6 31.97 Selecting previously unselected package libgsasl7.
+#6 31.97 Preparing to unpack .../14-libgsasl7_1.8.0-8+b2_amd64.deb ...
+#6 32.00 Unpacking libgsasl7 (1.8.0-8+b2) ...
+#6 32.22 Selecting previously unselected package libkyotocabinet16v5:amd64.
+#6 32.22 Preparing to unpack .../15-libkyotocabinet16v5_1.2.76-4.2+b1_amd64.deb ...
+#6 32.24 Unpacking libkyotocabinet16v5:amd64 (1.2.76-4.2+b1) ...
+#6 32.43 Selecting previously unselected package mailutils-common.
+#6 32.43 Preparing to unpack .../16-mailutils-common_1%3a3.1.1-1_all.deb ...
+#6 32.45 Unpacking mailutils-common (1:3.1.1-1) ...
+#6 32.73 Selecting previously unselected package libpython2.7:amd64.
+#6 32.73 Preparing to unpack .../17-libpython2.7_2.7.13-2+deb9u6_amd64.deb ...
+#6 32.75 Unpacking libpython2.7:amd64 (2.7.13-2+deb9u6) ...
+#6 33.09 Selecting previously unselected package libmailutils5:amd64.
+#6 33.09 Preparing to unpack .../18-libmailutils5_1%3a3.1.1-1_amd64.deb ...
+#6 33.12 Unpacking libmailutils5:amd64 (1:3.1.1-1) ...
+#6 33.42 Selecting previously unselected package mailutils.
+#6 33.42 Preparing to unpack .../19-mailutils_1%3a3.1.1-1_amd64.deb ...
+#6 33.44 Unpacking mailutils (1:3.1.1-1) ...
+#6 33.70 Selecting previously unselected package psmisc.
+#6 33.70 Preparing to unpack .../20-psmisc_22.21-2.1+b2_amd64.deb ...
+#6 33.72 Unpacking psmisc (22.21-2.1+b2) ...
+#6 33.92 Selecting previously unselected package tcpd.
+#6 33.92 Preparing to unpack .../21-tcpd_7.6.q-26_amd64.deb ...
+#6 33.94 Unpacking tcpd (7.6.q-26) ...
+#6 34.15 Setting up psmisc (22.21-2.1+b2) ...
+#6 34.22 Setting up exim4-config (4.89-2+deb9u8) ...
+#6 35.49 debconf: unable to initialize frontend: Dialog
+#6 35.49 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 35.49 debconf: falling back to frontend: Readline
+#6 35.63 Adding system-user for exim (v4)
+#6 37.02 Processing triggers for mime-support (3.60) ...
+#6 37.09 Setting up libgc1c2:amd64 (1:7.4.2-8+deb9u1) ...
+#6 37.17 Setting up libntlm0:amd64 (1.4-8+deb9u1) ...
+#6 37.24 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#6 37.35 Setting up guile-2.0-libs:amd64 (2.0.13+1-4) ...
+#6 37.45 Setting up libfribidi0:amd64 (0.19.7-1+deb9u2) ...
+#6 37.53 Setting up libpython2.7-minimal:amd64 (2.7.13-2+deb9u6) ...
+#6 37.64 Setting up cron (3.0pl1-128+deb9u2) ...
+#6 37.96 Adding group `crontab' (GID 103) ...
+#6 38.03 Done.
+#6 38.27 update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+#6 38.28 invoke-rc.d: could not determine current runlevel
+#6 38.28 invoke-rc.d: policy-rc.d denied execution of start.
+#6 38.31 Setting up libkyotocabinet16v5:amd64 (1.2.76-4.2+b1) ...
+#6 38.38 Setting up libpython2.7-stdlib:amd64 (2.7.13-2+deb9u6) ...
+#6 38.46 Setting up python2.7-minimal (2.7.13-2+deb9u6) ...
+#6 38.88 Setting up libwrap0:amd64 (7.6.q-26) ...
+#6 38.95 Setting up mailutils-common (1:3.1.1-1) ...
+#6 39.03 Setting up libgsasl7 (1.8.0-8+b2) ...
+#6 39.11 Setting up python2.7 (2.7.13-2+deb9u6) ...
+#6 40.22 Setting up exim4-base (4.89-2+deb9u8) ...
+#6 40.48 debconf: unable to initialize frontend: Dialog
+#6 40.48 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 40.48 debconf: falling back to frontend: Readline
+#6 40.52 exim: DB upgrade, deleting hints-db
+#6 40.64 Setting up tcpd (7.6.q-26) ...
+#6 40.72 Setting up libpython2.7:amd64 (2.7.13-2+deb9u6) ...
+#6 40.80 Setting up exim4-daemon-light (4.89-2+deb9u8) ...
+#6 40.95 debconf: unable to initialize frontend: Dialog
+#6 40.95 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 40.95 debconf: falling back to frontend: Readline
+#6 40.97 invoke-rc.d: could not determine current runlevel
+#6 40.98 invoke-rc.d: policy-rc.d denied execution of start.
+#6 40.98 Initializing GnuTLS DH parameter file
+#6 41.16 Setting up libmailutils5:amd64 (1:3.1.1-1) ...
+#6 41.24 Setting up mailutils (1:3.1.1-1) ...
+#6 41.31 update-alternatives: using /usr/bin/frm.mailutils to provide /usr/bin/frm (frm) in auto mode
+#6 41.33 update-alternatives: using /usr/bin/from.mailutils to provide /usr/bin/from (from) in auto mode
+#6 41.35 update-alternatives: using /usr/bin/messages.mailutils to provide /usr/bin/messages (messages) in auto mode
+#6 41.37 update-alternatives: using /usr/bin/movemail.mailutils to provide /usr/bin/movemail (movemail) in auto mode
+#6 41.38 update-alternatives: using /usr/bin/readmsg.mailutils to provide /usr/bin/readmsg (readmsg) in auto mode
+#6 41.40 update-alternatives: using /usr/bin/dotlock.mailutils to provide /usr/bin/dotlock (dotlock) in auto mode
+#6 41.43 update-alternatives: using /usr/bin/mail.mailutils to provide /usr/bin/mailx (mailx) in auto mode
+#6 41.48 Setting up exim4 (4.89-2+deb9u8) ...
+#6 41.64 debconf: unable to initialize frontend: Dialog
+#6 41.64 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 41.64 debconf: falling back to frontend: Readline
+#6 41.78 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#6 DONE 42.5s
+
+#7 [3/8] WORKDIR /var/www/
+#7 DONE 0.4s
+
+#8 [4/8] COPY package-lock.json package-lock.json
+#8 DONE 0.4s
+
+#9 [5/8] COPY package.json package.json
+#9 DONE 0.3s
+
+#10 [6/8] RUN npm ci --only=production
+#10 5.525 
+#10 5.525 > fsevents@1.2.7 install /var/www/node_modules/fsevents
+#10 5.525 > node install
+#10 5.525 
+#10 5.633 added 416 packages in 4.398s
+#10 DONE 7.1s
+
+#11 [7/8] COPY . .
+#11 DONE 0.5s
+
+#12 [8/8] RUN crontab ./crons/updater.cron
+#12 DONE 0.8s
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 2.1s done
+#13 writing image sha256:280ea1f7878a47ab1820a7a38c0ee5c80b00208dc12b70ec40c5f70f2cf2bade 0.0s done
+#13 naming to docker.io/library/image_name_v1_1 0.0s done
+#13 DONE 2.1s
+Duration: 0:58.90

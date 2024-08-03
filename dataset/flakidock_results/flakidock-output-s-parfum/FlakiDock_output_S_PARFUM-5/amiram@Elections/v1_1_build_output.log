@@ -1,0 +1,25 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 163B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/coreos/apache:latest
+#2 ...
+
+#3 [auth] coreos/apache:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/coreos/apache:latest
+#2 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+------
+ > [internal] load metadata for docker.io/coreos/apache:latest:
+------
+v1_Dockerfile:1
+--------------------
+   1 | >>> FROM coreos/apache
+   2 |     MAINTAINER Yonah Russ
+   3 |     COPY Source /var/www/
+--------------------
+ERROR: failed to solve: coreos/apache: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+Duration: 0:0.73

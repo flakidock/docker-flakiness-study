@@ -1,0 +1,17 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.27kB done
+#2 DONE 0.3s
+v1_Dockerfile:1
+--------------------
+   1 | >>> The build error indicates that the Go code is using features that are not available in Go 1.13.4. Specifically, the `io.NopCloser`, `io.Discard`, and `io.ReadAll` functions, as well as the `tls.Conn.HandshakeContext` method, were introduced in later versions of Go. To fix this, we need to update the Go version in the Dockerfile to a version that supports these features.
+   2 |     
+   3 |     Let's update the Go version to a more recent one, such as Go 1.16, which includes these features.
+--------------------
+ERROR: failed to solve: dockerfile parse error on line 1: unknown instruction: The
+Duration: 0:1.87

@@ -1,0 +1,1025 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile-MakeImage
+#1 transferring dockerfile:
+#1 transferring dockerfile: 782B 0.0s done
+#1 DONE 0.3s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/amazonlinux:latest
+#3 ...
+
+#4 [auth] library/amazonlinux:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/amazonlinux:latest
+#3 DONE 1.5s
+
+#5 [1/6] FROM docker.io/library/amazonlinux:latest@sha256:7edb8e2f8b0a114acabae813a54144187343bf59e41bbd3e79a2cf187ca02c3d
+#5 resolve docker.io/library/amazonlinux:latest@sha256:7edb8e2f8b0a114acabae813a54144187343bf59e41bbd3e79a2cf187ca02c3d 0.1s done
+#5 sha256:7edb8e2f8b0a114acabae813a54144187343bf59e41bbd3e79a2cf187ca02c3d 2.38kB / 2.38kB done
+#5 sha256:ed1d48d43d169ee6318a16ca5d2a21d8dda0e57b78d307722f35221ab779295c 1.02kB / 1.02kB done
+#5 sha256:25a16e38b2bd188c3b64e05abbd3c4f9649843ef3f3f801ab664e6e5f93fc51d 575B / 575B done
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 0B / 52.31MB 0.1s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 10.49MB / 52.31MB 0.3s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 16.78MB / 52.31MB 0.5s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 23.07MB / 52.31MB 0.7s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 26.21MB / 52.31MB 0.9s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 32.51MB / 52.31MB 1.0s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 36.70MB / 52.31MB 1.2s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 46.14MB / 52.31MB 1.3s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 52.31MB / 52.31MB 1.6s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 52.31MB / 52.31MB 2.2s done
+#5 extracting sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 0.1s
+#5 extracting sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 3.4s done
+#5 DONE 6.4s
+
+#6 [2/6] RUN yum -y update && yum -y install zip
+#6 1.988 Amazon Linux 2023 repository                     24 MB/s |  26 MB     00:01    
+#6 11.51 Last metadata expiration check: 0:00:11 ago on Wed Jul 31 00:24:18 2024.
+#6 12.28 Dependencies resolved.
+#6 12.30 Nothing to do.
+#6 12.30 Complete!
+#6 12.64 Last metadata expiration check: 0:00:12 ago on Wed Jul 31 00:24:18 2024.
+#6 12.70 Dependencies resolved.
+#6 12.71 ================================================================================
+#6 12.71  Package      Architecture  Version                    Repository          Size
+#6 12.71 ================================================================================
+#6 12.71 Installing:
+#6 12.71  zip          x86_64        3.0-28.amzn2023.0.2        amazonlinux        257 k
+#6 12.71 Installing dependencies:
+#6 12.71  unzip        x86_64        6.0-57.amzn2023.0.2        amazonlinux        182 k
+#6 12.71 
+#6 12.71 Transaction Summary
+#6 12.71 ================================================================================
+#6 12.71 Install  2 Packages
+#6 12.71 
+#6 12.71 Total download size: 439 k
+#6 12.71 Installed size: 1.1 M
+#6 12.71 Downloading Packages:
+#6 12.90 (1/2): unzip-6.0-57.amzn2023.0.2.x86_64.rpm     2.5 MB/s | 182 kB     00:00    
+#6 12.94 (2/2): zip-3.0-28.amzn2023.0.2.x86_64.rpm       2.4 MB/s | 257 kB     00:00    
+#6 12.94 --------------------------------------------------------------------------------
+#6 12.94 Total                                           1.9 MB/s | 439 kB     00:00     
+#6 13.05 Running transaction check
+#6 13.06 Transaction check succeeded.
+#6 13.06 Running transaction test
+#6 13.09 Transaction test succeeded.
+#6 13.09 Running transaction
+#6 13.32   Preparing        :                                                        1/1 
+#6 13.34   Installing       : unzip-6.0-57.amzn2023.0.2.x86_64                       1/2 
+#6 13.41   Installing       : zip-3.0-28.amzn2023.0.2.x86_64                         2/2 
+#6 13.43   Running scriptlet: zip-3.0-28.amzn2023.0.2.x86_64                         2/2 
+#6 16.61   Verifying        : unzip-6.0-57.amzn2023.0.2.x86_64                       1/2 
+#6 16.61   Verifying        : zip-3.0-28.amzn2023.0.2.x86_64                         2/2 
+#6 16.68 
+#6 16.68 Installed:
+#6 16.68   unzip-6.0-57.amzn2023.0.2.x86_64        zip-3.0-28.amzn2023.0.2.x86_64       
+#6 16.68 
+#6 16.68 Complete!
+#6 DONE 17.0s
+
+#7 [3/6] RUN yum -y install java-1.8.0 &&     curl -L https://www.scala-sbt.org/sbt-rpm.repo | tee /etc/yum.repos.d/sbt-rpm.repo &&     yum -y install sbt
+#7 1.084 Last metadata expiration check: 0:00:17 ago on Wed Jul 31 00:24:18 2024.
+#7 1.220 Dependencies resolved.
+#7 1.250 =========================================================================================
+#7 1.250  Package                       Arch    Version                         Repository    Size
+#7 1.250 =========================================================================================
+#7 1.250 Installing:
+#7 1.250  java-1.8.0-amazon-corretto    x86_64  1:1.8.0_422.b05-1.amzn2023      amazonlinux   38 M
+#7 1.250 Installing dependencies:
+#7 1.250  adwaita-cursor-theme          noarch  40.1.1-1.amzn2023.0.2           amazonlinux  623 k
+#7 1.250  adwaita-icon-theme            noarch  40.1.1-1.amzn2023.0.2           amazonlinux   11 M
+#7 1.250  alsa-lib                      x86_64  1.2.7.2-1.amzn2023.0.2          amazonlinux  504 k
+#7 1.250  at-spi2-atk                   x86_64  2.38.0-2.amzn2023.0.2           amazonlinux   86 k
+#7 1.250  at-spi2-core                  x86_64  2.40.3-1.amzn2023.0.1           amazonlinux  178 k
+#7 1.250  atk                           x86_64  2.36.0-3.amzn2023.0.2           amazonlinux  271 k
+#7 1.250  avahi-libs                    x86_64  0.8-14.amzn2023.0.12            amazonlinux   68 k
+#7 1.250  cairo                         x86_64  1.17.6-2.amzn2023.0.1           amazonlinux  684 k
+#7 1.250  cairo-gobject                 x86_64  1.17.6-2.amzn2023.0.1           amazonlinux   19 k
+#7 1.250  chkconfig                     x86_64  1.15-2.amzn2023.0.2             amazonlinux  161 k
+#7 1.250  colord-libs                   x86_64  1.4.5-2.amzn2023.0.2            amazonlinux  235 k
+#7 1.250  cracklib                      x86_64  2.9.6-27.amzn2023.0.2           amazonlinux   82 k
+#7 1.250  cups-libs                     x86_64  1:2.3.3op2-18.amzn2023.0.8      amazonlinux  262 k
+#7 1.250  dbus                          x86_64  1:1.12.28-1.amzn2023.0.1        amazonlinux  8.5 k
+#7 1.250  dbus-broker                   x86_64  32-1.amzn2023.0.2               amazonlinux  174 k
+#7 1.250  dbus-common                   noarch  1:1.12.28-1.amzn2023.0.1        amazonlinux   15 k
+#7 1.250  dbus-libs                     x86_64  1:1.12.28-1.amzn2023.0.1        amazonlinux  153 k
+#7 1.250  dejavu-sans-fonts             noarch  2.37-16.amzn2023.0.2            amazonlinux  1.3 M
+#7 1.250  dejavu-sans-mono-fonts        noarch  2.37-16.amzn2023.0.2            amazonlinux  467 k
+#7 1.250  dejavu-serif-fonts            noarch  2.37-16.amzn2023.0.2            amazonlinux  1.0 M
+#7 1.250  device-mapper                 x86_64  1.02.185-1.amzn2023.0.4         amazonlinux  140 k
+#7 1.250  device-mapper-libs            x86_64  1.02.185-1.amzn2023.0.4         amazonlinux  180 k
+#7 1.250  fontconfig                    x86_64  2.13.94-2.amzn2023.0.2          amazonlinux  273 k
+#7 1.250  fonts-filesystem              noarch  1:2.0.5-12.amzn2023.0.2         amazonlinux  9.5 k
+#7 1.250  freetype                      x86_64  2.13.0-2.amzn2023.0.1           amazonlinux  422 k
+#7 1.250  fribidi                       x86_64  1.0.11-3.amzn2023.0.2           amazonlinux   54 k
+#7 1.250  gdk-pixbuf2                   x86_64  2.42.10-1.amzn2023.0.1          amazonlinux  467 k
+#7 1.250  gdk-pixbuf2-modules           x86_64  2.42.10-1.amzn2023.0.1          amazonlinux   88 k
+#7 1.250  giflib                        x86_64  5.2.1-9.amzn2023.0.1            amazonlinux   49 k
+#7 1.250  glib-networking               x86_64  2.68.2-1.amzn2023.0.3           amazonlinux  169 k
+#7 1.250  gnutls                        x86_64  3.8.0-380.amzn2023.0.6          amazonlinux  1.1 M
+#7 1.250  google-noto-fonts-common      noarch  20201206-2.amzn2023.0.2         amazonlinux   15 k
+#7 1.250  google-noto-sans-vf-fonts     noarch  20201206-2.amzn2023.0.2         amazonlinux  492 k
+#7 1.250  graphite2                     x86_64  1.3.14-7.amzn2023.0.2           amazonlinux   97 k
+#7 1.250  gsettings-desktop-schemas     x86_64  40.0-1.amzn2023.0.3             amazonlinux  667 k
+#7 1.250  gtk-update-icon-cache         x86_64  3.24.30-4.amzn2023.0.4          amazonlinux   34 k
+#7 1.250  gtk3                          x86_64  3.24.30-4.amzn2023.0.4          amazonlinux  4.8 M
+#7 1.250  gzip                          x86_64  1.12-1.amzn2023.0.1             amazonlinux  160 k
+#7 1.250  harfbuzz                      x86_64  7.0.0-2.amzn2023.0.1            amazonlinux  868 k
+#7 1.250  hicolor-icon-theme            noarch  0.17-10.amzn2023.0.3            amazonlinux   44 k
+#7 1.250  hwdata                        noarch  0.353-1.amzn2023.0.3            amazonlinux  1.5 M
+#7 1.250  javapackages-filesystem       noarch  6.0.0-7.amzn2023.0.6            amazonlinux   12 k
+#7 1.250  jbigkit-libs                  x86_64  2.1-21.amzn2023.0.2             amazonlinux   54 k
+#7 1.250  json-glib                     x86_64  1.6.6-1.amzn2023.0.2            amazonlinux  152 k
+#7 1.250  kmod-libs                     x86_64  29-2.amzn2023.0.5               amazonlinux   62 k
+#7 1.250  langpacks-core-font-en        noarch  3.0-21.amzn2023.0.4             amazonlinux   10 k
+#7 1.250  lcms2                         x86_64  2.12-1.amzn2023.0.3             amazonlinux  174 k
+#7 1.250  libX11                        x86_64  1.7.2-3.amzn2023.0.4            amazonlinux  657 k
+#7 1.250  libX11-common                 noarch  1.7.2-3.amzn2023.0.4            amazonlinux  152 k
+#7 1.250  libX11-xcb                    x86_64  1.7.2-3.amzn2023.0.4            amazonlinux   12 k
+#7 1.250  libXau                        x86_64  1.0.9-6.amzn2023.0.2            amazonlinux   31 k
+#7 1.250  libXcomposite                 x86_64  0.4.5-5.amzn2023.0.2            amazonlinux   24 k
+#7 1.250  libXcursor                    x86_64  1.2.0-5.amzn2023.0.2            amazonlinux   31 k
+#7 1.250  libXdamage                    x86_64  1.1.5-5.amzn2023.0.2            amazonlinux   23 k
+#7 1.250  libXext                       x86_64  1.3.4-6.amzn2023.0.2            amazonlinux   41 k
+#7 1.250  libXfixes                     x86_64  6.0.0-1.amzn2023.0.2            amazonlinux   20 k
+#7 1.250  libXft                        x86_64  2.3.3-6.amzn2023.0.2            amazonlinux   64 k
+#7 1.250  libXi                         x86_64  1.7.10-6.amzn2023.0.2           amazonlinux   40 k
+#7 1.250  libXinerama                   x86_64  1.1.4-8.amzn2023.0.2            amazonlinux   15 k
+#7 1.250  libXrandr                     x86_64  1.5.2-6.amzn2023.0.2            amazonlinux   28 k
+#7 1.250  libXrender                    x86_64  0.9.10-14.amzn2023.0.2          amazonlinux   28 k
+#7 1.250  libXtst                       x86_64  1.2.3-14.amzn2023.0.2           amazonlinux   21 k
+#7 1.250  libXxf86vm                    x86_64  1.1.4-16.amzn2023.0.2           amazonlinux   19 k
+#7 1.250  libargon2                     x86_64  20171227-9.amzn2023.0.2         amazonlinux   29 k
+#7 1.250  libbrotli                     x86_64  1.0.9-4.amzn2023.0.2            amazonlinux  315 k
+#7 1.250  libcloudproviders             x86_64  0.3.1-3.amzn2023.0.2            amazonlinux   45 k
+#7 1.250  libdatrie                     x86_64  0.2.13-1.amzn2023.0.2           amazonlinux   33 k
+#7 1.250  libdb                         x86_64  5.3.28-49.amzn2023.0.2          amazonlinux  756 k
+#7 1.250  libdrm                        x86_64  2.4.110-1.amzn2023.0.2          amazonlinux  164 k
+#7 1.250  libeconf                      x86_64  0.4.0-1.amzn2023.0.3            amazonlinux   28 k
+#7 1.250  libedit                       x86_64  3.1-38.20210714cvs.amzn2023.0.2 amazonlinux  108 k
+#7 1.250  libepoxy                      x86_64  1.5.9-1.amzn2023.0.2            amazonlinux  242 k
+#7 1.250  libevent                      x86_64  2.1.12-3.amzn2023.0.3           amazonlinux  262 k
+#7 1.250  libfdisk                      x86_64  2.37.4-1.amzn2023.0.4           amazonlinux  153 k
+#7 1.250  libglvnd                      x86_64  1:1.3.4-1.amzn2023.0.2          amazonlinux  138 k
+#7 1.250  libglvnd-glx                  x86_64  1:1.3.4-1.amzn2023.0.2          amazonlinux  141 k
+#7 1.250  libgusb                       x86_64  0.3.8-1.amzn2023.0.2            amazonlinux   51 k
+#7 1.250  libicu                        x86_64  67.1-7.amzn2023.0.3             amazonlinux  9.6 M
+#7 1.250  libjpeg-turbo                 x86_64  2.1.4-2.amzn2023.0.5            amazonlinux  190 k
+#7 1.250  libpciaccess                  x86_64  0.16-4.amzn2023.0.2             amazonlinux   28 k
+#7 1.250  libpng                        x86_64  2:1.6.37-10.amzn2023.0.6        amazonlinux  128 k
+#7 1.250  libproxy                      x86_64  0.4.15-30.amzn2023.0.5          amazonlinux   70 k
+#7 1.250  libpwquality                  x86_64  1.4.4-6.amzn2023.0.2            amazonlinux  106 k
+#7 1.250  libseccomp                    x86_64  2.5.3-1.amzn2023.0.2            amazonlinux   71 k
+#7 1.250  libsemanage                   x86_64  3.4-5.amzn2023.0.2              amazonlinux  121 k
+#7 1.250  libsoup                       x86_64  2.72.0-6.amzn2023.0.2           amazonlinux  391 k
+#7 1.250  libstemmer                    x86_64  0-16.585svn.amzn2023.0.2        amazonlinux   84 k
+#7 1.250  libthai                       x86_64  0.1.28-6.amzn2023.0.2           amazonlinux  209 k
+#7 1.250  libtiff                       x86_64  4.4.0-4.amzn2023.0.18           amazonlinux  213 k
+#7 1.250  libtracker-sparql             x86_64  3.1.2-1.amzn2023.0.2            amazonlinux  310 k
+#7 1.250  libusbx                       x86_64  1.0.24-2.amzn2023.0.2           amazonlinux   73 k
+#7 1.250  libutempter                   x86_64  1.2.1-4.amzn2023.0.2            amazonlinux   26 k
+#7 1.250  libwayland-client             x86_64  1.22.0-1.amzn2023.0.2           amazonlinux   35 k
+#7 1.250  libwayland-cursor             x86_64  1.22.0-1.amzn2023.0.2           amazonlinux   21 k
+#7 1.250  libwayland-egl                x86_64  1.22.0-1.amzn2023.0.2           amazonlinux   14 k
+#7 1.250  libwebp                       x86_64  1.2.4-1.amzn2023.0.6            amazonlinux  341 k
+#7 1.250  libxcb                        x86_64  1.13.1-7.amzn2023.0.2           amazonlinux  230 k
+#7 1.250  libxkbcommon                  x86_64  1.3.0-1.amzn2023.0.2            amazonlinux  141 k
+#7 1.250  libxshmfence                  x86_64  1.3-8.amzn2023.0.2              amazonlinux   13 k
+#7 1.250  llvm-libs                     x86_64  15.0.7-3.amzn2023.0.1           amazonlinux   25 M
+#7 1.250  mesa-filesystem               x86_64  22.3.3-1140.amzn2023.0.3        amazonlinux   19 k
+#7 1.250  mesa-libGL                    x86_64  22.3.3-1140.amzn2023.0.3        amazonlinux  178 k
+#7 1.250  mesa-libglapi                 x86_64  22.3.3-1140.amzn2023.0.3        amazonlinux   55 k
+#7 1.250  nettle                        x86_64  3.8-1.amzn2023.0.2              amazonlinux  417 k
+#7 1.250  pam                           x86_64  1.5.1-8.amzn2023.0.4            amazonlinux  542 k
+#7 1.250  pango                         x86_64  1.48.10-1.amzn2023.0.3          amazonlinux  301 k
+#7 1.250  pixman                        x86_64  0.40.0-3.amzn2023.0.3           amazonlinux  295 k
+#7 1.250  shadow-utils                  x86_64  2:4.9-12.amzn2023.0.4           amazonlinux  1.1 M
+#7 1.250  shared-mime-info              x86_64  2.2-2.amzn2023.0.1              amazonlinux  382 k
+#7 1.250  systemd                       x86_64  252.23-2.amzn2023               amazonlinux  4.2 M
+#7 1.250  systemd-libs                  x86_64  252.23-2.amzn2023               amazonlinux  620 k
+#7 1.250  systemd-pam                   x86_64  252.23-2.amzn2023               amazonlinux  322 k
+#7 1.250  util-linux                    x86_64  2.37.4-1.amzn2023.0.4           amazonlinux  2.2 M
+#7 1.250  util-linux-core               x86_64  2.37.4-1.amzn2023.0.4           amazonlinux  432 k
+#7 1.250  xkeyboard-config              noarch  2.33-1.amzn2023.0.2             amazonlinux  779 k
+#7 1.250  xml-common                    noarch  0.6.3-56.amzn2023.0.2           amazonlinux   32 k
+#7 1.250 Installing weak dependencies:
+#7 1.250  abattis-cantarell-fonts       noarch  0.301-2.amzn2023.0.1            amazonlinux  366 k
+#7 1.250  adobe-source-code-pro-fonts   noarch  2.030.1.050-10.amzn2023.0.2     amazonlinux  831 k
+#7 1.250  cryptsetup-libs               x86_64  2.6.1-1.amzn2023.0.1            amazonlinux  489 k
+#7 1.250  dconf                         x86_64  0.40.0-3.amzn2023.0.2           amazonlinux  109 k
+#7 1.250  diffutils                     x86_64  3.8-1.amzn2023.0.2              amazonlinux  370 k
+#7 1.250  mesa-dri-drivers              x86_64  22.3.3-1140.amzn2023.0.3        amazonlinux   18 M
+#7 1.250  mesa-va-drivers               x86_64  22.3.3-1140.amzn2023.0.3        amazonlinux  3.6 M
+#7 1.250  qrencode-libs                 x86_64  4.1.1-2.amzn2023.0.2            amazonlinux   66 k
+#7 1.250  systemd-networkd              x86_64  252.23-2.amzn2023               amazonlinux  611 k
+#7 1.250  systemd-resolved              x86_64  252.23-2.amzn2023               amazonlinux  274 k
+#7 1.250  tracker                       x86_64  3.1.2-1.amzn2023.0.2            amazonlinux  539 k
+#7 1.250 
+#7 1.250 Transaction Summary
+#7 1.250 =========================================================================================
+#7 1.250 Install  128 Packages
+#7 1.250 
+#7 1.260 Total download size: 145 M
+#7 1.260 Installed size: 527 M
+#7 1.261 Downloading Packages:
+#7 1.532 (1/128): abattis-cantarell-fonts-0.301-2.amzn20 2.5 MB/s | 366 kB     00:00    
+#7 1.565 (2/128): adwaita-cursor-theme-40.1.1-1.amzn2023 3.5 MB/s | 623 kB     00:00    
+#7 1.607 (3/128): adobe-source-code-pro-fonts-2.030.1.05 3.7 MB/s | 831 kB     00:00    
+#7 1.665 (4/128): alsa-lib-1.2.7.2-1.amzn2023.0.2.x86_64 5.0 MB/s | 504 kB     00:00    
+#7 1.699 (5/128): at-spi2-atk-2.38.0-2.amzn2023.0.2.x86_ 960 kB/s |  86 kB     00:00    
+#7 1.982 (6/128): adwaita-icon-theme-40.1.1-1.amzn2023.0  24 MB/s |  11 MB     00:00    
+#7 2.007 (7/128): at-spi2-core-2.40.3-1.amzn2023.0.1.x86 533 kB/s | 178 kB     00:00    
+#7 2.033 (8/128): atk-2.36.0-3.amzn2023.0.2.x86_64.rpm   824 kB/s | 271 kB     00:00    
+#7 2.058 (9/128): avahi-libs-0.8-14.amzn2023.0.12.x86_64 1.4 MB/s |  68 kB     00:00    
+#7 2.091 (10/128): cairo-1.17.6-2.amzn2023.0.1.x86_64.rp 8.1 MB/s | 684 kB     00:00    
+#7 2.108 (11/128): cairo-gobject-1.17.6-2.amzn2023.0.1.x 265 kB/s |  19 kB     00:00    
+#7 2.133 (12/128): chkconfig-1.15-2.amzn2023.0.2.x86_64. 3.8 MB/s | 161 kB     00:00    
+#7 2.166 (13/128): colord-libs-1.4.5-2.amzn2023.0.2.x86_ 3.1 MB/s | 235 kB     00:00    
+#7 2.183 (14/128): cracklib-2.9.6-27.amzn2023.0.2.x86_64 1.1 MB/s |  82 kB     00:00    
+#7 2.217 (15/128): cryptsetup-libs-2.6.1-1.amzn2023.0.1. 5.8 MB/s | 489 kB     00:00    
+#7 2.242 (16/128): cups-libs-2.3.3op2-18.amzn2023.0.8.x8 4.5 MB/s | 262 kB     00:00    
+#7 2.259 (17/128): dbus-1.12.28-1.amzn2023.0.1.x86_64.rp 116 kB/s | 8.5 kB     00:00    
+#7 2.284 (18/128): dbus-broker-32-1.amzn2023.0.2.x86_64. 2.6 MB/s | 174 kB     00:00    
+#7 2.301 (19/128): dbus-common-1.12.28-1.amzn2023.0.1.no 376 kB/s |  15 kB     00:00    
+#7 2.317 (20/128): dbus-libs-1.12.28-1.amzn2023.0.1.x86_ 2.6 MB/s | 153 kB     00:00    
+#7 2.334 (21/128): dconf-0.40.0-3.amzn2023.0.2.x86_64.rp 2.2 MB/s | 109 kB     00:00    
+#7 2.401 (22/128): dejavu-sans-fonts-2.37-16.amzn2023.0.  16 MB/s | 1.3 MB     00:00    
+#7 2.434 (23/128): dejavu-sans-mono-fonts-2.37-16.amzn20 3.9 MB/s | 467 kB     00:00    
+#7 2.476 (24/128): dejavu-serif-fonts-2.37-16.amzn2023.0 7.4 MB/s | 1.0 MB     00:00    
+#7 2.501 (25/128): device-mapper-1.02.185-1.amzn2023.0.4 1.4 MB/s | 140 kB     00:00    
+#7 2.526 (26/128): device-mapper-libs-1.02.185-1.amzn202 3.6 MB/s | 180 kB     00:00    
+#7 2.552 (27/128): diffutils-3.8-1.amzn2023.0.2.x86_64.r 4.9 MB/s | 370 kB     00:00    
+#7 2.585 (28/128): fontconfig-2.13.94-2.amzn2023.0.2.x86 3.3 MB/s | 273 kB     00:00    
+#7 2.602 (29/128): fonts-filesystem-2.0.5-12.amzn2023.0. 195 kB/s | 9.5 kB     00:00    
+#7 2.627 (30/128): freetype-2.13.0-2.amzn2023.0.1.x86_64 5.6 MB/s | 422 kB     00:00    
+#7 2.644 (31/128): fribidi-1.0.11-3.amzn2023.0.2.x86_64. 959 kB/s |  54 kB     00:00    
+#7 2.677 (32/128): gdk-pixbuf2-2.42.10-1.amzn2023.0.1.x8 9.3 MB/s | 467 kB     00:00    
+#7 2.694 (33/128): gdk-pixbuf2-modules-2.42.10-1.amzn202 1.3 MB/s |  88 kB     00:00    
+#7 2.711 (34/128): giflib-5.2.1-9.amzn2023.0.1.x86_64.rp 746 kB/s |  49 kB     00:00    
+#7 2.736 (35/128): glib-networking-2.68.2-1.amzn2023.0.3 2.9 MB/s | 169 kB     00:00    
+#7 2.786 (36/128): gnutls-3.8.0-380.amzn2023.0.6.x86_64.  15 MB/s | 1.1 MB     00:00    
+#7 2.803 (37/128): google-noto-fonts-common-20201206-2.a 166 kB/s |  15 kB     00:00    
+#7 2.828 (38/128): google-noto-sans-vf-fonts-20201206-2. 5.4 MB/s | 492 kB     00:00    
+#7 2.853 (39/128): graphite2-1.3.14-7.amzn2023.0.2.x86_6 1.5 MB/s |  97 kB     00:00    
+#7 2.870 (40/128): gtk-update-icon-cache-3.24.30-4.amzn2 847 kB/s |  34 kB     00:00    
+#7 2.905 (41/128): gsettings-desktop-schemas-40.0-1.amzn 8.6 MB/s | 667 kB     00:00    
+#7 2.930 (42/128): gzip-1.12-1.amzn2023.0.1.x86_64.rpm   2.6 MB/s | 160 kB     00:00    
+#7 2.972 (43/128): harfbuzz-7.0.0-2.amzn2023.0.1.x86_64.  13 MB/s | 868 kB     00:00    
+#7 3.122 (44/128): gtk3-3.24.30-4.amzn2023.0.4.x86_64.rp  18 MB/s | 4.8 MB     00:00    
+#7 3.139 (45/128): hicolor-icon-theme-0.17-10.amzn2023.0 218 kB/s |  44 kB     00:00    
+#7 3.197 (46/128): hwdata-0.353-1.amzn2023.0.3.noarch.rp 6.8 MB/s | 1.5 MB     00:00    
+#7 3.222 (47/128): javapackages-filesystem-6.0.0-7.amzn2 150 kB/s |  12 kB     00:00    
+#7 3.248 (48/128): jbigkit-libs-2.1-21.amzn2023.0.2.x86_ 1.2 MB/s |  54 kB     00:00    
+#7 3.306 (49/128): kmod-libs-29-2.amzn2023.0.5.x86_64.rp 1.2 MB/s |  62 kB     00:00    
+#7 3.348 (50/128): json-glib-1.6.6-1.amzn2023.0.2.x86_64 1.3 MB/s | 152 kB     00:00    
+#7 3.373 (51/128): langpacks-core-font-en-3.0-21.amzn202 177 kB/s |  10 kB     00:00    
+#7 3.449 (52/128): lcms2-2.12-1.amzn2023.0.3.x86_64.rpm  1.8 MB/s | 174 kB     00:00    
+#7 3.507 (53/128): libX11-1.7.2-3.amzn2023.0.4.x86_64.rp 5.1 MB/s | 657 kB     00:00    
+#7 3.549 (54/128): libX11-common-1.7.2-3.amzn2023.0.4.no 1.7 MB/s | 152 kB     00:00    
+#7 4.358 (55/128): java-1.8.0-amazon-corretto-1.8.0_422.  31 MB/s |  38 MB     00:01    
+#7 4.374 (56/128): libX11-xcb-1.7.2-3.amzn2023.0.4.x86_6  14 kB/s |  12 kB     00:00    
+#7 4.391 (57/128): libXau-1.0.9-6.amzn2023.0.2.x86_64.rp  37 kB/s |  31 kB     00:00    
+#7 4.424 (58/128): libXcursor-1.2.0-5.amzn2023.0.2.x86_6 961 kB/s |  31 kB     00:00    
+#7 4.450 (59/128): libXcomposite-0.4.5-5.amzn2023.0.2.x8 417 kB/s |  24 kB     00:00    
+#7 4.475 (60/128): libXdamage-1.1.5-5.amzn2023.0.2.x86_6 276 kB/s |  23 kB     00:00    
+#7 4.492 (61/128): libXext-1.3.4-6.amzn2023.0.2.x86_64.r 623 kB/s |  41 kB     00:00    
+#7 4.517 (62/128): libXfixes-6.0.0-1.amzn2023.0.2.x86_64 303 kB/s |  20 kB     00:00    
+#7 4.542 (63/128): libXft-2.3.3-6.amzn2023.0.2.x86_64.rp 1.3 MB/s |  64 kB     00:00    
+#7 4.567 (64/128): libXi-1.7.10-6.amzn2023.0.2.x86_64.rp 543 kB/s |  40 kB     00:00    
+#7 4.584 (65/128): libXinerama-1.1.4-8.amzn2023.0.2.x86_ 227 kB/s |  15 kB     00:00    
+#7 4.609 (66/128): libXrender-0.9.10-14.amzn2023.0.2.x86 692 kB/s |  28 kB     00:00    
+#7 4.634 (67/128): libXrandr-1.5.2-6.amzn2023.0.2.x86_64 429 kB/s |  28 kB     00:00    
+#7 4.659 (68/128): libXtst-1.2.3-14.amzn2023.0.2.x86_64. 288 kB/s |  21 kB     00:00    
+#7 4.684 (69/128): libXxf86vm-1.1.4-16.amzn2023.0.2.x86_ 252 kB/s |  19 kB     00:00    
+#7 4.701 (70/128): libargon2-20171227-9.amzn2023.0.2.x86 716 kB/s |  29 kB     00:00    
+#7 4.726 (71/128): libbrotli-1.0.9-4.amzn2023.0.2.x86_64 4.7 MB/s | 315 kB     00:00    
+#7 4.743 (72/128): libcloudproviders-0.3.1-3.amzn2023.0. 795 kB/s |  45 kB     00:00    
+#7 4.768 (73/128): libdatrie-0.2.13-1.amzn2023.0.2.x86_6 796 kB/s |  33 kB     00:00    
+#7 4.802 (74/128): libdb-5.3.28-49.amzn2023.0.2.x86_64.r  10 MB/s | 756 kB     00:00    
+#7 4.827 (75/128): libdrm-2.4.110-1.amzn2023.0.2.x86_64. 2.0 MB/s | 164 kB     00:00    
+#7 4.852 (76/128): libeconf-0.4.0-1.amzn2023.0.3.x86_64. 570 kB/s |  28 kB     00:00    
+#7 4.877 (77/128): libedit-3.1-38.20210714cvs.amzn2023.0 1.4 MB/s | 108 kB     00:00    
+#7 4.902 (78/128): libepoxy-1.5.9-1.amzn2023.0.2.x86_64. 3.2 MB/s | 242 kB     00:00    
+#7 4.969 (79/128): libevent-2.1.12-3.amzn2023.0.3.x86_64 2.8 MB/s | 262 kB     00:00    
+#7 4.994 (80/128): libfdisk-2.37.4-1.amzn2023.0.4.x86_64 1.3 MB/s | 153 kB     00:00    
+#7 5.011 (81/128): libglvnd-1.3.4-1.amzn2023.0.2.x86_64. 1.3 MB/s | 138 kB     00:00    
+#7 5.061 (82/128): libgusb-0.3.8-1.amzn2023.0.2.x86_64.r 785 kB/s |  51 kB     00:00    
+#7 5.078 (83/128): libglvnd-glx-1.3.4-1.amzn2023.0.2.x86 1.7 MB/s | 141 kB     00:00    
+#7 5.103 (84/128): libjpeg-turbo-2.1.4-2.amzn2023.0.5.x8 4.7 MB/s | 190 kB     00:00    
+#7 5.170 (85/128): libpng-1.6.37-10.amzn2023.0.6.x86_64. 1.9 MB/s | 128 kB     00:00    
+#7 5.195 (86/128): libpciaccess-0.16-4.amzn2023.0.2.x86_ 239 kB/s |  28 kB     00:00    
+#7 5.445 (87/128): libicu-67.1-7.amzn2023.0.3.x86_64.rpm  22 MB/s | 9.6 MB     00:00    
+#7 5.470 (88/128): libproxy-0.4.15-30.amzn2023.0.5.x86_6 238 kB/s |  70 kB     00:00    
+#7 5.495 (89/128): libpwquality-1.4.4-6.amzn2023.0.2.x86 356 kB/s | 106 kB     00:00    
+#7 5.521 (90/128): libseccomp-2.5.3-1.amzn2023.0.2.x86_6 2.9 MB/s |  71 kB     00:00    
+#7 5.538 (91/128): libsemanage-3.4-5.amzn2023.0.2.x86_64 2.9 MB/s | 121 kB     00:00    
+#7 5.571 (92/128): libstemmer-0-16.585svn.amzn2023.0.2.x 1.7 MB/s |  84 kB     00:00    
+#7 5.596 (93/128): libthai-0.1.28-6.amzn2023.0.2.x86_64. 3.6 MB/s | 209 kB     00:00    
+#7 5.621 (94/128): libsoup-2.72.0-6.amzn2023.0.2.x86_64. 3.1 MB/s | 391 kB     00:00    
+#7 5.648 (95/128): libtiff-4.4.0-4.amzn2023.0.18.x86_64. 2.8 MB/s | 213 kB     00:00    
+#7 5.673 (96/128): libtracker-sparql-3.1.2-1.amzn2023.0. 4.0 MB/s | 310 kB     00:00    
+#7 5.690 (97/128): libusbx-1.0.24-2.amzn2023.0.2.x86_64. 1.8 MB/s |  73 kB     00:00    
+#7 5.706 (98/128): libutempter-1.2.1-4.amzn2023.0.2.x86_ 467 kB/s |  26 kB     00:00    
+#7 5.723 (99/128): libwayland-client-1.22.0-1.amzn2023.0 711 kB/s |  35 kB     00:00    
+#7 5.748 (100/128): libwayland-cursor-1.22.0-1.amzn2023. 500 kB/s |  21 kB     00:00    
+#7 5.774 (101/128): libwayland-egl-1.22.0-1.amzn2023.0.2 212 kB/s |  14 kB     00:00    
+#7 5.799 (102/128): libwebp-1.2.4-1.amzn2023.0.6.x86_64. 4.4 MB/s | 341 kB     00:00    
+#7 5.824 (103/128): libxcb-1.13.1-7.amzn2023.0.2.x86_64. 3.1 MB/s | 230 kB     00:00    
+#7 5.849 (104/128): libxkbcommon-1.3.0-1.amzn2023.0.2.x8 2.8 MB/s | 141 kB     00:00    
+#7 5.949 (105/128): libxshmfence-1.3-8.amzn2023.0.2.x86_  84 kB/s |  13 kB     00:00    
+#7 6.066 (106/128): mesa-filesystem-22.3.3-1140.amzn2023 186 kB/s |  19 kB     00:00    
+#7 6.216 (107/128): mesa-libGL-22.3.3-1140.amzn2023.0.3. 1.2 MB/s | 178 kB     00:00    
+#7 6.817 (108/128): llvm-libs-15.0.7-3.amzn2023.0.1.x86_  26 MB/s |  25 MB     00:00    
+#7 6.850 (109/128): mesa-libglapi-22.3.3-1140.amzn2023.0  89 kB/s |  55 kB     00:00    
+#7 7.250 (110/128): mesa-dri-drivers-22.3.3-1140.amzn202  14 MB/s |  18 MB     00:01    
+#7 7.284 (111/128): nettle-3.8-1.amzn2023.0.2.x86_64.rpm 987 kB/s | 417 kB     00:00    
+#7 7.384 (112/128): mesa-va-drivers-22.3.3-1140.amzn2023 6.4 MB/s | 3.6 MB     00:00    
+#7 7.417 (113/128): pam-1.5.1-8.amzn2023.0.4.x86_64.rpm  3.4 MB/s | 542 kB     00:00    
+#7 7.442 (114/128): pango-1.48.10-1.amzn2023.0.3.x86_64. 1.9 MB/s | 301 kB     00:00    
+#7 7.468 (115/128): pixman-0.40.0-3.amzn2023.0.3.x86_64. 5.9 MB/s | 295 kB     00:00    
+#7 7.484 (116/128): qrencode-libs-4.1.1-2.amzn2023.0.2.x 1.0 MB/s |  66 kB     00:00    
+#7 7.535 (117/128): shadow-utils-4.9-12.amzn2023.0.4.x86  12 MB/s | 1.1 MB     00:00    
+#7 7.576 (118/128): shared-mime-info-2.2-2.amzn2023.0.1. 4.2 MB/s | 382 kB     00:00    
+#7 7.618 (119/128): systemd-libs-252.23-2.amzn2023.x86_6 8.0 MB/s | 620 kB     00:00    
+#7 7.727 (120/128): systemd-252.23-2.amzn2023.x86_64.rpm  18 MB/s | 4.2 MB     00:00    
+#7 7.760 (121/128): systemd-networkd-252.23-2.amzn2023.x 3.4 MB/s | 611 kB     00:00    
+#7 7.785 (122/128): systemd-pam-252.23-2.amzn2023.x86_64 1.9 MB/s | 322 kB     00:00    
+#7 7.811 (123/128): systemd-resolved-252.23-2.amzn2023.x 5.5 MB/s | 274 kB     00:00    
+#7 7.886 (124/128): util-linux-2.37.4-1.amzn2023.0.4.x86  22 MB/s | 2.2 MB     00:00    
+#7 7.919 (125/128): tracker-3.1.2-1.amzn2023.0.2.x86_64. 3.4 MB/s | 539 kB     00:00    
+#7 7.944 (126/128): util-linux-core-2.37.4-1.amzn2023.0. 3.3 MB/s | 432 kB     00:00    
+#7 7.986 (127/128): xkeyboard-config-2.33-1.amzn2023.0.2 7.7 MB/s | 779 kB     00:00    
+#7 8.011 (128/128): xml-common-0.6.3-56.amzn2023.0.2.noa 495 kB/s |  32 kB     00:00    
+#7 8.017 --------------------------------------------------------------------------------
+#7 8.017 Total                                            21 MB/s | 145 MB     00:06     
+#7 11.93 Running transaction check
+#7 12.04 Transaction check succeeded.
+#7 12.04 Running transaction test
+#7 14.26 Transaction test succeeded.
+#7 14.26 Running transaction
+#7 22.87   Preparing        :                                                        1/1 
+#7 22.91   Installing       : systemd-libs-252.23-2.amzn2023.x86_64                1/128 
+#7 22.98   Installing       : fonts-filesystem-1:2.0.5-12.amzn2023.0.2.noarch      2/128 
+#7 23.01   Installing       : dbus-libs-1:1.12.28-1.amzn2023.0.1.x86_64            3/128 
+#7 23.03   Installing       : libpng-2:1.6.37-10.amzn2023.0.6.x86_64               4/128 
+#7 23.10   Installing       : atk-2.36.0-3.amzn2023.0.2.x86_64                     5/128 
+#7 23.15   Installing       : dejavu-sans-mono-fonts-2.37-16.amzn2023.0.2.noar     6/128 
+#7 23.25   Installing       : dejavu-sans-fonts-2.37-16.amzn2023.0.2.noarch        7/128 
+#7 23.31   Installing       : util-linux-core-2.37.4-1.amzn2023.0.4.x86_64         8/128 
+#7 23.34   Running scriptlet: util-linux-core-2.37.4-1.amzn2023.0.4.x86_64         8/128 
+#7 23.35   Installing       : mesa-libglapi-22.3.3-1140.amzn2023.0.3.x86_64        9/128 
+#7 23.37   Installing       : mesa-filesystem-22.3.3-1140.amzn2023.0.3.x86_64     10/128 
+#7 23.40   Installing       : libxshmfence-1.3-8.amzn2023.0.2.x86_64              11/128 
+#7 23.43   Installing       : libwayland-client-1.22.0-1.amzn2023.0.2.x86_64      12/128 
+#7 23.45   Installing       : libstemmer-0-16.585svn.amzn2023.0.2.x86_64          13/128 
+#7 23.48   Installing       : libjpeg-turbo-2.1.4-2.amzn2023.0.5.x86_64           14/128 
+#7 23.79   Installing       : libicu-67.1-7.amzn2023.0.3.x86_64                   15/128 
+#7 23.83   Installing       : libfdisk-2.37.4-1.amzn2023.0.4.x86_64               16/128 
+#7 23.86   Installing       : libbrotli-1.0.9-4.amzn2023.0.2.x86_64               17/128 
+#7 23.89   Installing       : libX11-xcb-1.7.2-3.amzn2023.0.4.x86_64              18/128 
+#7 23.91   Installing       : fribidi-1.0.11-3.amzn2023.0.2.x86_64                19/128 
+#7 23.94   Installing       : libwayland-cursor-1.22.0-1.amzn2023.0.2.x86_64      20/128 
+#7 23.97   Installing       : abattis-cantarell-fonts-0.301-2.amzn2023.0.1.noa    21/128 
+#7 24.01   Installing       : adobe-source-code-pro-fonts-2.030.1.050-10.amzn2    22/128 
+#7 24.09   Installing       : gsettings-desktop-schemas-40.0-1.amzn2023.0.3.x8    23/128 
+#7 24.20   Installing       : dejavu-serif-fonts-2.37-16.amzn2023.0.2.noarch      24/128 
+#7 24.23   Installing       : libusbx-1.0.24-2.amzn2023.0.2.x86_64                25/128 
+#7 24.26   Installing       : libgusb-0.3.8-1.amzn2023.0.2.x86_64                 26/128 
+#7 24.29   Running scriptlet: xml-common-0.6.3-56.amzn2023.0.2.noarch             27/128 
+#7 24.30   Installing       : xml-common-0.6.3-56.amzn2023.0.2.noarch             27/128 
+#7 24.46   Installing       : xkeyboard-config-2.33-1.amzn2023.0.2.noarch         28/128 
+#7 24.51   Installing       : libxkbcommon-1.3.0-1.amzn2023.0.2.x86_64            29/128 
+#7 24.55   Installing       : shared-mime-info-2.2-2.amzn2023.0.1.x86_64          30/128 
+#7 24.59   Running scriptlet: shared-mime-info-2.2-2.amzn2023.0.1.x86_64          30/128 
+#7 24.66   Installing       : gdk-pixbuf2-2.42.10-1.amzn2023.0.1.x86_64           31/128 
+#7 24.71   Installing       : gtk-update-icon-cache-3.24.30-4.amzn2023.0.4.x86    32/128 
+#7 24.75   Installing       : qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64           33/128 
+#7 24.78   Installing       : pixman-0.40.0-3.amzn2023.0.3.x86_64                 34/128 
+#7 24.81   Installing       : nettle-3.8-1.amzn2023.0.2.x86_64                    35/128 
+#7 24.86   Installing       : gnutls-3.8.0-380.amzn2023.0.6.x86_64                36/128 
+#7 24.91   Installing       : libwebp-1.2.4-1.amzn2023.0.6.x86_64                 37/128 
+#7 24.95   Installing       : libwayland-egl-1.22.0-1.amzn2023.0.2.x86_64         38/128 
+#7 24.98   Installing       : libsemanage-3.4-5.amzn2023.0.2.x86_64               39/128 
+#7 25.12   Installing       : shadow-utils-2:4.9-12.amzn2023.0.4.x86_64           40/128 
+#7 25.16   Running scriptlet: libutempter-1.2.1-4.amzn2023.0.2.x86_64             41/128 
+#7 25.41   Installing       : libutempter-1.2.1-4.amzn2023.0.2.x86_64             41/128 
+#7 25.45   Installing       : libseccomp-2.5.3-1.amzn2023.0.2.x86_64              42/128 
+#7 25.48   Installing       : libproxy-0.4.15-30.amzn2023.0.5.x86_64              43/128 
+#7 25.53   Installing       : glib-networking-2.68.2-1.amzn2023.0.3.x86_64        44/128 
+#7 25.60   Installing       : libsoup-2.72.0-6.amzn2023.0.2.x86_64                45/128 
+#7 25.64   Installing       : libglvnd-1:1.3.4-1.amzn2023.0.2.x86_64              46/128 
+#7 25.68   Installing       : libevent-2.1.12-3.amzn2023.0.3.x86_64               47/128 
+#7 25.71   Installing       : avahi-libs-0.8-14.amzn2023.0.12.x86_64              48/128 
+#7 25.74   Installing       : cups-libs-1:2.3.3op2-18.amzn2023.0.8.x86_64         49/128 
+#7 25.79   Installing       : libepoxy-1.5.9-1.amzn2023.0.2.x86_64                50/128 
+#7 25.82   Installing       : libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64      51/128 
+#7 26.72   Installing       : llvm-libs-15.0.7-3.amzn2023.0.1.x86_64              52/128 
+#7 26.77   Installing       : libeconf-0.4.0-1.amzn2023.0.3.x86_64                53/128 
+#7 26.81   Installing       : libdb-5.3.28-49.amzn2023.0.2.x86_64                 54/128 
+#7 26.83   Installing       : libdatrie-0.2.13-1.amzn2023.0.2.x86_64              55/128 
+#7 26.86   Installing       : libthai-0.1.28-6.amzn2023.0.2.x86_64                56/128 
+#7 26.89   Installing       : libcloudproviders-0.3.1-3.amzn2023.0.2.x86_64       57/128 
+#7 26.92   Installing       : libargon2-20171227-9.amzn2023.0.2.x86_64            58/128 
+#7 26.94   Installing       : libXau-1.0.9-6.amzn2023.0.2.x86_64                  59/128 
+#7 26.99   Installing       : libxcb-1.13.1-7.amzn2023.0.2.x86_64                 60/128 
+#7 27.08   Installing       : libX11-common-1.7.2-3.amzn2023.0.4.noarch           61/128 
+#7 27.13   Installing       : libX11-1.7.2-3.amzn2023.0.4.x86_64                  62/128 
+#7 27.15   Installing       : libXext-1.3.4-6.amzn2023.0.2.x86_64                 63/128 
+#7 27.18   Installing       : libXrender-0.9.10-14.amzn2023.0.2.x86_64            64/128 
+#7 27.20   Installing       : libXi-1.7.10-6.amzn2023.0.2.x86_64                  65/128 
+#7 27.23   Installing       : libXfixes-6.0.0-1.amzn2023.0.2.x86_64               66/128 
+#7 27.25   Installing       : libXtst-1.2.3-14.amzn2023.0.2.x86_64                67/128 
+#7 27.27   Installing       : libXxf86vm-1.1.4-16.amzn2023.0.2.x86_64             68/128 
+#7 27.30   Installing       : libXcursor-1.2.0-5.amzn2023.0.2.x86_64              69/128 
+#7 27.32   Installing       : libXdamage-1.1.5-5.amzn2023.0.2.x86_64              70/128 
+#7 27.34   Installing       : libXrandr-1.5.2-6.amzn2023.0.2.x86_64               71/128 
+#7 27.36   Installing       : libXinerama-1.1.4-8.amzn2023.0.2.x86_64             72/128 
+#7 27.39   Installing       : libXcomposite-0.4.5-5.amzn2023.0.2.x86_64           73/128 
+#7 27.42   Installing       : lcms2-2.12-1.amzn2023.0.3.x86_64                    74/128 
+#7 27.46   Installing       : colord-libs-1.4.5-2.amzn2023.0.2.x86_64             75/128 
+#7 27.50   Installing       : kmod-libs-29-2.amzn2023.0.5.x86_64                  76/128 
+#7 27.55   Installing       : json-glib-1.6.6-1.amzn2023.0.2.x86_64               77/128 
+#7 27.59   Installing       : jbigkit-libs-2.1-21.amzn2023.0.2.x86_64             78/128 
+#7 27.62   Installing       : libtiff-4.4.0-4.amzn2023.0.18.x86_64                79/128 
+#7 27.65   Installing       : gdk-pixbuf2-modules-2.42.10-1.amzn2023.0.1.x86_6    80/128 
+#7 27.69   Installing       : javapackages-filesystem-6.0.0-7.amzn2023.0.6.noa    81/128 
+#7 27.77   Installing       : hwdata-0.353-1.amzn2023.0.3.noarch                  82/128 
+#7 27.79   Installing       : libpciaccess-0.16-4.amzn2023.0.2.x86_64             83/128 
+#7 27.82   Installing       : libdrm-2.4.110-1.amzn2023.0.2.x86_64                84/128 
+#7 27.96   Installing       : mesa-va-drivers-22.3.3-1140.amzn2023.0.3.x86_64     85/128 
+#7 28.62   Installing       : mesa-dri-drivers-22.3.3-1140.amzn2023.0.3.x86_64    86/128 
+#7 28.67   Installing       : libglvnd-glx-1:1.3.4-1.amzn2023.0.2.x86_64          87/128 
+#7 28.69   Installing       : mesa-libGL-22.3.3-1140.amzn2023.0.3.x86_64          88/128 
+#7 28.76   Installing       : hicolor-icon-theme-0.17-10.amzn2023.0.3.noarch      89/128 
+#7 28.81   Installing       : gzip-1.12-1.amzn2023.0.1.x86_64                     90/128 
+#7 28.87   Installing       : cracklib-2.9.6-27.amzn2023.0.2.x86_64               91/128 
+#7 28.98   Installing       : pam-1.5.1-8.amzn2023.0.4.x86_64                     92/128 
+#7 29.16   Installing       : libpwquality-1.4.4-6.amzn2023.0.2.x86_64            93/128 
+#7 29.35   Installing       : util-linux-2.37.4-1.amzn2023.0.4.x86_64             94/128 
+#7 29.36 warning: /etc/adjtime created as /etc/adjtime.rpmnew
+#7 29.36 
+#7 29.40   Running scriptlet: util-linux-2.37.4-1.amzn2023.0.4.x86_64             94/128 
+#7 29.42   Installing       : graphite2-1.3.14-7.amzn2023.0.2.x86_64              95/128 
+#7 29.45   Installing       : google-noto-fonts-common-20201206-2.amzn2023.0.2    96/128 
+#7 29.48   Installing       : google-noto-sans-vf-fonts-20201206-2.amzn2023.0.    97/128 
+#7 29.50   Installing       : langpacks-core-font-en-3.0-21.amzn2023.0.4.noarc    98/128 
+#7 29.55   Installing       : cairo-1.17.6-2.amzn2023.0.1.x86_64                  99/128 
+#7 29.59   Installing       : harfbuzz-7.0.0-2.amzn2023.0.1.x86_64               100/128 
+#7 29.64   Installing       : freetype-2.13.0-2.amzn2023.0.1.x86_64              101/128 
+#7 29.69   Installing       : fontconfig-2.13.94-2.amzn2023.0.2.x86_64           102/128 
+#7 29.72   Running scriptlet: fontconfig-2.13.94-2.amzn2023.0.2.x86_64           102/128 
+#7 30.81   Installing       : cairo-gobject-1.17.6-2.amzn2023.0.1.x86_64         103/128 
+#7 30.84   Installing       : libXft-2.3.3-6.amzn2023.0.2.x86_64                 104/128 
+#7 30.88   Installing       : pango-1.48.10-1.amzn2023.0.3.x86_64                105/128 
+#7 31.00   Installing       : giflib-5.2.1-9.amzn2023.0.1.x86_64                 106/128 
+#7 31.05   Installing       : diffutils-3.8-1.amzn2023.0.2.x86_64                107/128 
+#7 31.08   Installing       : dbus-common-1:1.12.28-1.amzn2023.0.1.noarch        108/128 
+#7 31.10   Running scriptlet: dbus-common-1:1.12.28-1.amzn2023.0.1.noarch        108/128 
+#7 31.11   Running scriptlet: dbus-broker-32-1.amzn2023.0.2.x86_64               109/128 
+#7 31.40   Installing       : dbus-broker-32-1.amzn2023.0.2.x86_64               109/128 
+#7 31.43   Running scriptlet: dbus-broker-32-1.amzn2023.0.2.x86_64               109/128 
+#7 31.44   Installing       : dbus-1:1.12.28-1.amzn2023.0.1.x86_64               110/128 
+#7 31.48   Installing       : cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64        111/128 
+#7 31.52   Installing       : device-mapper-libs-1.02.185-1.amzn2023.0.4.x86_6   112/128 
+#7 31.55   Installing       : device-mapper-1.02.185-1.amzn2023.0.4.x86_64       113/128 
+#7 31.65   Installing       : systemd-networkd-252.23-2.amzn2023.x86_64          114/128 
+#7 31.68   Running scriptlet: systemd-networkd-252.23-2.amzn2023.x86_64          114/128 
+#7 31.70   Installing       : systemd-pam-252.23-2.amzn2023.x86_64               115/128 
+#7 31.75   Installing       : systemd-resolved-252.23-2.amzn2023.x86_64          116/128 
+#7 31.78   Running scriptlet: systemd-resolved-252.23-2.amzn2023.x86_64          116/128 
+#7 32.17   Installing       : systemd-252.23-2.amzn2023.x86_64                   117/128 
+#7 32.21   Running scriptlet: systemd-252.23-2.amzn2023.x86_64                   117/128 
+#7 32.73 Creating group 'input' with GID 104.
+#7 32.73 Creating group 'kvm' with GID 36.
+#7 32.73 Creating group 'render' with GID 105.
+#7 32.73 Creating group 'sgx' with GID 106.
+#7 32.73 Creating group 'systemd-journal' with GID 190.
+#7 32.73 Creating group 'systemd-network' with GID 192.
+#7 32.73 Creating user 'systemd-network' (systemd Network Management) with UID 192 and GID 192.
+#7 32.73 Creating group 'systemd-oom' with GID 999.
+#7 32.73 Creating user 'systemd-oom' (systemd Userspace OOM Killer) with UID 999 and GID 999.
+#7 32.73 Creating group 'systemd-resolve' with GID 193.
+#7 32.73 Creating user 'systemd-resolve' (systemd Resolver) with UID 193 and GID 193.
+#7 32.73 
+#7 32.79   Installing       : tracker-3.1.2-1.amzn2023.0.2.x86_64                118/128 
+#7 32.83   Running scriptlet: tracker-3.1.2-1.amzn2023.0.2.x86_64                118/128 
+#7 32.88   Installing       : libtracker-sparql-3.1.2-1.amzn2023.0.2.x86_64      119/128 
+#7 32.97   Installing       : at-spi2-core-2.40.3-1.amzn2023.0.1.x86_64          120/128 
+#7 33.00   Installing       : at-spi2-atk-2.38.0-2.amzn2023.0.2.x86_64           121/128 
+#7 33.04   Installing       : dconf-0.40.0-3.amzn2023.0.2.x86_64                 122/128 
+#7 33.07   Running scriptlet: dconf-0.40.0-3.amzn2023.0.2.x86_64                 122/128 
+#7 33.16   Installing       : chkconfig-1.15-2.amzn2023.0.2.x86_64               123/128 
+#7 33.22   Installing       : alsa-lib-1.2.7.2-1.amzn2023.0.2.x86_64             124/128 
+#7 33.35   Installing       : adwaita-cursor-theme-40.1.1-1.amzn2023.0.2.noarc   125/128 
+#7 34.49   Installing       : adwaita-icon-theme-40.1.1-1.amzn2023.0.2.noarch    126/128 
+#7 34.82   Installing       : gtk3-3.24.30-4.amzn2023.0.4.x86_64                 127/128 
+#7 35.86   Installing       : java-1.8.0-amazon-corretto-1:1.8.0_422.b05-1.amz   128/128 
+#7 35.97   Running scriptlet: java-1.8.0-amazon-corretto-1:1.8.0_422.b05-1.amz   128/128 
+#7 35.98   Running scriptlet: pam-1.5.1-8.amzn2023.0.4.x86_64                    128/128 
+#7 35.99   Running scriptlet: fontconfig-2.13.94-2.amzn2023.0.2.x86_64           128/128 
+#7 36.00   Running scriptlet: systemd-resolved-252.23-2.amzn2023.x86_64          128/128 
+#7 36.02   Running scriptlet: dconf-0.40.0-3.amzn2023.0.2.x86_64                 128/128 
+#7 36.05   Running scriptlet: java-1.8.0-amazon-corretto-1:1.8.0_422.b05-1.amz   128/128 
+#7 62.35   Verifying        : abattis-cantarell-fonts-0.301-2.amzn2023.0.1.noa     1/128 
+#7 62.35   Verifying        : adobe-source-code-pro-fonts-2.030.1.050-10.amzn2     2/128 
+#7 62.35   Verifying        : adwaita-cursor-theme-40.1.1-1.amzn2023.0.2.noarc     3/128 
+#7 62.35   Verifying        : adwaita-icon-theme-40.1.1-1.amzn2023.0.2.noarch      4/128 
+#7 62.35   Verifying        : alsa-lib-1.2.7.2-1.amzn2023.0.2.x86_64               5/128 
+#7 62.35   Verifying        : at-spi2-atk-2.38.0-2.amzn2023.0.2.x86_64             6/128 
+#7 62.35   Verifying        : at-spi2-core-2.40.3-1.amzn2023.0.1.x86_64            7/128 
+#7 62.35   Verifying        : atk-2.36.0-3.amzn2023.0.2.x86_64                     8/128 
+#7 62.35   Verifying        : avahi-libs-0.8-14.amzn2023.0.12.x86_64               9/128 
+#7 62.35   Verifying        : cairo-1.17.6-2.amzn2023.0.1.x86_64                  10/128 
+#7 62.35   Verifying        : cairo-gobject-1.17.6-2.amzn2023.0.1.x86_64          11/128 
+#7 62.35   Verifying        : chkconfig-1.15-2.amzn2023.0.2.x86_64                12/128 
+#7 62.35   Verifying        : colord-libs-1.4.5-2.amzn2023.0.2.x86_64             13/128 
+#7 62.35   Verifying        : cracklib-2.9.6-27.amzn2023.0.2.x86_64               14/128 
+#7 62.35   Verifying        : cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64         15/128 
+#7 62.35   Verifying        : cups-libs-1:2.3.3op2-18.amzn2023.0.8.x86_64         16/128 
+#7 62.35   Verifying        : dbus-1:1.12.28-1.amzn2023.0.1.x86_64                17/128 
+#7 62.35   Verifying        : dbus-broker-32-1.amzn2023.0.2.x86_64                18/128 
+#7 62.35   Verifying        : dbus-common-1:1.12.28-1.amzn2023.0.1.noarch         19/128 
+#7 62.35   Verifying        : dbus-libs-1:1.12.28-1.amzn2023.0.1.x86_64           20/128 
+#7 62.35   Verifying        : dconf-0.40.0-3.amzn2023.0.2.x86_64                  21/128 
+#7 62.35   Verifying        : dejavu-sans-fonts-2.37-16.amzn2023.0.2.noarch       22/128 
+#7 62.35   Verifying        : dejavu-sans-mono-fonts-2.37-16.amzn2023.0.2.noar    23/128 
+#7 62.35   Verifying        : dejavu-serif-fonts-2.37-16.amzn2023.0.2.noarch      24/128 
+#7 62.35   Verifying        : device-mapper-1.02.185-1.amzn2023.0.4.x86_64        25/128 
+#7 62.35   Verifying        : device-mapper-libs-1.02.185-1.amzn2023.0.4.x86_6    26/128 
+#7 62.35   Verifying        : diffutils-3.8-1.amzn2023.0.2.x86_64                 27/128 
+#7 62.35   Verifying        : fontconfig-2.13.94-2.amzn2023.0.2.x86_64            28/128 
+#7 62.35   Verifying        : fonts-filesystem-1:2.0.5-12.amzn2023.0.2.noarch     29/128 
+#7 62.35   Verifying        : freetype-2.13.0-2.amzn2023.0.1.x86_64               30/128 
+#7 62.35   Verifying        : fribidi-1.0.11-3.amzn2023.0.2.x86_64                31/128 
+#7 62.35   Verifying        : gdk-pixbuf2-2.42.10-1.amzn2023.0.1.x86_64           32/128 
+#7 62.35   Verifying        : gdk-pixbuf2-modules-2.42.10-1.amzn2023.0.1.x86_6    33/128 
+#7 62.35   Verifying        : giflib-5.2.1-9.amzn2023.0.1.x86_64                  34/128 
+#7 62.35   Verifying        : glib-networking-2.68.2-1.amzn2023.0.3.x86_64        35/128 
+#7 62.35   Verifying        : gnutls-3.8.0-380.amzn2023.0.6.x86_64                36/128 
+#7 62.35   Verifying        : google-noto-fonts-common-20201206-2.amzn2023.0.2    37/128 
+#7 62.35   Verifying        : google-noto-sans-vf-fonts-20201206-2.amzn2023.0.    38/128 
+#7 62.35   Verifying        : graphite2-1.3.14-7.amzn2023.0.2.x86_64              39/128 
+#7 62.35   Verifying        : gsettings-desktop-schemas-40.0-1.amzn2023.0.3.x8    40/128 
+#7 62.35   Verifying        : gtk-update-icon-cache-3.24.30-4.amzn2023.0.4.x86    41/128 
+#7 62.35   Verifying        : gtk3-3.24.30-4.amzn2023.0.4.x86_64                  42/128 
+#7 62.35   Verifying        : gzip-1.12-1.amzn2023.0.1.x86_64                     43/128 
+#7 62.35   Verifying        : harfbuzz-7.0.0-2.amzn2023.0.1.x86_64                44/128 
+#7 62.35   Verifying        : hicolor-icon-theme-0.17-10.amzn2023.0.3.noarch      45/128 
+#7 62.35   Verifying        : hwdata-0.353-1.amzn2023.0.3.noarch                  46/128 
+#7 62.35   Verifying        : java-1.8.0-amazon-corretto-1:1.8.0_422.b05-1.amz    47/128 
+#7 62.35   Verifying        : javapackages-filesystem-6.0.0-7.amzn2023.0.6.noa    48/128 
+#7 62.35   Verifying        : jbigkit-libs-2.1-21.amzn2023.0.2.x86_64             49/128 
+#7 62.35   Verifying        : json-glib-1.6.6-1.amzn2023.0.2.x86_64               50/128 
+#7 62.35   Verifying        : kmod-libs-29-2.amzn2023.0.5.x86_64                  51/128 
+#7 62.35   Verifying        : langpacks-core-font-en-3.0-21.amzn2023.0.4.noarc    52/128 
+#7 62.35   Verifying        : lcms2-2.12-1.amzn2023.0.3.x86_64                    53/128 
+#7 62.35   Verifying        : libX11-1.7.2-3.amzn2023.0.4.x86_64                  54/128 
+#7 62.35   Verifying        : libX11-common-1.7.2-3.amzn2023.0.4.noarch           55/128 
+#7 62.35   Verifying        : libX11-xcb-1.7.2-3.amzn2023.0.4.x86_64              56/128 
+#7 62.35   Verifying        : libXau-1.0.9-6.amzn2023.0.2.x86_64                  57/128 
+#7 62.35   Verifying        : libXcomposite-0.4.5-5.amzn2023.0.2.x86_64           58/128 
+#7 62.35   Verifying        : libXcursor-1.2.0-5.amzn2023.0.2.x86_64              59/128 
+#7 62.35   Verifying        : libXdamage-1.1.5-5.amzn2023.0.2.x86_64              60/128 
+#7 62.35   Verifying        : libXext-1.3.4-6.amzn2023.0.2.x86_64                 61/128 
+#7 62.35   Verifying        : libXfixes-6.0.0-1.amzn2023.0.2.x86_64               62/128 
+#7 62.35   Verifying        : libXft-2.3.3-6.amzn2023.0.2.x86_64                  63/128 
+#7 62.35   Verifying        : libXi-1.7.10-6.amzn2023.0.2.x86_64                  64/128 
+#7 62.36   Verifying        : libXinerama-1.1.4-8.amzn2023.0.2.x86_64             65/128 
+#7 62.36   Verifying        : libXrandr-1.5.2-6.amzn2023.0.2.x86_64               66/128 
+#7 62.36   Verifying        : libXrender-0.9.10-14.amzn2023.0.2.x86_64            67/128 
+#7 62.36   Verifying        : libXtst-1.2.3-14.amzn2023.0.2.x86_64                68/128 
+#7 62.36   Verifying        : libXxf86vm-1.1.4-16.amzn2023.0.2.x86_64             69/128 
+#7 62.36   Verifying        : libargon2-20171227-9.amzn2023.0.2.x86_64            70/128 
+#7 62.36   Verifying        : libbrotli-1.0.9-4.amzn2023.0.2.x86_64               71/128 
+#7 62.36   Verifying        : libcloudproviders-0.3.1-3.amzn2023.0.2.x86_64       72/128 
+#7 62.36   Verifying        : libdatrie-0.2.13-1.amzn2023.0.2.x86_64              73/128 
+#7 62.36   Verifying        : libdb-5.3.28-49.amzn2023.0.2.x86_64                 74/128 
+#7 62.36   Verifying        : libdrm-2.4.110-1.amzn2023.0.2.x86_64                75/128 
+#7 62.36   Verifying        : libeconf-0.4.0-1.amzn2023.0.3.x86_64                76/128 
+#7 62.36   Verifying        : libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64      77/128 
+#7 62.36   Verifying        : libepoxy-1.5.9-1.amzn2023.0.2.x86_64                78/128 
+#7 62.36   Verifying        : libevent-2.1.12-3.amzn2023.0.3.x86_64               79/128 
+#7 62.36   Verifying        : libfdisk-2.37.4-1.amzn2023.0.4.x86_64               80/128 
+#7 62.36   Verifying        : libglvnd-1:1.3.4-1.amzn2023.0.2.x86_64              81/128 
+#7 62.36   Verifying        : libglvnd-glx-1:1.3.4-1.amzn2023.0.2.x86_64          82/128 
+#7 62.36   Verifying        : libgusb-0.3.8-1.amzn2023.0.2.x86_64                 83/128 
+#7 62.36   Verifying        : libicu-67.1-7.amzn2023.0.3.x86_64                   84/128 
+#7 62.36   Verifying        : libjpeg-turbo-2.1.4-2.amzn2023.0.5.x86_64           85/128 
+#7 62.36   Verifying        : libpciaccess-0.16-4.amzn2023.0.2.x86_64             86/128 
+#7 62.36   Verifying        : libpng-2:1.6.37-10.amzn2023.0.6.x86_64              87/128 
+#7 62.36   Verifying        : libproxy-0.4.15-30.amzn2023.0.5.x86_64              88/128 
+#7 62.36   Verifying        : libpwquality-1.4.4-6.amzn2023.0.2.x86_64            89/128 
+#7 62.36   Verifying        : libseccomp-2.5.3-1.amzn2023.0.2.x86_64              90/128 
+#7 62.36   Verifying        : libsemanage-3.4-5.amzn2023.0.2.x86_64               91/128 
+#7 62.36   Verifying        : libsoup-2.72.0-6.amzn2023.0.2.x86_64                92/128 
+#7 62.36   Verifying        : libstemmer-0-16.585svn.amzn2023.0.2.x86_64          93/128 
+#7 62.36   Verifying        : libthai-0.1.28-6.amzn2023.0.2.x86_64                94/128 
+#7 62.36   Verifying        : libtiff-4.4.0-4.amzn2023.0.18.x86_64                95/128 
+#7 62.36   Verifying        : libtracker-sparql-3.1.2-1.amzn2023.0.2.x86_64       96/128 
+#7 62.36   Verifying        : libusbx-1.0.24-2.amzn2023.0.2.x86_64                97/128 
+#7 62.36   Verifying        : libutempter-1.2.1-4.amzn2023.0.2.x86_64             98/128 
+#7 62.36   Verifying        : libwayland-client-1.22.0-1.amzn2023.0.2.x86_64      99/128 
+#7 62.36   Verifying        : libwayland-cursor-1.22.0-1.amzn2023.0.2.x86_64     100/128 
+#7 62.36   Verifying        : libwayland-egl-1.22.0-1.amzn2023.0.2.x86_64        101/128 
+#7 62.36   Verifying        : libwebp-1.2.4-1.amzn2023.0.6.x86_64                102/128 
+#7 62.36   Verifying        : libxcb-1.13.1-7.amzn2023.0.2.x86_64                103/128 
+#7 62.36   Verifying        : libxkbcommon-1.3.0-1.amzn2023.0.2.x86_64           104/128 
+#7 62.36   Verifying        : libxshmfence-1.3-8.amzn2023.0.2.x86_64             105/128 
+#7 62.36   Verifying        : llvm-libs-15.0.7-3.amzn2023.0.1.x86_64             106/128 
+#7 62.36   Verifying        : mesa-dri-drivers-22.3.3-1140.amzn2023.0.3.x86_64   107/128 
+#7 62.36   Verifying        : mesa-filesystem-22.3.3-1140.amzn2023.0.3.x86_64    108/128 
+#7 62.36   Verifying        : mesa-libGL-22.3.3-1140.amzn2023.0.3.x86_64         109/128 
+#7 62.36   Verifying        : mesa-libglapi-22.3.3-1140.amzn2023.0.3.x86_64      110/128 
+#7 62.36   Verifying        : mesa-va-drivers-22.3.3-1140.amzn2023.0.3.x86_64    111/128 
+#7 62.36   Verifying        : nettle-3.8-1.amzn2023.0.2.x86_64                   112/128 
+#7 62.36   Verifying        : pam-1.5.1-8.amzn2023.0.4.x86_64                    113/128 
+#7 62.36   Verifying        : pango-1.48.10-1.amzn2023.0.3.x86_64                114/128 
+#7 62.36   Verifying        : pixman-0.40.0-3.amzn2023.0.3.x86_64                115/128 
+#7 62.36   Verifying        : qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64          116/128 
+#7 62.36   Verifying        : shadow-utils-2:4.9-12.amzn2023.0.4.x86_64          117/128 
+#7 62.36   Verifying        : shared-mime-info-2.2-2.amzn2023.0.1.x86_64         118/128 
+#7 62.36   Verifying        : systemd-252.23-2.amzn2023.x86_64                   119/128 
+#7 62.36   Verifying        : systemd-libs-252.23-2.amzn2023.x86_64              120/128 
+#7 62.36   Verifying        : systemd-networkd-252.23-2.amzn2023.x86_64          121/128 
+#7 62.36   Verifying        : systemd-pam-252.23-2.amzn2023.x86_64               122/128 
+#7 62.36   Verifying        : systemd-resolved-252.23-2.amzn2023.x86_64          123/128 
+#7 62.36   Verifying        : tracker-3.1.2-1.amzn2023.0.2.x86_64                124/128 
+#7 62.36   Verifying        : util-linux-2.37.4-1.amzn2023.0.4.x86_64            125/128 
+#7 62.36   Verifying        : util-linux-core-2.37.4-1.amzn2023.0.4.x86_64       126/128 
+#7 62.36   Verifying        : xkeyboard-config-2.33-1.amzn2023.0.2.noarch        127/128 
+#7 62.36   Verifying        : xml-common-0.6.3-56.amzn2023.0.2.noarch            128/128 
+#7 63.60 
+#7 63.60 Installed:
+#7 63.60   abattis-cantarell-fonts-0.301-2.amzn2023.0.1.noarch                           
+#7 63.60   adobe-source-code-pro-fonts-2.030.1.050-10.amzn2023.0.2.noarch                
+#7 63.60   adwaita-cursor-theme-40.1.1-1.amzn2023.0.2.noarch                             
+#7 63.60   adwaita-icon-theme-40.1.1-1.amzn2023.0.2.noarch                               
+#7 63.60   alsa-lib-1.2.7.2-1.amzn2023.0.2.x86_64                                        
+#7 63.60   at-spi2-atk-2.38.0-2.amzn2023.0.2.x86_64                                      
+#7 63.60   at-spi2-core-2.40.3-1.amzn2023.0.1.x86_64                                     
+#7 63.60   atk-2.36.0-3.amzn2023.0.2.x86_64                                              
+#7 63.60   avahi-libs-0.8-14.amzn2023.0.12.x86_64                                        
+#7 63.60   cairo-1.17.6-2.amzn2023.0.1.x86_64                                            
+#7 63.60   cairo-gobject-1.17.6-2.amzn2023.0.1.x86_64                                    
+#7 63.60   chkconfig-1.15-2.amzn2023.0.2.x86_64                                          
+#7 63.60   colord-libs-1.4.5-2.amzn2023.0.2.x86_64                                       
+#7 63.60   cracklib-2.9.6-27.amzn2023.0.2.x86_64                                         
+#7 63.60   cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64                                   
+#7 63.60   cups-libs-1:2.3.3op2-18.amzn2023.0.8.x86_64                                   
+#7 63.60   dbus-1:1.12.28-1.amzn2023.0.1.x86_64                                          
+#7 63.60   dbus-broker-32-1.amzn2023.0.2.x86_64                                          
+#7 63.60   dbus-common-1:1.12.28-1.amzn2023.0.1.noarch                                   
+#7 63.60   dbus-libs-1:1.12.28-1.amzn2023.0.1.x86_64                                     
+#7 63.60   dconf-0.40.0-3.amzn2023.0.2.x86_64                                            
+#7 63.60   dejavu-sans-fonts-2.37-16.amzn2023.0.2.noarch                                 
+#7 63.60   dejavu-sans-mono-fonts-2.37-16.amzn2023.0.2.noarch                            
+#7 63.60   dejavu-serif-fonts-2.37-16.amzn2023.0.2.noarch                                
+#7 63.60   device-mapper-1.02.185-1.amzn2023.0.4.x86_64                                  
+#7 63.60   device-mapper-libs-1.02.185-1.amzn2023.0.4.x86_64                             
+#7 63.60   diffutils-3.8-1.amzn2023.0.2.x86_64                                           
+#7 63.60   fontconfig-2.13.94-2.amzn2023.0.2.x86_64                                      
+#7 63.60   fonts-filesystem-1:2.0.5-12.amzn2023.0.2.noarch                               
+#7 63.60   freetype-2.13.0-2.amzn2023.0.1.x86_64                                         
+#7 63.60   fribidi-1.0.11-3.amzn2023.0.2.x86_64                                          
+#7 63.60   gdk-pixbuf2-2.42.10-1.amzn2023.0.1.x86_64                                     
+#7 63.60   gdk-pixbuf2-modules-2.42.10-1.amzn2023.0.1.x86_64                             
+#7 63.60   giflib-5.2.1-9.amzn2023.0.1.x86_64                                            
+#7 63.60   glib-networking-2.68.2-1.amzn2023.0.3.x86_64                                  
+#7 63.60   gnutls-3.8.0-380.amzn2023.0.6.x86_64                                          
+#7 63.60   google-noto-fonts-common-20201206-2.amzn2023.0.2.noarch                       
+#7 63.60   google-noto-sans-vf-fonts-20201206-2.amzn2023.0.2.noarch                      
+#7 63.60   graphite2-1.3.14-7.amzn2023.0.2.x86_64                                        
+#7 63.60   gsettings-desktop-schemas-40.0-1.amzn2023.0.3.x86_64                          
+#7 63.60   gtk-update-icon-cache-3.24.30-4.amzn2023.0.4.x86_64                           
+#7 63.60   gtk3-3.24.30-4.amzn2023.0.4.x86_64                                            
+#7 63.60   gzip-1.12-1.amzn2023.0.1.x86_64                                               
+#7 63.60   harfbuzz-7.0.0-2.amzn2023.0.1.x86_64                                          
+#7 63.60   hicolor-icon-theme-0.17-10.amzn2023.0.3.noarch                                
+#7 63.60   hwdata-0.353-1.amzn2023.0.3.noarch                                            
+#7 63.60   java-1.8.0-amazon-corretto-1:1.8.0_422.b05-1.amzn2023.x86_64                  
+#7 63.60   javapackages-filesystem-6.0.0-7.amzn2023.0.6.noarch                           
+#7 63.60   jbigkit-libs-2.1-21.amzn2023.0.2.x86_64                                       
+#7 63.60   json-glib-1.6.6-1.amzn2023.0.2.x86_64                                         
+#7 63.60   kmod-libs-29-2.amzn2023.0.5.x86_64                                            
+#7 63.60   langpacks-core-font-en-3.0-21.amzn2023.0.4.noarch                             
+#7 63.60   lcms2-2.12-1.amzn2023.0.3.x86_64                                              
+#7 63.60   libX11-1.7.2-3.amzn2023.0.4.x86_64                                            
+#7 63.60   libX11-common-1.7.2-3.amzn2023.0.4.noarch                                     
+#7 63.60   libX11-xcb-1.7.2-3.amzn2023.0.4.x86_64                                        
+#7 63.60   libXau-1.0.9-6.amzn2023.0.2.x86_64                                            
+#7 63.60   libXcomposite-0.4.5-5.amzn2023.0.2.x86_64                                     
+#7 63.60   libXcursor-1.2.0-5.amzn2023.0.2.x86_64                                        
+#7 63.60   libXdamage-1.1.5-5.amzn2023.0.2.x86_64                                        
+#7 63.60   libXext-1.3.4-6.amzn2023.0.2.x86_64                                           
+#7 63.60   libXfixes-6.0.0-1.amzn2023.0.2.x86_64                                         
+#7 63.60   libXft-2.3.3-6.amzn2023.0.2.x86_64                                            
+#7 63.60   libXi-1.7.10-6.amzn2023.0.2.x86_64                                            
+#7 63.60   libXinerama-1.1.4-8.amzn2023.0.2.x86_64                                       
+#7 63.60   libXrandr-1.5.2-6.amzn2023.0.2.x86_64                                         
+#7 63.60   libXrender-0.9.10-14.amzn2023.0.2.x86_64                                      
+#7 63.60   libXtst-1.2.3-14.amzn2023.0.2.x86_64                                          
+#7 63.60   libXxf86vm-1.1.4-16.amzn2023.0.2.x86_64                                       
+#7 63.60   libargon2-20171227-9.amzn2023.0.2.x86_64                                      
+#7 63.60   libbrotli-1.0.9-4.amzn2023.0.2.x86_64                                         
+#7 63.60   libcloudproviders-0.3.1-3.amzn2023.0.2.x86_64                                 
+#7 63.60   libdatrie-0.2.13-1.amzn2023.0.2.x86_64                                        
+#7 63.60   libdb-5.3.28-49.amzn2023.0.2.x86_64                                           
+#7 63.60   libdrm-2.4.110-1.amzn2023.0.2.x86_64                                          
+#7 63.60   libeconf-0.4.0-1.amzn2023.0.3.x86_64                                          
+#7 63.60   libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64                                
+#7 63.60   libepoxy-1.5.9-1.amzn2023.0.2.x86_64                                          
+#7 63.60   libevent-2.1.12-3.amzn2023.0.3.x86_64                                         
+#7 63.60   libfdisk-2.37.4-1.amzn2023.0.4.x86_64                                         
+#7 63.60   libglvnd-1:1.3.4-1.amzn2023.0.2.x86_64                                        
+#7 63.60   libglvnd-glx-1:1.3.4-1.amzn2023.0.2.x86_64                                    
+#7 63.60   libgusb-0.3.8-1.amzn2023.0.2.x86_64                                           
+#7 63.60   libicu-67.1-7.amzn2023.0.3.x86_64                                             
+#7 63.60   libjpeg-turbo-2.1.4-2.amzn2023.0.5.x86_64                                     
+#7 63.60   libpciaccess-0.16-4.amzn2023.0.2.x86_64                                       
+#7 63.60   libpng-2:1.6.37-10.amzn2023.0.6.x86_64                                        
+#7 63.60   libproxy-0.4.15-30.amzn2023.0.5.x86_64                                        
+#7 63.60   libpwquality-1.4.4-6.amzn2023.0.2.x86_64                                      
+#7 63.60   libseccomp-2.5.3-1.amzn2023.0.2.x86_64                                        
+#7 63.60   libsemanage-3.4-5.amzn2023.0.2.x86_64                                         
+#7 63.60   libsoup-2.72.0-6.amzn2023.0.2.x86_64                                          
+#7 63.60   libstemmer-0-16.585svn.amzn2023.0.2.x86_64                                    
+#7 63.60   libthai-0.1.28-6.amzn2023.0.2.x86_64                                          
+#7 63.60   libtiff-4.4.0-4.amzn2023.0.18.x86_64                                          
+#7 63.60   libtracker-sparql-3.1.2-1.amzn2023.0.2.x86_64                                 
+#7 63.60   libusbx-1.0.24-2.amzn2023.0.2.x86_64                                          
+#7 63.60   libutempter-1.2.1-4.amzn2023.0.2.x86_64                                       
+#7 63.60   libwayland-client-1.22.0-1.amzn2023.0.2.x86_64                                
+#7 63.60   libwayland-cursor-1.22.0-1.amzn2023.0.2.x86_64                                
+#7 63.60   libwayland-egl-1.22.0-1.amzn2023.0.2.x86_64                                   
+#7 63.60   libwebp-1.2.4-1.amzn2023.0.6.x86_64                                           
+#7 63.60   libxcb-1.13.1-7.amzn2023.0.2.x86_64                                           
+#7 63.60   libxkbcommon-1.3.0-1.amzn2023.0.2.x86_64                                      
+#7 63.60   libxshmfence-1.3-8.amzn2023.0.2.x86_64                                        
+#7 63.60   llvm-libs-15.0.7-3.amzn2023.0.1.x86_64                                        
+#7 63.60   mesa-dri-drivers-22.3.3-1140.amzn2023.0.3.x86_64                              
+#7 63.60   mesa-filesystem-22.3.3-1140.amzn2023.0.3.x86_64                               
+#7 63.60   mesa-libGL-22.3.3-1140.amzn2023.0.3.x86_64                                    
+#7 63.60   mesa-libglapi-22.3.3-1140.amzn2023.0.3.x86_64                                 
+#7 63.60   mesa-va-drivers-22.3.3-1140.amzn2023.0.3.x86_64                               
+#7 63.60   nettle-3.8-1.amzn2023.0.2.x86_64                                              
+#7 63.60   pam-1.5.1-8.amzn2023.0.4.x86_64                                               
+#7 63.60   pango-1.48.10-1.amzn2023.0.3.x86_64                                           
+#7 63.60   pixman-0.40.0-3.amzn2023.0.3.x86_64                                           
+#7 63.60   qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64                                     
+#7 63.60   shadow-utils-2:4.9-12.amzn2023.0.4.x86_64                                     
+#7 63.60   shared-mime-info-2.2-2.amzn2023.0.1.x86_64                                    
+#7 63.60   systemd-252.23-2.amzn2023.x86_64                                              
+#7 63.60   systemd-libs-252.23-2.amzn2023.x86_64                                         
+#7 63.60   systemd-networkd-252.23-2.amzn2023.x86_64                                     
+#7 63.60   systemd-pam-252.23-2.amzn2023.x86_64                                          
+#7 63.60   systemd-resolved-252.23-2.amzn2023.x86_64                                     
+#7 63.60   tracker-3.1.2-1.amzn2023.0.2.x86_64                                           
+#7 63.60   util-linux-2.37.4-1.amzn2023.0.4.x86_64                                       
+#7 63.60   util-linux-core-2.37.4-1.amzn2023.0.4.x86_64                                  
+#7 63.60   xkeyboard-config-2.33-1.amzn2023.0.2.noarch                                   
+#7 63.60   xml-common-0.6.3-56.amzn2023.0.2.noarch                                       
+#7 63.61 
+#7 63.61 Complete!
+#7 63.88   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#7 63.88                                  Dload  Upload   Total   Spent    Left  Speed
+#7 63.88   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   108  100   108    0     0    323      0 --:--:-- --:--:-- --:--:--   322
+#7 64.22 [sbt-rpm]
+#7 64.22 name=sbt-rpm
+#7 64.22 baseurl=https://repo.scala-sbt.org/scalasbt/rpm
+#7 64.22 gpgcheck=0
+#7 64.22 repo_gpgcheck=0
+#7 64.22 enabled=1
+#7 65.79 sbt-rpm                                          17 kB/s |  21 kB     00:01    
+#7 65.95 Dependencies resolved.
+#7 65.97 ================================================================================
+#7 65.97  Package        Architecture      Version              Repository          Size
+#7 65.97 ================================================================================
+#7 65.97 Installing:
+#7 65.97  sbt            noarch            1.10.1-0             sbt-rpm             23 k
+#7 65.97 
+#7 65.97 Transaction Summary
+#7 65.97 ================================================================================
+#7 65.97 Install  1 Package
+#7 65.97 
+#7 65.97 Total download size: 23 k
+#7 65.97 Installed size: 46 k
+#7 65.97 Downloading Packages:
+#7 66.29 sbt-1.10.1.rpm                                   72 kB/s |  23 kB     00:00    
+#7 66.29 --------------------------------------------------------------------------------
+#7 66.29 Total                                            71 kB/s |  23 kB     00:00     
+#7 66.29 Running transaction check
+#7 66.30 Transaction check succeeded.
+#7 66.30 Running transaction test
+#7 66.32 Transaction test succeeded.
+#7 66.32 Running transaction
+#7 66.39   Preparing        :                                                        1/1 
+#7 66.40   Running scriptlet: sbt-1.10.1-0.noarch                                    1/1 
+#7 66.41   Installing       : sbt-1.10.1-0.noarch                                    1/1 
+#7 66.58   Verifying        : sbt-1.10.1-0.noarch                                    1/1 
+#7 66.63 
+#7 66.63 Installed:
+#7 66.63   sbt-1.10.1-0.noarch                                                           
+#7 66.63 
+#7 66.63 Complete!
+#7 DONE 67.0s
+
+#8 [4/6] RUN yum -y install python3 python3-virtualenv python3-pip
+#8 1.047 Last metadata expiration check: 0:00:02 ago on Wed Jul 31 00:25:40 2024.
+#8 1.074 Package python3-3.9.16-1.amzn2023.0.8.x86_64 is already installed.
+#8 1.242 Dependencies resolved.
+#8 1.260 ================================================================================
+#8 1.260  Package               Arch     Version                     Repository     Size
+#8 1.260 ================================================================================
+#8 1.260 Installing:
+#8 1.260  python3-pip           noarch   21.3.1-2.amzn2023.0.7       amazonlinux   1.8 M
+#8 1.260  python3-virtualenv    noarch   20.4.0-3.amzn2023.0.3       amazonlinux   233 k
+#8 1.260 Installing dependencies:
+#8 1.260  python3-appdirs       noarch   1.4.4-2.amzn2023.0.2        amazonlinux    23 k
+#8 1.260  python3-distlib       noarch   0.3.1-4.amzn2023.0.2        amazonlinux   188 k
+#8 1.260  python3-filelock      noarch   3.0.12-9.amzn2023.0.2       amazonlinux    22 k
+#8 1.260  python3-setuptools    noarch   59.6.0-2.amzn2023.0.4       amazonlinux   940 k
+#8 1.260  python3-six           noarch   1.15.0-5.amzn2023.0.2       amazonlinux    36 k
+#8 1.260  python3-wheel-wheel   noarch   1:0.37.1-1.amzn2023.0.3     amazonlinux    43 k
+#8 1.260 Installing weak dependencies:
+#8 1.260  libxcrypt-compat      x86_64   4.4.33-7.amzn2023           amazonlinux    92 k
+#8 1.260 
+#8 1.260 Transaction Summary
+#8 1.260 ================================================================================
+#8 1.260 Install  9 Packages
+#8 1.260 
+#8 1.262 Total download size: 3.3 M
+#8 1.262 Installed size: 19 M
+#8 1.262 Downloading Packages:
+#8 1.505 (1/9): libxcrypt-compat-4.4.33-7.amzn2023.x86_6 1.1 MB/s |  92 kB     00:00    
+#8 1.522 (2/9): python3-appdirs-1.4.4-2.amzn2023.0.2.noa 223 kB/s |  23 kB     00:00    
+#8 1.539 (3/9): python3-distlib-0.3.1-4.amzn2023.0.2.noa 1.6 MB/s | 188 kB     00:00    
+#8 1.556 (4/9): python3-filelock-3.0.12-9.amzn2023.0.2.n 439 kB/s |  22 kB     00:00    
+#8 1.631 (5/9): python3-pip-21.3.1-2.amzn2023.0.7.noarch  16 MB/s | 1.8 MB     00:00    
+#8 1.673 (6/9): python3-setuptools-59.6.0-2.amzn2023.0.4 6.9 MB/s | 940 kB     00:00    
+#8 1.689 (7/9): python3-six-1.15.0-5.amzn2023.0.2.noarch 276 kB/s |  36 kB     00:00    
+#8 1.714 (8/9): python3-virtualenv-20.4.0-3.amzn2023.0.3 2.8 MB/s | 233 kB     00:00    
+#8 1.731 (9/9): python3-wheel-wheel-0.37.1-1.amzn2023.0. 1.0 MB/s |  43 kB     00:00    
+#8 1.733 --------------------------------------------------------------------------------
+#8 1.733 Total                                           7.0 MB/s | 3.3 MB     00:00     
+#8 1.900 Running transaction check
+#8 1.928 Transaction check succeeded.
+#8 1.928 Running transaction test
+#8 2.061 Transaction test succeeded.
+#8 2.061 Running transaction
+#8 2.556   Preparing        :                                                        1/1 
+#8 2.780   Installing       : python3-setuptools-59.6.0-2.amzn2023.0.4.noarch        1/9 
+#8 2.848   Installing       : python3-wheel-wheel-1:0.37.1-1.amzn2023.0.3.noarch     2/9 
+#8 2.875   Installing       : python3-six-1.15.0-5.amzn2023.0.2.noarch               3/9 
+#8 2.900   Installing       : python3-filelock-3.0.12-9.amzn2023.0.2.noarch          4/9 
+#8 2.955   Installing       : python3-distlib-0.3.1-4.amzn2023.0.2.noarch            5/9 
+#8 2.986   Installing       : python3-appdirs-1.4.4-2.amzn2023.0.2.noarch            6/9 
+#8 3.011   Installing       : libxcrypt-compat-4.4.33-7.amzn2023.x86_64              7/9 
+#8 3.657   Installing       : python3-pip-21.3.1-2.amzn2023.0.7.noarch               8/9 
+#8 3.997   Installing       : python3-virtualenv-20.4.0-3.amzn2023.0.3.noarch        9/9 
+#8 4.046   Running scriptlet: python3-virtualenv-20.4.0-3.amzn2023.0.3.noarch        9/9 
+#8 4.731   Verifying        : libxcrypt-compat-4.4.33-7.amzn2023.x86_64              1/9 
+#8 4.731   Verifying        : python3-appdirs-1.4.4-2.amzn2023.0.2.noarch            2/9 
+#8 4.731   Verifying        : python3-distlib-0.3.1-4.amzn2023.0.2.noarch            3/9 
+#8 4.731   Verifying        : python3-filelock-3.0.12-9.amzn2023.0.2.noarch          4/9 
+#8 4.731   Verifying        : python3-pip-21.3.1-2.amzn2023.0.7.noarch               5/9 
+#8 4.731   Verifying        : python3-setuptools-59.6.0-2.amzn2023.0.4.noarch        6/9 
+#8 4.731   Verifying        : python3-six-1.15.0-5.amzn2023.0.2.noarch               7/9 
+#8 4.732   Verifying        : python3-virtualenv-20.4.0-3.amzn2023.0.3.noarch        8/9 
+#8 4.732   Verifying        : python3-wheel-wheel-1:0.37.1-1.amzn2023.0.3.noarch     9/9 
+#8 4.853 
+#8 4.853 Installed:
+#8 4.853   libxcrypt-compat-4.4.33-7.amzn2023.x86_64                                     
+#8 4.853   python3-appdirs-1.4.4-2.amzn2023.0.2.noarch                                   
+#8 4.853   python3-distlib-0.3.1-4.amzn2023.0.2.noarch                                   
+#8 4.853   python3-filelock-3.0.12-9.amzn2023.0.2.noarch                                 
+#8 4.853   python3-pip-21.3.1-2.amzn2023.0.7.noarch                                      
+#8 4.853   python3-setuptools-59.6.0-2.amzn2023.0.4.noarch                               
+#8 4.853   python3-six-1.15.0-5.amzn2023.0.2.noarch                                      
+#8 4.853   python3-virtualenv-20.4.0-3.amzn2023.0.3.noarch                               
+#8 4.853   python3-wheel-wheel-1:0.37.1-1.amzn2023.0.3.noarch                            
+#8 4.853 
+#8 4.853 Complete!
+#8 DONE 5.2s
+
+#9 [5/6] RUN rpm --import https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL &&     rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg &&     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo &&     curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - &&     yum -y install yarn
+#9 1.267 [yarn]
+#9 1.267 name=Yarn Repository
+#9 1.267 baseurl=https://dl.yarnpkg.com/rpm/
+#9 1.267 enabled=1
+#9 1.267 gpgcheck=1
+#9 1.267 gpgkey=https://dl.yarnpkg.com/rpm/pubkey.gpg
+#9 1.381 
+#9 1.381 ================================================================================
+#9 1.381 ================================================================================
+#9 1.381 
+#9 1.381                               DEPRECATION WARNING                            
+#9 1.381 
+#9 1.381   Node.js 6.x LTS Boron is no longer actively supported!
+#9 1.381 
+#9 1.381   You will not receive security or critical stability updates for this version.
+#9 1.381 
+#9 1.381   You should migrate to a supported version of Node.js as soon as possible.
+#9 1.381   Use the installation script that corresponds to the version of Node.js you
+#9 1.381   wish to install. e.g.
+#9 1.381 
+#9 1.381    * https://rpm.nodesource.com/setup_16.x - Node.js v16 "Gallium"
+#9 1.381    * https://rpm.nodesource.com/setup_18.x - Node.js v18 LTS "Hydrogen" (recommended)
+#9 1.381    * https://rpm.nodesource.com/setup_19.x — Node.js v19 "Nineteen"
+#9 1.381    * https://rpm.nodesource.com/setup_20.x — Node.js v20 "Iron" (current)
+#9 1.381 
+#9 1.381   Please see https://github.com/nodejs/Release for details about which
+#9 1.381   version may be appropriate for you.
+#9 1.381 
+#9 1.381   The NodeSource Node.js distributions repository contains
+#9 1.381   information both about supported versions of Node.js and supported Linux
+#9 1.381   distributions. To learn more about usage, see the repository:
+#9 1.381     https://github.com/nodesource/distributions
+#9 1.381 
+#9 1.381 ================================================================================
+#9 1.381 ================================================================================
+#9 1.381 
+#9 1.381 Continuing in 20 seconds ...
+#9 1.381 
+#9 21.38 
+#9 21.38 ================================================================================
+#9 21.38 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+#9 21.38 ================================================================================
+#9 21.38 
+#9 21.38                            SCRIPT DEPRECATION WARNING                    
+#9 21.38 
+#9 21.38   
+#9 21.38   This script, located at https://rpm.nodesource.com/setup_X, used to
+#9 21.38   install Node.js is deprecated now and will eventually be made inactive.
+#9 21.38 
+#9 21.38   Please visit the NodeSource distributions Github and follow the
+#9 21.38   instructions to migrate your repo.
+#9 21.38   https://github.com/nodesource/distributions
+#9 21.38 
+#9 21.38   The NodeSource Node.js Linux distributions GitHub repository contains
+#9 21.38   information about which versions of Node.js and which Linux distributions
+#9 21.38   are supported and how to install it.
+#9 21.38   https://github.com/nodesource/distributions
+#9 21.38 
+#9 21.38 
+#9 21.38                           SCRIPT DEPRECATION WARNING
+#9 21.38 
+#9 21.38 ================================================================================
+#9 21.38 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+#9 21.38 ================================================================================
+#9 21.38 
+#9 21.38 TO AVOID THIS WAIT MIGRATE THE SCRIPT
+#9 21.38 Continuing in 60 seconds (press Ctrl-C to abort) ...
+#9 21.38 
+#9 81.39 
+#9 81.39 ## Installing the NodeSource Node.js 6.x LTS Boron repo...
+#9 81.39 
+#9 81.39 
+#9 81.39 ## Inspecting system...
+#9 81.39 
+#9 81.39 + uname -m
+#9 81.40 no package provides redhat-release
+#9 81.43 no package provides centos-release
+#9 81.44 no package provides cloudlinux-release
+#9 81.45 no package provides sl-release
+#9 81.47 no package provides fedora-release
+#9 81.48 system-release-2023.5.20240722-0.amzn2023.noarch
+#9 81.49 exec system-release
+#9 81.50 Release package: system-release-2023.5.20240722-0.amzn2023.noarch
+#9 81.50 
+#9 81.50 ## Confirming "al2023-x86_64" is supported...
+#9 81.50 
+#9 81.50 + curl -sLf -o /dev/null 'https://rpm.nodesource.com/pub_6.x/al/2023/x86_64/nodesource-release-al2023-1.noarch.rpm'
+#9 81.64 
+#9 81.64 ## Your distribution, identified as "system-release-2023.5.20240722-0.amzn2023.noarch", is not currently supported, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support
+#9 81.64 
+#9 ERROR: process "/bin/sh -c rpm --import https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL &&     rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg &&     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo &&     curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - &&     yum -y install yarn" did not complete successfully: exit code: 1
+------
+ > [5/6] RUN rpm --import https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL &&     rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg &&     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo &&     curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - &&     yum -y install yarn:
+81.48 system-release-2023.5.20240722-0.amzn2023.noarch
+81.49 exec system-release
+81.50 Release package: system-release-2023.5.20240722-0.amzn2023.noarch
+81.50 
+81.50 ## Confirming "al2023-x86_64" is supported...
+81.50 
+81.50 + curl -sLf -o /dev/null 'https://rpm.nodesource.com/pub_6.x/al/2023/x86_64/nodesource-release-al2023-1.noarch.rpm'
+81.64 
+81.64 ## Your distribution, identified as "system-release-2023.5.20240722-0.amzn2023.noarch", is not currently supported, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support
+81.64 
+------
+Dockerfile-MakeImage:16
+--------------------
+  15 |     # NODE & YARN
+  16 | >>> RUN rpm --import https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL && \
+  17 | >>>     rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg && \
+  18 | >>>     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo && \
+  19 | >>>     curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - && \
+  20 | >>>     yum -y install yarn
+  21 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c rpm --import https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL &&     rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg &&     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo &&     curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - &&     yum -y install yarn" did not complete successfully: exit code: 1
+Duration: 2:59.85

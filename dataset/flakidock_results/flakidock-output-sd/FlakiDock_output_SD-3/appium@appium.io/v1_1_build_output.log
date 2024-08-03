@@ -1,0 +1,187 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.3s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 373B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/node:12.22.1-alpine3.11
+#3 DONE 1.1s
+
+#4 [1/8] FROM docker.io/library/node:12.22.1-alpine3.11@sha256:93b71facf11d471ac035acfaf020ecc05297f6a401781cafceae1d0561704ba4
+#4 resolve docker.io/library/node:12.22.1-alpine3.11@sha256:93b71facf11d471ac035acfaf020ecc05297f6a401781cafceae1d0561704ba4
+#4 resolve docker.io/library/node:12.22.1-alpine3.11@sha256:93b71facf11d471ac035acfaf020ecc05297f6a401781cafceae1d0561704ba4 0.2s done
+#4 sha256:93b71facf11d471ac035acfaf020ecc05297f6a401781cafceae1d0561704ba4 1.43kB / 1.43kB done
+#4 sha256:5b8504e22687f25e22254d062558aa18d41d3331b64e771a6a0675e93d357e70 1.16kB / 1.16kB done
+#4 sha256:ba59ff60c386d2dc77f7afc5f9211e410ce80e864415c1bafe0006ef76fece1c 6.53kB / 6.53kB done
+#4 sha256:5c72c204eb2261d221bcc8b34dbb4727d6a6625dc7dadf87425c3fa8fd8bbf36 0B / 2.24MB 0.1s
+#4 sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811 0B / 24.60MB 0.1s
+#4 sha256:5c72c204eb2261d221bcc8b34dbb4727d6a6625dc7dadf87425c3fa8fd8bbf36 2.24MB / 2.24MB 0.2s
+#4 sha256:5c72c204eb2261d221bcc8b34dbb4727d6a6625dc7dadf87425c3fa8fd8bbf36 2.24MB / 2.24MB 0.3s done
+#4 sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811 9.44MB / 24.60MB 0.3s
+#4 sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0 0B / 2.82MB 0.3s
+#4 sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811 17.83MB / 24.60MB 0.4s
+#4 sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0 2.82MB / 2.82MB 0.4s
+#4 sha256:33fce3bc6102e63645ad9b969467728efd17b0cdf8b083b1f505df5af73bd627 0B / 281B 0.4s
+#4 sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811 24.60MB / 24.60MB 0.5s
+#4 sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0 2.82MB / 2.82MB 0.5s done
+#4 sha256:33fce3bc6102e63645ad9b969467728efd17b0cdf8b083b1f505df5af73bd627 281B / 281B 0.5s
+#4 extracting sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0
+#4 sha256:33fce3bc6102e63645ad9b969467728efd17b0cdf8b083b1f505df5af73bd627 281B / 281B 0.6s done
+#4 extracting sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0 0.2s done
+#4 sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811 24.60MB / 24.60MB 1.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 81.08MB 0.9s done
+#5 DONE 1.4s
+
+#4 [1/8] FROM docker.io/library/node:12.22.1-alpine3.11@sha256:93b71facf11d471ac035acfaf020ecc05297f6a401781cafceae1d0561704ba4
+#4 extracting sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811
+#4 extracting sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811 1.8s done
+#4 extracting sha256:5c72c204eb2261d221bcc8b34dbb4727d6a6625dc7dadf87425c3fa8fd8bbf36
+#4 extracting sha256:5c72c204eb2261d221bcc8b34dbb4727d6a6625dc7dadf87425c3fa8fd8bbf36 0.2s done
+#4 extracting sha256:33fce3bc6102e63645ad9b969467728efd17b0cdf8b083b1f505df5af73bd627
+#4 extracting sha256:33fce3bc6102e63645ad9b969467728efd17b0cdf8b083b1f505df5af73bd627 done
+#4 DONE 4.9s
+
+#6 [2/8] WORKDIR /root
+#6 DONE 4.4s
+
+#7 [3/8] RUN apk add --no-cache git python2 py-pip
+#7 0.563 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#7 0.769 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#7 1.018 (1/16) Installing ca-certificates (20191127-r2)
+#7 1.240 (2/16) Installing nghttp2-libs (1.40.0-r1)
+#7 1.245 (3/16) Installing libcurl (7.79.1-r0)
+#7 1.254 (4/16) Installing expat (2.2.9-r1)
+#7 1.466 (5/16) Installing pcre2 (10.34-r1)
+#7 1.477 (6/16) Installing git (2.24.4-r0)
+#7 1.689 (7/16) Installing libbz2 (1.0.8-r1)
+#7 1.907 (8/16) Installing libffi (3.2.1-r6)
+#7 2.109 (9/16) Installing gdbm (1.13-r1)
+#7 2.324 (10/16) Installing ncurses-terminfo-base (6.1_p20200118-r4)
+#7 2.525 (11/16) Installing ncurses-libs (6.1_p20200118-r4)
+#7 2.759 (12/16) Installing readline (8.0.1-r0)
+#7 2.980 (13/16) Installing sqlite-libs (3.30.1-r2)
+#7 3.219 (14/16) Installing python2 (2.7.18-r0)
+#7 3.882 (15/16) Installing py-setuptools (42.0.2-r0)
+#7 4.109 (16/16) Installing py2-pip (18.1-r0)
+#7 5.582 Executing busybox-1.31.1-r10.trigger
+#7 5.588 Executing ca-certificates-20191127-r2.trigger
+#7 5.635 OK: 76 MiB in 32 packages
+#7 DONE 7.4s
+
+#8 [4/8] COPY ./package.json ./
+#8 DONE 0.4s
+
+#9 [5/8] RUN pip install --upgrade pip
+#9 2.267 Collecting pip
+#9 2.508   Downloading https://files.pythonhosted.org/packages/27/79/8a850fe3496446ff0d584327ae44e7500daf6764ca1a382d2d02789accf7/pip-20.3.4-py2.py3-none-any.whl (1.5MB)
+#9 2.674 Installing collected packages: pip
+#9 2.674   Found existing installation: pip 18.1
+#9 2.677     Uninstalling pip-18.1:
+#9 2.978       Successfully uninstalled pip-18.1
+#9 4.060 Successfully installed pip-20.3.4
+#9 DONE 5.0s
+
+#10 [6/8] RUN pip install mkdocs==0.17.5
+#10 0.994 DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. pip 21.0 will drop support for Python 2.7 in January 2021. More details about Python 2 support in pip can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support pip 21.0 will remove support for this functionality.
+#10 1.184 Collecting mkdocs==0.17.5
+#10 1.224   Downloading mkdocs-0.17.5-py2.py3-none-any.whl (1.2 MB)
+#10 1.472 Collecting click>=3.3
+#10 1.484   Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)
+#10 1.619 Collecting Jinja2>=2.7.1
+#10 1.628   Downloading Jinja2-2.11.3-py2.py3-none-any.whl (125 kB)
+#10 1.803 Collecting livereload>=2.5.1
+#10 1.814   Downloading livereload-2.6.3-py2.py3-none-any.whl (24 kB)
+#10 2.140 Collecting tornado<5.0,>=4.1
+#10 2.152   Downloading tornado-4.5.3.tar.gz (484 kB)
+#10 2.790 Collecting Markdown>=2.3.1
+#10 2.800   Downloading Markdown-3.1.1-py2.py3-none-any.whl (87 kB)
+#10 3.148 Collecting PyYAML>=3.10
+#10 3.159   Downloading PyYAML-5.4.1.tar.gz (175 kB)
+#10 3.558   Installing build dependencies: started
+#10 9.522   Installing build dependencies: finished with status 'done'
+#10 9.523   Getting requirements to build wheel: started
+#10 9.876   Getting requirements to build wheel: finished with status 'error'
+#10 9.876   ERROR: Command errored out with exit status 1:
+#10 9.876    command: /usr/bin/python2 /usr/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpd04QK0
+#10 9.876        cwd: /tmp/pip-install-fv0qIY/pyyaml
+#10 9.876   Complete output (46 lines):
+#10 9.876   running egg_info
+#10 9.876   creating lib/PyYAML.egg-info
+#10 9.876   writing lib/PyYAML.egg-info/PKG-INFO
+#10 9.876   writing top-level names to lib/PyYAML.egg-info/top_level.txt
+#10 9.876   writing dependency_links to lib/PyYAML.egg-info/dependency_links.txt
+#10 9.876   writing manifest file 'lib/PyYAML.egg-info/SOURCES.txt'
+#10 9.876   Traceback (most recent call last):
+#10 9.876     File "/usr/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 280, in <module>
+#10 9.876       main()
+#10 9.876     File "/usr/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 263, in main
+#10 9.876       json_out['return_val'] = hook(**hook_input['kwargs'])
+#10 9.876     File "/usr/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 114, in get_requires_for_build_wheel
+#10 9.876       return hook(config_settings)
+#10 9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 146, in get_requires_for_build_wheel
+#10 9.876       return self._get_build_requires(config_settings, requirements=['wheel'])
+#10 9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 127, in _get_build_requires
+#10 9.876       self.run_setup()
+#10 9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 142, in run_setup
+#10 9.876       exec(compile(code, __file__, 'exec'), locals())
+#10 9.876     File "setup.py", line 295, in <module>
+#10 9.876       python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+#10 9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/__init__.py", line 162, in setup
+#10 9.876       return distutils.core.setup(**attrs)
+#10 9.876     File "/usr/lib/python2.7/distutils/core.py", line 151, in setup
+#10 9.876       dist.run_commands()
+#10 9.876     File "/usr/lib/python2.7/distutils/dist.py", line 953, in run_commands
+#10 9.876       self.run_command(cmd)
+#10 9.876     File "/usr/lib/python2.7/distutils/dist.py", line 972, in run_command
+#10 9.876       cmd_obj.run()
+#10 9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 296, in run
+#10 9.876       self.find_sources()
+#10 9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 303, in find_sources
+#10 9.876       mm.run()
+#10 9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 534, in run
+#10 9.876       self.add_defaults()
+#10 9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 570, in add_defaults
+#10 9.876       sdist.add_defaults(self)
+#10 9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 36, in add_defaults
+#10 9.876       self._add_defaults_ext()
+#10 9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+#10 9.876       self.filelist.extend(build_ext.get_source_files())
+#10 9.876     File "setup.py", line 201, in get_source_files
+#10 9.876       self.cython_sources(ext.sources, ext)
+#10 9.876     File "/usr/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+#10 9.876       raise AttributeError, attr
+#10 9.876   AttributeError: cython_sources
+#10 9.876   ----------------------------------------
+#10 9.877 ERROR: Command errored out with exit status 1: /usr/bin/python2 /usr/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpd04QK0 Check the logs for full command output.
+#10 ERROR: process "/bin/sh -c pip install mkdocs==0.17.5" did not complete successfully: exit code: 1
+------
+ > [6/8] RUN pip install mkdocs==0.17.5:
+9.876       self._add_defaults_ext()
+9.876     File "/tmp/pip-build-env-k8fXZq/overlay/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+9.876       self.filelist.extend(build_ext.get_source_files())
+9.876     File "setup.py", line 201, in get_source_files
+9.876       self.cython_sources(ext.sources, ext)
+9.876     File "/usr/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+9.876       raise AttributeError, attr
+9.876   AttributeError: cython_sources
+9.876   ----------------------------------------
+9.877 ERROR: Command errored out with exit status 1: /usr/bin/python2 /usr/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpd04QK0 Check the logs for full command output.
+------
+v1_Dockerfile:12
+--------------------
+  10 |     RUN pip install --upgrade pip
+  11 |     
+  12 | >>> RUN pip install mkdocs==0.17.5
+  13 |     
+  14 |     RUN npm install
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip install mkdocs==0.17.5" did not complete successfully: exit code: 1
+Duration: 0:34.45

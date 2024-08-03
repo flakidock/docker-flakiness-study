@@ -1,0 +1,32 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.26kB done
+#1 DONE 0.0s
+
+#2 [auth] library/debian:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/nvidia/cuda:8.0-devel-ubuntu16.04
+#3 ...
+
+#4 [auth] nvidia/cuda:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/nvidia/cuda:8.0-devel-ubuntu16.04
+#3 ERROR: docker.io/nvidia/cuda:8.0-devel-ubuntu16.04: not found
+
+#5 [internal] load metadata for docker.io/library/debian:stretch-slim
+#5 CANCELED
+------
+ > [internal] load metadata for docker.io/nvidia/cuda:8.0-devel-ubuntu16.04:
+------
+v1_Dockerfile:2
+--------------------
+   1 |     # Dockerfile
+   2 | >>> FROM nvidia/cuda:8.0-devel-ubuntu16.04 as build
+   3 |     
+   4 |     RUN apt-get update && apt-get install -y --no-install-recommends \
+--------------------
+ERROR: failed to solve: nvidia/cuda:8.0-devel-ubuntu16.04: docker.io/nvidia/cuda:8.0-devel-ubuntu16.04: not found
+Duration: 0:0.80

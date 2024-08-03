@@ -1,0 +1,19 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 537B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for r.j3ss.co/terraform:latest
+#2 ERROR: failed to do request: Head "https://r.j3ss.co/v2/terraform/manifests/latest": dial tcp: lookup r.j3ss.co on 172.31.0.2:53: no such host
+------
+ > [internal] load metadata for r.j3ss.co/terraform:latest:
+------
+v1_Dockerfile:1
+--------------------
+   1 | >>> FROM r.j3ss.co/terraform:latest
+   2 |     
+   3 |     LABEL "com.github.actions.name"="Cloudflare DNS"
+--------------------
+ERROR: failed to solve: r.j3ss.co/terraform:latest: failed to do request: Head "https://r.j3ss.co/v2/terraform/manifests/latest": dial tcp: lookup r.j3ss.co on 172.31.0.2:53: no such host
+Duration: 0:0.38

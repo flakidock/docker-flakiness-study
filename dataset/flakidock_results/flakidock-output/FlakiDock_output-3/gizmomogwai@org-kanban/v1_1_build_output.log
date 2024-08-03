@@ -1,0 +1,108 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.3s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 438B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.0s
+
+#4 [1/4] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#4 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#4 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#4 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#4 DONE 0.6s
+
+#5 [2/4] RUN apk --no-cache add emacs-nox
+#5 0.447 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#5 0.702 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#5 1.202 (1/18) Installing emacs (29.4-r0)
+#5 1.513 (2/18) Installing dbus-libs (1.14.10-r1)
+#5 1.521 (3/18) Installing gmp (6.3.0-r1)
+#5 1.531 (4/18) Installing nettle (3.9.1-r0)
+#5 1.543 (5/18) Installing libunistring (1.2-r0)
+#5 1.582 (6/18) Installing libidn2 (2.3.7-r0)
+#5 1.595 (7/18) Installing libffi (3.4.6-r0)
+#5 1.599 (8/18) Installing libtasn1 (4.19.0-r2)
+#5 1.603 (9/18) Installing p11-kit (0.25.3-r0)
+#5 1.620 (10/18) Installing gnutls (3.8.5-r0)
+#5 1.645 (11/18) Installing jansson (2.14-r4)
+#5 1.649 (12/18) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#5 1.678 (13/18) Installing libncursesw (6.4_p20240420-r0)
+#5 1.686 (14/18) Installing sqlite-libs (3.45.3-r1)
+#5 1.708 (15/18) Installing tree-sitter (0.22.2-r1)
+#5 1.885 (16/18) Installing xz-libs (5.6.1-r3)
+#5 1.894 (17/18) Installing libxml2 (2.12.7-r0)
+#5 1.913 (18/18) Installing emacs-nox (29.4-r0)
+#5 4.586 Executing busybox-1.36.1-r29.trigger
+#5 4.595 OK: 141 MiB in 32 packages
+#5 DONE 6.6s
+
+#6 [3/4] RUN mkdir -p /workspace
+#6 DONE 0.8s
+
+#7 [4/4] RUN emacs --batch --execute "(progn (package-initialize) (message "1") (setq network-security-level 'low) (message "2") (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t) (message "3") (package-list-packages) (message "4") (sleep-for 4) (package-install 'org-kanban))"
+#7 0.740 1
+#7 0.740 2
+#7 0.740 3
+#7 1.747 4
+#7 3.560 Package refresh done
+#7 5.785 Setting ‘package-selected-packages’ temporarily since "emacs -q" would overwrite customizations
+#7 5.785 Setting ‘package-selected-packages’ temporarily since "emacs -q" would overwrite customizations
+#7 5.786 Contacting host: melpa.org:443
+#7 5.973 Parsing tar file... 
+#7 5.973 Parsing tar file...done
+#7 5.973 Extracting... \ 
+#7 5.976 Extracting...done
+#7 5.987   INFO     Scraping files for loaddefs... 
+#7 6.008   INFO     Scraping files for loaddefs...done
+#7 6.009   GEN      dash-autoloads.el
+#7 6.188 Checking /root/.emacs.d/elpa/dash-20240510.1327...
+#7 6.188 Compiling /root/.emacs.d/elpa/dash-20240510.1327/dash-autoloads.el...
+#7 6.191 Compiling /root/.emacs.d/elpa/dash-20240510.1327/dash-pkg.el...
+#7 6.193 Compiling /root/.emacs.d/elpa/dash-20240510.1327/dash.el...
+#7 6.671 Done (Total of 1 file compiled, 2 skipped)
+#7 6.721 Contacting host: melpa.org:443
+#7 6.767 Parsing tar file... 
+#7 6.767 Parsing tar file...done
+#7 6.767 Extracting... \ 
+#7 6.769 Extracting...done
+#7 6.769   INFO     Scraping files for loaddefs... 
+#7 6.771   INFO     Scraping files for loaddefs...done
+#7 6.772   GEN      s-autoloads.el
+#7 6.831 Checking /root/.emacs.d/elpa/s-20220902.1511...
+#7 6.832 Compiling /root/.emacs.d/elpa/s-20220902.1511/s-autoloads.el...
+#7 6.834 Compiling /root/.emacs.d/elpa/s-20220902.1511/s-pkg.el...
+#7 6.837 Compiling /root/.emacs.d/elpa/s-20220902.1511/s.el...
+#7 6.882 Done (Total of 1 file compiled, 2 skipped)
+#7 6.980 Parsing tar file... 
+#7 6.980 Parsing tar file...done
+#7 6.980 Extracting... \ 
+#7 6.981 Extracting...done
+#7 6.982   INFO     Scraping files for loaddefs... 
+#7 6.988   INFO     Scraping files for loaddefs...done
+#7 6.989   GEN      org-kanban-autoloads.el
+#7 7.048 Checking /root/.emacs.d/elpa/org-kanban-20240607.1612...
+#7 7.049 Compiling /root/.emacs.d/elpa/org-kanban-20240607.1612/org-kanban-autoloads.el...
+#7 7.052 Compiling /root/.emacs.d/elpa/org-kanban-20240607.1612/org-kanban-pkg.el...
+#7 7.054 Compiling /root/.emacs.d/elpa/org-kanban-20240607.1612/org-kanban.el...
+#7 7.245 Done (Total of 1 file compiled, 2 skipped)
+#7 7.304 Package ‘org-kanban’ installed.
+#7 DONE 7.7s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 2.1s done
+#8 writing image sha256:89863360bb1aea6b011ce3527a47959fa12ce411defd04a154f010a90b8483fb 0.0s done
+#8 naming to docker.io/library/image_name_v1_1 0.0s done
+#8 DONE 2.1s
+Duration: 0:19.74

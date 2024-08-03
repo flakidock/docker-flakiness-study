@@ -1,0 +1,131 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.51kB done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/python:2.7-alpine
+#3 DONE 1.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561d87cb36b2f5b9ff8a760a
+#5 resolve docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561d87cb36b2f5b9ff8a760a 0.1s done
+#5 sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561d87cb36b2f5b9ff8a760a 1.65kB / 1.65kB done
+#5 sha256:b9ca0d225d42fd188bd636148229d121586fe7dcf3dcccfb23237b6401df4951 1.16kB / 1.16kB done
+#5 sha256:8579e446340f415fece00398a37dbdc4fff1f16901af2e173d6ae8c0bdbb9505 7.51kB / 7.51kB done
+#5 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 0B / 20.28MB 0.3s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 802B done
+#4 DONE 0.5s
+
+#5 [1/7] FROM docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561d87cb36b2f5b9ff8a760a
+#5 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 3.15MB / 20.28MB 0.5s
+#5 sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54bef7fbddabcc009431 0B / 1.89MB 0.5s
+#5 sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b096a41066701f78d2 0B / 301.29kB 0.5s
+#5 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 7.34MB / 20.28MB 0.6s
+#5 sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b096a41066701f78d2 301.29kB / 301.29kB 0.6s
+#5 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 12.58MB / 20.28MB 0.7s
+#5 sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54bef7fbddabcc009431 1.89MB / 1.89MB 0.6s done
+#5 sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b096a41066701f78d2 301.29kB / 301.29kB 0.7s done
+#5 extracting sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b096a41066701f78d2 0.1s
+#5 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 20.28MB / 20.28MB 0.9s
+#5 extracting sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b096a41066701f78d2 0.1s done
+#5 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 20.28MB / 20.28MB 1.2s done
+#5 extracting sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd
+#5 extracting sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 1.2s done
+#5 extracting sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54bef7fbddabcc009431
+#5 extracting sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54bef7fbddabcc009431 0.2s done
+#5 DONE 4.0s
+
+#6 [2/7] RUN apk update &&     apk add bash curl git openssh-client gcc make musl-dev libffi-dev openssl-dev &&     curl -L -o /root/google-cloud-sdk-200.0.0-linux-x86_64.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-200.0.0-linux-x86_64.tar.gz &&     curl -L -o /usr/local/bin/cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 &&     curl -L -o /usr/local/bin/cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 &&     curl -L -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.12.2/bin/linux/amd64/kubectl &&     curl -L -o /root/terraform_0.11.3_linux_amd64.zip https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip
+#6 0.481 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#6 0.886 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#6 1.339 v3.11.13-12-g2cfa91a2b4 [http://dl-cdn.alpinelinux.org/alpine/v3.11/main]
+#6 1.339 v3.11.11-124-gf2729ece5a [http://dl-cdn.alpinelinux.org/alpine/v3.11/community]
+#6 1.339 OK: 11290 distinct packages available
+#6 1.511 (1/28) Upgrading musl (1.1.24-r2 -> 1.1.24-r3)
+#6 1.524 (2/28) Upgrading libcrypto1.1 (1.1.1d-r3 -> 1.1.1l-r0)
+#6 1.556 (3/28) Upgrading libssl1.1 (1.1.1d-r3 -> 1.1.1l-r0)
+#6 1.565 (4/28) Installing bash (5.0.11-r1)
+#6 1.580 Executing bash-5.0.11-r1.post-install
+#6 1.583 (5/28) Installing nghttp2-libs (1.40.0-r1)
+#6 1.589 (6/28) Installing libcurl (7.79.1-r0)
+#6 1.598 (7/28) Installing curl (7.79.1-r0)
+#6 1.604 (8/28) Installing libgcc (9.3.0-r0)
+#6 1.607 (9/28) Installing libstdc++ (9.3.0-r0)
+#6 1.633 (10/28) Installing binutils (2.33.1-r1)
+#6 1.739 (11/28) Installing gmp (6.1.2-r1)
+#6 1.747 (12/28) Installing isl (0.18-r0)
+#6 1.765 (13/28) Installing libgomp (9.3.0-r0)
+#6 1.770 (14/28) Installing libatomic (9.3.0-r0)
+#6 1.773 (15/28) Installing mpfr4 (4.0.2-r1)
+#6 1.781 (16/28) Installing mpc1 (1.1.0-r1)
+#6 1.785 (17/28) Installing gcc (9.3.0-r0)
+#6 2.645 (18/28) Installing pcre2 (10.34-r1)
+#6 2.655 (19/28) Installing git (2.24.4-r0)
+#6 2.847 (20/28) Installing linux-headers (4.19.36-r0)
+#6 3.028 (21/28) Installing pkgconf (1.6.3-r0)
+#6 3.032 (22/28) Installing libffi-dev (3.2.1-r6)
+#6 3.035 (23/28) Installing make (4.2.1-r2)
+#6 3.041 (24/28) Installing musl-dev (1.1.24-r3)
+#6 6.543 (25/28) Installing openssh-keygen (8.1_p1-r1)
+#6 6.551 (26/28) Installing libedit (20191211.3.1-r0)
+#6 6.556 (27/28) Installing openssh-client (8.1_p1-r1)
+#6 6.593 (28/28) Installing openssl-dev (1.1.1l-r0)
+#6 6.617 Executing busybox-1.31.1-r9.trigger
+#6 6.623 Executing ca-certificates-20191127-r1.trigger
+#6 6.665 OK: 146 MiB in 57 packages
+#6 6.701   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#6 6.701                                  Dload  Upload   Total   Spent    Left  Speed
+#6 6.701   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 18.6M  100 18.6M    0     0  36.6M      0 --:--:-- --:--:-- --:--:-- 36.7M
+#6 7.217   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#6 7.217                                  Dload  Upload   Total   Spent    Left  Speed
+#6 7.217   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   167  100   167    0     0   4097      0 --:--:-- --:--:-- --:--:--  4175
+#6 7.322   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+#6 8.367  67  9.8M   67 6830k    0     0  5936k      0  0:00:01  0:00:01 --:--:-- 5936k100  9.8M  100  9.8M    0     0  8354k      0  0:00:01  0:00:01 --:--:-- 52.0M
+#6 8.438   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#6 8.438                                  Dload  Upload   Total   Spent    Left  Speed
+#6 8.438   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   167  100   167    0     0   2503      0 --:--:-- --:--:-- --:--:--  2530
+#6 8.787   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+#6 9.199 100 2224k  100 2224k    0     0  2921k      0 --:--:-- --:--:-- --:--:-- 2921k
+#6 9.207   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#6 9.207                                  Dload  Upload   Total   Spent    Left  Speed
+#6 9.208   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 54.6M    0  6721    0     0  43666      0  0:21:53 --:--:--  0:21:53 43642 32 54.6M   32 17.9M    0     0  12.4M      0  0:00:04  0:00:01  0:00:03 12.4M 38 54.6M   38 21.1M    0     0  13.7M      0  0:00:03  0:00:01  0:00:02 13.6M
+#6 10.75 curl: (23) Failure writing output to destination
+#6 ERROR: process "/bin/sh -c apk update &&     apk add bash curl git openssh-client gcc make musl-dev libffi-dev openssl-dev &&     curl -L -o /root/$GCLOUD_SDK_FILE https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/$GCLOUD_SDK_FILE &&     curl -L -o /usr/local/bin/cfssl https://pkg.cfssl.org/$CFSSL_VERSION/cfssl_linux-amd64 &&     curl -L -o /usr/local/bin/cfssljson https://pkg.cfssl.org/$CFSSL_VERSION/cfssljson_linux-amd64 &&     curl -L -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$KUBE_VERSION/bin/linux/amd64/kubectl &&     curl -L -o /root/$TERRAFORM_FILE https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/$TERRAFORM_FILE" did not complete successfully: exit code: 23
+------
+ > [2/7] RUN apk update &&     apk add bash curl git openssh-client gcc make musl-dev libffi-dev openssl-dev &&     curl -L -o /root/google-cloud-sdk-200.0.0-linux-x86_64.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-200.0.0-linux-x86_64.tar.gz &&     curl -L -o /usr/local/bin/cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 &&     curl -L -o /usr/local/bin/cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 &&     curl -L -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.12.2/bin/linux/amd64/kubectl &&     curl -L -o /root/terraform_0.11.3_linux_amd64.zip https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip:
+6.617 Executing busybox-1.31.1-r9.trigger
+6.623 Executing ca-certificates-20191127-r1.trigger
+6.665 OK: 146 MiB in 57 packages
+100 18.6M  100 18.6M    0     0  36.6M      0 --:--:-- --:--:-- --:--:-- 36.7M
+--:--:--     0
+-  2530
+8.787   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+9.199 100 2224k  100 2224k    0     0  2921k      0 --:--:-- --:--:-- --:--:-- 2921k
+13.6M
+10.75 curl: (23) Failure writing output to destination
+------
+v1_Dockerfile:11
+--------------------
+  10 |     
+  11 | >>> RUN apk update && \
+  12 | >>>     apk add bash curl git openssh-client gcc make musl-dev libffi-dev openssl-dev && \
+  13 | >>>     curl -L -o /root/$GCLOUD_SDK_FILE https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/$GCLOUD_SDK_FILE && \
+  14 | >>>     curl -L -o /usr/local/bin/cfssl https://pkg.cfssl.org/$CFSSL_VERSION/cfssl_linux-amd64 && \
+  15 | >>>     curl -L -o /usr/local/bin/cfssljson https://pkg.cfssl.org/$CFSSL_VERSION/cfssljson_linux-amd64 && \
+  16 | >>>     curl -L -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$KUBE_VERSION/bin/linux/amd64/kubectl && \
+  17 | >>>     curl -L -o /root/$TERRAFORM_FILE https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/$TERRAFORM_FILE
+  18 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk update &&     apk add bash curl git openssh-client gcc make musl-dev libffi-dev openssl-dev &&     curl -L -o /root/$GCLOUD_SDK_FILE https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/$GCLOUD_SDK_FILE &&     curl -L -o /usr/local/bin/cfssl https://pkg.cfssl.org/$CFSSL_VERSION/cfssl_linux-amd64 &&     curl -L -o /usr/local/bin/cfssljson https://pkg.cfssl.org/$CFSSL_VERSION/cfssljson_linux-amd64 &&     curl -L -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$KUBE_VERSION/bin/linux/amd64/kubectl &&     curl -L -o /root/$TERRAFORM_FILE https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/$TERRAFORM_FILE" did not complete successfully: exit code: 23
+Duration: 0:17.08

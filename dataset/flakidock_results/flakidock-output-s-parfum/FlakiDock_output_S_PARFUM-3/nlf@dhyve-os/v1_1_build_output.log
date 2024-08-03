@@ -1,0 +1,92 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.10kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:latest
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 116B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#4 resolve docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 10.39MB 0.1s done
+#5 DONE 0.1s
+
+#4 [1/7] FROM docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#4 sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 1.85kB / 1.85kB done
+#4 sha256:b1ae8b5bfaa9afa86b50c2a151a442d832c4449cf3731bddf8a728e5628ebb59 529B / 529B done
+#4 sha256:2e5b8d3ef33ebde2b2a943fadb241a63de1535a007a7bd185e7037abfff99f63 1.46kB / 1.46kB done
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 7.34MB / 49.55MB 0.2s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 15.73MB / 49.55MB 0.3s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 22.02MB / 49.55MB 0.4s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 29.36MB / 49.55MB 0.5s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 40.89MB / 49.55MB 0.7s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 49.55MB / 49.55MB 0.9s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 49.55MB / 49.55MB 0.9s done
+#4 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 0.1s
+#4 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 2.6s done
+#4 DONE 3.7s
+
+#6 [2/7] RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections &&     echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections &&     apt-get -q update &&     DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install -q -y     wget     build-essential     libncurses-dev     rsync     unzip     bc     gnupg     python     libc6-i386     cpio     locales     git-core && rm -rf /var/lib/apt/lists/*;
+#6 0.355 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#6 0.389 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#6 0.400 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#6 0.451 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#6 0.580 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#6 0.582 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#6 1.698 Fetched 9225 kB in 1s (6763 kB/s)
+#6 1.698 Reading package lists...
+#6 2.259 Reading package lists...
+#6 2.787 Building dependency tree...
+#6 2.898 Reading state information...
+#6 2.901 Package python is not available, but is referred to by another package.
+#6 2.901 This may mean that the package is missing, has been obsoleted, or
+#6 2.901 is only available from another source
+#6 2.901 However the following packages replace it:
+#6 2.901   python-is-python3 2to3
+#6 2.901 
+#6 2.906 E: Package 'python' has no installation candidate
+#6 ERROR: process "/bin/sh -c echo \"locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8\" | debconf-set-selections &&     echo \"locales locales/default_environment_locale select en_US.UTF-8\" | debconf-set-selections &&     apt-get -q update &&     DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install -q -y     wget     build-essential     libncurses-dev     rsync     unzip     bc     gnupg     python     libc6-i386     cpio     locales     git-core && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+------
+ > [2/7] RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections &&     echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections &&     apt-get -q update &&     DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install -q -y     wget     build-essential     libncurses-dev     rsync     unzip     bc     gnupg     python     libc6-i386     cpio     locales     git-core && rm -rf /var/lib/apt/lists/*;:
+
+2.787 Building dependency tree...
+2.898 Reading state information...
+2.901 Package python is not available, but is referred to by another package.
+2.901 This may mean that the package is missing, has been obsoleted, or
+2.901 is only available from another source
+2.901 However the following packages replace it:
+2.901   python-is-python3 2to3
+2.901 
+2.906 E: Package 'python' has no installation candidate
+------
+v1_Dockerfile:3
+--------------------
+   2 |     
+   3 | >>> RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections && \
+   4 | >>>     echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections && \
+   5 | >>>     apt-get -q update && \
+   6 | >>>     DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install -q -y \
+   7 | >>>     wget \
+   8 | >>>     build-essential \
+   9 | >>>     libncurses-dev \
+  10 | >>>     rsync \
+  11 | >>>     unzip \
+  12 | >>>     bc \
+  13 | >>>     gnupg \
+  14 | >>>     python \
+  15 | >>>     libc6-i386 \
+  16 | >>>     cpio \
+  17 | >>>     locales \
+  18 | >>>     git-core && rm -rf /var/lib/apt/lists/*;
+  19 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c echo \"locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8\" | debconf-set-selections &&     echo \"locales locales/default_environment_locale select en_US.UTF-8\" | debconf-set-selections &&     apt-get -q update &&     DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install -q -y     wget     build-essential     libncurses-dev     rsync     unzip     bc     gnupg     python     libc6-i386     cpio     locales     git-core && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+Duration: 0:8.31

@@ -1,0 +1,128 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 608B done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 46B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.6s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.3s done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 791B done
+#4 DONE 0.4s
+
+#5 [1/7] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.2s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.6s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.7s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.7s done
+#5 DONE 2.2s
+
+#6 [2/7] RUN apk add --no-cache --update python3 py3-pip bash
+#6 1.358 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 1.778 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 2.636 (1/26) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 2.675 (2/26) Installing libncursesw (6.4_p20240420-r0)
+#6 2.693 (3/26) Installing readline (8.2.10-r0)
+#6 2.711 (4/26) Installing bash (5.2.26-r0)
+#6 2.755 Executing bash-5.2.26-r0.post-install
+#6 2.788 (5/26) Installing libbz2 (1.0.8-r6)
+#6 2.808 (6/26) Installing libexpat (2.6.2-r0)
+#6 2.842 (7/26) Installing libffi (3.4.6-r0)
+#6 2.859 (8/26) Installing gdbm (1.23-r1)
+#6 2.868 (9/26) Installing xz-libs (5.6.1-r3)
+#6 2.877 (10/26) Installing libgcc (13.2.1_git20240309-r0)
+#6 2.898 (11/26) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 2.946 (12/26) Installing mpdecimal (4.0.0-r0)
+#6 2.971 (13/26) Installing libpanelw (6.4_p20240420-r0)
+#6 2.975 (14/26) Installing sqlite-libs (3.45.3-r1)
+#6 3.020 (15/26) Installing python3 (3.12.3-r1)
+#6 3.983 (16/26) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 4.444 (17/26) Installing pyc (3.12.3-r1)
+#6 4.449 (18/26) Installing py3-setuptools-pyc (69.5.1-r0)
+#6 4.686 (19/26) Installing py3-pip-pyc (24.0-r2)
+#6 5.076 (20/26) Installing py3-parsing (3.1.2-r1)
+#6 5.087 (21/26) Installing py3-parsing-pyc (3.1.2-r1)
+#6 5.114 (22/26) Installing py3-packaging-pyc (24.0-r1)
+#6 5.124 (23/26) Installing python3-pyc (3.12.3-r1)
+#6 5.127 (24/26) Installing py3-packaging (24.0-r1)
+#6 5.159 (25/26) Installing py3-setuptools (69.5.1-r0)
+#6 5.389 (26/26) Installing py3-pip (24.0-r2)
+#6 6.555 Executing busybox-1.36.1-r29.trigger
+#6 6.588 OK: 77 MiB in 40 packages
+#6 DONE 9.9s
+
+#7 [3/7] ADD ./webapp/requirements.txt /tmp/requirements.txt
+#7 DONE 0.6s
+
+#8 [4/7] RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
+#8 6.092 error: externally-managed-environment
+#8 6.092 
+#8 6.092 × This environment is externally managed
+#8 6.092 ╰─> 
+#8 6.092     The system-wide python installation should be maintained using the system
+#8 6.092     package manager (apk) only.
+#8 6.092     
+#8 6.092     If the package in question is not packaged already (and hence installable via
+#8 6.092     "apk add py3-somepackage"), please consider installing it inside a virtual
+#8 6.092     environment, e.g.:
+#8 6.092     
+#8 6.092     python3 -m venv /path/to/venv
+#8 6.092     . /path/to/venv/bin/activate
+#8 6.092     pip install mypackage
+#8 6.092     
+#8 6.092     To exit the virtual environment, run:
+#8 6.092     
+#8 6.092     deactivate
+#8 6.092     
+#8 6.092     The virtual environment is not deleted, and can be re-entered by re-sourcing
+#8 6.092     the activate file.
+#8 6.092     
+#8 6.092     To automatically manage virtual environments, consider using pipx (from the
+#8 6.092     pipx package).
+#8 6.092 
+#8 6.092 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+#8 6.092 hint: See PEP 668 for the detailed specification.
+#8 ERROR: process "/bin/sh -c pip3 install --no-cache-dir -q -r /tmp/requirements.txt" did not complete successfully: exit code: 1
+------
+ > [4/7] RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt:
+6.092     deactivate
+6.092     
+6.092     The virtual environment is not deleted, and can be re-entered by re-sourcing
+6.092     the activate file.
+6.092     
+6.092     To automatically manage virtual environments, consider using pipx (from the
+6.092     pipx package).
+6.092 
+6.092 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+6.092 hint: See PEP 668 for the detailed specification.
+------
+Dockerfile:9
+--------------------
+   7 |     
+   8 |     # Install dependencies
+   9 | >>> RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
+  10 |     
+  11 |     # Add our code
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip3 install --no-cache-dir -q -r /tmp/requirements.txt" did not complete successfully: exit code: 1
+Duration: 0:22.59

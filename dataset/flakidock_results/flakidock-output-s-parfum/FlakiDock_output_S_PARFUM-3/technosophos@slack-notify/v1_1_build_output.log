@@ -1,0 +1,83 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 271B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:jessie-slim
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 282B done
+#4 DONE 0.0s
+
+#5 [1/3] FROM docker.io/library/debian:jessie-slim@sha256:b9b0e7354098cbd534861d7532c082fb81cdb4d893303ba1f322f52c9e583cd2
+#5 resolve docker.io/library/debian:jessie-slim@sha256:b9b0e7354098cbd534861d7532c082fb81cdb4d893303ba1f322f52c9e583cd2 0.0s done
+#5 sha256:b9b0e7354098cbd534861d7532c082fb81cdb4d893303ba1f322f52c9e583cd2 982B / 982B done
+#5 sha256:5d269f1de9ab8e7fc7ccbb00d2a1bc844626d5ffd236e7278110e5fa93209384 529B / 529B done
+#5 sha256:2045588e2542506b670b8ec0bb38b649a9898d23b72f340e4afec2b510c21293 1.46kB / 1.46kB done
+#5 sha256:3cf8903473922073c9867f146001cff789cddb909166c438b18e268487493cd4 0B / 30.16MB 0.1s
+#5 sha256:3cf8903473922073c9867f146001cff789cddb909166c438b18e268487493cd4 18.87MB / 30.16MB 0.3s
+#5 sha256:3cf8903473922073c9867f146001cff789cddb909166c438b18e268487493cd4 30.16MB / 30.16MB 0.5s done
+#5 extracting sha256:3cf8903473922073c9867f146001cff789cddb909166c438b18e268487493cd4
+#5 extracting sha256:3cf8903473922073c9867f146001cff789cddb909166c438b18e268487493cd4 1.9s done
+#5 DONE 2.6s
+
+#6 [2/3] RUN apt-get update && apt-get install --no-install-recommends -y ca-certificates && rm -rf /var/lib/apt/lists/*;
+#6 0.203 Ign http://deb.debian.org jessie InRelease
+#6 0.211 Ign http://deb.debian.org jessie-updates InRelease
+#6 0.219 Ign http://deb.debian.org jessie Release.gpg
+#6 0.228 Ign http://deb.debian.org jessie-updates Release.gpg
+#6 0.235 Ign http://deb.debian.org jessie Release
+#6 0.244 Ign http://deb.debian.org jessie-updates Release
+#6 0.339 Err http://deb.debian.org jessie/main amd64 Packages
+#6 0.339   404  Not Found
+#6 0.348 Err http://deb.debian.org jessie-updates/main amd64 Packages
+#6 0.348   404  Not Found
+#6 0.354 Ign http://security.debian.org jessie/updates InRelease
+#6 0.508 Ign http://security.debian.org jessie/updates Release.gpg
+#6 0.667 Ign http://security.debian.org jessie/updates Release
+#6 0.825 Err http://security.debian.org jessie/updates/main amd64 Packages
+#6 0.825   
+#6 0.982 Err http://security.debian.org jessie/updates/main amd64 Packages
+#6 0.982   
+#6 1.136 Err http://security.debian.org jessie/updates/main amd64 Packages
+#6 1.136   
+#6 1.295 Err http://security.debian.org jessie/updates/main amd64 Packages
+#6 1.295   
+#6 1.453 Err http://security.debian.org jessie/updates/main amd64 Packages
+#6 1.453   404  Not Found [IP: 151.101.194.132 80]
+#6 1.454 W: Failed to fetch http://deb.debian.org/debian/dists/jessie/main/binary-amd64/Packages  404  Not Found
+#6 1.454 
+#6 1.454 W: Failed to fetch http://deb.debian.org/debian/dists/jessie-updates/main/binary-amd64/Packages  404  Not Found
+#6 1.454 
+#6 1.454 W: Failed to fetch http://security.debian.org/debian-security/dists/jessie/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+#6 1.454 
+#6 1.454 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c apt-get update && apt-get install --no-install-recommends -y ca-certificates && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+------
+ > [2/3] RUN apt-get update && apt-get install --no-install-recommends -y ca-certificates && rm -rf /var/lib/apt/lists/*;:
+1.295   
+1.453 Err http://security.debian.org jessie/updates/main amd64 Packages
+1.453   404  Not Found [IP: 151.101.194.132 80]
+1.454 W: Failed to fetch http://deb.debian.org/debian/dists/jessie/main/binary-amd64/Packages  404  Not Found
+1.454 
+1.454 W: Failed to fetch http://deb.debian.org/debian/dists/jessie-updates/main/binary-amd64/Packages  404  Not Found
+1.454 
+1.454 W: Failed to fetch http://security.debian.org/debian-security/dists/jessie/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+1.454 
+1.454 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:2
+--------------------
+   1 |     FROM debian:jessie-slim
+   2 | >>> RUN apt-get update && apt-get install --no-install-recommends -y ca-certificates && rm -rf /var/lib/apt/lists/*;
+   3 |     
+   4 |     COPY rootfs /
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install --no-install-recommends -y ca-certificates && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+Duration: 0:5.46

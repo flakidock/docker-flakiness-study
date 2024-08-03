@@ -1,0 +1,236 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 764B done
+#2 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/debian:stretch
+#3 DONE 1.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 0.1s done
+#5 sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 1.21kB / 1.21kB done
+#5 sha256:16ee3e11da473f6565ef94a715f1a38b3079e0664913be78869c336a71cb6085 529B / 529B done
+#5 sha256:662c05203bab4c59568d24689fa5c3955439360a35c483178598d226b9a5ad10 1.46kB / 1.46kB done
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 0B / 45.43MB 0.2s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 4.04kB done
+#4 DONE 0.4s
+
+#5 [1/5] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 6.29MB / 45.43MB 0.5s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 9.44MB / 45.43MB 0.7s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 17.83MB / 45.43MB 0.9s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 25.17MB / 45.43MB 1.1s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 29.36MB / 45.43MB 1.2s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 37.75MB / 45.43MB 1.4s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 41.94MB / 45.43MB 1.5s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 1.6s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 2.2s done
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 2.5s done
+#5 DONE 5.6s
+
+#6 [2/5] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+#6 DONE 2.7s
+
+#7 [3/5] RUN     apt-get update &&     apt-get install --no-install-recommends -y mldonkey-server &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/log/mldonkey &&     rm /var/lib/mldonkey/*
+#7 0.938 Ign:1 http://archive.debian.org/debian stretch InRelease
+#7 0.940 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#7 0.952 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#7 0.957 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#7 1.063 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
+#7 1.174 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [7080 kB]
+#7 2.462 Fetched 8042 kB in 1s (4788 kB/s)
+#7 2.462 Reading package lists...
+#7 3.174 Reading package lists...
+#7 3.870 Building dependency tree...
+#7 3.968 Reading state information...
+#7 4.049 The following additional packages will be installed:
+#7 4.049   fontconfig-config fonts-dejavu-core libbsd0 libexpat1 libfontconfig1
+#7 4.049   libfreetype6 libgd3 libjbig0 libjpeg62-turbo libpng16-16 libtiff5 libwebp6
+#7 4.049   libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxpm4 mime-support ucf
+#7 4.050 Suggested packages:
+#7 4.050   libgd-tools
+#7 4.050 Recommended packages:
+#7 4.050   bzip2 file xz-utils
+#7 4.162 The following NEW packages will be installed:
+#7 4.162   fontconfig-config fonts-dejavu-core libbsd0 libexpat1 libfontconfig1
+#7 4.162   libfreetype6 libgd3 libjbig0 libjpeg62-turbo libpng16-16 libtiff5 libwebp6
+#7 4.162   libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxpm4 mime-support
+#7 4.162   mldonkey-server ucf
+#7 4.480 0 upgraded, 21 newly installed, 0 to remove and 2 not upgraded.
+#7 4.480 Need to get 7592 kB of archives.
+#7 4.480 After this operation, 25.5 MB of additional disk space will be used.
+#7 4.480 Get:1 http://archive.debian.org/debian stretch/main amd64 libxau6 amd64 1:1.0.8-1 [20.7 kB]
+#7 4.490 Get:2 http://archive.debian.org/debian stretch/main amd64 mime-support all 3.60 [36.7 kB]
+#7 4.802 Get:3 http://archive.debian.org/debian stretch/main amd64 ucf all 3.0036 [70.2 kB]
+#7 5.155 Get:4 http://archive.debian.org/debian stretch/main amd64 fonts-dejavu-core all 2.37-1 [1068 kB]
+#7 5.829 Get:5 http://archive.debian.org/debian stretch/main amd64 fontconfig-config all 2.11.0-6.7 [271 kB]
+#7 6.437 Get:6 http://archive.debian.org/debian-security stretch/updates/main amd64 libbsd0 amd64 0.8.3-1+deb9u1 [82.9 kB]
+#7 6.501 Get:7 http://archive.debian.org/debian-security stretch/updates/main amd64 libexpat1 amd64 2.2.0-2+deb9u5 [84.7 kB]
+#7 6.803 Get:8 http://archive.debian.org/debian stretch/main amd64 libpng16-16 amd64 1.6.28-1+deb9u1 [280 kB]
+#7 7.420 Get:9 http://archive.debian.org/debian-security stretch/updates/main amd64 libfreetype6 amd64 2.6.3-3.2+deb9u2 [438 kB]
+#7 8.088 Get:10 http://archive.debian.org/debian stretch/main amd64 libfontconfig1 amd64 2.11.0-6.7+b1 [331 kB]
+#7 8.707 Get:11 http://archive.debian.org/debian-security stretch/updates/main amd64 libjpeg62-turbo amd64 1:1.5.1-2+deb9u2 [134 kB]
+#7 9.186 Get:12 http://archive.debian.org/debian stretch/main amd64 libjbig0 amd64 2.1-3.1+b2 [31.0 kB]
+#7 9.511 Get:13 http://archive.debian.org/debian-security stretch/updates/main amd64 libtiff5 amd64 4.0.8-2+deb9u8 [239 kB]
+#7 9.900 Get:14 http://archive.debian.org/debian-security stretch/updates/main amd64 libwebp6 amd64 0.5.2-1+deb9u1 [235 kB]
+#7 10.43 Get:15 http://archive.debian.org/debian stretch/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+#7 10.74 Get:16 http://archive.debian.org/debian stretch/main amd64 libxcb1 amd64 1.12-1 [133 kB]
+#7 11.22 Get:17 http://archive.debian.org/debian-security stretch/updates/main amd64 libx11-data all 2:1.6.4-3+deb9u4 [291 kB]
+#7 11.68 Get:18 http://archive.debian.org/debian-security stretch/updates/main amd64 libx11-6 amd64 2:1.6.4-3+deb9u4 [748 kB]
+#7 11.83 Get:19 http://archive.debian.org/debian stretch/main amd64 libxpm4 amd64 1:3.5.12-1 [49.1 kB]
+#7 12.13 Get:20 http://archive.debian.org/debian stretch/main amd64 libgd3 amd64 2.2.4-2+deb9u5 [132 kB]
+#7 12.62 Get:21 http://archive.debian.org/debian stretch/main amd64 mldonkey-server amd64 3.1.5-3.1 [2891 kB]
+#7 13.60 debconf: delaying package configuration, since apt-utils is not installed
+#7 13.62 Fetched 7592 kB in 9s (823 kB/s)
+#7 13.74 Selecting previously unselected package libxau6:amd64.
+#7 13.74 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6502 files and directories currently installed.)
+#7 13.74 Preparing to unpack .../00-libxau6_1%3a1.0.8-1_amd64.deb ...
+#7 13.77 Unpacking libxau6:amd64 (1:1.0.8-1) ...
+#7 14.01 Selecting previously unselected package mime-support.
+#7 14.01 Preparing to unpack .../01-mime-support_3.60_all.deb ...
+#7 14.04 Unpacking mime-support (3.60) ...
+#7 14.36 Selecting previously unselected package ucf.
+#7 14.36 Preparing to unpack .../02-ucf_3.0036_all.deb ...
+#7 14.38 Moving old data out of the way
+#7 14.38 Unpacking ucf (3.0036) ...
+#7 14.56 Selecting previously unselected package fonts-dejavu-core.
+#7 14.56 Preparing to unpack .../03-fonts-dejavu-core_2.37-1_all.deb ...
+#7 14.58 Unpacking fonts-dejavu-core (2.37-1) ...
+#7 14.97 Selecting previously unselected package fontconfig-config.
+#7 14.97 Preparing to unpack .../04-fontconfig-config_2.11.0-6.7_all.deb ...
+#7 15.11 Unpacking fontconfig-config (2.11.0-6.7) ...
+#7 15.42 Selecting previously unselected package libbsd0:amd64.
+#7 15.42 Preparing to unpack .../05-libbsd0_0.8.3-1+deb9u1_amd64.deb ...
+#7 15.47 Unpacking libbsd0:amd64 (0.8.3-1+deb9u1) ...
+#7 15.70 Selecting previously unselected package libexpat1:amd64.
+#7 15.70 Preparing to unpack .../06-libexpat1_2.2.0-2+deb9u5_amd64.deb ...
+#7 15.72 Unpacking libexpat1:amd64 (2.2.0-2+deb9u5) ...
+#7 15.93 Selecting previously unselected package libpng16-16:amd64.
+#7 15.93 Preparing to unpack .../07-libpng16-16_1.6.28-1+deb9u1_amd64.deb ...
+#7 15.96 Unpacking libpng16-16:amd64 (1.6.28-1+deb9u1) ...
+#7 16.19 Selecting previously unselected package libfreetype6:amd64.
+#7 16.19 Preparing to unpack .../08-libfreetype6_2.6.3-3.2+deb9u2_amd64.deb ...
+#7 16.23 Unpacking libfreetype6:amd64 (2.6.3-3.2+deb9u2) ...
+#7 16.47 Selecting previously unselected package libfontconfig1:amd64.
+#7 16.47 Preparing to unpack .../09-libfontconfig1_2.11.0-6.7+b1_amd64.deb ...
+#7 16.50 Unpacking libfontconfig1:amd64 (2.11.0-6.7+b1) ...
+#7 16.80 Selecting previously unselected package libjpeg62-turbo:amd64.
+#7 16.80 Preparing to unpack .../10-libjpeg62-turbo_1%3a1.5.1-2+deb9u2_amd64.deb ...
+#7 16.83 Unpacking libjpeg62-turbo:amd64 (1:1.5.1-2+deb9u2) ...
+#7 17.07 Selecting previously unselected package libjbig0:amd64.
+#7 17.07 Preparing to unpack .../11-libjbig0_2.1-3.1+b2_amd64.deb ...
+#7 17.10 Unpacking libjbig0:amd64 (2.1-3.1+b2) ...
+#7 17.33 Selecting previously unselected package libtiff5:amd64.
+#7 17.33 Preparing to unpack .../12-libtiff5_4.0.8-2+deb9u8_amd64.deb ...
+#7 17.36 Unpacking libtiff5:amd64 (4.0.8-2+deb9u8) ...
+#7 17.60 Selecting previously unselected package libwebp6:amd64.
+#7 17.60 Preparing to unpack .../13-libwebp6_0.5.2-1+deb9u1_amd64.deb ...
+#7 17.62 Unpacking libwebp6:amd64 (0.5.2-1+deb9u1) ...
+#7 17.85 Selecting previously unselected package libxdmcp6:amd64.
+#7 17.85 Preparing to unpack .../14-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+#7 17.88 Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+#7 18.07 Selecting previously unselected package libxcb1:amd64.
+#7 18.07 Preparing to unpack .../15-libxcb1_1.12-1_amd64.deb ...
+#7 18.11 Unpacking libxcb1:amd64 (1.12-1) ...
+#7 18.28 Selecting previously unselected package libx11-data.
+#7 18.28 Preparing to unpack .../16-libx11-data_2%3a1.6.4-3+deb9u4_all.deb ...
+#7 18.30 Unpacking libx11-data (2:1.6.4-3+deb9u4) ...
+#7 18.65 Selecting previously unselected package libx11-6:amd64.
+#7 18.65 Preparing to unpack .../17-libx11-6_2%3a1.6.4-3+deb9u4_amd64.deb ...
+#7 18.68 Unpacking libx11-6:amd64 (2:1.6.4-3+deb9u4) ...
+#7 18.99 Selecting previously unselected package libxpm4:amd64.
+#7 18.99 Preparing to unpack .../18-libxpm4_1%3a3.5.12-1_amd64.deb ...
+#7 19.02 Unpacking libxpm4:amd64 (1:3.5.12-1) ...
+#7 19.22 Selecting previously unselected package libgd3:amd64.
+#7 19.22 Preparing to unpack .../19-libgd3_2.2.4-2+deb9u5_amd64.deb ...
+#7 19.24 Unpacking libgd3:amd64 (2.2.4-2+deb9u5) ...
+#7 19.54 Selecting previously unselected package mldonkey-server.
+#7 19.54 Preparing to unpack .../20-mldonkey-server_3.1.5-3.1_amd64.deb ...
+#7 19.57 Unpacking mldonkey-server (3.1.5-3.1) ...
+#7 20.38 Setting up libexpat1:amd64 (2.2.0-2+deb9u5) ...
+#7 20.47 Setting up libjpeg62-turbo:amd64 (1:1.5.1-2+deb9u2) ...
+#7 20.54 Setting up mime-support (3.60) ...
+#7 20.69 Setting up libpng16-16:amd64 (1.6.28-1+deb9u1) ...
+#7 20.77 Setting up libjbig0:amd64 (2.1-3.1+b2) ...
+#7 20.85 Setting up fonts-dejavu-core (2.37-1) ...
+#7 21.25 Setting up libtiff5:amd64 (4.0.8-2+deb9u8) ...
+#7 21.33 Setting up libbsd0:amd64 (0.8.3-1+deb9u1) ...
+#7 21.40 Setting up ucf (3.0036) ...
+#7 21.57 debconf: unable to initialize frontend: Dialog
+#7 21.57 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 21.57 debconf: falling back to frontend: Readline
+#7 21.57 debconf: unable to initialize frontend: Readline
+#7 21.57 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.24.1 /usr/local/share/perl/5.24.1 /usr/lib/x86_64-linux-gnu/perl5/5.24 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.24 /usr/share/perl/5.24 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#7 21.57 debconf: falling back to frontend: Teletype
+#7 21.67 Setting up libfreetype6:amd64 (2.6.3-3.2+deb9u2) ...
+#7 21.74 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#7 21.82 Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+#7 21.93 Setting up libx11-data (2:1.6.4-3+deb9u4) ...
+#7 22.01 Setting up libxau6:amd64 (1:1.0.8-1) ...
+#7 22.12 Setting up libwebp6:amd64 (0.5.2-1+deb9u1) ...
+#7 22.22 Setting up fontconfig-config (2.11.0-6.7) ...
+#7 22.48 debconf: unable to initialize frontend: Dialog
+#7 22.48 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 22.48 debconf: falling back to frontend: Readline
+#7 22.48 debconf: unable to initialize frontend: Readline
+#7 22.48 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.24.1 /usr/local/share/perl/5.24.1 /usr/lib/x86_64-linux-gnu/perl5/5.24 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.24 /usr/share/perl/5.24 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#7 22.48 debconf: falling back to frontend: Teletype
+#7 22.72 Setting up libxcb1:amd64 (1.12-1) ...
+#7 22.79 Setting up libfontconfig1:amd64 (2.11.0-6.7+b1) ...
+#7 22.87 Setting up libx11-6:amd64 (2:1.6.4-3+deb9u4) ...
+#7 22.95 Setting up libxpm4:amd64 (1:3.5.12-1) ...
+#7 23.02 Setting up libgd3:amd64 (2.2.4-2+deb9u5) ...
+#7 23.10 Setting up mldonkey-server (3.1.5-3.1) ...
+#7 23.30 debconf: unable to initialize frontend: Dialog
+#7 23.30 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 23.30 debconf: falling back to frontend: Readline
+#7 23.30 debconf: unable to initialize frontend: Readline
+#7 23.30 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.24.1 /usr/local/share/perl/5.24.1 /usr/lib/x86_64-linux-gnu/perl5/5.24 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.24 /usr/share/perl/5.24 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#7 23.30 debconf: falling back to frontend: Teletype
+#7 23.31 Configuring mldonkey-server
+#7 23.31 ---------------------------
+#7 23.31 
+#7 23.31 If enabled, each time your machine starts, the MLDonkey server will be started.
+#7 23.31 
+#7 23.31 Otherwise, you will need to launch MLDonkey yourself each time you want to use
+#7 23.31 it.
+#7 23.31 
+#7 23.31 Launch MLDonkey at startup? [yes/no] 
+#7 23.31 Use of uninitialized value $_[1] in join or string at /usr/share/perl5/Debconf/DbDriver/Stack.pm line 111.
+#7 23.88 
+#7 23.88 Creating config file /etc/default/mldonkey-server with new version
+#7 23.90 update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+#7 23.91 invoke-rc.d: could not determine current runlevel
+#7 23.91 invoke-rc.d: policy-rc.d denied execution of start.
+#7 23.91 Use of uninitialized value $val in substitution (s///) at /usr/share/perl5/Debconf/Format/822.pm line 83, <GEN6> line 3.
+#7 23.91 Use of uninitialized value $val in concatenation (.) or string at /usr/share/perl5/Debconf/Format/822.pm line 84, <GEN6> line 3.
+#7 24.00 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#7 DONE 24.4s
+
+#8 [4/5] COPY start.sh /start.sh
+#8 DONE 0.5s
+
+#9 [5/5] RUN chmod -v +x /start.sh
+#9 0.703 mode of '/start.sh' changed from 0664 (rw-rw-r--) to 0775 (rwxrwxr-x)
+#9 DONE 0.9s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.8s done
+#10 writing image sha256:09e3a2e63299f474bc30c486e1f5709018c21da91ff444aaad7a03e1a7761490 0.0s done
+#10 naming to docker.io/library/image_name_v1_1 0.0s done
+#10 DONE 0.8s
+Duration: 0:37.36

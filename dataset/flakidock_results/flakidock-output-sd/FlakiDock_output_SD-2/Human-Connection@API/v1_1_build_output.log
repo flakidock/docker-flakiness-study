@@ -1,0 +1,18 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 1.54kB done
+#1 DONE 0.5s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 88B done
+#2 DONE 0.7s
+v1_Dockerfile:1
+--------------------
+   1 | >>> The build error indicates that the `proxy-agent@6.3.1` module requires a Node.js version of `>= 14`, but the Dockerfile is using `node:10-alpine`, which is incompatible. To fix this, we need to update the base image to a compatible Node.js version.
+   2 |     
+   3 |     Here is the repaired Dockerfile:
+--------------------
+ERROR: failed to solve: dockerfile parse error on line 1: unknown instruction: The
+Duration: 0:2.32

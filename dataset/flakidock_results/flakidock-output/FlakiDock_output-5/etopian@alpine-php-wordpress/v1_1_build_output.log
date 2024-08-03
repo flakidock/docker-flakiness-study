@@ -1,0 +1,200 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 2.25kB done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.9s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [ 1/10] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 8.49kB 0.0s done
+#4 DONE 0.4s
+
+#5 [ 1/10] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.2s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.28MB / 3.62MB 0.3s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.8s done
+#5 DONE 1.9s
+
+#6 [ 2/10] RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories    && apk update     && apk add --no-cache     bash     less     vim     nginx     ca-certificates     php81-fpm     php81-json     php81-zlib     php81-xml     php81-pdo     php81-phar     php81-openssl     php81-pdo_mysql     php81-mysqli     php81-session     php81-gd     php81-iconv     php81-curl     php81-opcache     php81-ctype     php81-apcu     php81-intl     php81-bcmath     php81-mbstring     php81-dom     php81-xmlreader     php81-simplexml     mysql-client     openssh-client     git     curl     rsync     musl     && apk --update --no-cache add tar
+#6 1.352 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 1.764 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 2.423 fetch http://dl-4.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#6 2.591 WARNING: Permanently redirected to https://dl-4.alpinelinux.org:443/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#6 4.249 v3.20.2-42-g5b0740b11a1 [https://dl-cdn.alpinelinux.org/alpine/v3.20/main]
+#6 4.249 v3.20.2-43-g4fdd3a681b2 [https://dl-cdn.alpinelinux.org/alpine/v3.20/community]
+#6 4.249 v20240606-3728-g2f182665ac7 [http://dl-4.alpinelinux.org/alpine/edge/testing]
+#6 4.249 OK: 31685 distinct packages available
+#6 4.456 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 4.792 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 5.135 fetch http://dl-4.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#6 5.293 WARNING: Permanently redirected to https://dl-4.alpinelinux.org:443/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#6 7.216 (1/93) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 7.267 (2/93) Installing libncursesw (6.4_p20240420-r0)
+#6 7.283 (3/93) Installing readline (8.2.10-r0)
+#6 7.299 (4/93) Installing bash (5.2.26-r0)
+#6 7.334 Executing bash-5.2.26-r0.post-install
+#6 7.342 (5/93) Installing ca-certificates (20240705-r0)
+#6 7.423 (6/93) Installing brotli-libs (1.1.0-r2)
+#6 7.471 (7/93) Installing c-ares (1.28.1-r0)
+#6 7.486 (8/93) Installing libunistring (1.2-r0)
+#6 7.558 (9/93) Installing libidn2 (2.3.7-r0)
+#6 7.573 (10/93) Installing nghttp2-libs (1.62.1-r0)
+#6 7.599 (11/93) Installing libpsl (0.21.5-r1)
+#6 7.602 (12/93) Installing zstd-libs (1.5.6-r0)
+#6 7.626 (13/93) Installing libcurl (8.9.0-r0)
+#6 7.649 (14/93) Installing curl (8.9.0-r0)
+#6 7.664 (15/93) Installing libexpat (2.6.2-r0)
+#6 7.678 (16/93) Installing pcre2 (10.43-r0)
+#6 7.701 (17/93) Installing git (2.45.2-r0)
+#6 7.974 (18/93) Installing git-init-template (2.45.2-r0)
+#6 7.988 (19/93) Installing less (643-r2)
+#6 8.034 (20/93) Installing mariadb-common (10.11.8-r0)
+#6 8.112 (21/93) Installing libbz2 (1.0.8-r6)
+#6 8.115 (22/93) Installing perl (5.38.2-r0)
+#6 9.935 (23/93) Installing perl-error (0.17029-r2)
+#6 9.941 (24/93) Installing perl-git (2.45.2-r0)
+#6 9.955 (25/93) Installing git-perl (2.45.2-r0)
+#6 9.960 (26/93) Installing libgcc (13.2.1_git20240309-r0)
+#6 9.966 (27/93) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 10.03 (28/93) Installing mariadb-client (10.11.8-r0)
+#6 11.30 (29/93) Installing mysql-client (10.11.8-r0)
+#6 11.45 (30/93) Installing pcre (8.45-r3)
+#6 11.47 (31/93) Installing nginx (1.26.1-r0)
+#6 11.55 Executing nginx-1.26.1-r0.pre-install
+#6 11.82 Executing nginx-1.26.1-r0.post-install
+#6 11.87 (32/93) Installing openssh-keygen (9.7_p1-r4)
+#6 11.91 (33/93) Installing libedit (20240517.3.1-r0)
+#6 11.93 (34/93) Installing openssh-client-common (9.7_p1-r4)
+#6 12.08 (35/93) Installing openssh-client-default (9.7_p1-r4)
+#6 12.12 (36/93) Installing php81-common (8.1.29-r0)
+#6 12.75 (37/93) Installing php81-pecl-apcu (5.1.23-r2)
+#6 13.44 (38/93) Installing php81-bcmath (8.1.29-r0)
+#6 14.10 (39/93) Installing php81-ctype (8.1.29-r0)
+#6 14.66 (40/93) Installing php81-curl (8.1.29-r0)
+#6 15.29 (41/93) Installing xz-libs (5.6.1-r3)
+#6 15.30 (42/93) Installing libxml2 (2.12.7-r0)
+#6 15.36 (43/93) Installing php81-dom (8.1.29-r0)
+#6 16.10 (44/93) Installing libacl (2.3.2-r0)
+#6 16.35 (45/93) Installing argon2-libs (20190702-r5)
+#6 16.53 (46/93) Installing php81-fpm (8.1.29-r0)
+#6 17.59 (47/93) Installing libxau (1.0.11-r4)
+#6 17.61 (48/93) Installing libmd (1.1.0-r0)
+#6 17.64 (49/93) Installing libbsd (0.12.2-r0)
+#6 17.66 (50/93) Installing libxdmcp (1.1.5-r1)
+#6 17.66 (51/93) Installing libxcb (1.16.1-r0)
+#6 17.74 (52/93) Installing libx11 (1.8.9-r1)
+#6 17.94 (53/93) Installing libxext (1.3.6-r2)
+#6 17.97 (54/93) Installing libice (1.1.1-r6)
+#6 17.99 (55/93) Installing libuuid (2.40.1-r1)
+#6 18.01 (56/93) Installing libsm (1.2.4-r4)
+#6 18.02 (57/93) Installing libxt (1.3.0-r5)
+#6 18.04 (58/93) Installing libxpm (3.5.17-r0)
+#6 18.68 (59/93) Installing aom-libs (3.9.0-r0)
+#6 20.19 (60/93) Installing libdav1d (1.4.2-r0)
+#6 20.24 (61/93) Installing libsharpyuv (1.3.2-r0)
+#6 20.26 (62/93) Installing libavif (1.0.4-r0)
+#6 20.44 (63/93) Installing libpng (1.6.43-r0)
+#6 20.45 (64/93) Installing freetype (2.13.2-r0)
+#6 20.49 (65/93) Installing libjpeg-turbo (3.0.3-r0)
+#6 20.51 (66/93) Installing libwebp (1.3.2-r0)
+#6 20.54 (67/93) Installing php81-gd (8.1.29-r0)
+#6 21.34 (68/93) Installing php81-iconv (8.1.29-r0)
+#6 21.95 (69/93) Installing icu-data-en (74.2-r0)
+#6 22.00 Executing icu-data-en-74.2-r0.post-install
+#6 22.02 *
+#6 22.02 * If you need ICU with non-English locales and legacy charset support, install
+#6 22.02 * package icu-data-full.
+#6 22.02 *
+#6 22.02 (70/93) Installing icu-libs (74.2-r0)
+#6 22.18 (71/93) Installing php81-intl (8.1.29-r0)
+#6 22.95 (72/93) Installing oniguruma (6.9.9-r0)
+#6 22.98 (73/93) Installing php81-mbstring (8.1.29-r0)
+#6 23.92 (74/93) Installing php81-openssl (8.1.29-r0)
+#6 24.63 (75/93) Installing php81-mysqlnd (8.1.29-r0)
+#6 25.37 (76/93) Installing php81-mysqli (8.1.29-r0)
+#6 26.06 (77/93) Installing php81-opcache (8.1.29-r0)
+#6 26.93 (78/93) Installing php81-pdo (8.1.29-r0)
+#6 27.61 (79/93) Installing php81-pdo_mysql (8.1.29-r0)
+#6 28.24 (80/93) Installing php81 (8.1.29-r0)
+#6 29.33 (81/93) Installing php81-phar (8.1.29-r0)
+#6 30.12 (82/93) Installing php81-session (8.1.29-r0)
+#6 30.76 (83/93) Installing php81-simplexml (8.1.29-r0)
+#6 31.40 (84/93) Installing php81-xml (8.1.29-r0)
+#6 32.05 (85/93) Installing php81-xmlreader (8.1.29-r0)
+#6 32.67 (86/93) Installing lz4-libs (1.9.4-r5)
+#6 32.69 (87/93) Installing popt (1.19-r3)
+#6 32.72 (88/93) Installing libxxhash (0.8.2-r2)
+#6 32.73 (89/93) Installing rsync (3.3.0-r0)
+#6 32.75 (90/93) Installing vim-common (9.1.0414-r0)
+#6 34.13 (91/93) Installing xxd (9.1.0414-r0)
+#6 34.14 (92/93) Installing vim (9.1.0414-r0)
+#6 34.23 (93/93) Installing nginx-vim (1.26.1-r0)
+#6 34.69 Executing busybox-1.36.1-r29.trigger
+#6 34.71 Executing ca-certificates-20240705-r0.trigger
+#6 34.93 OK: 189 MiB in 107 packages
+#6 35.40 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 35.94 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 36.75 fetch http://dl-4.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#6 36.89 WARNING: Permanently redirected to https://dl-4.alpinelinux.org:443/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#6 38.22 (1/1) Installing tar (1.35-r2)
+#6 38.26 Executing busybox-1.36.1-r29.trigger
+#6 38.29 OK: 189 MiB in 108 packages
+#6 DONE 41.4s
+
+#7 [ 3/10] RUN rm -rf /var/cache/apk/*
+#7 DONE 1.9s
+
+#8 [ 4/10] RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php81/php.ini &&     sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/DATA:\/bin\/bash/g" /etc/passwd &&     sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/DATA:\/bin\/bash/g" /etc/passwd-
+#8 DONE 2.2s
+
+#9 [ 5/10] ADD files/nginx.conf /etc/nginx/
+#9 DONE 0.5s
+
+#10 [ 6/10] ADD files/php-fpm.conf /etc/php81/
+#10 DONE 0.4s
+
+#11 [ 7/10] ADD files/run.sh /
+#11 DONE 0.4s
+
+#12 [ 8/10] ADD files/wp-config-devoply.php /usr/bin/wp-config-devoply
+#12 DONE 0.4s
+
+#13 [ 9/10] RUN chmod +x /run.sh && chmod +x /usr/bin/wp-config-devoply
+#13 DONE 1.6s
+
+#14 [10/10] RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp-cli && chown nginx:nginx /usr/bin/wp-cli
+#14 1.752   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#14 1.752                                  Dload  Upload   Total   Spent    Left  Speed
+#14 1.752   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 6831k  100 6831k    0     0  8746k      0 --:--:-- --:--:-- --:--:-- 8780k
+#14 DONE 3.0s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 4.8s done
+#15 writing image sha256:f181fe42025c9470e64b90978be768e932796aa5dafbe3edfd8f25e1d45abfb6
+#15 writing image sha256:f181fe42025c9470e64b90978be768e932796aa5dafbe3edfd8f25e1d45abfb6 0.0s done
+#15 naming to docker.io/library/image_name_v1_1 0.0s done
+#15 DONE 4.9s
+Duration: 1:1.57

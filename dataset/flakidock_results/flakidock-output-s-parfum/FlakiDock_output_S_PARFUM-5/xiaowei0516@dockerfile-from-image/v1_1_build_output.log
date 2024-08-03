@@ -1,0 +1,171 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 460B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:latest
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 1.60kB done
+#4 DONE 0.0s
+
+#5 [1/3] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.0s done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.2s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s done
+#5 DONE 0.4s
+
+#6 [2/3] RUN apk add --no-cache --update python3 wget      && wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py      && apk del wget      && python3 get-pip.py      && rm get-pip.py      && pip3 install --no-cache-dir -U docker-py pip      && yes | pip uninstall pip
+#6 0.175 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.278 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 0.564 (1/21) Installing libbz2 (1.0.8-r6)
+#6 0.573 (2/21) Installing libexpat (2.6.2-r0)
+#6 0.586 (3/21) Installing libffi (3.4.6-r0)
+#6 0.593 (4/21) Installing gdbm (1.23-r1)
+#6 0.602 (5/21) Installing xz-libs (5.6.1-r3)
+#6 0.612 (6/21) Installing libgcc (13.2.1_git20240309-r0)
+#6 0.623 (7/21) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 0.656 (8/21) Installing mpdecimal (4.0.0-r0)
+#6 0.669 (9/21) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 0.679 (10/21) Installing libncursesw (6.4_p20240420-r0)
+#6 0.691 (11/21) Installing libpanelw (6.4_p20240420-r0)
+#6 0.700 (12/21) Installing readline (8.2.10-r0)
+#6 0.713 (13/21) Installing sqlite-libs (3.45.3-r1)
+#6 0.737 (14/21) Installing python3 (3.12.3-r1)
+#6 0.967 (15/21) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 1.110 (16/21) Installing pyc (3.12.3-r1)
+#6 1.119 (17/21) Installing python3-pyc (3.12.3-r1)
+#6 1.129 (18/21) Installing libunistring (1.2-r0)
+#6 1.151 (19/21) Installing libidn2 (2.3.7-r0)
+#6 1.163 (20/21) Installing pcre2 (10.43-r0)
+#6 1.177 (21/21) Installing wget (1.24.5-r0)
+#6 1.192 Executing busybox-1.36.1-r29.trigger
+#6 1.199 OK: 53 MiB in 35 packages
+#6 1.267 --2024-08-01 08:15:32--  https://bootstrap.pypa.io/get-pip.py
+#6 1.281 Resolving bootstrap.pypa.io (bootstrap.pypa.io)... 146.75.40.175, 2a04:4e42:7a::175
+#6 1.291 Connecting to bootstrap.pypa.io (bootstrap.pypa.io)|146.75.40.175|:443... connected.
+#6 1.319 HTTP request sent, awaiting response... 200 OK
+#6 1.331 Length: 2266755 (2.2M) [text/x-python]
+#6 1.331 Saving to: 'get-pip.py'
+#6 1.332 
+#6 1.332      0K .......... .......... .......... .......... ..........  2% 2.52M 1s
+#6 1.351     50K .......... .......... .......... .......... ..........  4% 23.5M 0s
+#6 1.353    100K .......... .......... .......... .......... ..........  6% 6.62M 0s
+#6 1.360    150K .......... .......... .......... .......... ..........  9% 40.7M 0s
+#6 1.361    200K .......... .......... .......... .......... .......... 11% 8.63M 0s
+#6 1.368    250K .......... .......... .......... .......... .......... 13% 35.3M 0s
+#6 1.369    300K .......... .......... .......... .......... .......... 15% 30.8M 0s
+#6 1.370    350K .......... .......... .......... .......... .......... 18% 64.2M 0s
+#6 1.371    400K .......... .......... .......... .......... .......... 20% 63.2M 0s
+#6 1.372    450K .......... .......... .......... .......... .......... 22% 41.3M 0s
+#6 1.373    500K .......... .......... .......... .......... .......... 24% 14.5M 0s
+#6 1.376    550K .......... .......... .......... .......... .......... 27% 54.5M 0s
+#6 1.377    600K .......... .......... .......... .......... .......... 29% 29.5M 0s
+#6 1.380    650K .......... .......... .......... .......... .......... 31% 51.8M 0s
+#6 1.380    700K .......... .......... .......... .......... .......... 33%  211M 0s
+#6 1.380    750K .......... .......... .......... .......... .......... 36% 56.4M 0s
+#6 1.381    800K .......... .......... .......... .......... .......... 38%  278M 0s
+#6 1.381    850K .......... .......... .......... .......... .......... 40%  185M 0s
+#6 1.381    900K .......... .......... .......... .......... .......... 42%  275M 0s
+#6 1.381    950K .......... .......... .......... .......... .......... 45%  238M 0s
+#6 1.381   1000K .......... .......... .......... .......... .......... 47% 16.7M 0s
+#6 1.384   1050K .......... .......... .......... .......... .......... 49%  135M 0s
+#6 1.385   1100K .......... .......... .......... .......... .......... 51%  160M 0s
+#6 1.385   1150K .......... .......... .......... .......... .......... 54% 28.3M 0s
+#6 1.387   1200K .......... .......... .......... .......... .......... 56%  139M 0s
+#6 1.387   1250K .......... .......... .......... .......... .......... 58%  141M 0s
+#6 1.388   1300K .......... .......... .......... .......... .......... 60% 85.1M 0s
+#6 1.388   1350K .......... .......... .......... .......... .......... 63% 57.6M 0s
+#6 1.389   1400K .......... .......... .......... .......... .......... 65%  130M 0s
+#6 1.389   1450K .......... .......... .......... .......... .......... 67%  139M 0s
+#6 1.390   1500K .......... .......... .......... .......... .......... 70%  121M 0s
+#6 1.390   1550K .......... .......... .......... .......... .......... 72%  180M 0s
+#6 1.390   1600K .......... .......... .......... .......... .......... 74%  123M 0s
+#6 1.391   1650K .......... .......... .......... .......... .......... 76%  115M 0s
+#6 1.391   1700K .......... .......... .......... .......... .......... 79%  143M 0s
+#6 1.392   1750K .......... .......... .......... .......... .......... 81%  105M 0s
+#6 1.392   1800K .......... .......... .......... .......... .......... 83%  140M 0s
+#6 1.392   1850K .......... .......... .......... .......... .......... 85%  133M 0s
+#6 1.393   1900K .......... .......... .......... .......... .......... 88%  256M 0s
+#6 1.393   1950K .......... .......... .......... .......... .......... 90%  119M 0s
+#6 1.393   2000K .......... .......... .......... .......... .......... 92%  149M 0s
+#6 1.394   2050K .......... .......... .......... .......... .......... 94%  215M 0s
+#6 1.394   2100K .......... .......... .......... .......... .......... 97%  164M 0s
+#6 1.394   2150K .......... .......... .......... .......... .......... 99% 34.1M 0s
+#6 1.397   2200K .......... ...                                        100%  206M=0.06s
+#6 1.397 
+#6 1.397 2024-08-01 08:15:32 (33.6 MB/s) - 'get-pip.py' saved [2266755/2266755]
+#6 1.397 
+#6 1.402 (1/4) Purging wget (1.24.5-r0)
+#6 1.402 WARNING: opening from cache https://dl-cdn.alpinelinux.org/alpine/v3.20/main: No such file or directory
+#6 1.402 WARNING: opening from cache https://dl-cdn.alpinelinux.org/alpine/v3.20/community: No such file or directory
+#6 1.402 (2/4) Purging libidn2 (2.3.7-r0)
+#6 1.402 (3/4) Purging libunistring (1.2-r0)
+#6 1.402 (4/4) Purging pcre2 (10.43-r0)
+#6 1.402 Executing busybox-1.36.1-r29.trigger
+#6 1.406 OK: 50 MiB in 31 packages
+#6 3.432 error: externally-managed-environment
+#6 3.432 
+#6 3.432 × This environment is externally managed
+#6 3.432 ╰─> 
+#6 3.432     The system-wide python installation should be maintained using the system
+#6 3.432     package manager (apk) only.
+#6 3.432     
+#6 3.432     If the package in question is not packaged already (and hence installable via
+#6 3.432     "apk add py3-somepackage"), please consider installing it inside a virtual
+#6 3.432     environment, e.g.:
+#6 3.432     
+#6 3.432     python3 -m venv /path/to/venv
+#6 3.432     . /path/to/venv/bin/activate
+#6 3.432     pip install mypackage
+#6 3.432     
+#6 3.432     To exit the virtual environment, run:
+#6 3.432     
+#6 3.432     deactivate
+#6 3.432     
+#6 3.432     The virtual environment is not deleted, and can be re-entered by re-sourcing
+#6 3.432     the activate file.
+#6 3.432     
+#6 3.432     To automatically manage virtual environments, consider using pipx (from the
+#6 3.432     pipx package).
+#6 3.432 
+#6 3.432 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+#6 3.432 hint: See PEP 668 for the detailed specification.
+#6 ERROR: process "/bin/sh -c apk add --no-cache --update python3 wget      && wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py      && apk del wget      && python3 get-pip.py      && rm get-pip.py      && pip3 install --no-cache-dir -U docker-py pip      && yes | pip uninstall pip" did not complete successfully: exit code: 1
+------
+ > [2/3] RUN apk add --no-cache --update python3 wget      && wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py      && apk del wget      && python3 get-pip.py      && rm get-pip.py      && pip3 install --no-cache-dir -U docker-py pip      && yes | pip uninstall pip:
+3.432     deactivate
+3.432     
+3.432     The virtual environment is not deleted, and can be re-entered by re-sourcing
+3.432     the activate file.
+3.432     
+3.432     To automatically manage virtual environments, consider using pipx (from the
+3.432     pipx package).
+3.432 
+3.432 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+3.432 hint: See PEP 668 for the detailed specification.
+------
+v1_Dockerfile:3
+--------------------
+   2 |     
+   3 | >>> RUN apk add --no-cache --update python3 wget \
+   4 | >>>      && wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py \
+   5 | >>>      && apk del wget \
+   6 | >>>      && python3 get-pip.py \
+   7 | >>>      && rm get-pip.py \
+   8 | >>>      && pip3 install --no-cache-dir -U docker-py pip \
+   9 | >>>      && yes | pip uninstall pip
+  10 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk add --no-cache --update python3 wget      && wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py      && apk del wget      && python3 get-pip.py      && rm get-pip.py      && pip3 install --no-cache-dir -U docker-py pip      && yes | pip uninstall pip" did not complete successfully: exit code: 1
+Duration: 0:5.10

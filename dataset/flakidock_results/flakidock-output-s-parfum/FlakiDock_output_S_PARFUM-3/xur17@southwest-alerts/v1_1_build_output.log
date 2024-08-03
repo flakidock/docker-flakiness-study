@@ -1,0 +1,105 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 512B done
+#1 DONE 0.0s
+
+#2 [auth] library/python:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.5.3-slim
+#3 DONE 0.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 76.43kB done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/python:3.5.3-slim@sha256:b04f52a2a0cb52fe648cd379e11329e4790ff9124b6ae11f1848273933abe8ec
+#6 resolve docker.io/library/python:3.5.3-slim@sha256:b04f52a2a0cb52fe648cd379e11329e4790ff9124b6ae11f1848273933abe8ec 0.0s done
+#6 sha256:0a004373a9cb06e679ea69cce0b8f6dbc33b7e77aa068d1b9092f499cf371cd2 0B / 3.64MB 0.1s
+#6 sha256:98a91263cb54a4a6cdbea29478380451d5c8f5c06a648ba12c3b204700932461 0B / 19.45MB 0.1s
+#6 sha256:b04f52a2a0cb52fe648cd379e11329e4790ff9124b6ae11f1848273933abe8ec 1.37kB / 1.37kB done
+#6 sha256:2567cbb02293c1c5dec3f6e9a688f6750cea49b3c03d3749f43ab03b177436cc 5.90kB / 5.90kB done
+#6 sha256:ad74af05f5a24bcf9459ae1cf7718628c2aeb6b587eb51b6eeaf639aca3e566f 0B / 52.61MB 0.1s
+#6 sha256:ad74af05f5a24bcf9459ae1cf7718628c2aeb6b587eb51b6eeaf639aca3e566f 4.19MB / 52.61MB 0.2s
+#6 sha256:0a004373a9cb06e679ea69cce0b8f6dbc33b7e77aa068d1b9092f499cf371cd2 3.64MB / 3.64MB 0.3s done
+#6 sha256:98a91263cb54a4a6cdbea29478380451d5c8f5c06a648ba12c3b204700932461 8.39MB / 19.45MB 0.5s
+#6 sha256:ad74af05f5a24bcf9459ae1cf7718628c2aeb6b587eb51b6eeaf639aca3e566f 24.12MB / 52.61MB 0.5s
+#6 sha256:5278d9dbbfc9222c750c50bbec1ad91e1e82c80d0e83d0bd3b3ad5d76cdb412e 233B / 233B 0.5s done
+#6 sha256:1b922ac708ab974e90bf6af0e87cfa6fbb6c3433719c6dbf5a952d66ebc1f502 0B / 1.74MB 0.5s
+#6 sha256:98a91263cb54a4a6cdbea29478380451d5c8f5c06a648ba12c3b204700932461 18.87MB / 19.45MB 0.7s
+#6 sha256:ad74af05f5a24bcf9459ae1cf7718628c2aeb6b587eb51b6eeaf639aca3e566f 34.60MB / 52.61MB 0.7s
+#6 sha256:1b922ac708ab974e90bf6af0e87cfa6fbb6c3433719c6dbf5a952d66ebc1f502 1.74MB / 1.74MB 0.6s done
+#6 sha256:98a91263cb54a4a6cdbea29478380451d5c8f5c06a648ba12c3b204700932461 19.45MB / 19.45MB 0.8s done
+#6 sha256:ad74af05f5a24bcf9459ae1cf7718628c2aeb6b587eb51b6eeaf639aca3e566f 51.38MB / 52.61MB 0.9s
+#6 extracting sha256:ad74af05f5a24bcf9459ae1cf7718628c2aeb6b587eb51b6eeaf639aca3e566f
+#6 sha256:ad74af05f5a24bcf9459ae1cf7718628c2aeb6b587eb51b6eeaf639aca3e566f 52.61MB / 52.61MB 1.0s done
+#6 extracting sha256:ad74af05f5a24bcf9459ae1cf7718628c2aeb6b587eb51b6eeaf639aca3e566f 3.0s done
+#6 extracting sha256:0a004373a9cb06e679ea69cce0b8f6dbc33b7e77aa068d1b9092f499cf371cd2
+#6 extracting sha256:0a004373a9cb06e679ea69cce0b8f6dbc33b7e77aa068d1b9092f499cf371cd2 0.3s done
+#6 extracting sha256:98a91263cb54a4a6cdbea29478380451d5c8f5c06a648ba12c3b204700932461
+#6 extracting sha256:98a91263cb54a4a6cdbea29478380451d5c8f5c06a648ba12c3b204700932461 0.9s done
+#6 extracting sha256:5278d9dbbfc9222c750c50bbec1ad91e1e82c80d0e83d0bd3b3ad5d76cdb412e done
+#6 extracting sha256:1b922ac708ab974e90bf6af0e87cfa6fbb6c3433719c6dbf5a952d66ebc1f502
+#6 extracting sha256:1b922ac708ab974e90bf6af0e87cfa6fbb6c3433719c6dbf5a952d66ebc1f502 0.2s done
+#6 DONE 5.9s
+
+#7 [2/5] RUN apt-get update && apt-get install --no-install-recommends -y locales && rm -rf /var/lib/apt/lists/* && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+#7 0.212 Ign http://security.debian.org jessie/updates InRelease
+#7 0.216 Ign http://deb.debian.org jessie InRelease
+#7 0.222 Ign http://security.debian.org jessie/updates Release.gpg
+#7 0.231 Ign http://deb.debian.org jessie-updates InRelease
+#7 0.232 Ign http://security.debian.org jessie/updates Release
+#7 0.242 Err http://security.debian.org jessie/updates/main amd64 Packages
+#7 0.242   
+#7 0.243 Ign http://deb.debian.org jessie Release.gpg
+#7 0.253 Err http://security.debian.org jessie/updates/main amd64 Packages
+#7 0.253   
+#7 0.258 Ign http://deb.debian.org jessie-updates Release.gpg
+#7 0.263 Err http://security.debian.org jessie/updates/main amd64 Packages
+#7 0.263   
+#7 0.271 Ign http://deb.debian.org jessie Release
+#7 0.273 Err http://security.debian.org jessie/updates/main amd64 Packages
+#7 0.273   
+#7 0.283 Err http://security.debian.org jessie/updates/main amd64 Packages
+#7 0.283   404  Not Found [IP: 151.101.130.132 80]
+#7 0.283 Ign http://deb.debian.org jessie-updates Release
+#7 0.397 Err http://deb.debian.org jessie/main amd64 Packages
+#7 0.397   404  Not Found
+#7 0.408 Err http://deb.debian.org jessie-updates/main amd64 Packages
+#7 0.408   404  Not Found
+#7 0.409 W: Failed to fetch http://security.debian.org/dists/jessie/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+#7 0.409 
+#7 0.409 W: Failed to fetch http://deb.debian.org/debian/dists/jessie/main/binary-amd64/Packages  404  Not Found
+#7 0.409 
+#7 0.409 W: Failed to fetch http://deb.debian.org/debian/dists/jessie-updates/main/binary-amd64/Packages  404  Not Found
+#7 0.409 
+#7 0.409 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#7 ERROR: process "/bin/sh -c apt-get update && apt-get install --no-install-recommends -y locales && rm -rf /var/lib/apt/lists/* && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8" did not complete successfully: exit code: 100
+------
+ > [2/5] RUN apt-get update && apt-get install --no-install-recommends -y locales && rm -rf /var/lib/apt/lists/* && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8:
+0.397   404  Not Found
+0.408 Err http://deb.debian.org jessie-updates/main amd64 Packages
+0.408   404  Not Found
+0.409 W: Failed to fetch http://security.debian.org/dists/jessie/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+0.409 
+0.409 W: Failed to fetch http://deb.debian.org/debian/dists/jessie/main/binary-amd64/Packages  404  Not Found
+0.409 
+0.409 W: Failed to fetch http://deb.debian.org/debian/dists/jessie-updates/main/binary-amd64/Packages  404  Not Found
+0.409 
+0.409 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:3
+--------------------
+   1 |     FROM        python:3.5.3-slim
+   2 |     
+   3 | >>> RUN apt-get update && apt-get install --no-install-recommends -y locales && rm -rf /var/lib/apt/lists/* && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+   4 |     
+   5 |     COPY        requirements.txt /tmp/
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install --no-install-recommends -y locales && rm -rf /var/lib/apt/lists/* && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8" did not complete successfully: exit code: 100
+Duration: 0:8.14

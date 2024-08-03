@@ -1,0 +1,117 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.3s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 801B done
+#2 DONE 0.4s
+
+#3 [auth] library/golang:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/golang:1.11.4-alpine3.7
+#4 ...
+
+#5 [internal] load metadata for docker.io/library/alpine:3.9
+#5 DONE 1.3s
+
+#4 [internal] load metadata for docker.io/library/golang:1.11.4-alpine3.7
+#4 DONE 1.7s
+
+#6 [internal] load build context
+#6 DONE 0.0s
+
+#7 [stage-1 1/5] FROM docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011
+#7 resolve docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011
+#7 resolve docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011 0.3s done
+#7 sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011 1.64kB / 1.64kB done
+#7 sha256:65b3a80ebe7471beecbc090c5b2cdd0aafeaefa0715f8f12e40dc918a3a70e32 528B / 528B done
+#7 sha256:78a2ce922f8665f5a227dc5cd9fda87221acba8a7a952b9665f99bc771a29963 1.51kB / 1.51kB done
+#7 ...
+
+#6 [internal] load build context
+#6 transferring context: 79.50kB 0.0s done
+#6 DONE 0.3s
+
+#7 [stage-1 1/5] FROM docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011
+#7 sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 0B / 2.77MB 0.2s
+#7 sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 2.77MB / 2.77MB 0.3s
+#7 sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 2.77MB / 2.77MB 0.4s done
+#7 extracting sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5
+#7 extracting sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 0.2s done
+#7 DONE 3.6s
+
+#8 [build-env 1/6] FROM docker.io/library/golang:1.11.4-alpine3.7@sha256:93dde1ff1216cd118ae64d5774e008ddbf5df4651d272f5a7894e83862e8a00b
+#8 resolve docker.io/library/golang:1.11.4-alpine3.7@sha256:93dde1ff1216cd118ae64d5774e008ddbf5df4651d272f5a7894e83862e8a00b 0.4s done
+#8 sha256:0eea6b1e32f18569774a28c937f65f0082d9f6ba0b0a8e6dc04bd56cfad3d436 3.80kB / 3.80kB done
+#8 sha256:93dde1ff1216cd118ae64d5774e008ddbf5df4651d272f5a7894e83862e8a00b 2.04kB / 2.04kB done
+#8 sha256:85f4b38a3ff6da01e00b7d8bf2bf133807a1d8168432229d170c21a9c1133306 1.36kB / 1.36kB done
+#8 sha256:407ea412d82cbc18a270f0ae17d5e528e620bcf4661229e757446f6e6443768b 2.11MB / 2.11MB 0.5s done
+#8 sha256:7e5cffe44344cfc591249de0c7d4608b57771ca0484f5e611e063258a0da21fe 308.48kB / 308.48kB 0.6s done
+#8 extracting sha256:407ea412d82cbc18a270f0ae17d5e528e620bcf4661229e757446f6e6443768b 0.2s done
+#8 sha256:3441e0c2a082f780d65776aefed38beae40277df79962873ed19dd73cf2e1456 154B / 154B 0.9s done
+#8 sha256:00f0c82cef86c522e64595872a7a01024c8fef7eb8efb2b5a18de52865b002e3 110.08MB / 110.08MB 3.2s
+#8 sha256:235fc68d35f9b164e067fa056a5533c82b5de1561742f06d9ebf3637bf2664fe 125B / 125B 1.0s done
+#8 extracting sha256:7e5cffe44344cfc591249de0c7d4608b57771ca0484f5e611e063258a0da21fe 0.1s done
+#8 ...
+
+#9 [stage-1 2/5] RUN apk add shadow bash &&     useradd --create-home --shell /sbin/nologin cspparse &&     mkdir /cspparse &&     chown cspparse:cspparse /cspparse
+#9 0.653 fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/main/x86_64/APKINDEX.tar.gz
+#9 0.882 fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/community/x86_64/APKINDEX.tar.gz
+#9 1.120 (1/7) Installing ncurses-terminfo-base (6.1_p20190105-r0)
+#9 1.126 (2/7) Installing ncurses-terminfo (6.1_p20190105-r0)
+#9 1.480 (3/7) Installing ncurses-libs (6.1_p20190105-r0)
+#9 1.490 (4/7) Installing readline (7.0.003-r1)
+#9 1.511 (5/7) Installing bash (4.4.19-r1)
+#9 1.529 Executing bash-4.4.19-r1.post-install
+#9 1.532 (6/7) Installing linux-pam (1.3.0-r0)
+#9 1.564 (7/7) Installing shadow (4.5-r2)
+#9 1.587 Executing busybox-1.29.3-r10.trigger
+#9 1.593 OK: 17 MiB in 21 packages
+#9 1.673 Creating mailbox file: No such file or directory
+#9 DONE 5.4s
+
+#8 [build-env 1/6] FROM docker.io/library/golang:1.11.4-alpine3.7@sha256:93dde1ff1216cd118ae64d5774e008ddbf5df4651d272f5a7894e83862e8a00b
+#8 extracting sha256:3441e0c2a082f780d65776aefed38beae40277df79962873ed19dd73cf2e1456 done
+#8 extracting sha256:00f0c82cef86c522e64595872a7a01024c8fef7eb8efb2b5a18de52865b002e3 5.0s
+#8 extracting sha256:00f0c82cef86c522e64595872a7a01024c8fef7eb8efb2b5a18de52865b002e3 6.3s done
+#8 extracting sha256:235fc68d35f9b164e067fa056a5533c82b5de1561742f06d9ebf3637bf2664fe
+#8 extracting sha256:235fc68d35f9b164e067fa056a5533c82b5de1561742f06d9ebf3637bf2664fe done
+#8 DONE 13.2s
+
+#10 [build-env 2/6] RUN apk add --no-cache --upgrade git openssh-client ca-certificates
+#10 0.537 fetch http://dl-cdn.alpinelinux.org/alpine/v3.7/main/x86_64/APKINDEX.tar.gz
+#10 0.931 fetch http://dl-cdn.alpinelinux.org/alpine/v3.7/community/x86_64/APKINDEX.tar.gz
+#10 1.313 (1/8) Upgrading ca-certificates (20171114-r0 -> 20190108-r0)
+#10 1.517 (2/8) Installing libssh2 (1.9.0-r1)
+#10 1.721 (3/8) Installing libcurl (7.61.1-r3)
+#10 1.930 (4/8) Installing expat (2.2.8-r0)
+#10 2.131 (5/8) Installing pcre2 (10.30-r0)
+#10 2.385 (6/8) Installing git (2.15.4-r0)
+#10 2.754 (7/8) Installing openssh-keygen (7.5_p1-r10)
+#10 2.950 (8/8) Installing openssh-client (7.5_p1-r10)
+#10 3.181 Executing busybox-1.27.2-r11.trigger
+#10 3.186 Executing ca-certificates-20190108-r0.trigger
+#10 3.225 OK: 22 MiB in 21 packages
+#10 DONE 7.6s
+
+#11 [build-env 3/6] RUN go get -u github.com/golang/dep/cmd/dep
+#11 0.611 go: cannot find main module; see 'go help modules'
+#11 ERROR: process "/bin/sh -c go get -u github.com/golang/dep/cmd/dep" did not complete successfully: exit code: 1
+------
+ > [build-env 3/6] RUN go get -u github.com/golang/dep/cmd/dep:
+0.611 go: cannot find main module; see 'go help modules'
+------
+v1_Dockerfile:7
+--------------------
+   5 |     ENV GO111MODULE=on
+   6 |     
+   7 | >>> RUN go get -u github.com/golang/dep/cmd/dep
+   8 |     WORKDIR /go/src/app
+   9 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c go get -u github.com/golang/dep/cmd/dep" did not complete successfully: exit code: 1
+Duration: 0:24.19

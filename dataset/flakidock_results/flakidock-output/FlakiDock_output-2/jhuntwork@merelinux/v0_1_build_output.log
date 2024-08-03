@@ -1,0 +1,65 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 530B done
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#1 [internal] load build definition from Dockerfile
+#1 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/mere/base:latest
+#3 ...
+
+#4 [auth] mere/base:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/mere/base:latest
+#3 DONE 1.8s
+
+#5 [build 1/4] FROM docker.io/mere/base@sha256:cc03facb25a032ae3ce1842b7f031b72274059f50d43ab5c0f1be7a8fca09dc7
+#5 resolve docker.io/mere/base@sha256:cc03facb25a032ae3ce1842b7f031b72274059f50d43ab5c0f1be7a8fca09dc7
+#5 resolve docker.io/mere/base@sha256:cc03facb25a032ae3ce1842b7f031b72274059f50d43ab5c0f1be7a8fca09dc7 0.2s done
+#5 sha256:cc03facb25a032ae3ce1842b7f031b72274059f50d43ab5c0f1be7a8fca09dc7 491B / 491B done
+#5 sha256:ac8e490438788380b69f3d640ce35c28ddf83c7bde32e036ff24ad453cc0fbbb 503B / 503B done
+#5 sha256:df728ecc60cf9978ac7e9f811f65ef8da09ec744dadebaf74118765fd62232c4 655B / 655B done
+#5 sha256:cbad665ad4d2f616827ba6f80595266601c3517956850da3edd5fffc9f4e8ef1 0B / 3.44MB 0.2s
+#5 sha256:cbad665ad4d2f616827ba6f80595266601c3517956850da3edd5fffc9f4e8ef1 3.44MB / 3.44MB 0.6s
+#5 sha256:cbad665ad4d2f616827ba6f80595266601c3517956850da3edd5fffc9f4e8ef1 3.44MB / 3.44MB 0.6s done
+#5 extracting sha256:cbad665ad4d2f616827ba6f80595266601c3517956850da3edd5fffc9f4e8ef1
+#5 extracting sha256:cbad665ad4d2f616827ba6f80595266601c3517956850da3edd5fffc9f4e8ef1 0.3s done
+#5 DONE 1.5s
+
+#6 [build 2/4] RUN install -d /tmp/system/var/lib/pacman
+#6 DONE 0.9s
+
+#7 [build 3/4] RUN pacman -r /tmp/system -Sy         base-layout=2.0.5-1 busybox=1.33.1-5 pacman=6.0.1-3 ca-certs=7.79.0-2 --noconfirm
+#7 0.816 :: Synchronizing package databases...
+#7 1.364  core downloading...
+#7 1.371 error: target not found: base-layout=2.0.5-1
+#7 1.371 error: target not found: busybox=1.33.1-5
+#7 1.371 error: target not found: pacman=6.0.1-3
+#7 1.371 error: target not found: ca-certs=7.79.0-2
+#7 ERROR: process "/bin/sh -c pacman -r /tmp/system -Sy         base-layout=${BL_VRS} busybox=${BB_VRS} pacman=${PM_VRS} ca-certs=${CA_VRS} --noconfirm" did not complete successfully: exit code: 1
+------
+ > [build 3/4] RUN pacman -r /tmp/system -Sy         base-layout=2.0.5-1 busybox=1.33.1-5 pacman=6.0.1-3 ca-certs=7.79.0-2 --noconfirm:
+0.816 :: Synchronizing package databases...
+1.364  core downloading...
+1.371 error: target not found: base-layout=2.0.5-1
+1.371 error: target not found: busybox=1.33.1-5
+1.371 error: target not found: pacman=6.0.1-3
+1.371 error: target not found: ca-certs=7.79.0-2
+------
+Dockerfile:9
+--------------------
+   8 |     RUN install -d /tmp/system/var/lib/pacman
+   9 | >>> RUN pacman -r /tmp/system -Sy \
+  10 | >>>         base-layout=${BL_VRS} busybox=${BB_VRS} pacman=${PM_VRS} ca-certs=${CA_VRS} --noconfirm
+  11 |     RUN rm /tmp/system/etc/services \
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pacman -r /tmp/system -Sy         base-layout=${BL_VRS} busybox=${BB_VRS} pacman=${PM_VRS} ca-certs=${CA_VRS} --noconfirm" did not complete successfully: exit code: 1
+Duration: 0:7.10

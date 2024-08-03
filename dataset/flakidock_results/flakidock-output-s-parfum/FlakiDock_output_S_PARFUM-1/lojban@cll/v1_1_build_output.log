@@ -1,0 +1,1778 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.65kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/fedora:30
+#2 ...
+
+#3 [auth] library/fedora:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/fedora:30
+#2 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 633B done
+#5 DONE 0.0s
+
+#6 [ 1/17] FROM docker.io/library/fedora:30@sha256:3a0c8c86d8ac2d1bbcfd08d40d3b757337f7916fb14f40efcb1d1137a4edef45
+#6 resolve docker.io/library/fedora:30@sha256:3a0c8c86d8ac2d1bbcfd08d40d3b757337f7916fb14f40efcb1d1137a4edef45 0.0s done
+#6 sha256:3a0c8c86d8ac2d1bbcfd08d40d3b757337f7916fb14f40efcb1d1137a4edef45 975B / 975B done
+#6 sha256:3b7532bc7d3782b2b66adc7f941b4b2d2ac8cf761dfa76990af2c8043c63e1d0 529B / 529B done
+#6 sha256:177d5adf0c6c2627a752e168479395d2a530a090deab65b47716405075bd2107 2.20kB / 2.20kB done
+#6 sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8 0B / 70.82MB 0.2s
+#6 sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8 9.44MB / 70.82MB 0.6s
+#6 sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8 19.92MB / 70.82MB 0.8s
+#6 sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8 28.31MB / 70.82MB 0.9s
+#6 sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8 49.28MB / 70.82MB 1.1s
+#6 sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8 59.77MB / 70.82MB 1.2s
+#6 sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8 70.82MB / 70.82MB 1.4s
+#6 sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8 70.82MB / 70.82MB 1.5s done
+#6 extracting sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8
+#6 extracting sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8 5.0s
+#6 extracting sha256:401909e6e2aacafa1d786d52eea42628f264d257577910f091402edded1fd2d8 5.6s done
+#6 DONE 7.4s
+
+#7 [ 2/17] RUN dnf -y update
+#7 0.973 Fedora Modular 30 - x86_64                      4.5 MB/s | 2.7 MB     00:00    
+#7 1.927 Fedora Modular 30 - x86_64 - Updates            7.0 MB/s | 4.1 MB     00:00    
+#7 3.639 Fedora 30 - x86_64 - Updates                     25 MB/s |  25 MB     00:01    
+#7 12.26 Fedora 30 - x86_64                               25 MB/s |  70 MB     00:02    
+#7 34.59 Dependencies resolved.
+#7 35.47 ================================================================================
+#7 35.47  Package                      Arch    Version                    Repo      Size
+#7 35.47 ================================================================================
+#7 35.47 Upgrading:
+#7 35.47  cryptsetup-libs              x86_64  2.3.0-1.fc30               updates  440 k
+#7 35.47  dnf                          noarch  4.2.18-1.fc30              updates  396 k
+#7 35.47  dnf-data                     noarch  4.2.18-1.fc30              updates   47 k
+#7 35.47  dnf-yum                      noarch  4.2.18-1.fc30              updates   45 k
+#7 35.47  elfutils-debuginfod-client   x86_64  0.179-2.fc30               updates   34 k
+#7 35.47  elfutils-default-yama-scope  noarch  0.179-2.fc30               updates   18 k
+#7 35.47  elfutils-libelf              x86_64  0.179-2.fc30               updates  183 k
+#7 35.47  elfutils-libs                x86_64  0.179-2.fc30               updates  261 k
+#7 35.47  fedora-gpg-keys              noarch  30-4                       updates  104 k
+#7 35.47  fedora-repos                 noarch  30-4                       updates  9.5 k
+#7 35.47  glib2                        x86_64  2.60.7-3.fc30              updates  2.6 M
+#7 35.47  glibc                        x86_64  2.29-29.fc30               updates  3.9 M
+#7 35.47  glibc-common                 x86_64  2.29-29.fc30               updates  805 k
+#7 35.47  glibc-minimal-langpack       x86_64  2.29-29.fc30               updates   29 k
+#7 35.47  gnupg2                       x86_64  2.2.20-2.fc30              updates  2.5 M
+#7 35.47  gpgme                        x86_64  1.13.1-7.fc30              updates  199 k
+#7 35.47  json-c                       x86_64  0.13.1-12.fc30             updates   36 k
+#7 35.47  libarchive                   x86_64  3.3.3-7.fc30               updates  352 k
+#7 35.47  libdnf                       x86_64  0.43.1-5.fc30              updates  612 k
+#7 35.47  libgcc                       x86_64  9.3.1-2.fc30               updates  101 k
+#7 35.47  libnghttp2                   x86_64  1.40.0-1.fc30              updates   72 k
+#7 35.47  libpcap                      x86_64  14:1.9.1-2.fc30            updates  159 k
+#7 35.47  libreport-filesystem         noarch  2.12.0-2.fc30              updates   12 k
+#7 35.47  libsss_idmap                 x86_64  2.2.3-13.fc30              updates   45 k
+#7 35.47  libsss_nss_idmap             x86_64  2.2.3-13.fc30              updates   52 k
+#7 35.47  libstdc++                    x86_64  9.3.1-2.fc30               updates  605 k
+#7 35.47  libtirpc                     x86_64  1.2.6-0.fc30               updates   93 k
+#7 35.47  libxcrypt                    x86_64  4.4.16-3.fc30              updates  123 k
+#7 35.47  libxcrypt-compat             x86_64  4.4.16-3.fc30              updates   96 k
+#7 35.47  libxml2                      x86_64  2.9.10-3.fc30              updates  686 k
+#7 35.47  mkpasswd                     x86_64  5.5.6-1.fc30               updates   41 k
+#7 35.47  openssl                      x86_64  1:1.1.1g-1.fc30            updates  653 k
+#7 35.47  openssl-libs                 x86_64  1:1.1.1g-1.fc30            updates  1.4 M
+#7 35.47  pcre                         x86_64  8.44-1.fc30                updates  189 k
+#7 35.47  pcre2                        x86_64  10.34-9.fc30               updates  219 k
+#7 35.47  python-pip-wheel             noarch  19.0.3-7.fc30              updates  1.2 M
+#7 35.47  python3                      x86_64  3.7.7-1.fc30               updates   33 k
+#7 35.47  python3-dnf                  noarch  4.2.18-1.fc30              updates  423 k
+#7 35.47  python3-gpg                  x86_64  1.13.1-7.fc30              updates  243 k
+#7 35.47  python3-hawkey               x86_64  0.43.1-5.fc30              updates   96 k
+#7 35.47  python3-libdnf               x86_64  0.43.1-5.fc30              updates  712 k
+#7 35.47  python3-libs                 x86_64  3.7.7-1.fc30               updates  7.9 M
+#7 35.47  python3-pip                  noarch  19.0.3-7.fc30              updates  1.8 M
+#7 35.47  shadow-utils                 x86_64  2:4.6-9.fc30               updates  1.2 M
+#7 35.47  sssd-client                  x86_64  2.2.3-13.fc30              updates  109 k
+#7 35.47  sudo                         x86_64  1.8.31p1-1.fc30            updates  906 k
+#7 35.47  systemd                      x86_64  241-14.git18dd3fb.fc30     updates  3.8 M
+#7 35.47  systemd-libs                 x86_64  241-14.git18dd3fb.fc30     updates  503 k
+#7 35.47  systemd-pam                  x86_64  241-14.git18dd3fb.fc30     updates  156 k
+#7 35.47  systemd-rpm-macros           noarch  241-14.git18dd3fb.fc30     updates   21 k
+#7 35.47  tzdata                       noarch  2020a-1.fc30               updates  427 k
+#7 35.47  vim-minimal                  x86_64  2:8.2.587-1.fc30           updates  638 k
+#7 35.47  whois-nls                    noarch  5.5.6-1.fc30               updates   33 k
+#7 35.47 Installing dependencies:
+#7 35.47  pcre2-syntax                 noarch  10.34-9.fc30               updates  141 k
+#7 35.47  xkeyboard-config             noarch  2.26-2.fc30                updates  837 k
+#7 35.47  libsecret                    x86_64  0.18.8-1.fc30              fedora   152 k
+#7 35.47 Installing weak dependencies:
+#7 35.47  glibc-langpack-en            x86_64  2.29-29.fc30               updates  800 k
+#7 35.47  gnupg2-smime                 x86_64  2.2.20-2.fc30              updates  267 k
+#7 35.47  shared-mime-info             x86_64  1.15-1.fc30                updates  318 k
+#7 35.47  libxkbcommon                 x86_64  0.8.3-1.fc30               fedora   108 k
+#7 35.47  pinentry                     x86_64  1.1.0-5.fc30               fedora    90 k
+#7 35.47 
+#7 35.47 Transaction Summary
+#7 35.47 ================================================================================
+#7 35.47 Install   8 Packages
+#7 35.47 Upgrade  53 Packages
+#7 35.47 
+#7 35.47 Total download size: 40 M
+#7 35.48 Downloading Packages:
+#7 35.89 (1/61): pcre2-syntax-10.34-9.fc30.noarch.rpm    1.8 MB/s | 141 kB     00:00    
+#7 35.89 (2/61): gnupg2-smime-2.2.20-2.fc30.x86_64.rpm   3.3 MB/s | 267 kB     00:00    
+#7 35.90 (3/61): glibc-langpack-en-2.29-29.fc30.x86_64.r 9.1 MB/s | 800 kB     00:00    
+#7 35.91 (4/61): xkeyboard-config-2.26-2.fc30.noarch.rpm  41 MB/s | 837 kB     00:00    
+#7 35.91 (5/61): shared-mime-info-1.15-1.fc30.x86_64.rpm  13 MB/s | 318 kB     00:00    
+#7 35.93 (6/61): libsecret-0.18.8-1.fc30.x86_64.rpm      5.3 MB/s | 152 kB     00:00    
+#7 35.93 (7/61): libxkbcommon-0.8.3-1.fc30.x86_64.rpm    5.7 MB/s | 108 kB     00:00    
+#7 35.93 (8/61): pinentry-1.1.0-5.fc30.x86_64.rpm        4.9 MB/s |  90 kB     00:00    
+#7 35.95 (9/61): dnf-data-4.2.18-1.fc30.noarch.rpm       2.6 MB/s |  47 kB     00:00    
+#7 35.96 (10/61): dnf-yum-4.2.18-1.fc30.noarch.rpm       4.1 MB/s |  45 kB     00:00    
+#7 35.96 (11/61): dnf-4.2.18-1.fc30.noarch.rpm            11 MB/s | 396 kB     00:00    
+#7 35.97 (12/61): cryptsetup-libs-2.3.0-1.fc30.x86_64.rp  10 MB/s | 440 kB     00:00    
+#7 35.97 (13/61): elfutils-debuginfod-client-0.179-2.fc3 3.1 MB/s |  34 kB     00:00    
+#7 35.97 (14/61): elfutils-default-yama-scope-0.179-2.fc 2.1 MB/s |  18 kB     00:00    
+#7 35.98 (15/61): elfutils-libelf-0.179-2.fc30.x86_64.rp  15 MB/s | 183 kB     00:00    
+#7 35.98 (16/61): elfutils-libs-0.179-2.fc30.x86_64.rpm   21 MB/s | 261 kB     00:00    
+#7 35.98 (17/61): fedora-gpg-keys-30-4.noarch.rpm         10 MB/s | 104 kB     00:00    
+#7 35.99 (18/61): fedora-repos-30-4.noarch.rpm           1.1 MB/s | 9.5 kB     00:00    
+#7 36.05 (19/61): glib2-2.60.7-3.fc30.x86_64.rpm          43 MB/s | 2.6 MB     00:00    
+#7 36.05 (20/61): glibc-common-2.29-29.fc30.x86_64.rpm    12 MB/s | 805 kB     00:00    
+#7 36.10 (21/61): glibc-2.29-29.fc30.x86_64.rpm           34 MB/s | 3.9 MB     00:00    
+#7 36.10 (22/61): glibc-minimal-langpack-2.29-29.fc30.x8 542 kB/s |  29 kB     00:00    
+#7 36.12 (23/61): gnupg2-2.2.20-2.fc30.x86_64.rpm         39 MB/s | 2.5 MB     00:00    
+#7 36.12 (24/61): json-c-0.13.1-12.fc30.x86_64.rpm       1.8 MB/s |  36 kB     00:00    
+#7 36.12 (25/61): gpgme-1.13.1-7.fc30.x86_64.rpm         9.2 MB/s | 199 kB     00:00    
+#7 36.13 (26/61): libgcc-9.3.1-2.fc30.x86_64.rpm         9.7 MB/s | 101 kB     00:00    
+#7 36.14 (27/61): libdnf-0.43.1-5.fc30.x86_64.rpm         38 MB/s | 612 kB     00:00    
+#7 36.14 (28/61): libnghttp2-1.40.0-1.fc30.x86_64.rpm    7.3 MB/s |  72 kB     00:00    
+#7 36.15 (29/61): libpcap-1.9.1-2.fc30.x86_64.rpm         17 MB/s | 159 kB     00:00    
+#7 36.15 (30/61): libreport-filesystem-2.12.0-2.fc30.noa 1.5 MB/s |  12 kB     00:00    
+#7 36.16 (31/61): libsss_idmap-2.2.3-13.fc30.x86_64.rpm  5.1 MB/s |  45 kB     00:00    
+#7 36.16 (32/61): libsss_nss_idmap-2.2.3-13.fc30.x86_64. 5.5 MB/s |  52 kB     00:00    
+#7 36.17 (33/61): libtirpc-1.2.6-0.fc30.x86_64.rpm       9.3 MB/s |  93 kB     00:00    
+#7 36.18 (34/61): libstdc++-9.3.1-2.fc30.x86_64.rpm       32 MB/s | 605 kB     00:00    
+#7 36.18 (35/61): libarchive-3.3.3-7.fc30.x86_64.rpm     5.8 MB/s | 352 kB     00:00    
+#7 36.18 (36/61): libxcrypt-4.4.16-3.fc30.x86_64.rpm      12 MB/s | 123 kB     00:00    
+#7 36.19 (37/61): libxcrypt-compat-4.4.16-3.fc30.x86_64. 9.7 MB/s |  96 kB     00:00    
+#7 36.19 (38/61): mkpasswd-5.5.6-1.fc30.x86_64.rpm       3.7 MB/s |  41 kB     00:00    
+#7 36.20 (39/61): openssl-1.1.1g-1.fc30.x86_64.rpm        33 MB/s | 653 kB     00:00    
+#7 36.21 (40/61): libxml2-2.9.10-3.fc30.x86_64.rpm        20 MB/s | 686 kB     00:00    
+#7 36.23 (41/61): openssl-libs-1.1.1g-1.fc30.x86_64.rpm   42 MB/s | 1.4 MB     00:00    
+#7 36.23 (42/61): pcre-8.44-1.fc30.x86_64.rpm            8.6 MB/s | 189 kB     00:00    
+#7 36.23 (43/61): pcre2-10.34-9.fc30.x86_64.rpm           12 MB/s | 219 kB     00:00    
+#7 36.24 (44/61): python3-3.7.7-1.fc30.x86_64.rpm        3.0 MB/s |  33 kB     00:00    
+#7 36.25 (45/61): python-pip-wheel-19.0.3-7.fc30.noarch.  50 MB/s | 1.2 MB     00:00    
+#7 36.26 (46/61): python3-gpg-1.13.1-7.fc30.x86_64.rpm    14 MB/s | 243 kB     00:00    
+#7 36.26 (47/61): python3-dnf-4.2.18-1.fc30.noarch.rpm    15 MB/s | 423 kB     00:00    
+#7 36.26 (48/61): python3-hawkey-0.43.1-5.fc30.x86_64.rp 9.3 MB/s |  96 kB     00:00    
+#7 36.28 (49/61): python3-libdnf-0.43.1-5.fc30.x86_64.rp  32 MB/s | 712 kB     00:00    
+#7 36.32 (50/61): python3-pip-19.0.3-7.fc30.noarch.rpm    30 MB/s | 1.8 MB     00:00    
+#7 36.40 (51/61): python3-libs-3.7.7-1.fc30.x86_64.rpm    57 MB/s | 7.9 MB     00:00    
+#7 36.41 (52/61): shadow-utils-4.6-9.fc30.x86_64.rpm     9.3 MB/s | 1.2 MB     00:00    
+#7 36.41 (53/61): sssd-client-2.2.3-13.fc30.x86_64.rpm   1.2 MB/s | 109 kB     00:00    
+#7 36.42 (54/61): sudo-1.8.31p1-1.fc30.x86_64.rpm         47 MB/s | 906 kB     00:00    
+#7 36.43 (55/61): systemd-libs-241-14.git18dd3fb.fc30.x8  24 MB/s | 503 kB     00:00    
+#7 36.47 (56/61): systemd-241-14.git18dd3fb.fc30.x86_64.  60 MB/s | 3.8 MB     00:00    
+#7 36.47 (57/61): systemd-pam-241-14.git18dd3fb.fc30.x86 3.0 MB/s | 156 kB     00:00    
+#7 36.47 (58/61): systemd-rpm-macros-241-14.git18dd3fb.f 473 kB/s |  21 kB     00:00    
+#7 36.49 (59/61): tzdata-2020a-1.fc30.noarch.rpm          28 MB/s | 427 kB     00:00    
+#7 36.49 (60/61): whois-nls-5.5.6-1.fc30.noarch.rpm      2.3 MB/s |  33 kB     00:00    
+#7 36.49 (61/61): vim-minimal-8.2.587-1.fc30.x86_64.rpm   32 MB/s | 638 kB     00:00    
+#7 36.50 --------------------------------------------------------------------------------
+#7 36.50 Total                                            40 MB/s |  40 MB     00:00     
+#7 36.58 Running transaction check
+#7 36.72 Transaction check succeeded.
+#7 36.72 Running transaction test
+#7 37.21 Transaction test succeeded.
+#7 37.21 Running transaction
+#7 38.74   Preparing        :                                                        1/1 
+#7 38.78   Running scriptlet: libgcc-9.3.1-2.fc30.x86_64                             1/1 
+#7 38.83   Upgrading        : libgcc-9.3.1-2.fc30.x86_64                           1/114 
+#7 38.87   Running scriptlet: libgcc-9.3.1-2.fc30.x86_64                           1/114 
+#7 38.89   Upgrading        : whois-nls-5.5.6-1.fc30.noarch                        2/114 
+#7 39.15   Upgrading        : tzdata-2020a-1.fc30.noarch                           3/114 
+#7 39.31   Upgrading        : glibc-common-2.29-29.fc30.x86_64                     4/114 
+#7 39.35   Running scriptlet: glibc-2.29-29.fc30.x86_64                            5/114 
+#7 39.93   Upgrading        : glibc-2.29-29.fc30.x86_64                            5/114 
+#7 39.99   Running scriptlet: glibc-2.29-29.fc30.x86_64                            5/114 
+#7 40.19   Installing       : glibc-langpack-en-2.29-29.fc30.x86_64                6/114 
+#7 40.38   Upgrading        : openssl-libs-1:1.1.1g-1.fc30.x86_64                  7/114 
+#7 40.42   Upgrading        : libxcrypt-4.4.16-3.fc30.x86_64                       8/114 
+#7 40.46   Upgrading        : mkpasswd-5.5.6-1.fc30.x86_64                         9/114 
+#7 40.51   Upgrading        : elfutils-libelf-0.179-2.fc30.x86_64                 10/114 
+#7 40.60   Upgrading        : libstdc++-9.3.1-2.fc30.x86_64                       11/114 
+#7 40.64   Upgrading        : libxcrypt-compat-4.4.16-3.fc30.x86_64               12/114 
+#7 40.67   Upgrading        : json-c-0.13.1-12.fc30.x86_64                        13/114 
+#7 40.75   Upgrading        : libxml2-2.9.10-3.fc30.x86_64                        14/114 
+#7 40.82   Upgrading        : cryptsetup-libs-2.3.0-1.fc30.x86_64                 15/114 
+#7 40.91   Upgrading        : python-pip-wheel-19.0.3-7.fc30.noarch               16/114 
+#7 41.09   Upgrading        : shadow-utils-2:4.6-9.fc30.x86_64                    17/114 
+#7 41.12   Upgrading        : libsss_idmap-2.2.3-13.fc30.x86_64                   18/114 
+#7 41.14   Upgrading        : libsss_nss_idmap-2.2.3-13.fc30.x86_64               19/114 
+#7 41.18   Upgrading        : libtirpc-1.2.6-0.fc30.x86_64                        20/114 
+#7 41.52   Upgrading        : python3-pip-19.0.3-7.fc30.noarch                    21/114 
+#7 41.57   Upgrading        : python3-3.7.7-1.fc30.x86_64                         22/114 
+#7 42.79   Upgrading        : python3-libs-3.7.7-1.fc30.x86_64                    23/114 
+#7 42.88   Upgrading        : pcre-8.44-1.fc30.x86_64                             24/114 
+#7 42.94   Installing       : shared-mime-info-1.15-1.fc30.x86_64                 25/114 
+#7 42.97   Running scriptlet: shared-mime-info-1.15-1.fc30.x86_64                 25/114 
+#7 43.27   Upgrading        : glib2-2.60.7-3.fc30.x86_64                          26/114 
+#7 43.32   Installing       : libsecret-0.18.8-1.fc30.x86_64                      27/114 
+#7 43.35   Installing       : pinentry-1.1.0-5.fc30.x86_64                        28/114 
+#7 43.40   Installing       : gnupg2-smime-2.2.20-2.fc30.x86_64                   29/114 
+#7 43.69   Upgrading        : gnupg2-2.2.20-2.fc30.x86_64                         30/114 
+#7 43.75   Upgrading        : gpgme-1.13.1-7.fc30.x86_64                          31/114 
+#7 43.84   Upgrading        : libdnf-0.43.1-5.fc30.x86_64                         32/114 
+#7 43.96   Upgrading        : python3-libdnf-0.43.1-5.fc30.x86_64                 33/114 
+#7 44.00   Upgrading        : python3-hawkey-0.43.1-5.fc30.x86_64                 34/114 
+#7 44.06   Upgrading        : python3-gpg-1.13.1-7.fc30.x86_64                    35/114 
+#7 44.14   Upgrading        : systemd-libs-241-14.git18dd3fb.fc30.x86_64          36/114 
+#7 44.17   Running scriptlet: systemd-libs-241-14.git18dd3fb.fc30.x86_64          36/114 
+#7 44.25   Upgrading        : vim-minimal-2:8.2.587-1.fc30.x86_64                 37/114 
+#7 44.28   Upgrading        : systemd-rpm-macros-241-14.git18dd3fb.fc30.noarch    38/114 
+#7 44.30   Upgrading        : libreport-filesystem-2.12.0-2.fc30.noarch           39/114 
+#7 44.32   Upgrading        : dnf-data-4.2.18-1.fc30.noarch                       40/114 
+#7 44.41   Upgrading        : python3-dnf-4.2.18-1.fc30.noarch                    41/114 
+#7 44.48   Upgrading        : dnf-4.2.18-1.fc30.noarch                            42/114 
+#7 44.50   Running scriptlet: dnf-4.2.18-1.fc30.noarch                            42/114 
+#7 44.53   Upgrading        : fedora-gpg-keys-30-4.noarch                         43/114 
+#7 44.69   Installing       : xkeyboard-config-2.26-2.fc30.noarch                 44/114 
+#7 44.73   Installing       : libxkbcommon-0.8.3-1.fc30.x86_64                    45/114 
+#7 44.76   Installing       : pcre2-syntax-10.34-9.fc30.noarch                    46/114 
+#7 44.80   Upgrading        : pcre2-10.34-9.fc30.x86_64                           47/114 
+#7 44.82   Upgrading        : elfutils-debuginfod-client-0.179-2.fc30.x86_64      48/114 
+#7 44.87   Upgrading        : elfutils-libs-0.179-2.fc30.x86_64                   49/114 
+#7 44.90   Upgrading        : elfutils-default-yama-scope-0.179-2.fc30.noarch     50/114 
+#7 44.91   Running scriptlet: elfutils-default-yama-scope-0.179-2.fc30.noarch     50/114 
+#7 44.93   Running scriptlet: systemd-241-14.git18dd3fb.fc30.x86_64               51/114 
+#7 45.42   Upgrading        : systemd-241-14.git18dd3fb.fc30.x86_64               51/114 
+#7 45.48   Running scriptlet: systemd-241-14.git18dd3fb.fc30.x86_64               51/114 
+#7 45.53   Upgrading        : systemd-pam-241-14.git18dd3fb.fc30.x86_64           52/114 
+#7 45.56   Upgrading        : fedora-repos-30-4.noarch                            53/114 
+#7 45.58   Upgrading        : dnf-yum-4.2.18-1.fc30.noarch                        54/114 
+#7 45.70   Upgrading        : sudo-1.8.31p1-1.fc30.x86_64                         55/114 
+#7 45.74   Running scriptlet: sudo-1.8.31p1-1.fc30.x86_64                         55/114 
+#7 45.76   Upgrading        : sssd-client-2.2.3-13.fc30.x86_64                    56/114 
+#7 45.79   Running scriptlet: sssd-client-2.2.3-13.fc30.x86_64                    56/114 
+#7 45.83   Upgrading        : libarchive-3.3.3-7.fc30.x86_64                      57/114 
+#7 45.92   Upgrading        : openssl-1:1.1.1g-1.fc30.x86_64                      58/114 
+#7 45.94   Upgrading        : glibc-minimal-langpack-2.29-29.fc30.x86_64          59/114 
+#7 45.97   Upgrading        : libnghttp2-1.40.0-1.fc30.x86_64                     60/114 
+#7 46.00   Upgrading        : libpcap-14:1.9.1-2.fc30.x86_64                      61/114 
+#7 46.03   Cleanup          : elfutils-libs-0.178-7.fc30.x86_64                   62/114 
+#7 46.05   Cleanup          : elfutils-default-yama-scope-0.178-7.fc30.noarch     63/114 
+#7 46.08   Running scriptlet: systemd-241-12.git323cdf4.fc30.x86_64               64/114 
+#7 46.10   Cleanup          : systemd-241-12.git323cdf4.fc30.x86_64               64/114 
+#7 46.16   Cleanup          : fedora-repos-30-2.noarch                            65/114 
+#7 46.19   Cleanup          : dnf-yum-4.2.17-1.fc30.noarch                        66/114 
+#7 46.21   Cleanup          : systemd-libs-241-12.git323cdf4.fc30.x86_64          67/114 
+#7 46.24   Cleanup          : sudo-1.8.29-1.fc30.x86_64                           68/114 
+#7 46.27   Cleanup          : systemd-pam-241-12.git323cdf4.fc30.x86_64           69/114 
+#7 46.30   Cleanup          : libarchive-3.3.3-6.fc30.x86_64                      70/114 
+#7 46.32   Cleanup          : cryptsetup-libs-2.2.2-1.fc30.x86_64                 71/114 
+#7 46.35   Cleanup          : openssl-1:1.1.1d-2.fc30.x86_64                      72/114 
+#7 46.38   Running scriptlet: sssd-client-2.2.2-3.fc30.x86_64                     73/114 
+#7 46.39   Cleanup          : sssd-client-2.2.2-3.fc30.x86_64                     73/114 
+#7 46.41   Cleanup          : libxml2-2.9.9-2.fc30.x86_64                         74/114 
+#7 46.43   Cleanup          : libsss_nss_idmap-2.2.2-3.fc30.x86_64                75/114 
+#7 46.46   Cleanup          : shadow-utils-2:4.6-8.fc30.x86_64                    76/114 
+#7 46.50   Cleanup          : libpcap-14:1.9.1-1.fc30.x86_64                      77/114 
+#7 46.52   Cleanup          : vim-minimal-2:8.2.109-1.fc30.x86_64                 78/114 
+#7 46.54   Cleanup          : pcre2-10.34-5.fc30.x86_64                           79/114 
+#7 46.57   Cleanup          : elfutils-libelf-0.178-7.fc30.x86_64                 80/114 
+#7 46.60   Cleanup          : elfutils-debuginfod-client-0.178-7.fc30.x86_64      81/114 
+#7 46.62   Cleanup          : libsss_idmap-2.2.2-3.fc30.x86_64                    82/114 
+#7 46.64   Cleanup          : libnghttp2-1.39.2-1.fc30.x86_64                     83/114 
+#7 46.67   Running scriptlet: dnf-4.2.17-1.fc30.noarch                            84/114 
+#7 46.68   Cleanup          : dnf-4.2.17-1.fc30.noarch                            84/114 
+#7 46.68   Running scriptlet: dnf-4.2.17-1.fc30.noarch                            84/114 
+#7 46.71   Cleanup          : python3-dnf-4.2.17-1.fc30.noarch                    85/114 
+#7 46.74   Cleanup          : dnf-data-4.2.17-1.fc30.noarch                       86/114 
+#7 46.76   Cleanup          : libreport-filesystem-2.11.3-1.fc30.noarch           87/114 
+#7 46.79   Cleanup          : fedora-gpg-keys-30-2.noarch                         88/114 
+#7 46.81   Cleanup          : systemd-rpm-macros-241-12.git323cdf4.fc30.noarch    89/114 
+#7 46.83   Cleanup          : python3-hawkey-0.39.1-1.fc30.x86_64                 90/114 
+#7 46.85   Cleanup          : python3-libdnf-0.39.1-1.fc30.x86_64                 91/114 
+#7 46.88   Cleanup          : libdnf-0.39.1-1.fc30.x86_64                         92/114 
+#7 46.91   Cleanup          : glib2-2.60.7-2.fc30.x86_64                          93/114 
+#7 46.94   Cleanup          : libstdc++-9.2.1-1.fc30.x86_64                       94/114 
+#7 46.97   Cleanup          : python3-gpg-1.12.0-1.fc30.x86_64                    95/114 
+#7 47.05   Cleanup          : python3-libs-3.7.6-2.fc30.x86_64                    96/114 
+#7 47.11   Cleanup          : python3-3.7.6-2.fc30.x86_64                         97/114 
+#7 47.13   Cleanup          : openssl-libs-1:1.1.1d-2.fc30.x86_64                 98/114 
+#7 47.16   Cleanup          : libtirpc-1.2.5-0.fc30.x86_64                        99/114 
+#7 47.20   Cleanup          : gpgme-1.12.0-1.fc30.x86_64                         100/114 
+#7 47.22   Cleanup          : gnupg2-2.2.18-2.fc30.x86_64                        101/114 
+#7 47.25   Cleanup          : json-c-0.13.1-8.fc30.x86_64                        102/114 
+#7 47.39   Cleanup          : pcre-8.43-2.fc30.x86_64                            103/114 
+#7 47.41   Cleanup          : python-pip-wheel-19.0.3-6.fc30.noarch              104/114 
+#7 47.45   Cleanup          : python3-pip-19.0.3-6.fc30.noarch                   105/114 
+#7 47.53   Cleanup          : libxcrypt-compat-4.4.12-1.fc30.x86_64              106/114 
+#7 47.58   Cleanup          : libxcrypt-4.4.12-1.fc30.x86_64                     107/114 
+#7 47.63   Cleanup          : mkpasswd-5.5.5-1.fc30.x86_64                       108/114 
+#7 47.67   Cleanup          : whois-nls-5.5.5-1.fc30.noarch                      109/114 
+#7 47.71   Cleanup          : glibc-2.29-28.fc30.x86_64                          110/114 
+#7 47.75   Cleanup          : glibc-minimal-langpack-2.29-28.fc30.x86_64         111/114 
+#7 47.77   Cleanup          : glibc-common-2.29-28.fc30.x86_64                   112/114 
+#7 47.84   Cleanup          : tzdata-2019c-2.fc30.noarch                         113/114 
+#7 47.87   Cleanup          : libgcc-9.2.1-1.fc30.x86_64                         114/114 
+#7 47.87   Running scriptlet: libgcc-9.2.1-1.fc30.x86_64                         114/114 
+#7 47.95   Running scriptlet: glibc-common-2.29-29.fc30.x86_64                   114/114 
+#7 47.97   Running scriptlet: shared-mime-info-1.15-1.fc30.x86_64                114/114 
+#7 50.68   Running scriptlet: glib2-2.60.7-3.fc30.x86_64                         114/114 
+#7 50.70   Running scriptlet: systemd-241-14.git18dd3fb.fc30.x86_64              114/114 
+#7 50.77   Verifying        : glibc-langpack-en-2.29-29.fc30.x86_64                1/114 
+#7 50.77   Verifying        : gnupg2-smime-2.2.20-2.fc30.x86_64                    2/114 
+#7 50.77   Verifying        : pcre2-syntax-10.34-9.fc30.noarch                     3/114 
+#7 50.77   Verifying        : shared-mime-info-1.15-1.fc30.x86_64                  4/114 
+#7 50.77   Verifying        : xkeyboard-config-2.26-2.fc30.noarch                  5/114 
+#7 50.77   Verifying        : libsecret-0.18.8-1.fc30.x86_64                       6/114 
+#7 50.77   Verifying        : libxkbcommon-0.8.3-1.fc30.x86_64                     7/114 
+#7 50.77   Verifying        : pinentry-1.1.0-5.fc30.x86_64                         8/114 
+#7 50.77   Verifying        : cryptsetup-libs-2.3.0-1.fc30.x86_64                  9/114 
+#7 50.77   Verifying        : cryptsetup-libs-2.2.2-1.fc30.x86_64                 10/114 
+#7 50.77   Verifying        : dnf-4.2.18-1.fc30.noarch                            11/114 
+#7 50.77   Verifying        : dnf-4.2.17-1.fc30.noarch                            12/114 
+#7 50.77   Verifying        : dnf-data-4.2.18-1.fc30.noarch                       13/114 
+#7 50.77   Verifying        : dnf-data-4.2.17-1.fc30.noarch                       14/114 
+#7 50.77   Verifying        : dnf-yum-4.2.18-1.fc30.noarch                        15/114 
+#7 50.77   Verifying        : dnf-yum-4.2.17-1.fc30.noarch                        16/114 
+#7 50.77   Verifying        : elfutils-debuginfod-client-0.179-2.fc30.x86_64      17/114 
+#7 50.77   Verifying        : elfutils-debuginfod-client-0.178-7.fc30.x86_64      18/114 
+#7 50.77   Verifying        : elfutils-default-yama-scope-0.179-2.fc30.noarch     19/114 
+#7 50.77   Verifying        : elfutils-default-yama-scope-0.178-7.fc30.noarch     20/114 
+#7 50.77   Verifying        : elfutils-libelf-0.179-2.fc30.x86_64                 21/114 
+#7 50.77   Verifying        : elfutils-libelf-0.178-7.fc30.x86_64                 22/114 
+#7 50.77   Verifying        : elfutils-libs-0.179-2.fc30.x86_64                   23/114 
+#7 50.77   Verifying        : elfutils-libs-0.178-7.fc30.x86_64                   24/114 
+#7 50.77   Verifying        : fedora-gpg-keys-30-4.noarch                         25/114 
+#7 50.77   Verifying        : fedora-gpg-keys-30-2.noarch                         26/114 
+#7 50.77   Verifying        : fedora-repos-30-4.noarch                            27/114 
+#7 50.77   Verifying        : fedora-repos-30-2.noarch                            28/114 
+#7 50.77   Verifying        : glib2-2.60.7-3.fc30.x86_64                          29/114 
+#7 50.77   Verifying        : glib2-2.60.7-2.fc30.x86_64                          30/114 
+#7 50.77   Verifying        : glibc-2.29-29.fc30.x86_64                           31/114 
+#7 50.77   Verifying        : glibc-2.29-28.fc30.x86_64                           32/114 
+#7 50.77   Verifying        : glibc-common-2.29-29.fc30.x86_64                    33/114 
+#7 50.78   Verifying        : glibc-common-2.29-28.fc30.x86_64                    34/114 
+#7 50.78   Verifying        : glibc-minimal-langpack-2.29-29.fc30.x86_64          35/114 
+#7 50.78   Verifying        : glibc-minimal-langpack-2.29-28.fc30.x86_64          36/114 
+#7 50.78   Verifying        : gnupg2-2.2.20-2.fc30.x86_64                         37/114 
+#7 50.78   Verifying        : gnupg2-2.2.18-2.fc30.x86_64                         38/114 
+#7 50.78   Verifying        : gpgme-1.13.1-7.fc30.x86_64                          39/114 
+#7 50.78   Verifying        : gpgme-1.12.0-1.fc30.x86_64                          40/114 
+#7 50.78   Verifying        : json-c-0.13.1-12.fc30.x86_64                        41/114 
+#7 50.78   Verifying        : json-c-0.13.1-8.fc30.x86_64                         42/114 
+#7 50.78   Verifying        : libarchive-3.3.3-7.fc30.x86_64                      43/114 
+#7 50.78   Verifying        : libarchive-3.3.3-6.fc30.x86_64                      44/114 
+#7 50.78   Verifying        : libdnf-0.43.1-5.fc30.x86_64                         45/114 
+#7 50.78   Verifying        : libdnf-0.39.1-1.fc30.x86_64                         46/114 
+#7 50.78   Verifying        : libgcc-9.3.1-2.fc30.x86_64                          47/114 
+#7 50.78   Verifying        : libgcc-9.2.1-1.fc30.x86_64                          48/114 
+#7 50.78   Verifying        : libnghttp2-1.40.0-1.fc30.x86_64                     49/114 
+#7 50.78   Verifying        : libnghttp2-1.39.2-1.fc30.x86_64                     50/114 
+#7 50.78   Verifying        : libpcap-14:1.9.1-2.fc30.x86_64                      51/114 
+#7 50.78   Verifying        : libpcap-14:1.9.1-1.fc30.x86_64                      52/114 
+#7 50.78   Verifying        : libreport-filesystem-2.12.0-2.fc30.noarch           53/114 
+#7 50.78   Verifying        : libreport-filesystem-2.11.3-1.fc30.noarch           54/114 
+#7 50.78   Verifying        : libsss_idmap-2.2.3-13.fc30.x86_64                   55/114 
+#7 50.78   Verifying        : libsss_idmap-2.2.2-3.fc30.x86_64                    56/114 
+#7 50.78   Verifying        : libsss_nss_idmap-2.2.3-13.fc30.x86_64               57/114 
+#7 50.78   Verifying        : libsss_nss_idmap-2.2.2-3.fc30.x86_64                58/114 
+#7 50.78   Verifying        : libstdc++-9.3.1-2.fc30.x86_64                       59/114 
+#7 50.78   Verifying        : libstdc++-9.2.1-1.fc30.x86_64                       60/114 
+#7 50.78   Verifying        : libtirpc-1.2.6-0.fc30.x86_64                        61/114 
+#7 50.78   Verifying        : libtirpc-1.2.5-0.fc30.x86_64                        62/114 
+#7 50.78   Verifying        : libxcrypt-4.4.16-3.fc30.x86_64                      63/114 
+#7 50.78   Verifying        : libxcrypt-4.4.12-1.fc30.x86_64                      64/114 
+#7 50.78   Verifying        : libxcrypt-compat-4.4.16-3.fc30.x86_64               65/114 
+#7 50.78   Verifying        : libxcrypt-compat-4.4.12-1.fc30.x86_64               66/114 
+#7 50.78   Verifying        : libxml2-2.9.10-3.fc30.x86_64                        67/114 
+#7 50.78   Verifying        : libxml2-2.9.9-2.fc30.x86_64                         68/114 
+#7 50.78   Verifying        : mkpasswd-5.5.6-1.fc30.x86_64                        69/114 
+#7 50.78   Verifying        : mkpasswd-5.5.5-1.fc30.x86_64                        70/114 
+#7 50.78   Verifying        : openssl-1:1.1.1g-1.fc30.x86_64                      71/114 
+#7 50.78   Verifying        : openssl-1:1.1.1d-2.fc30.x86_64                      72/114 
+#7 50.78   Verifying        : openssl-libs-1:1.1.1g-1.fc30.x86_64                 73/114 
+#7 50.78   Verifying        : openssl-libs-1:1.1.1d-2.fc30.x86_64                 74/114 
+#7 50.78   Verifying        : pcre-8.44-1.fc30.x86_64                             75/114 
+#7 50.78   Verifying        : pcre-8.43-2.fc30.x86_64                             76/114 
+#7 50.78   Verifying        : pcre2-10.34-9.fc30.x86_64                           77/114 
+#7 50.78   Verifying        : pcre2-10.34-5.fc30.x86_64                           78/114 
+#7 50.78   Verifying        : python-pip-wheel-19.0.3-7.fc30.noarch               79/114 
+#7 50.78   Verifying        : python-pip-wheel-19.0.3-6.fc30.noarch               80/114 
+#7 50.78   Verifying        : python3-3.7.7-1.fc30.x86_64                         81/114 
+#7 50.78   Verifying        : python3-3.7.6-2.fc30.x86_64                         82/114 
+#7 50.78   Verifying        : python3-dnf-4.2.18-1.fc30.noarch                    83/114 
+#7 50.78   Verifying        : python3-dnf-4.2.17-1.fc30.noarch                    84/114 
+#7 50.78   Verifying        : python3-gpg-1.13.1-7.fc30.x86_64                    85/114 
+#7 50.78   Verifying        : python3-gpg-1.12.0-1.fc30.x86_64                    86/114 
+#7 50.78   Verifying        : python3-hawkey-0.43.1-5.fc30.x86_64                 87/114 
+#7 50.78   Verifying        : python3-hawkey-0.39.1-1.fc30.x86_64                 88/114 
+#7 50.78   Verifying        : python3-libdnf-0.43.1-5.fc30.x86_64                 89/114 
+#7 50.78   Verifying        : python3-libdnf-0.39.1-1.fc30.x86_64                 90/114 
+#7 50.78   Verifying        : python3-libs-3.7.7-1.fc30.x86_64                    91/114 
+#7 50.78   Verifying        : python3-libs-3.7.6-2.fc30.x86_64                    92/114 
+#7 50.78   Verifying        : python3-pip-19.0.3-7.fc30.noarch                    93/114 
+#7 50.78   Verifying        : python3-pip-19.0.3-6.fc30.noarch                    94/114 
+#7 50.78   Verifying        : shadow-utils-2:4.6-9.fc30.x86_64                    95/114 
+#7 50.78   Verifying        : shadow-utils-2:4.6-8.fc30.x86_64                    96/114 
+#7 50.78   Verifying        : sssd-client-2.2.3-13.fc30.x86_64                    97/114 
+#7 50.78   Verifying        : sssd-client-2.2.2-3.fc30.x86_64                     98/114 
+#7 50.78   Verifying        : sudo-1.8.31p1-1.fc30.x86_64                         99/114 
+#7 50.78   Verifying        : sudo-1.8.29-1.fc30.x86_64                          100/114 
+#7 50.78   Verifying        : systemd-241-14.git18dd3fb.fc30.x86_64              101/114 
+#7 50.78   Verifying        : systemd-241-12.git323cdf4.fc30.x86_64              102/114 
+#7 50.78   Verifying        : systemd-libs-241-14.git18dd3fb.fc30.x86_64         103/114 
+#7 50.78   Verifying        : systemd-libs-241-12.git323cdf4.fc30.x86_64         104/114 
+#7 50.78   Verifying        : systemd-pam-241-14.git18dd3fb.fc30.x86_64          105/114 
+#7 50.78   Verifying        : systemd-pam-241-12.git323cdf4.fc30.x86_64          106/114 
+#7 50.78   Verifying        : systemd-rpm-macros-241-14.git18dd3fb.fc30.noarch   107/114 
+#7 50.78   Verifying        : systemd-rpm-macros-241-12.git323cdf4.fc30.noarch   108/114 
+#7 50.78   Verifying        : tzdata-2020a-1.fc30.noarch                         109/114 
+#7 50.78   Verifying        : tzdata-2019c-2.fc30.noarch                         110/114 
+#7 50.78   Verifying        : vim-minimal-2:8.2.587-1.fc30.x86_64                111/114 
+#7 50.78   Verifying        : vim-minimal-2:8.2.109-1.fc30.x86_64                112/114 
+#7 50.78   Verifying        : whois-nls-5.5.6-1.fc30.noarch                      113/114 
+#7 50.78   Verifying        : whois-nls-5.5.5-1.fc30.noarch                      114/114 
+#7 52.05 
+#7 52.05 Upgraded:
+#7 52.05   cryptsetup-libs-2.3.0-1.fc30.x86_64                                           
+#7 52.05   dnf-4.2.18-1.fc30.noarch                                                      
+#7 52.05   dnf-data-4.2.18-1.fc30.noarch                                                 
+#7 52.05   dnf-yum-4.2.18-1.fc30.noarch                                                  
+#7 52.05   elfutils-debuginfod-client-0.179-2.fc30.x86_64                                
+#7 52.05   elfutils-default-yama-scope-0.179-2.fc30.noarch                               
+#7 52.05   elfutils-libelf-0.179-2.fc30.x86_64                                           
+#7 52.05   elfutils-libs-0.179-2.fc30.x86_64                                             
+#7 52.05   fedora-gpg-keys-30-4.noarch                                                   
+#7 52.05   fedora-repos-30-4.noarch                                                      
+#7 52.05   glib2-2.60.7-3.fc30.x86_64                                                    
+#7 52.05   glibc-2.29-29.fc30.x86_64                                                     
+#7 52.05   glibc-common-2.29-29.fc30.x86_64                                              
+#7 52.05   glibc-minimal-langpack-2.29-29.fc30.x86_64                                    
+#7 52.05   gnupg2-2.2.20-2.fc30.x86_64                                                   
+#7 52.05   gpgme-1.13.1-7.fc30.x86_64                                                    
+#7 52.05   json-c-0.13.1-12.fc30.x86_64                                                  
+#7 52.05   libarchive-3.3.3-7.fc30.x86_64                                                
+#7 52.05   libdnf-0.43.1-5.fc30.x86_64                                                   
+#7 52.05   libgcc-9.3.1-2.fc30.x86_64                                                    
+#7 52.05   libnghttp2-1.40.0-1.fc30.x86_64                                               
+#7 52.05   libpcap-14:1.9.1-2.fc30.x86_64                                                
+#7 52.05   libreport-filesystem-2.12.0-2.fc30.noarch                                     
+#7 52.05   libsss_idmap-2.2.3-13.fc30.x86_64                                             
+#7 52.05   libsss_nss_idmap-2.2.3-13.fc30.x86_64                                         
+#7 52.05   libstdc++-9.3.1-2.fc30.x86_64                                                 
+#7 52.05   libtirpc-1.2.6-0.fc30.x86_64                                                  
+#7 52.05   libxcrypt-4.4.16-3.fc30.x86_64                                                
+#7 52.05   libxcrypt-compat-4.4.16-3.fc30.x86_64                                         
+#7 52.05   libxml2-2.9.10-3.fc30.x86_64                                                  
+#7 52.05   mkpasswd-5.5.6-1.fc30.x86_64                                                  
+#7 52.05   openssl-1:1.1.1g-1.fc30.x86_64                                                
+#7 52.05   openssl-libs-1:1.1.1g-1.fc30.x86_64                                           
+#7 52.05   pcre-8.44-1.fc30.x86_64                                                       
+#7 52.05   pcre2-10.34-9.fc30.x86_64                                                     
+#7 52.05   python-pip-wheel-19.0.3-7.fc30.noarch                                         
+#7 52.05   python3-3.7.7-1.fc30.x86_64                                                   
+#7 52.05   python3-dnf-4.2.18-1.fc30.noarch                                              
+#7 52.05   python3-gpg-1.13.1-7.fc30.x86_64                                              
+#7 52.05   python3-hawkey-0.43.1-5.fc30.x86_64                                           
+#7 52.05   python3-libdnf-0.43.1-5.fc30.x86_64                                           
+#7 52.05   python3-libs-3.7.7-1.fc30.x86_64                                              
+#7 52.05   python3-pip-19.0.3-7.fc30.noarch                                              
+#7 52.05   shadow-utils-2:4.6-9.fc30.x86_64                                              
+#7 52.05   sssd-client-2.2.3-13.fc30.x86_64                                              
+#7 52.05   sudo-1.8.31p1-1.fc30.x86_64                                                   
+#7 52.05   systemd-241-14.git18dd3fb.fc30.x86_64                                         
+#7 52.05   systemd-libs-241-14.git18dd3fb.fc30.x86_64                                    
+#7 52.05   systemd-pam-241-14.git18dd3fb.fc30.x86_64                                     
+#7 52.05   systemd-rpm-macros-241-14.git18dd3fb.fc30.noarch                              
+#7 52.05   tzdata-2020a-1.fc30.noarch                                                    
+#7 52.05   vim-minimal-2:8.2.587-1.fc30.x86_64                                           
+#7 52.05   whois-nls-5.5.6-1.fc30.noarch                                                 
+#7 52.05 
+#7 52.05 Installed:
+#7 52.05   glibc-langpack-en-2.29-29.fc30.x86_64    gnupg2-smime-2.2.20-2.fc30.x86_64   
+#7 52.05   shared-mime-info-1.15-1.fc30.x86_64      libxkbcommon-0.8.3-1.fc30.x86_64    
+#7 52.05   pinentry-1.1.0-5.fc30.x86_64             pcre2-syntax-10.34-9.fc30.noarch    
+#7 52.05   xkeyboard-config-2.26-2.fc30.noarch      libsecret-0.18.8-1.fc30.x86_64      
+#7 52.05 
+#7 52.05 Complete!
+#7 DONE 53.0s
+
+#8 [ 3/17] RUN dnf -y remove vim-minimal
+#8 0.388 Dependencies resolved.
+#8 0.389 ================================================================================
+#8 0.389  Package            Architecture  Version                 Repository       Size
+#8 0.389 ================================================================================
+#8 0.389 Removing:
+#8 0.389  vim-minimal        x86_64        2:8.2.587-1.fc30        @updates        1.5 M
+#8 0.389 
+#8 0.389 Transaction Summary
+#8 0.389 ================================================================================
+#8 0.389 Remove  1 Package
+#8 0.389 
+#8 0.389 Freed space: 1.5 M
+#8 0.389 Running transaction check
+#8 0.395 Transaction check succeeded.
+#8 0.395 Running transaction test
+#8 0.404 Transaction test succeeded.
+#8 0.405 Running transaction
+#8 0.437   Preparing        :                                                        1/1 
+#8 0.472   Erasing          : vim-minimal-2:8.2.587-1.fc30.x86_64                    1/1 
+#8 0.516   Running scriptlet: vim-minimal-2:8.2.587-1.fc30.x86_64                    1/1 
+#8 0.557   Verifying        : vim-minimal-2:8.2.587-1.fc30.x86_64                    1/1 
+#8 0.569 
+#8 0.569 Removed:
+#8 0.569   vim-minimal-2:8.2.587-1.fc30.x86_64                                           
+#8 0.569 
+#8 0.569 Complete!
+#8 DONE 0.6s
+
+#9 [ 4/17] RUN dnf -y reinstall shadow-utils  # needed for man pages, dunno why
+#9 1.644 Last metadata expiration check: 0:00:44 ago on Thu Aug  1 07:26:17 2024.
+#9 3.341 Dependencies resolved.
+#9 4.251 ================================================================================
+#9 4.251  Package              Architecture   Version              Repository       Size
+#9 4.251 ================================================================================
+#9 4.251 Reinstalling:
+#9 4.251  shadow-utils         x86_64         2:4.6-9.fc30         updates         1.2 M
+#9 4.251 
+#9 4.251 Transaction Summary
+#9 4.251 ================================================================================
+#9 4.251 
+#9 4.251 Total download size: 1.2 M
+#9 4.251 Installed size: 5.0 M
+#9 4.252 Downloading Packages:
+#9 4.614 shadow-utils-4.6-9.fc30.x86_64.rpm               14 MB/s | 1.2 MB     00:00    
+#9 4.615 --------------------------------------------------------------------------------
+#9 4.615 Total                                           3.3 MB/s | 1.2 MB     00:00     
+#9 4.617 Running transaction check
+#9 4.630 Transaction check succeeded.
+#9 4.630 Running transaction test
+#9 4.662 Transaction test succeeded.
+#9 4.666 Running transaction
+#9 4.763   Preparing        :                                                        1/1 
+#9 4.956   Reinstalling     : shadow-utils-2:4.6-9.fc30.x86_64                       1/2 
+#9 5.022   Cleanup          : shadow-utils-2:4.6-9.fc30.x86_64                       2/2 
+#9 5.050   Running scriptlet: shadow-utils-2:4.6-9.fc30.x86_64                       2/2 
+#9 5.109   Verifying        : shadow-utils-2:4.6-9.fc30.x86_64                       1/2 
+#9 5.109   Verifying        : shadow-utils-2:4.6-9.fc30.x86_64                       2/2 
+#9 6.003 
+#9 6.003 Reinstalled:
+#9 6.003   shadow-utils-2:4.6-9.fc30.x86_64                                              
+#9 6.003 
+#9 6.003 Complete!
+#9 DONE 6.1s
+
+#10 [ 5/17] RUN dnf -y install vim sudo tmux zsh moreutils make moreutils sudo       dos2unix strace git the_silver_searcher procps-ng openssh-server       initscripts openssh man-db ncurses-compat-libs wget curl       libcurl-devel pcre-devel bzip2-devel rsync zlib-devel       pkgconfig w3m openssl-devel gcc rubygem-rake fpaste       zip unzip psmisc lsof python yum-plugin-ovl glibc-all-langpacks
+#10 1.560 Last metadata expiration check: 0:00:50 ago on Thu Aug  1 07:26:17 2024.
+#10 2.356 Package sudo-1.8.31p1-1.fc30.x86_64 is already installed.
+#10 2.377 Package curl-7.65.3-4.fc30.x86_64 is already installed.
+#10 3.318 Dependencies resolved.
+#10 4.210 ================================================================================
+#10 4.210  Package                     Arch    Version                     Repo      Size
+#10 4.210 ================================================================================
+#10 4.210 Installing:
+#10 4.210  bzip2-devel                 x86_64  1.0.6-29.fc30               fedora   215 k
+#10 4.210  dos2unix                    x86_64  7.4.0-6.fc30                fedora   230 k
+#10 4.210  fpaste                      noarch  0.4.0.1-1.fc30              updates   32 k
+#10 4.210  gcc                         x86_64  9.3.1-2.fc30                updates   23 M
+#10 4.210  git                         x86_64  2.21.3-1.fc30               updates  129 k
+#10 4.210  glibc-all-langpacks         x86_64  2.29-29.fc30                updates   25 M
+#10 4.210  initscripts                 x86_64  10.02-1.fc30                updates  202 k
+#10 4.210  libcurl-devel               x86_64  7.65.3-4.fc30               updates  812 k
+#10 4.210  lsof                        x86_64  4.91-3.fc30                 fedora   243 k
+#10 4.210  make                        x86_64  1:4.2.1-14.fc30             updates  486 k
+#10 4.210  man-db                      x86_64  2.8.4-4.fc30                fedora   1.0 M
+#10 4.210  moreutils                   x86_64  0.57-10.fc30                fedora    79 k
+#10 4.210  ncurses-compat-libs         x86_64  6.1-10.20180923.fc30        fedora   285 k
+#10 4.210  openssh-server              x86_64  8.0p1-5.fc30                updates  394 k
+#10 4.210  openssl-devel               x86_64  1:1.1.1g-1.fc30             updates  2.3 M
+#10 4.210  pcre-devel                  x86_64  8.44-1.fc30                 updates  529 k
+#10 4.210  pkgconf-pkg-config          x86_64  1.6.1-1.fc30                fedora    11 k
+#10 4.210  procps-ng                   x86_64  3.3.15-5.fc30               fedora   301 k
+#10 4.210  psmisc                      x86_64  23.3-1.fc30                 updates  156 k
+#10 4.210  python-unversioned-command  noarch  2.7.18-1.fc30               updates  9.3 k
+#10 4.210  rsync                       x86_64  3.1.3-9.fc30                updates  405 k
+#10 4.210  rubygem-rake                noarch  12.3.3-200.fc30             updates   73 k
+#10 4.210  strace                      x86_64  5.6-1.fc30                  updates  1.1 M
+#10 4.210  the_silver_searcher         x86_64  2.1.0-4.fc30                fedora    53 k
+#10 4.210  tmux                        x86_64  2.9a-2.fc30                 updates  324 k
+#10 4.210  unzip                       x86_64  6.0-43.fc30                 fedora   175 k
+#10 4.210  vim-enhanced                x86_64  2:8.2.587-1.fc30            updates  1.5 M
+#10 4.210  w3m                         x86_64  0.5.3-45.git20190105.fc30   updates  1.0 M
+#10 4.210  wget                        x86_64  1.20.3-1.fc30               fedora   772 k
+#10 4.210  yum-plugin-ovl              noarch  1.1.31-519.fc30             fedora    17 k
+#10 4.210  zip                         x86_64  3.0-24.fc30                 fedora   264 k
+#10 4.210  zlib-devel                  x86_64  1.2.11-19.fc30              updates   46 k
+#10 4.210  zsh                         x86_64  5.7.1-6.fc30                updates  3.0 M
+#10 4.210 Installing dependencies:
+#10 4.210  binutils                    x86_64  2.31.1-37.fc30              updates  5.9 M
+#10 4.210  cpio                        x86_64  2.12-10.fc30                fedora   247 k
+#10 4.210  cpp                         x86_64  9.3.1-2.fc30                updates  9.8 M
+#10 4.210  emacs-filesystem            noarch  1:26.3-1.fc30               updates  8.6 k
+#10 4.210  findutils                   x86_64  1:4.6.0-22.fc30             fedora   504 k
+#10 4.210  fipscheck                   x86_64  1.5.0-6.fc30                fedora    24 k
+#10 4.210  fipscheck-lib               x86_64  1.5.0-6.fc30                fedora    12 k
+#10 4.210  gc                          x86_64  7.6.4-5.fc30                fedora    93 k
+#10 4.210  gdbm                        x86_64  1:1.18-4.fc30               fedora   116 k
+#10 4.210  git-core                    x86_64  2.21.3-1.fc30               updates  5.8 M
+#10 4.210  git-core-doc                noarch  2.21.3-1.fc30               updates  2.3 M
+#10 4.210  glibc-devel                 x86_64  2.29-29.fc30                updates  1.0 M
+#10 4.210  glibc-headers               x86_64  2.29-29.fc30                updates  455 k
+#10 4.210  gpm-libs                    x86_64  1.20.7-21.fc30              updates   19 k
+#10 4.210  groff-base                  x86_64  1.22.3-19.fc30              fedora   938 k
+#10 4.210  guile22                     x86_64  2.2.4-3.fc30                fedora   6.4 M
+#10 4.210  isl                         x86_64  0.16.1-8.fc30               fedora   796 k
+#10 4.210  kernel-headers              x86_64  5.6.11-100.fc30             updates  1.3 M
+#10 4.210  less                        x86_64  551-1.fc30                  updates  144 k
+#10 4.210  libatomic_ops               x86_64  7.6.6-2.fc30                fedora    34 k
+#10 4.210  libedit                     x86_64  3.1-30.20191211cvs.fc30     updates  100 k
+#10 4.210  libgomp                     x86_64  9.3.1-2.fc30                updates  234 k
+#10 4.210  libmpc                      x86_64  1.1.0-3.fc30                fedora    56 k
+#10 4.210  libpipeline                 x86_64  1.5.1-2.fc30                fedora    51 k
+#10 4.210  libpkgconf                  x86_64  1.6.1-1.fc30                fedora    34 k
+#10 4.210  libtool-ltdl                x86_64  2.4.6-29.fc30               fedora    34 k
+#10 4.210  libxcrypt-devel             x86_64  4.4.16-3.fc30               updates   34 k
+#10 4.210  openssh                     x86_64  8.0p1-5.fc30                updates  405 k
+#10 4.210  openssh-clients             x86_64  8.0p1-5.fc30                updates  555 k
+#10 4.210  pcre-cpp                    x86_64  8.44-1.fc30                 updates   26 k
+#10 4.210  pcre-utf16                  x86_64  8.44-1.fc30                 updates  175 k
+#10 4.210  pcre-utf32                  x86_64  8.44-1.fc30                 updates  165 k
+#10 4.210  perl-Carp                   noarch  1.50-418.fc30               fedora    29 k
+#10 4.210  perl-Data-Dumper            x86_64  2.173-3.fc30                fedora    54 k
+#10 4.210  perl-Digest                 noarch  1.17-418.fc30               fedora    24 k
+#10 4.210  perl-Digest-MD5             x86_64  2.55-418.fc30               fedora    34 k
+#10 4.210  perl-Encode                 x86_64  4:3.06-15.fc30              updates  1.5 M
+#10 4.210  perl-Errno                  x86_64  1.29-444.fc30               updates   22 k
+#10 4.210  perl-Error                  noarch  1:0.17027-2.fc30            fedora    42 k
+#10 4.210  perl-Exporter               noarch  5.74-1.fc30                 updates   31 k
+#10 4.210  perl-File-Path              noarch  2.16-2.fc30                 fedora    36 k
+#10 4.210  perl-File-Temp              noarch  1:0.230.900-2.fc30          fedora    61 k
+#10 4.210  perl-Getopt-Long            noarch  1:2.51-1.fc30               updates   61 k
+#10 4.210  perl-Git                    noarch  2.21.3-1.fc30               updates   41 k
+#10 4.210  perl-HTTP-Tiny              noarch  0.076-2.fc30                fedora    55 k
+#10 4.210  perl-IO                     x86_64  1.39-444.fc30               updates   89 k
+#10 4.210  perl-IO-Tty                 x86_64  1.12-14.fc30                fedora    42 k
+#10 4.210  perl-IPC-Run                noarch  20180523.0-4.fc30           fedora   124 k
+#10 4.210  perl-MIME-Base64            x86_64  3.15-418.fc30               fedora    29 k
+#10 4.210  perl-NKF                    x86_64  1:2.1.4-13.fc30             fedora   133 k
+#10 4.210  perl-Net-SSLeay             x86_64  1.85-11.fc30                updates  327 k
+#10 4.210  perl-PathTools              x86_64  3.75-2.fc30                 fedora    85 k
+#10 4.210  perl-Pod-Escapes            noarch  1:1.07-418.fc30             fedora    20 k
+#10 4.210  perl-Pod-Perldoc            noarch  3.28.01-420.fc30            updates   84 k
+#10 4.210  perl-Pod-Simple             noarch  1:3.35-418.fc30             fedora   211 k
+#10 4.210  perl-Pod-Usage              noarch  4:1.70-1.fc30               updates   32 k
+#10 4.210  perl-Scalar-List-Utils      x86_64  3:1.50-418.fc30             fedora    63 k
+#10 4.210  perl-Socket                 x86_64  4:2.029-1.fc30              fedora    53 k
+#10 4.210  perl-Storable               x86_64  1:3.15-4.fc30               updates   95 k
+#10 4.210  perl-Term-ANSIColor         noarch  4.06-419.fc30               fedora    45 k
+#10 4.210  perl-Term-Cap               noarch  1.17-418.fc30               fedora    22 k
+#10 4.210  perl-TermReadKey            x86_64  2.38-2.fc30                 fedora    34 k
+#10 4.210  perl-Text-ParseWords        noarch  3.30-418.fc30               fedora    16 k
+#10 4.210  perl-Text-Tabs+Wrap         noarch  2013.0523-418.fc30          fedora    23 k
+#10 4.210  perl-Time-Duration          noarch  1.20-12.fc30                fedora    25 k
+#10 4.210  perl-Time-HiRes             x86_64  1.9760-1.fc30               fedora    57 k
+#10 4.210  perl-Time-Local             noarch  2:1.300-1.fc30              updates   34 k
+#10 4.210  perl-TimeDate               noarch  1:2.30-17.fc30              updates   48 k
+#10 4.210  perl-URI                    noarch  1.76-2.fc30                 fedora   110 k
+#10 4.210  perl-Unicode-Normalize      x86_64  1.26-418.fc30               fedora    80 k
+#10 4.210  perl-constant               noarch  1.33-419.fc30               fedora    23 k
+#10 4.210  perl-interpreter            x86_64  4:5.28.2-444.fc30           updates  6.4 M
+#10 4.210  perl-libnet                 noarch  3.11-419.fc30               fedora   119 k
+#10 4.210  perl-libs                   x86_64  4:5.28.2-444.fc30           updates  1.6 M
+#10 4.210  perl-macros                 noarch  4:5.28.2-444.fc30           updates   18 k
+#10 4.210  perl-parent                 noarch  1:0.237-3.fc30              fedora    14 k
+#10 4.210  perl-podlators              noarch  1:4.12-1.fc30               updates  115 k
+#10 4.210  perl-threads                x86_64  1:2.22-418.fc30             fedora    56 k
+#10 4.210  perl-threads-shared         x86_64  1.59-3.fc30                 updates   42 k
+#10 4.210  pkgconf                     x86_64  1.6.1-1.fc30                fedora    38 k
+#10 4.210  pkgconf-m4                  noarch  1.6.1-1.fc30                fedora    15 k
+#10 4.210  pyliblzma                   x86_64  0.5.3-25.fc30               fedora    52 k
+#10 4.210  python2                     x86_64  2.7.18-1.fc30               updates   43 k
+#10 4.210  python2-gpg                 x86_64  1.13.1-7.fc30               updates  236 k
+#10 4.210  python2-iniparse            noarch  0.4-33.fc30                 fedora    42 k
+#10 4.210  python2-libs                x86_64  2.7.18-1.fc30               updates  6.4 M
+#10 4.210  python2-pycurl              x86_64  7.43.0.2-6.fc30             fedora   218 k
+#10 4.210  python2-pyxattr             x86_64  0.6.1-1.fc30                updates   32 k
+#10 4.210  python2-rpm                 x86_64  4.14.2.1-5.fc30             updates   66 k
+#10 4.210  python2-six                 noarch  1.12.0-1.fc30               fedora    35 k
+#10 4.210  python2-urlgrabber          noarch  4.0.0-3.fc30                updates  102 k
+#10 4.210  python3-pycurl              x86_64  7.43.0.2-6.fc30             fedora   218 k
+#10 4.210  python3-six                 noarch  1.12.0-1.fc30               fedora    35 k
+#10 4.210  python3-urlgrabber          noarch  4.0.0-3.fc30                updates  105 k
+#10 4.210  ruby                        x86_64  2.6.5-124.fc30              updates   42 k
+#10 4.210  ruby-libs                   x86_64  2.6.5-124.fc30              updates  3.0 M
+#10 4.210  rubygem-irb                 noarch  1.0.0-124.fc30              updates   66 k
+#10 4.210  rubygem-json                x86_64  2.2.0-202.fc30              updates   56 k
+#10 4.210  rubygem-openssl             x86_64  2.1.2-124.fc30              updates  144 k
+#10 4.210  rubygem-psych               x86_64  3.1.0-124.fc30              updates   51 k
+#10 4.210  rubygems                    noarch  3.0.3-124.fc30              updates  270 k
+#10 4.210  rubypick                    noarch  1.1.1-10.fc30               fedora   9.9 k
+#10 4.210  vim-common                  x86_64  2:8.2.587-1.fc30            updates  6.9 M
+#10 4.210  vim-filesystem              noarch  2:8.2.587-1.fc30            updates   23 k
+#10 4.210  which                       x86_64  2.21-14.fc30                fedora    41 k
+#10 4.210  yum                         noarch  3.4.3-522.fc30              updates  1.2 M
+#10 4.210  yum-metadata-parser         x86_64  1.1.4-22.fc29               fedora    41 k
+#10 4.210 Installing weak dependencies:
+#10 4.210  perl-IO-Socket-IP           noarch  0.39-419.fc30               fedora    42 k
+#10 4.210  perl-IO-Socket-SSL          noarch  2.066-2.fc30                updates  243 k
+#10 4.210  perl-Mozilla-CA             noarch  20180117-4.fc30             fedora    12 k
+#10 4.210  python2-pip                 noarch  19.0.3-7.fc30               updates  1.9 M
+#10 4.210  python2-setuptools          noarch  40.8.0-2.fc30               updates  642 k
+#10 4.210  rubygem-bigdecimal          x86_64  1.4.1-124.fc30              updates   55 k
+#10 4.210  rubygem-did_you_mean        noarch  1.3.0-124.fc30              updates   37 k
+#10 4.210  rubygem-io-console          x86_64  0.4.7-124.fc30              updates   22 k
+#10 4.210  rubygem-rdoc                noarch  6.1.2-124.fc30              updates  410 k
+#10 4.210 
+#10 4.210 Transaction Summary
+#10 4.210 ================================================================================
+#10 4.210 Install  149 Packages
+#10 4.210 
+#10 4.217 Total download size: 137 M
+#10 4.217 Installed size: 607 M
+#10 4.218 Downloading Packages:
+#10 4.941 (1/149): emacs-filesystem-26.3-1.fc30.noarch.rp 172 kB/s | 8.6 kB     00:00    
+#10 4.993 (2/149): fpaste-0.4.0.1-1.fc30.noarch.rpm       611 kB/s |  32 kB     00:00    
+#10 5.127 (3/149): binutils-2.31.1-37.fc30.x86_64.rpm      25 MB/s | 5.9 MB     00:00    
+#10 5.175 (4/149): cpp-9.3.1-2.fc30.x86_64.rpm             35 MB/s | 9.8 MB     00:00    
+#10 5.258 (5/149): git-2.21.3-1.fc30.x86_64.rpm           1.0 MB/s | 129 kB     00:00    
+#10 5.458 (6/149): git-core-2.21.3-1.fc30.x86_64.rpm       21 MB/s | 5.8 MB     00:00    
+#10 5.469 (7/149): git-core-doc-2.21.3-1.fc30.noarch.rpm   11 MB/s | 2.3 MB     00:00    
+#10 5.568 (8/149): gcc-9.3.1-2.fc30.x86_64.rpm             40 MB/s |  23 MB     00:00    
+#10 5.592 (9/149): glibc-devel-2.29-29.fc30.x86_64.rpm    8.1 MB/s | 1.0 MB     00:00    
+#10 5.648 (10/149): glibc-headers-2.29-29.fc30.x86_64.rpm 5.6 MB/s | 455 kB     00:00    
+#10 5.674 (11/149): gpm-libs-1.20.7-21.fc30.x86_64.rpm    239 kB/s |  19 kB     00:00    
+#10 5.772 (12/149): initscripts-10.02-1.fc30.x86_64.rpm   1.6 MB/s | 202 kB     00:00    
+#10 5.834 (13/149): kernel-headers-5.6.11-100.fc30.x86_64 8.0 MB/s | 1.3 MB     00:00    
+#10 5.936 (14/149): glibc-all-langpacks-2.29-29.fc30.x86_  53 MB/s |  25 MB     00:00    
+#10 5.939 (15/149): less-551-1.fc30.x86_64.rpm            868 kB/s | 144 kB     00:00    
+#10 5.941 (16/149): libcurl-devel-7.65.3-4.fc30.x86_64.rp 7.4 MB/s | 812 kB     00:00    
+#10 5.949 (17/149): libedit-3.1-30.20191211cvs.fc30.x86_6 9.0 MB/s | 100 kB     00:00    
+#10 5.962 (18/149): make-4.2.1-14.fc30.x86_64.rpm          36 MB/s | 486 kB     00:00    
+#10 5.964 (19/149): libgomp-9.3.1-2.fc30.x86_64.rpm        10 MB/s | 234 kB     00:00    
+#10 5.978 (20/149): openssh-clients-8.0p1-5.fc30.x86_64.r  37 MB/s | 555 kB     00:00    
+#10 5.979 (21/149): libxcrypt-devel-4.4.16-3.fc30.x86_64. 940 kB/s |  34 kB     00:00    
+#10 6.006 (22/149): openssh-server-8.0p1-5.fc30.x86_64.rp  14 MB/s | 394 kB     00:00    
+#10 6.007 (23/149): openssh-8.0p1-5.fc30.x86_64.rpm       8.8 MB/s | 405 kB     00:00    
+#10 6.032 (24/149): openssl-devel-1.1.1g-1.fc30.x86_64.rp  43 MB/s | 2.3 MB     00:00    
+#10 6.032 (25/149): pcre-cpp-8.44-1.fc30.x86_64.rpm       1.0 MB/s |  26 kB     00:00    
+#10 6.036 (26/149): pcre-devel-8.44-1.fc30.x86_64.rpm      18 MB/s | 529 kB     00:00    
+#10 6.054 (27/149): pcre-utf16-8.44-1.fc30.x86_64.rpm     8.7 MB/s | 175 kB     00:00    
+#10 6.054 (28/149): pcre-utf32-8.44-1.fc30.x86_64.rpm     8.0 MB/s | 165 kB     00:00    
+#10 6.071 (29/149): perl-Errno-1.29-444.fc30.x86_64.rpm   1.3 MB/s |  22 kB     00:00    
+#10 6.071 (30/149): perl-Exporter-5.74-1.fc30.noarch.rpm  1.9 MB/s |  31 kB     00:00    
+#10 6.081 (31/149): perl-Git-2.21.3-1.fc30.noarch.rpm     4.0 MB/s |  41 kB     00:00    
+#10 6.089 (32/149): perl-Getopt-Long-2.51-1.fc30.noarch.r 3.4 MB/s |  61 kB     00:00    
+#10 6.099 (33/149): perl-IO-1.39-444.fc30.x86_64.rpm      5.0 MB/s |  89 kB     00:00    
+#10 6.119 (34/149): perl-Encode-3.06-15.fc30.x86_64.rpm    18 MB/s | 1.5 MB     00:00    
+#10 6.120 (35/149): perl-IO-Socket-SSL-2.066-2.fc30.noarc 7.8 MB/s | 243 kB     00:00    
+#10 6.122 (36/149): perl-Net-SSLeay-1.85-11.fc30.x86_64.r  14 MB/s | 327 kB     00:00    
+#10 6.131 (37/149): perl-Pod-Usage-1.70-1.fc30.noarch.rpm 3.0 MB/s |  32 kB     00:00    
+#10 6.139 (38/149): perl-Pod-Perldoc-3.28.01-420.fc30.noa 4.4 MB/s |  84 kB     00:00    
+#10 6.148 (39/149): perl-Time-Local-1.300-1.fc30.noarch.r 1.9 MB/s |  34 kB     00:00    
+#10 6.156 (40/149): perl-TimeDate-2.30-17.fc30.noarch.rpm 2.8 MB/s |  48 kB     00:00    
+#10 6.159 (41/149): perl-Storable-3.15-4.fc30.x86_64.rpm  2.5 MB/s |  95 kB     00:00    
+#10 6.181 (42/149): perl-macros-5.28.2-444.fc30.noarch.rp 839 kB/s |  18 kB     00:00    
+#10 6.204 (43/149): perl-libs-5.28.2-444.fc30.x86_64.rpm   34 MB/s | 1.6 MB     00:00    
+#10 6.226 (44/149): perl-podlators-4.12-1.fc30.noarch.rpm 2.6 MB/s | 115 kB     00:00    
+#10 6.246 (45/149): perl-threads-shared-1.59-3.fc30.x86_6 1.0 MB/s |  42 kB     00:00    
+#10 6.270 (46/149): perl-interpreter-5.28.2-444.fc30.x86_  53 MB/s | 6.4 MB     00:00    
+#10 6.270 (47/149): psmisc-23.3-1.fc30.x86_64.rpm         3.5 MB/s | 156 kB     00:00    
+#10 6.274 (48/149): python-unversioned-command-2.7.18-1.f 355 kB/s | 9.3 kB     00:00    
+#10 6.314 (49/149): python2-2.7.18-1.fc30.x86_64.rpm      1.0 MB/s |  43 kB     00:00    
+#10 6.314 (50/149): python2-gpg-1.13.1-7.fc30.x86_64.rpm  5.5 MB/s | 236 kB     00:00    
+#10 6.375 (51/149): python2-libs-2.7.18-1.fc30.x86_64.rpm  63 MB/s | 6.4 MB     00:00    
+#10 6.375 (52/149): python2-pyxattr-0.6.1-1.fc30.x86_64.r 537 kB/s |  32 kB     00:00    
+#10 6.392 (53/149): python2-pip-19.0.3-7.fc30.noarch.rpm   25 MB/s | 1.9 MB     00:00    
+#10 6.394 (54/149): python2-setuptools-40.8.0-2.fc30.noar  40 MB/s | 642 kB     00:00    
+#10 6.411 (55/149): python2-urlgrabber-4.0.0-3.fc30.noarc 5.4 MB/s | 102 kB     00:00    
+#10 6.412 (56/149): python2-rpm-4.14.2.1-5.fc30.x86_64.rp 1.7 MB/s |  66 kB     00:00    
+#10 6.413 (57/149): python3-urlgrabber-4.0.0-3.fc30.noarc 5.6 MB/s | 105 kB     00:00    
+#10 6.430 (58/149): ruby-2.6.5-124.fc30.x86_64.rpm        2.3 MB/s |  42 kB     00:00    
+#10 6.436 (59/149): rsync-3.1.3-9.fc30.x86_64.rpm          17 MB/s | 405 kB     00:00    
+#10 6.450 (60/149): rubygem-bigdecimal-1.4.1-124.fc30.x86 2.6 MB/s |  55 kB     00:00    
+#10 6.454 (61/149): rubygem-did_you_mean-1.3.0-124.fc30.n 2.0 MB/s |  37 kB     00:00    
+#10 6.467 (62/149): ruby-libs-2.6.5-124.fc30.x86_64.rpm    55 MB/s | 3.0 MB     00:00    
+#10 6.468 (63/149): rubygem-io-console-0.4.7-124.fc30.x86 1.2 MB/s |  22 kB     00:00    
+#10 6.472 (64/149): rubygem-irb-1.0.0-124.fc30.noarch.rpm 3.5 MB/s |  66 kB     00:00    
+#10 6.486 (65/149): rubygem-json-2.2.0-202.fc30.x86_64.rp 3.1 MB/s |  56 kB     00:00    
+#10 6.486 (66/149): rubygem-openssl-2.1.2-124.fc30.x86_64 7.7 MB/s | 144 kB     00:00    
+#10 6.489 (67/149): rubygem-psych-3.1.0-124.fc30.x86_64.r 3.0 MB/s |  51 kB     00:00    
+#10 6.503 (68/149): rubygem-rake-12.3.3-200.fc30.noarch.r 4.3 MB/s |  73 kB     00:00    
+#10 6.511 (69/149): rubygem-rdoc-6.1.2-124.fc30.noarch.rp  16 MB/s | 410 kB     00:00    
+#10 6.518 (70/149): rubygems-3.0.3-124.fc30.noarch.rpm    9.4 MB/s | 270 kB     00:00    
+#10 6.537 (71/149): strace-5.6-1.fc30.x86_64.rpm           32 MB/s | 1.1 MB     00:00    
+#10 6.539 (72/149): tmux-2.9a-2.fc30.x86_64.rpm            12 MB/s | 324 kB     00:00    
+#10 6.561 (73/149): vim-filesystem-8.2.587-1.fc30.noarch. 1.1 MB/s |  23 kB     00:00    
+#10 6.588 (74/149): vim-enhanced-8.2.587-1.fc30.x86_64.rp  29 MB/s | 1.5 MB     00:00    
+#10 6.635 (75/149): w3m-0.5.3-45.git20190105.fc30.x86_64.  14 MB/s | 1.0 MB     00:00    
+#10 6.665 (76/149): vim-common-8.2.587-1.fc30.x86_64.rpm   47 MB/s | 6.9 MB     00:00    
+#10 6.670 (77/149): yum-3.4.3-522.fc30.noarch.rpm          15 MB/s | 1.2 MB     00:00    
+#10 6.673 (78/149): zlib-devel-1.2.11-19.fc30.x86_64.rpm  1.2 MB/s |  46 kB     00:00    
+#10 6.696 (79/149): bzip2-devel-1.0.6-29.fc30.x86_64.rpm  9.6 MB/s | 215 kB     00:00    
+#10 6.696 (80/149): cpio-2.12-10.fc30.x86_64.rpm           10 MB/s | 247 kB     00:00    
+#10 6.716 (81/149): dos2unix-7.4.0-6.fc30.x86_64.rpm       11 MB/s | 230 kB     00:00    
+#10 6.738 (82/149): zsh-5.7.1-6.fc30.x86_64.rpm            41 MB/s | 3.0 MB     00:00    
+#10 6.744 (83/149): findutils-4.6.0-22.fc30.x86_64.rpm     11 MB/s | 504 kB     00:00    
+#10 6.744 (84/149): fipscheck-1.5.0-6.fc30.x86_64.rpm     873 kB/s |  24 kB     00:00    
+#10 6.760 (85/149): fipscheck-lib-1.5.0-6.fc30.x86_64.rpm 661 kB/s |  12 kB     00:00    
+#10 6.762 (86/149): gc-7.6.4-5.fc30.x86_64.rpm            5.2 MB/s |  93 kB     00:00    
+#10 6.763 (87/149): gdbm-1.18-4.fc30.x86_64.rpm           6.3 MB/s | 116 kB     00:00    
+#10 6.793 (88/149): groff-base-1.22.3-19.fc30.x86_64.rpm   27 MB/s | 938 kB     00:00    
+#10 6.850 (89/149): isl-0.16.1-8.fc30.x86_64.rpm          8.9 MB/s | 796 kB     00:00    
+#10 6.850 (90/149): libatomic_ops-7.6.6-2.fc30.x86_64.rpm 599 kB/s |  34 kB     00:00    
+#10 6.885 (91/149): guile22-2.2.4-3.fc30.x86_64.rpm        52 MB/s | 6.4 MB     00:00    
+#10 6.888 (92/149): libpipeline-1.5.1-2.fc30.x86_64.rpm   1.4 MB/s |  51 kB     00:00    
+#10 6.888 (93/149): libmpc-1.1.0-3.fc30.x86_64.rpm        1.4 MB/s |  56 kB     00:00    
+#10 6.904 (94/149): libpkgconf-1.6.1-1.fc30.x86_64.rpm    2.1 MB/s |  34 kB     00:00    
+#10 6.906 (95/149): libtool-ltdl-2.4.6-29.fc30.x86_64.rpm 1.9 MB/s |  34 kB     00:00    
+#10 6.907 (96/149): lsof-4.91-3.fc30.x86_64.rpm            13 MB/s | 243 kB     00:00    
+#10 6.924 (97/149): moreutils-0.57-10.fc30.x86_64.rpm     4.5 MB/s |  79 kB     00:00    
+#10 6.927 (98/149): ncurses-compat-libs-6.1-10.20180923.f  14 MB/s | 285 kB     00:00    
+#10 6.939 (99/149): perl-Carp-1.50-418.fc30.noarch.rpm    1.8 MB/s |  29 kB     00:00    
+#10 6.944 (100/149): perl-Data-Dumper-2.173-3.fc30.x86_64 3.1 MB/s |  54 kB     00:00    
+#10 6.950 (101/149): man-db-2.8.4-4.fc30.x86_64.rpm        21 MB/s | 1.0 MB     00:00    
+#10 6.957 (102/149): perl-Digest-1.17-418.fc30.noarch.rpm 1.3 MB/s |  24 kB     00:00    
+#10 6.960 (103/149): perl-Digest-MD5-2.55-418.fc30.x86_64 2.0 MB/s |  34 kB     00:00    
+#10 6.970 (104/149): perl-Error-0.17027-2.fc30.noarch.rpm 2.1 MB/s |  42 kB     00:00    
+#10 6.976 (105/149): perl-File-Path-2.16-2.fc30.noarch.rp 2.0 MB/s |  36 kB     00:00    
+#10 6.978 (106/149): perl-File-Temp-0.230.900-2.fc30.noar 3.6 MB/s |  61 kB     00:00    
+#10 6.993 (107/149): perl-IO-Socket-IP-0.39-419.fc30.noar 2.5 MB/s |  42 kB     00:00    
+#10 6.994 (108/149): perl-IO-Tty-1.12-14.fc30.x86_64.rpm  2.5 MB/s |  42 kB     00:00    
+#10 7.010 (109/149): perl-IPC-Run-20180523.0-4.fc30.noarc 7.1 MB/s | 124 kB     00:00    
+#10 7.010 (110/149): perl-HTTP-Tiny-0.076-2.fc30.noarch.r 1.3 MB/s |  55 kB     00:00    
+#10 7.011 (111/149): perl-MIME-Base64-3.15-418.fc30.x86_6 1.6 MB/s |  29 kB     00:00    
+#10 7.028 (112/149): perl-Mozilla-CA-20180117-4.fc30.noar 669 kB/s |  12 kB     00:00    
+#10 7.029 (113/149): perl-NKF-2.1.4-13.fc30.x86_64.rpm    6.7 MB/s | 133 kB     00:00    
+#10 7.034 (114/149): perl-PathTools-3.75-2.fc30.x86_64.rp 3.7 MB/s |  85 kB     00:00    
+#10 7.048 (115/149): perl-Pod-Escapes-1.07-418.fc30.noarc 1.1 MB/s |  20 kB     00:00    
+#10 7.048 (116/149): perl-Pod-Simple-3.35-418.fc30.noarch  11 MB/s | 211 kB     00:00    
+#10 7.051 (117/149): perl-Scalar-List-Utils-1.50-418.fc30 3.6 MB/s |  63 kB     00:00    
+#10 7.064 (118/149): perl-Socket-2.029-1.fc30.x86_64.rpm  3.1 MB/s |  53 kB     00:00    
+#10 7.065 (119/149): perl-Term-ANSIColor-4.06-419.fc30.no 2.6 MB/s |  45 kB     00:00    
+#10 7.066 (120/149): perl-Term-Cap-1.17-418.fc30.noarch.r 1.4 MB/s |  22 kB     00:00    
+#10 7.080 (121/149): perl-TermReadKey-2.38-2.fc30.x86_64. 2.1 MB/s |  34 kB     00:00    
+#10 7.082 (122/149): perl-Text-ParseWords-3.30-418.fc30.n 949 kB/s |  16 kB     00:00    
+#10 7.082 (123/149): perl-Text-Tabs+Wrap-2013.0523-418.fc 1.4 MB/s |  23 kB     00:00    
+#10 7.097 (124/149): perl-Time-Duration-1.20-12.fc30.noar 1.4 MB/s |  25 kB     00:00    
+#10 7.100 (125/149): perl-Time-HiRes-1.9760-1.fc30.x86_64 3.4 MB/s |  57 kB     00:00    
+#10 7.102 (126/149): perl-URI-1.76-2.fc30.noarch.rpm      5.6 MB/s | 110 kB     00:00    
+#10 7.115 (127/149): perl-constant-1.33-419.fc30.noarch.r 1.4 MB/s |  23 kB     00:00    
+#10 7.121 (128/149): perl-libnet-3.11-419.fc30.noarch.rpm 6.4 MB/s | 119 kB     00:00    
+#10 7.121 (129/149): perl-Unicode-Normalize-1.26-418.fc30 3.3 MB/s |  80 kB     00:00    
+#10 7.132 (130/149): perl-parent-0.237-3.fc30.noarch.rpm  865 kB/s |  14 kB     00:00    
+#10 7.137 (131/149): pkgconf-1.6.1-1.fc30.x86_64.rpm      2.3 MB/s |  38 kB     00:00    
+#10 7.147 (132/149): pkgconf-m4-1.6.1-1.fc30.noarch.rpm   1.0 MB/s |  15 kB     00:00    
+#10 7.148 (133/149): perl-threads-2.22-418.fc30.x86_64.rp 2.0 MB/s |  56 kB     00:00    
+#10 7.154 (134/149): pkgconf-pkg-config-1.6.1-1.fc30.x86_ 631 kB/s |  11 kB     00:00    
+#10 7.165 (135/149): pyliblzma-0.5.3-25.fc30.x86_64.rpm   3.1 MB/s |  52 kB     00:00    
+#10 7.171 (136/149): procps-ng-3.3.15-5.fc30.x86_64.rpm    12 MB/s | 301 kB     00:00    
+#10 7.171 (137/149): python2-iniparse-0.4-33.fc30.noarch. 2.4 MB/s |  42 kB     00:00    
+#10 7.183 (138/149): python2-pycurl-7.43.0.2-6.fc30.x86_6  12 MB/s | 218 kB     00:00    
+#10 7.188 (139/149): python2-six-1.12.0-1.fc30.noarch.rpm 2.1 MB/s |  35 kB     00:00    
+#10 7.196 (140/149): python3-pycurl-7.43.0.2-6.fc30.x86_6 9.3 MB/s | 218 kB     00:00    
+#10 7.199 (141/149): python3-six-1.12.0-1.fc30.noarch.rpm 2.1 MB/s |  35 kB     00:00    
+#10 7.204 (142/149): rubypick-1.1.1-10.fc30.noarch.rpm    593 kB/s | 9.9 kB     00:00    
+#10 7.212 (143/149): the_silver_searcher-2.1.0-4.fc30.x86 3.0 MB/s |  53 kB     00:00    
+#10 7.224 (144/149): unzip-6.0-43.fc30.x86_64.rpm         6.8 MB/s | 175 kB     00:00    
+#10 7.231 (145/149): wget-1.20.3-1.fc30.x86_64.rpm         29 MB/s | 772 kB     00:00    
+#10 7.231 (146/149): which-2.21-14.fc30.x86_64.rpm        2.1 MB/s |  41 kB     00:00    
+#10 7.246 (147/149): yum-plugin-ovl-1.1.31-519.fc30.noarc 1.1 MB/s |  17 kB     00:00    
+#10 7.247 (148/149): yum-metadata-parser-1.1.4-22.fc29.x8 1.8 MB/s |  41 kB     00:00    
+#10 7.257 (149/149): zip-3.0-24.fc30.x86_64.rpm            10 MB/s | 264 kB     00:00    
+#10 7.260 --------------------------------------------------------------------------------
+#10 7.262 Total                                            46 MB/s | 137 MB     00:02     
+#10 7.435 Running transaction check
+#10 7.555 Transaction check succeeded.
+#10 7.555 Running transaction test
+#10 8.986 Transaction test succeeded.
+#10 8.986 Running transaction
+#10 11.68   Preparing        :                                                        1/1 
+#10 12.00   Installing       : perl-libs-4:5.28.2-444.fc30.x86_64                   1/149 
+#10 12.07   Installing       : perl-Carp-1.50-418.fc30.noarch                       2/149 
+#10 12.09   Installing       : perl-Exporter-5.74-1.fc30.noarch                     3/149 
+#10 12.51   Installing       : ruby-libs-2.6.5-124.fc30.x86_64                      4/149 
+#10 12.60   Installing       : perl-Scalar-List-Utils-3:1.50-418.fc30.x86_64        5/149 
+#10 12.62   Installing       : perl-parent-1:0.237-3.fc30.noarch                    6/149 
+#10 12.65   Installing       : rubygem-bigdecimal-1.4.1-124.fc30.x86_64             7/149 
+#10 12.69   Installing       : rubygem-did_you_mean-1.3.0-124.fc30.noarch           8/149 
+#10 12.71   Installing       : rubygem-io-console-0.4.7-124.fc30.x86_64             9/149 
+#10 12.75   Installing       : rubygem-irb-1.0.0-124.fc30.noarch                   10/149 
+#10 12.79   Installing       : rubygem-json-2.2.0-202.fc30.x86_64                  11/149 
+#10 12.83   Installing       : rubygem-openssl-2.1.2-124.fc30.x86_64               12/149 
+#10 12.86   Installing       : rubygem-psych-3.1.0-124.fc30.x86_64                 13/149 
+#10 12.96   Installing       : rubygem-rdoc-6.1.2-124.fc30.noarch                  14/149 
+#10 13.04   Installing       : rubygems-3.0.3-124.fc30.noarch                      15/149 
+#10 13.07   Installing       : rubypick-1.1.1-10.fc30.noarch                       16/149 
+#10 13.09   Installing       : ruby-2.6.5-124.fc30.x86_64                          17/149 
+#10 13.12   Installing       : perl-Text-ParseWords-3.30-418.fc30.noarch           18/149 
+#10 13.14   Installing       : libmpc-1.1.0-3.fc30.x86_64                          19/149 
+#10 13.30   Installing       : groff-base-1.22.3-19.fc30.x86_64                    20/149 
+#10 13.35   Installing       : less-551-1.fc30.x86_64                              21/149 
+#10 13.37   Installing       : gpm-libs-1.20.7-21.fc30.x86_64                      22/149 
+#10 14.40   Installing       : cpp-9.3.1-2.fc30.x86_64                             23/149 
+#10 14.43   Installing       : perl-Term-ANSIColor-4.06-419.fc30.noarch            24/149 
+#10 14.46   Installing       : perl-Time-HiRes-1.9760-1.fc30.x86_64                25/149 
+#10 14.50   Installing       : perl-Unicode-Normalize-1.26-418.fc30.x86_64         26/149 
+#10 14.53   Installing       : perl-Socket-4:2.029-1.fc30.x86_64                   27/149 
+#10 14.55   Installing       : perl-Errno-1.29-444.fc30.x86_64                     28/149 
+#10 14.57   Installing       : perl-macros-4:5.28.2-444.fc30.noarch                29/149 
+#10 14.60   Installing       : perl-IO-1.39-444.fc30.x86_64                        30/149 
+#10 14.63   Installing       : perl-Text-Tabs+Wrap-2013.0523-418.fc30.noarch       31/149 
+#10 14.65   Installing       : perl-constant-1.33-419.fc30.noarch                  32/149 
+#10 14.68   Installing       : perl-PathTools-3.75-2.fc30.x86_64                   33/149 
+#10 14.70   Installing       : perl-threads-shared-1.59-3.fc30.x86_64              34/149 
+#10 14.73   Installing       : perl-threads-1:2.22-418.fc30.x86_64                 35/149 
+#10 14.76   Installing       : perl-File-Path-2.16-2.fc30.noarch                   36/149 
+#10 15.33   Installing       : perl-interpreter-4:5.28.2-444.fc30.x86_64           37/149 
+#10 15.38   Installing       : perl-MIME-Base64-3.15-418.fc30.x86_64               38/149 
+#10 15.41   Installing       : perl-Time-Local-2:1.300-1.fc30.noarch               39/149 
+#10 15.43   Installing       : perl-File-Temp-1:0.230.900-2.fc30.noarch            40/149 
+#10 15.45   Installing       : perl-IO-Socket-IP-0.39-419.fc30.noarch              41/149 
+#10 15.49   Installing       : perl-Data-Dumper-2.173-3.fc30.x86_64                42/149 
+#10 15.52   Installing       : perl-TimeDate-1:2.30-17.fc30.noarch                 43/149 
+#10 15.58   Installing       : perl-Net-SSLeay-1.85-11.fc30.x86_64                 44/149 
+#10 15.62   Installing       : perl-Digest-1.17-418.fc30.noarch                    45/149 
+#10 15.64   Installing       : perl-Digest-MD5-2.55-418.fc30.x86_64                46/149 
+#10 15.67   Installing       : perl-Storable-1:3.15-4.fc30.x86_64                  47/149 
+#10 15.69   Installing       : perl-Error-1:0.17027-2.fc30.noarch                  48/149 
+#10 15.72   Installing       : perl-IO-Tty-1.12-14.fc30.x86_64                     49/149 
+#10 15.76   Installing       : perl-IPC-Run-20180523.0-4.fc30.noarch               50/149 
+#10 15.79   Installing       : perl-NKF-1:2.1.4-13.fc30.x86_64                     51/149 
+#10 15.81   Installing       : perl-Pod-Escapes-1:1.07-418.fc30.noarch             52/149 
+#10 15.83   Installing       : perl-Term-Cap-1.17-418.fc30.noarch                  53/149 
+#10 15.85   Installing       : perl-TermReadKey-2.38-2.fc30.x86_64                 54/149 
+#10 15.88   Installing       : perl-Mozilla-CA-20180117-4.fc30.noarch              55/149 
+#10 15.92   Installing       : perl-Pod-Simple-1:3.35-418.fc30.noarch              56/149 
+#10 15.95   Installing       : perl-Getopt-Long-1:2.51-1.fc30.noarch               57/149 
+#10 16.20   Installing       : perl-Encode-4:3.06-15.fc30.x86_64                   58/149 
+#10 16.24   Installing       : perl-podlators-1:4.12-1.fc30.noarch                 59/149 
+#10 16.27   Installing       : perl-Pod-Usage-4:1.70-1.fc30.noarch                 60/149 
+#10 16.30   Installing       : perl-Pod-Perldoc-3.28.01-420.fc30.noarch            61/149 
+#10 16.33   Installing       : perl-HTTP-Tiny-0.076-2.fc30.noarch                  62/149 
+#10 16.37   Installing       : perl-libnet-3.11-419.fc30.noarch                    63/149 
+#10 16.41   Installing       : perl-URI-1.76-2.fc30.noarch                         64/149 
+#10 16.46   Installing       : perl-IO-Socket-SSL-2.066-2.fc30.noarch              65/149 
+#10 16.49   Installing       : perl-Time-Duration-1.20-12.fc30.noarch              66/149 
+#10 16.51   Installing       : fipscheck-lib-1.5.0-6.fc30.x86_64                   67/149 
+#10 16.54   Installing       : fipscheck-1.5.0-6.fc30.x86_64                       68/149 
+#10 16.56   Running scriptlet: openssh-8.0p1-5.fc30.x86_64                         69/149 
+#10 16.64   Installing       : openssh-8.0p1-5.fc30.x86_64                         69/149 
+#10 16.67   Installing       : which-2.21-14.fc30.x86_64                           70/149 
+#10 16.71   Installing       : unzip-6.0-43.fc30.x86_64                            71/149 
+#10 16.74   Installing       : python3-six-1.12.0-1.fc30.noarch                    72/149 
+#10 16.78   Installing       : python3-pycurl-7.43.0.2-6.fc30.x86_64               73/149 
+#10 16.83   Installing       : python3-urlgrabber-4.0.0-3.fc30.noarch              74/149 
+#10 16.89   Installing       : procps-ng-3.3.15-5.fc30.x86_64                      75/149 
+#10 16.92   Installing       : pkgconf-m4-1.6.1-1.fc30.noarch                      76/149 
+#10 16.95   Installing       : libtool-ltdl-2.4.6-29.fc30.x86_64                   77/149 
+#10 16.98   Installing       : libpkgconf-1.6.1-1.fc30.x86_64                      78/149 
+#10 17.00   Installing       : pkgconf-1.6.1-1.fc30.x86_64                         79/149 
+#10 17.03   Installing       : pkgconf-pkg-config-1.6.1-1.fc30.x86_64              80/149 
+#10 17.05   Installing       : libpipeline-1.5.1-2.fc30.x86_64                     81/149 
+#10 17.10   Installing       : libatomic_ops-7.6.6-2.fc30.x86_64                   82/149 
+#10 17.14   Installing       : gc-7.6.4-5.fc30.x86_64                              83/149 
+#10 18.11   Installing       : guile22-2.2.4-3.fc30.x86_64                         84/149 
+#10 18.16   Running scriptlet: guile22-2.2.4-3.fc30.x86_64                         84/149 
+#10 18.28   Installing       : isl-0.16.1-8.fc30.x86_64                            85/149 
+#10 18.31   Installing       : gdbm-1:1.18-4.fc30.x86_64                           86/149 
+#10 19.30   Installing       : python2-libs-2.7.18-1.fc30.x86_64                   87/149 
+#10 19.67   Installing       : python2-pip-19.0.3-7.fc30.noarch                    88/149 
+#10 19.82   Installing       : python2-setuptools-40.8.0-2.fc30.noarch             89/149 
+#10 19.86   Installing       : python2-2.7.18-1.fc30.x86_64                        90/149 
+#10 19.88   Installing       : python-unversioned-command-2.7.18-1.fc30.noarch     91/149 
+#10 19.91   Installing       : python2-six-1.12.0-1.fc30.noarch                    92/149 
+#10 19.94   Installing       : python2-iniparse-0.4-33.fc30.noarch                 93/149 
+#10 20.01   Installing       : python2-gpg-1.13.1-7.fc30.x86_64                    94/149 
+#10 20.04   Installing       : python2-pyxattr-0.6.1-1.fc30.x86_64                 95/149 
+#10 20.07   Installing       : python2-rpm-4.14.2.1-5.fc30.x86_64                  96/149 
+#10 20.10   Installing       : pyliblzma-0.5.3-25.fc30.x86_64                      97/149 
+#10 20.15   Installing       : python2-pycurl-7.43.0.2-6.fc30.x86_64               98/149 
+#10 20.20   Installing       : python2-urlgrabber-4.0.0-3.fc30.noarch              99/149 
+#10 20.23   Installing       : yum-metadata-parser-1.1.4-22.fc29.x86_64           100/149 
+#10 20.30   Installing       : findutils-1:4.6.0-22.fc30.x86_64                   101/149 
+#10 20.36   Installing       : cpio-2.12-10.fc30.x86_64                           102/149 
+#10 20.52   Installing       : yum-3.4.3-522.fc30.noarch                          103/149 
+#10 20.56   Running scriptlet: yum-3.4.3-522.fc30.noarch                          103/149 
+#10 20.58   Installing       : vim-filesystem-2:8.2.587-1.fc30.noarch             104/149 
+#10 21.55   Installing       : vim-common-2:8.2.587-1.fc30.x86_64                 105/149 
+#10 21.63   Installing       : pcre-utf32-8.44-1.fc30.x86_64                      106/149 
+#10 21.67   Installing       : pcre-utf16-8.44-1.fc30.x86_64                      107/149 
+#10 21.70   Installing       : pcre-cpp-8.44-1.fc30.x86_64                        108/149 
+#10 21.73   Installing       : libgomp-9.3.1-2.fc30.x86_64                        109/149 
+#10 21.76   Installing       : libedit-3.1-30.20191211cvs.fc30.x86_64             110/149 
+#10 21.86   Installing       : openssh-clients-8.0p1-5.fc30.x86_64                111/149 
+#10 22.61   Installing       : git-core-2.21.3-1.fc30.x86_64                      112/149 
+#10 22.88   Installing       : git-core-doc-2.21.3-1.fc30.noarch                  113/149 
+#10 23.15   Installing       : kernel-headers-5.6.11-100.fc30.x86_64              114/149 
+#10 23.21   Running scriptlet: glibc-headers-2.29-29.fc30.x86_64                  115/149 
+#10 23.31   Installing       : glibc-headers-2.29-29.fc30.x86_64                  115/149 
+#10 23.35   Installing       : libxcrypt-devel-4.4.16-3.fc30.x86_64               116/149 
+#10 23.45   Installing       : glibc-devel-2.29-29.fc30.x86_64                    117/149 
+#10 23.48   Installing       : emacs-filesystem-1:26.3-1.fc30.noarch              118/149 
+#10 23.50   Installing       : perl-Git-2.21.3-1.fc30.noarch                      119/149 
+#10 23.53   Installing       : git-2.21.3-1.fc30.x86_64                           120/149 
+#10 24.18   Installing       : binutils-2.31.1-37.fc30.x86_64                     121/149 
+#10 24.21   Running scriptlet: binutils-2.31.1-37.fc30.x86_64                     121/149 
+#10 25.87   Installing       : gcc-9.3.1-2.fc30.x86_64                            122/149 
+#10 25.95   Installing       : pcre-devel-8.44-1.fc30.x86_64                      123/149 
+#10 26.12   Installing       : vim-enhanced-2:8.2.587-1.fc30.x86_64               124/149 
+#10 26.15   Installing       : yum-plugin-ovl-1.1.31-519.fc30.noarch              125/149 
+#10 26.19   Installing       : initscripts-10.02-1.fc30.x86_64                    126/149 
+#10 26.22   Running scriptlet: initscripts-10.02-1.fc30.x86_64                    126/149 
+#10 26.28   Installing       : make-1:4.2.1-14.fc30.x86_64                        127/149 
+#10 26.41   Installing       : w3m-0.5.3-45.git20190105.fc30.x86_64               128/149 
+#10 26.45   Running scriptlet: man-db-2.8.4-4.fc30.x86_64                         129/149 
+#10 26.55   Installing       : man-db-2.8.4-4.fc30.x86_64                         129/149 
+#10 26.59   Running scriptlet: man-db-2.8.4-4.fc30.x86_64                         129/149 
+#10 26.67   Installing       : libcurl-devel-7.65.3-4.fc30.x86_64                 130/149 
+#10 26.98   Installing       : openssl-devel-1:1.1.1g-1.fc30.x86_64               131/149 
+#10 27.05   Installing       : zlib-devel-1.2.11-19.fc30.x86_64                   132/149 
+#10 27.09   Installing       : bzip2-devel-1.0.6-29.fc30.x86_64                   133/149 
+#10 27.13   Installing       : zip-3.0-24.fc30.x86_64                             134/149 
+#10 27.17   Running scriptlet: openssh-server-8.0p1-5.fc30.x86_64                 135/149 
+#10 27.27   Installing       : openssh-server-8.0p1-5.fc30.x86_64                 135/149 
+#10 27.30   Running scriptlet: openssh-server-8.0p1-5.fc30.x86_64                 135/149 
+#10 27.32   Installing       : moreutils-0.57-10.fc30.x86_64                      136/149 
+#10 27.37   Installing       : rubygem-rake-12.3.3-200.fc30.noarch                137/149 
+#10 27.47   Installing       : wget-1.20.3-1.fc30.x86_64                          138/149 
+#10 27.50   Installing       : the_silver_searcher-2.1.0-4.fc30.x86_64            139/149 
+#10 27.57   Installing       : ncurses-compat-libs-6.1-10.20180923.fc30.x86_64    140/149 
+#10 27.62   Installing       : lsof-4.91-3.fc30.x86_64                            141/149 
+#10 27.67   Installing       : dos2unix-7.4.0-6.fc30.x86_64                       142/149 
+#10 28.08   Installing       : zsh-5.7.1-6.fc30.x86_64                            143/149 
+#10 28.14   Running scriptlet: zsh-5.7.1-6.fc30.x86_64                            143/149 
+#10 28.19   Installing       : tmux-2.9a-2.fc30.x86_64                            144/149 
+#10 28.22   Running scriptlet: tmux-2.9a-2.fc30.x86_64                            144/149 
+#10 28.30   Installing       : strace-5.6-1.fc30.x86_64                           145/149 
+#10 28.38   Installing       : rsync-3.1.3-9.fc30.x86_64                          146/149 
+#10 28.42   Installing       : psmisc-23.3-1.fc30.x86_64                          147/149 
+#10 33.17   Installing       : glibc-all-langpacks-2.29-29.fc30.x86_64            148/149 
+#10 33.20   Installing       : fpaste-0.4.0.1-1.fc30.noarch                       149/149 
+#10 33.22   Running scriptlet: glibc-all-langpacks-2.29-29.fc30.x86_64            149/149 
+#10 33.39   Running scriptlet: fpaste-0.4.0.1-1.fc30.noarch                       149/149 
+#10 33.47   Running scriptlet: vim-common-2:8.2.587-1.fc30.x86_64                 149/149 
+#10 35.51   Running scriptlet: man-db-2.8.4-4.fc30.x86_64                         149/149 
+#10 35.58   Verifying        : binutils-2.31.1-37.fc30.x86_64                       1/149 
+#10 35.58   Verifying        : cpp-9.3.1-2.fc30.x86_64                              2/149 
+#10 35.58   Verifying        : emacs-filesystem-1:26.3-1.fc30.noarch                3/149 
+#10 35.58   Verifying        : fpaste-0.4.0.1-1.fc30.noarch                         4/149 
+#10 35.58   Verifying        : gcc-9.3.1-2.fc30.x86_64                              5/149 
+#10 35.58   Verifying        : git-2.21.3-1.fc30.x86_64                             6/149 
+#10 35.58   Verifying        : git-core-2.21.3-1.fc30.x86_64                        7/149 
+#10 35.58   Verifying        : git-core-doc-2.21.3-1.fc30.noarch                    8/149 
+#10 35.58   Verifying        : glibc-all-langpacks-2.29-29.fc30.x86_64              9/149 
+#10 35.58   Verifying        : glibc-devel-2.29-29.fc30.x86_64                     10/149 
+#10 35.58   Verifying        : glibc-headers-2.29-29.fc30.x86_64                   11/149 
+#10 35.58   Verifying        : gpm-libs-1.20.7-21.fc30.x86_64                      12/149 
+#10 35.58   Verifying        : initscripts-10.02-1.fc30.x86_64                     13/149 
+#10 35.58   Verifying        : kernel-headers-5.6.11-100.fc30.x86_64               14/149 
+#10 35.58   Verifying        : less-551-1.fc30.x86_64                              15/149 
+#10 35.58   Verifying        : libcurl-devel-7.65.3-4.fc30.x86_64                  16/149 
+#10 35.58   Verifying        : libedit-3.1-30.20191211cvs.fc30.x86_64              17/149 
+#10 35.58   Verifying        : libgomp-9.3.1-2.fc30.x86_64                         18/149 
+#10 35.58   Verifying        : libxcrypt-devel-4.4.16-3.fc30.x86_64                19/149 
+#10 35.58   Verifying        : make-1:4.2.1-14.fc30.x86_64                         20/149 
+#10 35.58   Verifying        : openssh-8.0p1-5.fc30.x86_64                         21/149 
+#10 35.58   Verifying        : openssh-clients-8.0p1-5.fc30.x86_64                 22/149 
+#10 35.58   Verifying        : openssh-server-8.0p1-5.fc30.x86_64                  23/149 
+#10 35.58   Verifying        : openssl-devel-1:1.1.1g-1.fc30.x86_64                24/149 
+#10 35.58   Verifying        : pcre-cpp-8.44-1.fc30.x86_64                         25/149 
+#10 35.58   Verifying        : pcre-devel-8.44-1.fc30.x86_64                       26/149 
+#10 35.58   Verifying        : pcre-utf16-8.44-1.fc30.x86_64                       27/149 
+#10 35.58   Verifying        : pcre-utf32-8.44-1.fc30.x86_64                       28/149 
+#10 35.58   Verifying        : perl-Encode-4:3.06-15.fc30.x86_64                   29/149 
+#10 35.58   Verifying        : perl-Errno-1.29-444.fc30.x86_64                     30/149 
+#10 35.58   Verifying        : perl-Exporter-5.74-1.fc30.noarch                    31/149 
+#10 35.58   Verifying        : perl-Getopt-Long-1:2.51-1.fc30.noarch               32/149 
+#10 35.58   Verifying        : perl-Git-2.21.3-1.fc30.noarch                       33/149 
+#10 35.58   Verifying        : perl-IO-1.39-444.fc30.x86_64                        34/149 
+#10 35.58   Verifying        : perl-IO-Socket-SSL-2.066-2.fc30.noarch              35/149 
+#10 35.58   Verifying        : perl-Net-SSLeay-1.85-11.fc30.x86_64                 36/149 
+#10 35.58   Verifying        : perl-Pod-Perldoc-3.28.01-420.fc30.noarch            37/149 
+#10 35.58   Verifying        : perl-Pod-Usage-4:1.70-1.fc30.noarch                 38/149 
+#10 35.58   Verifying        : perl-Storable-1:3.15-4.fc30.x86_64                  39/149 
+#10 35.58   Verifying        : perl-Time-Local-2:1.300-1.fc30.noarch               40/149 
+#10 35.58   Verifying        : perl-TimeDate-1:2.30-17.fc30.noarch                 41/149 
+#10 35.58   Verifying        : perl-interpreter-4:5.28.2-444.fc30.x86_64           42/149 
+#10 35.58   Verifying        : perl-libs-4:5.28.2-444.fc30.x86_64                  43/149 
+#10 35.58   Verifying        : perl-macros-4:5.28.2-444.fc30.noarch                44/149 
+#10 35.58   Verifying        : perl-podlators-1:4.12-1.fc30.noarch                 45/149 
+#10 35.58   Verifying        : perl-threads-shared-1.59-3.fc30.x86_64              46/149 
+#10 35.58   Verifying        : psmisc-23.3-1.fc30.x86_64                           47/149 
+#10 35.58   Verifying        : python-unversioned-command-2.7.18-1.fc30.noarch     48/149 
+#10 35.58   Verifying        : python2-2.7.18-1.fc30.x86_64                        49/149 
+#10 35.58   Verifying        : python2-gpg-1.13.1-7.fc30.x86_64                    50/149 
+#10 35.58   Verifying        : python2-libs-2.7.18-1.fc30.x86_64                   51/149 
+#10 35.58   Verifying        : python2-pip-19.0.3-7.fc30.noarch                    52/149 
+#10 35.58   Verifying        : python2-pyxattr-0.6.1-1.fc30.x86_64                 53/149 
+#10 35.58   Verifying        : python2-rpm-4.14.2.1-5.fc30.x86_64                  54/149 
+#10 35.58   Verifying        : python2-setuptools-40.8.0-2.fc30.noarch             55/149 
+#10 35.58   Verifying        : python2-urlgrabber-4.0.0-3.fc30.noarch              56/149 
+#10 35.58   Verifying        : python3-urlgrabber-4.0.0-3.fc30.noarch              57/149 
+#10 35.58   Verifying        : rsync-3.1.3-9.fc30.x86_64                           58/149 
+#10 35.58   Verifying        : ruby-2.6.5-124.fc30.x86_64                          59/149 
+#10 35.58   Verifying        : ruby-libs-2.6.5-124.fc30.x86_64                     60/149 
+#10 35.58   Verifying        : rubygem-bigdecimal-1.4.1-124.fc30.x86_64            61/149 
+#10 35.58   Verifying        : rubygem-did_you_mean-1.3.0-124.fc30.noarch          62/149 
+#10 35.58   Verifying        : rubygem-io-console-0.4.7-124.fc30.x86_64            63/149 
+#10 35.58   Verifying        : rubygem-irb-1.0.0-124.fc30.noarch                   64/149 
+#10 35.58   Verifying        : rubygem-json-2.2.0-202.fc30.x86_64                  65/149 
+#10 35.59   Verifying        : rubygem-openssl-2.1.2-124.fc30.x86_64               66/149 
+#10 35.59   Verifying        : rubygem-psych-3.1.0-124.fc30.x86_64                 67/149 
+#10 35.59   Verifying        : rubygem-rake-12.3.3-200.fc30.noarch                 68/149 
+#10 35.59   Verifying        : rubygem-rdoc-6.1.2-124.fc30.noarch                  69/149 
+#10 35.59   Verifying        : rubygems-3.0.3-124.fc30.noarch                      70/149 
+#10 35.59   Verifying        : strace-5.6-1.fc30.x86_64                            71/149 
+#10 35.59   Verifying        : tmux-2.9a-2.fc30.x86_64                             72/149 
+#10 35.59   Verifying        : vim-common-2:8.2.587-1.fc30.x86_64                  73/149 
+#10 35.59   Verifying        : vim-enhanced-2:8.2.587-1.fc30.x86_64                74/149 
+#10 35.59   Verifying        : vim-filesystem-2:8.2.587-1.fc30.noarch              75/149 
+#10 35.59   Verifying        : w3m-0.5.3-45.git20190105.fc30.x86_64                76/149 
+#10 35.59   Verifying        : yum-3.4.3-522.fc30.noarch                           77/149 
+#10 35.59   Verifying        : zlib-devel-1.2.11-19.fc30.x86_64                    78/149 
+#10 35.59   Verifying        : zsh-5.7.1-6.fc30.x86_64                             79/149 
+#10 35.59   Verifying        : bzip2-devel-1.0.6-29.fc30.x86_64                    80/149 
+#10 35.59   Verifying        : cpio-2.12-10.fc30.x86_64                            81/149 
+#10 35.59   Verifying        : dos2unix-7.4.0-6.fc30.x86_64                        82/149 
+#10 35.59   Verifying        : findutils-1:4.6.0-22.fc30.x86_64                    83/149 
+#10 35.59   Verifying        : fipscheck-1.5.0-6.fc30.x86_64                       84/149 
+#10 35.59   Verifying        : fipscheck-lib-1.5.0-6.fc30.x86_64                   85/149 
+#10 35.59   Verifying        : gc-7.6.4-5.fc30.x86_64                              86/149 
+#10 35.59   Verifying        : gdbm-1:1.18-4.fc30.x86_64                           87/149 
+#10 35.59   Verifying        : groff-base-1.22.3-19.fc30.x86_64                    88/149 
+#10 35.59   Verifying        : guile22-2.2.4-3.fc30.x86_64                         89/149 
+#10 35.59   Verifying        : isl-0.16.1-8.fc30.x86_64                            90/149 
+#10 35.59   Verifying        : libatomic_ops-7.6.6-2.fc30.x86_64                   91/149 
+#10 35.59   Verifying        : libmpc-1.1.0-3.fc30.x86_64                          92/149 
+#10 35.59   Verifying        : libpipeline-1.5.1-2.fc30.x86_64                     93/149 
+#10 35.59   Verifying        : libpkgconf-1.6.1-1.fc30.x86_64                      94/149 
+#10 35.59   Verifying        : libtool-ltdl-2.4.6-29.fc30.x86_64                   95/149 
+#10 35.59   Verifying        : lsof-4.91-3.fc30.x86_64                             96/149 
+#10 35.59   Verifying        : man-db-2.8.4-4.fc30.x86_64                          97/149 
+#10 35.59   Verifying        : moreutils-0.57-10.fc30.x86_64                       98/149 
+#10 35.59   Verifying        : ncurses-compat-libs-6.1-10.20180923.fc30.x86_64     99/149 
+#10 35.59   Verifying        : perl-Carp-1.50-418.fc30.noarch                     100/149 
+#10 35.59   Verifying        : perl-Data-Dumper-2.173-3.fc30.x86_64               101/149 
+#10 35.59   Verifying        : perl-Digest-1.17-418.fc30.noarch                   102/149 
+#10 35.59   Verifying        : perl-Digest-MD5-2.55-418.fc30.x86_64               103/149 
+#10 35.59   Verifying        : perl-Error-1:0.17027-2.fc30.noarch                 104/149 
+#10 35.59   Verifying        : perl-File-Path-2.16-2.fc30.noarch                  105/149 
+#10 35.59   Verifying        : perl-File-Temp-1:0.230.900-2.fc30.noarch           106/149 
+#10 35.59   Verifying        : perl-HTTP-Tiny-0.076-2.fc30.noarch                 107/149 
+#10 35.59   Verifying        : perl-IO-Socket-IP-0.39-419.fc30.noarch             108/149 
+#10 35.59   Verifying        : perl-IO-Tty-1.12-14.fc30.x86_64                    109/149 
+#10 35.59   Verifying        : perl-IPC-Run-20180523.0-4.fc30.noarch              110/149 
+#10 35.59   Verifying        : perl-MIME-Base64-3.15-418.fc30.x86_64              111/149 
+#10 35.59   Verifying        : perl-Mozilla-CA-20180117-4.fc30.noarch             112/149 
+#10 35.59   Verifying        : perl-NKF-1:2.1.4-13.fc30.x86_64                    113/149 
+#10 35.59   Verifying        : perl-PathTools-3.75-2.fc30.x86_64                  114/149 
+#10 35.59   Verifying        : perl-Pod-Escapes-1:1.07-418.fc30.noarch            115/149 
+#10 35.59   Verifying        : perl-Pod-Simple-1:3.35-418.fc30.noarch             116/149 
+#10 35.59   Verifying        : perl-Scalar-List-Utils-3:1.50-418.fc30.x86_64      117/149 
+#10 35.59   Verifying        : perl-Socket-4:2.029-1.fc30.x86_64                  118/149 
+#10 35.59   Verifying        : perl-Term-ANSIColor-4.06-419.fc30.noarch           119/149 
+#10 35.59   Verifying        : perl-Term-Cap-1.17-418.fc30.noarch                 120/149 
+#10 35.59   Verifying        : perl-TermReadKey-2.38-2.fc30.x86_64                121/149 
+#10 35.59   Verifying        : perl-Text-ParseWords-3.30-418.fc30.noarch          122/149 
+#10 35.59   Verifying        : perl-Text-Tabs+Wrap-2013.0523-418.fc30.noarch      123/149 
+#10 35.59   Verifying        : perl-Time-Duration-1.20-12.fc30.noarch             124/149 
+#10 35.59   Verifying        : perl-Time-HiRes-1.9760-1.fc30.x86_64               125/149 
+#10 35.59   Verifying        : perl-URI-1.76-2.fc30.noarch                        126/149 
+#10 35.59   Verifying        : perl-Unicode-Normalize-1.26-418.fc30.x86_64        127/149 
+#10 35.59   Verifying        : perl-constant-1.33-419.fc30.noarch                 128/149 
+#10 35.59   Verifying        : perl-libnet-3.11-419.fc30.noarch                   129/149 
+#10 35.59   Verifying        : perl-parent-1:0.237-3.fc30.noarch                  130/149 
+#10 35.59   Verifying        : perl-threads-1:2.22-418.fc30.x86_64                131/149 
+#10 35.59   Verifying        : pkgconf-1.6.1-1.fc30.x86_64                        132/149 
+#10 35.59   Verifying        : pkgconf-m4-1.6.1-1.fc30.noarch                     133/149 
+#10 35.59   Verifying        : pkgconf-pkg-config-1.6.1-1.fc30.x86_64             134/149 
+#10 35.59   Verifying        : procps-ng-3.3.15-5.fc30.x86_64                     135/149 
+#10 35.59   Verifying        : pyliblzma-0.5.3-25.fc30.x86_64                     136/149 
+#10 35.59   Verifying        : python2-iniparse-0.4-33.fc30.noarch                137/149 
+#10 35.59   Verifying        : python2-pycurl-7.43.0.2-6.fc30.x86_64              138/149 
+#10 35.59   Verifying        : python2-six-1.12.0-1.fc30.noarch                   139/149 
+#10 35.59   Verifying        : python3-pycurl-7.43.0.2-6.fc30.x86_64              140/149 
+#10 35.59   Verifying        : python3-six-1.12.0-1.fc30.noarch                   141/149 
+#10 35.59   Verifying        : rubypick-1.1.1-10.fc30.noarch                      142/149 
+#10 35.59   Verifying        : the_silver_searcher-2.1.0-4.fc30.x86_64            143/149 
+#10 35.59   Verifying        : unzip-6.0-43.fc30.x86_64                           144/149 
+#10 35.59   Verifying        : wget-1.20.3-1.fc30.x86_64                          145/149 
+#10 35.59   Verifying        : which-2.21-14.fc30.x86_64                          146/149 
+#10 35.59   Verifying        : yum-metadata-parser-1.1.4-22.fc29.x86_64           147/149 
+#10 35.59   Verifying        : yum-plugin-ovl-1.1.31-519.fc30.noarch              148/149 
+#10 35.59   Verifying        : zip-3.0-24.fc30.x86_64                             149/149 
+#10 36.69 
+#10 36.69 Installed:
+#10 36.69   binutils-2.31.1-37.fc30.x86_64                                                
+#10 36.69   bzip2-devel-1.0.6-29.fc30.x86_64                                              
+#10 36.69   cpio-2.12-10.fc30.x86_64                                                      
+#10 36.69   cpp-9.3.1-2.fc30.x86_64                                                       
+#10 36.69   dos2unix-7.4.0-6.fc30.x86_64                                                  
+#10 36.69   emacs-filesystem-1:26.3-1.fc30.noarch                                         
+#10 36.69   findutils-1:4.6.0-22.fc30.x86_64                                              
+#10 36.69   fipscheck-1.5.0-6.fc30.x86_64                                                 
+#10 36.69   fipscheck-lib-1.5.0-6.fc30.x86_64                                             
+#10 36.69   fpaste-0.4.0.1-1.fc30.noarch                                                  
+#10 36.69   gc-7.6.4-5.fc30.x86_64                                                        
+#10 36.69   gcc-9.3.1-2.fc30.x86_64                                                       
+#10 36.69   gdbm-1:1.18-4.fc30.x86_64                                                     
+#10 36.69   git-2.21.3-1.fc30.x86_64                                                      
+#10 36.69   git-core-2.21.3-1.fc30.x86_64                                                 
+#10 36.69   git-core-doc-2.21.3-1.fc30.noarch                                             
+#10 36.69   glibc-all-langpacks-2.29-29.fc30.x86_64                                       
+#10 36.69   glibc-devel-2.29-29.fc30.x86_64                                               
+#10 36.69   glibc-headers-2.29-29.fc30.x86_64                                             
+#10 36.69   gpm-libs-1.20.7-21.fc30.x86_64                                                
+#10 36.69   groff-base-1.22.3-19.fc30.x86_64                                              
+#10 36.69   guile22-2.2.4-3.fc30.x86_64                                                   
+#10 36.69   initscripts-10.02-1.fc30.x86_64                                               
+#10 36.69   isl-0.16.1-8.fc30.x86_64                                                      
+#10 36.69   kernel-headers-5.6.11-100.fc30.x86_64                                         
+#10 36.69   less-551-1.fc30.x86_64                                                        
+#10 36.69   libatomic_ops-7.6.6-2.fc30.x86_64                                             
+#10 36.69   libcurl-devel-7.65.3-4.fc30.x86_64                                            
+#10 36.69   libedit-3.1-30.20191211cvs.fc30.x86_64                                        
+#10 36.69   libgomp-9.3.1-2.fc30.x86_64                                                   
+#10 36.69   libmpc-1.1.0-3.fc30.x86_64                                                    
+#10 36.69   libpipeline-1.5.1-2.fc30.x86_64                                               
+#10 36.69   libpkgconf-1.6.1-1.fc30.x86_64                                                
+#10 36.69   libtool-ltdl-2.4.6-29.fc30.x86_64                                             
+#10 36.69   libxcrypt-devel-4.4.16-3.fc30.x86_64                                          
+#10 36.69   lsof-4.91-3.fc30.x86_64                                                       
+#10 36.69   make-1:4.2.1-14.fc30.x86_64                                                   
+#10 36.69   man-db-2.8.4-4.fc30.x86_64                                                    
+#10 36.69   moreutils-0.57-10.fc30.x86_64                                                 
+#10 36.69   ncurses-compat-libs-6.1-10.20180923.fc30.x86_64                               
+#10 36.69   openssh-8.0p1-5.fc30.x86_64                                                   
+#10 36.69   openssh-clients-8.0p1-5.fc30.x86_64                                           
+#10 36.69   openssh-server-8.0p1-5.fc30.x86_64                                            
+#10 36.69   openssl-devel-1:1.1.1g-1.fc30.x86_64                                          
+#10 36.69   pcre-cpp-8.44-1.fc30.x86_64                                                   
+#10 36.69   pcre-devel-8.44-1.fc30.x86_64                                                 
+#10 36.69   pcre-utf16-8.44-1.fc30.x86_64                                                 
+#10 36.69   pcre-utf32-8.44-1.fc30.x86_64                                                 
+#10 36.69   perl-Carp-1.50-418.fc30.noarch                                                
+#10 36.69   perl-Data-Dumper-2.173-3.fc30.x86_64                                          
+#10 36.69   perl-Digest-1.17-418.fc30.noarch                                              
+#10 36.69   perl-Digest-MD5-2.55-418.fc30.x86_64                                          
+#10 36.69   perl-Encode-4:3.06-15.fc30.x86_64                                             
+#10 36.69   perl-Errno-1.29-444.fc30.x86_64                                               
+#10 36.69   perl-Error-1:0.17027-2.fc30.noarch                                            
+#10 36.69   perl-Exporter-5.74-1.fc30.noarch                                              
+#10 36.69   perl-File-Path-2.16-2.fc30.noarch                                             
+#10 36.69   perl-File-Temp-1:0.230.900-2.fc30.noarch                                      
+#10 36.69   perl-Getopt-Long-1:2.51-1.fc30.noarch                                         
+#10 36.69   perl-Git-2.21.3-1.fc30.noarch                                                 
+#10 36.69   perl-HTTP-Tiny-0.076-2.fc30.noarch                                            
+#10 36.69   perl-IO-1.39-444.fc30.x86_64                                                  
+#10 36.69   perl-IO-Socket-IP-0.39-419.fc30.noarch                                        
+#10 36.69   perl-IO-Socket-SSL-2.066-2.fc30.noarch                                        
+#10 36.69   perl-IO-Tty-1.12-14.fc30.x86_64                                               
+#10 36.69   perl-IPC-Run-20180523.0-4.fc30.noarch                                         
+#10 36.69   perl-MIME-Base64-3.15-418.fc30.x86_64                                         
+#10 36.69   perl-Mozilla-CA-20180117-4.fc30.noarch                                        
+#10 36.69   perl-NKF-1:2.1.4-13.fc30.x86_64                                               
+#10 36.69   perl-Net-SSLeay-1.85-11.fc30.x86_64                                           
+#10 36.69   perl-PathTools-3.75-2.fc30.x86_64                                             
+#10 36.69   perl-Pod-Escapes-1:1.07-418.fc30.noarch                                       
+#10 36.69   perl-Pod-Perldoc-3.28.01-420.fc30.noarch                                      
+#10 36.69   perl-Pod-Simple-1:3.35-418.fc30.noarch                                        
+#10 36.69   perl-Pod-Usage-4:1.70-1.fc30.noarch                                           
+#10 36.69   perl-Scalar-List-Utils-3:1.50-418.fc30.x86_64                                 
+#10 36.69   perl-Socket-4:2.029-1.fc30.x86_64                                             
+#10 36.69   perl-Storable-1:3.15-4.fc30.x86_64                                            
+#10 36.69   perl-Term-ANSIColor-4.06-419.fc30.noarch                                      
+#10 36.69   perl-Term-Cap-1.17-418.fc30.noarch                                            
+#10 36.69   perl-TermReadKey-2.38-2.fc30.x86_64                                           
+#10 36.69   perl-Text-ParseWords-3.30-418.fc30.noarch                                     
+#10 36.69   perl-Text-Tabs+Wrap-2013.0523-418.fc30.noarch                                 
+#10 36.69   perl-Time-Duration-1.20-12.fc30.noarch                                        
+#10 36.69   perl-Time-HiRes-1.9760-1.fc30.x86_64                                          
+#10 36.69   perl-Time-Local-2:1.300-1.fc30.noarch                                         
+#10 36.69   perl-TimeDate-1:2.30-17.fc30.noarch                                           
+#10 36.69   perl-URI-1.76-2.fc30.noarch                                                   
+#10 36.69   perl-Unicode-Normalize-1.26-418.fc30.x86_64                                   
+#10 36.69   perl-constant-1.33-419.fc30.noarch                                            
+#10 36.69   perl-interpreter-4:5.28.2-444.fc30.x86_64                                     
+#10 36.69   perl-libnet-3.11-419.fc30.noarch                                              
+#10 36.69   perl-libs-4:5.28.2-444.fc30.x86_64                                            
+#10 36.69   perl-macros-4:5.28.2-444.fc30.noarch                                          
+#10 36.69   perl-parent-1:0.237-3.fc30.noarch                                             
+#10 36.69   perl-podlators-1:4.12-1.fc30.noarch                                           
+#10 36.69   perl-threads-1:2.22-418.fc30.x86_64                                           
+#10 36.69   perl-threads-shared-1.59-3.fc30.x86_64                                        
+#10 36.69   pkgconf-1.6.1-1.fc30.x86_64                                                   
+#10 36.69   pkgconf-m4-1.6.1-1.fc30.noarch                                                
+#10 36.69   pkgconf-pkg-config-1.6.1-1.fc30.x86_64                                        
+#10 36.69   procps-ng-3.3.15-5.fc30.x86_64                                                
+#10 36.69   psmisc-23.3-1.fc30.x86_64                                                     
+#10 36.69   pyliblzma-0.5.3-25.fc30.x86_64                                                
+#10 36.69   python-unversioned-command-2.7.18-1.fc30.noarch                               
+#10 36.69   python2-2.7.18-1.fc30.x86_64                                                  
+#10 36.69   python2-gpg-1.13.1-7.fc30.x86_64                                              
+#10 36.69   python2-iniparse-0.4-33.fc30.noarch                                           
+#10 36.69   python2-libs-2.7.18-1.fc30.x86_64                                             
+#10 36.69   python2-pip-19.0.3-7.fc30.noarch                                              
+#10 36.69   python2-pycurl-7.43.0.2-6.fc30.x86_64                                         
+#10 36.69   python2-pyxattr-0.6.1-1.fc30.x86_64                                           
+#10 36.69   python2-rpm-4.14.2.1-5.fc30.x86_64                                            
+#10 36.69   python2-setuptools-40.8.0-2.fc30.noarch                                       
+#10 36.69   python2-six-1.12.0-1.fc30.noarch                                              
+#10 36.69   python2-urlgrabber-4.0.0-3.fc30.noarch                                        
+#10 36.69   python3-pycurl-7.43.0.2-6.fc30.x86_64                                         
+#10 36.69   python3-six-1.12.0-1.fc30.noarch                                              
+#10 36.69   python3-urlgrabber-4.0.0-3.fc30.noarch                                        
+#10 36.69   rsync-3.1.3-9.fc30.x86_64                                                     
+#10 36.69   ruby-2.6.5-124.fc30.x86_64                                                    
+#10 36.69   ruby-libs-2.6.5-124.fc30.x86_64                                               
+#10 36.69   rubygem-bigdecimal-1.4.1-124.fc30.x86_64                                      
+#10 36.69   rubygem-did_you_mean-1.3.0-124.fc30.noarch                                    
+#10 36.69   rubygem-io-console-0.4.7-124.fc30.x86_64                                      
+#10 36.69   rubygem-irb-1.0.0-124.fc30.noarch                                             
+#10 36.69   rubygem-json-2.2.0-202.fc30.x86_64                                            
+#10 36.69   rubygem-openssl-2.1.2-124.fc30.x86_64                                         
+#10 36.69   rubygem-psych-3.1.0-124.fc30.x86_64                                           
+#10 36.69   rubygem-rake-12.3.3-200.fc30.noarch                                           
+#10 36.69   rubygem-rdoc-6.1.2-124.fc30.noarch                                            
+#10 36.69   rubygems-3.0.3-124.fc30.noarch                                                
+#10 36.69   rubypick-1.1.1-10.fc30.noarch                                                 
+#10 36.69   strace-5.6-1.fc30.x86_64                                                      
+#10 36.69   the_silver_searcher-2.1.0-4.fc30.x86_64                                       
+#10 36.69   tmux-2.9a-2.fc30.x86_64                                                       
+#10 36.69   unzip-6.0-43.fc30.x86_64                                                      
+#10 36.69   vim-common-2:8.2.587-1.fc30.x86_64                                            
+#10 36.69   vim-enhanced-2:8.2.587-1.fc30.x86_64                                          
+#10 36.69   vim-filesystem-2:8.2.587-1.fc30.noarch                                        
+#10 36.69   w3m-0.5.3-45.git20190105.fc30.x86_64                                          
+#10 36.69   wget-1.20.3-1.fc30.x86_64                                                     
+#10 36.69   which-2.21-14.fc30.x86_64                                                     
+#10 36.69   yum-3.4.3-522.fc30.noarch                                                     
+#10 36.69   yum-metadata-parser-1.1.4-22.fc29.x86_64                                      
+#10 36.69   yum-plugin-ovl-1.1.31-519.fc30.noarch                                         
+#10 36.69   zip-3.0-24.fc30.x86_64                                                        
+#10 36.69   zlib-devel-1.2.11-19.fc30.x86_64                                              
+#10 36.69   zsh-5.7.1-6.fc30.x86_64                                                       
+#10 36.69 
+#10 36.69 Complete!
+#10 DONE 38.6s
+
+#11 [ 6/17] RUN dnf -y install xmlto-0.0.28 ruby-devel libxml2-devel libxslt-devel redhat-rpm-config tidy dejavu-fonts-common dejavu-serif-fonts linux-libertine-biolinum-fonts linux-libertine-fonts linux-libertine-fonts-common unifont unifont-fonts dejavu-sans-mono-fonts.noarch java-1.8.0-openjdk-headless.x86_64
+#11 1.601 Last metadata expiration check: 0:01:29 ago on Thu Aug  1 07:26:17 2024.
+#11 5.604 Dependencies resolved.
+#11 6.500 ================================================================================
+#11 6.500  Package                        Arch   Version                    Repo     Size
+#11 6.500 ================================================================================
+#11 6.500 Installing:
+#11 6.500  dejavu-fonts-common            noarch 2.37-1.fc30                fedora   67 k
+#11 6.500  dejavu-sans-mono-fonts         noarch 2.37-1.fc30                fedora  439 k
+#11 6.500  dejavu-serif-fonts             noarch 2.37-1.fc30                fedora  796 k
+#11 6.500  java-1.8.0-openjdk-headless    x86_64 1:1.8.0.252.b09-0.fc30     updates  33 M
+#11 6.500  libxml2-devel                  x86_64 2.9.10-3.fc30              updates 1.0 M
+#11 6.500  libxslt-devel                  x86_64 1.1.34-1.fc30              updates 317 k
+#11 6.500  linux-libertine-biolinum-fonts noarch 5.3.0-14.2012_07_02.fc30   fedora  669 k
+#11 6.500  linux-libertine-fonts          noarch 5.3.0-14.2012_07_02.fc30   fedora  1.2 M
+#11 6.500  linux-libertine-fonts-common   noarch 5.3.0-14.2012_07_02.fc30   fedora   43 k
+#11 6.500  redhat-rpm-config              noarch 132-1.fc30                 updates  63 k
+#11 6.500  ruby-devel                     x86_64 2.6.5-124.fc30             updates 198 k
+#11 6.500  tidy                           x86_64 5.6.0-5.fc30               fedora  230 k
+#11 6.500  unifont                        x86_64 12.0.01-1.fc30             fedora  959 k
+#11 6.500  unifont-fonts                  noarch 12.0.01-1.fc30             fedora  3.1 M
+#11 6.500  xmlto                          x86_64 0.0.28-11.fc30             fedora   49 k
+#11 6.500 Installing dependencies:
+#11 6.500  annobin                        x86_64 8.71-4.fc30                updates 104 k
+#11 6.500  avahi-libs                     x86_64 0.7-18.fc30                fedora   59 k
+#11 6.500  chkconfig                      x86_64 1.11-4.fc30                fedora  152 k
+#11 6.500  cmake-filesystem               x86_64 3.17.2-1.fc30              updates  14 k
+#11 6.500  copy-jdk-configs               noarch 3.7-3.fc30                 fedora   25 k
+#11 6.500  cups-libs                      x86_64 1:2.2.12-8.fc30            updates 260 k
+#11 6.500  docbook-dtds                   noarch 1.0-72.fc30                fedora  368 k
+#11 6.500  docbook-style-xsl              noarch 1.79.2-9.fc30              fedora  1.6 M
+#11 6.500  dwz                            x86_64 0.12-10.fc30               fedora  102 k
+#11 6.500  efi-srpm-macros                noarch 4-2.fc30                   fedora   23 k
+#11 6.500  file                           x86_64 5.36-5.fc30                updates  49 k
+#11 6.500  flex                           x86_64 2.6.4-2.fc30               fedora  305 k
+#11 6.500  fontconfig                     x86_64 2.13.1-9.fc30              updates 253 k
+#11 6.500  fontpackages-filesystem        noarch 1.44-24.fc30               fedora  8.2 k
+#11 6.500  fpc-srpm-macros                noarch 1.2-1.fc30                 fedora  7.5 k
+#11 6.500  freetype                       x86_64 2.9.1-7.fc30               fedora  355 k
+#11 6.500  gd                             x86_64 2.2.5-10.fc30              updates 131 k
+#11 6.500  ghc-srpm-macros                noarch 1.4.2-9.fc30               fedora  7.6 k
+#11 6.500  gnat-srpm-macros               noarch 4-9.fc30                   fedora  8.5 k
+#11 6.500  go-srpm-macros                 noarch 2-19.fc30                  fedora   11 k
+#11 6.500  javapackages-filesystem        noarch 5.3.0-4.fc30               fedora   12 k
+#11 6.500  jbigkit-libs                   x86_64 2.1-16.fc30                fedora   49 k
+#11 6.500  libX11                         x86_64 1.6.7-1.fc30               fedora  593 k
+#11 6.500  libX11-common                  noarch 1.6.7-1.fc30               fedora  155 k
+#11 6.500  libXau                         x86_64 1.0.9-1.fc30               fedora   30 k
+#11 6.500  libXpm                         x86_64 3.5.12-9.fc30              fedora   54 k
+#11 6.500  libgcrypt-devel                x86_64 1.8.5-1.fc30               updates 138 k
+#11 6.500  libgpg-error-devel             x86_64 1.33-2.fc30                fedora   60 k
+#11 6.500  libimagequant                  x86_64 2.12.5-1.fc30              updates  60 k
+#11 6.500  libjpeg-turbo                  x86_64 2.0.2-1.fc30               fedora  158 k
+#11 6.500  libpng                         x86_64 2:1.6.36-1.fc30            fedora  106 k
+#11 6.500  libtidy                        x86_64 5.6.0-5.fc30               fedora  213 k
+#11 6.500  libtiff                        x86_64 4.0.10-8.fc30              updates 173 k
+#11 6.500  libwebp                        x86_64 1.0.3-1.fc30               updates 255 k
+#11 6.500  libxcb                         x86_64 1.13.1-2.fc30              fedora  202 k
+#11 6.500  libxslt                        x86_64 1.1.34-1.fc30              updates 245 k
+#11 6.500  lksctp-tools                   x86_64 1.0.16-11.fc30             fedora   86 k
+#11 6.500  lua                            x86_64 5.3.5-5.fc30               fedora  178 k
+#11 6.500  lua-posix                      x86_64 33.3.1-13.fc30             fedora  170 k
+#11 6.500  m4                             x86_64 1.4.18-10.fc30             fedora  210 k
+#11 6.500  nim-srpm-macros                noarch 2-1.fc30                   updates 8.2 k
+#11 6.500  ocaml-srpm-macros              noarch 5-5.fc30                   fedora  7.7 k
+#11 6.500  openblas-srpm-macros           noarch 2-5.fc30                   fedora  7.3 k
+#11 6.500  perl-GD                        x86_64 2.71-1.fc30                fedora  176 k
+#11 6.500  perl-Math-Complex              noarch 1.59-444.fc30              updates  55 k
+#11 6.500  perl-srpm-macros               noarch 1-29.fc30                  fedora  8.2 k
+#11 6.500  python-srpm-macros             noarch 3-47.fc30                  updates  16 k
+#11 6.500  qt5-srpm-macros                noarch 5.12.5-1.fc30              updates 8.9 k
+#11 6.500  rust-srpm-macros               noarch 10-1.fc30                  updates 9.5 k
+#11 6.500  sgml-common                    noarch 0.6.3-52.fc30              fedora   55 k
+#11 6.500  tzdata-java                    noarch 2020a-1.fc30               updates 150 k
+#11 6.500  xml-common                     noarch 0.6.3-52.fc30              fedora   32 k
+#11 6.500  xz-devel                       x86_64 5.2.4-5.fc30               fedora   56 k
+#11 6.500 
+#11 6.500 Transaction Summary
+#11 6.500 ================================================================================
+#11 6.500 Install  68 Packages
+#11 6.500 
+#11 6.503 Total download size: 49 M
+#11 6.503 Installed size: 198 M
+#11 6.504 Downloading Packages:
+#11 6.653 (1/68): cmake-filesystem-3.17.2-1.fc30.x86_64.r 305 kB/s |  14 kB     00:00    
+#11 6.673 (2/68): annobin-8.71-4.fc30.x86_64.rpm          1.5 MB/s | 104 kB     00:00    
+#11 6.680 (3/68): file-5.36-5.fc30.x86_64.rpm             1.8 MB/s |  49 kB     00:00    
+#11 6.687 (4/68): cups-libs-2.2.12-8.fc30.x86_64.rpm      3.2 MB/s | 260 kB     00:00    
+#11 6.701 (5/68): fontconfig-2.13.1-9.fc30.x86_64.rpm     9.0 MB/s | 253 kB     00:00    
+#11 6.705 (6/68): gd-2.2.5-10.fc30.x86_64.rpm             5.2 MB/s | 131 kB     00:00    
+#11 6.721 (7/68): libgcrypt-devel-1.8.5-1.fc30.x86_64.rpm 6.9 MB/s | 138 kB     00:00    
+#11 6.726 (8/68): libimagequant-2.12.5-1.fc30.x86_64.rpm  2.8 MB/s |  60 kB     00:00    
+#11 6.744 (9/68): libtiff-4.0.10-8.fc30.x86_64.rpm        7.4 MB/s | 173 kB     00:00    
+#11 6.764 (10/68): libwebp-1.0.3-1.fc30.x86_64.rpm        6.6 MB/s | 255 kB     00:00    
+#11 6.815 (11/68): libxml2-devel-2.9.10-3.fc30.x86_64.rpm  15 MB/s | 1.0 MB     00:00    
+#11 6.822 (12/68): libxslt-1.1.34-1.fc30.x86_64.rpm       4.3 MB/s | 245 kB     00:00    
+#11 6.926 (13/68): libxslt-devel-1.1.34-1.fc30.x86_64.rpm 2.8 MB/s | 317 kB     00:00    
+#11 6.927 (14/68): nim-srpm-macros-2-1.fc30.noarch.rpm     79 kB/s | 8.2 kB     00:00    
+#11 7.043 (15/68): perl-Math-Complex-1.59-444.fc30.noarch 472 kB/s |  55 kB     00:00    
+#11 7.043 (16/68): python-srpm-macros-3-47.fc30.noarch.rp 139 kB/s |  16 kB     00:00    
+#11 7.209 (17/68): java-1.8.0-openjdk-headless-1.8.0.252.  62 MB/s |  33 MB     00:00    
+#11 7.210 (18/68): qt5-srpm-macros-5.12.5-1.fc30.noarch.r  53 kB/s | 8.9 kB     00:00    
+#11 7.210 (19/68): redhat-rpm-config-132-1.fc30.noarch.rp 375 kB/s |  63 kB     00:00    
+#11 7.230 (20/68): ruby-devel-2.6.5-124.fc30.x86_64.rpm   9.8 MB/s | 198 kB     00:00    
+#11 7.233 (21/68): tzdata-java-2020a-1.fc30.noarch.rpm    6.5 MB/s | 150 kB     00:00    
+#11 7.233 (22/68): rust-srpm-macros-10-1.fc30.noarch.rpm  415 kB/s | 9.5 kB     00:00    
+#11 7.248 (23/68): avahi-libs-0.7-18.fc30.x86_64.rpm      3.5 MB/s |  59 kB     00:00    
+#11 7.251 (24/68): chkconfig-1.11-4.fc30.x86_64.rpm       8.4 MB/s | 152 kB     00:00    
+#11 7.251 (25/68): copy-jdk-configs-3.7-3.fc30.noarch.rpm 1.4 MB/s |  25 kB     00:00    
+#11 7.263 (26/68): dejavu-fonts-common-2.37-1.fc30.noarch 4.1 MB/s |  67 kB     00:00    
+#11 7.276 (27/68): dejavu-sans-mono-fonts-2.37-1.fc30.noa  17 MB/s | 439 kB     00:00    
+#11 7.282 (28/68): dejavu-serif-fonts-2.37-1.fc30.noarch.  25 MB/s | 796 kB     00:00    
+#11 7.284 (29/68): docbook-dtds-1.0-72.fc30.noarch.rpm     17 MB/s | 368 kB     00:00    
+#11 7.301 (30/68): dwz-0.12-10.fc30.x86_64.rpm            5.5 MB/s | 102 kB     00:00    
+#11 7.301 (31/68): efi-srpm-macros-4-2.fc30.noarch.rpm    1.3 MB/s |  23 kB     00:00    
+#11 7.318 (32/68): docbook-style-xsl-1.79.2-9.fc30.noarch  41 MB/s | 1.6 MB     00:00    
+#11 7.320 (33/68): fontpackages-filesystem-1.44-24.fc30.n 426 kB/s | 8.2 kB     00:00    
+#11 7.340 (34/68): fpc-srpm-macros-1.2-1.fc30.noarch.rpm  345 kB/s | 7.5 kB     00:00    
+#11 7.346 (35/68): freetype-2.9.1-7.fc30.x86_64.rpm        14 MB/s | 355 kB     00:00    
+#11 7.350 (36/68): flex-2.6.4-2.fc30.x86_64.rpm           6.4 MB/s | 305 kB     00:00    
+#11 7.357 (37/68): ghc-srpm-macros-1.4.2-9.fc30.noarch.rp 455 kB/s | 7.6 kB     00:00    
+#11 7.362 (38/68): gnat-srpm-macros-4-9.fc30.noarch.rpm   539 kB/s | 8.5 kB     00:00    
+#11 7.365 (39/68): go-srpm-macros-2-19.fc30.noarch.rpm    642 kB/s |  11 kB     00:00    
+#11 7.373 (40/68): javapackages-filesystem-5.3.0-4.fc30.n 734 kB/s |  12 kB     00:00    
+#11 7.399 (41/68): jbigkit-libs-2.1-16.fc30.x86_64.rpm    1.3 MB/s |  49 kB     00:00    
+#11 7.401 (42/68): libX11-common-1.6.7-1.fc30.noarch.rpm  5.4 MB/s | 155 kB     00:00    
+#11 7.418 (43/68): libXau-1.0.9-1.fc30.x86_64.rpm         1.6 MB/s |  30 kB     00:00    
+#11 7.419 (44/68): libXpm-3.5.12-9.fc30.x86_64.rpm        3.1 MB/s |  54 kB     00:00    
+#11 7.427 (45/68): libX11-1.6.7-1.fc30.x86_64.rpm         9.7 MB/s | 593 kB     00:00    
+#11 7.437 (46/68): libjpeg-turbo-2.0.2-1.fc30.x86_64.rpm  8.6 MB/s | 158 kB     00:00    
+#11 7.442 (47/68): libgpg-error-devel-1.33-2.fc30.x86_64. 2.4 MB/s |  60 kB     00:00    
+#11 7.443 (48/68): libpng-1.6.36-1.fc30.x86_64.rpm        5.7 MB/s | 106 kB     00:00    
+#11 7.467 (49/68): libtidy-5.6.0-5.fc30.x86_64.rpm        7.0 MB/s | 213 kB     00:00    
+#11 7.472 (50/68): libxcb-1.13.1-2.fc30.x86_64.rpm        6.6 MB/s | 202 kB     00:00    
+#11 7.482 (51/68): linux-libertine-biolinum-fonts-5.3.0-1  17 MB/s | 669 kB     00:00    
+#11 7.490 (52/68): linux-libertine-fonts-common-5.3.0-14. 2.4 MB/s |  43 kB     00:00    
+#11 7.507 (53/68): lksctp-tools-1.0.16-11.fc30.x86_64.rpm 3.3 MB/s |  86 kB     00:00    
+#11 7.511 (54/68): linux-libertine-fonts-5.3.0-14.2012_07  27 MB/s | 1.2 MB     00:00    
+#11 7.526 (55/68): lua-5.3.5-5.fc30.x86_64.rpm            4.8 MB/s | 178 kB     00:00    
+#11 7.532 (56/68): m4-1.4.18-10.fc30.x86_64.rpm            10 MB/s | 210 kB     00:00    
+#11 7.538 (57/68): lua-posix-33.3.1-13.fc30.x86_64.rpm    5.5 MB/s | 170 kB     00:00    
+#11 7.543 (58/68): ocaml-srpm-macros-5-5.fc30.noarch.rpm  494 kB/s | 7.7 kB     00:00    
+#11 7.547 (59/68): openblas-srpm-macros-2-5.fc30.noarch.r 500 kB/s | 7.3 kB     00:00    
+#11 7.557 (60/68): perl-GD-2.71-1.fc30.x86_64.rpm         9.4 MB/s | 176 kB     00:00    
+#11 7.559 (61/68): perl-srpm-macros-1-29.fc30.noarch.rpm  491 kB/s | 8.2 kB     00:00    
+#11 7.577 (62/68): tidy-5.6.0-5.fc30.x86_64.rpm            11 MB/s | 230 kB     00:00    
+#11 7.584 (63/68): sgml-common-0.6.3-52.fc30.noarch.rpm   1.5 MB/s |  55 kB     00:00    
+#11 7.601 (64/68): xml-common-0.6.3-52.fc30.noarch.rpm    1.8 MB/s |  32 kB     00:00    
+#11 7.606 (65/68): unifont-12.0.01-1.fc30.x86_64.rpm       20 MB/s | 959 kB     00:00    
+#11 7.617 (66/68): xmlto-0.0.28-11.fc30.x86_64.rpm        2.9 MB/s |  49 kB     00:00    
+#11 7.630 (67/68): xz-devel-5.2.4-5.fc30.x86_64.rpm       2.4 MB/s |  56 kB     00:00    
+#11 7.702 (68/68): unifont-fonts-12.0.01-1.fc30.noarch.rp  25 MB/s | 3.1 MB     00:00    
+#11 7.706 --------------------------------------------------------------------------------
+#11 7.706 Total                                            42 MB/s |  49 MB     00:01     
+#11 7.778 Running transaction check
+#11 7.836 Transaction check succeeded.
+#11 7.836 Running transaction test
+#11 8.385 Transaction test succeeded.
+#11 8.385 Running transaction
+#11 9.873   Running scriptlet: copy-jdk-configs-3.7-3.fc30.noarch                     1/1 
+#11 9.877   Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.252.b09-0.fc30.x   1/1 
+#11 10.08   Preparing        :                                                        1/1 
+#11 10.23   Installing       : fontpackages-filesystem-1.44-24.fc30.noarch           1/68 
+#11 10.28   Installing       : libjpeg-turbo-2.0.2-1.fc30.x86_64                     2/68 
+#11 10.33   Installing       : dejavu-fonts-common-2.37-1.fc30.noarch                3/68 
+#11 10.37   Installing       : linux-libertine-fonts-common-5.3.0-14.2012_07_02.f    4/68 
+#11 10.39   Running scriptlet: xml-common-0.6.3-52.fc30.noarch                       5/68 
+#11 10.41   Installing       : xml-common-0.6.3-52.fc30.noarch                       5/68 
+#11 10.45   Installing       : libpng-2:1.6.36-1.fc30.x86_64                         6/68 
+#11 10.52   Installing       : freetype-2.9.1-7.fc30.x86_64                          7/68 
+#11 10.56   Installing       : libgpg-error-devel-1.33-2.fc30.x86_64                 8/68 
+#11 10.62   Installing       : libxslt-1.1.34-1.fc30.x86_64                          9/68 
+#11 10.67   Installing       : libgcrypt-devel-1.8.5-1.fc30.x86_64                  10/68 
+#11 10.75   Installing       : dejavu-sans-mono-fonts-2.37-1.fc30.noarch            11/68 
+#11 10.81   Installing       : fontconfig-2.13.1-9.fc30.x86_64                      12/68 
+#11 10.85   Running scriptlet: fontconfig-2.13.1-9.fc30.x86_64                      12/68 
+#11 11.88   Installing       : xz-devel-5.2.4-5.fc30.x86_64                         13/68 
+#11 11.91   Installing       : sgml-common-0.6.3-52.fc30.noarch                     14/68 
+#11 12.08   Installing       : docbook-dtds-1.0-72.fc30.noarch                      15/68 
+#11 12.12   Running scriptlet: docbook-dtds-1.0-72.fc30.noarch                      15/68 
+#11 12.80   Installing       : docbook-style-xsl-1.79.2-9.fc30.noarch               16/68 
+#11 12.86   Running scriptlet: docbook-style-xsl-1.79.2-9.fc30.noarch               16/68 
+#11 12.88   Installing       : perl-srpm-macros-1-29.fc30.noarch                    17/68 
+#11 12.91   Installing       : openblas-srpm-macros-2-5.fc30.noarch                 18/68 
+#11 12.93   Installing       : ocaml-srpm-macros-5-5.fc30.noarch                    19/68 
+#11 12.96   Installing       : m4-1.4.18-10.fc30.x86_64                             20/68 
+#11 13.02   Installing       : flex-2.6.4-2.fc30.x86_64                             21/68 
+#11 13.06   Installing       : lua-posix-33.3.1-13.fc30.x86_64                      22/68 
+#11 13.11   Installing       : lua-5.3.5-5.fc30.x86_64                              23/68 
+#11 13.14   Installing       : copy-jdk-configs-3.7-3.fc30.noarch                   24/68 
+#11 13.17   Installing       : lksctp-tools-1.0.16-11.fc30.x86_64                   25/68 
+#11 13.22   Installing       : libtidy-5.6.0-5.fc30.x86_64                          26/68 
+#11 13.25   Installing       : libXau-1.0.9-1.fc30.x86_64                           27/68 
+#11 13.30   Installing       : libxcb-1.13.1-2.fc30.x86_64                          28/68 
+#11 13.38   Installing       : libX11-common-1.6.7-1.fc30.noarch                    29/68 
+#11 13.47   Installing       : libX11-1.6.7-1.fc30.x86_64                           30/68 
+#11 13.49   Installing       : libXpm-3.5.12-9.fc30.x86_64                          31/68 
+#11 13.52   Installing       : jbigkit-libs-2.1-16.fc30.x86_64                      32/68 
+#11 13.56   Installing       : libtiff-4.0.10-8.fc30.x86_64                         33/68 
+#11 13.59   Installing       : javapackages-filesystem-5.3.0-4.fc30.noarch          34/68 
+#11 13.61   Installing       : go-srpm-macros-2-19.fc30.noarch                      35/68 
+#11 13.63   Installing       : gnat-srpm-macros-4-9.fc30.noarch                     36/68 
+#11 13.65   Installing       : ghc-srpm-macros-1.4.2-9.fc30.noarch                  37/68 
+#11 13.66   Installing       : fpc-srpm-macros-1.2-1.fc30.noarch                    38/68 
+#11 13.68   Installing       : efi-srpm-macros-4-2.fc30.noarch                      39/68 
+#11 13.72   Installing       : dwz-0.12-10.fc30.x86_64                              40/68 
+#11 13.76   Installing       : chkconfig-1.11-4.fc30.x86_64                         41/68 
+#11 13.80   Installing       : avahi-libs-0.7-18.fc30.x86_64                        42/68 
+#11 13.85   Installing       : cups-libs-1:2.2.12-8.fc30.x86_64                     43/68 
+#11 13.93   Installing       : tzdata-java-2020a-1.fc30.noarch                      44/68 
+#11 13.97   Installing       : rust-srpm-macros-10-1.fc30.noarch                    45/68 
+#11 13.99   Installing       : qt5-srpm-macros-5.12.5-1.fc30.noarch                 46/68 
+#11 14.01   Installing       : perl-Math-Complex-1.59-444.fc30.noarch               47/68 
+#11 14.04   Installing       : nim-srpm-macros-2-1.fc30.noarch                      48/68 
+#11 14.09   Installing       : libwebp-1.0.3-1.fc30.x86_64                          49/68 
+#11 14.12   Installing       : libimagequant-2.12.5-1.fc30.x86_64                   50/68 
+#11 14.16   Installing       : gd-2.2.5-10.fc30.x86_64                              51/68 
+#11 14.20   Installing       : perl-GD-2.71-1.fc30.x86_64                           52/68 
+#11 14.23   Installing       : file-5.36-5.fc30.x86_64                              53/68 
+#11 14.25   Installing       : cmake-filesystem-3.17.2-1.fc30.x86_64                54/68 
+#11 14.40   Installing       : libxml2-devel-2.9.10-3.fc30.x86_64                   55/68 
+#11 14.44   Installing       : annobin-8.71-4.fc30.x86_64                           56/68 
+#11 14.47   Installing       : python-srpm-macros-3-47.fc30.noarch                  57/68 
+#11 14.50   Installing       : redhat-rpm-config-132-1.fc30.noarch                  58/68 
+#11 14.56   Installing       : libxslt-devel-1.1.34-1.fc30.x86_64                   59/68 
+#11 14.70   Installing       : unifont-12.0.01-1.fc30.x86_64                        60/68 
+#11 18.33   Installing       : java-1.8.0-openjdk-headless-1:1.8.0.252.b09-0.fc30   61/68 
+#11 18.38   Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.252.b09-0.fc30   61/68 
+#11 18.71   Installing       : tidy-5.6.0-5.fc30.x86_64                             62/68 
+#11 18.74   Installing       : xmlto-0.0.28-11.fc30.x86_64                          63/68 
+#11 18.83   Installing       : linux-libertine-biolinum-fonts-5.3.0-14.2012_07_02   64/68 
+#11 18.98   Installing       : linux-libertine-fonts-5.3.0-14.2012_07_02.fc30.noa   65/68 
+#11 19.09   Installing       : dejavu-serif-fonts-2.37-1.fc30.noarch                66/68 
+#11 19.47   Installing       : unifont-fonts-12.0.01-1.fc30.noarch                  67/68 
+#11 19.52   Installing       : ruby-devel-2.6.5-124.fc30.x86_64                     68/68 
+#11 19.55   Running scriptlet: copy-jdk-configs-3.7-3.fc30.noarch                   68/68 
+#11 19.56   Running scriptlet: ruby-devel-2.6.5-124.fc30.x86_64                     68/68 
+#11 19.59   Running scriptlet: fontconfig-2.13.1-9.fc30.x86_64                      68/68 
+#11 19.68   Verifying        : annobin-8.71-4.fc30.x86_64                            1/68 
+#11 19.68   Verifying        : cmake-filesystem-3.17.2-1.fc30.x86_64                 2/68 
+#11 19.68   Verifying        : cups-libs-1:2.2.12-8.fc30.x86_64                      3/68 
+#11 19.68   Verifying        : file-5.36-5.fc30.x86_64                               4/68 
+#11 19.68   Verifying        : fontconfig-2.13.1-9.fc30.x86_64                       5/68 
+#11 19.68   Verifying        : gd-2.2.5-10.fc30.x86_64                               6/68 
+#11 19.68   Verifying        : java-1.8.0-openjdk-headless-1:1.8.0.252.b09-0.fc30    7/68 
+#11 19.68   Verifying        : libgcrypt-devel-1.8.5-1.fc30.x86_64                   8/68 
+#11 19.68   Verifying        : libimagequant-2.12.5-1.fc30.x86_64                    9/68 
+#11 19.68   Verifying        : libtiff-4.0.10-8.fc30.x86_64                         10/68 
+#11 19.68   Verifying        : libwebp-1.0.3-1.fc30.x86_64                          11/68 
+#11 19.68   Verifying        : libxml2-devel-2.9.10-3.fc30.x86_64                   12/68 
+#11 19.68   Verifying        : libxslt-1.1.34-1.fc30.x86_64                         13/68 
+#11 19.68   Verifying        : libxslt-devel-1.1.34-1.fc30.x86_64                   14/68 
+#11 19.68   Verifying        : nim-srpm-macros-2-1.fc30.noarch                      15/68 
+#11 19.68   Verifying        : perl-Math-Complex-1.59-444.fc30.noarch               16/68 
+#11 19.68   Verifying        : python-srpm-macros-3-47.fc30.noarch                  17/68 
+#11 19.68   Verifying        : qt5-srpm-macros-5.12.5-1.fc30.noarch                 18/68 
+#11 19.68   Verifying        : redhat-rpm-config-132-1.fc30.noarch                  19/68 
+#11 19.68   Verifying        : ruby-devel-2.6.5-124.fc30.x86_64                     20/68 
+#11 19.68   Verifying        : rust-srpm-macros-10-1.fc30.noarch                    21/68 
+#11 19.68   Verifying        : tzdata-java-2020a-1.fc30.noarch                      22/68 
+#11 19.68   Verifying        : avahi-libs-0.7-18.fc30.x86_64                        23/68 
+#11 19.68   Verifying        : chkconfig-1.11-4.fc30.x86_64                         24/68 
+#11 19.68   Verifying        : copy-jdk-configs-3.7-3.fc30.noarch                   25/68 
+#11 19.68   Verifying        : dejavu-fonts-common-2.37-1.fc30.noarch               26/68 
+#11 19.68   Verifying        : dejavu-sans-mono-fonts-2.37-1.fc30.noarch            27/68 
+#11 19.68   Verifying        : dejavu-serif-fonts-2.37-1.fc30.noarch                28/68 
+#11 19.68   Verifying        : docbook-dtds-1.0-72.fc30.noarch                      29/68 
+#11 19.68   Verifying        : docbook-style-xsl-1.79.2-9.fc30.noarch               30/68 
+#11 19.68   Verifying        : dwz-0.12-10.fc30.x86_64                              31/68 
+#11 19.68   Verifying        : efi-srpm-macros-4-2.fc30.noarch                      32/68 
+#11 19.68   Verifying        : flex-2.6.4-2.fc30.x86_64                             33/68 
+#11 19.68   Verifying        : fontpackages-filesystem-1.44-24.fc30.noarch          34/68 
+#11 19.68   Verifying        : fpc-srpm-macros-1.2-1.fc30.noarch                    35/68 
+#11 19.68   Verifying        : freetype-2.9.1-7.fc30.x86_64                         36/68 
+#11 19.68   Verifying        : ghc-srpm-macros-1.4.2-9.fc30.noarch                  37/68 
+#11 19.68   Verifying        : gnat-srpm-macros-4-9.fc30.noarch                     38/68 
+#11 19.68   Verifying        : go-srpm-macros-2-19.fc30.noarch                      39/68 
+#11 19.68   Verifying        : javapackages-filesystem-5.3.0-4.fc30.noarch          40/68 
+#11 19.68   Verifying        : jbigkit-libs-2.1-16.fc30.x86_64                      41/68 
+#11 19.68   Verifying        : libX11-1.6.7-1.fc30.x86_64                           42/68 
+#11 19.68   Verifying        : libX11-common-1.6.7-1.fc30.noarch                    43/68 
+#11 19.68   Verifying        : libXau-1.0.9-1.fc30.x86_64                           44/68 
+#11 19.68   Verifying        : libXpm-3.5.12-9.fc30.x86_64                          45/68 
+#11 19.68   Verifying        : libgpg-error-devel-1.33-2.fc30.x86_64                46/68 
+#11 19.68   Verifying        : libjpeg-turbo-2.0.2-1.fc30.x86_64                    47/68 
+#11 19.68   Verifying        : libpng-2:1.6.36-1.fc30.x86_64                        48/68 
+#11 19.68   Verifying        : libtidy-5.6.0-5.fc30.x86_64                          49/68 
+#11 19.68   Verifying        : libxcb-1.13.1-2.fc30.x86_64                          50/68 
+#11 19.68   Verifying        : linux-libertine-biolinum-fonts-5.3.0-14.2012_07_02   51/68 
+#11 19.68   Verifying        : linux-libertine-fonts-5.3.0-14.2012_07_02.fc30.noa   52/68 
+#11 19.68   Verifying        : linux-libertine-fonts-common-5.3.0-14.2012_07_02.f   53/68 
+#11 19.68   Verifying        : lksctp-tools-1.0.16-11.fc30.x86_64                   54/68 
+#11 19.68   Verifying        : lua-5.3.5-5.fc30.x86_64                              55/68 
+#11 19.68   Verifying        : lua-posix-33.3.1-13.fc30.x86_64                      56/68 
+#11 19.68   Verifying        : m4-1.4.18-10.fc30.x86_64                             57/68 
+#11 19.68   Verifying        : ocaml-srpm-macros-5-5.fc30.noarch                    58/68 
+#11 19.68   Verifying        : openblas-srpm-macros-2-5.fc30.noarch                 59/68 
+#11 19.68   Verifying        : perl-GD-2.71-1.fc30.x86_64                           60/68 
+#11 19.68   Verifying        : perl-srpm-macros-1-29.fc30.noarch                    61/68 
+#11 19.68   Verifying        : sgml-common-0.6.3-52.fc30.noarch                     62/68 
+#11 19.68   Verifying        : tidy-5.6.0-5.fc30.x86_64                             63/68 
+#11 19.68   Verifying        : unifont-12.0.01-1.fc30.x86_64                        64/68 
+#11 19.68   Verifying        : unifont-fonts-12.0.01-1.fc30.noarch                  65/68 
+#11 19.68   Verifying        : xml-common-0.6.3-52.fc30.noarch                      66/68 
+#11 19.68   Verifying        : xmlto-0.0.28-11.fc30.x86_64                          67/68 
+#11 19.68   Verifying        : xz-devel-5.2.4-5.fc30.x86_64                         68/68 
+#11 20.82 
+#11 20.82 Installed:
+#11 20.82   annobin-8.71-4.fc30.x86_64                                                    
+#11 20.82   avahi-libs-0.7-18.fc30.x86_64                                                 
+#11 20.82   chkconfig-1.11-4.fc30.x86_64                                                  
+#11 20.82   cmake-filesystem-3.17.2-1.fc30.x86_64                                         
+#11 20.82   copy-jdk-configs-3.7-3.fc30.noarch                                            
+#11 20.82   cups-libs-1:2.2.12-8.fc30.x86_64                                              
+#11 20.82   dejavu-fonts-common-2.37-1.fc30.noarch                                        
+#11 20.82   dejavu-sans-mono-fonts-2.37-1.fc30.noarch                                     
+#11 20.82   dejavu-serif-fonts-2.37-1.fc30.noarch                                         
+#11 20.82   docbook-dtds-1.0-72.fc30.noarch                                               
+#11 20.82   docbook-style-xsl-1.79.2-9.fc30.noarch                                        
+#11 20.82   dwz-0.12-10.fc30.x86_64                                                       
+#11 20.82   efi-srpm-macros-4-2.fc30.noarch                                               
+#11 20.82   file-5.36-5.fc30.x86_64                                                       
+#11 20.82   flex-2.6.4-2.fc30.x86_64                                                      
+#11 20.82   fontconfig-2.13.1-9.fc30.x86_64                                               
+#11 20.82   fontpackages-filesystem-1.44-24.fc30.noarch                                   
+#11 20.82   fpc-srpm-macros-1.2-1.fc30.noarch                                             
+#11 20.82   freetype-2.9.1-7.fc30.x86_64                                                  
+#11 20.82   gd-2.2.5-10.fc30.x86_64                                                       
+#11 20.82   ghc-srpm-macros-1.4.2-9.fc30.noarch                                           
+#11 20.82   gnat-srpm-macros-4-9.fc30.noarch                                              
+#11 20.82   go-srpm-macros-2-19.fc30.noarch                                               
+#11 20.82   java-1.8.0-openjdk-headless-1:1.8.0.252.b09-0.fc30.x86_64                     
+#11 20.82   javapackages-filesystem-5.3.0-4.fc30.noarch                                   
+#11 20.82   jbigkit-libs-2.1-16.fc30.x86_64                                               
+#11 20.82   libX11-1.6.7-1.fc30.x86_64                                                    
+#11 20.82   libX11-common-1.6.7-1.fc30.noarch                                             
+#11 20.82   libXau-1.0.9-1.fc30.x86_64                                                    
+#11 20.82   libXpm-3.5.12-9.fc30.x86_64                                                   
+#11 20.82   libgcrypt-devel-1.8.5-1.fc30.x86_64                                           
+#11 20.82   libgpg-error-devel-1.33-2.fc30.x86_64                                         
+#11 20.82   libimagequant-2.12.5-1.fc30.x86_64                                            
+#11 20.82   libjpeg-turbo-2.0.2-1.fc30.x86_64                                             
+#11 20.82   libpng-2:1.6.36-1.fc30.x86_64                                                 
+#11 20.82   libtidy-5.6.0-5.fc30.x86_64                                                   
+#11 20.82   libtiff-4.0.10-8.fc30.x86_64                                                  
+#11 20.82   libwebp-1.0.3-1.fc30.x86_64                                                   
+#11 20.82   libxcb-1.13.1-2.fc30.x86_64                                                   
+#11 20.82   libxml2-devel-2.9.10-3.fc30.x86_64                                            
+#11 20.82   libxslt-1.1.34-1.fc30.x86_64                                                  
+#11 20.82   libxslt-devel-1.1.34-1.fc30.x86_64                                            
+#11 20.82   linux-libertine-biolinum-fonts-5.3.0-14.2012_07_02.fc30.noarch                
+#11 20.82   linux-libertine-fonts-5.3.0-14.2012_07_02.fc30.noarch                         
+#11 20.82   linux-libertine-fonts-common-5.3.0-14.2012_07_02.fc30.noarch                  
+#11 20.82   lksctp-tools-1.0.16-11.fc30.x86_64                                            
+#11 20.82   lua-5.3.5-5.fc30.x86_64                                                       
+#11 20.82   lua-posix-33.3.1-13.fc30.x86_64                                               
+#11 20.82   m4-1.4.18-10.fc30.x86_64                                                      
+#11 20.82   nim-srpm-macros-2-1.fc30.noarch                                               
+#11 20.82   ocaml-srpm-macros-5-5.fc30.noarch                                             
+#11 20.82   openblas-srpm-macros-2-5.fc30.noarch                                          
+#11 20.82   perl-GD-2.71-1.fc30.x86_64                                                    
+#11 20.82   perl-Math-Complex-1.59-444.fc30.noarch                                        
+#11 20.82   perl-srpm-macros-1-29.fc30.noarch                                             
+#11 20.82   python-srpm-macros-3-47.fc30.noarch                                           
+#11 20.82   qt5-srpm-macros-5.12.5-1.fc30.noarch                                          
+#11 20.82   redhat-rpm-config-132-1.fc30.noarch                                           
+#11 20.82   ruby-devel-2.6.5-124.fc30.x86_64                                              
+#11 20.82   rust-srpm-macros-10-1.fc30.noarch                                             
+#11 20.82   sgml-common-0.6.3-52.fc30.noarch                                              
+#11 20.82   tidy-5.6.0-5.fc30.x86_64                                                      
+#11 20.82   tzdata-java-2020a-1.fc30.noarch                                               
+#11 20.82   unifont-12.0.01-1.fc30.x86_64                                                 
+#11 20.82   unifont-fonts-12.0.01-1.fc30.noarch                                           
+#11 20.82   xml-common-0.6.3-52.fc30.noarch                                               
+#11 20.82   xmlto-0.0.28-11.fc30.x86_64                                                   
+#11 20.82   xz-devel-5.2.4-5.fc30.x86_64                                                  
+#11 20.82 
+#11 20.82 Complete!
+#11 DONE 21.6s
+
+#12 [ 7/17] RUN /bin/echo 'LANG=en_US.UTF-8' >/etc/locale.conf
+#12 DONE 0.2s
+
+#13 [ 8/17] RUN mkdir /srv/cll
+#13 DONE 0.2s
+
+#14 [ 9/17] WORKDIR /srv/cll
+#14 DONE 0.0s
+
+#15 [10/17] RUN echo 'cll    ALL=(ALL)    NOPASSWD: ALL' >>/etc/sudoers.d/cll
+#15 DONE 0.2s
+
+#16 [11/17] COPY Gemfile Gemfile.lock /srv/cll/
+#16 DONE 0.1s
+
+#17 [12/17] RUN gem install bundler
+#17 21.03 ERROR:  Error installing bundler:
+#17 21.03 	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.6.5.114.
+#17 ERROR: process "/bin/sh -c gem install bundler" did not complete successfully: exit code: 1
+------
+ > [12/17] RUN gem install bundler:
+21.03 ERROR:  Error installing bundler:
+21.03 	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.6.5.114.
+------
+v1_Dockerfile:34
+--------------------
+  32 |     # Ruby setup
+  33 |     COPY Gemfile Gemfile.lock /srv/cll/
+  34 | >>> RUN gem install bundler
+  35 |     RUN bundle config --global silence_root_warning true
+  36 |     RUN bundle config build.nokogiri --use-system-libraries
+--------------------
+ERROR: failed to solve: process "/bin/sh -c gem install bundler" did not complete successfully: exit code: 1
+Duration: 2:30.66

@@ -1,0 +1,134 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 3.41kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/stellar/base:latest
+#2 ...
+
+#3 [auth] stellar/base:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/stellar/base:latest
+#2 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 51.54kB done
+#5 DONE 0.0s
+
+#6 [ 1/11] FROM docker.io/stellar/base:latest@sha256:ff3084af8fe12e3831027feef869626b5827723bcd3018314cec97d7179cc71b
+#6 resolve docker.io/stellar/base:latest@sha256:ff3084af8fe12e3831027feef869626b5827723bcd3018314cec97d7179cc71b 0.0s done
+#6 sha256:afb01e8e2c620f72df59c6c07182539f2f1890b5ea84a9f7bfa8f1ec809ba001 2.81kB / 2.81kB done
+#6 sha256:54f7e8ac135a5f502a6ee9537ef3d64b1cd2fa570dc0a40b4d3b6f7ac81e7486 3.15MB / 45.32MB 0.2s
+#6 sha256:12c1013767bd3f2882f079c6bd967de9e92066a67f669ccfbba74d2d674a130f 0B / 456B 0.2s
+#6 sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 0B / 90.25MB 0.2s
+#6 sha256:ff3084af8fe12e3831027feef869626b5827723bcd3018314cec97d7179cc71b 948B / 948B done
+#6 sha256:54f7e8ac135a5f502a6ee9537ef3d64b1cd2fa570dc0a40b4d3b6f7ac81e7486 19.92MB / 45.32MB 0.4s
+#6 sha256:12c1013767bd3f2882f079c6bd967de9e92066a67f669ccfbba74d2d674a130f 456B / 456B 0.3s done
+#6 sha256:54f7e8ac135a5f502a6ee9537ef3d64b1cd2fa570dc0a40b4d3b6f7ac81e7486 37.75MB / 45.32MB 0.6s
+#6 sha256:54f7e8ac135a5f502a6ee9537ef3d64b1cd2fa570dc0a40b4d3b6f7ac81e7486 45.32MB / 45.32MB 0.7s
+#6 sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 5.24MB / 90.25MB 0.7s
+#6 sha256:54f7e8ac135a5f502a6ee9537ef3d64b1cd2fa570dc0a40b4d3b6f7ac81e7486 45.32MB / 45.32MB 0.8s done
+#6 sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 15.73MB / 90.25MB 0.9s
+#6 extracting sha256:54f7e8ac135a5f502a6ee9537ef3d64b1cd2fa570dc0a40b4d3b6f7ac81e7486 0.1s
+#6 sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 24.12MB / 90.25MB 1.0s
+#6 sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 46.14MB / 90.25MB 1.2s
+#6 sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 57.67MB / 90.25MB 1.3s
+#6 sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 67.11MB / 90.25MB 1.4s
+#6 sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 77.59MB / 90.25MB 1.5s
+#6 sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 88.08MB / 90.25MB 1.6s
+#6 sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 90.25MB / 90.25MB 2.0s done
+#6 extracting sha256:54f7e8ac135a5f502a6ee9537ef3d64b1cd2fa570dc0a40b4d3b6f7ac81e7486 2.7s done
+#6 extracting sha256:12c1013767bd3f2882f079c6bd967de9e92066a67f669ccfbba74d2d674a130f done
+#6 extracting sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907
+#6 extracting sha256:0f4086d6b5d34e7de99c82aefe059452e5d8a2a892f04bef6e6006af8542b907 4.5s done
+#6 DONE 8.6s
+
+#7 [ 2/11] RUN echo "[start: dependencies]"     && apt-get update     && apt-get install --no-install-recommends -y         curl git libpq-dev libsqlite3-dev libsasl2-dev postgresql-client postgresql postgresql-contrib sudo vim zlib1g-dev supervisor     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo "[end: dependencies]"
+#7 0.171 [start: dependencies]
+#7 0.207 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+#7 0.212 Ign:2 http://deb.debian.org/debian stretch InRelease
+#7 0.216 Ign:3 http://security.debian.org/debian-security stretch/updates Release
+#7 0.223 Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+#7 0.225 Ign:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.232 Ign:6 http://deb.debian.org/debian stretch Release
+#7 0.234 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.242 Ign:8 http://deb.debian.org/debian stretch-updates Release
+#7 0.244 Ign:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.254 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.254 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.263 Ign:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.263 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.272 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.272 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.281 Ign:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.283 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.290 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.294 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.300 Ign:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.305 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.310 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.314 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.321 Err:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.321   404  Not Found
+#7 0.324 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.330 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.335 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.347 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.356 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.366 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.377 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.386 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.398 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.411 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.421 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.432 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.442 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.455 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.465 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.484 Err:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.484   404  Not Found
+#7 0.495 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.506 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.506   404  Not Found
+#7 0.514 Reading package lists...
+#7 0.523 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#7 0.523 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#7 0.523 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#7 0.523 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+#7 0.523 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#7 0.523 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#7 0.523 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#7 ERROR: process "/bin/sh -c echo \"[start: dependencies]\"     && apt-get update     && apt-get install --no-install-recommends -y         curl git libpq-dev libsqlite3-dev libsasl2-dev postgresql-client postgresql postgresql-contrib sudo vim zlib1g-dev supervisor     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo \"[end: dependencies]\"" did not complete successfully: exit code: 100
+------
+ > [ 2/11] RUN echo "[start: dependencies]"     && apt-get update     && apt-get install --no-install-recommends -y         curl git libpq-dev libsqlite3-dev libsasl2-dev postgresql-client postgresql postgresql-contrib sudo vim zlib1g-dev supervisor     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo "[end: dependencies]":
+0.506 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+0.506   404  Not Found
+0.514 Reading package lists...
+0.523 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.523 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.523 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.523 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+0.523 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.523 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.523 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:11
+--------------------
+  10 |     
+  11 | >>> RUN echo "[start: dependencies]" \
+  12 | >>>     && apt-get update \
+  13 | >>>     && apt-get install --no-install-recommends -y \
+  14 | >>>         curl git libpq-dev libsqlite3-dev libsasl2-dev postgresql-client postgresql postgresql-contrib sudo vim zlib1g-dev supervisor \
+  15 | >>>     && apt-get clean \
+  16 | >>>     && rm -rf /var/lib/apt/lists/* \
+  17 | >>>     && echo "[end: dependencies]"
+  18 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c echo \"[start: dependencies]\"     && apt-get update     && apt-get install --no-install-recommends -y         curl git libpq-dev libsqlite3-dev libsasl2-dev postgresql-client postgresql postgresql-contrib sudo vim zlib1g-dev supervisor     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo \"[end: dependencies]\"" did not complete successfully: exit code: 100
+Duration: 0:12.11

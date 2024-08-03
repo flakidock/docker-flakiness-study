@@ -1,0 +1,291 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 526B done
+#1 DONE 0.5s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.4s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.2s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.3s done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 48.01MB 0.6s done
+#4 DONE 1.0s
+
+#5 [1/4] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 DONE 1.6s
+
+#6 [2/4] COPY ./ /app
+#6 DONE 3.3s
+
+#7 [3/4] WORKDIR /app
+#7 DONE 0.4s
+
+#8 [4/4] RUN apk update &&     apk add --update     python3     python3-dev     py3-pip     gcc     musl-dev     bash &&     python3 -m venv /app/venv &&     . /app/venv/bin/activate &&     pip install -r requirements.txt &&     apk del python3-dev     gcc     musl-dev &&     rm -rf /var/cache/apk/* &&     rm -rf Atomic_Threat_Coverage
+#8 0.816 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#8 1.078 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#8 1.593 v3.20.2-45-g194e307d75d [https://dl-cdn.alpinelinux.org/alpine/v3.20/main]
+#8 1.593 v3.20.2-43-g4fdd3a681b2 [https://dl-cdn.alpinelinux.org/alpine/v3.20/community]
+#8 1.593 OK: 24154 distinct packages available
+#8 2.037 (1/39) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#8 2.094 (2/39) Installing libncursesw (6.4_p20240420-r0)
+#8 2.109 (3/39) Installing readline (8.2.10-r0)
+#8 2.116 (4/39) Installing bash (5.2.26-r0)
+#8 2.142 Executing bash-5.2.26-r0.post-install
+#8 2.145 (5/39) Installing libgcc (13.2.1_git20240309-r0)
+#8 2.157 (6/39) Installing jansson (2.14-r4)
+#8 2.160 (7/39) Installing libstdc++ (13.2.1_git20240309-r0)
+#8 2.195 (8/39) Installing zstd-libs (1.5.6-r0)
+#8 2.211 (9/39) Installing binutils (2.42-r0)
+#8 2.318 (10/39) Installing libgomp (13.2.1_git20240309-r0)
+#8 2.325 (11/39) Installing libatomic (13.2.1_git20240309-r0)
+#8 2.328 (12/39) Installing gmp (6.3.0-r1)
+#8 2.337 (13/39) Installing isl26 (0.26-r1)
+#8 2.362 (14/39) Installing mpfr4 (4.2.1-r0)
+#8 2.374 (15/39) Installing mpc1 (1.3.1-r1)
+#8 2.379 (16/39) Installing gcc (13.2.1_git20240309-r0)
+#8 3.583 (17/39) Installing musl-dev (1.2.5-r0)
+#8 3.691 (18/39) Installing libbz2 (1.0.8-r6)
+#8 3.695 (19/39) Installing libexpat (2.6.2-r0)
+#8 3.699 (20/39) Installing libffi (3.4.6-r0)
+#8 3.703 (21/39) Installing gdbm (1.23-r1)
+#8 3.712 (22/39) Installing xz-libs (5.6.1-r3)
+#8 3.718 (23/39) Installing mpdecimal (4.0.0-r0)
+#8 3.723 (24/39) Installing libpanelw (6.4_p20240420-r0)
+#8 3.725 (25/39) Installing sqlite-libs (3.45.3-r1)
+#8 3.747 (26/39) Installing python3 (3.12.3-r1)
+#8 4.072 (27/39) Installing python3-pycache-pyc0 (3.12.3-r1)
+#8 4.342 (28/39) Installing pyc (3.12.3-r1)
+#8 4.345 (29/39) Installing py3-setuptools-pyc (69.5.1-r0)
+#8 4.464 (30/39) Installing py3-pip-pyc (24.0-r2)
+#8 4.708 (31/39) Installing py3-parsing (3.1.2-r1)
+#8 4.716 (32/39) Installing py3-parsing-pyc (3.1.2-r1)
+#8 4.735 (33/39) Installing py3-packaging-pyc (24.0-r1)
+#8 4.748 (34/39) Installing python3-pyc (3.12.3-r1)
+#8 4.750 (35/39) Installing py3-packaging (24.0-r1)
+#8 4.767 (36/39) Installing py3-setuptools (69.5.1-r0)
+#8 4.864 (37/39) Installing py3-pip (24.0-r2)
+#8 5.075 (38/39) Installing pkgconf (2.2.0-r0)
+#8 5.080 (39/39) Installing python3-dev (3.12.3-r1)
+#8 5.901 Executing busybox-1.36.1-r29.trigger
+#8 5.909 OK: 316 MiB in 53 packages
+#8 11.93 Collecting pyyaml (from -r requirements.txt (line 1))
+#8 11.97   Downloading PyYAML-6.0.1-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (2.1 kB)
+#8 12.12 Collecting requests (from -r requirements.txt (line 2))
+#8 12.13   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+#8 12.23 Collecting jinja2 (from -r requirements.txt (line 3))
+#8 12.24   Downloading jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
+#8 12.49 Collecting elasticsearch (from -r requirements.txt (line 4))
+#8 12.51   Downloading elasticsearch-8.14.0-py3-none-any.whl.metadata (7.2 kB)
+#8 12.71 Collecting pytest (from -r requirements.txt (line 5))
+#8 12.72   Downloading pytest-8.3.2-py3-none-any.whl.metadata (7.5 kB)
+#8 12.88 Collecting stix2<3.0 (from -r requirements.txt (line 6))
+#8 12.89   Downloading stix2-2.1.0-py2.py3-none-any.whl.metadata (10 kB)
+#8 13.08 Collecting mkdocs (from -r requirements.txt (line 7))
+#8 13.09   Downloading mkdocs-1.6.0-py3-none-any.whl.metadata (6.0 kB)
+#8 13.21 Collecting mkdocs-awesome-pages-plugin (from -r requirements.txt (line 8))
+#8 13.22   Downloading mkdocs_awesome_pages_plugin-2.9.3-py3-none-any.whl.metadata (13 kB)
+#8 13.30 Collecting mkdocs-exclude (from -r requirements.txt (line 9))
+#8 13.31   Downloading mkdocs-exclude-1.0.2.tar.gz (6.8 kB)
+#8 13.36   Installing build dependencies: started
+#8 17.99   Installing build dependencies: finished with status 'done'
+#8 17.99   Getting requirements to build wheel: started
+#8 18.28   Getting requirements to build wheel: finished with status 'done'
+#8 18.28   Preparing metadata (pyproject.toml): started
+#8 18.58   Preparing metadata (pyproject.toml): finished with status 'done'
+#8 18.64 Collecting mkdocs-windmill (from -r requirements.txt (line 10))
+#8 18.65   Downloading mkdocs-windmill-1.0.5.tar.gz (961 kB)
+#8 18.73      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 961.4/961.4 kB 12.5 MB/s eta 0:00:00
+#8 18.79   Installing build dependencies: started
+#8 21.69   Installing build dependencies: finished with status 'done'
+#8 21.69   Getting requirements to build wheel: started
+#8 21.98   Getting requirements to build wheel: finished with status 'done'
+#8 21.98   Preparing metadata (pyproject.toml): started
+#8 22.29   Preparing metadata (pyproject.toml): finished with status 'done'
+#8 22.48 Collecting charset-normalizer<4,>=2 (from requests->-r requirements.txt (line 2))
+#8 22.49   Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (33 kB)
+#8 22.59 Collecting idna<4,>=2.5 (from requests->-r requirements.txt (line 2))
+#8 22.60   Downloading idna-3.7-py3-none-any.whl.metadata (9.9 kB)
+#8 22.74 Collecting urllib3<3,>=1.21.1 (from requests->-r requirements.txt (line 2))
+#8 22.75   Downloading urllib3-2.2.2-py3-none-any.whl.metadata (6.4 kB)
+#8 22.87 Collecting certifi>=2017.4.17 (from requests->-r requirements.txt (line 2))
+#8 22.88   Downloading certifi-2024.7.4-py3-none-any.whl.metadata (2.2 kB)
+#8 23.05 Collecting MarkupSafe>=2.0 (from jinja2->-r requirements.txt (line 3))
+#8 23.06   Downloading MarkupSafe-2.1.5-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (3.0 kB)
+#8 23.24 Collecting elastic-transport<9,>=8.13 (from elasticsearch->-r requirements.txt (line 4))
+#8 23.24   Downloading elastic_transport-8.13.1-py3-none-any.whl.metadata (3.7 kB)
+#8 23.36 Collecting iniconfig (from pytest->-r requirements.txt (line 5))
+#8 23.37   Downloading iniconfig-2.0.0-py3-none-any.whl.metadata (2.6 kB)
+#8 23.48 Collecting packaging (from pytest->-r requirements.txt (line 5))
+#8 23.48   Downloading packaging-24.1-py3-none-any.whl.metadata (3.2 kB)
+#8 23.60 Collecting pluggy<2,>=1.5 (from pytest->-r requirements.txt (line 5))
+#8 23.61   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+#8 23.79 Collecting pytz (from stix2<3.0->-r requirements.txt (line 6))
+#8 23.79   Downloading pytz-2024.1-py2.py3-none-any.whl.metadata (22 kB)
+#8 24.02 Collecting simplejson (from stix2<3.0->-r requirements.txt (line 6))
+#8 24.03   Downloading simplejson-3.19.2-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (3.1 kB)
+#8 24.14 Collecting six>=1.13.0 (from stix2<3.0->-r requirements.txt (line 6))
+#8 24.15   Downloading six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+#8 24.32 Collecting stix2-patterns>=1.2.0 (from stix2<3.0->-r requirements.txt (line 6))
+#8 24.33   Downloading stix2_patterns-2.0.0-py2.py3-none-any.whl.metadata (8.3 kB)
+#8 24.47 Collecting click>=7.0 (from mkdocs->-r requirements.txt (line 7))
+#8 24.48   Downloading click-8.1.7-py3-none-any.whl.metadata (3.0 kB)
+#8 24.64 Collecting ghp-import>=1.0 (from mkdocs->-r requirements.txt (line 7))
+#8 24.65   Downloading ghp_import-2.1.0-py3-none-any.whl.metadata (7.2 kB)
+#8 24.78 Collecting markdown>=3.3.6 (from mkdocs->-r requirements.txt (line 7))
+#8 24.79   Downloading Markdown-3.6-py3-none-any.whl.metadata (7.0 kB)
+#8 24.95 Collecting mergedeep>=1.3.4 (from mkdocs->-r requirements.txt (line 7))
+#8 24.95   Downloading mergedeep-1.3.4-py3-none-any.whl.metadata (4.3 kB)
+#8 25.12 Collecting mkdocs-get-deps>=0.2.0 (from mkdocs->-r requirements.txt (line 7))
+#8 25.12   Downloading mkdocs_get_deps-0.2.0-py3-none-any.whl.metadata (4.0 kB)
+#8 25.22 Collecting pathspec>=0.11.1 (from mkdocs->-r requirements.txt (line 7))
+#8 25.23   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+#8 25.41 Collecting pyyaml-env-tag>=0.1 (from mkdocs->-r requirements.txt (line 7))
+#8 25.42   Downloading pyyaml_env_tag-0.1-py3-none-any.whl.metadata (4.1 kB)
+#8 25.66 Collecting watchdog>=2.0 (from mkdocs->-r requirements.txt (line 7))
+#8 25.67   Downloading watchdog-4.0.1.tar.gz (126 kB)
+#8 25.70      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.6/126.6 kB 3.5 MB/s eta 0:00:00
+#8 25.75   Installing build dependencies: started
+#8 28.63   Installing build dependencies: finished with status 'done'
+#8 28.63   Getting requirements to build wheel: started
+#8 28.94   Getting requirements to build wheel: finished with status 'done'
+#8 28.94   Preparing metadata (pyproject.toml): started
+#8 29.27   Preparing metadata (pyproject.toml): finished with status 'done'
+#8 29.44 Collecting natsort>=8.1.0 (from mkdocs-awesome-pages-plugin->-r requirements.txt (line 8))
+#8 29.45   Downloading natsort-8.4.0-py3-none-any.whl.metadata (21 kB)
+#8 29.64 Collecting wcmatch>=7 (from mkdocs-awesome-pages-plugin->-r requirements.txt (line 8))
+#8 29.65   Downloading wcmatch-8.5.2-py3-none-any.whl.metadata (4.8 kB)
+#8 29.84 Collecting python-dateutil>=2.8.1 (from ghp-import>=1.0->mkdocs->-r requirements.txt (line 7))
+#8 29.85   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#8 31.15 Collecting platformdirs>=2.2.0 (from mkdocs-get-deps>=0.2.0->mkdocs->-r requirements.txt (line 7))
+#8 31.16   Downloading platformdirs-4.2.2-py3-none-any.whl.metadata (11 kB)
+#8 31.38 Collecting antlr4-python3-runtime~=4.9.0 (from stix2-patterns>=1.2.0->stix2<3.0->-r requirements.txt (line 6))
+#8 31.39   Downloading antlr4-python3-runtime-4.9.3.tar.gz (117 kB)
+#8 31.43      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.0/117.0 kB 2.6 MB/s eta 0:00:00
+#8 31.47   Installing build dependencies: started
+#8 34.33   Installing build dependencies: finished with status 'done'
+#8 34.33   Getting requirements to build wheel: started
+#8 34.62   Getting requirements to build wheel: finished with status 'done'
+#8 34.62   Preparing metadata (pyproject.toml): started
+#8 34.92   Preparing metadata (pyproject.toml): finished with status 'done'
+#8 35.09 Collecting bracex>=2.1.1 (from wcmatch>=7->mkdocs-awesome-pages-plugin->-r requirements.txt (line 8))
+#8 35.10   Downloading bracex-2.4-py3-none-any.whl.metadata (3.6 kB)
+#8 42.36 Downloading PyYAML-6.0.1-cp312-cp312-musllinux_1_1_x86_64.whl (712 kB)
+#8 42.64    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 712.6/712.6 kB 2.5 MB/s eta 0:00:00
+#8 42.65 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#8 42.69    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 1.8 MB/s eta 0:00:00
+#8 42.70 Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+#8 42.74    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.3/133.3 kB 3.6 MB/s eta 0:00:00
+#8 42.75 Downloading elasticsearch-8.14.0-py3-none-any.whl (480 kB)
+#8 42.80    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 480.2/480.2 kB 10.1 MB/s eta 0:00:00
+#8 42.81 Downloading pytest-8.3.2-py3-none-any.whl (341 kB)
+#8 42.86    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 341.8/341.8 kB 6.3 MB/s eta 0:00:00
+#8 42.87 Downloading stix2-2.1.0-py2.py3-none-any.whl (157 kB)
+#8 42.92    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 157.2/157.2 kB 3.1 MB/s eta 0:00:00
+#8 42.93 Downloading mkdocs-1.6.0-py3-none-any.whl (3.9 MB)
+#8 43.08    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 26.3 MB/s eta 0:00:00
+#8 43.09 Downloading mkdocs_awesome_pages_plugin-2.9.3-py3-none-any.whl (14 kB)
+#8 43.12 Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#8 43.16    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.0/163.0 kB 3.7 MB/s eta 0:00:00
+#8 43.17 Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl (142 kB)
+#8 43.22    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.2/142.2 kB 2.8 MB/s eta 0:00:00
+#8 43.23 Downloading click-8.1.7-py3-none-any.whl (97 kB)
+#8 43.28    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 1.9 MB/s eta 0:00:00
+#8 43.29 Downloading elastic_transport-8.13.1-py3-none-any.whl (64 kB)
+#8 43.33    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.5/64.5 kB 1.8 MB/s eta 0:00:00
+#8 43.34 Downloading ghp_import-2.1.0-py3-none-any.whl (11 kB)
+#8 43.38 Downloading idna-3.7-py3-none-any.whl (66 kB)
+#8 43.42    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.8/66.8 kB 1.7 MB/s eta 0:00:00
+#8 43.43 Downloading Markdown-3.6-py3-none-any.whl (105 kB)
+#8 43.47    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 105.4/105.4 kB 2.5 MB/s eta 0:00:00
+#8 43.48 Downloading MarkupSafe-2.1.5-cp312-cp312-musllinux_1_1_x86_64.whl (33 kB)
+#8 43.53 Downloading mergedeep-1.3.4-py3-none-any.whl (6.4 kB)
+#8 43.58 Downloading mkdocs_get_deps-0.2.0-py3-none-any.whl (9.5 kB)
+#8 43.62 Downloading natsort-8.4.0-py3-none-any.whl (38 kB)
+#8 43.67 Downloading packaging-24.1-py3-none-any.whl (53 kB)
+#8 43.71    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 kB 1.0 MB/s eta 0:00:00
+#8 43.73 Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+#8 43.78 Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+#8 43.82 Downloading pyyaml_env_tag-0.1-py3-none-any.whl (3.9 kB)
+#8 43.88 Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#8 43.94 Downloading stix2_patterns-2.0.0-py2.py3-none-any.whl (65 kB)
+#8 43.98    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.9/65.9 kB 1.3 MB/s eta 0:00:00
+#8 44.01 Downloading urllib3-2.2.2-py3-none-any.whl (121 kB)
+#8 44.04    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.4/121.4 kB 3.2 MB/s eta 0:00:00
+#8 44.06 Downloading wcmatch-8.5.2-py3-none-any.whl (39 kB)
+#8 44.12 Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+#8 44.17 Downloading pytz-2024.1-py2.py3-none-any.whl (505 kB)
+#8 44.23    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 505.5/505.5 kB 9.7 MB/s eta 0:00:00
+#8 44.25 Downloading simplejson-3.19.2-cp312-cp312-musllinux_1_1_x86_64.whl (156 kB)
+#8 44.30    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 156.9/156.9 kB 2.7 MB/s eta 0:00:00
+#8 44.32 Downloading bracex-2.4-py3-none-any.whl (11 kB)
+#8 44.38 Downloading platformdirs-4.2.2-py3-none-any.whl (18 kB)
+#8 44.42 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#8 44.46    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 6.1 MB/s eta 0:00:00
+#8 44.56 Building wheels for collected packages: mkdocs-exclude, mkdocs-windmill, watchdog, antlr4-python3-runtime
+#8 44.56   Building wheel for mkdocs-exclude (pyproject.toml): started
+#8 44.90   Building wheel for mkdocs-exclude (pyproject.toml): finished with status 'done'
+#8 44.90   Created wheel for mkdocs-exclude: filename=mkdocs_exclude-1.0.2-py3-none-any.whl size=7354 sha256=c0429e6dddaf0eef9f0f18b475a5fab4bd6066c50a4d9c9d73bd8dfc88d90ee4
+#8 44.90   Stored in directory: /root/.cache/pip/wheels/aa/20/e9/25997af9c7bb2613b1c938e869a6ba36c7c0de09d7ad1fa3d2
+#8 44.91   Building wheel for mkdocs-windmill (pyproject.toml): started
+#8 45.45   Building wheel for mkdocs-windmill (pyproject.toml): finished with status 'done'
+#8 45.45   Created wheel for mkdocs-windmill: filename=mkdocs_windmill-1.0.5-py3-none-any.whl size=965334 sha256=2585090e4feb796803b9f8d34ed266ab82d7cfd517d45bee787475b029034058
+#8 45.45   Stored in directory: /root/.cache/pip/wheels/d0/d7/f9/2167e58e72eac330e9d2e0534f742a0b05539e43f363c07c8c
+#8 45.46   Building wheel for watchdog (pyproject.toml): started
+#8 45.86   Building wheel for watchdog (pyproject.toml): finished with status 'done'
+#8 45.86   Created wheel for watchdog: filename=watchdog-4.0.1-py3-none-any.whl size=82996 sha256=4455ed9c37243f27103a30e56ede95dca1ad1d7cf25a7ccb051df8ff0b3b6a8b
+#8 45.86   Stored in directory: /root/.cache/pip/wheels/29/d0/a9/5af7e0c2b2daedda9871a808c1a1747130a400349a34a91906
+#8 45.87   Building wheel for antlr4-python3-runtime (pyproject.toml): started
+#8 47.27   Building wheel for antlr4-python3-runtime (pyproject.toml): finished with status 'done'
+#8 47.27   Created wheel for antlr4-python3-runtime: filename=antlr4_python3_runtime-4.9.3-py3-none-any.whl size=144552 sha256=14053f0d308af2c2a2d5cb71658940b6d616efbfea4580cbfd103f1c1793ba87
+#8 47.27   Stored in directory: /root/.cache/pip/wheels/1f/be/48/13754633f1d08d1fbfc60d5e80ae1e5d7329500477685286cd
+#8 47.27 Successfully built mkdocs-exclude mkdocs-windmill watchdog antlr4-python3-runtime
+#8 47.51 Installing collected packages: pytz, antlr4-python3-runtime, watchdog, urllib3, six, simplejson, pyyaml, pluggy, platformdirs, pathspec, packaging, natsort, mergedeep, MarkupSafe, markdown, iniconfig, idna, click, charset-normalizer, certifi, bracex, wcmatch, stix2-patterns, requests, pyyaml-env-tag, python-dateutil, pytest, mkdocs-get-deps, jinja2, elastic-transport, stix2, ghp-import, elasticsearch, mkdocs, mkdocs-windmill, mkdocs-exclude, mkdocs-awesome-pages-plugin
+#8 53.35 Successfully installed MarkupSafe-2.1.5 antlr4-python3-runtime-4.9.3 bracex-2.4 certifi-2024.7.4 charset-normalizer-3.3.2 click-8.1.7 elastic-transport-8.13.1 elasticsearch-8.14.0 ghp-import-2.1.0 idna-3.7 iniconfig-2.0.0 jinja2-3.1.4 markdown-3.6 mergedeep-1.3.4 mkdocs-1.6.0 mkdocs-awesome-pages-plugin-2.9.3 mkdocs-exclude-1.0.2 mkdocs-get-deps-0.2.0 mkdocs-windmill-1.0.5 natsort-8.4.0 packaging-24.1 pathspec-0.12.1 platformdirs-4.2.2 pluggy-1.5.0 pytest-8.3.2 python-dateutil-2.9.0.post0 pytz-2024.1 pyyaml-6.0.1 pyyaml-env-tag-0.1 requests-2.32.3 simplejson-3.19.2 six-1.16.0 stix2-2.1.0 stix2-patterns-2.0.0 urllib3-2.2.2 watchdog-4.0.1 wcmatch-8.5.2
+#8 53.38 
+#8 53.38 [notice] A new release of pip is available: 24.0 -> 24.2
+#8 53.38 [notice] To update, run: pip install --upgrade pip
+#8 54.22 (1/13) Purging gcc (13.2.1_git20240309-r0)
+#8 54.28 (2/13) Purging binutils (2.42-r0)
+#8 54.29 (3/13) Purging libatomic (13.2.1_git20240309-r0)
+#8 54.29 (4/13) Purging libgomp (13.2.1_git20240309-r0)
+#8 54.29 (5/13) Purging isl26 (0.26-r1)
+#8 54.29 (6/13) Purging jansson (2.14-r4)
+#8 54.29 (7/13) Purging mpc1 (1.3.1-r1)
+#8 54.29 (8/13) Purging mpfr4 (4.2.1-r0)
+#8 54.29 (9/13) Purging musl-dev (1.2.5-r0)
+#8 54.30 (10/13) Purging python3-dev (3.12.3-r1)
+#8 54.33 (11/13) Purging zstd-libs (1.5.6-r0)
+#8 54.33 (12/13) Purging gmp (6.3.0-r1)
+#8 54.33 (13/13) Purging pkgconf (2.2.0-r0)
+#8 54.33 Executing busybox-1.36.1-r29.trigger
+#8 54.34 OK: 77 MiB in 40 packages
+#8 DONE 56.1s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 2.1s done
+#9 writing image sha256:5a921d3f4ee00387a58a2b76559012b15f5893a36f505d31e001e7b4c1d71ada 0.0s done
+#9 naming to docker.io/library/image_name_v1_1 0.0s done
+#9 DONE 2.1s
+Duration: 1:5.23

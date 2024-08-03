@@ -1,0 +1,90 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.3s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 414B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/debian:buster
+#3 DONE 1.2s
+
+#4 [1/2] FROM docker.io/library/debian:buster@sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225
+#4 resolve docker.io/library/debian:buster@sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225
+#4 resolve docker.io/library/debian:buster@sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225 0.2s done
+#4 sha256:2a0c1b9175adf759420fe0fbd7f5b449038319171eb76554bb76cbe172b62b42 529B / 529B done
+#4 sha256:69530eaa9e7e18d0aad40c38b75a22b40c6ebdc374c059bd5f2eb07042caa50a 1.46kB / 1.46kB done
+#4 sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225 984B / 984B done
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 0B / 50.66MB 0.3s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 13.63MB / 50.66MB 0.5s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 23.07MB / 50.66MB 0.7s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 36.70MB / 50.66MB 0.9s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 49.28MB / 50.66MB 1.0s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 50.66MB / 50.66MB 2.6s done
+#4 extracting sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119
+#4 extracting sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 2.9s done
+#4 DONE 6.3s
+
+#5 [2/2] RUN apt-get update &&   apt-get upgrade -y &&   apt-get clean -y &&   apt-get autoclean -y &&   apt-get autoremove -y &&   rm -rf /usr/share/locale/* &&   rm -rf /var/cache/debconf/*-old &&   rm -rf /var/lib/apt/lists/* &&   rm -rf /usr/share/doc/*
+#5 0.507 Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+#5 0.683 Get:2 http://deb.debian.org/debian-security buster/updates InRelease [34.8 kB]
+#5 0.695 Get:3 http://deb.debian.org/debian buster-updates InRelease [56.6 kB]
+#5 0.708 Get:4 http://deb.debian.org/debian buster/main amd64 Packages [7909 kB]
+#5 0.843 Get:5 http://deb.debian.org/debian-security buster/updates/main amd64 Packages [610 kB]
+#5 0.933 Get:6 http://deb.debian.org/debian buster-updates/main amd64 Packages [8788 B]
+#5 2.324 Fetched 8741 kB in 2s (4732 kB/s)
+#5 2.324 Reading package lists...
+#5 3.076 Reading package lists...
+#5 3.811 Building dependency tree...
+#5 3.927 Reading state information...
+#5 3.942 Calculating upgrade...
+#5 4.075 The following packages will be upgraded:
+#5 4.076   libc-bin libc6
+#5 4.406 2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+#5 4.406 Need to get 3662 kB of archives.
+#5 4.406 After this operation, 2048 B of additional disk space will be used.
+#5 4.406 Get:1 http://deb.debian.org/debian-security buster/updates/main amd64 libc6 amd64 2.28-10+deb10u4 [2869 kB]
+#5 4.487 Get:2 http://deb.debian.org/debian-security buster/updates/main amd64 libc-bin amd64 2.28-10+deb10u4 [793 kB]
+#5 4.702 debconf: delaying package configuration, since apt-utils is not installed
+#5 4.720 Fetched 3662 kB in 0s (8877 kB/s)
+#5 4.942 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6650 files and directories currently installed.)
+#5 4.942 Preparing to unpack .../libc6_2.28-10+deb10u4_amd64.deb ...
+#5 5.142 debconf: unable to initialize frontend: Dialog
+#5 5.142 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 5.142 debconf: falling back to frontend: Readline
+#5 5.142 debconf: unable to initialize frontend: Readline
+#5 5.142 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#5 5.142 debconf: falling back to frontend: Teletype
+#5 5.248 Unpacking libc6:amd64 (2.28-10+deb10u4) over (2.28-10+deb10u3) ...
+#5 13.90 Setting up libc6:amd64 (2.28-10+deb10u4) ...
+#5 14.08 debconf: unable to initialize frontend: Dialog
+#5 14.08 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 14.08 debconf: falling back to frontend: Readline
+#5 14.08 debconf: unable to initialize frontend: Readline
+#5 14.08 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#5 14.08 debconf: falling back to frontend: Teletype
+#5 15.35 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6650 files and directories currently installed.)
+#5 15.35 Preparing to unpack .../libc-bin_2.28-10+deb10u4_amd64.deb ...
+#5 15.43 Unpacking libc-bin (2.28-10+deb10u4) over (2.28-10+deb10u3) ...
+#5 16.63 Setting up libc-bin (2.28-10+deb10u4) ...
+#5 16.98 Reading package lists...
+#5 17.71 Building dependency tree...
+#5 17.82 Reading state information...
+#5 17.85 Reading package lists...
+#5 18.58 Building dependency tree...
+#5 18.70 Reading state information...
+#5 18.82 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+#5 DONE 23.0s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 0.4s done
+#6 writing image sha256:9cf8b009c061c3b4f8711af0598d3d9bd97eb11eed1babbcf66e615bab7d4c99 0.0s done
+#6 naming to docker.io/library/image_name_v1_1 0.0s done
+#6 DONE 0.5s
+Duration: 0:31.88

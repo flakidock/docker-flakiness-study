@@ -1,0 +1,127 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 559B done
+#1 DONE 0.0s
+
+#2 [auth] library/node:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:10-slim
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 233B done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/node:10-slim@sha256:88932859e3d022d79161b99628c4c2c50e836437455e2d1b1a008d98367b10d6
+#6 resolve docker.io/library/node:10-slim@sha256:88932859e3d022d79161b99628c4c2c50e836437455e2d1b1a008d98367b10d6 0.0s done
+#6 sha256:88932859e3d022d79161b99628c4c2c50e836437455e2d1b1a008d98367b10d6 776B / 776B done
+#6 sha256:64c30c91d628d40eb8f772ee1477f78aff820e317e8afbc5160857ee804e4b70 1.37kB / 1.37kB done
+#6 sha256:6fbcbbb5c6032ce4013d4c736ffe54e0764c36fa14315ae54cb51f244e813c52 7.09kB / 7.09kB done
+#6 sha256:62deabe7a6db312ed773ccd640cd7cfbf51c22bf466886345684558f1036e358 0B / 22.53MB 0.1s
+#6 sha256:f698164f6049bead44aeb7590e88d3df323011c20f0cedbff3d86f62e4c9f184 0B / 4.17kB 0.1s
+#6 sha256:bc29352cb629712e7fbce7227a16b53308b541ef41e19122a04c15646756b176 0B / 21.91MB 0.1s
+#6 sha256:62deabe7a6db312ed773ccd640cd7cfbf51c22bf466886345684558f1036e358 14.68MB / 22.53MB 0.3s
+#6 sha256:f698164f6049bead44aeb7590e88d3df323011c20f0cedbff3d86f62e4c9f184 4.17kB / 4.17kB 0.2s done
+#6 sha256:85e84b4c858fae373ccdf48432de781210efb7fd75d9d801be9917577fe6ca09 0B / 2.93MB 0.3s
+#6 sha256:62deabe7a6db312ed773ccd640cd7cfbf51c22bf466886345684558f1036e358 20.97MB / 22.53MB 0.4s
+#6 sha256:bc29352cb629712e7fbce7227a16b53308b541ef41e19122a04c15646756b176 3.15MB / 21.91MB 0.4s
+#6 extracting sha256:62deabe7a6db312ed773ccd640cd7cfbf51c22bf466886345684558f1036e358
+#6 sha256:62deabe7a6db312ed773ccd640cd7cfbf51c22bf466886345684558f1036e358 22.53MB / 22.53MB 0.5s done
+#6 sha256:bc29352cb629712e7fbce7227a16b53308b541ef41e19122a04c15646756b176 13.63MB / 21.91MB 0.6s
+#6 sha256:85e84b4c858fae373ccdf48432de781210efb7fd75d9d801be9917577fe6ca09 2.93MB / 2.93MB 0.6s
+#6 sha256:ac72e4359589952a2e38fbe10287d792cbb57f2ec3cd1eb730e9bab685ac9754 295B / 295B 0.6s done
+#6 sha256:bc29352cb629712e7fbce7227a16b53308b541ef41e19122a04c15646756b176 20.97MB / 21.91MB 0.7s
+#6 sha256:85e84b4c858fae373ccdf48432de781210efb7fd75d9d801be9917577fe6ca09 2.93MB / 2.93MB 0.6s done
+#6 sha256:bc29352cb629712e7fbce7227a16b53308b541ef41e19122a04c15646756b176 21.91MB / 21.91MB 0.8s done
+#6 extracting sha256:62deabe7a6db312ed773ccd640cd7cfbf51c22bf466886345684558f1036e358 1.6s done
+#6 extracting sha256:f698164f6049bead44aeb7590e88d3df323011c20f0cedbff3d86f62e4c9f184 done
+#6 extracting sha256:bc29352cb629712e7fbce7227a16b53308b541ef41e19122a04c15646756b176
+#6 extracting sha256:bc29352cb629712e7fbce7227a16b53308b541ef41e19122a04c15646756b176 2.1s done
+#6 extracting sha256:85e84b4c858fae373ccdf48432de781210efb7fd75d9d801be9917577fe6ca09
+#6 extracting sha256:85e84b4c858fae373ccdf48432de781210efb7fd75d9d801be9917577fe6ca09 0.1s done
+#6 extracting sha256:ac72e4359589952a2e38fbe10287d792cbb57f2ec3cd1eb730e9bab685ac9754 done
+#6 DONE 4.7s
+
+#7 [2/5] RUN apt-get update && apt-get install -y --no-install-recommends --assume-yes software-properties-common &&   apt-get install -y --no-install-recommends --assume-yes git cron && rm -rf /var/lib/apt/lists/*;
+#7 0.209 Ign:1 http://deb.debian.org/debian stretch InRelease
+#7 0.223 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#7 0.233 Ign:3 http://deb.debian.org/debian stretch-updates InRelease
+#7 0.236 Ign:4 http://security.debian.org/debian-security stretch/updates Release
+#7 0.244 Ign:5 http://deb.debian.org/debian stretch Release
+#7 0.249 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.255 Ign:7 http://deb.debian.org/debian stretch-updates Release
+#7 0.262 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.266 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.276 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.277 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.286 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.289 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.295 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.302 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.305 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.314 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.315 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.327 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.327 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.337 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.339 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.347 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.353 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.357 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.366 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.368 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.378 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.379 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.388 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.390 Err:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.390   404  Not Found [IP: 151.101.130.132 80]
+#7 0.398 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.408 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.419 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.428 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.439 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.449 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.462 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.472 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#7 0.490 Err:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.490   404  Not Found
+#7 0.501 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.501   404  Not Found
+#7 0.511 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.515 Reading package lists...
+#7 0.524 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#7 0.524 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#7 0.524 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#7 0.524 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+#7 0.524 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#7 0.524 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#7 0.524 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#7 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends --assume-yes software-properties-common &&   apt-get install -y --no-install-recommends --assume-yes git cron && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+------
+ > [2/5] RUN apt-get update && apt-get install -y --no-install-recommends --assume-yes software-properties-common &&   apt-get install -y --no-install-recommends --assume-yes git cron && rm -rf /var/lib/apt/lists/*;:
+0.501   404  Not Found
+0.511 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+0.515 Reading package lists...
+0.524 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.524 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.524 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.524 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+0.524 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.524 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.524 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:3
+--------------------
+   2 |     
+   3 | >>> RUN apt-get update && apt-get install -y --no-install-recommends --assume-yes software-properties-common && \
+   4 | >>>   apt-get install -y --no-install-recommends --assume-yes git cron && rm -rf /var/lib/apt/lists/*;
+   5 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends --assume-yes software-properties-common &&   apt-get install -y --no-install-recommends --assume-yes git cron && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+Duration: 0:7.05

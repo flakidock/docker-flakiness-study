@@ -1,0 +1,79 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.01kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:1.14.0
+#2 ...
+
+#3 [auth] library/nginx:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:1.14.0
+#2 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 401B done
+#5 DONE 0.0s
+
+#6 [1/8] FROM docker.io/library/nginx:1.14.0@sha256:8b600a4d029481cc5b459f1380b30ff6cb98e27544fc02370de836e397e34030
+#6 resolve docker.io/library/nginx:1.14.0@sha256:8b600a4d029481cc5b459f1380b30ff6cb98e27544fc02370de836e397e34030 0.0s done
+#6 sha256:d43aa3719937f9df0502f8258f3034a21b720b5b9bbf01bbfdbd09871aac8930 948B / 948B done
+#6 sha256:ecc98fc2f376d6560311b66d6958e4350a5a485ee07aa2d1235842d0bce440da 6.00kB / 6.00kB done
+#6 sha256:f17d81b4b692f7e0d6c1176c86b81d9f2cb5ac5349703adca51c61debcfe413c 2.10MB / 22.49MB 0.2s
+#6 sha256:3df1ab0a17501475a551e081246db28a2a604cc986377d76506302100c9ce2ea 0B / 22.11MB 0.2s
+#6 sha256:576b56a453df3802f5c6f0f83da37810e7bbf789bce9d9a15dbcd6ae16e69f80 0B / 203B 0.2s
+#6 sha256:8b600a4d029481cc5b459f1380b30ff6cb98e27544fc02370de836e397e34030 2.03kB / 2.03kB done
+#6 sha256:f17d81b4b692f7e0d6c1176c86b81d9f2cb5ac5349703adca51c61debcfe413c 14.68MB / 22.49MB 0.4s
+#6 sha256:3df1ab0a17501475a551e081246db28a2a604cc986377d76506302100c9ce2ea 4.19MB / 22.11MB 0.4s
+#6 sha256:576b56a453df3802f5c6f0f83da37810e7bbf789bce9d9a15dbcd6ae16e69f80 203B / 203B 0.3s done
+#6 sha256:f17d81b4b692f7e0d6c1176c86b81d9f2cb5ac5349703adca51c61debcfe413c 18.87MB / 22.49MB 0.5s
+#6 sha256:3df1ab0a17501475a551e081246db28a2a604cc986377d76506302100c9ce2ea 10.49MB / 22.11MB 0.5s
+#6 sha256:f17d81b4b692f7e0d6c1176c86b81d9f2cb5ac5349703adca51c61debcfe413c 22.49MB / 22.49MB 0.6s
+#6 sha256:3df1ab0a17501475a551e081246db28a2a604cc986377d76506302100c9ce2ea 18.87MB / 22.11MB 0.6s
+#6 extracting sha256:f17d81b4b692f7e0d6c1176c86b81d9f2cb5ac5349703adca51c61debcfe413c
+#6 sha256:f17d81b4b692f7e0d6c1176c86b81d9f2cb5ac5349703adca51c61debcfe413c 22.49MB / 22.49MB 0.6s done
+#6 sha256:3df1ab0a17501475a551e081246db28a2a604cc986377d76506302100c9ce2ea 22.11MB / 22.11MB 0.7s
+#6 sha256:3df1ab0a17501475a551e081246db28a2a604cc986377d76506302100c9ce2ea 22.11MB / 22.11MB 0.7s done
+#6 extracting sha256:f17d81b4b692f7e0d6c1176c86b81d9f2cb5ac5349703adca51c61debcfe413c 1.5s done
+#6 extracting sha256:3df1ab0a17501475a551e081246db28a2a604cc986377d76506302100c9ce2ea
+#6 extracting sha256:3df1ab0a17501475a551e081246db28a2a604cc986377d76506302100c9ce2ea 0.6s done
+#6 extracting sha256:576b56a453df3802f5c6f0f83da37810e7bbf789bce9d9a15dbcd6ae16e69f80
+#6 extracting sha256:576b56a453df3802f5c6f0f83da37810e7bbf789bce9d9a15dbcd6ae16e69f80 done
+#6 DONE 3.1s
+
+#7 [2/8] RUN DEBIAN_FRONTEND=noninteractive     apt-get update -qq &&     apt-get -y --no-install-recommends install wget runit unzip &&     rm -rf /var/lib/apt/lists/*
+#7 0.566 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#7 0.566 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#7 0.566 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#7 0.566 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+#7 0.566 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#7 0.566 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#7 0.566 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#7 ERROR: process "/bin/sh -c DEBIAN_FRONTEND=noninteractive     apt-get update -qq &&     apt-get -y --no-install-recommends install wget runit unzip &&     rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [2/8] RUN DEBIAN_FRONTEND=noninteractive     apt-get update -qq &&     apt-get -y --no-install-recommends install wget runit unzip &&     rm -rf /var/lib/apt/lists/*:
+0.566 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.566 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.566 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.566 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+0.566 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.566 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.566 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:6
+--------------------
+   5 |     
+   6 | >>> RUN DEBIAN_FRONTEND=noninteractive \
+   7 | >>>     apt-get update -qq && \
+   8 | >>>     apt-get -y --no-install-recommends install wget runit unzip && \
+   9 | >>>     rm -rf /var/lib/apt/lists/*
+  10 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c DEBIAN_FRONTEND=noninteractive     apt-get update -qq &&     apt-get -y --no-install-recommends install wget runit unzip &&     rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+Duration: 0:5.37

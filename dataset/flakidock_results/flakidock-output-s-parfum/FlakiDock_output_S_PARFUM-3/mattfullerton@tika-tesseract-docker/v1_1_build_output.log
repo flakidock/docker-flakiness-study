@@ -1,0 +1,25 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 321B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/java:7
+#2 ...
+
+#3 [auth] library/java:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/java:7
+#2 ERROR: docker.io/library/java:7: not found
+------
+ > [internal] load metadata for docker.io/library/java:7:
+------
+v1_Dockerfile:1
+--------------------
+   1 | >>> FROM java:7
+   2 |     MAINTAINER Matt Fullerton <matt.fullerton@gmail.com>
+   3 |     
+--------------------
+ERROR: failed to solve: java:7: docker.io/library/java:7: not found
+Duration: 0:0.79

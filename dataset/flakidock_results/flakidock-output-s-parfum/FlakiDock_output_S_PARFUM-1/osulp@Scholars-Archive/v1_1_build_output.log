@@ -1,0 +1,67 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 3.96kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ruby:2.6-alpine3.12
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 379B done
+#3 DONE 0.1s
+
+#4 [bundler 1/2] FROM docker.io/library/ruby:2.6-alpine3.12@sha256:45e583b8064c14b21e0e6823247c77a6da8b5549e9221565e2c9ebecd4e09d24
+#4 resolve docker.io/library/ruby:2.6-alpine3.12@sha256:45e583b8064c14b21e0e6823247c77a6da8b5549e9221565e2c9ebecd4e09d24 0.0s done
+#4 sha256:339de151aab4bc06eed8409daae147c408478cb538dacb90cc63f19ad4eba80b 0B / 2.80MB 0.1s
+#4 sha256:467b8fbfadaf6004690377bd47dacd9f3cb1b32c529c126b5f3131f5a54b3c6b 0B / 1.20MB 0.1s
+#4 sha256:b8f201a2281a386a91906846f1f508eadbe78e0cba8c5b0101df9d9612add16d 0B / 223B 0.1s
+#4 sha256:45e583b8064c14b21e0e6823247c77a6da8b5549e9221565e2c9ebecd4e09d24 1.65kB / 1.65kB done
+#4 sha256:269101e89a5bc668123b75462c3c21ed5b6b998b55221d1b7e32a1e2f7f7e8d2 1.36kB / 1.36kB done
+#4 sha256:9a3abd613d48e8cebfb3c31c6ed91dc12f0947a117ad6e9a9e874fe2b17dacf1 6.05kB / 6.05kB done
+#4 sha256:339de151aab4bc06eed8409daae147c408478cb538dacb90cc63f19ad4eba80b 2.10MB / 2.80MB 0.2s
+#4 extracting sha256:339de151aab4bc06eed8409daae147c408478cb538dacb90cc63f19ad4eba80b
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 15.95MB 0.2s done
+#5 DONE 0.2s
+
+#4 [bundler 1/2] FROM docker.io/library/ruby:2.6-alpine3.12@sha256:45e583b8064c14b21e0e6823247c77a6da8b5549e9221565e2c9ebecd4e09d24
+#4 sha256:339de151aab4bc06eed8409daae147c408478cb538dacb90cc63f19ad4eba80b 2.80MB / 2.80MB 0.2s done
+#4 sha256:467b8fbfadaf6004690377bd47dacd9f3cb1b32c529c126b5f3131f5a54b3c6b 1.20MB / 1.20MB 0.3s done
+#4 sha256:b8f201a2281a386a91906846f1f508eadbe78e0cba8c5b0101df9d9612add16d 223B / 223B 0.2s done
+#4 extracting sha256:339de151aab4bc06eed8409daae147c408478cb538dacb90cc63f19ad4eba80b 0.1s done
+#4 sha256:b89a033f23afbb0d29e7835bcd67fa134cce0c0acbf2e448c71c5b9d165c74e5 5.24MB / 22.07MB 0.4s
+#4 sha256:82fdb89dc52d85e0d4604ad645c1c7b21beb211178486a7d6fa9ff5c254332d2 172B / 172B 0.4s done
+#4 sha256:b89a033f23afbb0d29e7835bcd67fa134cce0c0acbf2e448c71c5b9d165c74e5 22.07MB / 22.07MB 0.6s
+#4 extracting sha256:467b8fbfadaf6004690377bd47dacd9f3cb1b32c529c126b5f3131f5a54b3c6b 0.1s done
+#4 extracting sha256:b8f201a2281a386a91906846f1f508eadbe78e0cba8c5b0101df9d9612add16d done
+#4 sha256:b89a033f23afbb0d29e7835bcd67fa134cce0c0acbf2e448c71c5b9d165c74e5 22.07MB / 22.07MB 0.6s done
+#4 extracting sha256:b89a033f23afbb0d29e7835bcd67fa134cce0c0acbf2e448c71c5b9d165c74e5 0.1s
+#4 extracting sha256:b89a033f23afbb0d29e7835bcd67fa134cce0c0acbf2e448c71c5b9d165c74e5 1.2s done
+#4 extracting sha256:82fdb89dc52d85e0d4604ad645c1c7b21beb211178486a7d6fa9ff5c254332d2
+#4 extracting sha256:82fdb89dc52d85e0d4604ad645c1c7b21beb211178486a7d6fa9ff5c254332d2 done
+#4 DONE 2.2s
+
+#6 [bundler 2/2] RUN gem install bundler
+#6 30.92 ERROR:  Error installing bundler:
+#6 30.92 	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+#6 30.92 	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.6.8.205.
+#6 ERROR: process "/bin/sh -c gem install bundler" did not complete successfully: exit code: 1
+------
+ > [bundler 2/2] RUN gem install bundler:
+30.92 ERROR:  Error installing bundler:
+30.92 	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+30.92 	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.6.8.205.
+------
+v1_Dockerfile:11
+--------------------
+   9 |     
+  10 |     # Install bundler
+  11 | >>> RUN gem install bundler
+  12 |     
+  13 |     ##########################################################################
+--------------------
+ERROR: failed to solve: process "/bin/sh -c gem install bundler" did not complete successfully: exit code: 1
+Duration: 0:34.72

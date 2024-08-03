@@ -1,0 +1,138 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 475B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:latest
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.0s done
+#4 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#4 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#4 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.2s done
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.2s done
+#4 DONE 0.5s
+
+#5 [internal] load build context
+#5 transferring context: 48.16MB 0.4s done
+#5 DONE 0.4s
+
+#6 [2/7] COPY ./ /app
+#6 DONE 0.5s
+
+#7 [3/7] WORKDIR /app
+#7 DONE 0.0s
+
+#8 [4/7] RUN apk update;     apk add --no-cache --update     python3     python3-dev     py-pip     gcc     musl-dev     bash;
+#8 0.171 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#8 0.302 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#8 0.611 v3.20.2-45-g194e307d75d [https://dl-cdn.alpinelinux.org/alpine/v3.20/main]
+#8 0.611 v3.20.2-43-g4fdd3a681b2 [https://dl-cdn.alpinelinux.org/alpine/v3.20/community]
+#8 0.611 OK: 24154 distinct packages available
+#8 0.667 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#8 0.789 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#8 1.074 (1/39) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#8 1.089 (2/39) Installing libncursesw (6.4_p20240420-r0)
+#8 1.107 (3/39) Installing readline (8.2.10-r0)
+#8 1.121 (4/39) Installing bash (5.2.26-r0)
+#8 1.146 Executing bash-5.2.26-r0.post-install
+#8 1.149 (5/39) Installing libgcc (13.2.1_git20240309-r0)
+#8 1.163 (6/39) Installing jansson (2.14-r4)
+#8 1.175 (7/39) Installing libstdc++ (13.2.1_git20240309-r0)
+#8 1.209 (8/39) Installing zstd-libs (1.5.6-r0)
+#8 1.229 (9/39) Installing binutils (2.42-r0)
+#8 1.321 (10/39) Installing libgomp (13.2.1_git20240309-r0)
+#8 1.336 (11/39) Installing libatomic (13.2.1_git20240309-r0)
+#8 1.349 (12/39) Installing gmp (6.3.0-r1)
+#8 1.365 (13/39) Installing isl26 (0.26-r1)
+#8 1.398 (14/39) Installing mpfr4 (4.2.1-r0)
+#8 1.418 (15/39) Installing mpc1 (1.3.1-r1)
+#8 1.430 (16/39) Installing gcc (13.2.1_git20240309-r0)
+#8 2.496 (17/39) Installing musl-dev (1.2.5-r0)
+#8 2.585 (18/39) Installing libbz2 (1.0.8-r6)
+#8 2.596 (19/39) Installing libexpat (2.6.2-r0)
+#8 2.609 (20/39) Installing libffi (3.4.6-r0)
+#8 2.620 (21/39) Installing gdbm (1.23-r1)
+#8 2.632 (22/39) Installing xz-libs (5.6.1-r3)
+#8 2.646 (23/39) Installing mpdecimal (4.0.0-r0)
+#8 2.660 (24/39) Installing libpanelw (6.4_p20240420-r0)
+#8 2.673 (25/39) Installing sqlite-libs (3.45.3-r1)
+#8 2.700 (26/39) Installing python3 (3.12.3-r1)
+#8 2.936 (27/39) Installing python3-pycache-pyc0 (3.12.3-r1)
+#8 3.084 (28/39) Installing pyc (3.12.3-r1)
+#8 3.095 (29/39) Installing py3-setuptools-pyc (69.5.1-r0)
+#8 3.154 (30/39) Installing py3-pip-pyc (24.0-r2)
+#8 3.262 (31/39) Installing py3-parsing (3.1.2-r1)
+#8 3.277 (32/39) Installing py3-parsing-pyc (3.1.2-r1)
+#8 3.296 (33/39) Installing py3-packaging-pyc (24.0-r1)
+#8 3.311 (34/39) Installing python3-pyc (3.12.3-r1)
+#8 3.322 (35/39) Installing py3-packaging (24.0-r1)
+#8 3.336 (36/39) Installing py3-setuptools (69.5.1-r0)
+#8 3.383 (37/39) Installing py3-pip (24.0-r2)
+#8 3.479 (38/39) Installing pkgconf (2.2.0-r0)
+#8 3.492 (39/39) Installing python3-dev (3.12.3-r1)
+#8 4.171 Executing busybox-1.36.1-r29.trigger
+#8 4.179 OK: 316 MiB in 53 packages
+#8 DONE 5.7s
+
+#9 [5/7] RUN pip3 install --no-cache-dir -r requirements.txt;
+#9 1.471 error: externally-managed-environment
+#9 1.471 
+#9 1.471 × This environment is externally managed
+#9 1.471 ╰─> 
+#9 1.471     The system-wide python installation should be maintained using the system
+#9 1.471     package manager (apk) only.
+#9 1.471     
+#9 1.471     If the package in question is not packaged already (and hence installable via
+#9 1.471     "apk add py3-somepackage"), please consider installing it inside a virtual
+#9 1.471     environment, e.g.:
+#9 1.471     
+#9 1.471     python3 -m venv /path/to/venv
+#9 1.471     . /path/to/venv/bin/activate
+#9 1.471     pip install mypackage
+#9 1.471     
+#9 1.471     To exit the virtual environment, run:
+#9 1.471     
+#9 1.471     deactivate
+#9 1.471     
+#9 1.471     The virtual environment is not deleted, and can be re-entered by re-sourcing
+#9 1.471     the activate file.
+#9 1.471     
+#9 1.471     To automatically manage virtual environments, consider using pipx (from the
+#9 1.471     pipx package).
+#9 1.471 
+#9 1.471 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+#9 1.471 hint: See PEP 668 for the detailed specification.
+#9 ERROR: process "/bin/sh -c pip3 install --no-cache-dir -r requirements.txt;" did not complete successfully: exit code: 1
+------
+ > [5/7] RUN pip3 install --no-cache-dir -r requirements.txt;:
+1.471     deactivate
+1.471     
+1.471     The virtual environment is not deleted, and can be re-entered by re-sourcing
+1.471     the activate file.
+1.471     
+1.471     To automatically manage virtual environments, consider using pipx (from the
+1.471     pipx package).
+1.471 
+1.471 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+1.471 hint: See PEP 668 for the detailed specification.
+------
+v1_Dockerfile:14
+--------------------
+  12 |         bash;
+  13 |     
+  14 | >>> RUN pip3 install --no-cache-dir -r requirements.txt;
+  15 |     
+  16 |     RUN apk del python3-dev \
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip3 install --no-cache-dir -r requirements.txt;" did not complete successfully: exit code: 1
+Duration: 0:9.48

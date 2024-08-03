@@ -1,0 +1,76 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 271B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/ruby:2.1.4
+#3 ...
+
+#4 [auth] library/ruby:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ruby:2.1.4
+#3 DONE 0.9s
+
+#5 [1/4] FROM docker.io/library/ruby:2.1.4@sha256:88740a1f68a4d633abf82595374c038cedc8777fbe000fc79d212f590c4d8876
+#5 resolve docker.io/library/ruby:2.1.4@sha256:88740a1f68a4d633abf82595374c038cedc8777fbe000fc79d212f590c4d8876 0.1s done
+#5 resolve docker.io/library/ruby:2.1.4@sha256:88740a1f68a4d633abf82595374c038cedc8777fbe000fc79d212f590c4d8876 done
+#5 sha256:92609fd9e7c7491df86a4b88eaf28f2600bb4bf9418f3ccc288d3d7319ccad88 28.43MB / 28.43MB done
+#5 sha256:9b2eb769553e7156c345cb082a3794847dc8ca2de5bcfcefdf8491b0759c83bb 150B / 150B done
+#5 sha256:a52c5be7b1225443d9e1de0479f311e060fc7b48aded7d75fa813ab7700a693f 1.37MB / 1.37MB done
+#5 sha256:5d3df020ecd36ab0b807f023be59596c0509cdc9202398897eafba3f21c1992e 59.17MB / 59.17MB done
+#5 sha256:c09c5b1f622ef7d5a1de9df33b92e111f471873318d1b28b22f5194d02c61f66 177.23MB / 177.23MB done
+#5 sha256:2f834e23e9c890e221166523890ea7eeb4d4fc1879606206643909ac07f9c24f 46.58MB / 46.58MB done
+#5 sha256:7fe16aa6941e8b042cc824edc1b62a823b9d8dc20a38fd47730fc55a1e993d17 457.21kB / 457.21kB done
+#5 extracting sha256:5d3df020ecd36ab0b807f023be59596c0509cdc9202398897eafba3f21c1992e 0.1s
+#5 extracting sha256:5d3df020ecd36ab0b807f023be59596c0509cdc9202398897eafba3f21c1992e 3.7s done
+#5 extracting sha256:c09c5b1f622ef7d5a1de9df33b92e111f471873318d1b28b22f5194d02c61f66
+#5 extracting sha256:c09c5b1f622ef7d5a1de9df33b92e111f471873318d1b28b22f5194d02c61f66 5.0s
+#5 extracting sha256:c09c5b1f622ef7d5a1de9df33b92e111f471873318d1b28b22f5194d02c61f66 10.1s
+#5 extracting sha256:c09c5b1f622ef7d5a1de9df33b92e111f471873318d1b28b22f5194d02c61f66 10.2s done
+#5 extracting sha256:2f834e23e9c890e221166523890ea7eeb4d4fc1879606206643909ac07f9c24f
+#5 extracting sha256:2f834e23e9c890e221166523890ea7eeb4d4fc1879606206643909ac07f9c24f 2.7s done
+#5 extracting sha256:7fe16aa6941e8b042cc824edc1b62a823b9d8dc20a38fd47730fc55a1e993d17
+#5 extracting sha256:7fe16aa6941e8b042cc824edc1b62a823b9d8dc20a38fd47730fc55a1e993d17 0.1s done
+#5 extracting sha256:92609fd9e7c7491df86a4b88eaf28f2600bb4bf9418f3ccc288d3d7319ccad88
+#5 extracting sha256:92609fd9e7c7491df86a4b88eaf28f2600bb4bf9418f3ccc288d3d7319ccad88 1.8s done
+#5 extracting sha256:9b2eb769553e7156c345cb082a3794847dc8ca2de5bcfcefdf8491b0759c83bb
+#5 extracting sha256:9b2eb769553e7156c345cb082a3794847dc8ca2de5bcfcefdf8491b0759c83bb done
+#5 extracting sha256:a52c5be7b1225443d9e1de0479f311e060fc7b48aded7d75fa813ab7700a693f
+#5 extracting sha256:a52c5be7b1225443d9e1de0479f311e060fc7b48aded7d75fa813ab7700a693f 0.2s done
+#5 DONE 34.5s
+
+#6 [2/4] RUN mkdir -p /var/data/fake-s3 /usr/src/app
+#6 DONE 15.5s
+
+#7 [3/4] WORKDIR /usr/src/app
+#7 DONE 0.4s
+
+#8 [4/4] RUN gem install fakes3
+#8 11.19 ERROR:  Error installing fakes3:
+#8 11.19 	thor requires Ruby version >= 2.6.0.
+#8 ERROR: process "/bin/sh -c gem install fakes3" did not complete successfully: exit code: 1
+------
+ > [4/4] RUN gem install fakes3:
+11.19 ERROR:  Error installing fakes3:
+11.19 	thor requires Ruby version >= 2.6.0.
+------
+Dockerfile:7
+--------------------
+   5 |     WORKDIR /usr/src/app
+   6 |     
+   7 | >>> RUN gem install fakes3
+   8 |     
+   9 |     EXPOSE 4569
+--------------------
+ERROR: failed to solve: process "/bin/sh -c gem install fakes3" did not complete successfully: exit code: 1
+Duration: 1:4.39

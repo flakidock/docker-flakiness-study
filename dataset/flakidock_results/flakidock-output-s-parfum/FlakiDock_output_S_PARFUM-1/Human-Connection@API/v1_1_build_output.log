@@ -1,0 +1,110 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.33kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:10-alpine
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 147B done
+#3 DONE 0.0s
+
+#4 [ 1/10] FROM docker.io/library/node:10-alpine@sha256:dc98dac24efd4254f75976c40bce46944697a110d06ce7fa47e7268470cf2e28
+#4 resolve docker.io/library/node:10-alpine@sha256:dc98dac24efd4254f75976c40bce46944697a110d06ce7fa47e7268470cf2e28 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 2.79MB 0.1s done
+#5 DONE 0.2s
+
+#4 [ 1/10] FROM docker.io/library/node:10-alpine@sha256:dc98dac24efd4254f75976c40bce46944697a110d06ce7fa47e7268470cf2e28
+#4 sha256:aa67ba258e1877ed6ec455a7f4cc69e25cf0f0b027a7f6f3c63a8eca2c8a440c 6.73kB / 6.73kB done
+#4 sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0 2.82MB / 2.82MB 0.2s done
+#4 sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 0B / 22.21MB 0.2s
+#4 sha256:7150aa69525b95f82b3df6a61a002f82382b2f3ea8ce51b9000b965f7476a5cc 0B / 2.35MB 0.2s
+#4 sha256:dc98dac24efd4254f75976c40bce46944697a110d06ce7fa47e7268470cf2e28 1.65kB / 1.65kB done
+#4 sha256:02767d92553e465bf51e0bd661074f2e70bd575c4a69a0d610aa6e78fd20a9bf 1.16kB / 1.16kB done
+#4 extracting sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0
+#4 sha256:d7aa47be044e5a988e3e7f204e2e28cb9f070daa32ed081072ad6d5bf6c085d1 0B / 280B 0.2s
+#4 sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 17.83MB / 22.21MB 0.4s
+#4 sha256:7150aa69525b95f82b3df6a61a002f82382b2f3ea8ce51b9000b965f7476a5cc 2.35MB / 2.35MB 0.3s done
+#4 extracting sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0 0.1s done
+#4 sha256:d7aa47be044e5a988e3e7f204e2e28cb9f070daa32ed081072ad6d5bf6c085d1 280B / 280B 0.3s done
+#4 sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 22.21MB / 22.21MB 0.5s
+#4 sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 22.21MB / 22.21MB 0.5s done
+#4 extracting sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 0.1s
+#4 extracting sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 2.2s done
+#4 extracting sha256:7150aa69525b95f82b3df6a61a002f82382b2f3ea8ce51b9000b965f7476a5cc
+#4 extracting sha256:7150aa69525b95f82b3df6a61a002f82382b2f3ea8ce51b9000b965f7476a5cc 0.1s done
+#4 extracting sha256:d7aa47be044e5a988e3e7f204e2e28cb9f070daa32ed081072ad6d5bf6c085d1
+#4 extracting sha256:d7aa47be044e5a988e3e7f204e2e28cb9f070daa32ed081072ad6d5bf6c085d1 done
+#4 DONE 3.1s
+
+#6 [ 2/10] RUN mkdir -p /API
+#6 DONE 0.6s
+
+#7 [ 3/10] WORKDIR /API
+#7 DONE 0.0s
+
+#8 [ 4/10] RUN apk --no-cache --virtual build-dependencies add python make g++
+#8 0.268 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#8 0.489 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#8 0.723 (1/22) Installing libbz2 (1.0.8-r1)
+#8 0.734 (2/22) Installing expat (2.2.9-r1)
+#8 0.746 (3/22) Installing libffi (3.2.1-r6)
+#8 0.756 (4/22) Installing gdbm (1.13-r1)
+#8 0.768 (5/22) Installing ncurses-terminfo-base (6.1_p20200118-r4)
+#8 0.779 (6/22) Installing ncurses-libs (6.1_p20200118-r4)
+#8 0.792 (7/22) Installing readline (8.0.1-r0)
+#8 0.803 (8/22) Installing sqlite-libs (3.30.1-r2)
+#8 0.821 (9/22) Installing python2 (2.7.18-r0)
+#8 1.270 (10/22) Installing make (4.2.1-r2)
+#8 1.283 (11/22) Installing binutils (2.33.1-r1)
+#8 1.362 (12/22) Installing gmp (6.1.2-r1)
+#8 1.377 (13/22) Installing isl (0.18-r0)
+#8 1.398 (14/22) Installing libgomp (9.3.0-r0)
+#8 1.410 (15/22) Installing libatomic (9.3.0-r0)
+#8 1.420 (16/22) Installing mpfr4 (4.0.2-r1)
+#8 1.434 (17/22) Installing mpc1 (1.1.0-r1)
+#8 1.444 (18/22) Installing gcc (9.3.0-r0)
+#8 2.153 (19/22) Installing musl-dev (1.1.24-r3)
+#8 2.241 (20/22) Installing libc-dev (0.7.2-r0)
+#8 2.252 (21/22) Installing g++ (9.3.0-r0)
+#8 2.713 (22/22) Installing build-dependencies (20240801.070221)
+#8 2.713 Executing busybox-1.31.1-r10.trigger
+#8 2.720 OK: 212 MiB in 38 packages
+#8 DONE 3.5s
+
+#9 [ 5/10] RUN yarn global add pm2
+#9 0.393 yarn global v1.22.5
+#9 0.465 [1/4] Resolving packages...
+#9 1.364 [2/4] Fetching packages...
+#9 3.694 info fsevents@2.3.3: The platform "linux" is incompatible with this module.
+#9 3.694 info "fsevents@2.3.3" is an optional dependency and failed compatibility check. Excluding it from installation.
+#9 3.696 error proxy-agent@6.3.1: The engine "node" is incompatible with this module. Expected version ">= 14". Got "10.24.1"
+#9 3.704 info Visit https://yarnpkg.com/en/docs/cli/global for documentation about this command.
+#9 3.705 error Found incompatible module.
+#9 ERROR: process "/bin/sh -c yarn global add pm2" did not complete successfully: exit code: 1
+------
+ > [ 5/10] RUN yarn global add pm2:
+0.393 yarn global v1.22.5
+0.465 [1/4] Resolving packages...
+1.364 [2/4] Fetching packages...
+3.694 info fsevents@2.3.3: The platform "linux" is incompatible with this module.
+3.694 info "fsevents@2.3.3" is an optional dependency and failed compatibility check. Excluding it from installation.
+3.696 error proxy-agent@6.3.1: The engine "node" is incompatible with this module. Expected version ">= 14". Got "10.24.1"
+3.704 info Visit https://yarnpkg.com/en/docs/cli/global for documentation about this command.
+3.705 error Found incompatible module.
+------
+v1_Dockerfile:19
+--------------------
+  17 |     RUN apk --no-cache --virtual build-dependencies add python make g++
+  18 |     
+  19 | >>> RUN yarn global add pm2
+  20 |     
+  21 |     # install app dependencies
+--------------------
+ERROR: failed to solve: process "/bin/sh -c yarn global add pm2" did not complete successfully: exit code: 1
+Duration: 0:12.31

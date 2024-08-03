@@ -1,0 +1,173 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 32B
+#1 transferring context: 56B done
+#1 DONE 0.5s
+
+#2 [internal] load build definition from v2_Dockerfile
+#2 transferring dockerfile: 774B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/debian:stable-slim
+#3 DONE 1.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755
+#5 resolve docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755 0.1s done
+#5 sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755 1.85kB / 1.85kB done
+#5 sha256:e5365b94db65754594422a8a101c873728711c6a4df029677f4a7f7200d6e1c3 529B / 529B done
+#5 sha256:ea3dacfdd555d2342b58d6ce6515c3a2c10ac60a826e15df4b213effd45e54ff 1.46kB / 1.46kB done
+#5 DONE 0.5s
+
+#4 [internal] load build context
+#4 transferring context: 33.19MB 0.3s done
+#4 DONE 0.7s
+
+#6 [2/6] ADD . /code
+#6 DONE 1.4s
+
+#7 [3/6] WORKDIR /code
+#7 DONE 0.4s
+
+#8 [4/6] RUN apt-get update -qq && apt-get install -y --no-install-recommends     python3-setuptools     python3-wheel     python3-pip     python3-numpy     python3-nibabel     python3-matplotlib     python3-imageio     python3-skimage &&     apt-get clean &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/cache/apt/archives/*
+#8 2.854 Reading package lists...
+#8 3.537 Building dependency tree...
+#8 3.665 Reading state information...
+#8 3.829 The following additional packages will be installed:
+#8 3.829   binutils binutils-common binutils-x86-64-linux-gnu blt ca-certificates cpp
+#8 3.829   cpp-12 fontconfig-config fonts-dejavu-core fonts-lyx g++ g++-12 gcc gcc-12
+#8 3.829   libasan8 libatomic1 libbinutils libblas3 libboost-dev libboost1.74-dev
+#8 3.829   libbrotli1 libbsd0 libc-dev-bin libc6-dev libcc1-0 libcrypt-dev
+#8 3.829   libctf-nobfd0 libctf0 libdeflate0 libexpat1 libexpat1-dev libfontconfig1
+#8 3.829   libfreetype6 libfribidi0 libgcc-12-dev libgfortran5 libglib2.0-0 libgomp1
+#8 3.829   libgprofng0 libgraphite2-3 libgssapi-krb5-2 libharfbuzz0b libicu72
+#8 3.829   libimagequant0 libisl23 libitm1 libjansson4 libjbig0 libjpeg62-turbo
+#8 3.829   libjs-jquery libjs-jquery-ui libjs-sphinxdoc libjs-underscore libk5crypto3
+#8 3.829   libkeyutils1 libkrb5-3 libkrb5support0 liblapack3 liblbfgsb0 liblcms2-2
+#8 3.829   liblerc4 liblsan0 libmpc3 libmpfr6 libncursesw6 libnsl-dev libnsl2
+#8 3.829   libopenblas-dev libopenblas-pthread-dev libopenblas0 libopenblas0-pthread
+#8 3.829   libopenjp2-7 libpng16-16 libpython3-all-dev libpython3-dev libpython3-stdlib
+#8 3.829   libpython3.11 libpython3.11-dev libpython3.11-minimal libpython3.11-stdlib
+#8 3.829   libqhull-r8.0 libquadmath0 libraqm0 libreadline8 libsqlite3-0 libssl3
+#8 3.829   libstdc++-12-dev libtcl8.6 libtiff6 libtirpc-common libtirpc-dev libtirpc3
+#8 3.829   libtk8.6 libtsan2 libubsan1 libwebp7 libwebpdemux2 libwebpmux3 libx11-6
+#8 3.829   libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxft2 libxml2 libxrender1
+#8 3.830   libxsimd-dev libxslt1.1 libxss1 linux-libc-dev media-types openssl
+#8 3.830   python-matplotlib-data python3 python3-all python3-all-dev python3-appdirs
+#8 3.830   python3-attr python3-beniget python3-brotli python3-contourpy python3-cycler
+#8 3.830   python3-dateutil python3-decorator python3-dev python3-distutils
+#8 3.830   python3-fonttools python3-fs python3-gast python3-kiwisolver python3-lib2to3
+#8 3.830   python3-lxml python3-lz4 python3-minimal python3-mpmath python3-networkx
+#8 3.830   python3-packaging python3-pil python3-pil.imagetk python3-pkg-resources
+#8 3.830   python3-ply python3-pyparsing python3-pythran python3-pywt python3-scipy
+#8 3.830   python3-six python3-skimage-lib python3-sympy python3-tifffile python3-tk
+#8 3.830   python3-tz python3-ufolib2 python3.11 python3.11-dev python3.11-minimal
+#8 3.830   readline-common rpcsvc-proto tk8.6-blt2.5 unicode-data x11-common zlib1g-dev
+#8 3.831 Suggested packages:
+#8 3.831   binutils-doc blt-demo cpp-doc gcc-12-locales cpp-12-doc g++-multilib
+#8 3.831   g++-12-multilib gcc-12-doc gcc-multilib make manpages-dev autoconf automake
+#8 3.831   libtool flex bison gdb gcc-doc gcc-12-multilib libboost-doc libboost1.74-doc
+#8 3.831   libboost-atomic1.74-dev libboost-chrono1.74-dev libboost-container1.74-dev
+#8 3.831   libboost-context1.74-dev libboost-contract1.74-dev
+#8 3.831   libboost-coroutine1.74-dev libboost-date-time1.74-dev
+#8 3.831   libboost-exception1.74-dev libboost-fiber1.74-dev
+#8 3.831   libboost-filesystem1.74-dev libboost-graph1.74-dev
+#8 3.831   libboost-graph-parallel1.74-dev libboost-iostreams1.74-dev
+#8 3.831   libboost-locale1.74-dev libboost-log1.74-dev libboost-math1.74-dev
+#8 3.831   libboost-mpi1.74-dev libboost-mpi-python1.74-dev libboost-numpy1.74-dev
+#8 3.831   libboost-program-options1.74-dev libboost-python1.74-dev
+#8 3.831   libboost-random1.74-dev libboost-regex1.74-dev
+#8 3.831   libboost-serialization1.74-dev libboost-stacktrace1.74-dev
+#8 3.831   libboost-system1.74-dev libboost-test1.74-dev libboost-thread1.74-dev
+#8 3.831   libboost-timer1.74-dev libboost-type-erasure1.74-dev libboost-wave1.74-dev
+#8 3.831   libboost1.74-tools-dev libmpfrc++-dev libntl-dev libboost-nowide1.74-dev
+#8 3.831   glibc-doc low-memory-monitor krb5-doc krb5-user libjs-jquery-ui-docs
+#8 3.831   liblcms2-utils libstdc++-12-doc tcl8.6 tk8.6 libxsimd-doc python3-doc
+#8 3.831   python3-venv python-attr-doc python-cycler-doc python-imageio-doc
+#8 3.831   python3-astropy python3-gdal ffmpeg python-lxml-doc cm-super-minimal dvipng
+#8 3.831   fonts-staypuft ghostscript gir1.2-gtk-3.0 inkscape ipython3 librsvg2-common
+#8 3.831   python3-cairocffi python3-gi python3-gi-cairo python3-gobject python3-pyqt5
+#8 3.831   python3-sip python3-tornado texlive-extra-utils texlive-latex-extra
+#8 3.831   python-mpmath-doc python3-gmpy2 python-nibabel-doc python3-mock gfortran
+#8 3.831   python3-pytest python-pil-doc python-ply-doc python-pyparsing-doc
+#8 3.831   python-pywt-doc python-scipy-doc python-setuptools-doc python-skimage-doc
+#8 3.831   texlive-fonts-extra python-sympy-doc python3-fsspec tix python3-tk-dbg
+#8 3.831   python3.11-venv python3.11-doc binfmt-support readline-doc
+#8 3.831 Recommended packages:
+#8 3.831   manpages manpages-dev libc-devtools libglib2.0-data shared-mime-info
+#8 3.831   xdg-user-dirs javascript-common krb5-locales libgpm2 python3-bs4
+#8 3.831   python3-html5lib python3-gdal python3-pydot python3-pygraphviz python3-yaml
+#8 3.831   python3-pydicom python3-fuse python3-olefile build-essential python3-dask
+#8 3.831   python3-pytest isympy-common
+#8 5.161 The following NEW packages will be installed:
+#8 5.161   binutils binutils-common binutils-x86-64-linux-gnu blt ca-certificates cpp
+#8 5.161   cpp-12 fontconfig-config fonts-dejavu-core fonts-lyx g++ g++-12 gcc gcc-12
+#8 5.161   libasan8 libatomic1 libbinutils libblas3 libboost-dev libboost1.74-dev
+#8 5.161   libbrotli1 libbsd0 libc-dev-bin libc6-dev libcc1-0 libcrypt-dev
+#8 5.161   libctf-nobfd0 libctf0 libdeflate0 libexpat1 libexpat1-dev libfontconfig1
+#8 5.161   libfreetype6 libfribidi0 libgcc-12-dev libgfortran5 libglib2.0-0 libgomp1
+#8 5.161   libgprofng0 libgraphite2-3 libgssapi-krb5-2 libharfbuzz0b libicu72
+#8 5.161   libimagequant0 libisl23 libitm1 libjansson4 libjbig0 libjpeg62-turbo
+#8 5.161   libjs-jquery libjs-jquery-ui libjs-sphinxdoc libjs-underscore libk5crypto3
+#8 5.161   libkeyutils1 libkrb5-3 libkrb5support0 liblapack3 liblbfgsb0 liblcms2-2
+#8 5.161   liblerc4 liblsan0 libmpc3 libmpfr6 libncursesw6 libnsl-dev libnsl2
+#8 5.161   libopenblas-dev libopenblas-pthread-dev libopenblas0 libopenblas0-pthread
+#8 5.161   libopenjp2-7 libpng16-16 libpython3-all-dev libpython3-dev libpython3-stdlib
+#8 5.161   libpython3.11 libpython3.11-dev libpython3.11-minimal libpython3.11-stdlib
+#8 5.161   libqhull-r8.0 libquadmath0 libraqm0 libreadline8 libsqlite3-0 libssl3
+#8 5.161   libstdc++-12-dev libtcl8.6 libtiff6 libtirpc-common libtirpc-dev libtirpc3
+#8 5.161   libtk8.6 libtsan2 libubsan1 libwebp7 libwebpdemux2 libwebpmux3 libx11-6
+#8 5.161   libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxft2 libxml2 libxrender1
+#8 5.161   libxsimd-dev libxslt1.1 libxss1 linux-libc-dev media-types openssl
+#8 5.161   python-matplotlib-data python3 python3-all python3-all-dev python3-appdirs
+#8 5.162   python3-attr python3-beniget python3-brotli python3-contourpy python3-cycler
+#8 5.162   python3-dateutil python3-decorator python3-dev python3-distutils
+#8 5.162   python3-fonttools python3-fs python3-gast python3-imageio python3-kiwisolver
+#8 5.162   python3-lib2to3 python3-lxml python3-lz4 python3-matplotlib python3-minimal
+#8 5.162   python3-mpmath python3-networkx python3-nibabel python3-numpy
+#8 5.162   python3-packaging python3-pil python3-pil.imagetk python3-pip
+#8 5.162   python3-pkg-resources python3-ply python3-pyparsing python3-pythran
+#8 5.162   python3-pywt python3-scipy python3-setuptools python3-six python3-skimage
+#8 5.162   python3-skimage-lib python3-sympy python3-tifffile python3-tk python3-tz
+#8 5.162   python3-ufolib2 python3-wheel python3.11 python3.11-dev python3.11-minimal
+#8 5.162   readline-common rpcsvc-proto tk8.6-blt2.5 unicode-data x11-common zlib1g-dev
+#8 5.174 0 upgraded, 170 newly installed, 0 to remove and 0 not upgraded.
+#8 5.174 Need to get 212 MB of archives.
+#8 5.174 After this operation, 962 MB of additional disk space will be used.
+#8 5.174 E: You don't have enough free space in /var/cache/apt/archives/.
+#8 ERROR: process "/bin/sh -c apt-get update -qq && apt-get install -y --no-install-recommends     python3-setuptools     python3-wheel     python3-pip     python3-numpy     python3-nibabel     python3-matplotlib     python3-imageio     python3-skimage &&     apt-get clean &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/cache/apt/archives/*" did not complete successfully: exit code: 100
+------
+ > [4/6] RUN apt-get update -qq && apt-get install -y --no-install-recommends     python3-setuptools     python3-wheel     python3-pip     python3-numpy     python3-nibabel     python3-matplotlib     python3-imageio     python3-skimage &&     apt-get clean &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/cache/apt/archives/*:
+5.162   python3-packaging python3-pil python3-pil.imagetk python3-pip
+5.162   python3-pkg-resources python3-ply python3-pyparsing python3-pythran
+5.162   python3-pywt python3-scipy python3-setuptools python3-six python3-skimage
+5.162   python3-skimage-lib python3-sympy python3-tifffile python3-tk python3-tz
+5.162   python3-ufolib2 python3-wheel python3.11 python3.11-dev python3.11-minimal
+5.162   readline-common rpcsvc-proto tk8.6-blt2.5 unicode-data x11-common zlib1g-dev
+5.174 0 upgraded, 170 newly installed, 0 to remove and 0 not upgraded.
+5.174 Need to get 212 MB of archives.
+5.174 After this operation, 962 MB of additional disk space will be used.
+5.174 E: You don't have enough free space in /var/cache/apt/archives/.
+------
+v2_Dockerfile:8
+--------------------
+   7 |     # try to provide binary packages for requirements.txt, amend this list if necessary
+   8 | >>> RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+   9 | >>>     python3-setuptools \
+  10 | >>>     python3-wheel \
+  11 | >>>     python3-pip \
+  12 | >>>     python3-numpy \
+  13 | >>>     python3-nibabel \
+  14 | >>>     python3-matplotlib \
+  15 | >>>     python3-imageio \
+  16 | >>>     python3-skimage && \
+  17 | >>>     apt-get clean && \
+  18 | >>>     rm -rf /var/lib/apt/lists/* && \
+  19 | >>>     rm -rf /var/cache/apt/archives/*
+  20 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update -qq && apt-get install -y --no-install-recommends     python3-setuptools     python3-wheel     python3-pip     python3-numpy     python3-nibabel     python3-matplotlib     python3-imageio     python3-skimage &&     apt-get clean &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/cache/apt/archives/*" did not complete successfully: exit code: 100
+Duration: 0:10.39

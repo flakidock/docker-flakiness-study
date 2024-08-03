@@ -1,0 +1,370 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.11kB done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/golang:1.11.4
+#3 DONE 0.9s
+
+#4 [internal] load metadata for docker.io/library/debian:10-slim
+#4 DONE 1.4s
+
+#5 [stage-1 1/8] FROM docker.io/library/debian:10-slim@sha256:bb3dc79fddbca7e8903248ab916bb775c96ec61014b3d02b4f06043b604726dc
+#5 resolve docker.io/library/debian:10-slim@sha256:bb3dc79fddbca7e8903248ab916bb775c96ec61014b3d02b4f06043b604726dc
+#5 resolve docker.io/library/debian:10-slim@sha256:bb3dc79fddbca7e8903248ab916bb775c96ec61014b3d02b4f06043b604726dc 0.6s done
+#5 sha256:32220ea48be72979c9f0810d69f3de9145c9584c2ee966c6ec26edbcf4640c0b 529B / 529B done
+#5 sha256:e1a7bb630c8baa947c5430a7f0965ef6afe71e88e90547aced2e601a89b68399 1.46kB / 1.46kB done
+#5 sha256:bb3dc79fddbca7e8903248ab916bb775c96ec61014b3d02b4f06043b604726dc 984B / 984B done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 25.59MB 0.5s done
+#6 DONE 1.0s
+
+#7 [builder 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 resolve docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf 0.5s done
+#7 sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf 3.46kB / 3.46kB done
+#7 sha256:40f419705a5d794eeff415b7593f813e02ae4eb1a55f084ed1bd439a6be6926f 1.80kB / 1.80kB done
+#7 sha256:dd46c12568290b942a5ec20c330269b06b9039a22c9945f58d2f05cbaf0ea8a1 5.47kB / 5.47kB done
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 8.39MB / 45.34MB 0.4s
+#7 sha256:f0cb1fa13079687d5118e5cd7e3ce3c09dc483fa44f0577eca349de8d76e4e8c 0B / 4.34MB 0.4s
+#7 sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7 0B / 10.78MB 0.4s
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 13.63MB / 45.34MB 0.5s
+#7 sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7 2.10MB / 10.78MB 0.5s
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 18.87MB / 45.34MB 0.6s
+#7 sha256:f0cb1fa13079687d5118e5cd7e3ce3c09dc483fa44f0577eca349de8d76e4e8c 1.05MB / 4.34MB 0.6s
+#7 sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7 8.39MB / 10.78MB 0.6s
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 29.36MB / 45.34MB 0.8s
+#7 sha256:f0cb1fa13079687d5118e5cd7e3ce3c09dc483fa44f0577eca349de8d76e4e8c 4.34MB / 4.34MB 0.8s
+#7 sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7 10.78MB / 10.78MB 0.8s
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 40.89MB / 45.34MB 1.0s
+#7 sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7 10.78MB / 10.78MB 0.8s done
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 0B / 50.06MB 1.0s
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 45.34MB / 45.34MB 1.1s
+#7 sha256:f0cb1fa13079687d5118e5cd7e3ce3c09dc483fa44f0577eca349de8d76e4e8c 4.34MB / 4.34MB 1.0s done
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 3.15MB / 50.06MB 1.1s
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 9.44MB / 50.06MB 1.2s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 0B / 57.62MB 1.2s
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 20.97MB / 50.06MB 1.4s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 10.49MB / 57.62MB 1.4s
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 32.51MB / 50.06MB 1.6s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 22.02MB / 57.62MB 1.6s
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 37.75MB / 50.06MB 1.7s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 27.61MB / 57.62MB 1.7s
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 45.34MB / 45.34MB 1.7s done
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 42.99MB / 50.06MB 1.8s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 33.55MB / 57.62MB 1.8s
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 48.23MB / 50.06MB 1.9s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 38.80MB / 57.62MB 1.9s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 0B / 126.64MB 1.9s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 50.33MB / 57.62MB 2.1s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 7.34MB / 126.64MB 2.1s
+#7 extracting sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 54.53MB / 57.62MB 2.2s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 57.62MB / 57.62MB 2.3s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 16.78MB / 126.64MB 2.3s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 29.92MB / 126.64MB 2.5s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 36.70MB / 126.64MB 2.6s
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 50.06MB / 50.06MB 2.7s done
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 49.28MB / 126.64MB 2.8s
+#7 sha256:0b7ee073a53ef3517eb33b826455deade48221c5ebab6965459499a4963dc4f6 0B / 126B 2.8s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 60.82MB / 126.64MB 3.0s
+#7 sha256:0b7ee073a53ef3517eb33b826455deade48221c5ebab6965459499a4963dc4f6 126B / 126B 3.0s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 72.35MB / 126.64MB 3.2s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 83.89MB / 126.64MB 3.4s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 95.42MB / 126.64MB 3.6s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 108.00MB / 126.64MB 3.8s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 57.62MB / 57.62MB 3.8s done
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 118.49MB / 126.64MB 4.0s
+#7 sha256:0b7ee073a53ef3517eb33b826455deade48221c5ebab6965459499a4963dc4f6 126B / 126B 3.9s done
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 126.64MB / 126.64MB 4.3s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 126.64MB / 126.64MB 6.1s done
+#7 extracting sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 5.2s
+#7 extracting sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 7.2s done
+#7 extracting sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7
+#7 extracting sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7 2.0s done
+#7 extracting sha256:f0cb1fa13079687d5118e5cd7e3ce3c09dc483fa44f0577eca349de8d76e4e8c
+#7 ...
+
+#5 [stage-1 1/8] FROM docker.io/library/debian:10-slim@sha256:bb3dc79fddbca7e8903248ab916bb775c96ec61014b3d02b4f06043b604726dc
+#5 sha256:b338562f40a7fb7360dfae935da6d7e40d2545db18bc461d9d70ec1b2b657f33 27.34MB / 27.34MB 6.5s done
+#5 extracting sha256:b338562f40a7fb7360dfae935da6d7e40d2545db18bc461d9d70ec1b2b657f33 5.6s done
+#5 DONE 13.8s
+
+#8 [stage-1 2/8] RUN  apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 1.710 Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+#8 1.892 Get:2 http://deb.debian.org/debian-security buster/updates InRelease [34.8 kB]
+#8 1.912 Get:3 http://deb.debian.org/debian buster-updates InRelease [56.6 kB]
+#8 2.857 Get:4 http://deb.debian.org/debian buster/main amd64 Packages [7909 kB]
+#8 4.171 Get:5 http://deb.debian.org/debian-security buster/updates/main amd64 Packages [610 kB]
+#8 6.358 Get:6 http://deb.debian.org/debian buster-updates/main amd64 Packages [8788 B]
+#8 ...
+
+#7 [builder 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 extracting sha256:f0cb1fa13079687d5118e5cd7e3ce3c09dc483fa44f0577eca349de8d76e4e8c 1.0s done
+#7 extracting sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 5.6s
+#7 ...
+
+#8 [stage-1 2/8] RUN  apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 8.375 Fetched 8741 kB in 7s (1301 kB/s)
+#8 8.375 Reading package lists...
+#8 10.62 Reading package lists...
+#8 13.10 Building dependency tree...
+#8 13.88 Reading state information...
+#8 ...
+
+#7 [builder 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 extracting sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 10.8s done
+#7 extracting sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 1.9s
+#7 ...
+
+#8 [stage-1 2/8] RUN  apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 14.86 The following additional packages will be installed:
+#8 14.87   libc-l10n libpcre2-8-0 libpsl5 libssl1.1 openssl
+#8 14.88 Recommended packages:
+#8 14.88   publicsuffix
+#8 15.11 The following NEW packages will be installed:
+#8 15.11   ca-certificates libc-l10n libpcre2-8-0 libpsl5 libssl1.1 locales openssl
+#8 15.11   wget
+#8 15.24 0 upgraded, 8 newly installed, 0 to remove and 2 not upgraded.
+#8 15.24 Need to get 8649 kB of archives.
+#8 15.24 After this operation, 31.0 MB of additional disk space will be used.
+#8 15.24 Get:1 http://deb.debian.org/debian-security buster/updates/main amd64 libssl1.1 amd64 1.1.1n-0+deb10u6 [1552 kB]
+#8 15.35 Get:2 http://deb.debian.org/debian-security buster/updates/main amd64 libc-l10n all 2.28-10+deb10u4 [847 kB]
+#8 15.41 Get:3 http://deb.debian.org/debian-security buster/updates/main amd64 locales all 2.28-10+deb10u4 [4060 kB]
+#8 15.77 Get:4 http://deb.debian.org/debian-security buster/updates/main amd64 libpcre2-8-0 amd64 10.32-5+deb10u1 [213 kB]
+#8 15.77 Get:5 http://deb.debian.org/debian buster/main amd64 libpsl5 amd64 0.20.2-2 [53.7 kB]
+#8 15.80 Get:6 http://deb.debian.org/debian buster/main amd64 wget amd64 1.20.1-1.1 [902 kB]
+#8 15.87 Get:7 http://deb.debian.org/debian-security buster/updates/main amd64 openssl amd64 1.1.1n-0+deb10u6 [855 kB]
+#8 15.91 Get:8 http://deb.debian.org/debian buster/main amd64 ca-certificates all 20200601~deb10u2 [166 kB]
+#8 17.06 debconf: delaying package configuration, since apt-utils is not installed
+#8 17.14 Fetched 8649 kB in 1s (11.9 MB/s)
+#8 17.41 Selecting previously unselected package libssl1.1:amd64.
+#8 17.41 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6433 files and directories currently installed.)
+#8 17.42 Preparing to unpack .../0-libssl1.1_1.1.1n-0+deb10u6_amd64.deb ...
+#8 17.47 Unpacking libssl1.1:amd64 (1.1.1n-0+deb10u6) ...
+#8 18.17 Selecting previously unselected package libc-l10n.
+#8 18.18 Preparing to unpack .../1-libc-l10n_2.28-10+deb10u4_all.deb ...
+#8 18.22 Unpacking libc-l10n (2.28-10+deb10u4) ...
+#8 18.92 Selecting previously unselected package locales.
+#8 18.93 Preparing to unpack .../2-locales_2.28-10+deb10u4_all.deb ...
+#8 18.95 Unpacking locales (2.28-10+deb10u4) ...
+#8 21.02 Selecting previously unselected package libpcre2-8-0:amd64.
+#8 21.02 Preparing to unpack .../3-libpcre2-8-0_10.32-5+deb10u1_amd64.deb ...
+#8 21.06 Unpacking libpcre2-8-0:amd64 (10.32-5+deb10u1) ...
+#8 ...
+
+#7 [builder 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 extracting sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 7.7s done
+#7 extracting sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 1.4s
+#7 ...
+
+#8 [stage-1 2/8] RUN  apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 24.43 Selecting previously unselected package libpsl5:amd64.
+#8 24.44 Preparing to unpack .../4-libpsl5_0.20.2-2_amd64.deb ...
+#8 ...
+
+#7 [builder 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 extracting sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 8.6s
+#7 extracting sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 13.7s
+#7 ...
+
+#8 [stage-1 2/8] RUN  apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 36.39 Unpacking libpsl5:amd64 (0.20.2-2) ...
+#8 39.35 Selecting previously unselected package wget.
+#8 39.36 Preparing to unpack .../5-wget_1.20.1-1.1_amd64.deb ...
+#8 39.40 Unpacking wget (1.20.1-1.1) ...
+#8 39.95 Selecting previously unselected package openssl.
+#8 39.95 Preparing to unpack .../6-openssl_1.1.1n-0+deb10u6_amd64.deb ...
+#8 39.97 Unpacking openssl (1.1.1n-0+deb10u6) ...
+#8 40.80 Selecting previously unselected package ca-certificates.
+#8 40.80 Preparing to unpack .../7-ca-certificates_20200601~deb10u2_all.deb ...
+#8 40.86 Unpacking ca-certificates (20200601~deb10u2) ...
+#8 41.31 Setting up libc-l10n (2.28-10+deb10u4) ...
+#8 41.46 Setting up libpsl5:amd64 (0.20.2-2) ...
+#8 41.67 Setting up libssl1.1:amd64 (1.1.1n-0+deb10u6) ...
+#8 42.20 debconf: unable to initialize frontend: Dialog
+#8 42.20 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#8 42.20 debconf: falling back to frontend: Readline
+#8 42.20 debconf: unable to initialize frontend: Readline
+#8 42.20 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#8 42.20 debconf: falling back to frontend: Teletype
+#8 42.48 Setting up locales (2.28-10+deb10u4) ...
+#8 ...
+
+#7 [builder 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 extracting sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 19.5s done
+#7 extracting sha256:0b7ee073a53ef3517eb33b826455deade48221c5ebab6965459499a4963dc4f6 done
+#7 DONE 56.7s
+
+#8 [stage-1 2/8] RUN  apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 42.99 debconf: unable to initialize frontend: Dialog
+#8 42.99 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#8 42.99 debconf: falling back to frontend: Readline
+#8 42.99 debconf: unable to initialize frontend: Readline
+#8 42.99 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#8 42.99 debconf: falling back to frontend: Teletype
+#8 ...
+
+#9 [builder 2/6] COPY . /go/src/github.com/maddevsio/comedian
+#9 ...
+
+#8 [stage-1 2/8] RUN  apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 51.10 Generating locales (this might take a while)...
+#8 51.15 Generation complete.
+#8 ...
+
+#9 [builder 2/6] COPY . /go/src/github.com/maddevsio/comedian
+#9 DONE 11.2s
+
+#8 [stage-1 2/8] RUN  apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 54.07 Setting up libpcre2-8-0:amd64 (10.32-5+deb10u1) ...
+#8 54.25 Setting up openssl (1.1.1n-0+deb10u6) ...
+#8 54.57 Setting up wget (1.20.1-1.1) ...
+#8 54.81 Setting up ca-certificates (20200601~deb10u2) ...
+#8 ...
+
+#10 [builder 3/6] WORKDIR /go/src/github.com/maddevsio/comedian
+#10 DONE 0.7s
+
+#11 [builder 4/6] RUN go get -u github.com/golang/dep/cmd/dep
+#11 ...
+
+#8 [stage-1 2/8] RUN  apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 55.51 debconf: unable to initialize frontend: Dialog
+#8 55.51 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#8 55.51 debconf: falling back to frontend: Readline
+#8 55.51 debconf: unable to initialize frontend: Readline
+#8 55.51 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#8 55.51 debconf: falling back to frontend: Teletype
+#8 62.87 Updating certificates in /etc/ssl/certs...
+#8 72.56 137 added, 0 removed; done.
+#8 72.78 Processing triggers for libc-bin (2.28-10+deb10u3) ...
+#8 72.91 Processing triggers for ca-certificates (20200601~deb10u2) ...
+#8 72.95 Updating certificates in /etc/ssl/certs...
+#8 79.11 0 added, 0 removed; done.
+#8 79.11 Running hooks in /etc/ca-certificates/update.d...
+#8 79.15 done.
+#8 DONE 80.5s
+
+#12 [stage-1 3/8] RUN localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+#12 DONE 8.1s
+
+#13 [stage-1 4/8] RUN wget https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.6.1.tar.gz     && rm dockerize-linux-amd64-v0.6.1.tar.gz
+#13 1.671 --2024-08-01 11:45:35--  https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz
+#13 1.722 Resolving github.com (github.com)... 140.82.114.4
+#13 1.752 Connecting to github.com (github.com)|140.82.114.4|:443... connected.
+#13 1.997 HTTP request sent, awaiting response... 302 Found
+#13 2.120 Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/25178920/ef020aa8-2eed-11e8-8e0f-c1fcce07ec65?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240801T114535Z&X-Amz-Expires=300&X-Amz-Signature=58119a8a5307503fafd2b70af1ad0244c1fbecfa1e1d08f9288b641f9e96db83&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=25178920&response-content-disposition=attachment%3B%20filename%3Ddockerize-linux-amd64-v0.6.1.tar.gz&response-content-type=application%2Foctet-stream [following]
+#13 2.120 --2024-08-01 11:45:35--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/25178920/ef020aa8-2eed-11e8-8e0f-c1fcce07ec65?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240801T114535Z&X-Amz-Expires=300&X-Amz-Signature=58119a8a5307503fafd2b70af1ad0244c1fbecfa1e1d08f9288b641f9e96db83&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=25178920&response-content-disposition=attachment%3B%20filename%3Ddockerize-linux-amd64-v0.6.1.tar.gz&response-content-type=application%2Foctet-stream
+#13 2.120 Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.108.133, 185.199.110.133, 185.199.109.133, ...
+#13 2.129 Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.108.133|:443... connected.
+#13 2.138 HTTP request sent, awaiting response... 200 OK
+#13 2.516 Length: 3005823 (2.9M) [application/octet-stream]
+#13 2.516 Saving to: ‘dockerize-linux-amd64-v0.6.1.tar.gz’
+#13 2.516 
+#13 2.516      0K .......... .......... .......... .......... ..........  1% 41.4M 0s
+#13 2.516     50K .......... .......... .......... .......... ..........  3% 17.3M 0s
+#13 2.520    100K .......... .......... .......... .......... ..........  5%  110M 0s
+#13 2.520    150K .......... .......... .......... .......... ..........  6% 32.3M 0s
+#13 2.522    200K .......... .......... .......... .......... ..........  8% 64.8M 0s
+#13 2.522    250K .......... .......... .......... .......... .......... 10% 67.5M 0s
+#13 2.522    300K .......... .......... .......... .......... .......... 11% 68.9M 0s
+#13 2.524    350K .......... .......... .......... .......... .......... 13% 65.6M 0s
+#13 2.524    400K .......... .......... .......... .......... .......... 15% 67.1M 0s
+#13 2.526    450K .......... .......... .......... .......... .......... 17% 72.4M 0s
+#13 2.526    500K .......... .......... .......... .......... .......... 18% 68.3M 0s
+#13 2.526    550K .......... .......... .......... .......... .......... 20% 65.4M 0s
+#13 2.528    600K .......... .......... .......... .......... .......... 22% 76.7M 0s
+#13 2.528    650K .......... .......... .......... .......... .......... 23% 79.9M 0s
+#13 2.530    700K .......... .......... .......... .......... .......... 25% 82.9M 0s
+#13 2.530    750K .......... .......... .......... .......... .......... 27% 68.2M 0s
+#13 2.530    800K .......... .......... .......... .......... .......... 28% 68.8M 0s
+#13 2.533    850K .......... .......... .......... .......... .......... 30% 71.9M 0s
+#13 2.533    900K .......... .......... .......... .......... .......... 32% 92.8M 0s
+#13 2.533    950K .......... .......... .......... .......... .......... 34% 63.9M 0s
+#13 2.533   1000K .......... .......... .......... .......... .......... 35% 84.4M 0s
+#13 2.533   1050K .......... .......... .......... .......... .......... 37% 74.6M 0s
+#13 2.533   1100K .......... .......... .......... .......... .......... 39% 75.1M 0s
+#13 2.535   1150K .......... .......... .......... .......... .......... 40% 60.5M 0s
+#13 2.535   1200K .......... .......... .......... .......... .......... 42% 73.8M 0s
+#13 2.535   1250K .......... .......... .......... .......... .......... 44% 80.5M 0s
+#13 2.537   1300K .......... .......... .......... .......... .......... 45% 93.2M 0s
+#13 2.537   1350K .......... .......... .......... .......... .......... 47% 65.3M 0s
+#13 2.537   1400K .......... .......... .......... .......... .......... 49% 80.6M 0s
+#13 2.540   1450K .......... .......... .......... .......... .......... 51% 70.2M 0s
+#13 2.540   1500K .......... .......... .......... .......... .......... 52% 78.3M 0s
+#13 2.540   1550K .......... .......... .......... .......... .......... 54% 69.3M 0s
+#13 2.542   1600K .......... .......... .......... .......... .......... 56% 75.7M 0s
+#13 2.542   1650K .......... .......... .......... .......... .......... 57% 84.8M 0s
+#13 2.542   1700K .......... .......... .......... .......... .......... 59% 72.8M 0s
+#13 2.545   1750K .......... .......... .......... .......... .......... 61% 68.7M 0s
+#13 2.545   1800K .......... .......... .......... .......... .......... 63% 80.9M 0s
+#13 2.545   1850K .......... .......... .......... .......... .......... 64% 79.2M 0s
+#13 2.548   1900K .......... .......... .......... .......... .......... 66% 80.6M 0s
+#13 2.548   1950K .......... .......... .......... .......... .......... 68% 66.5M 0s
+#13 2.548   2000K .......... .......... .......... .......... .......... 69% 70.5M 0s
+#13 2.548   2050K .......... .......... .......... .......... .......... 71% 75.1M 0s
+#13 2.548   2100K .......... .......... .......... .......... .......... 73% 77.8M 0s
+#13 2.551   2150K .......... .......... .......... .......... .......... 74% 68.4M 0s
+#13 2.551   2200K .......... .......... .......... .......... .......... 76% 86.3M 0s
+#13 2.551   2250K .......... .......... .......... .......... .......... 78% 81.9M 0s
+#13 2.551   2300K .......... .......... .......... .......... .......... 80% 75.9M 0s
+#13 2.554   2350K .......... .......... .......... .......... .......... 81% 63.0M 0s
+#13 2.554   2400K .......... .......... .......... .......... .......... 83% 78.0M 0s
+#13 2.554   2450K .......... .......... .......... .......... .......... 85% 89.8M 0s
+#13 2.554   2500K .......... .......... .......... .......... .......... 86% 75.1M 0s
+#13 2.554   2550K .......... .......... .......... .......... .......... 88% 69.4M 0s
+#13 2.557   2600K .......... .......... .......... .......... .......... 90% 81.7M 0s
+#13 2.557   2650K .......... .......... .......... .......... .......... 91% 94.9M 0s
+#13 2.557   2700K .......... .......... .......... .......... .......... 93%  112M 0s
+#13 2.557   2750K .......... .......... .......... .......... .......... 95% 89.5M 0s
+#13 2.557   2800K .......... .......... .......... .......... .......... 97%  107M 0s
+#13 2.557   2850K .......... .......... .......... .......... .......... 98%  103M 0s
+#13 2.560   2900K .......... .......... .......... .....                100%  106M=0.04s
+#13 2.560 
+#13 2.560 2024-08-01 11:45:36 (69.7 MB/s) - ‘dockerize-linux-amd64-v0.6.1.tar.gz’ saved [3005823/3005823]
+#13 2.560 
+#13 2.574 dockerize
+#13 DONE 3.2s
+
+#14 [stage-1 5/8] COPY active.en.toml  /
+#14 DONE 0.9s
+
+#15 [stage-1 6/8] COPY active.ru.toml  /
+#15 ...
+
+#11 [builder 4/6] RUN go get -u github.com/golang/dep/cmd/dep
+#11 DONE 37.9s
+
+#16 [builder 5/6] RUN dep ensure
+#16 ...
+
+#15 [stage-1 6/8] COPY active.ru.toml  /
+#15 DONE 0.9s
+
+#16 [builder 5/6] RUN dep ensure
+#16 DONE 66.1s
+
+#17 [builder 6/6] RUN GOOS=linux GOARCH=amd64 go build -o comedian main.go
+#17 DONE 38.1s
+
+#18 [stage-1 7/8] COPY --from=builder  /go/src/github.com/maddevsio/comedian/comedian /
+#18 DONE 0.7s
+
+#19 [stage-1 8/8] COPY migrations /migrations
+#19 DONE 0.4s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 1.6s done
+#20 writing image sha256:e0b967344418c76497dc5f62fc386f1d9120928de1dac61184ef13e838a94586
+#20 writing image sha256:e0b967344418c76497dc5f62fc386f1d9120928de1dac61184ef13e838a94586 0.0s done
+#20 naming to docker.io/library/image_name_v1_1 0.0s done
+#20 DONE 1.6s
+Duration: 3:37.21

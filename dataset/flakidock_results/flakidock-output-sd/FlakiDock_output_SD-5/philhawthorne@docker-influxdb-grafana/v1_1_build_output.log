@@ -1,0 +1,162 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 2.41kB done
+#2 DONE 0.3s
+
+#3 [internal] load metadata for docker.io/library/debian:stretch-slim
+#3 DONE 0.7s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [ 1/10] FROM docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#5 resolve docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#5 resolve docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 0.3s done
+#5 DONE 0.3s
+
+#4 [internal] load build context
+#4 transferring context: 26.99kB 0.0s done
+#4 DONE 0.3s
+
+#5 [ 1/10] FROM docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#5 sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 1.21kB / 1.21kB done
+#5 sha256:c5cd3ffceeb25b683bf5111ea89bf8049a177e00fb237235d48076a19cc80097 529B / 529B done
+#5 sha256:0e23ec2ce5e621c0e8fa57a53c7781d59d57de8c139a8a351b7236530cd85ec2 1.46kB / 1.46kB done
+#5 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 0B / 22.57MB 0.2s
+#5 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 9.44MB / 22.57MB 0.4s
+#5 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 19.92MB / 22.57MB 0.6s
+#5 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 22.57MB / 22.57MB 0.8s
+#5 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 22.57MB / 22.57MB 1.0s done
+#5 extracting sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd
+#5 extracting sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 3.8s done
+#5 DONE 6.2s
+
+#6 [ 2/10] COPY system/99fixbadproxy /etc/apt/apt.conf.d/99fixbadproxy
+#6 DONE 3.3s
+
+#7 [ 3/10] WORKDIR /root
+#7 DONE 0.4s
+
+#8 [ 4/10] RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     rm /var/lib/apt/lists/* -vf     && apt-get -y update     && apt-get -y dist-upgrade     && apt-get -y install         apt-utils         ca-certificates         curl         git         htop         libfontconfig         nano         net-tools         supervisor         wget         gnupg     && curl -sL https://deb.nodesource.com/setup_10.x | bash -     && apt-get install -y nodejs     && mkdir -p /var/log/supervisor     && rm -rf .profile     && wget --no-verbose https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && dpkg -i influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && rm influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && wget https://dl.influxdata.com/chronograf/releases/chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb     && dpkg -i chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb && rm chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb     && wget https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_${ARCH}.deb     && dpkg -i grafana_${GRAFANA_VERSION}_${ARCH}.deb     && rm grafana_${GRAFANA_VERSION}_${ARCH}.deb     && apt-get clean     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 1.481 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+#8 1.508 Ign:2 http://security.debian.org/debian-security stretch/updates Release
+#8 1.532 Ign:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 1.544 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 1.561 Ign:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 1.565 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 1.569 Ign:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 1.572 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 1.585 Ign:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 1.595 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 1.606 Ign:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 1.617 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 1.623 Err:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 1.623   404  Not Found [IP: 151.101.194.132 80]
+#8 1.629 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 1.640 Ign:5 http://deb.debian.org/debian stretch InRelease
+#8 1.808 Ign:6 http://deb.debian.org/debian stretch-updates InRelease
+#8 1.991 Ign:7 http://deb.debian.org/debian stretch Release
+#8 2.157 Ign:8 http://deb.debian.org/debian stretch-updates Release
+#8 2.173 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 2.189 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 2.205 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 2.219 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 2.233 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 2.247 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 2.261 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 2.275 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 2.289 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 2.309 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 2.329 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 2.338 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 2.352 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 2.373 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 2.375 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 2.385 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 2.395 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 2.405 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 2.417 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 2.437 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 2.439 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 2.461 Err:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 2.461   404  Not Found
+#8 2.471 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 2.471   404  Not Found
+#8 2.481 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 2.509 Reading package lists...
+#8 2.591 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#8 2.591 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#8 2.591 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#8 2.591 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+#8 2.591 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#8 2.591 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#8 2.591 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#8 ERROR: process "/bin/sh -c ARCH= && dpkgArch=\"$(dpkg --print-architecture)\" &&     case \"${dpkgArch##*-}\" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo \"Unsupported architecture: ${dpkgArch}\"; exit 1;;     esac &&     rm /var/lib/apt/lists/* -vf     && apt-get -y update     && apt-get -y dist-upgrade     && apt-get -y install         apt-utils         ca-certificates         curl         git         htop         libfontconfig         nano         net-tools         supervisor         wget         gnupg     && curl -sL https://deb.nodesource.com/setup_10.x | bash -     && apt-get install -y nodejs     && mkdir -p /var/log/supervisor     && rm -rf .profile     && wget --no-verbose https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && dpkg -i influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && rm influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && wget https://dl.influxdata.com/chronograf/releases/chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb     && dpkg -i chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb && rm chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb     && wget https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_${ARCH}.deb     && dpkg -i grafana_${GRAFANA_VERSION}_${ARCH}.deb     && rm grafana_${GRAFANA_VERSION}_${ARCH}.deb     && apt-get clean     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*" did not complete successfully: exit code: 100
+------
+ > [ 4/10] RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     rm /var/lib/apt/lists/* -vf     && apt-get -y update     && apt-get -y dist-upgrade     && apt-get -y install         apt-utils         ca-certificates         curl         git         htop         libfontconfig         nano         net-tools         supervisor         wget         gnupg     && curl -sL https://deb.nodesource.com/setup_10.x | bash -     && apt-get install -y nodejs     && mkdir -p /var/log/supervisor     && rm -rf .profile     && wget --no-verbose https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && dpkg -i influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && rm influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && wget https://dl.influxdata.com/chronograf/releases/chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb     && dpkg -i chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb && rm chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb     && wget https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_${ARCH}.deb     && dpkg -i grafana_${GRAFANA_VERSION}_${ARCH}.deb     && rm grafana_${GRAFANA_VERSION}_${ARCH}.deb     && apt-get clean     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*:
+2.471   404  Not Found
+2.481 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+2.509 Reading package lists...
+2.591 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+2.591 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+2.591 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+2.591 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+2.591 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+2.591 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+2.591 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:21
+--------------------
+  20 |     # Clear previous sources
+  21 | >>> RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" && \
+  22 | >>>     case "${dpkgArch##*-}" in \
+  23 | >>>       amd64) ARCH='amd64';; \
+  24 | >>>       arm64) ARCH='arm64';; \
+  25 | >>>       armhf) ARCH='armhf';; \
+  26 | >>>       armel) ARCH='armel';; \
+  27 | >>>       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;; \
+  28 | >>>     esac && \
+  29 | >>>     rm /var/lib/apt/lists/* -vf \
+  30 | >>>     # Base dependencies
+  31 | >>>     && apt-get -y update \
+  32 | >>>     && apt-get -y dist-upgrade \
+  33 | >>>     && apt-get -y install \
+  34 | >>>         apt-utils \
+  35 | >>>         ca-certificates \
+  36 | >>>         curl \
+  37 | >>>         git \
+  38 | >>>         htop \
+  39 | >>>         libfontconfig \
+  40 | >>>         nano \
+  41 | >>>         net-tools \
+  42 | >>>         supervisor \
+  43 | >>>         wget \
+  44 | >>>         gnupg \
+  45 | >>>     && curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+  46 | >>>     && apt-get install -y nodejs \
+  47 | >>>     && mkdir -p /var/log/supervisor \
+  48 | >>>     && rm -rf .profile \
+  49 | >>>     # Install InfluxDB
+  50 | >>>     && wget --no-verbose https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION}_${ARCH}.deb \
+  51 | >>>     && dpkg -i influxdb_${INFLUXDB_VERSION}_${ARCH}.deb \
+  52 | >>>     && rm influxdb_${INFLUXDB_VERSION}_${ARCH}.deb \
+  53 | >>>     # Install Chronograf
+  54 | >>>     && wget https://dl.influxdata.com/chronograf/releases/chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb \
+  55 | >>>     && dpkg -i chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb && rm chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb \
+  56 | >>>     # Install Grafana
+  57 | >>>     && wget https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_${ARCH}.deb \
+  58 | >>>     && dpkg -i grafana_${GRAFANA_VERSION}_${ARCH}.deb \
+  59 | >>>     && rm grafana_${GRAFANA_VERSION}_${ARCH}.deb \
+  60 | >>>     # Cleanup
+  61 | >>>     && apt-get clean \
+  62 | >>>     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  63 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c ARCH= && dpkgArch=\"$(dpkg --print-architecture)\" &&     case \"${dpkgArch##*-}\" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo \"Unsupported architecture: ${dpkgArch}\"; exit 1;;     esac &&     rm /var/lib/apt/lists/* -vf     && apt-get -y update     && apt-get -y dist-upgrade     && apt-get -y install         apt-utils         ca-certificates         curl         git         htop         libfontconfig         nano         net-tools         supervisor         wget         gnupg     && curl -sL https://deb.nodesource.com/setup_10.x | bash -     && apt-get install -y nodejs     && mkdir -p /var/log/supervisor     && rm -rf .profile     && wget --no-verbose https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && dpkg -i influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && rm influxdb_${INFLUXDB_VERSION}_${ARCH}.deb     && wget https://dl.influxdata.com/chronograf/releases/chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb     && dpkg -i chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb && rm chronograf_${CHRONOGRAF_VERSION}_${ARCH}.deb     && wget https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_${ARCH}.deb     && dpkg -i grafana_${GRAFANA_VERSION}_${ARCH}.deb     && rm grafana_${GRAFANA_VERSION}_${ARCH}.deb     && apt-get clean     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*" did not complete successfully: exit code: 100
+Duration: 0:15.27

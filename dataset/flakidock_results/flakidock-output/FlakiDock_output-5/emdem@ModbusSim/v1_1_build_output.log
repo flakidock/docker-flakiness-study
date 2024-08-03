@@ -1,0 +1,185 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 425B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.0s
+
+#4 [internal] load build context
+#4 transferring context: 2.60MB 0.1s done
+#4 ...
+
+#5 [1/7] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.4s done
+#5 DONE 0.4s
+
+#4 [internal] load build context
+#4 DONE 0.5s
+
+#5 [1/7] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.2s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.8s done
+#5 DONE 2.0s
+
+#6 [2/7] RUN apk add --no-cache python3 &&   python3 -m venv /venv &&   . /venv/bin/activate &&   pip install --upgrade pip setuptools &&   rm -r /root/.cache
+#6 1.334 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 1.926 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 3.575 (1/17) Installing libbz2 (1.0.8-r6)
+#6 3.590 (2/17) Installing libexpat (2.6.2-r0)
+#6 3.604 (3/17) Installing libffi (3.4.6-r0)
+#6 3.616 (4/17) Installing gdbm (1.23-r1)
+#6 3.645 (5/17) Installing xz-libs (5.6.1-r3)
+#6 3.664 (6/17) Installing libgcc (13.2.1_git20240309-r0)
+#6 3.671 (7/17) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 3.772 (8/17) Installing mpdecimal (4.0.0-r0)
+#6 3.787 (9/17) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 3.845 (10/17) Installing libncursesw (6.4_p20240420-r0)
+#6 3.858 (11/17) Installing libpanelw (6.4_p20240420-r0)
+#6 3.872 (12/17) Installing readline (8.2.10-r0)
+#6 3.888 (13/17) Installing sqlite-libs (3.45.3-r1)
+#6 3.939 (14/17) Installing python3 (3.12.3-r1)
+#6 4.799 (15/17) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 5.303 (16/17) Installing pyc (3.12.3-r1)
+#6 5.315 (17/17) Installing python3-pyc (3.12.3-r1)
+#6 5.328 Executing busybox-1.36.1-r29.trigger
+#6 5.354 OK: 50 MiB in 31 packages
+#6 24.98 Requirement already satisfied: pip in /venv/lib/python3.12/site-packages (24.0)
+#6 25.52 Collecting pip
+#6 25.60   Downloading pip-24.2-py3-none-any.whl.metadata (3.6 kB)
+#6 26.85 Collecting setuptools
+#6 26.87   Downloading setuptools-72.1.0-py3-none-any.whl.metadata (6.6 kB)
+#6 27.26 Downloading pip-24.2-py3-none-any.whl (1.8 MB)
+#6 27.52    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 7.4 MB/s eta 0:00:00
+#6 27.54 Downloading setuptools-72.1.0-py3-none-any.whl (2.3 MB)
+#6 27.84    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 8.0 MB/s eta 0:00:00
+#6 28.18 Installing collected packages: setuptools, pip
+#6 32.79   Attempting uninstall: pip
+#6 32.80     Found existing installation: pip 24.0
+#6 33.09     Uninstalling pip-24.0:
+#6 33.13       Successfully uninstalled pip-24.0
+#6 37.70 Successfully installed pip-24.2 setuptools-72.1.0
+#6 DONE 39.6s
+
+#7 [3/7] RUN mkdir -p /opt
+#7 DONE 1.9s
+
+#8 [4/7] ADD requirements.txt /opt/.
+#8 DONE 0.5s
+
+#9 [5/7] RUN . /venv/bin/activate && pip install -r /opt/requirements.txt
+#9 4.147 Collecting flask (from -r /opt/requirements.txt (line 1))
+#9 4.265   Downloading flask-3.0.3-py3-none-any.whl.metadata (3.2 kB)
+#9 4.445 Collecting modbus_tk (from -r /opt/requirements.txt (line 2))
+#9 4.464   Downloading modbus_tk-1.1.3-py3-none-any.whl.metadata (938 bytes)
+#9 4.639 Collecting pyserial (from -r /opt/requirements.txt (line 3))
+#9 4.667   Downloading pyserial-3.5-py2.py3-none-any.whl.metadata (1.6 kB)
+#9 5.058 Collecting watchdog (from -r /opt/requirements.txt (line 4))
+#9 5.094   Downloading watchdog-4.0.1.tar.gz (126 kB)
+#9 5.293   Installing build dependencies: started
+#9 13.62   Installing build dependencies: finished with status 'done'
+#9 13.62   Getting requirements to build wheel: started
+#9 14.55   Getting requirements to build wheel: finished with status 'done'
+#9 14.56   Preparing metadata (pyproject.toml): started
+#9 15.51   Preparing metadata (pyproject.toml): finished with status 'done'
+#9 15.67 Collecting flasgger (from -r /opt/requirements.txt (line 5))
+#9 15.69   Downloading flasgger-0.9.7.1.tar.gz (4.0 MB)
+#9 16.23      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 7.6 MB/s eta 0:00:00
+#9 17.17   Installing build dependencies: started
+#9 24.68   Installing build dependencies: finished with status 'done'
+#9 24.68   Getting requirements to build wheel: started
+#9 25.56   Getting requirements to build wheel: finished with status 'done'
+#9 25.56   Preparing metadata (pyproject.toml): started
+#9 26.29   Preparing metadata (pyproject.toml): finished with status 'done'
+#9 26.57 Collecting Werkzeug>=3.0.0 (from flask->-r /opt/requirements.txt (line 1))
+#9 26.59   Downloading werkzeug-3.0.3-py3-none-any.whl.metadata (3.7 kB)
+#9 26.79 Collecting Jinja2>=3.1.2 (from flask->-r /opt/requirements.txt (line 1))
+#9 26.81   Downloading jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
+#9 26.97 Collecting itsdangerous>=2.1.2 (from flask->-r /opt/requirements.txt (line 1))
+#9 26.99   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+#9 27.17 Collecting click>=8.1.3 (from flask->-r /opt/requirements.txt (line 1))
+#9 27.18   Downloading click-8.1.7-py3-none-any.whl.metadata (3.0 kB)
+#9 27.29 Collecting blinker>=1.6.2 (from flask->-r /opt/requirements.txt (line 1))
+#9 27.34   Downloading blinker-1.8.2-py3-none-any.whl.metadata (1.6 kB)
+#9 27.70 Collecting PyYAML>=3.0 (from flasgger->-r /opt/requirements.txt (line 5))
+#9 27.72   Downloading PyYAML-6.0.1-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (2.1 kB)
+#9 28.18 Collecting jsonschema>=3.0.1 (from flasgger->-r /opt/requirements.txt (line 5))
+#9 28.20   Downloading jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)
+#9 28.45 Collecting mistune (from flasgger->-r /opt/requirements.txt (line 5))
+#9 28.46   Downloading mistune-3.0.2-py3-none-any.whl.metadata (1.7 kB)
+#9 28.64 Collecting six>=1.10.0 (from flasgger->-r /opt/requirements.txt (line 5))
+#9 28.66   Downloading six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+#9 28.87 Collecting packaging (from flasgger->-r /opt/requirements.txt (line 5))
+#9 28.89   Downloading packaging-24.1-py3-none-any.whl.metadata (3.2 kB)
+#9 29.28 Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->flask->-r /opt/requirements.txt (line 1))
+#9 29.31   Downloading MarkupSafe-2.1.5-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (3.0 kB)
+#9 29.53 Collecting attrs>=22.2.0 (from jsonschema>=3.0.1->flasgger->-r /opt/requirements.txt (line 5))
+#9 29.55   Downloading attrs-23.2.0-py3-none-any.whl.metadata (9.5 kB)
+#9 29.81 Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=3.0.1->flasgger->-r /opt/requirements.txt (line 5))
+#9 29.82   Downloading jsonschema_specifications-2023.12.1-py3-none-any.whl.metadata (3.0 kB)
+#9 30.19 Collecting referencing>=0.28.4 (from jsonschema>=3.0.1->flasgger->-r /opt/requirements.txt (line 5))
+#9 30.21   Downloading referencing-0.35.1-py3-none-any.whl.metadata (2.8 kB)
+#9 32.29 Collecting rpds-py>=0.7.1 (from jsonschema>=3.0.1->flasgger->-r /opt/requirements.txt (line 5))
+#9 32.32   Downloading rpds_py-0.19.1-cp312-cp312-musllinux_1_2_x86_64.whl.metadata (4.2 kB)
+#9 32.53 Downloading flask-3.0.3-py3-none-any.whl (101 kB)
+#9 32.60 Downloading modbus_tk-1.1.3-py3-none-any.whl (30 kB)
+#9 32.66 Downloading pyserial-3.5-py2.py3-none-any.whl (90 kB)
+#9 32.72 Downloading blinker-1.8.2-py3-none-any.whl (9.5 kB)
+#9 32.77 Downloading click-8.1.7-py3-none-any.whl (97 kB)
+#9 32.83 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#9 32.88 Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+#9 32.93 Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+#9 33.00 Downloading PyYAML-6.0.1-cp312-cp312-musllinux_1_1_x86_64.whl (712 kB)
+#9 33.10    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 712.6/712.6 kB 5.7 MB/s eta 0:00:00
+#9 33.12 Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#9 33.17 Downloading werkzeug-3.0.3-py3-none-any.whl (227 kB)
+#9 33.24 Downloading mistune-3.0.2-py3-none-any.whl (47 kB)
+#9 33.29 Downloading packaging-24.1-py3-none-any.whl (53 kB)
+#9 33.34 Downloading attrs-23.2.0-py3-none-any.whl (60 kB)
+#9 33.97 Downloading jsonschema_specifications-2023.12.1-py3-none-any.whl (18 kB)
+#9 34.02 Downloading MarkupSafe-2.1.5-cp312-cp312-musllinux_1_1_x86_64.whl (33 kB)
+#9 34.07 Downloading referencing-0.35.1-py3-none-any.whl (26 kB)
+#9 34.12 Downloading rpds_py-0.19.1-cp312-cp312-musllinux_1_2_x86_64.whl (527 kB)
+#9 34.20    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 527.7/527.7 kB 4.1 MB/s eta 0:00:00
+#9 34.33 Building wheels for collected packages: watchdog, flasgger
+#9 34.35   Building wheel for watchdog (pyproject.toml): started
+#9 35.33   Building wheel for watchdog (pyproject.toml): finished with status 'done'
+#9 35.33   Created wheel for watchdog: filename=watchdog-4.0.1-py3-none-any.whl size=82996 sha256=b8511655f4c00919624252aaadfff5a5a1d313a084d9d2795ed1fcf4f5b06a40
+#9 35.33   Stored in directory: /root/.cache/pip/wheels/29/d0/a9/5af7e0c2b2daedda9871a808c1a1747130a400349a34a91906
+#9 35.35   Building wheel for flasgger (pyproject.toml): started
+#9 38.11   Building wheel for flasgger (pyproject.toml): finished with status 'done'
+#9 38.14   Created wheel for flasgger: filename=flasgger-0.9.7.1-py2.py3-none-any.whl size=3865182 sha256=5d9d876eb7eb65d5ed696703defa7ded3170e3b9fc5cffed898ad5f3ae162f4f
+#9 38.14   Stored in directory: /root/.cache/pip/wheels/60/a4/b2/76a769725ac2f2c543a6286cddf2bd55b425a9ada6a8f86253
+#9 38.16 Successfully built watchdog flasgger
+#9 38.32 Installing collected packages: pyserial, watchdog, six, rpds-py, PyYAML, packaging, modbus_tk, mistune, MarkupSafe, itsdangerous, click, blinker, attrs, Werkzeug, referencing, Jinja2, jsonschema-specifications, flask, jsonschema, flasgger
+#9 43.88 Successfully installed Jinja2-3.1.4 MarkupSafe-2.1.5 PyYAML-6.0.1 Werkzeug-3.0.3 attrs-23.2.0 blinker-1.8.2 click-8.1.7 flasgger-0.9.7.1 flask-3.0.3 itsdangerous-2.2.0 jsonschema-4.23.0 jsonschema-specifications-2023.12.1 mistune-3.0.2 modbus_tk-1.1.3 packaging-24.1 pyserial-3.5 referencing-0.35.1 rpds-py-0.19.1 six-1.16.0 watchdog-4.0.1
+#9 DONE 46.7s
+
+#10 [6/7] RUN rm /opt/requirements.txt
+#10 DONE 2.1s
+
+#11 [7/7] ADD . /opt/
+#11 DONE 0.6s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 2.3s done
+#12 writing image sha256:8a911f794b5ae9d8cacc46f38c6b65208117996287ca7b128686213ed27b2554
+#12 writing image sha256:8a911f794b5ae9d8cacc46f38c6b65208117996287ca7b128686213ed27b2554 0.0s done
+#12 naming to docker.io/library/image_name_v1_1 0.0s done
+#12 DONE 2.4s
+Duration: 1:38.99

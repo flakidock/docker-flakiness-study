@@ -1,0 +1,166 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 554B done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:edge
+#3 DONE 1.2s
+
+#4 [1/6] FROM docker.io/library/alpine:edge@sha256:166710df254975d4a6c4c407c315951c22753dcaa829e020a3fd5d18fff70dd2
+#4 resolve docker.io/library/alpine:edge@sha256:166710df254975d4a6c4c407c315951c22753dcaa829e020a3fd5d18fff70dd2 0.1s done
+#4 sha256:5f3877672d1e408d63126ebcd62fa84183a627955762876ac64315722fb7fa87 528B / 528B done
+#4 sha256:55617791c9de4f227b2b701123ab5d1a3ae1adc9fdbc817f1df15e258d7692ee 1.47kB / 1.47kB done
+#4 sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 0B / 3.62MB 0.1s
+#4 sha256:166710df254975d4a6c4c407c315951c22753dcaa829e020a3fd5d18fff70dd2 1.85kB / 1.85kB done
+#4 sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 2.10MB / 3.62MB 0.2s
+#4 sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 3.62MB / 3.62MB 0.3s
+#4 extracting sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259
+#4 sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 3.62MB / 3.62MB 0.3s done
+#4 extracting sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 0.2s done
+#4 DONE 1.0s
+
+#5 [2/6] RUN apk --update add --no-cache python3 py3-requests py3-pip openssl ca-certificates
+#5 0.458 fetch https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz
+#5 0.704 fetch https://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz
+#5 1.202 (1/39) Upgrading libcrypto3 (3.3.0-r2 -> 3.3.1-r3)
+#5 1.427 (2/39) Upgrading libssl3 (3.3.0-r2 -> 3.3.1-r3)
+#5 1.441 (3/39) Installing ca-certificates (20240705-r0)
+#5 1.862 (4/39) Installing openssl (3.3.1-r3)
+#5 1.874 (5/39) Installing libbz2 (1.0.8-r6)
+#5 1.878 (6/39) Installing libexpat (2.6.2-r0)
+#5 1.980 (7/39) Installing libffi (3.4.6-r0)
+#5 2.028 (8/39) Installing gdbm (1.24-r0)
+#5 2.037 (9/39) Installing xz-libs (5.6.2-r0)
+#5 2.044 (10/39) Installing libgcc (13.2.1_git20240309-r0)
+#5 2.049 (11/39) Installing libstdc++ (13.2.1_git20240309-r0)
+#5 2.077 (12/39) Installing mpdecimal (4.0.0-r0)
+#5 2.083 (13/39) Installing ncurses-terminfo-base (6.5_p20240601-r0)
+#5 2.104 (14/39) Installing libncursesw (6.5_p20240601-r0)
+#5 2.112 (15/39) Installing libpanelw (6.5_p20240601-r0)
+#5 2.116 (16/39) Installing readline (8.2.10-r0)
+#5 2.123 (17/39) Installing sqlite-libs (3.46.0-r0)
+#5 2.151 (18/39) Installing python3 (3.12.3-r1)
+#5 2.481 (19/39) Installing python3-pycache-pyc0 (3.12.3-r1)
+#5 2.751 (20/39) Installing pyc (3.12.3-r1)
+#5 2.754 (21/39) Installing py3-setuptools-pyc (70.3.0-r0)
+#5 2.880 (22/39) Installing py3-pip-pyc (24.2-r0)
+#5 3.088 (23/39) Installing py3-parsing (3.1.2-r1)
+#5 3.097 (24/39) Installing py3-parsing-pyc (3.1.2-r1)
+#5 3.115 (25/39) Installing py3-packaging-pyc (24.1-r0)
+#5 3.122 (26/39) Installing python3-pyc (3.12.3-r1)
+#5 3.125 (27/39) Installing py3-packaging (24.1-r0)
+#5 3.147 (28/39) Installing py3-setuptools (70.3.0-r0)
+#5 3.261 (29/39) Installing py3-pip (24.2-r0)
+#5 3.434 (30/39) Installing py3-certifi (2024.2.2-r1)
+#5 3.438 (31/39) Installing py3-certifi-pyc (2024.2.2-r1)
+#5 3.441 (32/39) Installing py3-charset-normalizer (3.3.2-r1)
+#5 3.467 (33/39) Installing py3-charset-normalizer-pyc (3.3.2-r1)
+#5 3.484 (34/39) Installing py3-idna (3.7-r0)
+#5 3.501 (35/39) Installing py3-idna-pyc (3.7-r0)
+#5 3.518 (36/39) Installing py3-urllib3 (1.26.18-r1)
+#5 3.531 (37/39) Installing py3-urllib3-pyc (1.26.18-r1)
+#5 3.562 (38/39) Installing py3-requests (2.32.3-r0)
+#5 3.570 (39/39) Installing py3-requests-pyc (2.32.3-r0)
+#5 3.581 Executing busybox-1.36.1-r29.trigger
+#5 3.586 Executing ca-certificates-20240705-r0.trigger
+#5 3.633 OK: 76 MiB in 51 packages
+#5 DONE 6.4s
+
+#6 [3/6] RUN apk --update add --virtual build-dependencies python3-dev build-base wget git   && git clone https://github.com/maldevel/EmailHarvester.git
+#6 0.685 fetch https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz
+#6 0.784 fetch https://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz
+#6 1.175 (1/33) Installing pkgconf (2.2.0-r0)
+#6 1.181 (2/33) Installing python3-dev (3.12.3-r1)
+#6 1.970 (3/33) Installing jansson (2.14-r4)
+#6 1.974 (4/33) Installing zstd-libs (1.5.6-r0)
+#6 2.006 (5/33) Installing binutils (2.42-r0)
+#6 2.109 (6/33) Installing libmagic (5.45-r1)
+#6 2.143 (7/33) Installing file (5.45-r1)
+#6 2.147 (8/33) Installing libgomp (13.2.1_git20240309-r0)
+#6 2.155 (9/33) Installing libatomic (13.2.1_git20240309-r0)
+#6 2.158 (10/33) Installing gmp (6.3.0-r1)
+#6 2.167 (11/33) Installing isl26 (0.26-r1)
+#6 2.192 (12/33) Installing mpfr4 (4.2.1-r0)
+#6 2.203 (13/33) Installing mpc1 (1.3.1-r1)
+#6 2.208 (14/33) Installing gcc (13.2.1_git20240309-r0)
+#6 3.435 (15/33) Installing libstdc++-dev (13.2.1_git20240309-r0)
+#6 3.723 (16/33) Installing musl-dev (1.2.5-r1)
+#6 3.874 (17/33) Installing g++ (13.2.1_git20240309-r0)
+#6 4.218 (18/33) Installing make (4.4.1-r2)
+#6 4.225 (19/33) Installing fortify-headers (1.1-r5)
+#6 4.250 (20/33) Installing patch (2.7.6-r10)
+#6 4.256 (21/33) Installing build-base (0.5-r3)
+#6 4.259 (22/33) Installing libunistring (1.2-r0)
+#6 4.278 (23/33) Installing libidn2 (2.3.7-r0)
+#6 4.285 (24/33) Installing pcre2 (10.43-r0)
+#6 4.295 (25/33) Installing wget (1.24.5-r0)
+#6 4.304 (26/33) Installing brotli-libs (1.1.0-r2)
+#6 4.319 (27/33) Installing c-ares (1.32.3-r0)
+#6 4.324 (28/33) Installing nghttp2-libs (1.62.1-r0)
+#6 4.330 (29/33) Installing libpsl (0.21.5-r2)
+#6 4.335 (30/33) Installing libcurl (8.9.1-r0)
+#6 4.345 (31/33) Installing git (2.46.0-r0)
+#6 4.440 (32/33) Installing git-init-template (2.46.0-r0)
+#6 4.445 (33/33) Installing build-dependencies (20240801.044429)
+#6 4.446 Executing busybox-1.36.1-r29.trigger
+#6 4.456 OK: 394 MiB in 84 packages
+#6 4.538 Cloning into 'EmailHarvester'...
+#6 DONE 11.3s
+
+#7 [4/6] WORKDIR EmailHarvester
+#7 DONE 0.5s
+
+#8 [5/6] RUN python3 -m venv venv
+#8 DONE 6.6s
+
+#9 [6/6] RUN . venv/bin/activate && pip install -r requirements.txt
+#9 1.280 Collecting termcolor (from -r requirements.txt (line 1))
+#9 1.323   Downloading termcolor-2.4.0-py3-none-any.whl.metadata (6.1 kB)
+#9 1.426 Collecting colorama (from -r requirements.txt (line 2))
+#9 1.434   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+#9 1.591 Collecting requests (from -r requirements.txt (line 3))
+#9 1.599   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+#9 1.784 Collecting validators (from -r requirements.txt (line 4))
+#9 1.799   Downloading validators-0.33.0-py3-none-any.whl.metadata (3.8 kB)
+#9 2.031 Collecting charset-normalizer<4,>=2 (from requests->-r requirements.txt (line 3))
+#9 2.040   Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (33 kB)
+#9 2.167 Collecting idna<4,>=2.5 (from requests->-r requirements.txt (line 3))
+#9 2.176   Downloading idna-3.7-py3-none-any.whl.metadata (9.9 kB)
+#9 2.328 Collecting urllib3<3,>=1.21.1 (from requests->-r requirements.txt (line 3))
+#9 2.338   Downloading urllib3-2.2.2-py3-none-any.whl.metadata (6.4 kB)
+#9 2.438 Collecting certifi>=2017.4.17 (from requests->-r requirements.txt (line 3))
+#9 2.446   Downloading certifi-2024.7.4-py3-none-any.whl.metadata (2.2 kB)
+#9 2.525 Downloading termcolor-2.4.0-py3-none-any.whl (7.7 kB)
+#9 2.571 Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+#9 2.624 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#9 2.666    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 1.5 MB/s eta 0:00:00
+#9 2.675 Downloading validators-0.33.0-py3-none-any.whl (43 kB)
+#9 2.717    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.3/43.3 kB 864.1 kB/s eta 0:00:00
+#9 2.725 Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#9 2.775    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.0/163.0 kB 3.3 MB/s eta 0:00:00
+#9 2.786 Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl (142 kB)
+#9 2.825    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.2/142.2 kB 3.6 MB/s eta 0:00:00
+#9 2.834 Downloading idna-3.7-py3-none-any.whl (66 kB)
+#9 2.884    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.8/66.8 kB 1.2 MB/s eta 0:00:00
+#9 2.894 Downloading urllib3-2.2.2-py3-none-any.whl (121 kB)
+#9 2.935    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.4/121.4 kB 2.9 MB/s eta 0:00:00
+#9 2.992 Installing collected packages: validators, urllib3, termcolor, idna, colorama, charset-normalizer, certifi, requests
+#9 3.927 Successfully installed certifi-2024.7.4 charset-normalizer-3.3.2 colorama-0.4.6 idna-3.7 requests-2.32.3 termcolor-2.4.0 urllib3-2.2.2 validators-0.33.0
+#9 4.121 
+#9 4.121 [notice] A new release of pip is available: 24.0 -> 24.2
+#9 4.121 [notice] To update, run: pip install --upgrade pip
+#9 DONE 4.6s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 3.8s done
+#10 writing image sha256:af67a0a5502e52d3aae501090509a128a01c76f3fae1c4d228a916811604f966 0.0s done
+#10 naming to docker.io/library/image_name_v1_1 0.0s done
+#10 DONE 3.8s
+Duration: 0:36.44

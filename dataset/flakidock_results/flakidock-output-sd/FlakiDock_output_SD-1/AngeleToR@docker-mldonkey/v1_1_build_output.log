@@ -1,0 +1,92 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 571B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/debian:bullseye
+#3 DONE 1.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/library/debian:bullseye@sha256:7aef2e7d061743fdb57973dac3ddbceb0b0912746ca7e0ee7535016c38286561
+#5 resolve docker.io/library/debian:bullseye@sha256:7aef2e7d061743fdb57973dac3ddbceb0b0912746ca7e0ee7535016c38286561 0.1s done
+#5 sha256:7aef2e7d061743fdb57973dac3ddbceb0b0912746ca7e0ee7535016c38286561 1.85kB / 1.85kB done
+#5 sha256:907e428c7d1dd4e3a2458d22da8193e69878d3a23761d12ef9cd1a1238214798 529B / 529B done
+#5 sha256:91a3af22c9b3512c42a130ebbe374c10082d45a3ce562164be41dcce0642cac8 1.46kB / 1.46kB done
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 0B / 55.08MB 0.2s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 4.04kB done
+#4 DONE 0.3s
+
+#5 [1/4] FROM docker.io/library/debian:bullseye@sha256:7aef2e7d061743fdb57973dac3ddbceb0b0912746ca7e0ee7535016c38286561
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 4.19MB / 55.08MB 0.3s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 10.49MB / 55.08MB 0.7s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 13.63MB / 55.08MB 0.8s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 18.87MB / 55.08MB 1.0s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 25.17MB / 55.08MB 1.3s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 30.41MB / 55.08MB 1.6s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 35.65MB / 55.08MB 2.0s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 39.85MB / 55.08MB 2.2s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 45.09MB / 55.08MB 2.4s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 52.43MB / 55.08MB 2.6s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 55.08MB / 55.08MB 3.7s done
+#5 extracting sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 0.1s
+#5 extracting sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 3.0s done
+#5 DONE 7.4s
+
+#6 [2/4] RUN     apt-get update &&     apt-get install --no-install-recommends -y mldonkey-server &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/log/mldonkey &&     rm /var/lib/mldonkey/*
+#6 1.865 Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#6 1.893 Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [48.4 kB]
+#6 1.904 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
+#6 2.025 Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8067 kB]
+#6 2.137 Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [280 kB]
+#6 2.244 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]
+#6 3.381 Fetched 8574 kB in 2s (5522 kB/s)
+#6 3.381 Reading package lists...
+#6 4.018 Reading package lists...
+#6 4.661 Building dependency tree...
+#6 4.779 Reading state information...
+#6 4.793 Package mldonkey-server is not available, but is referred to by another package.
+#6 4.793 This may mean that the package is missing, has been obsoleted, or
+#6 4.793 is only available from another source
+#6 4.793 
+#6 4.858 E: Package 'mldonkey-server' has no installation candidate
+#6 ERROR: process "/bin/sh -c apt-get update &&     apt-get install --no-install-recommends -y mldonkey-server &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/log/mldonkey &&     rm /var/lib/mldonkey/*" did not complete successfully: exit code: 100
+------
+ > [2/4] RUN     apt-get update &&     apt-get install --no-install-recommends -y mldonkey-server &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/log/mldonkey &&     rm /var/lib/mldonkey/*:
+2.244 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]
+
+
+4.661 Building dependency tree...
+4.779 Reading state information...
+4.793 Package mldonkey-server is not available, but is referred to by another package.
+4.793 This may mean that the package is missing, has been obsoleted, or
+4.793 is only available from another source
+4.793 
+4.858 E: Package 'mldonkey-server' has no installation candidate
+------
+v1_Dockerfile:4
+--------------------
+   3 |     
+   4 | >>> RUN \
+   5 | >>>     apt-get update && \
+   6 | >>>     apt-get install --no-install-recommends -y mldonkey-server && \
+   7 | >>>     rm -rf /var/lib/apt/lists/* && \
+   8 | >>>     rm -rf /var/log/mldonkey && \
+   9 | >>>     rm /var/lib/mldonkey/*
+  10 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update &&     apt-get install --no-install-recommends -y mldonkey-server &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/log/mldonkey &&     rm /var/lib/mldonkey/*" did not complete successfully: exit code: 100
+Duration: 0:18.94

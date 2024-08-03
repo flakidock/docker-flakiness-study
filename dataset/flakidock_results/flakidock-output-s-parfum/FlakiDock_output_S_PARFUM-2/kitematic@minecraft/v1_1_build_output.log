@@ -1,0 +1,119 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.83kB done
+#1 DONE 0.0s
+
+#2 [auth] library/debian:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/debian:stretch
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/3] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 0.0s done
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 0B / 45.43MB 0.1s
+#5 sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 1.21kB / 1.21kB done
+#5 sha256:16ee3e11da473f6565ef94a715f1a38b3079e0664913be78869c336a71cb6085 529B / 529B done
+#5 sha256:662c05203bab4c59568d24689fa5c3955439360a35c483178598d226b9a5ad10 1.46kB / 1.46kB done
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 14.68MB / 45.43MB 0.3s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 34.60MB / 45.43MB 0.5s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 0.7s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 0.7s done
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 0.1s
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 3.0s done
+#5 DONE 3.9s
+
+#6 [2/3] RUN apt-get update;     apt-get install --no-install-recommends -y default-jre ca-certificates-java curl; rm -rf /var/lib/apt/lists/*;     curl -f -sL "https://github.com/marblenix/minecraft_downloader/releases/download/latest/minecraft_downloader_linux" -o minecraft_downloader;     chmod +x ./minecraft_downloader;     ./minecraft_downloader -o minecraft_server_latest.jar;
+#6 0.246 Ign:1 http://deb.debian.org/debian stretch InRelease
+#6 0.246 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#6 0.256 Ign:3 http://security.debian.org/debian-security stretch/updates Release
+#6 0.257 Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+#6 0.267 Ign:5 http://deb.debian.org/debian stretch Release
+#6 0.267 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.278 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.278 Ign:8 http://deb.debian.org/debian stretch-updates Release
+#6 0.288 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 0.290 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.299 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.302 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.310 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.313 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.320 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.331 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 0.331 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.342 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.343 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.355 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.355 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.365 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.365 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.375 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 0.375 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.387 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.387 Err:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.387   404  Not Found [IP: 151.101.194.132 80]
+#6 0.397 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.399 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.408 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.417 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 0.432 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.443 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.454 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.464 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 0.475 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.489 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.500 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.511 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 0.531 Err:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.531   404  Not Found
+#6 0.543 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.552 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.552   404  Not Found
+#6 0.555 Reading package lists...
+#6 0.563 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 0.563 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 0.563 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 0.563 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+#6 0.563 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 0.563 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 0.563 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 0.568 Reading package lists...
+#6 0.578 Building dependency tree...
+#6 0.578 Reading state information...
+#6 0.578 E: Unable to locate package default-jre
+#6 0.578 E: Unable to locate package ca-certificates-java
+#6 0.578 E: Unable to locate package curl
+#6 0.580 /bin/sh: 1: curl: not found
+#6 0.580 chmod: cannot access './minecraft_downloader': No such file or directory
+#6 0.580 /bin/sh: 1: ./minecraft_downloader: not found
+#6 ERROR: process "/bin/sh -c apt-get update;     apt-get install --no-install-recommends -y default-jre ca-certificates-java curl; rm -rf /var/lib/apt/lists/*;     curl -f -sL \"${MINECRAFT_UTILITY}\" -o minecraft_downloader;     chmod +x ./minecraft_downloader;     ./minecraft_downloader -o minecraft_server_${MINECRAFT_VERSION}.jar;" did not complete successfully: exit code: 127
+------
+ > [2/3] RUN apt-get update;     apt-get install --no-install-recommends -y default-jre ca-certificates-java curl; rm -rf /var/lib/apt/lists/*;     curl -f -sL "https://github.com/marblenix/minecraft_downloader/releases/download/latest/minecraft_downloader_linux" -o minecraft_downloader;     chmod +x ./minecraft_downloader;     ./minecraft_downloader -o minecraft_server_latest.jar;:
+0.464 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+
+0.578 Building dependency tree...
+0.578 Reading state information...
+0.578 E: Unable to locate package default-jre
+0.578 E: Unable to locate package ca-certificates-java
+0.578 E: Unable to locate package curl
+0.580 /bin/sh: 1: curl: not found
+0.580 chmod: cannot access './minecraft_downloader': No such file or directory
+0.580 /bin/sh: 1: ./minecraft_downloader: not found
+------
+v1_Dockerfile:21
+--------------------
+  20 |     # .jar file fetched from the official page https://minecraft.net/en-us/download/server/
+  21 | >>> RUN apt-get update; \
+  22 | >>>     apt-get install --no-install-recommends -y default-jre ca-certificates-java curl; rm -rf /var/lib/apt/lists/*; \
+  23 | >>>     curl -f -sL "${MINECRAFT_UTILITY}" -o minecraft_downloader; \
+  24 | >>>     chmod +x ./minecraft_downloader; \
+  25 | >>>     ./minecraft_downloader -o minecraft_server_${MINECRAFT_VERSION}.jar;
+  26 |     # We do the above in a single line to reduce the number of layers in our container
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update;     apt-get install --no-install-recommends -y default-jre ca-certificates-java curl; rm -rf /var/lib/apt/lists/*;     curl -f -sL \"${MINECRAFT_UTILITY}\" -o minecraft_downloader;     chmod +x ./minecraft_downloader;     ./minecraft_downloader -o minecraft_server_${MINECRAFT_VERSION}.jar;" did not complete successfully: exit code: 127
+Duration: 0:6.16

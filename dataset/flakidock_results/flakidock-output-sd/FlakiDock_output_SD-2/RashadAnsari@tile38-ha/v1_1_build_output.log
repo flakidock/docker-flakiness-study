@@ -1,0 +1,61 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 908B done
+#1 DONE 0.6s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/bitnami/minideb:stretch
+#3 ...
+
+#4 [auth] bitnami/minideb:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/bitnami/minideb:stretch
+#3 DONE 1.4s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/7] FROM docker.io/bitnami/minideb:stretch@sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f
+#6 resolve docker.io/bitnami/minideb:stretch@sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f 0.1s done
+#6 sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f 741B / 741B done
+#6 sha256:b0671f4930e13f9b839bc0c795727951b7ab1e0e5c46fcb3b639f8bdd9dd2b7f 528B / 528B done
+#6 sha256:e398a222dbd61796b392b33bf534e8372bce2b552fcd97534f5a1203c69a231f 910B / 910B done
+#6 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 1.05MB / 22.15MB 0.2s
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 1.44kB done
+#5 DONE 0.5s
+
+#6 [1/7] FROM docker.io/bitnami/minideb:stretch@sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f
+#6 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 20.97MB / 22.15MB 0.5s
+#6 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 22.15MB / 22.15MB 0.6s
+#6 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 22.15MB / 22.15MB 0.8s done
+#6 extracting sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 0.1s
+#6 extracting sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 1.4s done
+#6 DONE 3.2s
+
+#7 [2/7] RUN curl -L  https://github.com/tidwall/tile38/releases/download/1.17.6/tile38-1.17.6-linux-amd64.tar.gz -o tile38-1.17.6-linux-amd64.tar.gz &&     tar xzvf tile38-1.17.6-linux-amd64.tar.gz &&     mv tile38-1.17.6-linux-amd64 tile38 &&     rm -rf tile38-1.17.6-linux-amd64.tar.gz
+#7 0.537 /bin/sh: 1: curl: not found
+#7 ERROR: process "/bin/sh -c curl -L  https://github.com/tidwall/tile38/releases/download/${TILE38_VERSION}/tile38-${TILE38_VERSION}-linux-amd64.tar.gz -o tile38-${TILE38_VERSION}-linux-amd64.tar.gz &&     tar xzvf tile38-${TILE38_VERSION}-linux-amd64.tar.gz &&     mv tile38-${TILE38_VERSION}-linux-amd64 tile38 &&     rm -rf tile38-${TILE38_VERSION}-linux-amd64.tar.gz" did not complete successfully: exit code: 127
+------
+ > [2/7] RUN curl -L  https://github.com/tidwall/tile38/releases/download/1.17.6/tile38-1.17.6-linux-amd64.tar.gz -o tile38-1.17.6-linux-amd64.tar.gz &&     tar xzvf tile38-1.17.6-linux-amd64.tar.gz &&     mv tile38-1.17.6-linux-amd64 tile38 &&     rm -rf tile38-1.17.6-linux-amd64.tar.gz:
+0.537 /bin/sh: 1: curl: not found
+------
+v1_Dockerfile:6
+--------------------
+   5 |     
+   6 | >>> RUN curl -L  https://github.com/tidwall/tile38/releases/download/${TILE38_VERSION}/tile38-${TILE38_VERSION}-linux-amd64.tar.gz -o tile38-${TILE38_VERSION}-linux-amd64.tar.gz && \
+   7 | >>>     tar xzvf tile38-${TILE38_VERSION}-linux-amd64.tar.gz && \
+   8 | >>>     mv tile38-${TILE38_VERSION}-linux-amd64 tile38 && \
+   9 | >>>     rm -rf tile38-${TILE38_VERSION}-linux-amd64.tar.gz
+  10 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c curl -L  https://github.com/tidwall/tile38/releases/download/${TILE38_VERSION}/tile38-${TILE38_VERSION}-linux-amd64.tar.gz -o tile38-${TILE38_VERSION}-linux-amd64.tar.gz &&     tar xzvf tile38-${TILE38_VERSION}-linux-amd64.tar.gz &&     mv tile38-${TILE38_VERSION}-linux-amd64 tile38 &&     rm -rf tile38-${TILE38_VERSION}-linux-amd64.tar.gz" did not complete successfully: exit code: 127
+Duration: 0:9.62

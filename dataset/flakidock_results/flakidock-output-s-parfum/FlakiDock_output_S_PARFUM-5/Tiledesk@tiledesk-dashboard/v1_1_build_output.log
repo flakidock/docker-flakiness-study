@@ -1,0 +1,712 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.45kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:14-alpine
+#2 ...
+
+#3 [auth] library/nginx:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/nginx:1.14.1-alpine
+#4 ...
+
+#2 [internal] load metadata for docker.io/library/node:14-alpine
+#2 DONE 0.6s
+
+#4 [internal] load metadata for docker.io/library/nginx:1.14.1-alpine
+#4 DONE 1.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [stage-1 1/4] FROM docker.io/library/nginx:1.14.1-alpine@sha256:3c1380fd5f6f0e4c468a922ed6331831e60cea9db317b8ac4a8ad36335e53bbd
+#6 resolve docker.io/library/nginx:1.14.1-alpine@sha256:3c1380fd5f6f0e4c468a922ed6331831e60cea9db317b8ac4a8ad36335e53bbd 0.0s done
+#6 sha256:3c1380fd5f6f0e4c468a922ed6331831e60cea9db317b8ac4a8ad36335e53bbd 2.04kB / 2.04kB done
+#6 sha256:9a7bc4c86e7ba9b704597296305b4fb811ccd951682c6d554101559e9239eb2c 1.15kB / 1.15kB done
+#6 sha256:77bae8d0065423e2338884d3698ef5ff9de8dec05a55dc81cf48ae9e78008b3f 8.40kB / 8.40kB done
+#6 sha256:4fe2ade4980c2dda4fc95858ebb981489baec8c1e4bd282ab1c3560be8ff9bde 0B / 2.21MB 0.3s
+#6 sha256:c691664ebb08d34035cbe528036cce874157bfa3c9c7a54aab2d7cbd34c706b9 0B / 5.52MB 0.3s
+#6 sha256:4fe2ade4980c2dda4fc95858ebb981489baec8c1e4bd282ab1c3560be8ff9bde 1.05MB / 2.21MB 0.5s
+#6 extracting sha256:4fe2ade4980c2dda4fc95858ebb981489baec8c1e4bd282ab1c3560be8ff9bde
+#6 sha256:4fe2ade4980c2dda4fc95858ebb981489baec8c1e4bd282ab1c3560be8ff9bde 2.21MB / 2.21MB 0.5s done
+#6 sha256:c691664ebb08d34035cbe528036cce874157bfa3c9c7a54aab2d7cbd34c706b9 5.52MB / 5.52MB 0.6s done
+#6 extracting sha256:4fe2ade4980c2dda4fc95858ebb981489baec8c1e4bd282ab1c3560be8ff9bde 0.1s done
+#6 sha256:a6f6a50701b62fea35c5f25874be74c1dea5e2e2e10f3f1d13e0148bca764fa7 494B / 494B 0.6s done
+#6 sha256:5980ba3b5a393d18c9c37551a35ae230349f88953ada6c5a6e52e602a5102678 0B / 625B 0.7s
+#6 sha256:5980ba3b5a393d18c9c37551a35ae230349f88953ada6c5a6e52e602a5102678 625B / 625B 0.8s
+#6 extracting sha256:c691664ebb08d34035cbe528036cce874157bfa3c9c7a54aab2d7cbd34c706b9
+#6 sha256:5980ba3b5a393d18c9c37551a35ae230349f88953ada6c5a6e52e602a5102678 625B / 625B 0.8s done
+#6 ...
+
+#7 [internal] load build context
+#7 transferring context: 85.71MB 0.9s done
+#7 DONE 1.0s
+
+#6 [stage-1 1/4] FROM docker.io/library/nginx:1.14.1-alpine@sha256:3c1380fd5f6f0e4c468a922ed6331831e60cea9db317b8ac4a8ad36335e53bbd
+#6 extracting sha256:c691664ebb08d34035cbe528036cce874157bfa3c9c7a54aab2d7cbd34c706b9 0.4s done
+#6 extracting sha256:a6f6a50701b62fea35c5f25874be74c1dea5e2e2e10f3f1d13e0148bca764fa7 done
+#6 extracting sha256:5980ba3b5a393d18c9c37551a35ae230349f88953ada6c5a6e52e602a5102678
+#6 extracting sha256:5980ba3b5a393d18c9c37551a35ae230349f88953ada6c5a6e52e602a5102678 done
+#6 DONE 1.5s
+
+#8 [builder 1/6] FROM docker.io/library/node:14-alpine@sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33
+#8 resolve docker.io/library/node:14-alpine@sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33 0.0s done
+#8 sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33 1.43kB / 1.43kB done
+#8 sha256:4e84c956cd276af9ed14a8b2939a734364c2b0042485e90e1b97175e73dfd548 1.16kB / 1.16kB done
+#8 sha256:0dac3dc27b1ad570e6c3a7f7cd29e88e7130ff0cad31b2ec5a0f222fbe971bdb 6.44kB / 6.44kB done
+#8 sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09 3.37MB / 3.37MB 0.2s done
+#8 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 37.17MB / 37.17MB 0.8s done
+#8 sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6 2.37MB / 2.37MB 0.2s done
+#8 extracting sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09 0.2s done
+#8 sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf 448B / 448B 0.3s done
+#8 extracting sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 0.5s
+#8 ...
+
+#9 [stage-1 2/4] COPY nginx.conf /etc/nginx/nginx.conf
+#9 DONE 0.7s
+
+#8 [builder 1/6] FROM docker.io/library/node:14-alpine@sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33
+#8 ...
+
+#10 [stage-1 3/4] RUN rm -rf /usr/share/nginx/html/*
+#10 DONE 0.3s
+
+#8 [builder 1/6] FROM docker.io/library/node:14-alpine@sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33
+#8 extracting sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 2.1s done
+#8 extracting sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6
+#8 extracting sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6 0.1s done
+#8 extracting sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf
+#8 extracting sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf done
+#8 DONE 3.3s
+
+#11 [builder 2/6] COPY package.json package-lock.json ./
+#11 DONE 0.2s
+
+#12 [builder 3/6] RUN npm ci && mkdir /ng-app && mv ./node_modules ./ng-app && npm cache clean --force;
+#12 21.55 
+#12 21.55 > nice-napi@1.0.2 install /node_modules/nice-napi
+#12 21.55 > node-gyp-build
+#12 21.55 
+#12 21.78 
+#12 21.78 > esbuild@0.15.5 postinstall /node_modules/@angular-devkit/build-angular/node_modules/esbuild
+#12 21.78 > node install.js
+#12 21.78 
+#12 22.40 
+#12 22.40 > core-js@3.6.5 postinstall /node_modules/core-js
+#12 22.40 > node -e "try{require('./postinstall')}catch(e){}"
+#12 22.40 
+#12 22.46 [96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+#12 22.46 
+#12 22.46 [96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+#12 22.46 [96m>[94m https://opencollective.com/core-js [0m
+#12 22.46 [96m>[94m https://www.patreon.com/zloirock [0m
+#12 22.46 
+#12 22.46 [96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+#12 22.46 
+#12 22.49 
+#12 22.49 > protobufjs@6.11.3 postinstall /node_modules/@grpc/proto-loader/node_modules/protobufjs
+#12 22.49 > node scripts/postinstall
+#12 22.49 
+#12 22.57 
+#12 22.57 > protobufjs@7.1.2 postinstall /node_modules/protobufjs
+#12 22.57 > node scripts/postinstall
+#12 22.57 
+#12 22.89 added 1430 packages in 22.207s
+#12 23.13 npm WARN using --force I sure hope you know what you are doing.
+#12 DONE 34.4s
+
+#13 [builder 4/6] WORKDIR /ng-app
+#13 DONE 0.0s
+
+#14 [builder 5/6] COPY . .
+#14 DONE 0.5s
+
+#15 [builder 6/6] RUN npm run ng build -- --configuration production --output-path=dist --base-href ./
+#15 0.465 
+#15 0.465 > @tiledesk/tiledesk-dashboard@2.4.5-rc1 ng /ng-app
+#15 0.465 > ng "build" "--configuration" "production" "--output-path=dist" "--base-href" "./"
+#15 0.465 
+#15 3.416 - Generating browser application bundles (phase: setup)...
+#15 29.70 DEPRECATION DEPRECATION DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.21 
+#15 33.21 Recommendation: math.div($grid-gutter-width, 2) or calc($grid-gutter-width / 2)
+#15 33.21 
+#15 33.21 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.21 
+#15 33.21     ╷
+#15 33.21 519 │ $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+#15 33.21     │                                           ^^^^^^^^^^^^^^^^^^^^^^
+#15 33.21     ╵
+#15 33.21     src/assets/sass/md/_variables.scss 519:43                                           @import
+#15 33.21     src/app/create-project-wizard/configure-widget/configure-widget.component.scss 1:9  root stylesheet
+#15 33.21 
+#15 33.21 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.21 
+#15 33.21 Recommendation: math.div($navbar-height - $line-height-computed, 2) or calc(($navbar-height - $line-height-computed) / 2)
+#15 33.21 
+#15 33.21 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.21 
+#15 33.21     ╷
+#15 33.21 520 │ $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+#15 33.21     │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#15 33.21     ╵
+#15 33.21     src/assets/sass/md/_variables.scss 520:37                                           @import
+#15 33.21     src/app/create-project-wizard/configure-widget/configure-widget.component.scss 1:9  root stylesheet
+#15 33.21 
+#15 33.21 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.21 
+#15 33.21 Recommendation: math.div(75, 100)
+#15 33.21 
+#15 33.21 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.21 
+#15 33.21      ╷
+#15 33.21 1052 │ $mdb-label-static-size-ratio: 75 / 100 !default;
+#15 33.21      │                               ^^^^^^^^
+#15 33.21      ╵
+#15 33.21     src/assets/sass/md/_variables.scss 1052:31                                          @import
+#15 33.21     src/app/create-project-wizard/configure-widget/configure-widget.component.scss 1:9  root stylesheet
+#15 33.21 
+#15 33.21 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.21 
+#15 33.21 Recommendation: math.div(75, 100)
+#15 33.21 
+#15 33.21 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.21 
+#15 33.21      ╷
+#15 33.21 1053 │ $mdb-help-block-size-ratio: 75 / 100 !default;
+#15 33.21      │                             ^^^^^^^^
+#15 33.21      ╵
+#15 33.21     src/assets/sass/md/_variables.scss 1053:29                                          @import
+#15 33.21     src/app/create-project-wizard/configure-widget/configure-widget.component.scss 1:9  root stylesheet
+#15 33.21 
+#15 33.62 WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div($grid-gutter-width, 2) or calc($grid-gutter-width / 2)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62     ╷
+#15 33.62 519 │ $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+#15 33.62     │                                           ^^^^^^^^^^^^^^^^^^^^^^
+#15 33.62     ╵
+#15 33.62     src/assets/sass/md/_variables.scss 519:43                                       @import
+#15 33.62     src/app/create-project-wizard/create-project/create-project.component.scss 1:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div($navbar-height - $line-height-computed, 2) or calc(($navbar-height - $line-height-computed) / 2)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62     ╷
+#15 33.62 520 │ $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+#15 33.62     │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#15 33.62     ╵
+#15 33.62     src/assets/sass/md/_variables.scss 520:37                                       @import
+#15 33.62     src/app/create-project-wizard/create-project/create-project.component.scss 1:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div(75, 100)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62      ╷
+#15 33.62 1052 │ $mdb-label-static-size-ratio: 75 / 100 !default;
+#15 33.62      │                               ^^^^^^^^
+#15 33.62      ╵
+#15 33.62     src/assets/sass/md/_variables.scss 1052:31                                      @import
+#15 33.62     src/app/create-project-wizard/create-project/create-project.component.scss 1:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div(75, 100)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62      ╷
+#15 33.62 1053 │ $mdb-help-block-size-ratio: 75 / 100 !default;
+#15 33.62      │                             ^^^^^^^^
+#15 33.62      ╵
+#15 33.62     src/assets/sass/md/_variables.scss 1053:29                                      @import
+#15 33.62     src/app/create-project-wizard/create-project/create-project.component.scss 1:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div($grid-gutter-width, 2) or calc($grid-gutter-width / 2)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62     ╷
+#15 33.62 519 │ $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+#15 33.62     │                                           ^^^^^^^^^^^^^^^^^^^^^^
+#15 33.62     ╵
+#15 33.62     src/assets/sass/md/_variables.scss 519:43                                                       @import
+#15 33.62     src/app/create-project-wizard/get-start-chatbot-fork/get-start-chatbot-fork.component.scss 1:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div($navbar-height - $line-height-computed, 2) or calc(($navbar-height - $line-height-computed) / 2)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62     ╷
+#15 33.62 520 │ $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+#15 33.62     │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#15 33.62     ╵
+#15 33.62     src/assets/sass/md/_variables.scss 520:37                                                       @import
+#15 33.62     src/app/create-project-wizard/get-start-chatbot-fork/get-start-chatbot-fork.component.scss 1:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div(75, 100)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62      ╷
+#15 33.62 1052 │ $mdb-label-static-size-ratio: 75 / 100 !default;
+#15 33.62      │                               ^^^^^^^^
+#15 33.62      ╵
+#15 33.62     src/assets/sass/md/_variables.scss 1052:31                                                      @import
+#15 33.62     src/app/create-project-wizard/get-start-chatbot-fork/get-start-chatbot-fork.component.scss 1:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div(75, 100)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62      ╷
+#15 33.62 1053 │ $mdb-help-block-size-ratio: 75 / 100 !default;
+#15 33.62      │                             ^^^^^^^^
+#15 33.62      ╵
+#15 33.62     src/assets/sass/md/_variables.scss 1053:29                                                      @import
+#15 33.62     src/app/create-project-wizard/get-start-chatbot-fork/get-start-chatbot-fork.component.scss 1:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div($grid-gutter-width, 2) or calc($grid-gutter-width / 2)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62     ╷
+#15 33.62 519 │ $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+#15 33.62     │                                           ^^^^^^^^^^^^^^^^^^^^^^
+#15 33.62     ╵
+#15 33.62     src/assets/sass/md/_variables.scss 519:43     @import
+#15 33.62     src/assets/sass/material-dashboard.scss 19:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div($navbar-height - $line-height-computed, 2) or calc(($navbar-height - $line-height-computed) / 2)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62     ╷
+#15 33.62 520 │ $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+#15 33.62     │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#15 33.62     ╵
+#15 33.62     src/assets/sass/md/_variables.scss 520:37     @import
+#15 33.62     src/assets/sass/material-dashboard.scss 19:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div(75, 100)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62      ╷
+#15 33.62 1052 │ $mdb-label-static-size-ratio: 75 / 100 !default;
+#15 33.62      │                               ^^^^^^^^
+#15 33.62      ╵
+#15 33.62     src/assets/sass/md/_variables.scss 1052:31    @import
+#15 33.62     src/assets/sass/material-dashboard.scss 19:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div(75, 100)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62      ╷
+#15 33.62 1053 │ $mdb-help-block-size-ratio: 75 / 100 !default;
+#15 33.62      │                             ^^^^^^^^
+#15 33.62      ╵
+#15 33.62     src/assets/sass/md/_variables.scss 1053:29    @import
+#15 33.62     src/assets/sass/material-dashboard.scss 19:9  root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div(15, 16) or calc(15 / 16)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62   ╷
+#15 33.62 2 │ $ct-scales: ((1), (15/16), (8/9), (5/6), (4/5), (3/4), (2/3), (5/8), (1/1.618), (3/5), (9/16), (8/15), (1/2), (2/5), (3/8), (1/3), (1/4)) !default;
+#15 33.62   │                    ^^^^^
+#15 33.62   ╵
+#15 33.62     src/assets/sass/md/mixins/_chartist.scss 2:20  @import
+#15 33.62     src/assets/sass/md/_mixins.scss 5:9            @import
+#15 33.62     src/assets/sass/material-dashboard.scss 20:9   root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div(8, 9) or calc(8 / 9)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62   ╷
+#15 33.62 2 │ $ct-scales: ((1), (15/16), (8/9), (5/6), (4/5), (3/4), (2/3), (5/8), (1/1.618), (3/5), (9/16), (8/15), (1/2), (2/5), (3/8), (1/3), (1/4)) !default;
+#15 33.62   │                             ^^^
+#15 33.62   ╵
+#15 33.62     src/assets/sass/md/mixins/_chartist.scss 2:29  @import
+#15 33.62     src/assets/sass/md/_mixins.scss 5:9            @import
+#15 33.62     src/assets/sass/material-dashboard.scss 20:9   root stylesheet
+#15 33.62 
+#15 33.62 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.62 
+#15 33.62 Recommendation: math.div(5, 6) or calc(5 / 6)
+#15 33.62 
+#15 33.62 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.62 
+#15 33.62   ╷
+#15 33.62 2 │ $ct-scales: ((1), (15/16), (8/9), (5/6), (4/5), (3/4), (2/3), (5/8), (1/1.618), (3/5), (9/16), (8/15), (1/2), (2/5), (3/8), (1/3), (1/4)) !default;
+#15 33.62   │                                    ^^^
+#15 33.62   ╵
+#15 33.62     src/assets/sass/md/mixins/_chartist.scss 2:36  @import
+#15 33.62     src/assets/sass/md/_mixins.scss 5:9            @import
+#15 33.62     src/assets/sass/material-dashboard.scss 20:9   root stylesheet
+#15 33.62 
+#15 33.62 WARNING: 20 repetitive deprecation warnings omitted.
+#15 33.62 
+#15 33.66 WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.66 
+#15 33.66 Recommendation: math.div($grid-gutter-width, 2) or calc($grid-gutter-width / 2)
+#15 33.66 
+#15 33.66 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.66 
+#15 33.66     ╷
+#15 33.66 519 │ $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+#15 33.66     │                                           ^^^^^^^^^^^^^^^^^^^^^^
+#15 33.66     ╵
+#15 33.66     src/assets/sass/md/_variables.scss 519:43                                       @import
+#15 33.66     src/app/create-project-wizard/install-widget/install-widget.component.scss 1:9  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.66 
+#15 33.66 Recommendation: math.div($navbar-height - $line-height-computed, 2) or calc(($navbar-height - $line-height-computed) / 2)
+#15 33.66 
+#15 33.66 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.66 
+#15 33.66     ╷
+#15 33.66 520 │ $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+#15 33.66     │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#15 33.66     ╵
+#15 33.66     src/assets/sass/md/_variables.scss 520:37                                       @import
+#15 33.66     src/app/create-project-wizard/install-widget/install-widget.component.scss 1:9  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.66 
+#15 33.66 Recommendation: math.div(75, 100)
+#15 33.66 
+#15 33.66 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.66 
+#15 33.66      ╷
+#15 33.66 1052 │ $mdb-label-static-size-ratio: 75 / 100 !default;
+#15 33.66      │                               ^^^^^^^^
+#15 33.66      ╵
+#15 33.66     src/assets/sass/md/_variables.scss 1052:31                                      @import
+#15 33.66     src/app/create-project-wizard/install-widget/install-widget.component.scss 1:9  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.66 
+#15 33.66 Recommendation: math.div(75, 100)
+#15 33.66 
+#15 33.66 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.66 
+#15 33.66      ╷
+#15 33.66 1053 │ $mdb-help-block-size-ratio: 75 / 100 !default;
+#15 33.66      │                             ^^^^^^^^
+#15 33.66      ╵
+#15 33.66     src/assets/sass/md/_variables.scss 1053:29                                      @import
+#15 33.66     src/app/create-project-wizard/install-widget/install-widget.component.scss 1:9  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.66 
+#15 33.66 Recommendation: math.div($grid-gutter-width, 2) or calc($grid-gutter-width / 2)
+#15 33.66 
+#15 33.66 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.66 
+#15 33.66     ╷
+#15 33.66 519 │ $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+#15 33.66     │                                           ^^^^^^^^^^^^^^^^^^^^^^
+#15 33.66     ╵
+#15 33.66     src/assets/sass/md/_variables.scss 519:43                                           @import
+#15 33.66     src/app/create-project-wizard/install-template/install-template.component.scss 1:9  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.66 
+#15 33.66 Recommendation: math.div($navbar-height - $line-height-computed, 2) or calc(($navbar-height - $line-height-computed) / 2)
+#15 33.66 
+#15 33.66 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.66 
+#15 33.66     ╷
+#15 33.66 520 │ $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+#15 33.66     │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#15 33.66     ╵
+#15 33.66     src/assets/sass/md/_variables.scss 520:37                                           @import
+#15 33.66     src/app/create-project-wizard/install-template/install-template.component.scss 1:9  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.66 
+#15 33.66 Recommendation: math.div(75, 100)
+#15 33.66 
+#15 33.66 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.66 
+#15 33.66      ╷
+#15 33.66 1052 │ $mdb-label-static-size-ratio: 75 / 100 !default;
+#15 33.66      │                               ^^^^^^^^
+#15 33.66      ╵
+#15 33.66     src/assets/sass/md/_variables.scss 1052:31                                          @import
+#15 33.66     src/app/create-project-wizard/install-template/install-template.component.scss 1:9  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 33.66 
+#15 33.66 Recommendation: math.div(75, 100)
+#15 33.66 
+#15 33.66 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 33.66 
+#15 33.66      ╷
+#15 33.66 1053 │ $mdb-help-block-size-ratio: 75 / 100 !default;
+#15 33.66      │                             ^^^^^^^^
+#15 33.66      ╵
+#15 33.66     src/assets/sass/md/_variables.scss 1053:29                                          @import
+#15 33.66     src/app/create-project-wizard/install-template/install-template.component.scss 1:9  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $saturation: Passing a number without unit % (100) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $saturation * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 13 │     stroke: hsl(210, 100, 75);
+#15 33.66    │             ^^^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 13:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $lightness: Passing a number without unit % (75) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $lightness * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 13 │     stroke: hsl(210, 100, 75);
+#15 33.66    │             ^^^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 13:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $saturation: Passing a number without unit % (100) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $saturation * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 42 │     stroke: hsl(0, 100, 50);
+#15 33.66    │             ^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 42:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $lightness: Passing a number without unit % (50) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $lightness * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 42 │     stroke: hsl(0, 100, 50);
+#15 33.66    │             ^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 42:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $saturation: Passing a number without unit % (100) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $saturation * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 45 │     stroke: hsl(0, 100, 50);
+#15 33.66    │             ^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 45:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $lightness: Passing a number without unit % (50) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $lightness * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 45 │     stroke: hsl(0, 100, 50);
+#15 33.66    │             ^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 45:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $saturation: Passing a number without unit % (100) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $saturation * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 48 │     stroke: hsl(50, 100, 45);
+#15 33.66    │             ^^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 48:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $lightness: Passing a number without unit % (45) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $lightness * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 48 │     stroke: hsl(50, 100, 45);
+#15 33.66    │             ^^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 48:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $saturation: Passing a number without unit % (100) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $saturation * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 51 │     stroke: hsl(50, 100, 45);
+#15 33.66    │             ^^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 51:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $lightness: Passing a number without unit % (45) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $lightness * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 51 │     stroke: hsl(50, 100, 45);
+#15 33.66    │             ^^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 51:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $lightness: Passing a number without unit % (30) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $lightness * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 54 │     stroke: hsl(100, 100, 30);
+#15 33.66    │             ^^^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 54:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $lightness: Passing a number without unit % (30) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $lightness * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 57 │     stroke: hsl(100, 100, 30);
+#15 33.66    │             ^^^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 57:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $lightness: Passing a number without unit % (37) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $lightness * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 60 │     stroke: hsl(190, 100, 37);
+#15 33.66    │             ^^^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 60:13  root stylesheet
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: $lightness: Passing a number without unit % (37) is deprecated.
+#15 33.66 
+#15 33.66 To preserve current behavior: $lightness * 1%
+#15 33.66 
+#15 33.66    ╷
+#15 33.66 63 │     stroke: hsl(190, 100, 37);
+#15 33.66    │             ^^^^^^^^^^^^^^^^^
+#15 33.66    ╵
+#15 33.66     src/app/auth/handle-invitation/handle-invitation.component.scss 63:13  root stylesheet
+#15 33.66 
+#15 33.66 WARNING: 4 repetitive deprecation warnings omitted.
+#15 33.66 
+#15 33.66 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 34.30 
+#15 34.30 Recommendation: math.div($grid-gutter-width, 2) or calc($grid-gutter-width / 2)
+#15 34.30 
+#15 34.30 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 34.30 
+#15 34.30     ╷
+#15 34.30 519 │ $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+#15 34.30     │                                           ^^^^^^^^^^^^^^^^^^^^^^
+#15 34.30     ╵
+#15 34.30     src/assets/sass/md/_variables.scss 519:43                                             @import
+#15 34.30     src/app/create-project-wizard/onboarding-widget/onboarding-widget.component.scss 1:9  root stylesheet
+#15 34.30 
+#15 34.30 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+#15 34.30 
+#15 34.30 Recommendation: math.div($navbar-height - $line-height-computed, 2) or calc(($navbar-height - $line-height-computed) / 2)
+#15 34.30 
+#15 34.30 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 34.30 
+#15 34.30     ╷
+#15 34.30 520 │ $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+#15 34.30     │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#15 34.30     ╵
+#15 34.30     src/assets/sass/md/_variables.scss 520:37                                             @import
+#15 34.30     src/app/create-project-wizard/onboarding-widget/onboarding-widget.component.scss 1:9  root stylesheet
+#15 34.30 
+#15 34.30 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 34.30 
+#15 34.30 Recommendation: math.div(75, 100)
+#15 34.30 
+#15 34.30 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 34.30 
+#15 34.30      ╷
+#15 34.30 1052 │ $mdb-label-static-size-ratio: 75 / 100 !default;
+#15 34.30      │                               ^^^^^^^^
+#15 34.30      ╵
+#15 34.30     src/assets/sass/md/_variables.scss 1052:31                                            @import
+#15 34.30     src/app/create-project-wizard/onboarding-widget/onboarding-widget.component.scss 1:9  root stylesheet
+#15 34.30 
+#15 34.30 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+#15 34.30 
+#15 34.30 Recommendation: math.div(75, 100)
+#15 34.30 
+#15 34.30 More info and automated migrator: https://sass-lang.com/d/slash-div
+#15 34.30 
+#15 34.30      ╷
+#15 34.30 1053 │ $mdb-help-block-size-ratio: 75 / 100 !default;
+#15 34.30      │                             ^^^^^^^^
+#15 34.30      ╵
+#15 34.30     src/assets/sass/md/_variables.scss 1053:29                                            @import
+#15 34.30     src/app/create-project-wizard/onboarding-widget/onboarding-widget.component.scss 1:9  root stylesheet
+#15 34.30 
+#15 148.0 ✔ Browser application bundle generation complete.
+#15 152.3 ✔ Browser application bundle generation complete.
+#15 152.3 - Copying assets...
+#15 152.4 ✔ Copying assets complete.
+#15 152.4 - Generating index html...
+#15 153.2 ✔ Index html generation complete.
+#15 153.2 
+#15 153.2 Initial Chunk Files           | Names         |  Raw Size | Estimated Transfer Size
+#15 153.2 main.60bca9f3a79d7571.js      | main          |   8.49 MB |                 1.19 MB
+#15 153.2 scripts.ffcbebd5534a991a.js   | scripts       | 748.60 kB |               177.05 kB
+#15 153.2 styles.e30053b4ec88fa47.css   | styles        | 413.87 kB |                45.92 kB
+#15 153.2 polyfills.72cb4a7d16a85ce9.js | polyfills     | 171.16 kB |                51.12 kB
+#15 153.2 runtime.35d56a58a15bdcec.js   | runtime       |   1.73 kB |               882 bytes
+#15 153.2 
+#15 153.2 | Initial Total |   9.79 MB |                 1.46 MB
+#15 153.2 
+#15 153.2 Build at: 2024-08-01T08:00:18.036Z - Hash: 10aef1f12c1a629f - Time: 149532ms
+#15 DONE 155.2s
+
+#16 [stage-1 4/4] COPY --from=builder /ng-app/dist /usr/share/nginx/html
+#16 DONE 0.1s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 0.6s done
+#17 writing image sha256:f32d3a51791bdb690ab585f05e2e27bb45195c5e854ed14f9164c415dda9cbb3 done
+#17 naming to docker.io/library/image_name_v1_1 done
+#17 DONE 0.6s
+Duration: 3:17.08

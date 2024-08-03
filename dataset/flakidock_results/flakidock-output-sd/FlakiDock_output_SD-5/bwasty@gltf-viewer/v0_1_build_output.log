@@ -1,0 +1,151 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 48B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 669B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/rust:1.34
+#3 ...
+
+#4 [auth] library/debian:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [auth] library/rust:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [internal] load metadata for docker.io/library/debian:stretch-20190326-slim
+#6 DONE 1.9s
+
+#3 [internal] load metadata for docker.io/library/rust:1.34
+#3 DONE 2.3s
+
+#7 [stage-1 1/5] FROM docker.io/library/debian:stretch-20190326-slim@sha256:bade11bf1835c9f09b011b5b1cf9f7428328416410b238d2f937966ea820be74
+#7 resolve docker.io/library/debian:stretch-20190326-slim@sha256:bade11bf1835c9f09b011b5b1cf9f7428328416410b238d2f937966ea820be74
+#7 ...
+
+#8 [internal] load build context
+#8 transferring context: 186.96kB 0.0s done
+#8 DONE 0.4s
+
+#9 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#9 resolve docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab 0.5s done
+#9 DONE 0.5s
+
+#7 [stage-1 1/5] FROM docker.io/library/debian:stretch-20190326-slim@sha256:bade11bf1835c9f09b011b5b1cf9f7428328416410b238d2f937966ea820be74
+#7 resolve docker.io/library/debian:stretch-20190326-slim@sha256:bade11bf1835c9f09b011b5b1cf9f7428328416410b238d2f937966ea820be74 0.7s done
+#7 sha256:bade11bf1835c9f09b011b5b1cf9f7428328416410b238d2f937966ea820be74 2.36kB / 2.36kB done
+#7 sha256:d4f7ac076cf641652722c33b026fccd52933bb5c26aa703d3cef2dd5b022422a 529B / 529B done
+#7 sha256:c08899734c039b0f480e439e70f54b12037d68cb9d5d3dec21a38909201e7903 1.50kB / 1.50kB done
+#7 DONE 1.5s
+
+#10 [stage-1 2/5] RUN apt-get update
+#10 4.216 Ign:1 http://deb.debian.org/debian stretch InRelease
+#10 4.239 Ign:2 http://deb.debian.org/debian stretch-updates InRelease
+#10 4.278 Ign:3 http://deb.debian.org/debian stretch Release
+#10 4.289 Ign:4 http://deb.debian.org/debian stretch-updates Release
+#10 4.306 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#10 4.347 Ign:6 http://security.debian.org/debian-security stretch/updates InRelease
+#10 4.502 Ign:7 http://security.debian.org/debian-security stretch/updates Release
+#10 4.622 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#10 4.644 Ign:9 http://deb.debian.org/debian stretch-updates/main all Packages
+#10 4.650 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#10 4.946 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#10 4.955 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#10 4.968 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#10 5.100 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#10 5.118 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#10 5.132 Ign:9 http://deb.debian.org/debian stretch-updates/main all Packages
+#10 5.293 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#10 5.312 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#10 5.400 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#10 5.550 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#10 5.620 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#10 5.650 Ign:9 http://deb.debian.org/debian stretch-updates/main all Packages
+#10 ...
+
+#9 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#9 sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab 988B / 988B done
+#9 sha256:a5c7a581a24624f9a24e473466347c472ff8757755987d60ac7a42df2545367b 1.59kB / 1.59kB done
+#9 sha256:977128090ee1213a2d89f5ee64f1e5be501385d54b85703fb0f4524f405b3441 6.38kB / 6.38kB done
+#9 sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 45.34MB / 45.34MB 1.9s done
+#9 sha256:4250b3117dca5e14edc32ebf1366cd54e4cda91f17610b76c504a86917ff8b95 4.34MB / 4.34MB 0.6s done
+#9 sha256:221d80d00ae9675aad24913aacbadfac1ce8b7084f9765a6c0813486082c5c69 10.78MB / 10.78MB 0.9s done
+#9 sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 50.07MB / 50.07MB 2.7s done
+#9 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 215.08MB / 215.08MB 6.5s
+#9 extracting sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 4.1s
+#9 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 196.08MB / 243.95MB 6.5s
+#9 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 220.20MB / 243.95MB 6.9s
+#9 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 236.98MB / 243.95MB 7.2s
+#9 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 215.08MB / 215.08MB 8.5s done
+#9 extracting sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 6.7s done
+#9 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 243.95MB / 243.95MB 12.3s
+#9 ...
+
+#10 [stage-1 2/5] RUN apt-get update
+#10 5.854 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#10 5.955 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#10 5.968 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#10 6.009 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#10 6.124 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#10 6.136 Ign:9 http://deb.debian.org/debian stretch-updates/main all Packages
+#10 6.295 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#10 6.312 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#10 6.323 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#10 6.478 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#10 6.478 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#10 6.488 Ign:9 http://deb.debian.org/debian stretch-updates/main all Packages
+#10 6.646 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#10 6.660 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#10 6.795 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#10 6.943 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#10 6.988 Err:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#10 6.988   404  Not Found
+#10 6.990 Ign:9 http://deb.debian.org/debian stretch-updates/main all Packages
+#10 7.097 Err:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#10 7.097   404  Not Found [IP: 151.101.130.132 80]
+#10 7.298 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#10 7.298   404  Not Found
+#10 7.833 Reading package lists...
+#10 7.877 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#10 7.877 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#10 7.877 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#10 7.877 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#10 7.877 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#10 7.877 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+#10 7.877 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#10 ...
+
+#9 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#9 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 243.95MB / 243.95MB 17.3s done
+#9 CANCELED
+
+#10 [stage-1 2/5] RUN apt-get update
+#10 ERROR: process "/bin/sh -c apt-get update" did not complete successfully: exit code: 100
+------
+ > [stage-1 2/5] RUN apt-get update:
+7.298 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+7.298   404  Not Found
+7.833 Reading package lists...
+7.877 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+7.877 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+7.877 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+7.877 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+7.877 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+7.877 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+7.877 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+Dockerfile:10
+--------------------
+   8 |     
+   9 |     FROM debian:stretch-20190326-slim
+  10 | >>> RUN apt-get update
+  11 |     RUN apt-get install -y \
+  12 |         xvfb \
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update" did not complete successfully: exit code: 100
+Duration: 0:22.43

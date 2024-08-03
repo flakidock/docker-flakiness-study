@@ -1,0 +1,20 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 825B done
+#1 DONE 0.0s
+v1_Dockerfile:1
+--------------------
+   1 | >>> FROM ruby:2.6RUN mkdir -p /usr/local/etc \
+   2 | >>>   && { \
+   3 | >>>     echo 'install: --no-document'; \
+   4 | >>>     echo 'update: --no-document'; \
+   5 | >>>   } >> /usr/local/etc/gemrc; RUN mkdir -p /usr/local/etc \
+   6 | >>>   && { \
+   7 | >>>     echo 'install: --no-document'; \
+   8 | >>>     echo 'update: --no-document'; \
+   9 | >>>   } >> /usr/local/etc/gemrc;
+  10 |     
+--------------------
+ERROR: failed to solve: dockerfile parse error on line 1: FROM requires either one or three arguments
+Duration: 0:0.30

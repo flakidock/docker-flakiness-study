@@ -1,0 +1,511 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 636B done
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.6s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/debian:bullseye-slim
+#3 DONE 0.5s
+
+#4 [1/2] FROM docker.io/library/debian:bullseye-slim@sha256:b257e5e831aa9949737638f6d323cd563347b2a5571d98b9b15eef0c7cd80b68
+#4 resolve docker.io/library/debian:bullseye-slim@sha256:b257e5e831aa9949737638f6d323cd563347b2a5571d98b9b15eef0c7cd80b68
+#4 resolve docker.io/library/debian:bullseye-slim@sha256:b257e5e831aa9949737638f6d323cd563347b2a5571d98b9b15eef0c7cd80b68 0.2s done
+#4 sha256:482aabdceb859cc9ddc2e36867ac1ff6d3477bffcd05cac015bfc442c334aff4 529B / 529B done
+#4 sha256:1dcedcb363a3e8070f3a0438cab8174b07fd23da25f04928c5111ccf7d856465 1.46kB / 1.46kB done
+#4 sha256:b257e5e831aa9949737638f6d323cd563347b2a5571d98b9b15eef0c7cd80b68 1.85kB / 1.85kB done
+#4 sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 0B / 31.43MB 0.2s
+#4 sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 2.10MB / 31.43MB 0.3s
+#4 sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 9.44MB / 31.43MB 0.4s
+#4 sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 23.07MB / 31.43MB 0.6s
+#4 sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 31.43MB / 31.43MB 0.8s
+#4 sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 31.43MB / 31.43MB 1.2s done
+#4 extracting sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 0.1s
+#4 extracting sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 2.0s done
+#4 DONE 4.1s
+
+#5 [2/2] RUN apt-get update &&     apt-get install -y curl wget git ca-certificates &&     mkdir /app && cd /app &&     LAST_RELEASE=$(curl -s https://api.github.com/repos/ovh/noderig/releases | grep tag_name | head -n 1 | cut -d '"' -f 4) &&     DOWNLOAD_URL=$(curl -s https://api.github.com/repos/ovh/noderig/releases/tags/${LAST_RELEASE} | grep browser_download_url | cut -d '"' -f 4) &&     wget $DOWNLOAD_URL -O noderig &&     chmod +x noderig &&     chown -R nobody:nogroup /app &&     rm -rf /var/lib/apt/lists/*
+#5 0.552 Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#5 0.582 Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [48.4 kB]
+#5 0.593 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
+#5 0.706 Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8067 kB]
+#5 0.821 Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [280 kB]
+#5 0.927 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]
+#5 2.075 Fetched 8574 kB in 2s (5543 kB/s)
+#5 2.075 Reading package lists...
+#5 2.699 Reading package lists...
+#5 3.335 Building dependency tree...
+#5 3.465 Reading state information...
+#5 3.594 The following additional packages will be installed:
+#5 3.594   git-man less libbrotli1 libbsd0 libcbor0 libcurl3-gnutls libcurl4 libedit2
+#5 3.594   liberror-perl libexpat1 libfido2-1 libgdbm-compat4 libgdbm6 libldap-2.4-2
+#5 3.594   libldap-common libmd0 libnghttp2-14 libperl5.32 libpsl5 librtmp1 libsasl2-2
+#5 3.594   libsasl2-modules libsasl2-modules-db libssh2-1 libx11-6 libx11-data libxau6
+#5 3.595   libxcb1 libxdmcp6 libxext6 libxmuu1 netbase openssh-client openssl patch
+#5 3.595   perl perl-modules-5.32 publicsuffix xauth
+#5 3.596 Suggested packages:
+#5 3.596   gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-el git-email
+#5 3.596   git-gui gitk gitweb git-cvs git-mediawiki git-svn gdbm-l10n sensible-utils
+#5 3.596   libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal
+#5 3.596   libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql keychain
+#5 3.596   libpam-ssh monkeysphere ssh-askpass ed diffutils-doc perl-doc
+#5 3.596   libterm-readline-gnu-perl | libterm-readline-perl-perl make
+#5 3.596   libtap-harness-archive-perl
+#5 3.882 The following NEW packages will be installed:
+#5 3.882   ca-certificates curl git git-man less libbrotli1 libbsd0 libcbor0
+#5 3.882   libcurl3-gnutls libcurl4 libedit2 liberror-perl libexpat1 libfido2-1
+#5 3.883   libgdbm-compat4 libgdbm6 libldap-2.4-2 libldap-common libmd0 libnghttp2-14
+#5 3.883   libperl5.32 libpsl5 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db
+#5 3.883   libssh2-1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1
+#5 3.884   netbase openssh-client openssl patch perl perl-modules-5.32 publicsuffix
+#5 3.884   wget xauth
+#5 3.923 0 upgraded, 43 newly installed, 0 to remove and 0 not upgraded.
+#5 3.923 Need to get 22.0 MB of archives.
+#5 3.923 After this operation, 106 MB of additional disk space will be used.
+#5 3.923 Get:1 http://deb.debian.org/debian bullseye/main amd64 perl-modules-5.32 all 5.32.1-4+deb11u3 [2823 kB]
+#5 3.994 Get:2 http://deb.debian.org/debian bullseye/main amd64 libgdbm6 amd64 1.19-2 [64.9 kB]
+#5 3.997 Get:3 http://deb.debian.org/debian bullseye/main amd64 libgdbm-compat4 amd64 1.19-2 [44.7 kB]
+#5 3.998 Get:4 http://deb.debian.org/debian bullseye/main amd64 libperl5.32 amd64 5.32.1-4+deb11u3 [4121 kB]
+#5 4.068 Get:5 http://deb.debian.org/debian bullseye/main amd64 perl amd64 5.32.1-4+deb11u3 [293 kB]
+#5 4.071 Get:6 http://deb.debian.org/debian bullseye/main amd64 less amd64 551-2+deb11u2 [136 kB]
+#5 4.073 Get:7 http://deb.debian.org/debian bullseye/main amd64 netbase all 6.3 [19.9 kB]
+#5 4.073 Get:8 http://deb.debian.org/debian bullseye/main amd64 openssl amd64 1.1.1w-0+deb11u1 [859 kB]
+#5 4.080 Get:9 http://deb.debian.org/debian bullseye/main amd64 ca-certificates all 20210119 [158 kB]
+#5 4.082 Get:10 http://deb.debian.org/debian bullseye/main amd64 libmd0 amd64 1.0.3-3 [28.0 kB]
+#5 4.082 Get:11 http://deb.debian.org/debian bullseye/main amd64 libbsd0 amd64 0.11.3-1+deb11u1 [108 kB]
+#5 4.083 Get:12 http://deb.debian.org/debian bullseye/main amd64 libedit2 amd64 3.1-20191231-2+b1 [96.7 kB]
+#5 4.084 Get:13 http://deb.debian.org/debian bullseye/main amd64 libcbor0 amd64 0.5.0+dfsg-2 [24.0 kB]
+#5 4.086 Get:14 http://deb.debian.org/debian bullseye/main amd64 libfido2-1 amd64 1.6.0-2 [53.3 kB]
+#5 4.096 Get:15 http://deb.debian.org/debian bullseye/main amd64 openssh-client amd64 1:8.4p1-5+deb11u3 [932 kB]
+#5 4.111 Get:16 http://deb.debian.org/debian bullseye/main amd64 libpsl5 amd64 0.21.0-1.2 [57.3 kB]
+#5 4.112 Get:17 http://deb.debian.org/debian bullseye/main amd64 wget amd64 1.21-1+deb11u1 [964 kB]
+#5 4.121 Get:18 http://deb.debian.org/debian bullseye/main amd64 libbrotli1 amd64 1.0.9-2+b2 [279 kB]
+#5 4.124 Get:19 http://deb.debian.org/debian bullseye/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-2.1+deb11u1 [69.1 kB]
+#5 4.125 Get:20 http://deb.debian.org/debian bullseye/main amd64 libsasl2-2 amd64 2.1.27+dfsg-2.1+deb11u1 [106 kB]
+#5 4.126 Get:21 http://deb.debian.org/debian bullseye/main amd64 libldap-2.4-2 amd64 2.4.57+dfsg-3+deb11u1 [232 kB]
+#5 4.129 Get:22 http://deb.debian.org/debian bullseye/main amd64 libnghttp2-14 amd64 1.43.0-1+deb11u1 [77.2 kB]
+#5 4.130 Get:23 http://deb.debian.org/debian bullseye/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]
+#5 4.131 Get:24 http://deb.debian.org/debian bullseye/main amd64 libssh2-1 amd64 1.9.0-2+deb11u1 [156 kB]
+#5 4.132 Get:25 http://deb.debian.org/debian bullseye/main amd64 libcurl4 amd64 7.74.0-1.3+deb11u12 [347 kB]
+#5 4.137 Get:26 http://deb.debian.org/debian bullseye/main amd64 curl amd64 7.74.0-1.3+deb11u12 [271 kB]
+#5 4.140 Get:27 http://deb.debian.org/debian bullseye/main amd64 libcurl3-gnutls amd64 7.74.0-1.3+deb11u12 [344 kB]
+#5 4.143 Get:28 http://deb.debian.org/debian bullseye/main amd64 libexpat1 amd64 2.2.10-2+deb11u5 [98.2 kB]
+#5 4.145 Get:29 http://deb.debian.org/debian bullseye/main amd64 liberror-perl all 0.17029-1 [31.0 kB]
+#5 4.146 Get:30 http://deb.debian.org/debian bullseye/main amd64 git-man all 1:2.30.2-1+deb11u2 [1828 kB]
+#5 4.163 Get:31 http://deb.debian.org/debian bullseye/main amd64 git amd64 1:2.30.2-1+deb11u2 [5518 kB]
+#5 4.213 Get:32 http://deb.debian.org/debian bullseye/main amd64 libldap-common all 2.4.57+dfsg-3+deb11u1 [95.8 kB]
+#5 4.215 Get:33 http://deb.debian.org/debian bullseye/main amd64 libsasl2-modules amd64 2.1.27+dfsg-2.1+deb11u1 [104 kB]
+#5 4.216 Get:34 http://deb.debian.org/debian bullseye/main amd64 libxau6 amd64 1:1.0.9-1 [19.7 kB]
+#5 4.216 Get:35 http://deb.debian.org/debian bullseye/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+#5 4.217 Get:36 http://deb.debian.org/debian bullseye/main amd64 libxcb1 amd64 1.14-3 [140 kB]
+#5 4.218 Get:37 http://deb.debian.org/debian bullseye/main amd64 libx11-data all 2:1.7.2-1+deb11u2 [311 kB]
+#5 4.221 Get:38 http://deb.debian.org/debian bullseye/main amd64 libx11-6 amd64 2:1.7.2-1+deb11u2 [772 kB]
+#5 4.228 Get:39 http://deb.debian.org/debian bullseye/main amd64 libxext6 amd64 2:1.3.3-1.1 [52.7 kB]
+#5 4.229 Get:40 http://deb.debian.org/debian bullseye/main amd64 libxmuu1 amd64 2:1.1.2-2+b3 [23.9 kB]
+#5 4.229 Get:41 http://deb.debian.org/debian bullseye/main amd64 patch amd64 2.7.6-7 [128 kB]
+#5 4.233 Get:42 http://deb.debian.org/debian bullseye/main amd64 publicsuffix all 20220811.1734-0+deb11u1 [127 kB]
+#5 4.235 Get:43 http://deb.debian.org/debian bullseye/main amd64 xauth amd64 1:1.1-1 [40.5 kB]
+#5 4.435 debconf: delaying package configuration, since apt-utils is not installed
+#5 4.461 Fetched 22.0 MB in 0s (64.0 MB/s)
+#5 4.524 Selecting previously unselected package perl-modules-5.32.
+#5 4.524 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6670 files and directories currently installed.)
+#5 4.526 Preparing to unpack .../00-perl-modules-5.32_5.32.1-4+deb11u3_all.deb ...
+#5 4.561 Unpacking perl-modules-5.32 (5.32.1-4+deb11u3) ...
+#5 5.994 Selecting previously unselected package libgdbm6:amd64.
+#5 5.994 Preparing to unpack .../01-libgdbm6_1.19-2_amd64.deb ...
+#5 6.050 Unpacking libgdbm6:amd64 (1.19-2) ...
+#5 6.254 Selecting previously unselected package libgdbm-compat4:amd64.
+#5 6.254 Preparing to unpack .../02-libgdbm-compat4_1.19-2_amd64.deb ...
+#5 6.286 Unpacking libgdbm-compat4:amd64 (1.19-2) ...
+#5 6.523 Selecting previously unselected package libperl5.32:amd64.
+#5 6.523 Preparing to unpack .../03-libperl5.32_5.32.1-4+deb11u3_amd64.deb ...
+#5 6.554 Unpacking libperl5.32:amd64 (5.32.1-4+deb11u3) ...
+#5 9.672 Selecting previously unselected package perl.
+#5 9.672 Preparing to unpack .../04-perl_5.32.1-4+deb11u3_amd64.deb ...
+#5 9.700 Unpacking perl (5.32.1-4+deb11u3) ...
+#5 9.975 Selecting previously unselected package less.
+#5 9.975 Preparing to unpack .../05-less_551-2+deb11u2_amd64.deb ...
+#5 10.01 Unpacking less (551-2+deb11u2) ...
+#5 10.25 Selecting previously unselected package netbase.
+#5 10.25 Preparing to unpack .../06-netbase_6.3_all.deb ...
+#5 10.27 Unpacking netbase (6.3) ...
+#5 10.45 Selecting previously unselected package openssl.
+#5 10.45 Preparing to unpack .../07-openssl_1.1.1w-0+deb11u1_amd64.deb ...
+#5 10.49 Unpacking openssl (1.1.1w-0+deb11u1) ...
+#5 10.77 Selecting previously unselected package ca-certificates.
+#5 10.77 Preparing to unpack .../08-ca-certificates_20210119_all.deb ...
+#5 10.80 Unpacking ca-certificates (20210119) ...
+#5 11.11 Selecting previously unselected package libmd0:amd64.
+#5 11.11 Preparing to unpack .../09-libmd0_1.0.3-3_amd64.deb ...
+#5 11.13 Unpacking libmd0:amd64 (1.0.3-3) ...
+#5 11.34 Selecting previously unselected package libbsd0:amd64.
+#5 11.34 Preparing to unpack .../10-libbsd0_0.11.3-1+deb11u1_amd64.deb ...
+#5 11.36 Unpacking libbsd0:amd64 (0.11.3-1+deb11u1) ...
+#5 11.57 Selecting previously unselected package libedit2:amd64.
+#5 11.57 Preparing to unpack .../11-libedit2_3.1-20191231-2+b1_amd64.deb ...
+#5 11.61 Unpacking libedit2:amd64 (3.1-20191231-2+b1) ...
+#5 11.87 Selecting previously unselected package libcbor0:amd64.
+#5 11.87 Preparing to unpack .../12-libcbor0_0.5.0+dfsg-2_amd64.deb ...
+#5 11.90 Unpacking libcbor0:amd64 (0.5.0+dfsg-2) ...
+#5 12.24 Selecting previously unselected package libfido2-1:amd64.
+#5 12.24 Preparing to unpack .../13-libfido2-1_1.6.0-2_amd64.deb ...
+#5 12.26 Unpacking libfido2-1:amd64 (1.6.0-2) ...
+#5 12.51 Selecting previously unselected package openssh-client.
+#5 12.51 Preparing to unpack .../14-openssh-client_1%3a8.4p1-5+deb11u3_amd64.deb ...
+#5 12.53 Unpacking openssh-client (1:8.4p1-5+deb11u3) ...
+#5 12.88 Selecting previously unselected package libpsl5:amd64.
+#5 12.88 Preparing to unpack .../15-libpsl5_0.21.0-1.2_amd64.deb ...
+#5 12.91 Unpacking libpsl5:amd64 (0.21.0-1.2) ...
+#5 13.09 Selecting previously unselected package wget.
+#5 13.09 Preparing to unpack .../16-wget_1.21-1+deb11u1_amd64.deb ...
+#5 13.13 Unpacking wget (1.21-1+deb11u1) ...
+#5 13.39 Selecting previously unselected package libbrotli1:amd64.
+#5 13.39 Preparing to unpack .../17-libbrotli1_1.0.9-2+b2_amd64.deb ...
+#5 13.42 Unpacking libbrotli1:amd64 (1.0.9-2+b2) ...
+#5 13.63 Selecting previously unselected package libsasl2-modules-db:amd64.
+#5 13.63 Preparing to unpack .../18-libsasl2-modules-db_2.1.27+dfsg-2.1+deb11u1_amd64.deb ...
+#5 13.65 Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+#5 13.85 Selecting previously unselected package libsasl2-2:amd64.
+#5 13.85 Preparing to unpack .../19-libsasl2-2_2.1.27+dfsg-2.1+deb11u1_amd64.deb ...
+#5 13.88 Unpacking libsasl2-2:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+#5 14.10 Selecting previously unselected package libldap-2.4-2:amd64.
+#5 14.10 Preparing to unpack .../20-libldap-2.4-2_2.4.57+dfsg-3+deb11u1_amd64.deb ...
+#5 14.14 Unpacking libldap-2.4-2:amd64 (2.4.57+dfsg-3+deb11u1) ...
+#5 14.40 Selecting previously unselected package libnghttp2-14:amd64.
+#5 14.40 Preparing to unpack .../21-libnghttp2-14_1.43.0-1+deb11u1_amd64.deb ...
+#5 14.43 Unpacking libnghttp2-14:amd64 (1.43.0-1+deb11u1) ...
+#5 14.66 Selecting previously unselected package librtmp1:amd64.
+#5 14.66 Preparing to unpack .../22-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
+#5 14.68 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#5 14.90 Selecting previously unselected package libssh2-1:amd64.
+#5 14.90 Preparing to unpack .../23-libssh2-1_1.9.0-2+deb11u1_amd64.deb ...
+#5 14.93 Unpacking libssh2-1:amd64 (1.9.0-2+deb11u1) ...
+#5 15.12 Selecting previously unselected package libcurl4:amd64.
+#5 15.12 Preparing to unpack .../24-libcurl4_7.74.0-1.3+deb11u12_amd64.deb ...
+#5 15.15 Unpacking libcurl4:amd64 (7.74.0-1.3+deb11u12) ...
+#5 15.37 Selecting previously unselected package curl.
+#5 15.37 Preparing to unpack .../25-curl_7.74.0-1.3+deb11u12_amd64.deb ...
+#5 15.40 Unpacking curl (7.74.0-1.3+deb11u12) ...
+#5 15.65 Selecting previously unselected package libcurl3-gnutls:amd64.
+#5 15.65 Preparing to unpack .../26-libcurl3-gnutls_7.74.0-1.3+deb11u12_amd64.deb ...
+#5 15.67 Unpacking libcurl3-gnutls:amd64 (7.74.0-1.3+deb11u12) ...
+#5 15.91 Selecting previously unselected package libexpat1:amd64.
+#5 15.91 Preparing to unpack .../27-libexpat1_2.2.10-2+deb11u5_amd64.deb ...
+#5 15.93 Unpacking libexpat1:amd64 (2.2.10-2+deb11u5) ...
+#5 16.10 Selecting previously unselected package liberror-perl.
+#5 16.10 Preparing to unpack .../28-liberror-perl_0.17029-1_all.deb ...
+#5 16.13 Unpacking liberror-perl (0.17029-1) ...
+#5 16.33 Selecting previously unselected package git-man.
+#5 16.33 Preparing to unpack .../29-git-man_1%3a2.30.2-1+deb11u2_all.deb ...
+#5 16.35 Unpacking git-man (1:2.30.2-1+deb11u2) ...
+#5 16.67 Selecting previously unselected package git.
+#5 16.67 Preparing to unpack .../30-git_1%3a2.30.2-1+deb11u2_amd64.deb ...
+#5 16.71 Unpacking git (1:2.30.2-1+deb11u2) ...
+#5 17.75 Selecting previously unselected package libldap-common.
+#5 17.75 Preparing to unpack .../31-libldap-common_2.4.57+dfsg-3+deb11u1_all.deb ...
+#5 17.78 Unpacking libldap-common (2.4.57+dfsg-3+deb11u1) ...
+#5 17.96 Selecting previously unselected package libsasl2-modules:amd64.
+#5 17.96 Preparing to unpack .../32-libsasl2-modules_2.1.27+dfsg-2.1+deb11u1_amd64.deb ...
+#5 18.00 Unpacking libsasl2-modules:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+#5 18.20 Selecting previously unselected package libxau6:amd64.
+#5 18.20 Preparing to unpack .../33-libxau6_1%3a1.0.9-1_amd64.deb ...
+#5 18.23 Unpacking libxau6:amd64 (1:1.0.9-1) ...
+#5 18.43 Selecting previously unselected package libxdmcp6:amd64.
+#5 18.43 Preparing to unpack .../34-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+#5 18.45 Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+#5 18.77 Selecting previously unselected package libxcb1:amd64.
+#5 18.77 Preparing to unpack .../35-libxcb1_1.14-3_amd64.deb ...
+#5 18.80 Unpacking libxcb1:amd64 (1.14-3) ...
+#5 18.99 Selecting previously unselected package libx11-data.
+#5 18.99 Preparing to unpack .../36-libx11-data_2%3a1.7.2-1+deb11u2_all.deb ...
+#5 19.02 Unpacking libx11-data (2:1.7.2-1+deb11u2) ...
+#5 19.41 Selecting previously unselected package libx11-6:amd64.
+#5 19.41 Preparing to unpack .../37-libx11-6_2%3a1.7.2-1+deb11u2_amd64.deb ...
+#5 19.44 Unpacking libx11-6:amd64 (2:1.7.2-1+deb11u2) ...
+#5 19.73 Selecting previously unselected package libxext6:amd64.
+#5 19.73 Preparing to unpack .../38-libxext6_2%3a1.3.3-1.1_amd64.deb ...
+#5 19.75 Unpacking libxext6:amd64 (2:1.3.3-1.1) ...
+#5 19.92 Selecting previously unselected package libxmuu1:amd64.
+#5 19.92 Preparing to unpack .../39-libxmuu1_2%3a1.1.2-2+b3_amd64.deb ...
+#5 19.94 Unpacking libxmuu1:amd64 (2:1.1.2-2+b3) ...
+#5 20.11 Selecting previously unselected package patch.
+#5 20.11 Preparing to unpack .../40-patch_2.7.6-7_amd64.deb ...
+#5 20.14 Unpacking patch (2.7.6-7) ...
+#5 20.32 Selecting previously unselected package publicsuffix.
+#5 20.32 Preparing to unpack .../41-publicsuffix_20220811.1734-0+deb11u1_all.deb ...
+#5 20.35 Unpacking publicsuffix (20220811.1734-0+deb11u1) ...
+#5 20.54 Selecting previously unselected package xauth.
+#5 20.54 Preparing to unpack .../42-xauth_1%3a1.1-1_amd64.deb ...
+#5 20.57 Unpacking xauth (1:1.1-1) ...
+#5 20.79 Setting up libexpat1:amd64 (2.2.10-2+deb11u5) ...
+#5 20.90 Setting up libxau6:amd64 (1:1.0.9-1) ...
+#5 20.97 Setting up libpsl5:amd64 (0.21.0-1.2) ...
+#5 21.05 Setting up wget (1.21-1+deb11u1) ...
+#5 21.16 Setting up perl-modules-5.32 (5.32.1-4+deb11u3) ...
+#5 21.26 Setting up libbrotli1:amd64 (1.0.9-2+b2) ...
+#5 21.33 Setting up libcbor0:amd64 (0.5.0+dfsg-2) ...
+#5 21.41 Setting up libsasl2-modules:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+#5 21.51 Setting up libnghttp2-14:amd64 (1.43.0-1+deb11u1) ...
+#5 21.59 Setting up less (551-2+deb11u2) ...
+#5 21.69 Setting up libldap-common (2.4.57+dfsg-3+deb11u1) ...
+#5 21.79 Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+#5 21.87 Setting up libx11-data (2:1.7.2-1+deb11u2) ...
+#5 21.94 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#5 22.12 Setting up patch (2.7.6-7) ...
+#5 22.19 Setting up libsasl2-2:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+#5 22.27 Setting up libmd0:amd64 (1.0.3-3) ...
+#5 22.34 Setting up git-man (1:2.30.2-1+deb11u2) ...
+#5 22.42 Setting up libssh2-1:amd64 (1.9.0-2+deb11u1) ...
+#5 22.50 Setting up netbase (6.3) ...
+#5 22.69 Setting up libfido2-1:amd64 (1.6.0-2) ...
+#5 22.81 Setting up openssl (1.1.1w-0+deb11u1) ...
+#5 22.92 Setting up libbsd0:amd64 (0.11.3-1+deb11u1) ...
+#5 22.99 Setting up publicsuffix (20220811.1734-0+deb11u1) ...
+#5 23.07 Setting up libgdbm6:amd64 (1.19-2) ...
+#5 23.15 Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+#5 23.22 Setting up libxcb1:amd64 (1.14-3) ...
+#5 23.31 Setting up libedit2:amd64 (3.1-20191231-2+b1) ...
+#5 23.38 Setting up libldap-2.4-2:amd64 (2.4.57+dfsg-3+deb11u1) ...
+#5 23.46 Setting up libcurl3-gnutls:amd64 (7.74.0-1.3+deb11u12) ...
+#5 23.54 Setting up ca-certificates (20210119) ...
+#5 23.72 debconf: unable to initialize frontend: Dialog
+#5 23.72 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 23.72 debconf: falling back to frontend: Readline
+#5 24.12 Updating certificates in /etc/ssl/certs...
+#5 24.68 129 added, 0 removed; done.
+#5 24.84 Setting up libgdbm-compat4:amd64 (1.19-2) ...
+#5 24.92 Setting up libperl5.32:amd64 (5.32.1-4+deb11u3) ...
+#5 25.02 Setting up libcurl4:amd64 (7.74.0-1.3+deb11u12) ...
+#5 25.11 Setting up libx11-6:amd64 (2:1.7.2-1+deb11u2) ...
+#5 25.21 Setting up curl (7.74.0-1.3+deb11u12) ...
+#5 25.29 Setting up libxmuu1:amd64 (2:1.1.2-2+b3) ...
+#5 25.36 Setting up openssh-client (1:8.4p1-5+deb11u3) ...
+#5 25.73 Setting up libxext6:amd64 (2:1.3.3-1.1) ...
+#5 25.81 Setting up perl (5.32.1-4+deb11u3) ...
+#5 25.94 Setting up xauth (1:1.1-1) ...
+#5 26.01 Setting up liberror-perl (0.17029-1) ...
+#5 26.09 Setting up git (1:2.30.2-1+deb11u2) ...
+#5 26.21 Processing triggers for libc-bin (2.31-13+deb11u10) ...
+#5 26.31 Processing triggers for ca-certificates (20210119) ...
+#5 26.34 Updating certificates in /etc/ssl/certs...
+#5 26.80 0 added, 0 removed; done.
+#5 26.80 Running hooks in /etc/ca-certificates/update.d...
+#5 26.80 done.
+#5 27.75 --2024-08-01 05:55:34--  https://github.com/ovh/noderig/releases/download/v2.5.7/noderig
+#5 27.77 Resolving github.com (github.com)... 140.82.112.4
+#5 27.77 Connecting to github.com (github.com)|140.82.112.4|:443... connected.
+#5 27.97 HTTP request sent, awaiting response... 302 Found
+#5 28.17 Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/79458745/383c0980-03fd-11eb-9930-5af54a61c2fc?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240801T055535Z&X-Amz-Expires=300&X-Amz-Signature=72b12fab1c62b2cc48c3edb560549697462b0f91f526942037d57122b1422a63&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=79458745&response-content-disposition=attachment%3B%20filename%3Dnoderig&response-content-type=application%2Foctet-stream [following]
+#5 28.17 --2024-08-01 05:55:35--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/79458745/383c0980-03fd-11eb-9930-5af54a61c2fc?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240801T055535Z&X-Amz-Expires=300&X-Amz-Signature=72b12fab1c62b2cc48c3edb560549697462b0f91f526942037d57122b1422a63&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=79458745&response-content-disposition=attachment%3B%20filename%3Dnoderig&response-content-type=application%2Foctet-stream
+#5 28.17 Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+#5 28.17 Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.108.133|:443... connected.
+#5 28.18 HTTP request sent, awaiting response... 200 OK
+#5 28.57 Length: 9540896 (9.1M) [application/octet-stream]
+#5 28.57 Saving to: 'noderig'
+#5 28.57 
+#5 28.57      0K .......... .......... .......... .......... ..........  0% 22.3M 0s
+#5 28.57     50K .......... .......... .......... .......... ..........  1% 61.6M 0s
+#5 28.57    100K .......... .......... .......... .......... ..........  1% 89.5M 0s
+#5 28.57    150K .......... .......... .......... .......... ..........  2% 83.6M 0s
+#5 28.57    200K .......... .......... .......... .......... ..........  2% 90.1M 0s
+#5 28.57    250K .......... .......... .......... .......... ..........  3% 98.1M 0s
+#5 28.57    300K .......... .......... .......... .......... ..........  3%  104M 0s
+#5 28.57    350K .......... .......... .......... .......... ..........  4% 69.4M 0s
+#5 28.57    400K .......... .......... .......... .......... ..........  4% 81.4M 0s
+#5 28.57    450K .......... .......... .......... .......... ..........  5% 62.1M 0s
+#5 28.57    500K .......... .......... .......... .......... ..........  5% 99.0M 0s
+#5 28.57    550K .......... .......... .......... .......... ..........  6% 48.8M 0s
+#5 28.58    600K .......... .......... .......... .......... ..........  6% 47.3M 0s
+#5 28.58    650K .......... .......... .......... .......... ..........  7% 86.5M 0s
+#5 28.58    700K .......... .......... .......... .......... ..........  8%  125M 0s
+#5 28.58    750K .......... .......... .......... .......... ..........  8% 56.9M 0s
+#5 28.58    800K .......... .......... .......... .......... ..........  9% 50.1M 0s
+#5 28.58    850K .......... .......... .......... .......... ..........  9% 47.7M 0s
+#5 28.58    900K .......... .......... .......... .......... .......... 10% 86.1M 0s
+#5 28.58    950K .......... .......... .......... .......... .......... 10%  697K 1s
+#5 28.65   1000K .......... .......... .......... .......... .......... 11% 77.3M 1s
+#5 28.65   1050K .......... .......... .......... .......... .......... 11%  117M 1s
+#5 28.65   1100K .......... .......... .......... .......... .......... 12% 75.8M 1s
+#5 28.65   1150K .......... .......... .......... .......... .......... 12% 90.1M 1s
+#5 28.65   1200K .......... .......... .......... .......... .......... 13%  126M 1s
+#5 28.66   1250K .......... .......... .......... .......... .......... 13%  122M 1s
+#5 28.66   1300K .......... .......... .......... .......... .......... 14%  115M 1s
+#5 28.66   1350K .......... .......... .......... .......... .......... 15%  107M 1s
+#5 28.66   1400K .......... .......... .......... .......... .......... 15%  133M 0s
+#5 28.66   1450K .......... .......... .......... .......... .......... 16%  129M 0s
+#5 28.66   1500K .......... .......... .......... .......... .......... 16%  128M 0s
+#5 28.66   1550K .......... .......... .......... .......... .......... 17%  103M 0s
+#5 28.66   1600K .......... .......... .......... .......... .......... 17%  107M 0s
+#5 28.66   1650K .......... .......... .......... .......... .......... 18%  129M 0s
+#5 28.66   1700K .......... .......... .......... .......... .......... 18%  108M 0s
+#5 28.66   1750K .......... .......... .......... .......... .......... 19%  113M 0s
+#5 28.66   1800K .......... .......... .......... .......... .......... 19%  102M 0s
+#5 28.66   1850K .......... .......... .......... .......... .......... 20%  101M 0s
+#5 28.66   1900K .......... .......... .......... .......... .......... 20% 92.2M 0s
+#5 28.66   1950K .......... .......... .......... .......... .......... 21% 62.0M 0s
+#5 28.66   2000K .......... .......... .......... .......... .......... 22%  102M 0s
+#5 28.66   2050K .......... .......... .......... .......... .......... 22% 95.3M 0s
+#5 28.66   2100K .......... .......... .......... .......... .......... 23% 82.9M 0s
+#5 28.66   2150K .......... .......... .......... .......... .......... 23% 79.7M 0s
+#5 28.66   2200K .......... .......... .......... .......... .......... 24% 88.0M 0s
+#5 28.66   2250K .......... .......... .......... .......... .......... 24% 92.3M 0s
+#5 28.67   2300K .......... .......... .......... .......... .......... 25% 86.6M 0s
+#5 28.67   2350K .......... .......... .......... .......... .......... 25%  109M 0s
+#5 28.67   2400K .......... .......... .......... .......... .......... 26% 97.0M 0s
+#5 28.67   2450K .......... .......... .......... .......... .......... 26% 96.1M 0s
+#5 28.67   2500K .......... .......... .......... .......... .......... 27% 81.0M 0s
+#5 28.67   2550K .......... .......... .......... .......... .......... 27% 83.0M 0s
+#5 28.67   2600K .......... .......... .......... .......... .......... 28% 95.8M 0s
+#5 28.67   2650K .......... .......... .......... .......... .......... 28% 88.3M 0s
+#5 28.67   2700K .......... .......... .......... .......... .......... 29% 87.1M 0s
+#5 28.67   2750K .......... .......... .......... .......... .......... 30% 68.5M 0s
+#5 28.67   2800K .......... .......... .......... .......... .......... 30%  128M 0s
+#5 28.67   2850K .......... .......... .......... .......... .......... 31% 90.9M 0s
+#5 28.67   2900K .......... .......... .......... .......... .......... 31% 97.7M 0s
+#5 28.67   2950K .......... .......... .......... .......... .......... 32% 87.9M 0s
+#5 28.67   3000K .......... .......... .......... .......... .......... 32% 67.9M 0s
+#5 28.67   3050K .......... .......... .......... .......... .......... 33% 82.2M 0s
+#5 28.67   3100K .......... .......... .......... .......... .......... 33% 73.5M 0s
+#5 28.67   3150K .......... .......... .......... .......... .......... 34% 97.1M 0s
+#5 28.68   3200K .......... .......... .......... .......... .......... 34% 82.9M 0s
+#5 28.68   3250K .......... .......... .......... .......... .......... 35% 80.9M 0s
+#5 28.68   3300K .......... .......... .......... .......... .......... 35% 86.3M 0s
+#5 28.68   3350K .......... .......... .......... .......... .......... 36% 90.3M 0s
+#5 28.68   3400K .......... .......... .......... .......... .......... 37% 87.3M 0s
+#5 28.68   3450K .......... .......... .......... .......... .......... 37% 73.4M 0s
+#5 28.68   3500K .......... .......... .......... .......... .......... 38%  112M 0s
+#5 28.68   3550K .......... .......... .......... .......... .......... 38% 78.7M 0s
+#5 28.68   3600K .......... .......... .......... .......... .......... 39% 88.2M 0s
+#5 28.68   3650K .......... .......... .......... .......... .......... 39% 90.7M 0s
+#5 28.68   3700K .......... .......... .......... .......... .......... 40% 80.5M 0s
+#5 28.68   3750K .......... .......... .......... .......... .......... 40%  108M 0s
+#5 28.68   3800K .......... .......... .......... .......... .......... 41% 89.3M 0s
+#5 28.68   3850K .......... .......... .......... .......... .......... 41%  119M 0s
+#5 28.68   3900K .......... .......... .......... .......... .......... 42%  113M 0s
+#5 28.68   3950K .......... .......... .......... .......... .......... 42%  119M 0s
+#5 28.68   4000K .......... .......... .......... .......... .......... 43%  141M 0s
+#5 28.68   4050K .......... .......... .......... .......... .......... 44%  113M 0s
+#5 28.68   4100K .......... .......... .......... .......... .......... 44%  140M 0s
+#5 28.69   4150K .......... .......... .......... .......... .......... 45%  109M 0s
+#5 28.69   4200K .......... .......... .......... .......... .......... 45%  120M 0s
+#5 28.69   4250K .......... .......... .......... .......... .......... 46%  103M 0s
+#5 28.69   4300K .......... .......... .......... .......... .......... 46%  109M 0s
+#5 28.69   4350K .......... .......... .......... .......... .......... 47%  121M 0s
+#5 28.69   4400K .......... .......... .......... .......... .......... 47%  130M 0s
+#5 28.69   4450K .......... .......... .......... .......... .......... 48% 2.58M 0s
+#5 28.71   4500K .......... .......... .......... .......... .......... 48% 65.1M 0s
+#5 28.71   4550K .......... .......... .......... .......... .......... 49% 31.1M 0s
+#5 28.71   4600K .......... .......... .......... .......... .......... 49%  110M 0s
+#5 28.71   4650K .......... .......... .......... .......... .......... 50% 67.5M 0s
+#5 28.71   4700K .......... .......... .......... .......... .......... 50% 88.1M 0s
+#5 28.71   4750K .......... .......... .......... .......... .......... 51% 33.1M 0s
+#5 28.71   4800K .......... .......... .......... .......... .......... 52% 91.3M 0s
+#5 28.71   4850K .......... .......... .......... .......... .......... 52% 77.6M 0s
+#5 28.71   4900K .......... .......... .......... .......... .......... 53% 99.8M 0s
+#5 28.71   4950K .......... .......... .......... .......... .......... 53% 47.1M 0s
+#5 28.71   5000K .......... .......... .......... .......... .......... 54%  114M 0s
+#5 28.72   5050K .......... .......... .......... .......... .......... 54% 7.35M 0s
+#5 28.72   5100K .......... .......... .......... .......... .......... 55% 38.4M 0s
+#5 28.72   5150K .......... .......... .......... .......... .......... 55% 37.6M 0s
+#5 28.72   5200K .......... .......... .......... .......... .......... 56% 36.8M 0s
+#5 28.73   5250K .......... .......... .......... .......... .......... 56% 38.3M 0s
+#5 28.73   5300K .......... .......... .......... .......... .......... 57% 29.9M 0s
+#5 28.73   5350K .......... .......... .......... .......... .......... 57% 40.6M 0s
+#5 28.73   5400K .......... .......... .......... .......... .......... 58% 47.9M 0s
+#5 28.73   5450K .......... .......... .......... .......... .......... 59% 39.3M 0s
+#5 28.73   5500K .......... .......... .......... .......... .......... 59% 34.5M 0s
+#5 28.73   5550K .......... .......... .......... .......... .......... 60% 35.6M 0s
+#5 28.73   5600K .......... .......... .......... .......... .......... 60% 42.8M 0s
+#5 28.74   5650K .......... .......... .......... .......... .......... 61% 36.5M 0s
+#5 28.74   5700K .......... .......... .......... .......... .......... 61% 53.2M 0s
+#5 28.74   5750K .......... .......... .......... .......... .......... 62% 32.6M 0s
+#5 28.74   5800K .......... .......... .......... .......... .......... 62% 45.6M 0s
+#5 28.74   5850K .......... .......... .......... .......... .......... 63% 33.6M 0s
+#5 28.74   5900K .......... .......... .......... .......... .......... 63% 44.4M 0s
+#5 28.74   5950K .......... .......... .......... .......... .......... 64% 27.8M 0s
+#5 28.75   6000K .......... .......... .......... .......... .......... 64% 32.9M 0s
+#5 28.75   6050K .......... .......... .......... .......... .......... 65% 75.0M 0s
+#5 28.75   6100K .......... .......... .......... .......... .......... 66% 27.7M 0s
+#5 28.75   6150K .......... .......... .......... .......... .......... 66% 65.2M 0s
+#5 28.75   6200K .......... .......... .......... .......... .......... 67% 29.8M 0s
+#5 28.75   6250K .......... .......... .......... .......... .......... 67% 57.0M 0s
+#5 28.75   6300K .......... .......... .......... .......... .......... 68% 35.6M 0s
+#5 28.75   6350K .......... .......... .......... .......... .......... 68% 33.7M 0s
+#5 28.76   6400K .......... .......... .......... .......... .......... 69% 34.5M 0s
+#5 28.76   6450K .......... .......... .......... .......... .......... 69% 33.2M 0s
+#5 28.76   6500K .......... .......... .......... .......... .......... 70% 74.1M 0s
+#5 28.76   6550K .......... .......... .......... .......... .......... 70% 30.5M 0s
+#5 28.76   6600K .......... .......... .......... .......... .......... 71% 31.5M 0s
+#5 28.76   6650K .......... .......... .......... .......... .......... 71% 50.4M 0s
+#5 28.76   6700K .......... .......... .......... .......... .......... 72% 3.69M 0s
+#5 28.78   6750K .......... .......... .......... .......... .......... 72% 37.8M 0s
+#5 28.78   6800K .......... .......... .......... .......... .......... 73% 9.42M 0s
+#5 28.78   6850K .......... .......... .......... .......... .......... 74% 89.8M 0s
+#5 28.78   6900K .......... .......... .......... .......... .......... 74% 89.1M 0s
+#5 28.78   6950K .......... .......... .......... .......... .......... 75%  100M 0s
+#5 28.78   7000K .......... .......... .......... .......... .......... 75%  114M 0s
+#5 28.78   7050K .......... .......... .......... .......... .......... 76%  108M 0s
+#5 28.79   7100K .......... .......... .......... .......... .......... 76% 55.0M 0s
+#5 28.79   7150K .......... .......... .......... .......... .......... 77% 30.9M 0s
+#5 28.79   7200K .......... .......... .......... .......... .......... 77% 36.5M 0s
+#5 28.79   7250K .......... .......... .......... .......... .......... 78% 44.3M 0s
+#5 28.79   7300K .......... .......... .......... .......... .......... 78% 32.6M 0s
+#5 28.79   7350K .......... .......... .......... .......... .......... 79% 45.6M 0s
+#5 28.79   7400K .......... .......... .......... .......... .......... 79% 37.6M 0s
+#5 28.79   7450K .......... .......... .......... .......... .......... 80% 40.6M 0s
+#5 28.80   7500K .......... .......... .......... .......... .......... 81% 27.4M 0s
+#5 28.80   7550K .......... .......... .......... .......... .......... 81% 37.6M 0s
+#5 28.80   7600K .......... .......... .......... .......... .......... 82% 52.5M 0s
+#5 28.80   7650K .......... .......... .......... .......... .......... 82% 34.1M 0s
+#5 28.80   7700K .......... .......... .......... .......... .......... 83% 38.8M 0s
+#5 28.80   7750K .......... .......... .......... .......... .......... 83% 33.4M 0s
+#5 28.80   7800K .......... .......... .......... .......... .......... 84% 28.5M 0s
+#5 28.80   7850K .......... .......... .......... .......... .......... 84% 88.8M 0s
+#5 28.81   7900K .......... .......... .......... .......... .......... 85% 39.5M 0s
+#5 28.81   7950K .......... .......... .......... .......... .......... 85% 38.6M 0s
+#5 28.81   8000K .......... .......... .......... .......... .......... 86% 39.4M 0s
+#5 28.81   8050K .......... .......... .......... .......... .......... 86% 34.1M 0s
+#5 28.81   8100K .......... .......... .......... .......... .......... 87% 59.4M 0s
+#5 28.81   8150K .......... .......... .......... .......... .......... 88% 32.5M 0s
+#5 28.81   8200K .......... .......... .......... .......... .......... 88% 52.9M 0s
+#5 28.81   8250K .......... .......... .......... .......... .......... 89% 29.9M 0s
+#5 28.82   8300K .......... .......... .......... .......... .......... 89% 67.8M 0s
+#5 28.82   8350K .......... .......... .......... .......... .......... 90% 23.3M 0s
+#5 28.82   8400K .......... .......... .......... .......... .......... 90% 36.8M 0s
+#5 28.82   8450K .......... .......... .......... .......... .......... 91% 53.6M 0s
+#5 28.82   8500K .......... .......... .......... .......... .......... 91% 40.1M 0s
+#5 28.82   8550K .......... .......... .......... .......... .......... 92% 39.7M 0s
+#5 28.82   8600K .......... .......... .......... .......... .......... 92% 33.5M 0s
+#5 28.82   8650K .......... .......... .......... .......... .......... 93% 66.4M 0s
+#5 28.83   8700K .......... .......... .......... .......... .......... 93% 36.1M 0s
+#5 28.83   8750K .......... .......... .......... .......... .......... 94% 27.8M 0s
+#5 28.83   8800K .......... .......... .......... .......... .......... 94% 51.7M 0s
+#5 28.83   8850K .......... .......... .......... .......... .......... 95% 37.8M 0s
+#5 28.83   8900K .......... .......... .......... .......... .......... 96% 44.0M 0s
+#5 28.83   8950K .......... .......... .......... .......... .......... 96% 3.68M 0s
+#5 28.84   9000K .......... .......... .......... .......... .......... 97% 54.7M 0s
+#5 28.85   9050K .......... .......... .......... .......... .......... 97% 33.5M 0s
+#5 28.85   9100K .......... .......... .......... .......... .......... 98% 64.9M 0s
+#5 28.85   9150K .......... .......... .......... .......... .......... 98% 27.1M 0s
+#5 28.85   9200K .......... .......... .......... .......... .......... 99% 33.1M 0s
+#5 28.85   9250K .......... .......... .......... .......... .......... 99% 50.1M 0s
+#5 28.85   9300K .......... .......                                    100% 37.7M=0.3s
+#5 28.85 
+#5 28.85 2024-08-01 05:55:36 (31.8 MB/s) - 'noderig' saved [9540896/9540896]
+#5 28.85 
+#5 DONE 32.4s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 1.4s done
+#6 writing image sha256:f344885126186b6967e148c0bc21f8184995323264a53042c94e39546185c284 0.0s done
+#6 naming to docker.io/library/image_name_v1_1 0.0s done
+#6 DONE 1.4s
+Duration: 0:39.59

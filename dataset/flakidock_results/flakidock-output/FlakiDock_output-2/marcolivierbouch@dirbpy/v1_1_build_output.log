@@ -1,0 +1,122 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.6s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 456B done
+#2 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.4s
+
+#4 [1/3] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.3s done
+#4 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#4 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#4 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.28MB / 3.62MB 0.3s
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s done
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.3s done
+#4 DONE 1.5s
+
+#5 [2/3] RUN apk add --no-cache python3 &&     python3 -m venv /venv &&     . /venv/bin/activate &&     pip install --upgrade pip setuptools &&     if [ ! -e /usr/bin/pip ]; then ln -s /venv/bin/pip /usr/bin/pip ; fi &&     if [ ! -e /usr/bin/python ]; then ln -sf /venv/bin/python /usr/bin/python; fi &&     rm -r /root/.cache
+#5 0.521 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#5 0.758 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#5 1.248 (1/17) Installing libbz2 (1.0.8-r6)
+#5 1.252 (2/17) Installing libexpat (2.6.2-r0)
+#5 1.257 (3/17) Installing libffi (3.4.6-r0)
+#5 1.262 (4/17) Installing gdbm (1.23-r1)
+#5 1.275 (5/17) Installing xz-libs (5.6.1-r3)
+#5 1.294 (6/17) Installing libgcc (13.2.1_git20240309-r0)
+#5 1.299 (7/17) Installing libstdc++ (13.2.1_git20240309-r0)
+#5 1.326 (8/17) Installing mpdecimal (4.0.0-r0)
+#5 1.332 (9/17) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#5 1.352 (10/17) Installing libncursesw (6.4_p20240420-r0)
+#5 1.360 (11/17) Installing libpanelw (6.4_p20240420-r0)
+#5 1.364 (12/17) Installing readline (8.2.10-r0)
+#5 1.370 (13/17) Installing sqlite-libs (3.45.3-r1)
+#5 1.393 (14/17) Installing python3 (3.12.3-r1)
+#5 1.712 (15/17) Installing python3-pycache-pyc0 (3.12.3-r1)
+#5 1.956 (16/17) Installing pyc (3.12.3-r1)
+#5 1.958 (17/17) Installing python3-pyc (3.12.3-r1)
+#5 1.961 Executing busybox-1.36.1-r29.trigger
+#5 1.968 OK: 50 MiB in 31 packages
+#5 7.872 Requirement already satisfied: pip in /venv/lib/python3.12/site-packages (24.0)
+#5 8.052 Collecting pip
+#5 8.093   Downloading pip-24.2-py3-none-any.whl.metadata (3.6 kB)
+#5 8.553 Collecting setuptools
+#5 8.562   Downloading setuptools-72.1.0-py3-none-any.whl.metadata (6.6 kB)
+#5 8.675 Downloading pip-24.2-py3-none-any.whl (1.8 MB)
+#5 8.796    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 15.4 MB/s eta 0:00:00
+#5 8.805 Downloading setuptools-72.1.0-py3-none-any.whl (2.3 MB)
+#5 8.913    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 22.4 MB/s eta 0:00:00
+#5 9.024 Installing collected packages: setuptools, pip
+#5 10.60   Attempting uninstall: pip
+#5 10.60     Found existing installation: pip 24.0
+#5 10.68     Uninstalling pip-24.0:
+#5 10.69       Successfully uninstalled pip-24.0
+#5 13.22 Successfully installed pip-24.2 setuptools-72.1.0
+#5 DONE 16.1s
+
+#6 [3/3] RUN . /venv/bin/activate && pip install dirbpy
+#6 1.459 Collecting dirbpy
+#6 1.513   Downloading dirbpy-1.8.4.tar.gz (6.5 kB)
+#6 1.558   Installing build dependencies: started
+#6 4.567   Installing build dependencies: finished with status 'done'
+#6 4.568   Getting requirements to build wheel: started
+#6 4.849   Getting requirements to build wheel: finished with status 'done'
+#6 4.851   Preparing metadata (pyproject.toml): started
+#6 5.155   Preparing metadata (pyproject.toml): finished with status 'done'
+#6 5.277 Collecting argparse (from dirbpy)
+#6 5.286   Downloading argparse-1.4.0-py2.py3-none-any.whl.metadata (2.8 kB)
+#6 5.433 Collecting requests (from dirbpy)
+#6 5.441   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+#6 5.592 Collecting JSON-log-formatter (from dirbpy)
+#6 5.601   Downloading JSON-log-formatter-1.0.tar.gz (5.5 kB)
+#6 5.650   Installing build dependencies: started
+#6 8.259   Installing build dependencies: finished with status 'done'
+#6 8.260   Getting requirements to build wheel: started
+#6 8.617   Getting requirements to build wheel: finished with status 'done'
+#6 8.619   Preparing metadata (pyproject.toml): started
+#6 8.978   Preparing metadata (pyproject.toml): finished with status 'done'
+#6 9.158 Collecting charset-normalizer<4,>=2 (from requests->dirbpy)
+#6 9.168   Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (33 kB)
+#6 9.278 Collecting idna<4,>=2.5 (from requests->dirbpy)
+#6 9.286   Downloading idna-3.7-py3-none-any.whl.metadata (9.9 kB)
+#6 9.433 Collecting urllib3<3,>=1.21.1 (from requests->dirbpy)
+#6 9.441   Downloading urllib3-2.2.2-py3-none-any.whl.metadata (6.4 kB)
+#6 9.558 Collecting certifi>=2017.4.17 (from requests->dirbpy)
+#6 9.567   Downloading certifi-2024.7.4-py3-none-any.whl.metadata (2.2 kB)
+#6 9.614 Downloading argparse-1.4.0-py2.py3-none-any.whl (23 kB)
+#6 9.659 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#6 9.701 Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#6 9.761 Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl (142 kB)
+#6 9.819 Downloading idna-3.7-py3-none-any.whl (66 kB)
+#6 9.869 Downloading urllib3-2.2.2-py3-none-any.whl (121 kB)
+#6 9.924 Building wheels for collected packages: dirbpy, JSON-log-formatter
+#6 9.925   Building wheel for dirbpy (pyproject.toml): started
+#6 10.27   Building wheel for dirbpy (pyproject.toml): finished with status 'done'
+#6 10.27   Created wheel for dirbpy: filename=dirbpy-1.8.4-py2.py3-none-any.whl size=8061 sha256=5199a6f9df858a7f0dbf1d227a822866772ec6fa5d0c83eb68ed0c26418cf80e
+#6 10.27   Stored in directory: /root/.cache/pip/wheels/63/74/d6/1aee4ad48b762210d6672748568423d281749591e3422c684b
+#6 10.28   Building wheel for JSON-log-formatter (pyproject.toml): started
+#6 10.67   Building wheel for JSON-log-formatter (pyproject.toml): finished with status 'done'
+#6 10.67   Created wheel for JSON-log-formatter: filename=JSON_log_formatter-1.0-py3-none-any.whl size=5953 sha256=677e9389ef0468cf2b9cd9b57c10906cf467cd32eaaba37a7b2fd761cd3ef327
+#6 10.67   Stored in directory: /root/.cache/pip/wheels/bf/b3/f1/2ed79164201995b28a507e78a7834582b4d9ebf437499543e5
+#6 10.68 Successfully built dirbpy JSON-log-formatter
+#6 10.72 Installing collected packages: argparse, urllib3, JSON-log-formatter, idna, charset-normalizer, certifi, requests, dirbpy
+#6 11.56 Successfully installed JSON-log-formatter-1.0 argparse-1.4.0 certifi-2024.7.4 charset-normalizer-3.3.2 dirbpy-1.8.4 idna-3.7 requests-2.32.3 urllib3-2.2.2
+#6 DONE 12.4s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 1.3s done
+#7 writing image sha256:c1a9edcefc369c6cef8e6a5819515a69ca641fbf2324eb4d71d838c2ad1c6d8d 0.0s done
+#7 naming to docker.io/library/image_name_v1_1 0.0s done
+#7 DONE 1.4s
+Duration: 0:33.12

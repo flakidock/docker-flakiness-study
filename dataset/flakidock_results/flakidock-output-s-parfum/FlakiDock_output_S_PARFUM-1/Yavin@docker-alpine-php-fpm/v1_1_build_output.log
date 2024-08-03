@@ -1,0 +1,153 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.04kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:edge
+#2 ...
+
+#3 [auth] library/alpine:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:edge
+#2 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 109B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 469B done
+#5 DONE 0.0s
+
+#6 [1/4] FROM docker.io/library/alpine:edge@sha256:166710df254975d4a6c4c407c315951c22753dcaa829e020a3fd5d18fff70dd2
+#6 resolve docker.io/library/alpine:edge@sha256:166710df254975d4a6c4c407c315951c22753dcaa829e020a3fd5d18fff70dd2 0.0s done
+#6 sha256:5f3877672d1e408d63126ebcd62fa84183a627955762876ac64315722fb7fa87 528B / 528B done
+#6 sha256:55617791c9de4f227b2b701123ab5d1a3ae1adc9fdbc817f1df15e258d7692ee 1.47kB / 1.47kB done
+#6 sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 0B / 3.62MB 0.1s
+#6 sha256:166710df254975d4a6c4c407c315951c22753dcaa829e020a3fd5d18fff70dd2 1.85kB / 1.85kB done
+#6 sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 2.10MB / 3.62MB 0.2s
+#6 sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 3.62MB / 3.62MB 0.3s done
+#6 extracting sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 0.1s done
+#6 DONE 0.5s
+
+#7 [2/4] RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories &&     apk --update add         php7         php7-bcmath         php7-dom         php7-ctype         php7-curl         php7-fileinfo         php7-fpm         php7-gd         php7-iconv         php7-intl         php7-json         php7-mbstring         php7-mcrypt         php7-mysqlnd         php7-opcache         php7-openssl         php7-pdo         php7-pdo_mysql         php7-pdo_pgsql         php7-pdo_sqlite         php7-phar         php7-posix         php7-simplexml         php7-session         php7-soap         php7-tokenizer         php7-xml         php7-xmlreader         php7-xmlwriter         php7-zip     && rm -rf /var/cache/apk/*
+#7 0.184 fetch https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz
+#7 0.448 fetch https://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz
+#7 0.657 fetch http://dl-cdn.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#7 1.200 ERROR: unable to select packages:
+#7 1.200   php7 (no such package):
+#7 1.200     required by: world[php7]
+#7 1.200   php7-bcmath (no such package):
+#7 1.200     required by: world[php7-bcmath]
+#7 1.200   php7-ctype (no such package):
+#7 1.200     required by: world[php7-ctype]
+#7 1.200   php7-curl (no such package):
+#7 1.200     required by: world[php7-curl]
+#7 1.200   php7-dom (no such package):
+#7 1.200     required by: world[php7-dom]
+#7 1.200   php7-fileinfo (no such package):
+#7 1.200     required by: world[php7-fileinfo]
+#7 1.200   php7-fpm (no such package):
+#7 1.200     required by: world[php7-fpm]
+#7 1.200   php7-gd (no such package):
+#7 1.200     required by: world[php7-gd]
+#7 1.200   php7-iconv (no such package):
+#7 1.200     required by: world[php7-iconv]
+#7 1.200   php7-intl (no such package):
+#7 1.200     required by: world[php7-intl]
+#7 1.200   php7-json (no such package):
+#7 1.200     required by: world[php7-json]
+#7 1.200   php7-mbstring (no such package):
+#7 1.200     required by: world[php7-mbstring]
+#7 1.200   php7-mcrypt (no such package):
+#7 1.200     required by: world[php7-mcrypt]
+#7 1.200   php7-mysqlnd (no such package):
+#7 1.200     required by: world[php7-mysqlnd]
+#7 1.200   php7-opcache (no such package):
+#7 1.200     required by: world[php7-opcache]
+#7 1.200   php7-openssl (no such package):
+#7 1.200     required by: world[php7-openssl]
+#7 1.200   php7-pdo (no such package):
+#7 1.200     required by: world[php7-pdo]
+#7 1.200   php7-pdo_mysql (no such package):
+#7 1.200     required by: world[php7-pdo_mysql]
+#7 1.200   php7-pdo_pgsql (no such package):
+#7 1.200     required by: world[php7-pdo_pgsql]
+#7 1.200   php7-pdo_sqlite (no such package):
+#7 1.200     required by: world[php7-pdo_sqlite]
+#7 1.200   php7-phar (no such package):
+#7 1.200     required by: world[php7-phar]
+#7 1.200   php7-posix (no such package):
+#7 1.200     required by: world[php7-posix]
+#7 1.200   php7-session (no such package):
+#7 1.200     required by: world[php7-session]
+#7 1.200   php7-simplexml (no such package):
+#7 1.200     required by: world[php7-simplexml]
+#7 1.200   php7-soap (no such package):
+#7 1.200     required by: world[php7-soap]
+#7 1.200   php7-tokenizer (no such package):
+#7 1.200     required by: world[php7-tokenizer]
+#7 1.200   php7-xml (no such package):
+#7 1.200     required by: world[php7-xml]
+#7 1.200   php7-xmlreader (no such package):
+#7 1.200     required by: world[php7-xmlreader]
+#7 1.200   php7-xmlwriter (no such package):
+#7 1.200     required by: world[php7-xmlwriter]
+#7 1.200   php7-zip (no such package):
+#7 1.200     required by: world[php7-zip]
+#7 ERROR: process "/bin/sh -c echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories &&     apk --update add         php7         php7-bcmath         php7-dom         php7-ctype         php7-curl         php7-fileinfo         php7-fpm         php7-gd         php7-iconv         php7-intl         php7-json         php7-mbstring         php7-mcrypt         php7-mysqlnd         php7-opcache         php7-openssl         php7-pdo         php7-pdo_mysql         php7-pdo_pgsql         php7-pdo_sqlite         php7-phar         php7-posix         php7-simplexml         php7-session         php7-soap         php7-tokenizer         php7-xml         php7-xmlreader         php7-xmlwriter         php7-zip     && rm -rf /var/cache/apk/*" did not complete successfully: exit code: 30
+------
+ > [2/4] RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories &&     apk --update add         php7         php7-bcmath         php7-dom         php7-ctype         php7-curl         php7-fileinfo         php7-fpm         php7-gd         php7-iconv         php7-intl         php7-json         php7-mbstring         php7-mcrypt         php7-mysqlnd         php7-opcache         php7-openssl         php7-pdo         php7-pdo_mysql         php7-pdo_pgsql         php7-pdo_sqlite         php7-phar         php7-posix         php7-simplexml         php7-session         php7-soap         php7-tokenizer         php7-xml         php7-xmlreader         php7-xmlwriter         php7-zip     && rm -rf /var/cache/apk/*:
+1.200   php7-tokenizer (no such package):
+1.200     required by: world[php7-tokenizer]
+1.200   php7-xml (no such package):
+1.200     required by: world[php7-xml]
+1.200   php7-xmlreader (no such package):
+1.200     required by: world[php7-xmlreader]
+1.200   php7-xmlwriter (no such package):
+1.200     required by: world[php7-xmlwriter]
+1.200   php7-zip (no such package):
+1.200     required by: world[php7-zip]
+------
+v1_Dockerfile:3
+--------------------
+   2 |     
+   3 | >>> RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
+   4 | >>>     apk --update add \
+   5 | >>>         php7 \
+   6 | >>>         php7-bcmath \
+   7 | >>>         php7-dom \
+   8 | >>>         php7-ctype \
+   9 | >>>         php7-curl \
+  10 | >>>         php7-fileinfo \
+  11 | >>>         php7-fpm \
+  12 | >>>         php7-gd \
+  13 | >>>         php7-iconv \
+  14 | >>>         php7-intl \
+  15 | >>>         php7-json \
+  16 | >>>         php7-mbstring \
+  17 | >>>         php7-mcrypt \
+  18 | >>>         php7-mysqlnd \
+  19 | >>>         php7-opcache \
+  20 | >>>         php7-openssl \
+  21 | >>>         php7-pdo \
+  22 | >>>         php7-pdo_mysql \
+  23 | >>>         php7-pdo_pgsql \
+  24 | >>>         php7-pdo_sqlite \
+  25 | >>>         php7-phar \
+  26 | >>>         php7-posix \
+  27 | >>>         php7-simplexml \
+  28 | >>>         php7-session \
+  29 | >>>         php7-soap \
+  30 | >>>         php7-tokenizer \
+  31 | >>>         php7-xml \
+  32 | >>>         php7-xmlreader \
+  33 | >>>         php7-xmlwriter \
+  34 | >>>         php7-zip \
+  35 | >>>     && rm -rf /var/cache/apk/*
+  36 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories &&     apk --update add         php7         php7-bcmath         php7-dom         php7-ctype         php7-curl         php7-fileinfo         php7-fpm         php7-gd         php7-iconv         php7-intl         php7-json         php7-mbstring         php7-mcrypt         php7-mysqlnd         php7-opcache         php7-openssl         php7-pdo         php7-pdo_mysql         php7-pdo_pgsql         php7-pdo_sqlite         php7-phar         php7-posix         php7-simplexml         php7-session         php7-soap         php7-tokenizer         php7-xml         php7-xmlreader         php7-xmlwriter         php7-zip     && rm -rf /var/cache/apk/*" did not complete successfully: exit code: 30
+Duration: 0:3.20

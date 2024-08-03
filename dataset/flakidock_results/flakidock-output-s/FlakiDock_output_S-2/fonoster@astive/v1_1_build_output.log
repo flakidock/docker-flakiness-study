@@ -1,0 +1,136 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 857B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:latest
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.0s done
+#4 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#4 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#4 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.2s done
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s done
+#4 DONE 0.4s
+
+#5 [2/4] WORKDIR /tmp
+#5 DONE 0.1s
+
+#6 [3/4] RUN apk update     && apk add --no-cache openjdk8 maven wget     && wget https://github.com/fonoster/astive/archive/v1.0.9.tar.gz     && tar xvf v1.0.9.tar.gz     && cd astive-1.0.9     && ./assembly     && cd dist     && tar xvf astive-server-1.0.9.tar.gz     && mkdir -p /opt/astive     && mv astive-server-1.0.9/* /opt/astive     && apk del maven     && apk del openjdk8     && apk add --no-cache openjdk8-jre-base     && rm -rf /var/cache/apk/* /tmp/astive*
+#6 0.200 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.325 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 0.685 v3.20.2-45-g194e307d75d [https://dl-cdn.alpinelinux.org/alpine/v3.20/main]
+#6 0.685 v3.20.2-43-g4fdd3a681b2 [https://dl-cdn.alpinelinux.org/alpine/v3.20/community]
+#6 0.685 OK: 24154 distinct packages available
+#6 0.754 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.872 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 1.214 (1/54) Installing libexpat (2.6.2-r0)
+#6 1.226 (2/54) Installing brotli-libs (1.1.0-r2)
+#6 1.249 (3/54) Installing libbz2 (1.0.8-r6)
+#6 1.259 (4/54) Installing libpng (1.6.43-r0)
+#6 1.272 (5/54) Installing freetype (2.13.2-r0)
+#6 1.291 (6/54) Installing fontconfig (2.15.0-r1)
+#6 1.313 (7/54) Installing encodings (1.0.7-r1)
+#6 1.384 (8/54) Installing libfontenc (1.1.8-r0)
+#6 1.395 (9/54) Installing mkfontscale (1.2.2-r6)
+#6 1.408 (10/54) Installing font-dejavu (2.37-r5)
+#6 1.541 (11/54) Installing libxau (1.0.11-r4)
+#6 1.551 (12/54) Installing libmd (1.1.0-r0)
+#6 1.564 (13/54) Installing libbsd (0.12.2-r0)
+#6 1.577 (14/54) Installing libxdmcp (1.1.5-r1)
+#6 1.589 (15/54) Installing libxcb (1.16.1-r0)
+#6 1.611 (16/54) Installing libx11 (1.8.9-r1)
+#6 1.658 (17/54) Installing libxcomposite (0.4.6-r5)
+#6 1.670 (18/54) Installing libxext (1.3.6-r2)
+#6 1.682 (19/54) Installing libxi (1.8.1-r4)
+#6 1.694 (20/54) Installing libxrender (0.9.11-r5)
+#6 1.706 (21/54) Installing libxtst (1.2.4-r6)
+#6 1.717 (22/54) Installing alsa-lib (1.2.11-r0)
+#6 1.747 (23/54) Installing libgcc (13.2.1_git20240309-r0)
+#6 1.759 (24/54) Installing giflib (5.2.2-r0)
+#6 1.774 (25/54) Installing libjpeg-turbo (3.0.3-r0)
+#6 1.791 (26/54) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 1.825 (27/54) Installing openjdk8-jre-lib (8.402.06-r0)
+#6 2.434 (28/54) Installing java-common (0.5-r0)
+#6 2.447 (29/54) Installing libffi (3.4.6-r0)
+#6 2.458 (30/54) Installing libtasn1 (4.19.0-r2)
+#6 2.469 (31/54) Installing p11-kit (0.25.3-r0)
+#6 2.487 (32/54) Installing p11-kit-trust (0.25.3-r0)
+#6 2.502 (33/54) Installing ca-certificates (20240705-r0)
+#6 2.528 (34/54) Installing java-cacerts (1.0-r1)
+#6 2.538 (35/54) Installing nspr (4.35-r4)
+#6 2.552 (36/54) Installing sqlite-libs (3.45.3-r1)
+#6 2.578 (37/54) Installing nss (3.101-r0)
+#6 2.627 (38/54) Installing krb5-conf (1.0-r2)
+#6 2.638 (39/54) Installing libcom_err (1.47.0-r5)
+#6 2.649 (40/54) Installing keyutils-libs (1.6.3-r3)
+#6 2.659 (41/54) Installing libverto (0.3.2-r2)
+#6 2.671 (42/54) Installing krb5-libs (1.21.3-r0)
+#6 2.701 (43/54) Installing lcms2 (2.16-r0)
+#6 2.717 (44/54) Installing pcsc-lite-libs (2.2.3-r0)
+#6 2.735 (45/54) Installing liblksctp (1.0.19-r5)
+#6 2.747 (46/54) Installing openjdk8-jre-base (8.402.06-r0)
+#6 2.918 (47/54) Installing openjdk8-jre (8.402.06-r0)
+#6 2.938 (48/54) Installing openjdk8-jdk (8.402.06-r0)
+#6 3.171 (49/54) Installing maven (3.9.6-r0)
+#6 3.313 (50/54) Installing openjdk8 (8.402.06-r0)
+#6 3.327 (51/54) Installing libunistring (1.2-r0)
+#6 3.352 (52/54) Installing libidn2 (2.3.7-r0)
+#6 3.365 (53/54) Installing pcre2 (10.43-r0)
+#6 3.384 (54/54) Installing wget (1.24.5-r0)
+#6 3.403 Executing busybox-1.36.1-r29.trigger
+#6 3.407 Executing fontconfig-2.15.0-r1.trigger
+#6 3.430 Executing mkfontscale-1.2.2-r6.trigger
+#6 3.459 Executing java-common-0.5-r0.trigger
+#6 3.463 Executing ca-certificates-20240705-r0.trigger
+#6 3.565 OK: 136 MiB in 68 packages
+#6 3.648 --2024-08-01 00:24:24--  https://github.com/fonoster/astive/archive/v1.0.9.tar.gz
+#6 3.663 Resolving github.com (github.com)... 140.82.116.4
+#6 3.664 Connecting to github.com (github.com)|140.82.116.4|:443... connected.
+#6 3.681 HTTP request sent, awaiting response... 404 Not Found
+#6 3.798 2024-08-01 00:24:25 ERROR 404: Not Found.
+#6 3.798 
+#6 ERROR: process "/bin/sh -c apk update     && apk add --no-cache openjdk8 maven wget     && wget https://github.com/fonoster/astive/archive/v$ASTIVE_VERSION.tar.gz     && tar xvf v$ASTIVE_VERSION.tar.gz     && cd astive-$ASTIVE_VERSION     && ./assembly     && cd dist     && tar xvf astive-server-$ASTIVE_VERSION.tar.gz     && mkdir -p $ASTIVE_HOME     && mv astive-server-$ASTIVE_VERSION/* /opt/astive     && apk del maven     && apk del openjdk8     && apk add --no-cache openjdk8-jre-base     && rm -rf /var/cache/apk/* /tmp/astive*" did not complete successfully: exit code: 8
+------
+ > [3/4] RUN apk update     && apk add --no-cache openjdk8 maven wget     && wget https://github.com/fonoster/astive/archive/v1.0.9.tar.gz     && tar xvf v1.0.9.tar.gz     && cd astive-1.0.9     && ./assembly     && cd dist     && tar xvf astive-server-1.0.9.tar.gz     && mkdir -p /opt/astive     && mv astive-server-1.0.9/* /opt/astive     && apk del maven     && apk del openjdk8     && apk add --no-cache openjdk8-jre-base     && rm -rf /var/cache/apk/* /tmp/astive*:
+3.430 Executing mkfontscale-1.2.2-r6.trigger
+3.459 Executing java-common-0.5-r0.trigger
+3.463 Executing ca-certificates-20240705-r0.trigger
+3.565 OK: 136 MiB in 68 packages
+3.648 --2024-08-01 00:24:24--  https://github.com/fonoster/astive/archive/v1.0.9.tar.gz
+3.663 Resolving github.com (github.com)... 140.82.116.4
+3.664 Connecting to github.com (github.com)|140.82.116.4|:443... connected.
+3.681 HTTP request sent, awaiting response... 404 Not Found
+3.798 2024-08-01 00:24:25 ERROR 404: Not Found.
+3.798 
+------
+v1_Dockerfile:10
+--------------------
+   9 |     
+  10 | >>> RUN apk update \
+  11 | >>>     && apk add --no-cache openjdk8 maven wget \
+  12 | >>>     && wget https://github.com/fonoster/astive/archive/v$ASTIVE_VERSION.tar.gz \
+  13 | >>>     && tar xvf v$ASTIVE_VERSION.tar.gz \
+  14 | >>>     && cd astive-$ASTIVE_VERSION \
+  15 | >>>     && ./assembly \
+  16 | >>>     && cd dist \
+  17 | >>>     && tar xvf astive-server-$ASTIVE_VERSION.tar.gz \
+  18 | >>>     && mkdir -p $ASTIVE_HOME \
+  19 | >>>     && mv astive-server-$ASTIVE_VERSION/* /opt/astive \
+  20 | >>>     && apk del maven \
+  21 | >>>     && apk del openjdk8 \
+  22 | >>>     && apk add --no-cache openjdk8-jre-base \
+  23 | >>>     && rm -rf /var/cache/apk/* /tmp/astive*
+  24 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk update     && apk add --no-cache openjdk8 maven wget     && wget https://github.com/fonoster/astive/archive/v$ASTIVE_VERSION.tar.gz     && tar xvf v$ASTIVE_VERSION.tar.gz     && cd astive-$ASTIVE_VERSION     && ./assembly     && cd dist     && tar xvf astive-server-$ASTIVE_VERSION.tar.gz     && mkdir -p $ASTIVE_HOME     && mv astive-server-$ASTIVE_VERSION/* /opt/astive     && apk del maven     && apk del openjdk8     && apk add --no-cache openjdk8-jre-base     && rm -rf /var/cache/apk/* /tmp/astive*" did not complete successfully: exit code: 8
+Duration: 0:5.73

@@ -1,0 +1,122 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 844B done
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.6s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.5s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.3s done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.3s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 253.13kB done
+#4 DONE 0.5s
+
+#5 [1/6] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.2s done
+#5 DONE 1.6s
+
+#6 [2/6] RUN apk add --no-cache 	ca-certificates 	python3 	py3-pip 	weechat 	weechat-perl 	weechat-python
+#6 0.528 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.775 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 1.266 (1/47) Installing ca-certificates (20240705-r0)
+#6 1.291 (2/47) Installing libbz2 (1.0.8-r6)
+#6 1.295 (3/47) Installing libexpat (2.6.2-r0)
+#6 1.300 (4/47) Installing libffi (3.4.6-r0)
+#6 1.303 (5/47) Installing gdbm (1.23-r1)
+#6 1.316 (6/47) Installing xz-libs (5.6.1-r3)
+#6 1.326 (7/47) Installing libgcc (13.2.1_git20240309-r0)
+#6 1.330 (8/47) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 1.357 (9/47) Installing mpdecimal (4.0.0-r0)
+#6 1.362 (10/47) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 1.386 (11/47) Installing libncursesw (6.4_p20240420-r0)
+#6 1.394 (12/47) Installing libpanelw (6.4_p20240420-r0)
+#6 1.397 (13/47) Installing readline (8.2.10-r0)
+#6 1.403 (14/47) Installing sqlite-libs (3.45.3-r1)
+#6 1.424 (15/47) Installing python3 (3.12.3-r1)
+#6 1.762 (16/47) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 2.007 (17/47) Installing pyc (3.12.3-r1)
+#6 2.009 (18/47) Installing py3-setuptools-pyc (69.5.1-r0)
+#6 2.137 (19/47) Installing py3-pip-pyc (24.0-r2)
+#6 2.373 (20/47) Installing py3-parsing (3.1.2-r1)
+#6 2.382 (21/47) Installing py3-parsing-pyc (3.1.2-r1)
+#6 2.401 (22/47) Installing py3-packaging-pyc (24.0-r1)
+#6 2.406 (23/47) Installing python3-pyc (3.12.3-r1)
+#6 2.409 (24/47) Installing py3-packaging (24.0-r1)
+#6 2.425 (25/47) Installing py3-setuptools (69.5.1-r0)
+#6 2.521 (26/47) Installing py3-pip (24.0-r2)
+#6 2.740 (27/47) Installing brotli-libs (1.1.0-r2)
+#6 2.755 (28/47) Installing c-ares (1.28.1-r0)
+#6 2.762 (29/47) Installing libunistring (1.2-r0)
+#6 2.783 (30/47) Installing libidn2 (2.3.7-r0)
+#6 2.789 (31/47) Installing nghttp2-libs (1.62.1-r0)
+#6 2.795 (32/47) Installing libpsl (0.21.5-r1)
+#6 2.800 (33/47) Installing zstd-libs (1.5.6-r0)
+#6 2.813 (34/47) Installing libcurl (8.9.0-r0)
+#6 2.824 (35/47) Installing libgpg-error (1.49-r0)
+#6 2.831 (36/47) Installing libgcrypt (1.10.3-r0)
+#6 2.847 (37/47) Installing gmp (6.3.0-r1)
+#6 2.856 (38/47) Installing nettle (3.9.1-r0)
+#6 2.867 (39/47) Installing libtasn1 (4.19.0-r2)
+#6 2.872 (40/47) Installing p11-kit (0.25.3-r0)
+#6 2.887 (41/47) Installing gnutls (3.8.5-r0)
+#6 2.910 (42/47) Installing libintl (0.22.5-r0)
+#6 2.914 (43/47) Installing weechat (4.2.2-r1)
+#6 2.957 (44/47) Installing perl (5.38.2-r0)
+#6 3.442 (45/47) Installing perl-pod-parser (1.67-r0)
+#6 3.464 (46/47) Installing weechat-perl (4.2.2-r1)
+#6 3.471 (47/47) Installing weechat-python (4.2.2-r1)
+#6 3.481 Executing busybox-1.36.1-r29.trigger
+#6 3.486 Executing ca-certificates-20240705-r0.trigger
+#6 3.532 OK: 130 MiB in 61 packages
+#6 DONE 7.9s
+
+#7 [3/6] RUN python3 -m venv /opt/venv     && . /opt/venv/bin/activate     && pip install websocket-client
+#7 7.631 Collecting websocket-client
+#7 7.675   Downloading websocket_client-1.8.0-py3-none-any.whl.metadata (8.0 kB)
+#7 7.743 Downloading websocket_client-1.8.0-py3-none-any.whl (58 kB)
+#7 7.793    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.8/58.8 kB 1.0 MB/s eta 0:00:00
+#7 7.823 Installing collected packages: websocket-client
+#7 7.945 Successfully installed websocket-client-1.8.0
+#7 8.122 
+#7 8.122 [notice] A new release of pip is available: 24.0 -> 24.2
+#7 8.122 [notice] To update, run: pip install --upgrade pip
+#7 DONE 9.0s
+
+#8 [4/6] COPY wee_slack.py /home/user/.weechat/python/autoload/wee_slack.py
+#8 DONE 0.6s
+
+#9 [5/6] RUN adduser -S user -h /home/user 	&& chown -R user /home/user
+#9 DONE 1.1s
+
+#10 [6/6] WORKDIR /home/user
+#10 DONE 0.5s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 2.2s done
+#11 writing image sha256:148350ab55f0d597087da67fd6e02d1ad543e1516a49cd09923f88773d692ff7 0.0s done
+#11 naming to docker.io/library/image_name_v1_1 0.0s done
+#11 DONE 2.2s
+Duration: 0:24.86

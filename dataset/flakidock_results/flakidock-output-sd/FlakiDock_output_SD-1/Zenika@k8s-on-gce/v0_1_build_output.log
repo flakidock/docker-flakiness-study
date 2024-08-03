@@ -1,0 +1,296 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.50kB done
+#1 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/python:2.7-alpine
+#3 ...
+
+#4 [auth] library/python:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:2.7-alpine
+#3 DONE 1.5s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/7] FROM docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561d87cb36b2f5b9ff8a760a
+#6 resolve docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561d87cb36b2f5b9ff8a760a 0.1s done
+#6 sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561d87cb36b2f5b9ff8a760a 1.65kB / 1.65kB done
+#6 sha256:b9ca0d225d42fd188bd636148229d121586fe7dcf3dcccfb23237b6401df4951 1.16kB / 1.16kB done
+#6 sha256:8579e446340f415fece00398a37dbdc4fff1f16901af2e173d6ae8c0bdbb9505 7.51kB / 7.51kB done
+#6 sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f39a5e327023056819 0B / 2.80MB 0.2s
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 802B done
+#5 DONE 0.4s
+
+#6 [1/7] FROM docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561d87cb36b2f5b9ff8a760a
+#6 sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f39a5e327023056819 2.80MB / 2.80MB 0.3s
+#6 sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b096a41066701f78d2 0B / 301.29kB 0.3s
+#6 sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f39a5e327023056819 2.80MB / 2.80MB 0.4s done
+#6 sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b096a41066701f78d2 301.29kB / 301.29kB 0.5s done
+#6 extracting sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f39a5e327023056819
+#6 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 0B / 20.28MB 0.5s
+#6 sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54bef7fbddabcc009431 0B / 1.89MB 0.5s
+#6 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 5.24MB / 20.28MB 0.6s
+#6 extracting sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f39a5e327023056819 0.2s done
+#6 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 12.58MB / 20.28MB 0.7s
+#6 sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54bef7fbddabcc009431 1.89MB / 1.89MB 0.7s
+#6 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 20.28MB / 20.28MB 0.8s
+#6 sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54bef7fbddabcc009431 1.89MB / 1.89MB 0.7s done
+#6 extracting sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b096a41066701f78d2
+#6 sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 20.28MB / 20.28MB 1.1s done
+#6 extracting sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b096a41066701f78d2 0.1s done
+#6 extracting sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd
+#6 extracting sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc820993773c2621dd57993fd 1.2s done
+#6 extracting sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54bef7fbddabcc009431
+#6 extracting sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54bef7fbddabcc009431 0.2s done
+#6 DONE 4.2s
+
+#7 [2/7] RUN apk update &&     apk add bash curl git openssh-client gcc make musl-dev libffi-dev openssl-dev &&     curl -o /root/google-cloud-sdk-200.0.0-linux-x86_64.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-200.0.0-linux-x86_64.tar.gz &&     curl -o /usr/local/bin/cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 &&     curl -o /usr/local/bin/cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 &&     curl -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.12.2/bin/linux/amd64/kubectl &&     curl -o /root/terraform_0.11.3_linux_amd64.zip https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip
+#7 0.463 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#7 0.874 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#7 1.347 v3.11.13-12-g2cfa91a2b4 [http://dl-cdn.alpinelinux.org/alpine/v3.11/main]
+#7 1.347 v3.11.11-124-gf2729ece5a [http://dl-cdn.alpinelinux.org/alpine/v3.11/community]
+#7 1.347 OK: 11290 distinct packages available
+#7 1.513 (1/28) Upgrading musl (1.1.24-r2 -> 1.1.24-r3)
+#7 1.732 (2/28) Upgrading libcrypto1.1 (1.1.1d-r3 -> 1.1.1l-r0)
+#7 1.953 (3/28) Upgrading libssl1.1 (1.1.1d-r3 -> 1.1.1l-r0)
+#7 2.173 (4/28) Installing bash (5.0.11-r1)
+#7 2.404 Executing bash-5.0.11-r1.post-install
+#7 2.407 (5/28) Installing nghttp2-libs (1.40.0-r1)
+#7 2.637 (6/28) Installing libcurl (7.79.1-r0)
+#7 2.860 (7/28) Installing curl (7.79.1-r0)
+#7 3.138 (8/28) Installing libgcc (9.3.0-r0)
+#7 3.364 (9/28) Installing libstdc++ (9.3.0-r0)
+#7 5.781 (10/28) Installing binutils (2.33.1-r1)
+#7 5.960 (11/28) Installing gmp (6.1.2-r1)
+#7 5.970 (12/28) Installing isl (0.18-r0)
+#7 5.991 (13/28) Installing libgomp (9.3.0-r0)
+#7 5.996 (14/28) Installing libatomic (9.3.0-r0)
+#7 6.007 (15/28) Installing mpfr4 (4.0.2-r1)
+#7 6.016 (16/28) Installing mpc1 (1.1.0-r1)
+#7 6.022 (17/28) Installing gcc (9.3.0-r0)
+#7 6.925 (18/28) Installing pcre2 (10.34-r1)
+#7 7.140 (19/28) Installing git (2.24.4-r0)
+#7 7.530 (20/28) Installing linux-headers (4.19.36-r0)
+#7 8.540 (21/28) Installing pkgconf (1.6.3-r0)
+#7 8.757 (22/28) Installing libffi-dev (3.2.1-r6)
+#7 8.973 (23/28) Installing make (4.2.1-r2)
+#7 8.982 (24/28) Installing musl-dev (1.1.24-r3)
+#7 9.136 (25/28) Installing openssh-keygen (8.1_p1-r1)
+#7 9.348 (26/28) Installing libedit (20191211.3.1-r0)
+#7 9.579 (27/28) Installing openssh-client (8.1_p1-r1)
+#7 10.17 (28/28) Installing openssl-dev (1.1.1l-r0)
+#7 10.44 Executing busybox-1.31.1-r9.trigger
+#7 10.45 Executing ca-certificates-20191127-r1.trigger
+#7 10.49 OK: 146 MiB in 57 packages
+#7 10.53   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#7 10.53                                  Dload  Upload   Total   Spent    Left  Speed
+#7 10.53   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0 18.6M    0  3177    0     0   1289      0  4:13:31  0:00:02  4:13:29  1288 26 18.6M   26 5007k    0     0  1451k      0  0:00:13  0:00:03  0:00:10 1451k 69 18.6M   69 13.0M    0     0  2997k      0  0:00:06  0:00:04  0:00:02 2997k100 18.6M  100 18.6M    0     0  3767k      0  0:00:05  0:00:05 --:--:-- 4952k
+#7 15.62   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#7 15.62                                  Dload  Upload   Total   Spent    Left  Speed
+#7 15.62   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   167  100   167    0     0   1256      0 --:--:-- --:--:-- --:--:--  1265
+#7 15.76   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#7 15.76                                  Dload  Upload   Total   Spent    Left  Speed
+#7 15.76   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   167  100   167    0     0   1485      0 --:--:-- --:--:-- --:--:--  1491
+#7 15.88   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#7 15.88                                  Dload  Upload   Total   Spent    Left  Speed
+#7 15.88   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 37 54.6M   37 20.4M    0     0  18.5M      0  0:00:02  0:00:01  0:00:01 18.5M 92 54.6M   92 50.7M    0     0  24.1M      0  0:00:02  0:00:02 --:--:-- 24.1M100 54.6M  100 54.6M    0     0  25.0M      0  0:00:02  0:00:02 --:--:-- 25.0M
+#7 18.07   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#7 18.07                                  Dload  Upload   Total   Spent    Left  Speed
+#7 18.07   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 15.7M  100 15.7M    0     0  38.3M      0 --:--:-- --:--:-- --:--:-- 38.3M
+#7 DONE 25.0s
+
+#8 [3/7] WORKDIR /root
+#8 DONE 0.5s
+
+#9 [4/7] RUN unzip terraform_0.11.3_linux_amd64.zip &&     mv terraform /usr/local/bin &&     rm terraform_0.11.3_linux_amd64.zip &&     tar xzf google-cloud-sdk-200.0.0-linux-x86_64.tar.gz &&     /root/google-cloud-sdk/install.sh -q &&     /root/google-cloud-sdk/bin/gcloud config set disable_usage_reporting true &&     rm /root/google-cloud-sdk-200.0.0-linux-x86_64.tar.gz &&     chmod +x /usr/local/bin/cfssl* /usr/local/bin/kubectl &&     pip2 install ansible
+#9 0.597 Archive:  terraform_0.11.3_linux_amd64.zip
+#9 1.288   inflating: terraform
+#9 2.906 Welcome to the Google Cloud SDK!
+#9 2.911 WARNING: You appear to be running this script as root. This may cause 
+#9 2.911 the installation to be inaccessible to users other than the root user.
+#9 4.439 
+#9 4.439 To help improve the quality of this product, we collect anonymized usage data
+#9 4.439 and anonymized stacktraces when crashes are encountered; additional information
+#9 4.439 is available at <https://cloud.google.com/sdk/usage-statistics>. You may choose
+#9 4.439 to opt out of this collection now (by choosing 'N' at the below prompt), or at
+#9 4.439 any time in the future by running the following command:
+#9 4.439 
+#9 4.439     gcloud config set disable_usage_reporting true
+#9 4.578 
+#9 4.578 Your current Cloud SDK version is: 200.0.0
+#9 4.578 The latest available version is: 486.0.0
+#9 4.578 
+#9 4.593 
+#9 4.593 ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+#9 4.593 │                                                     Components                                                     │
+#9 4.593 ├──────────────────┬──────────────────────────────────────────────────────┬──────────────────────────────┬───────────┤
+#9 4.593 │      Status      │                         Name                         │              ID              │    Size   │
+#9 4.593 ├──────────────────┼──────────────────────────────────────────────────────┼──────────────────────────────┼───────────┤
+#9 4.605 │ Update Available │ BigQuery Command Line Tool                           │ bq                           │   1.7 MiB │
+#9 4.605 │ Update Available │ Cloud Storage Command Line Tool                      │ gsutil                       │  11.3 MiB │
+#9 4.605 │ Update Available │ Google Cloud CLI Core Libraries                      │ core                         │  19.2 MiB │
+#9 4.605 │ Not Installed    │ App Engine Go Extensions                             │ app-engine-go                │   4.7 MiB │
+#9 4.605 │ Not Installed    │ Appctl                                               │ appctl                       │  21.0 MiB │
+#9 4.605 │ Not Installed    │ Artifact Registry Go Module Package Helper           │ package-go-module            │   < 1 MiB │
+#9 4.605 │ Not Installed    │ Bundled Python 3.11                                  │ bundled-python3-unix         │  74.0 MiB │
+#9 4.605 │ Not Installed    │ Cloud Bigtable Command Line Tool                     │ cbt                          │  17.7 MiB │
+#9 4.617 │ Not Installed    │ Cloud Bigtable Emulator                              │ bigtable                     │   7.3 MiB │
+#9 4.617 │ Not Installed    │ Cloud Datastore Emulator                             │ cloud-datastore-emulator     │  36.2 MiB │
+#9 4.617 │ Not Installed    │ Cloud Firestore Emulator                             │ cloud-firestore-emulator     │  45.2 MiB │
+#9 4.617 │ Not Installed    │ Cloud Pub/Sub Emulator                               │ pubsub-emulator              │  63.7 MiB │
+#9 4.617 │ Not Installed    │ Cloud Run Proxy                                      │ cloud-run-proxy              │  13.3 MiB │
+#9 4.617 │ Not Installed    │ Cloud SQL Proxy v2                                   │ cloud-sql-proxy              │  13.8 MiB │
+#9 4.617 │ Not Installed    │ Cloud Spanner Emulator                               │ cloud-spanner-emulator       │  36.6 MiB │
+#9 4.617 │ Not Installed    │ Cloud Spanner Migration Tool                         │ harbourbridge                │  20.9 MiB │
+#9 4.629 │ Not Installed    │ Google Cloud CRC32C Hash Tool                        │ gcloud-crc32c                │   1.3 MiB │
+#9 4.629 │ Not Installed    │ Google Container Registry's Docker credential helper │ docker-credential-gcr        │   1.8 MiB │
+#9 4.629 │ Not Installed    │ Kustomize                                            │ kustomize                    │   4.3 MiB │
+#9 4.629 │ Not Installed    │ Log Streaming                                        │ log-streaming                │  13.9 MiB │
+#9 4.629 │ Not Installed    │ Minikube                                             │ minikube                     │  34.4 MiB │
+#9 4.629 │ Not Installed    │ Nomos CLI                                            │ nomos                        │  30.3 MiB │
+#9 4.629 │ Not Installed    │ On-Demand Scanning API extraction helper             │ local-extract                │  14.4 MiB │
+#9 4.629 │ Not Installed    │ Skaffold                                             │ skaffold                     │  24.1 MiB │
+#9 4.641 │ Not Installed    │ Spanner migration tool                               │ spanner-migration-tool       │  23.6 MiB │
+#9 4.641 │ Not Installed    │ Terraform Tools                                      │ terraform-tools              │  66.1 MiB │
+#9 4.641 │ Not Installed    │ anthos-auth                                          │ anthos-auth                  │  22.0 MiB │
+#9 4.641 │ Not Installed    │ config-connector                                     │ config-connector             │  91.1 MiB │
+#9 4.641 │ Not Installed    │ enterprise-certificate-proxy                         │ enterprise-certificate-proxy │   8.6 MiB │
+#9 4.641 │ Not Installed    │ gcloud Alpha Commands                                │ alpha                        │   < 1 MiB │
+#9 4.641 │ Not Installed    │ gcloud Beta Commands                                 │ beta                         │   < 1 MiB │
+#9 4.641 │ Not Installed    │ gcloud app Java Extensions                           │ app-engine-java              │ 127.8 MiB │
+#9 4.653 │ Not Installed    │ gcloud app Python Extensions                         │ app-engine-python            │   5.0 MiB │
+#9 4.653 │ Not Installed    │ gcloud app Python Extensions (Extra Libraries)       │ app-engine-python-extras     │   < 1 MiB │
+#9 4.653 │ Not Installed    │ gke-gcloud-auth-plugin                               │ gke-gcloud-auth-plugin       │   4.0 MiB │
+#9 4.653 │ Not Installed    │ istioctl                                             │ istioctl                     │  24.0 MiB │
+#9 4.653 │ Not Installed    │ kpt                                                  │ kpt                          │  14.6 MiB │
+#9 4.653 │ Not Installed    │ kubectl                                              │ kubectl                      │   < 1 MiB │
+#9 4.653 │ Not Installed    │ kubectl-oidc                                         │ kubectl-oidc                 │  22.0 MiB │
+#9 4.653 │ Not Installed    │ pkg                                                  │ pkg                          │           │
+#9 4.653 └──────────────────┴──────────────────────────────────────────────────────┴──────────────────────────────┴───────────┘
+#9 4.653 To install or remove components at your current SDK version [200.0.0], run:
+#9 4.653   $ gcloud components install COMPONENT_ID
+#9 4.653   $ gcloud components remove COMPONENT_ID
+#9 4.653 
+#9 4.653 To update your SDK installation to the latest version [486.0.0], run:
+#9 4.653   $ gcloud components update
+#9 4.653 
+#9 5.714 ==> Source [/root/google-cloud-sdk/completion.bash.inc] in your profile to enable shell command completion for gcloud.
+#9 5.714 ==> Source [/root/google-cloud-sdk/path.bash.inc] in your profile to add the Google Cloud SDK command line tools to your $PATH.
+#9 5.714 
+#9 5.714 For more information on how to get started, please visit:
+#9 5.714   https://cloud.google.com/sdk/docs/quickstarts
+#9 5.714 
+#9 5.714 
+#9 6.338 Updated property [core/disable_usage_reporting].
+#9 9.807 DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+#9 10.28 Collecting ansible
+#9 10.32   Downloading ansible-4.10.0.tar.gz (36.8 MB)
+#9 50.53 Collecting ansible-core~=2.11.7
+#9 50.55   Downloading ansible-core-2.11.12.tar.gz (7.1 MB)
+#9 54.33 Collecting jinja2
+#9 54.34   Downloading Jinja2-2.11.3-py2.py3-none-any.whl (125 kB)
+#9 54.67 Collecting PyYAML
+#9 54.68   Downloading PyYAML-5.4.1.tar.gz (175 kB)
+#9 54.95   Installing build dependencies: started
+#9 60.30   Installing build dependencies: finished with status 'done'
+#9 60.30   Getting requirements to build wheel: started
+#9 60.61   Getting requirements to build wheel: finished with status 'error'
+#9 60.61   ERROR: Command errored out with exit status 1:
+#9 60.61    command: /usr/local/bin/python /usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmp19JVaD
+#9 60.61        cwd: /tmp/pip-install-W4bpYn/PyYAML
+#9 60.61   Complete output (46 lines):
+#9 60.61   running egg_info
+#9 60.61   creating lib/PyYAML.egg-info
+#9 60.61   writing lib/PyYAML.egg-info/PKG-INFO
+#9 60.61   writing top-level names to lib/PyYAML.egg-info/top_level.txt
+#9 60.61   writing dependency_links to lib/PyYAML.egg-info/dependency_links.txt
+#9 60.61   writing manifest file 'lib/PyYAML.egg-info/SOURCES.txt'
+#9 60.61   Traceback (most recent call last):
+#9 60.61     File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 257, in <module>
+#9 60.61       main()
+#9 60.61     File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 240, in main
+#9 60.61       json_out['return_val'] = hook(**hook_input['kwargs'])
+#9 60.61     File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 91, in get_requires_for_build_wheel
+#9 60.61       return hook(config_settings)
+#9 60.61     File "/tmp/pip-build-env-uFNUOZ/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 146, in get_requires_for_build_wheel
+#9 60.61       return self._get_build_requires(config_settings, requirements=['wheel'])
+#9 60.61     File "/tmp/pip-build-env-uFNUOZ/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 127, in _get_build_requires
+#9 60.61       self.run_setup()
+#9 60.61     File "/tmp/pip-build-env-uFNUOZ/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 142, in run_setup
+#9 60.61       exec(compile(code, __file__, 'exec'), locals())
+#9 60.61     File "setup.py", line 295, in <module>
+#9 60.61       python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+#9 60.61     File "/tmp/pip-build-env-uFNUOZ/overlay/lib/python2.7/site-packages/setuptools/__init__.py", line 162, in setup
+#9 60.61       return distutils.core.setup(**attrs)
+#9 60.61     File "/usr/local/lib/python2.7/distutils/core.py", line 151, in setup
+#9 60.61       dist.run_commands()
+#9 60.61     File "/usr/local/lib/python2.7/distutils/dist.py", line 953, in run_commands
+#9 60.61       self.run_command(cmd)
+#9 60.61     File "/usr/local/lib/python2.7/distutils/dist.py", line 972, in run_command
+#9 60.61       cmd_obj.run()
+#9 60.61     File "/tmp/pip-build-env-uFNUOZ/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 296, in run
+#9 60.61       self.find_sources()
+#9 60.61     File "/tmp/pip-build-env-uFNUOZ/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 303, in find_sources
+#9 60.61       mm.run()
+#9 60.61     File "/tmp/pip-build-env-uFNUOZ/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 534, in run
+#9 60.61       self.add_defaults()
+#9 60.61     File "/tmp/pip-build-env-uFNUOZ/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 570, in add_defaults
+#9 60.61       sdist.add_defaults(self)
+#9 60.61     File "/tmp/pip-build-env-uFNUOZ/overlay/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 36, in add_defaults
+#9 60.61       self._add_defaults_ext()
+#9 60.61     File "/tmp/pip-build-env-uFNUOZ/overlay/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+#9 60.61       self.filelist.extend(build_ext.get_source_files())
+#9 60.61     File "setup.py", line 201, in get_source_files
+#9 60.61       self.cython_sources(ext.sources, ext)
+#9 60.61     File "/usr/local/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+#9 60.61       raise AttributeError, attr
+#9 60.61   AttributeError: cython_sources
+#9 60.61   ----------------------------------------
+#9 67.29 ERROR: Command errored out with exit status 1: /usr/local/bin/python /usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmp19JVaD Check the logs for full command output.
+#9 67.30 WARNING: You are using pip version 20.0.2; however, version 20.3.4 is available.
+#9 67.30 You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+#9 ERROR: process "/bin/sh -c unzip $TERRAFORM_FILE &&     mv terraform /usr/local/bin &&     rm $TERRAFORM_FILE &&     tar xzf $GCLOUD_SDK_FILE &&     /root/google-cloud-sdk/install.sh -q &&     /root/google-cloud-sdk/bin/gcloud config set disable_usage_reporting true &&     rm /root/${GCLOUD_SDK_FILE} &&     chmod +x /usr/local/bin/cfssl* /usr/local/bin/kubectl &&     pip2 install ansible" did not complete successfully: exit code: 1
+------
+ > [4/7] RUN unzip terraform_0.11.3_linux_amd64.zip &&     mv terraform /usr/local/bin &&     rm terraform_0.11.3_linux_amd64.zip &&     tar xzf google-cloud-sdk-200.0.0-linux-x86_64.tar.gz &&     /root/google-cloud-sdk/install.sh -q &&     /root/google-cloud-sdk/bin/gcloud config set disable_usage_reporting true &&     rm /root/google-cloud-sdk-200.0.0-linux-x86_64.tar.gz &&     chmod +x /usr/local/bin/cfssl* /usr/local/bin/kubectl &&     pip2 install ansible:
+60.61       self.filelist.extend(build_ext.get_source_files())
+60.61     File "setup.py", line 201, in get_source_files
+60.61       self.cython_sources(ext.sources, ext)
+60.61     File "/usr/local/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+60.61       raise AttributeError, attr
+60.61   AttributeError: cython_sources
+60.61   ----------------------------------------
+67.29 ERROR: Command errored out with exit status 1: /usr/local/bin/python /usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmp19JVaD Check the logs for full command output.
+67.30 WARNING: You are using pip version 20.0.2; however, version 20.3.4 is available.
+67.30 You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+------
+Dockerfile:21
+--------------------
+  20 |     
+  21 | >>> RUN unzip $TERRAFORM_FILE && \
+  22 | >>>     mv terraform /usr/local/bin && \
+  23 | >>>     rm $TERRAFORM_FILE && \
+  24 | >>>     tar xzf $GCLOUD_SDK_FILE && \
+  25 | >>>     /root/google-cloud-sdk/install.sh -q && \
+  26 | >>>     /root/google-cloud-sdk/bin/gcloud config set disable_usage_reporting true && \
+  27 | >>>     rm /root/${GCLOUD_SDK_FILE} && \
+  28 | >>>     chmod +x /usr/local/bin/cfssl* /usr/local/bin/kubectl && \
+  29 | >>>     pip2 install ansible
+  30 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c unzip $TERRAFORM_FILE &&     mv terraform /usr/local/bin &&     rm $TERRAFORM_FILE &&     tar xzf $GCLOUD_SDK_FILE &&     /root/google-cloud-sdk/install.sh -q &&     /root/google-cloud-sdk/bin/gcloud config set disable_usage_reporting true &&     rm /root/${GCLOUD_SDK_FILE} &&     chmod +x /usr/local/bin/cfssl* /usr/local/bin/kubectl &&     pip2 install ansible" did not complete successfully: exit code: 1
+Duration: 1:40.15

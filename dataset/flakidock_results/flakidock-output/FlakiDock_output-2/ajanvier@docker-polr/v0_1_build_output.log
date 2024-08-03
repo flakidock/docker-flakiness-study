@@ -1,0 +1,173 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 2.94kB done
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.6s
+
+#1 [internal] load build definition from Dockerfile
+#1 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/alpine:3
+#3 ...
+
+#4 [auth] library/alpine:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3
+#3 DONE 1.5s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [ 1/20] FROM docker.io/library/alpine:3@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 resolve docker.io/library/alpine:3@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 resolve docker.io/library/alpine:3@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#6 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#6 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#6 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#6 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 16.40kB done
+#5 DONE 0.5s
+
+#6 [ 1/20] FROM docker.io/library/alpine:3@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#6 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s done
+#6 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.3s done
+#6 DONE 1.4s
+
+#7 [ 2/20] RUN apk --no-cache add bash git nginx supervisor curl &&     apk --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add php7 php7-fpm         php7-opcache php7-mysqli php7-json php7-openssl php7-curl php7-zlib php7-xml php7-xmlwriter         php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session php7-mbstring php7-gd         php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-tokenizer &&     apk add --update libintl &&     apk add --virtual build_deps gettext &&      cp /usr/bin/envsubst /usr/local/bin/envsubst &&     rm -f /etc/nginx/conf.d/default.conf
+#7 0.556 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#7 0.789 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#7 1.281 (1/41) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#7 1.310 (2/41) Installing libncursesw (6.4_p20240420-r0)
+#7 1.318 (3/41) Installing readline (8.2.10-r0)
+#7 1.324 (4/41) Installing bash (5.2.26-r0)
+#7 1.345 Executing bash-5.2.26-r0.post-install
+#7 1.348 (5/41) Installing ca-certificates (20240705-r0)
+#7 1.375 (6/41) Installing brotli-libs (1.1.0-r2)
+#7 1.390 (7/41) Installing c-ares (1.28.1-r0)
+#7 1.396 (8/41) Installing libunistring (1.2-r0)
+#7 1.414 (9/41) Installing libidn2 (2.3.7-r0)
+#7 1.419 (10/41) Installing nghttp2-libs (1.62.1-r0)
+#7 1.424 (11/41) Installing libpsl (0.21.5-r1)
+#7 1.428 (12/41) Installing zstd-libs (1.5.6-r0)
+#7 1.440 (13/41) Installing libcurl (8.9.0-r0)
+#7 1.451 (14/41) Installing curl (8.9.0-r0)
+#7 1.458 (15/41) Installing libexpat (2.6.2-r0)
+#7 1.463 (16/41) Installing pcre2 (10.43-r0)
+#7 1.474 (17/41) Installing git (2.45.2-r0)
+#7 1.570 (18/41) Installing git-init-template (2.45.2-r0)
+#7 1.575 (19/41) Installing pcre (8.45-r3)
+#7 1.584 (20/41) Installing nginx (1.26.1-r0)
+#7 1.736 Executing nginx-1.26.1-r0.pre-install
+#7 1.921 Executing nginx-1.26.1-r0.post-install
+#7 1.924 (21/41) Installing libbz2 (1.0.8-r6)
+#7 1.928 (22/41) Installing libffi (3.4.6-r0)
+#7 1.930 (23/41) Installing gdbm (1.23-r1)
+#7 1.934 (24/41) Installing xz-libs (5.6.1-r3)
+#7 2.225 (25/41) Installing libgcc (13.2.1_git20240309-r0)
+#7 2.242 (26/41) Installing libstdc++ (13.2.1_git20240309-r0)
+#7 2.293 (27/41) Installing mpdecimal (4.0.0-r0)
+#7 2.298 (28/41) Installing libpanelw (6.4_p20240420-r0)
+#7 2.300 (29/41) Installing sqlite-libs (3.45.3-r1)
+#7 2.321 (30/41) Installing python3 (3.12.3-r1)
+#7 2.635 (31/41) Installing python3-pycache-pyc0 (3.12.3-r1)
+#7 2.878 (32/41) Installing pyc (3.12.3-r1)
+#7 2.881 (33/41) Installing py3-parsing (3.1.2-r1)
+#7 2.890 (34/41) Installing py3-parsing-pyc (3.1.2-r1)
+#7 2.900 (35/41) Installing py3-packaging (24.0-r1)
+#7 2.921 (36/41) Installing py3-packaging-pyc (24.0-r1)
+#7 2.931 (37/41) Installing py3-setuptools (69.5.1-r0)
+#7 3.036 (38/41) Installing py3-setuptools-pyc (69.5.1-r0)
+#7 3.159 (39/41) Installing supervisor-pyc (4.2.5-r5)
+#7 3.193 (40/41) Installing python3-pyc (3.12.3-r1)
+#7 3.195 (41/41) Installing supervisor (4.2.5-r5)
+#7 3.240 Executing busybox-1.36.1-r29.trigger
+#7 3.246 Executing ca-certificates-20240705-r0.trigger
+#7 3.291 OK: 78 MiB in 55 packages
+#7 3.368 fetch http://dl-cdn.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#7 4.014 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#7 4.158 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#7 4.631 ERROR: unable to select packages:
+#7 4.631   php7 (no such package):
+#7 4.631     required by: world[php7]
+#7 4.631   php7-ctype (no such package):
+#7 4.631     required by: world[php7-ctype]
+#7 4.631   php7-curl (no such package):
+#7 4.631     required by: world[php7-curl]
+#7 4.631   php7-dom (no such package):
+#7 4.631     required by: world[php7-dom]
+#7 4.631   php7-fpm (no such package):
+#7 4.631     required by: world[php7-fpm]
+#7 4.631   php7-gd (no such package):
+#7 4.631     required by: world[php7-gd]
+#7 4.631   php7-intl (no such package):
+#7 4.631     required by: world[php7-intl]
+#7 4.631   php7-json (no such package):
+#7 4.631     required by: world[php7-json]
+#7 4.631   php7-mbstring (no such package):
+#7 4.631     required by: world[php7-mbstring]
+#7 4.631   php7-mysqli (no such package):
+#7 4.631     required by: world[php7-mysqli]
+#7 4.631   php7-opcache (no such package):
+#7 4.631     required by: world[php7-opcache]
+#7 4.631   php7-openssl (no such package):
+#7 4.631     required by: world[php7-openssl]
+#7 4.631   php7-pdo (no such package):
+#7 4.631     required by: world[php7-pdo]
+#7 4.631   php7-pdo_mysql (no such package):
+#7 4.631     required by: world[php7-pdo_mysql]
+#7 4.631   php7-pdo_sqlite (no such package):
+#7 4.631     required by: world[php7-pdo_sqlite]
+#7 4.631   php7-phar (no such package):
+#7 4.631     required by: world[php7-phar]
+#7 4.631   php7-session (no such package):
+#7 4.631     required by: world[php7-session]
+#7 4.631   php7-tokenizer (no such package):
+#7 4.631     required by: world[php7-tokenizer]
+#7 4.631   php7-xml (no such package):
+#7 4.631     required by: world[php7-xml]
+#7 4.631   php7-xmlreader (no such package):
+#7 4.631     required by: world[php7-xmlreader]
+#7 4.631   php7-xmlwriter (no such package):
+#7 4.631     required by: world[php7-xmlwriter]
+#7 4.631   php7-zlib (no such package):
+#7 4.631     required by: world[php7-zlib]
+#7 ERROR: process "/bin/sh -c apk --no-cache add bash git nginx supervisor curl &&     apk --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add php7 php7-fpm         php7-opcache php7-mysqli php7-json php7-openssl php7-curl php7-zlib php7-xml php7-xmlwriter         php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session php7-mbstring php7-gd         php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-tokenizer &&     apk add --update libintl &&     apk add --virtual build_deps gettext &&      cp /usr/bin/envsubst /usr/local/bin/envsubst &&     rm -f /etc/nginx/conf.d/default.conf" did not complete successfully: exit code: 22
+------
+ > [ 2/20] RUN apk --no-cache add bash git nginx supervisor curl &&     apk --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add php7 php7-fpm         php7-opcache php7-mysqli php7-json php7-openssl php7-curl php7-zlib php7-xml php7-xmlwriter         php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session php7-mbstring php7-gd         php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-tokenizer &&     apk add --update libintl &&     apk add --virtual build_deps gettext &&      cp /usr/bin/envsubst /usr/local/bin/envsubst &&     rm -f /etc/nginx/conf.d/default.conf:
+4.631   php7-tokenizer (no such package):
+4.631     required by: world[php7-tokenizer]
+4.631   php7-xml (no such package):
+4.631     required by: world[php7-xml]
+4.631   php7-xmlreader (no such package):
+4.631     required by: world[php7-xmlreader]
+4.631   php7-xmlwriter (no such package):
+4.631     required by: world[php7-xmlwriter]
+4.631   php7-zlib (no such package):
+4.631     required by: world[php7-zlib]
+------
+Dockerfile:17
+--------------------
+  16 |     # Install packages and remove default server definition
+  17 | >>> RUN apk --no-cache add bash git nginx supervisor curl && \
+  18 | >>>     apk --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add php7 php7-fpm \
+  19 | >>>         php7-opcache php7-mysqli php7-json php7-openssl php7-curl php7-zlib php7-xml php7-xmlwriter \
+  20 | >>>         php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session php7-mbstring php7-gd \
+  21 | >>>         php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-tokenizer && \
+  22 | >>>     apk add --update libintl && \
+  23 | >>>     apk add --virtual build_deps gettext &&  \
+  24 | >>>     cp /usr/bin/envsubst /usr/local/bin/envsubst && \
+  25 | >>>     rm -f /etc/nginx/conf.d/default.conf
+  26 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk --no-cache add bash git nginx supervisor curl &&     apk --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add php7 php7-fpm         php7-opcache php7-mysqli php7-json php7-openssl php7-curl php7-zlib php7-xml php7-xmlwriter         php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session php7-mbstring php7-gd         php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-tokenizer &&     apk add --update libintl &&     apk add --virtual build_deps gettext &&      cp /usr/bin/envsubst /usr/local/bin/envsubst &&     rm -f /etc/nginx/conf.d/default.conf" did not complete successfully: exit code: 22
+Duration: 0:11.52

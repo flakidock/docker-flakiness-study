@@ -1,0 +1,57 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 520B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 569B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:20.04
+#3 ...
+
+#4 [auth] library/ubuntu:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:20.04
+#3 DONE 1.3s
+
+#5 [1/4] FROM docker.io/library/ubuntu:20.04@sha256:0b897358ff6624825fb50d20ffb605ab0eaea77ced0adb8c6a4b756513dec6fc
+#5 resolve docker.io/library/ubuntu:20.04@sha256:0b897358ff6624825fb50d20ffb605ab0eaea77ced0adb8c6a4b756513dec6fc 0.1s done
+#5 sha256:5f5250218d28ad6612bf653eced407165dd6475a4daf9210b299fed991e172e9 2.30kB / 2.30kB done
+#5 sha256:0b897358ff6624825fb50d20ffb605ab0eaea77ced0adb8c6a4b756513dec6fc 1.13kB / 1.13kB done
+#5 sha256:d86db849e59626d94f768c679aba441163c996caf7a3426f44924d0239ffe03f 424B / 424B done
+#5 sha256:9ea8908f47652b59b8055316d9c0e16b365e2b5cee15d3efcb79e2957e3e7cad 0B / 27.51MB 0.1s
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 1.04MB 0.0s done
+#6 DONE 0.3s
+
+#5 [1/4] FROM docker.io/library/ubuntu:20.04@sha256:0b897358ff6624825fb50d20ffb605ab0eaea77ced0adb8c6a4b756513dec6fc
+#5 sha256:9ea8908f47652b59b8055316d9c0e16b365e2b5cee15d3efcb79e2957e3e7cad 10.49MB / 27.51MB 0.4s
+#5 sha256:9ea8908f47652b59b8055316d9c0e16b365e2b5cee15d3efcb79e2957e3e7cad 16.78MB / 27.51MB 0.5s
+#5 sha256:9ea8908f47652b59b8055316d9c0e16b365e2b5cee15d3efcb79e2957e3e7cad 27.51MB / 27.51MB 0.7s
+#5 sha256:9ea8908f47652b59b8055316d9c0e16b365e2b5cee15d3efcb79e2957e3e7cad 27.51MB / 27.51MB 1.3s done
+#5 extracting sha256:9ea8908f47652b59b8055316d9c0e16b365e2b5cee15d3efcb79e2957e3e7cad 0.1s
+#5 extracting sha256:9ea8908f47652b59b8055316d9c0e16b365e2b5cee15d3efcb79e2957e3e7cad 1.7s done
+#5 DONE 3.6s
+
+#7 [2/4] RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
+#7 DONE 3.2s
+
+#8 [3/4] ADD . /home/docker/files/
+#8 DONE 0.6s
+
+#9 [4/4] RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#9 DONE 0.7s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.5s done
+#10 writing image sha256:e0eb330d71d3239a575e25b0196cb2756827e366fbc1e1b4b961a296b7d08b78 0.0s done
+#10 naming to docker.io/library/image_name_v1_1 0.0s done
+#10 DONE 0.6s
+Duration: 0:13.89

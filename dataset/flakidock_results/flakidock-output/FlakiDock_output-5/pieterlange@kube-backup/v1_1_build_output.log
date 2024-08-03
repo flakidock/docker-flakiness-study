@@ -1,0 +1,163 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 827B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.11
+#3 DONE 1.2s
+
+#4 [1/7] FROM docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d
+#4 resolve docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d
+#4 resolve docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d 0.4s done
+#4 DONE 0.4s
+
+#5 [internal] load build context
+#5 transferring context: 4.76kB done
+#5 DONE 0.4s
+
+#4 [1/7] FROM docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d
+#4 sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d 1.64kB / 1.64kB done
+#4 sha256:a0ce0e57c6900f6f13cee6f1c1e0337cedd745ebc1bac226c61eb574667c6d04 528B / 528B done
+#4 sha256:a787cb9865032e5b5a407ecdf34b57a23a4a076aaa043d71742ddb6726ec9229 1.47kB / 1.47kB done
+#4 sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 0B / 2.82MB 0.1s
+#4 sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 2.10MB / 2.82MB 0.3s
+#4 sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 2.82MB / 2.82MB 0.3s done
+#4 extracting sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a
+#4 extracting sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 0.6s done
+#4 DONE 1.8s
+
+#6 [2/7] RUN apk update &&   apk add --update     bash     easy-rsa     git     openssh-client     curl     ca-certificates     jq     python3     py3-yaml     py3-pip     libstdc++     gpgme     git-crypt     &&   rm -rf /var/cache/apk/*
+#6 1.900 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#6 2.435 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#6 3.040 v3.11.13-12-g2cfa91a2b4 [http://dl-cdn.alpinelinux.org/alpine/v3.11/main]
+#6 3.040 v3.11.11-124-gf2729ece5a [http://dl-cdn.alpinelinux.org/alpine/v3.11/community]
+#6 3.040 OK: 11276 distinct packages available
+#6 3.681 (1/53) Installing ncurses-terminfo-base (6.1_p20200118-r4)
+#6 3.935 (2/53) Installing ncurses-libs (6.1_p20200118-r4)
+#6 4.219 (3/53) Installing readline (8.0.1-r0)
+#6 4.544 (4/53) Installing bash (5.0.11-r1)
+#6 4.934 Executing bash-5.0.11-r1.post-install
+#6 4.956 (5/53) Installing ca-certificates (20191127-r2)
+#6 5.211 (6/53) Installing nghttp2-libs (1.40.0-r1)
+#6 5.463 (7/53) Installing libcurl (7.79.1-r0)
+#6 5.835 (8/53) Installing curl (7.79.1-r0)
+#6 6.096 (9/53) Installing openssl (1.1.1l-r0)
+#6 6.436 (10/53) Installing easy-rsa (3.0.6-r0)
+#6 6.662 (11/53) Installing expat (2.2.9-r1)
+#6 6.886 (12/53) Installing pcre2 (10.34-r1)
+#6 7.232 (13/53) Installing git (2.24.4-r0)
+#6 8.153 (14/53) Installing libgcc (9.3.0-r0)
+#6 8.352 (15/53) Installing libstdc++ (9.3.0-r0)
+#6 8.692 (16/53) Installing git-crypt (0.6.0-r1)
+#6 8.902 (17/53) Installing libgpg-error (1.36-r2)
+#6 9.122 (18/53) Installing libassuan (2.5.3-r0)
+#6 9.412 (19/53) Installing libcap (2.27-r0)
+#6 9.684 (20/53) Installing libffi (3.2.1-r6)
+#6 9.892 (21/53) Installing libintl (0.20.1-r2)
+#6 10.12 (22/53) Installing libblkid (2.34-r1)
+#6 10.40 (23/53) Installing libmount (2.34-r1)
+#6 10.72 (24/53) Installing pcre (8.43-r1)
+#6 11.00 (25/53) Installing glib (2.62.6-r0)
+#6 11.51 (26/53) Installing libgcrypt (1.8.8-r1)
+#6 11.82 (27/53) Installing libsecret (0.19.1-r0)
+#6 12.13 (28/53) Installing pinentry (1.1.0-r2)
+#6 12.34 Executing pinentry-1.1.0-r2.post-install
+#6 12.36 (29/53) Installing libbz2 (1.0.8-r1)
+#6 12.58 (30/53) Installing gmp (6.1.2-r1)
+#6 12.92 (31/53) Installing nettle (3.5.1-r0)
+#6 13.23 (32/53) Installing p11-kit (0.23.18.1-r1)
+#6 13.50 (33/53) Installing libtasn1 (4.15.0-r0)
+#6 13.77 (34/53) Installing libunistring (0.9.10-r0)
+#6 14.25 (35/53) Installing gnutls (3.6.15-r1)
+#6 14.71 (36/53) Installing libksba (1.3.5-r0)
+#6 14.95 (37/53) Installing db (5.3.28-r1)
+#6 15.40 (38/53) Installing libsasl (2.1.27-r5)
+#6 15.68 (39/53) Installing libldap (2.4.48-r3)
+#6 15.97 (40/53) Installing npth (1.6-r0)
+#6 16.17 (41/53) Installing sqlite-libs (3.30.1-r2)
+#6 16.53 (42/53) Installing gnupg (2.2.19-r1)
+#6 17.04 (43/53) Installing gpgme (1.13.1-r1)
+#6 17.24 (44/53) Installing oniguruma (6.9.4-r1)
+#6 17.51 (45/53) Installing jq (1.6-r0)
+#6 17.80 (46/53) Installing openssh-keygen (8.1_p1-r1)
+#6 18.04 (47/53) Installing libedit (20191211.3.1-r0)
+#6 18.33 (48/53) Installing openssh-client (8.1_p1-r1)
+#6 18.79 (49/53) Installing gdbm (1.13-r1)
+#6 19.10 (50/53) Installing xz-libs (5.2.4-r0)
+#6 19.37 (51/53) Installing python3 (3.8.10-r0)
+#6 22.22 (52/53) Installing yaml (0.2.2-r1)
+#6 22.42 (53/53) Installing py3-yaml (5.3.1-r1)
+#6 22.73 Executing busybox-1.31.1-r11.trigger
+#6 22.75 Executing ca-certificates-20191127-r2.trigger
+#6 22.99 OK: 112 MiB in 67 packages
+#6 DONE 26.7s
+
+#7 [3/7] RUN pip3 install ijson awscli
+#7 6.293 Collecting ijson
+#7 6.447   Downloading ijson-3.3.0.tar.gz (60 kB)
+#7 17.09 Collecting awscli
+#7 17.13   Downloading awscli-1.33.33-py3-none-any.whl (4.5 MB)
+#7 18.28 Requirement already satisfied: PyYAML<6.1,>=3.10 in /usr/lib/python3.8/site-packages (from awscli) (5.3.1)
+#7 18.59 Collecting rsa<4.8,>=3.1.2
+#7 18.62   Downloading rsa-4.7.2-py3-none-any.whl (34 kB)
+#7 18.90 Collecting docutils<0.17,>=0.10
+#7 18.92   Downloading docutils-0.16-py2.py3-none-any.whl (548 kB)
+#7 19.26 Collecting colorama<0.4.7,>=0.2.5
+#7 19.28   Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+#7 26.39 Collecting botocore==1.34.151
+#7 26.41   Downloading botocore-1.34.151-py3-none-any.whl (12.4 MB)
+#7 27.67 Collecting s3transfer<0.11.0,>=0.10.0
+#7 27.69   Downloading s3transfer-0.10.2-py3-none-any.whl (82 kB)
+#7 27.95 Collecting jmespath<2.0.0,>=0.7.1
+#7 27.97   Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)
+#7 28.64 Collecting urllib3<1.27,>=1.25.4
+#7 28.66   Downloading urllib3-1.26.19-py2.py3-none-any.whl (143 kB)
+#7 28.98 Collecting python-dateutil<3.0.0,>=2.1
+#7 29.00   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#7 29.29 Collecting six>=1.5
+#7 29.31   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#7 29.91 Collecting pyasn1>=0.1.3
+#7 29.93   Downloading pyasn1-0.6.0-py2.py3-none-any.whl (85 kB)
+#7 31.69 Using legacy 'setup.py install' for ijson, since package 'wheel' is not installed.
+#7 32.35 Installing collected packages: six, urllib3, python-dateutil, jmespath, pyasn1, botocore, s3transfer, rsa, docutils, colorama, ijson, awscli
+#7 38.87     Running setup.py install for ijson: started
+#7 40.19     Running setup.py install for ijson: finished with status 'done'
+#7 48.64 Successfully installed awscli-1.33.33 botocore-1.34.151 colorama-0.4.6 docutils-0.16 ijson-3.3.0 jmespath-1.0.1 pyasn1-0.6.0 python-dateutil-2.9.0.post0 rsa-4.7.2 s3transfer-0.10.2 six-1.16.0 urllib3-1.26.19
+#7 48.64 WARNING: Running pip as root will break packages and permissions. You should install packages reliably by using venv: https://pip.pypa.io/warnings/venv
+#7 49.37 WARNING: You are using pip version 21.1.1; however, version 24.2 is available.
+#7 49.37 You should consider upgrading via the '/usr/bin/python3.8 -m pip install --upgrade pip' command.
+#7 DONE 51.8s
+
+#8 [4/7] RUN adduser -h /backup -D backup
+#8 DONE 2.1s
+
+#9 [5/7] RUN curl -SL https://storage.googleapis.com/kubernetes-release/release/v1.17.0/bin/linux/amd64/kubectl -o kubectl && chmod +x kubectl
+#9 1.786   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#9 1.786                                  Dload  Upload   Total   Spent    Left  Speed
+#9 1.786   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 23 41.4M   23 9791k    0     0  26.3M      0  0:00:01 --:--:--  0:00:01 26.3M100 41.4M  100 41.4M    0     0  49.2M      0 --:--:-- --:--:-- --:--:-- 49.2M
+#9 DONE 3.6s
+
+#10 [6/7] RUN echo "6e0aaaffe5507a44ec6b1b8a0fb585285813b78cc045f8804e70a6aac9d1cb4c  kubectl" | sha256sum -c - || exit 10
+#10 2.966 kubectl: OK
+#10 DONE 3.3s
+
+#11 [7/7] COPY entrypoint.sh /
+#11 DONE 0.6s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 4.5s done
+#12 writing image sha256:8069f4444154bd63ad42f1a26253f00e1c7360f0bd491f2df935d5d0721a52aa
+#12 writing image sha256:8069f4444154bd63ad42f1a26253f00e1c7360f0bd491f2df935d5d0721a52aa 0.0s done
+#12 naming to docker.io/library/image_name_v1_1 0.0s done
+#12 DONE 4.6s
+Duration: 1:37.72

@@ -1,0 +1,113 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 656B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:stretch
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 4.10kB done
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 0.0s done
+#5 sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 1.21kB / 1.21kB done
+#5 sha256:16ee3e11da473f6565ef94a715f1a38b3079e0664913be78869c336a71cb6085 529B / 529B done
+#5 sha256:662c05203bab4c59568d24689fa5c3955439360a35c483178598d226b9a5ad10 1.46kB / 1.46kB done
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 4.19MB / 45.43MB 0.2s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 23.07MB / 45.43MB 0.4s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 29.36MB / 45.43MB 0.5s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 38.80MB / 45.43MB 0.6s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 0.7s
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 0.8s done
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 2.5s done
+#5 DONE 3.4s
+
+#6 [2/4] RUN     apt-get update &&     apt-get install --no-install-recommends -y mldonkey-server &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/log/mldonkey &&     rm /var/lib/mldonkey/*
+#6 0.217 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+#6 0.218 Ign:2 http://deb.debian.org/debian stretch InRelease
+#6 0.228 Ign:3 http://deb.debian.org/debian stretch-updates InRelease
+#6 0.228 Ign:4 http://security.debian.org/debian-security stretch/updates Release
+#6 0.237 Ign:5 http://deb.debian.org/debian stretch Release
+#6 0.237 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.246 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.246 Ign:8 http://deb.debian.org/debian stretch-updates Release
+#6 0.258 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.258 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.266 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.277 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.286 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.297 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.306 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.316 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.325 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.337 Err:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.337   404  Not Found [IP: 151.101.66.132 80]
+#6 0.346 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.406 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.415 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.564 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.572 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.722 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.732 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.878 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.887 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.035 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 1.044 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.196 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.207 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.217 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 1.226 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.236 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.247 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.255 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 1.266 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.276 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.286 Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.286   404  Not Found
+#6 1.445 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 1.455 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.455   404  Not Found
+#6 1.604 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.607 Reading package lists...
+#6 1.615 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 1.615 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 1.615 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 1.615 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+#6 1.615 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 1.615 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 1.615 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c apt-get update &&     apt-get install --no-install-recommends -y mldonkey-server &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/log/mldonkey &&     rm /var/lib/mldonkey/*" did not complete successfully: exit code: 100
+------
+ > [2/4] RUN     apt-get update &&     apt-get install --no-install-recommends -y mldonkey-server &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/log/mldonkey &&     rm /var/lib/mldonkey/*:
+1.455   404  Not Found
+1.604 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+1.607 Reading package lists...
+1.615 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+1.615 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+1.615 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+1.615 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+1.615 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+1.615 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+1.615 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:5
+--------------------
+   4 |     
+   5 | >>> RUN \
+   6 | >>>     apt-get update && \
+   7 | >>>     apt-get install --no-install-recommends -y mldonkey-server && \
+   8 | >>>     rm -rf /var/lib/apt/lists/* && \
+   9 | >>>     rm -rf /var/log/mldonkey && \
+  10 | >>>     rm /var/lib/mldonkey/*
+  11 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update &&     apt-get install --no-install-recommends -y mldonkey-server &&     rm -rf /var/lib/apt/lists/* &&     rm -rf /var/log/mldonkey &&     rm /var/lib/mldonkey/*" did not complete successfully: exit code: 100
+Duration: 0:6.46

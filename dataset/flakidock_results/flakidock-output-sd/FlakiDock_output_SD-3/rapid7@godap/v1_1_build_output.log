@@ -1,0 +1,24 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 443B done
+#1 DONE 0.3s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 64B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/golang:1.12.3-buster
+#3 ERROR: docker.io/library/golang:1.12.3-buster: not found
+------
+ > [internal] load metadata for docker.io/library/golang:1.12.3-buster:
+------
+v1_Dockerfile:1
+--------------------
+   1 | >>> FROM golang:1.12.3-buster
+   2 |     
+   3 |     RUN apt-get update
+--------------------
+ERROR: failed to solve: golang:1.12.3-buster: docker.io/library/golang:1.12.3-buster: not found
+Duration: 0:1.06

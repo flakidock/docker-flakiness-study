@@ -1,0 +1,153 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 821B done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 116B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/python:3.7-slim-stretch
+#3 DONE 1.2s
+
+#4 [internal] load build context
+#4 transferring context: 62.98kB done
+#4 DONE 0.3s
+
+#5 [1/7] FROM docker.io/library/python:3.7-slim-stretch@sha256:649b13bc3e6a70f7722d5eba4d78afbf4e9cec63193a29148271124840013286
+#5 resolve docker.io/library/python:3.7-slim-stretch@sha256:649b13bc3e6a70f7722d5eba4d78afbf4e9cec63193a29148271124840013286
+#5 resolve docker.io/library/python:3.7-slim-stretch@sha256:649b13bc3e6a70f7722d5eba4d78afbf4e9cec63193a29148271124840013286 0.3s done
+#5 sha256:80b07211911eba00ca32c3004f39973501a2e2126a379d90c7f9f02477f41ead 8.31kB / 8.31kB done
+#5 sha256:649b13bc3e6a70f7722d5eba4d78afbf4e9cec63193a29148271124840013286 1.22kB / 1.22kB done
+#5 sha256:ed44d2c71dfbef1b1750b809acaab7242f367dee79c9ea650ad469467b37e548 1.37kB / 1.37kB done
+#5 DONE 1.6s
+
+#6 [2/7] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+#6 DONE 0.6s
+
+#7 [3/7] WORKDIR /app
+#7 DONE 0.4s
+
+#8 [4/7] RUN set -x && apt-get update && apt-get -y --no-install-recommends install dumb-init libsodium18 && apt-get -y autoremove && apt-get -y clean && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/* && rm -rf /var/tmp/* && useradd -M --home-dir /app tellstick   ;
+#8 0.549 + apt-get update
+#8 0.577 Ign:1 http://archive.debian.org/debian stretch InRelease
+#8 0.580 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#8 0.590 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#8 0.596 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#8 0.694 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
+#8 0.794 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [7080 kB]
+#8 2.092 Fetched 8042 kB in 1s (5297 kB/s)
+#8 2.092 Reading package lists...
+#8 2.792 + apt-get -y --no-install-recommends install dumb-init libsodium18
+#8 2.806 Reading package lists...
+#8 3.506 Building dependency tree...
+#8 3.605 Reading state information...
+#8 3.712 The following NEW packages will be installed:
+#8 3.712   dumb-init libsodium18
+#8 3.728 0 upgraded, 2 newly installed, 0 to remove and 12 not upgraded.
+#8 3.728 Need to get 173 kB of archives.
+#8 3.728 After this operation, 504 kB of additional disk space will be used.
+#8 3.728 Get:1 http://archive.debian.org/debian stretch/main amd64 libsodium18 amd64 1.0.11-2 [161 kB]
+#8 4.040 Get:2 http://archive.debian.org/debian stretch/main amd64 dumb-init amd64 1.2.0-1 [12.1 kB]
+#8 4.218 debconf: delaying package configuration, since apt-utils is not installed
+#8 4.274 Fetched 173 kB in 0s (541 kB/s)
+#8 4.423 Selecting previously unselected package libsodium18:amd64.
+#8 4.423 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6697 files and directories currently installed.)
+#8 4.423 Preparing to unpack .../libsodium18_1.0.11-2_amd64.deb ...
+#8 4.476 Unpacking libsodium18:amd64 (1.0.11-2) ...
+#8 4.645 Selecting previously unselected package dumb-init.
+#8 4.645 Preparing to unpack .../dumb-init_1.2.0-1_amd64.deb ...
+#8 4.668 Unpacking dumb-init (1.2.0-1) ...
+#8 4.834 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#8 4.903 Setting up dumb-init (1.2.0-1) ...
+#8 4.978 Setting up libsodium18:amd64 (1.0.11-2) ...
+#8 5.078 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#8 5.190 + apt-get -y autoremove
+#8 5.204 Reading package lists...
+#8 5.901 Building dependency tree...
+#8 6.000 Reading state information...
+#8 6.091 0 upgraded, 0 newly installed, 0 to remove and 12 not upgraded.
+#8 6.092 + apt-get -y clean
+#8 6.098 + rm -rf /var/lib/apt/lists/archive.debian.org_debian-security_dists_stretch_updates_InRelease /var/lib/apt/lists/archive.debian.org_debian-security_dists_stretch_updates_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.debian.org_debian_dists_stretch_Release /var/lib/apt/lists/archive.debian.org_debian_dists_stretch_Release.gpg /var/lib/apt/lists/archive.debian.org_debian_dists_stretch_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/lock /var/lib/apt/lists/partial
+#8 6.104 + rm -rf /tmp/tmp3oasq56c
+#8 6.106 + rm -rf /var/tmp/*
+#8 6.107 + useradd -M --home-dir /app tellstick
+#8 DONE 6.6s
+
+#9 [5/7] COPY requirements.txt ./
+#9 DONE 0.4s
+
+#10 [6/7] RUN pip --no-cache-dir --trusted-host pypi.org install --upgrade -r requirements.txt pip coloredlogs libnacl   && rm requirements.txt   ;
+#10 2.199 Requirement already satisfied: pip in /usr/local/lib/python3.7/site-packages (21.2.4)
+#10 2.436 Collecting pip
+#10 2.479   Downloading pip-24.0-py3-none-any.whl (2.1 MB)
+#10 2.711 Collecting coloredlogs
+#10 2.725   Downloading coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB)
+#10 2.831 Collecting libnacl
+#10 2.841   Downloading libnacl-2.1.0-py3-none-any.whl (21 kB)
+#10 2.863 Collecting docopt
+#10 2.872   Downloading docopt-0.6.2.tar.gz (25 kB)
+#10 3.360 Requirement already satisfied: setuptools in /usr/local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (57.4.0)
+#10 4.202 Collecting setuptools
+#10 4.215   Downloading setuptools-68.0.0-py3-none-any.whl (804 kB)
+#10 4.371 Collecting requests
+#10 4.380   Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+#10 4.629 Collecting pyyaml
+#10 4.645   Downloading PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (670 kB)
+#10 4.775 Collecting hbmqtt
+#10 4.788   Downloading hbmqtt-0.9.6.tar.gz (74 kB)
+#10 5.329 Collecting humanfriendly>=9.1
+#10 5.339   Downloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
+#10 5.476 Collecting certifi>=2017.4.17
+#10 5.485   Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#10 5.646 Collecting urllib3<3,>=1.21.1
+#10 5.655   Downloading urllib3-2.0.7-py3-none-any.whl (124 kB)
+#10 5.706 Collecting idna<4,>=2.5
+#10 5.715   Downloading idna-3.7-py3-none-any.whl (66 kB)
+#10 6.192 Collecting charset-normalizer<4,>=2
+#10 6.202   Downloading charset_normalizer-3.3.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (136 kB)
+#10 6.334 Collecting transitions
+#10 6.344   Downloading transitions-0.9.1-py2.py3-none-any.whl (102 kB)
+#10 6.835 Collecting websockets
+#10 6.848   Downloading websockets-11.0.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (129 kB)
+#10 6.998 Collecting passlib
+#10 7.010   Downloading passlib-1.7.4-py2.py3-none-any.whl (525 kB)
+#10 7.129 Collecting six
+#10 7.138   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#10 7.226 Building wheels for collected packages: docopt, hbmqtt
+#10 7.227   Building wheel for docopt (setup.py): started
+#10 7.636   Building wheel for docopt (setup.py): finished with status 'done'
+#10 7.637   Created wheel for docopt: filename=docopt-0.6.2-py2.py3-none-any.whl size=13724 sha256=4f804904fc0a133c918a887075e8c1470dc02da1e2a361b8994e347ed39c96bd
+#10 7.638   Stored in directory: /tmp/pip-ephem-wheel-cache-eotlhmsh/wheels/72/b0/3f/1d95f96ff986c7dfffe46ce2be4062f38ebd04b506c77c81b9
+#10 7.643   Building wheel for hbmqtt (setup.py): started
+#10 8.058   Building wheel for hbmqtt (setup.py): finished with status 'done'
+#10 8.059   Created wheel for hbmqtt: filename=hbmqtt-0.9.6-py34.py35-none-any.whl size=75337 sha256=2135d6450f4742c5da4ad1c63681726ebc96cf43b6fa5c4de8003f32887663d6
+#10 8.060   Stored in directory: /tmp/pip-ephem-wheel-cache-eotlhmsh/wheels/0a/ca/b4/c4820a25323d2eb05079e9f14b685a6a179d96ab6f992cf725
+#10 8.064 Successfully built docopt hbmqtt
+#10 8.317 Installing collected packages: six, websockets, urllib3, transitions, pyyaml, passlib, idna, humanfriendly, docopt, charset-normalizer, certifi, setuptools, requests, pip, libnacl, hbmqtt, coloredlogs
+#10 9.598   Attempting uninstall: setuptools
+#10 9.598     Found existing installation: setuptools 57.4.0
+#10 9.674     Uninstalling setuptools-57.4.0:
+#10 9.844       Successfully uninstalled setuptools-57.4.0
+#10 10.60   Attempting uninstall: pip
+#10 10.60     Found existing installation: pip 21.2.4
+#10 10.83     Uninstalling pip-21.2.4:
+#10 11.26       Successfully uninstalled pip-21.2.4
+#10 13.10 Successfully installed certifi-2024.7.4 charset-normalizer-3.3.2 coloredlogs-15.0.1 docopt-0.6.2 hbmqtt-0.9.6 humanfriendly-10.0 idna-3.7 libnacl-2.1.0 passlib-1.7.4 pip-24.0 pyyaml-6.0.1 requests-2.31.0 setuptools-68.0.0 six-1.16.0 transitions-0.9.1 urllib3-2.0.7 websockets-11.0.3
+#10 13.10 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#10 DONE 14.4s
+
+#11 [7/7] COPY . ./
+#11 DONE 0.4s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.0s done
+#12 writing image sha256:2f2f38ad906c6525f8508252150fa352476373999f3cbcd70cfd035b0740d09c 0.0s done
+#12 naming to docker.io/library/image_name_v1_1 0.0s done
+#12 DONE 1.0s
+Duration: 0:27.66

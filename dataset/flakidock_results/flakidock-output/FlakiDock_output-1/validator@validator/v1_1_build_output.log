@@ -1,0 +1,282 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.46kB done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/debian:stable-slim
+#3 DONE 1.2s
+
+#4 [internal] load metadata for gcr.io/distroless/base:latest
+#4 DONE 1.3s
+
+#5 [builder 1/4] FROM docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755
+#5 resolve docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755
+#5 resolve docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755 0.3s done
+#5 sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755 1.85kB / 1.85kB done
+#5 sha256:e5365b94db65754594422a8a101c873728711c6a4df029677f4a7f7200d6e1c3 529B / 529B done
+#5 sha256:ea3dacfdd555d2342b58d6ce6515c3a2c10ac60a826e15df4b213effd45e54ff 1.46kB / 1.46kB done
+#5 ...
+
+#6 https://github.com/validator/validator/releases/download/latest/vnu.linux.zip.sha1
+#6 DONE 1.5s
+
+#5 [builder 1/4] FROM docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755
+#5 DONE 1.5s
+
+#6 https://github.com/validator/validator/releases/download/latest/vnu.linux.zip.sha1
+#6 DONE 1.5s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 resolve gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9 0.2s done
+#7 sha256:a7af3ef5d69f6534ba0492cc7d6b8fbcffddcb02511b45becc2fac752f907584 2.27kB / 2.27kB done
+#7 sha256:7273f3276b21230a7ffb4709dee8b1213262d69d822f0fa0f5c11d48fcc28eb9 1.71kB / 1.71kB done
+#7 sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9 1.51kB / 1.51kB done
+#7 ...
+
+#8 https://github.com/validator/validator/releases/download/latest/vnu.linux.zip
+#8 DONE 2.4s
+
+#8 https://github.com/validator/validator/releases/download/latest/vnu.linux.zip
+#8 DONE 2.7s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 ...
+
+#9 [builder 2/4] ADD https://github.com/validator/validator/releases/download/latest/vnu.linux.zip .
+#9 DONE 2.4s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 ...
+
+#10 [builder 3/4] ADD https://github.com/validator/validator/releases/download/latest/vnu.linux.zip.sha1 .
+#10 DONE 0.9s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 ...
+
+#11 [builder 4/4] RUN apt-get update && apt-get install --no-install-recommends -y        unzip     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo "$(cat vnu.linux.zip.sha1)  vnu.linux.zip" | sha1sum -c -     && unzip ./vnu.linux.zip     && rm ./vnu.linux.zip*     && apt-get purge -y --auto-remove unzip
+#11 ...
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 DONE 7.3s
+
+#11 [builder 4/4] RUN apt-get update && apt-get install --no-install-recommends -y        unzip     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo "$(cat vnu.linux.zip.sha1)  vnu.linux.zip" | sha1sum -c -     && unzip ./vnu.linux.zip     && rm ./vnu.linux.zip*     && apt-get purge -y --auto-remove unzip
+#11 1.317 Get:1 http://deb.debian.org/debian stable InRelease [151 kB]
+#11 1.348 Get:2 http://deb.debian.org/debian stable-updates InRelease [55.4 kB]
+#11 1.359 Get:3 http://deb.debian.org/debian-security stable-security InRelease [48.0 kB]
+#11 1.431 Get:4 http://deb.debian.org/debian stable/main amd64 Packages [8788 kB]
+#11 1.568 Get:5 http://deb.debian.org/debian stable-updates/main amd64 Packages [13.8 kB]
+#11 1.578 Get:6 http://deb.debian.org/debian-security stable-security/main amd64 Packages [169 kB]
+#11 2.873 Fetched 9225 kB in 2s (5337 kB/s)
+#11 2.873 Reading package lists...
+#11 3.565 Reading package lists...
+#11 4.250 Building dependency tree...
+#11 4.378 Reading state information...
+#11 4.525 Suggested packages:
+#11 4.525   zip
+#11 4.574 The following NEW packages will be installed:
+#11 4.574   unzip
+#11 4.612 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+#11 4.612 Need to get 166 kB of archives.
+#11 4.612 After this operation, 388 kB of additional disk space will be used.
+#11 4.612 Get:1 http://deb.debian.org/debian stable/main amd64 unzip amd64 6.0-28 [166 kB]
+#11 4.845 debconf: delaying package configuration, since apt-utils is not installed
+#11 4.869 Fetched 166 kB in 0s (3066 kB/s)
+#11 4.958 Selecting previously unselected package unzip.
+#11 4.958 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6089 files and directories currently installed.)
+#11 4.960 Preparing to unpack .../unzip_6.0-28_amd64.deb ...
+#11 4.987 Unpacking unzip (6.0-28) ...
+#11 5.170 Setting up unzip (6.0-28) ...
+#11 5.505 vnu.linux.zip: OK
+#11 5.507 Archive:  ./vnu.linux.zip
+#11 5.508    creating: vnu-runtime-image/
+#11 5.508    creating: vnu-runtime-image/bin/
+#11 5.508    creating: vnu-runtime-image/conf/
+#11 5.509    creating: vnu-runtime-image/legal/
+#11 5.509    creating: vnu-runtime-image/lib/
+#11 5.509   inflating: vnu-runtime-image/index.html  
+#11 5.509   inflating: vnu-runtime-image/README.md  
+#11 5.510   inflating: vnu-runtime-image/LICENSE  
+#11 5.510   inflating: vnu-runtime-image/release  
+#11 5.510   inflating: vnu-runtime-image/CHANGELOG.md  
+#11 5.511    creating: vnu-runtime-image/conf/sdp/
+#11 5.511    creating: vnu-runtime-image/conf/security/
+#11 5.511   inflating: vnu-runtime-image/conf/logging.properties  
+#11 5.511   inflating: vnu-runtime-image/conf/net.properties  
+#11 5.511   inflating: vnu-runtime-image/conf/sound.properties  
+#11 5.512    creating: vnu-runtime-image/conf/security/policy/
+#11 5.512   inflating: vnu-runtime-image/conf/security/java.policy  
+#11 5.512   inflating: vnu-runtime-image/conf/security/java.security  
+#11 5.513    creating: vnu-runtime-image/conf/security/policy/limited/
+#11 5.514    creating: vnu-runtime-image/conf/security/policy/unlimited/
+#11 5.514   inflating: vnu-runtime-image/conf/security/policy/README.txt  
+#11 5.514   inflating: vnu-runtime-image/conf/security/policy/limited/default_local.policy  
+#11 5.514   inflating: vnu-runtime-image/conf/security/policy/limited/default_US_export.policy  
+#11 5.514   inflating: vnu-runtime-image/conf/security/policy/limited/exempt_local.policy  
+#11 5.514   inflating: vnu-runtime-image/conf/security/policy/unlimited/default_local.policy  
+#11 5.515   inflating: vnu-runtime-image/conf/security/policy/unlimited/default_US_export.policy  
+#11 5.515   inflating: vnu-runtime-image/conf/sdp/sdp.conf.template  
+#11 5.515    creating: vnu-runtime-image/lib/security/
+#11 5.516    creating: vnu-runtime-image/lib/server/
+#11 5.516   inflating: vnu-runtime-image/lib/libnet.so  
+#11 5.517   inflating: vnu-runtime-image/lib/libjawt.so  
+#11 5.517   inflating: vnu-runtime-image/lib/librmi.so  
+#11 5.517   inflating: vnu-runtime-image/lib/libjavajpeg.so  
+#11 5.520   inflating: vnu-runtime-image/lib/jrt-fs.jar  
+#11 5.522   inflating: vnu-runtime-image/lib/libverify.so  
+#11 5.523   inflating: vnu-runtime-image/lib/libjsig.so  
+#11 5.523   inflating: vnu-runtime-image/lib/libsplashscreen.so  
+#11 5.528   inflating: vnu-runtime-image/lib/libjava.so  
+#11 5.530   inflating: vnu-runtime-image/lib/libj2gss.so  
+#11 5.530   inflating: vnu-runtime-image/lib/libjsound.so  
+#11 5.531   inflating: vnu-runtime-image/lib/jspawnhelper  
+#11 5.532   inflating: vnu-runtime-image/lib/libnio.so  
+#11 5.533   inflating: vnu-runtime-image/lib/libawt_xawt.so  
+#11 5.538   inflating: vnu-runtime-image/lib/libmlib_image.so  
+#11 5.545   inflating: vnu-runtime-image/lib/libmanagement.so  
+#11 5.545   inflating: vnu-runtime-image/lib/libjimage.so  
+#11 5.547   inflating: vnu-runtime-image/lib/jvm.cfg  
+#11 5.547   inflating: vnu-runtime-image/lib/libprefs.so  
+#11 5.547   inflating: vnu-runtime-image/lib/classlist  
+#11 5.548   inflating: vnu-runtime-image/lib/modules  
+#11 6.009   inflating: vnu-runtime-image/lib/libfontmanager.so  
+#11 6.039   inflating: vnu-runtime-image/lib/jexec  
+#11 6.040   inflating: vnu-runtime-image/lib/liblcms.so  
+#11 6.046   inflating: vnu-runtime-image/lib/psfontj2d.properties  
+#11 6.047   inflating: vnu-runtime-image/lib/libzip.so  
+#11 6.047   inflating: vnu-runtime-image/lib/libfreetype.so  
+#11 6.057   inflating: vnu-runtime-image/lib/psfont.properties.ja  
+#11 6.057   inflating: vnu-runtime-image/lib/libjli.so  
+#11 6.058   inflating: vnu-runtime-image/lib/libawt.so  
+#11 6.067   inflating: vnu-runtime-image/lib/libawt_headless.so  
+#11 6.068   inflating: vnu-runtime-image/lib/tzdb.dat  
+#11 6.069   inflating: vnu-runtime-image/lib/security/public_suffix_list.dat  
+#11 6.071   inflating: vnu-runtime-image/lib/security/cacerts  
+#11 6.074   inflating: vnu-runtime-image/lib/security/blocked.certs  
+#11 6.074   inflating: vnu-runtime-image/lib/security/default.policy  
+#11 6.075   inflating: vnu-runtime-image/lib/server/libjsig.so  
+#11 6.075   inflating: vnu-runtime-image/lib/server/libjvm.so  
+#11 6.299   inflating: vnu-runtime-image/bin/rmiregistry  
+#11 6.300   inflating: vnu-runtime-image/bin/java  
+#11 6.301   inflating: vnu-runtime-image/bin/vnu  
+#11 6.301   inflating: vnu-runtime-image/bin/keytool  
+#11 6.302    creating: vnu-runtime-image/legal/java.base/
+#11 6.302    creating: vnu-runtime-image/legal/java.datatransfer/
+#11 6.303    creating: vnu-runtime-image/legal/java.desktop/
+#11 6.303    creating: vnu-runtime-image/legal/java.logging/
+#11 6.303    creating: vnu-runtime-image/legal/java.management/
+#11 6.304    creating: vnu-runtime-image/legal/java.management.rmi/
+#11 6.304    creating: vnu-runtime-image/legal/java.naming/
+#11 6.304    creating: vnu-runtime-image/legal/java.prefs/
+#11 6.305    creating: vnu-runtime-image/legal/java.rmi/
+#11 6.305    creating: vnu-runtime-image/legal/java.security.jgss/
+#11 6.305    creating: vnu-runtime-image/legal/java.security.sasl/
+#11 6.305    creating: vnu-runtime-image/legal/java.sql/
+#11 6.306    creating: vnu-runtime-image/legal/java.transaction.xa/
+#11 6.306    creating: vnu-runtime-image/legal/java.xml/
+#11 6.307    creating: vnu-runtime-image/legal/jdk.crypto.ec/
+#11 6.307   inflating: vnu-runtime-image/legal/java.security.sasl/ADDITIONAL_LICENSE_INFO  
+#11 6.307   inflating: vnu-runtime-image/legal/java.security.sasl/LICENSE  
+#11 6.307   inflating: vnu-runtime-image/legal/java.security.sasl/ASSEMBLY_EXCEPTION  
+#11 6.308   inflating: vnu-runtime-image/legal/java.sql/ADDITIONAL_LICENSE_INFO  
+#11 6.308   inflating: vnu-runtime-image/legal/java.sql/LICENSE  
+#11 6.308   inflating: vnu-runtime-image/legal/java.sql/ASSEMBLY_EXCEPTION  
+#11 6.308   inflating: vnu-runtime-image/legal/java.transaction.xa/ADDITIONAL_LICENSE_INFO  
+#11 6.309   inflating: vnu-runtime-image/legal/java.transaction.xa/LICENSE  
+#11 6.309   inflating: vnu-runtime-image/legal/java.transaction.xa/ASSEMBLY_EXCEPTION  
+#11 6.309   inflating: vnu-runtime-image/legal/java.base/siphash.md  
+#11 6.309   inflating: vnu-runtime-image/legal/java.base/cldr.md  
+#11 6.310   inflating: vnu-runtime-image/legal/java.base/public_suffix.md  
+#11 6.310   inflating: vnu-runtime-image/legal/java.base/asm.md  
+#11 6.310   inflating: vnu-runtime-image/legal/java.base/aes.md  
+#11 6.310   inflating: vnu-runtime-image/legal/java.base/icu.md  
+#11 6.311   inflating: vnu-runtime-image/legal/java.base/ADDITIONAL_LICENSE_INFO  
+#11 6.311   inflating: vnu-runtime-image/legal/java.base/LICENSE  
+#11 6.311   inflating: vnu-runtime-image/legal/java.base/unicode.md  
+#11 6.311   inflating: vnu-runtime-image/legal/java.base/ASSEMBLY_EXCEPTION  
+#11 6.311   inflating: vnu-runtime-image/legal/java.base/c-libutl.md  
+#11 6.312   inflating: vnu-runtime-image/legal/java.management.rmi/ADDITIONAL_LICENSE_INFO  
+#11 6.312   inflating: vnu-runtime-image/legal/java.management.rmi/LICENSE  
+#11 6.312   inflating: vnu-runtime-image/legal/java.management.rmi/ASSEMBLY_EXCEPTION  
+#11 6.312   inflating: vnu-runtime-image/legal/java.xml/bcel.md  
+#11 6.313   inflating: vnu-runtime-image/legal/java.xml/xerces.md  
+#11 6.313   inflating: vnu-runtime-image/legal/java.xml/dom.md  
+#11 6.313   inflating: vnu-runtime-image/legal/java.xml/xalan.md  
+#11 6.313   inflating: vnu-runtime-image/legal/java.xml/ADDITIONAL_LICENSE_INFO  
+#11 6.314   inflating: vnu-runtime-image/legal/java.xml/LICENSE  
+#11 6.314   inflating: vnu-runtime-image/legal/java.xml/ASSEMBLY_EXCEPTION  
+#11 6.314   inflating: vnu-runtime-image/legal/java.xml/jcup.md  
+#11 6.314   inflating: vnu-runtime-image/legal/java.naming/ADDITIONAL_LICENSE_INFO  
+#11 6.314   inflating: vnu-runtime-image/legal/java.naming/LICENSE  
+#11 6.315   inflating: vnu-runtime-image/legal/java.naming/ASSEMBLY_EXCEPTION  
+#11 6.315   inflating: vnu-runtime-image/legal/java.datatransfer/ADDITIONAL_LICENSE_INFO  
+#11 6.315   inflating: vnu-runtime-image/legal/java.datatransfer/LICENSE  
+#11 6.316   inflating: vnu-runtime-image/legal/java.datatransfer/ASSEMBLY_EXCEPTION  
+#11 6.316   inflating: vnu-runtime-image/legal/java.security.jgss/ADDITIONAL_LICENSE_INFO  
+#11 6.316   inflating: vnu-runtime-image/legal/java.security.jgss/LICENSE  
+#11 6.316   inflating: vnu-runtime-image/legal/java.security.jgss/ASSEMBLY_EXCEPTION  
+#11 6.316   inflating: vnu-runtime-image/legal/java.management/ADDITIONAL_LICENSE_INFO  
+#11 6.317   inflating: vnu-runtime-image/legal/java.management/LICENSE  
+#11 6.317   inflating: vnu-runtime-image/legal/java.management/ASSEMBLY_EXCEPTION  
+#11 6.317   inflating: vnu-runtime-image/legal/java.rmi/ADDITIONAL_LICENSE_INFO  
+#11 6.317   inflating: vnu-runtime-image/legal/java.rmi/LICENSE  
+#11 6.318   inflating: vnu-runtime-image/legal/java.rmi/ASSEMBLY_EXCEPTION  
+#11 6.318   inflating: vnu-runtime-image/legal/java.prefs/ADDITIONAL_LICENSE_INFO  
+#11 6.318   inflating: vnu-runtime-image/legal/java.prefs/LICENSE  
+#11 6.318   inflating: vnu-runtime-image/legal/java.prefs/ASSEMBLY_EXCEPTION  
+#11 6.319   inflating: vnu-runtime-image/legal/java.desktop/harfbuzz.md  
+#11 6.319   inflating: vnu-runtime-image/legal/java.desktop/giflib.md  
+#11 6.319   inflating: vnu-runtime-image/legal/java.desktop/xwd.md  
+#11 6.319   inflating: vnu-runtime-image/legal/java.desktop/freetype.md  
+#11 6.320   inflating: vnu-runtime-image/legal/java.desktop/ADDITIONAL_LICENSE_INFO  
+#11 6.320   inflating: vnu-runtime-image/legal/java.desktop/libpng.md  
+#11 6.320   inflating: vnu-runtime-image/legal/java.desktop/LICENSE  
+#11 6.320   inflating: vnu-runtime-image/legal/java.desktop/colorimaging.md  
+#11 6.320   inflating: vnu-runtime-image/legal/java.desktop/ASSEMBLY_EXCEPTION  
+#11 6.321   inflating: vnu-runtime-image/legal/java.desktop/lcms.md  
+#11 6.321   inflating: vnu-runtime-image/legal/java.desktop/jpeg.md  
+#11 6.321   inflating: vnu-runtime-image/legal/java.desktop/mesa3d.md  
+#11 6.321   inflating: vnu-runtime-image/legal/java.logging/ADDITIONAL_LICENSE_INFO  
+#11 6.321   inflating: vnu-runtime-image/legal/java.logging/LICENSE  
+#11 6.322   inflating: vnu-runtime-image/legal/java.logging/ASSEMBLY_EXCEPTION  
+#11 6.322   inflating: vnu-runtime-image/legal/jdk.crypto.ec/ADDITIONAL_LICENSE_INFO  
+#11 6.322   inflating: vnu-runtime-image/legal/jdk.crypto.ec/LICENSE  
+#11 6.322   inflating: vnu-runtime-image/legal/jdk.crypto.ec/ASSEMBLY_EXCEPTION  
+#11 6.332 Reading package lists...
+#11 6.341 Building dependency tree...
+#11 6.342 Reading state information...
+#11 6.347 The following packages will be REMOVED:
+#11 6.347   unzip*
+#11 6.519 0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
+#11 6.519 After this operation, 388 kB disk space will be freed.
+#11 6.552 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6107 files and directories currently installed.)
+#11 6.554 Removing unzip (6.0-28) ...
+#11 6.800 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6089 files and directories currently installed.)
+#11 6.801 Purging configuration files for unzip (6.0-28) ...
+#11 DONE 8.7s
+
+#12 [stage-1 2/5] COPY --from=builder /vnu-runtime-image /vnu-runtime-image
+#12 DONE 2.0s
+
+#13 [stage-1 3/5] COPY --from=builder /lib/x86_64-linux-gnu/libz.so.1 /lib/x86_64-linux-gnu/libz.so.1
+#13 DONE 0.4s
+
+#14 [stage-1 4/5] COPY --from=builder /bin/sh /bin/sh
+#14 DONE 0.4s
+
+#15 [stage-1 5/5] COPY --from=builder /usr/bin/dirname /usr/bin/dirname
+#15 DONE 0.4s
+
+#16 exporting to image
+#16 exporting layers
+#16 exporting layers 1.3s done
+#16 writing image sha256:8a275a2e6b5fede9d0f56b7362fa377d583150fc6b60f2262106bf282d606b93 0.0s done
+#16 naming to docker.io/library/image_name_v1_1 0.0s done
+#16 DONE 1.4s
+Duration: 0:22.95

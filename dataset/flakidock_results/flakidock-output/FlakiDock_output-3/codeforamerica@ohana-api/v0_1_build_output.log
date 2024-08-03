@@ -1,0 +1,126 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 70B 0.1s done
+#2 DONE 0.4s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 700B done
+#1 DONE 0.5s
+
+#3 [auth] library/ruby:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ruby:2.7.5
+#4 DONE 1.5s
+
+#5 [ 1/10] FROM docker.io/library/ruby:2.7.5@sha256:365df8a52b0cb34939e59c69136f7488aa8d7a8f4c2711af0a1bc25b8e8e6471
+#5 resolve docker.io/library/ruby:2.7.5@sha256:365df8a52b0cb34939e59c69136f7488aa8d7a8f4c2711af0a1bc25b8e8e6471
+#5 resolve docker.io/library/ruby:2.7.5@sha256:365df8a52b0cb34939e59c69136f7488aa8d7a8f4c2711af0a1bc25b8e8e6471 0.8s done
+#5 sha256:365df8a52b0cb34939e59c69136f7488aa8d7a8f4c2711af0a1bc25b8e8e6471 1.86kB / 1.86kB done
+#5 sha256:be21dca200ab4fe84635075c00c983d2f6908eda7765bb20fb6c9d1d6f43f6d4 2.00kB / 2.00kB done
+#5 sha256:e7c13114124cf17427e1f909e20aea6abc62b0037c3b382908b16cadb568a956 7.29kB / 7.29kB done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 1.19MB 3.0s done
+#6 DONE 3.3s
+
+#5 [ 1/10] FROM docker.io/library/ruby:2.7.5@sha256:365df8a52b0cb34939e59c69136f7488aa8d7a8f4c2711af0a1bc25b8e8e6471
+#5 DONE 4.3s
+
+#7 [ 2/10] RUN apt-get update     && apt-get install -y --no-install-recommends postgresql-client     && rm -rf /var/lib/apt/lists/*
+#7 0.582 Get:1 http://security.debian.org/debian-security bullseye-security InRelease [48.4 kB]
+#7 0.582 Get:2 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#7 0.612 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
+#7 0.726 Get:4 http://security.debian.org/debian-security bullseye-security/main amd64 Packages [280 kB]
+#7 0.840 Get:5 http://deb.debian.org/debian bullseye/main amd64 Packages [8067 kB]
+#7 0.944 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]
+#7 2.156 Fetched 8574 kB in 2s (5352 kB/s)
+#7 2.156 Reading package lists...
+#7 2.788 Reading package lists...
+#7 3.407 Building dependency tree...
+#7 3.532 Reading state information...
+#7 3.659 The following additional packages will be installed:
+#7 3.659   libpq-dev libpq5 postgresql-client-13 postgresql-client-common
+#7 3.660 Suggested packages:
+#7 3.660   postgresql-doc-13 postgresql-13
+#7 3.716 The following NEW packages will be installed:
+#7 3.716   postgresql-client postgresql-client-13 postgresql-client-common
+#7 3.717 The following packages will be upgraded:
+#7 3.717   libpq-dev libpq5
+#7 3.752 2 upgraded, 3 newly installed, 0 to remove and 157 not upgraded.
+#7 3.752 Need to get 1991 kB of archives.
+#7 3.752 After this operation, 6907 kB of additional disk space will be used.
+#7 3.752 Get:1 http://deb.debian.org/debian bullseye/main amd64 libpq-dev amd64 13.15-0+deb11u1 [142 kB]
+#7 3.782 Get:2 http://deb.debian.org/debian bullseye/main amd64 libpq5 amd64 13.15-0+deb11u1 [182 kB]
+#7 3.786 Get:3 http://deb.debian.org/debian bullseye/main amd64 postgresql-client-common all 225+deb11u1 [89.4 kB]
+#7 3.792 Get:4 http://deb.debian.org/debian bullseye/main amd64 postgresql-client-13 amd64 13.15-0+deb11u1 [1513 kB]
+#7 3.814 Get:5 http://deb.debian.org/debian bullseye/main amd64 postgresql-client all 13+225+deb11u1 [64.9 kB]
+#7 4.032 debconf: delaying package configuration, since apt-utils is not installed
+#7 4.106 Fetched 1991 kB in 0s (21.5 MB/s)
+#7 4.176 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22741 files and directories currently installed.)
+#7 4.190 Preparing to unpack .../libpq-dev_13.15-0+deb11u1_amd64.deb ...
+#7 4.262 Unpacking libpq-dev (13.15-0+deb11u1) over (13.5-0+deb11u1) ...
+#7 4.853 Preparing to unpack .../libpq5_13.15-0+deb11u1_amd64.deb ...
+#7 4.951 Unpacking libpq5:amd64 (13.15-0+deb11u1) over (13.5-0+deb11u1) ...
+#7 5.516 Selecting previously unselected package postgresql-client-common.
+#7 5.516 Preparing to unpack .../postgresql-client-common_225+deb11u1_all.deb ...
+#7 5.538 Unpacking postgresql-client-common (225+deb11u1) ...
+#7 5.725 Selecting previously unselected package postgresql-client-13.
+#7 5.725 Preparing to unpack .../postgresql-client-13_13.15-0+deb11u1_amd64.deb ...
+#7 5.748 Unpacking postgresql-client-13 (13.15-0+deb11u1) ...
+#7 6.148 Selecting previously unselected package postgresql-client.
+#7 6.148 Preparing to unpack .../postgresql-client_13+225+deb11u1_all.deb ...
+#7 6.171 Unpacking postgresql-client (13+225+deb11u1) ...
+#7 6.326 Setting up postgresql-client-common (225+deb11u1) ...
+#7 6.423 Setting up libpq5:amd64 (13.15-0+deb11u1) ...
+#7 6.481 Setting up libpq-dev (13.15-0+deb11u1) ...
+#7 6.557 Setting up postgresql-client-13 (13.15-0+deb11u1) ...
+#7 7.229 update-alternatives: using /usr/share/postgresql/13/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+#7 7.319 Setting up postgresql-client (13+225+deb11u1) ...
+#7 7.388 Processing triggers for libc-bin (2.31-13+deb11u3) ...
+#7 DONE 7.9s
+
+#8 [ 3/10] RUN mkdir /usr/local/node     && curl -L https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x64.tar.xz | tar Jx -C /usr/local/node --strip-components=1
+#8 0.642   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#8 0.642                                  Dload  Upload   Total   Spent    Left  Speed
+#8 0.642   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 71 8119k   71 5788k    0     0  7373k      0  0:00:01 --:--:--  0:00:01 7364k100 8119k  100 8119k    0     0  7348k      0  0:00:01  0:00:01 --:--:-- 7348k
+#8 DONE 2.8s
+
+#9 [ 4/10] RUN ln -s ../node/bin/node /usr/local/bin/
+#9 DONE 0.8s
+
+#10 [ 5/10] WORKDIR /ohana-api
+#10 DONE 0.4s
+
+#11 [ 6/10] COPY Gemfile /ohana-api
+#11 DONE 0.3s
+
+#12 [ 7/10] COPY Gemfile.lock /ohana-api
+#12 DONE 0.3s
+
+#13 [ 8/10] RUN gem install bundler
+#13 28.14 ERROR:  Error installing bundler:
+#13 28.14 	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+#13 28.14 	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.5.203.
+#13 ERROR: process "/bin/sh -c gem install bundler" did not complete successfully: exit code: 1
+------
+ > [ 8/10] RUN gem install bundler:
+28.14 ERROR:  Error installing bundler:
+28.14 	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+28.14 	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.5.203.
+------
+Dockerfile:17
+--------------------
+  15 |     COPY Gemfile.lock /ohana-api
+  16 |     
+  17 | >>> RUN gem install bundler
+  18 |     RUN bundle install --jobs 20 --retry 5 --without production
+  19 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c gem install bundler" did not complete successfully: exit code: 1
+Duration: 0:48.14

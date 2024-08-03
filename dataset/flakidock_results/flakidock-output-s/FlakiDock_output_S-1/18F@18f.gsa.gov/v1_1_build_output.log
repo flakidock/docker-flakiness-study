@@ -1,0 +1,262 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 611B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ruby:2.7
+#2 ...
+
+#3 [auth] library/ruby:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ruby:2.7
+#2 DONE 0.5s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/ruby:2.7@sha256:2347de892e419c7160fc21dec721d5952736909f8c3fbb7f84cb4a07aaf9ce7d
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 5.35kB done
+#6 DONE 0.0s
+
+#7 [2/6] RUN apt-get update &&     apt-get install -y locales &&     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen &&     locale-gen en_US.UTF-8 &&     gem install bundler -v 1.17.1 &&     export LANG=en_US.UTF-8 &&     export LANGUAGE=en_US.UTF-8 &&     export LC_ALL=en_US.UTF-8
+#7 0.224 Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#7 0.268 Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [48.4 kB]
+#7 0.280 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
+#7 0.380 Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8067 kB]
+#7 0.522 Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [280 kB]
+#7 0.586 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]
+#7 1.610 Fetched 8574 kB in 1s (6060 kB/s)
+#7 1.610 Reading package lists...
+#7 2.084 Reading package lists...
+#7 2.549 Building dependency tree...
+#7 2.646 Reading state information...
+#7 2.762 The following additional packages will be installed:
+#7 2.762   libc-l10n
+#7 2.782 The following NEW packages will be installed:
+#7 2.782   libc-l10n locales
+#7 2.841 0 upgraded, 2 newly installed, 0 to remove and 107 not upgraded.
+#7 2.841 Need to get 4947 kB of archives.
+#7 2.841 After this operation, 20.9 MB of additional disk space will be used.
+#7 2.841 Get:1 http://deb.debian.org/debian bullseye/main amd64 libc-l10n all 2.31-13+deb11u10 [864 kB]
+#7 2.900 Get:2 http://deb.debian.org/debian bullseye/main amd64 locales all 2.31-13+deb11u10 [4083 kB]
+#7 3.070 debconf: delaying package configuration, since apt-utils is not installed
+#7 3.101 Fetched 4947 kB in 0s (30.9 MB/s)
+#7 3.125 Selecting previously unselected package libc-l10n.
+#7 3.125 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22794 files and directories currently installed.)
+#7 3.137 Preparing to unpack .../libc-l10n_2.31-13+deb11u10_all.deb ...
+#7 3.146 Unpacking libc-l10n (2.31-13+deb11u10) ...
+#7 3.274 Selecting previously unselected package locales.
+#7 3.276 Preparing to unpack .../locales_2.31-13+deb11u10_all.deb ...
+#7 3.282 Unpacking locales (2.31-13+deb11u10) ...
+#7 3.708 Setting up libc-l10n (2.31-13+deb11u10) ...
+#7 3.722 Setting up locales (2.31-13+deb11u10) ...
+#7 3.803 debconf: unable to initialize frontend: Dialog
+#7 3.803 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 3.803 debconf: falling back to frontend: Readline
+#7 4.360 Generating locales (this might take a while)...
+#7 4.369 Generation complete.
+#7 4.423 Generating locales (this might take a while)...
+#7 4.427   en_US.UTF-8... done
+#7 6.008 Generation complete.
+#7 22.74 Successfully installed bundler-1.17.1
+#7 22.74 1 gem installed
+#7 DONE 23.0s
+
+#8 [3/6] RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - &&     apt-get install -y nodejs
+#8 0.266 
+#8 0.266 ================================================================================
+#8 0.266 ================================================================================
+#8 0.266 
+#8 0.266                               DEPRECATION WARNING                            
+#8 0.266 
+#8 0.266   Node.js 10.x is no longer actively supported!
+#8 0.266 
+#8 0.266   You will not receive security or critical stability updates for this version.
+#8 0.266 
+#8 0.266   You should migrate to a supported version of Node.js as soon as possible.
+#8 0.266   Use the installation script that corresponds to the version of Node.js you
+#8 0.266   wish to install. e.g.
+#8 0.266 
+#8 0.266    * https://deb.nodesource.com/setup_16.x — Node.js 16 "Gallium"
+#8 0.266    * https://deb.nodesource.com/setup_18.x — Node.js 18 LTS "Hydrogen" (recommended)
+#8 0.266    * https://deb.nodesource.com/setup_19.x — Node.js 19 "Nineteen"
+#8 0.266    * https://deb.nodesource.com/setup_20.x — Node.js 20 "Iron" (current)
+#8 0.266 
+#8 0.266   Please see https://github.com/nodejs/Release for details about which
+#8 0.266   version may be appropriate for you.
+#8 0.266 
+#8 0.266   The NodeSource Node.js distributions repository contains
+#8 0.266   information both about supported versions of Node.js and supported Linux
+#8 0.266   distributions. To learn more about usage, see the repository:
+#8 0.266     https://github.com/nodesource/distributions
+#8 0.266 
+#8 0.266 ================================================================================
+#8 0.266 ================================================================================
+#8 0.266 
+#8 0.266 Continuing in 20 seconds ...
+#8 0.266 
+#8 20.27 
+#8 20.27 ================================================================================
+#8 20.27 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+#8 20.27 ================================================================================
+#8 20.27 
+#8 20.27                            SCRIPT DEPRECATION WARNING                    
+#8 20.27 
+#8 20.27   
+#8 20.27   This script, located at https://deb.nodesource.com/setup_X, used to
+#8 20.27   install Node.js is deprecated now and will eventually be made inactive.
+#8 20.27 
+#8 20.27   Please visit the NodeSource distributions Github and follow the
+#8 20.27   instructions to migrate your repo.
+#8 20.27   https://github.com/nodesource/distributions
+#8 20.27 
+#8 20.27   The NodeSource Node.js Linux distributions GitHub repository contains
+#8 20.27   information about which versions of Node.js and which Linux distributions
+#8 20.27   are supported and how to install it.
+#8 20.27   https://github.com/nodesource/distributions
+#8 20.27 
+#8 20.27 
+#8 20.27                           SCRIPT DEPRECATION WARNING
+#8 20.27 
+#8 20.27 ================================================================================
+#8 20.27 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+#8 20.27 ================================================================================
+#8 20.27 
+#8 20.27 TO AVOID THIS WAIT MIGRATE THE SCRIPT
+#8 20.27 Continuing in 60 seconds (press Ctrl-C to abort) ...
+#8 20.27 
+#8 80.27 
+#8 80.27 ## Installing the NodeSource Node.js 10.x repo...
+#8 80.27 
+#8 80.27 
+#8 80.27 ## Populating apt-get cache...
+#8 80.27 
+#8 80.27 + apt-get update
+#8 80.33 Hit:1 http://deb.debian.org/debian bullseye InRelease
+#8 80.33 Hit:2 http://deb.debian.org/debian-security bullseye-security InRelease
+#8 80.34 Hit:3 http://deb.debian.org/debian bullseye-updates InRelease
+#8 80.66 Reading package lists...
+#8 81.13 
+#8 81.13 ## Installing packages required for setup: lsb-release...
+#8 81.13 
+#8 81.13 + apt-get install -y lsb-release > /dev/null 2>&1
+#8 82.31 
+#8 82.31 ## Confirming "bullseye" is supported...
+#8 82.31 
+#8 82.31 + curl -sLf -o /dev/null 'https://deb.nodesource.com/node_10.x/dists/bullseye/Release'
+#8 82.36 
+#8 82.36 ## Adding the NodeSource signing key to your keyring...
+#8 82.36 
+#8 82.36 + curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee /usr/share/keyrings/nodesource.gpg >/dev/null
+#8 82.42 
+#8 82.42 ## Creating apt sources list file for the NodeSource Node.js 10.x repo...
+#8 82.42 
+#8 82.42 + echo 'deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_10.x bullseye main' > /etc/apt/sources.list.d/nodesource.list
+#8 82.42 + echo 'deb-src [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_10.x bullseye main' >> /etc/apt/sources.list.d/nodesource.list
+#8 82.42 
+#8 82.42 ## Running `apt-get update` for you...
+#8 82.42 
+#8 82.42 + apt-get update
+#8 82.48 Hit:1 http://deb.debian.org/debian bullseye InRelease
+#8 82.49 Hit:2 http://deb.debian.org/debian-security bullseye-security InRelease
+#8 82.50 Hit:3 http://deb.debian.org/debian bullseye-updates InRelease
+#8 82.56 Get:4 https://deb.nodesource.com/node_10.x bullseye InRelease [4586 B]
+#8 82.87 Get:5 https://deb.nodesource.com/node_10.x bullseye/main amd64 Packages [769 B]
+#8 82.88 Fetched 5355 B in 0s (12.5 kB/s)
+#8 82.88 Reading package lists...
+#8 83.34 
+#8 83.34 ## Run `sudo apt-get install -y nodejs` to install Node.js 10.x and npm
+#8 83.34 ## You may also need development tools to build native addons:
+#8 83.34      sudo apt-get install gcc g++ make
+#8 83.34 ## To install the Yarn package manager, run:
+#8 83.34      curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+#8 83.34      echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+#8 83.34      sudo apt-get update && sudo apt-get install yarn
+#8 83.34 
+#8 83.34 
+#8 83.35 Reading package lists...
+#8 83.82 Building dependency tree...
+#8 83.92 Reading state information...
+#8 84.03 The following additional packages will be installed:
+#8 84.03   javascript-common libc-ares2 libjs-highlight.js libnode72 libuv1 nodejs-doc
+#8 84.03 Suggested packages:
+#8 84.03   apache2 | lighttpd | httpd npm
+#8 84.07 The following NEW packages will be installed:
+#8 84.07   javascript-common libc-ares2 libjs-highlight.js libnode72 libuv1 nodejs
+#8 84.07   nodejs-doc
+#8 84.11 0 upgraded, 7 newly installed, 0 to remove and 107 not upgraded.
+#8 84.11 Need to get 11.7 MB of archives.
+#8 84.11 After this operation, 50.9 MB of additional disk space will be used.
+#8 84.11 Get:1 http://deb.debian.org/debian bullseye/main amd64 javascript-common all 11+nmu1 [6260 B]
+#8 84.12 Get:2 http://deb.debian.org/debian bullseye/main amd64 libc-ares2 amd64 1.17.1-1+deb11u3 [102 kB]
+#8 84.14 Get:3 http://deb.debian.org/debian bullseye/main amd64 libjs-highlight.js all 9.18.5+dfsg1-1 [397 kB]
+#8 84.16 Get:4 http://deb.debian.org/debian bullseye/main amd64 libuv1 amd64 1.40.0-2+deb11u1 [132 kB]
+#8 84.16 Get:5 http://deb.debian.org/debian bullseye/main amd64 libnode72 amd64 12.22.12~dfsg-1~deb11u4 [8332 kB]
+#8 84.26 Get:6 http://deb.debian.org/debian bullseye/main amd64 nodejs amd64 12.22.12~dfsg-1~deb11u4 [148 kB]
+#8 84.26 Get:7 http://deb.debian.org/debian bullseye/main amd64 nodejs-doc all 12.22.12~dfsg-1~deb11u4 [2547 kB]
+#8 84.40 debconf: delaying package configuration, since apt-utils is not installed
+#8 84.43 Fetched 11.7 MB in 0s (56.9 MB/s)
+#8 84.47 Selecting previously unselected package javascript-common.
+#8 84.47 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 23467 files and directories currently installed.)
+#8 84.48 Preparing to unpack .../0-javascript-common_11+nmu1_all.deb ...
+#8 84.50 Unpacking javascript-common (11+nmu1) ...
+#8 84.54 Selecting previously unselected package libc-ares2:amd64.
+#8 84.55 Preparing to unpack .../1-libc-ares2_1.17.1-1+deb11u3_amd64.deb ...
+#8 84.56 Unpacking libc-ares2:amd64 (1.17.1-1+deb11u3) ...
+#8 84.60 Selecting previously unselected package libjs-highlight.js.
+#8 84.60 Preparing to unpack .../2-libjs-highlight.js_9.18.5+dfsg1-1_all.deb ...
+#8 84.60 Unpacking libjs-highlight.js (9.18.5+dfsg1-1) ...
+#8 84.69 Selecting previously unselected package libuv1:amd64.
+#8 84.69 Preparing to unpack .../3-libuv1_1.40.0-2+deb11u1_amd64.deb ...
+#8 84.69 Unpacking libuv1:amd64 (1.40.0-2+deb11u1) ...
+#8 84.74 Selecting previously unselected package libnode72:amd64.
+#8 84.74 Preparing to unpack .../4-libnode72_12.22.12~dfsg-1~deb11u4_amd64.deb ...
+#8 84.75 Unpacking libnode72:amd64 (12.22.12~dfsg-1~deb11u4) ...
+#8 85.52 Selecting previously unselected package nodejs.
+#8 85.52 Preparing to unpack .../5-nodejs_12.22.12~dfsg-1~deb11u4_amd64.deb ...
+#8 85.53 Unpacking nodejs (12.22.12~dfsg-1~deb11u4) ...
+#8 85.58 Selecting previously unselected package nodejs-doc.
+#8 85.58 Preparing to unpack .../6-nodejs-doc_12.22.12~dfsg-1~deb11u4_all.deb ...
+#8 85.58 Unpacking nodejs-doc (12.22.12~dfsg-1~deb11u4) ...
+#8 85.84 Setting up javascript-common (11+nmu1) ...
+#8 85.88 Setting up libc-ares2:amd64 (1.17.1-1+deb11u3) ...
+#8 85.89 Setting up libuv1:amd64 (1.40.0-2+deb11u1) ...
+#8 85.91 Setting up libjs-highlight.js (9.18.5+dfsg1-1) ...
+#8 85.93 Setting up libnode72:amd64 (12.22.12~dfsg-1~deb11u4) ...
+#8 85.95 Setting up nodejs-doc (12.22.12~dfsg-1~deb11u4) ...
+#8 85.96 Setting up nodejs (12.22.12~dfsg-1~deb11u4) ...
+#8 85.98 update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
+#8 85.99 Processing triggers for libc-bin (2.31-13+deb11u6) ...
+#8 DONE 86.2s
+
+#9 [4/6] COPY Gemfile Gemfile.lock /app/
+#9 DONE 0.0s
+
+#10 [5/6] WORKDIR /app
+#10 DONE 0.0s
+
+#11 [6/6] RUN gem install bundler && bundle install
+#11 19.05 ERROR:  Error installing bundler:
+#11 19.05 	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+#11 19.05 	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.8.225.
+#11 ERROR: process "/bin/sh -c gem install bundler && bundle install" did not complete successfully: exit code: 1
+------
+ > [6/6] RUN gem install bundler && bundle install:
+19.05 ERROR:  Error installing bundler:
+19.05 	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+19.05 	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.8.225.
+------
+v1_Dockerfile:21
+--------------------
+  19 |     WORKDIR /app
+  20 |     
+  21 | >>> RUN gem install bundler && bundle install
+--------------------
+ERROR: failed to solve: process "/bin/sh -c gem install bundler && bundle install" did not complete successfully: exit code: 1
+Duration: 2:9.36

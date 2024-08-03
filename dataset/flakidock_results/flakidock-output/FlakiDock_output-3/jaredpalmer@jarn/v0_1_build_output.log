@@ -1,0 +1,111 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 197B 0.0s done
+#1 DONE 0.5s
+
+#2 [internal] load build definition from Dockerfile.dev
+#2 transferring dockerfile: 392B 0.2s done
+#2 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/node:10
+#3 ...
+
+#4 [auth] library/node:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:10
+#3 DONE 2.4s
+
+#5 [1/3] FROM docker.io/library/node:10@sha256:59531d2835edd5161c8f9512f9e095b1836f7a1fcb0ab73e005ec46047384911
+#5 resolve docker.io/library/node:10@sha256:59531d2835edd5161c8f9512f9e095b1836f7a1fcb0ab73e005ec46047384911 0.1s done
+#5 sha256:28dca6642db82aaecbed18101d9966f001e8de6691e1a1718c2927c124d81262 7.83kB / 7.83kB done
+#5 sha256:59531d2835edd5161c8f9512f9e095b1836f7a1fcb0ab73e005ec46047384911 776B / 776B done
+#5 sha256:686e0e859358f28bfe1641e1627549b9cd0ad74f222b953d74209213488c6858 2.21kB / 2.21kB done
+#5 DONE 1.7s
+
+#6 [2/3] RUN apt-get -y update &&   apt-get install -y --no-install-recommends     fakeroot     lintian     rpm     ruby     ruby-dev   &&   apt-get clean &&   rm -rf /var/lib/apt/lists/*
+#6 0.475 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+#6 0.486 Ign:2 http://security.debian.org/debian-security stretch/updates Release
+#6 0.496 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.551 Ign:4 http://deb.debian.org/debian stretch InRelease
+#6 0.562 Ign:5 http://deb.debian.org/debian stretch-updates InRelease
+#6 0.573 Ign:6 http://deb.debian.org/debian stretch Release
+#6 0.584 Ign:7 http://deb.debian.org/debian stretch-updates Release
+#6 0.594 Ign:8 http://deb.debian.org/debian stretch/main all Packages
+#6 0.662 Ign:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.673 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.754 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.765 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.840 Ign:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.850 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.926 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.936 Ign:8 http://deb.debian.org/debian stretch/main all Packages
+#6 1.017 Ign:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.028 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.094 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.104 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.195 Ign:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.205 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.262 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.273 Ign:8 http://deb.debian.org/debian stretch/main all Packages
+#6 1.372 Ign:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.382 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.430 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.440 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.549 Err:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.549   404  Not Found
+#6 1.599 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.609 Ign:8 http://deb.debian.org/debian stretch/main all Packages
+#6 1.766 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.776 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.933 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.943 Ign:8 http://deb.debian.org/debian stretch/main all Packages
+#6 2.101 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.112 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.270 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.281 Ign:8 http://deb.debian.org/debian stretch/main all Packages
+#6 2.448 Err:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.448   404  Not Found
+#6 2.459 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.616 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.616   404  Not Found
+#6 2.620 Reading package lists...
+#6 2.633 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 2.633 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 2.633 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 2.633 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+#6 2.633 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 2.633 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 2.633 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c apt-get -y update &&   apt-get install -y --no-install-recommends     fakeroot     lintian     rpm     ruby     ruby-dev   &&   apt-get clean &&   rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [2/3] RUN apt-get -y update &&   apt-get install -y --no-install-recommends     fakeroot     lintian     rpm     ruby     ruby-dev   &&   apt-get clean &&   rm -rf /var/lib/apt/lists/*:
+2.616 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+2.616   404  Not Found
+2.620 Reading package lists...
+2.633 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+2.633 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+2.633 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+2.633 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+2.633 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+2.633 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+2.633 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+Dockerfile.dev:7
+--------------------
+   6 |     # Debian packages
+   7 | >>> RUN apt-get -y update && \
+   8 | >>>   apt-get install -y --no-install-recommends \
+   9 | >>>     fakeroot \
+  10 | >>>     lintian \
+  11 | >>>     rpm \
+  12 | >>>     ruby \
+  13 | >>>     ruby-dev \
+  14 | >>>   && \
+  15 | >>>   apt-get clean && \
+  16 | >>>   rm -rf /var/lib/apt/lists/*
+  17 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get -y update &&   apt-get install -y --no-install-recommends     fakeroot     lintian     rpm     ruby     ruby-dev   &&   apt-get clean &&   rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+Duration: 0:8.22

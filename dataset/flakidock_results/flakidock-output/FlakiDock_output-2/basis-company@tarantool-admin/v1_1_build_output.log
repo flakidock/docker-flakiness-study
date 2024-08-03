@@ -1,0 +1,150 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 158B done
+#1 DONE 0.5s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 2.25kB done
+#2 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/php:8.1-apache
+#3 ...
+
+#4 [internal] load metadata for docker.io/library/composer:latest
+#4 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/php:8.1-apache
+#3 DONE 0.7s
+
+#5 [stage-1  1/14] FROM docker.io/library/php:8.1-apache@sha256:20b54d2104bad48cee81bb66a59c5eb74ba872782b8b016b872bbbf6c3a2c57c
+#5 CACHED
+
+#6 [stage-1  2/14] WORKDIR /var/www/html
+#6 CACHED
+
+#7 FROM docker.io/library/composer:latest@sha256:6d2b5386580c3ba67399c6ccfb50873146d68fcd7c31549f8802781559bed709
+#7 resolve docker.io/library/composer:latest@sha256:6d2b5386580c3ba67399c6ccfb50873146d68fcd7c31549f8802781559bed709
+#7 ...
+
+#8 [internal] load build context
+#8 transferring context: 536.38kB 0.0s done
+#8 DONE 2.4s
+
+#9 [stage-1  3/14] RUN apt-get update && apt-get install -y zip zlib1g-dev libzip-dev uuid-dev     && docker-php-ext-install zip opcache     && pecl install decimal uuid     && docker-php-ext-enable decimal uuid     && a2enmod rewrite
+#9 ...
+
+#10 [build  2/10] WORKDIR /build
+#10 DONE 2.7s
+
+#9 [stage-1  3/14] RUN apt-get update && apt-get install -y zip zlib1g-dev libzip-dev uuid-dev     && docker-php-ext-install zip opcache     && pecl install decimal uuid     && docker-php-ext-enable decimal uuid     && a2enmod rewrite
+#9 2.911 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#9 2.941 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#9 2.954 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#9 3.028 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#9 3.166 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#9 3.176 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#9 4.549 Fetched 9225 kB in 2s (5564 kB/s)
+#9 4.549 Reading package lists...
+#9 5.313 Reading package lists...
+#9 6.084 Building dependency tree...
+#9 6.231 Reading state information...
+#9 6.416 The following additional packages will be installed:
+#9 6.416   libzip4 unzip
+#9 6.504 The following NEW packages will be installed:
+#9 6.504   libzip-dev libzip4 unzip uuid-dev zip zlib1g-dev
+#9 6.543 0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+#9 6.543 Need to get 1571 kB of archives.
+#9 6.543 After this operation, 2957 kB of additional disk space will be used.
+#9 6.543 Get:1 http://deb.debian.org/debian bookworm/main amd64 libzip4 amd64 1.7.3-1+b1 [55.5 kB]
+#9 6.565 Get:2 http://deb.debian.org/debian bookworm/main amd64 zlib1g-dev amd64 1:1.2.13.dfsg-1 [916 kB]
+#9 6.595 Get:3 http://deb.debian.org/debian bookworm/main amd64 libzip-dev amd64 1.7.3-1+b1 [163 kB]
+#9 6.597 Get:4 http://deb.debian.org/debian bookworm/main amd64 unzip amd64 6.0-28 [166 kB]
+#9 6.599 Get:5 http://deb.debian.org/debian bookworm/main amd64 uuid-dev amd64 2.38.1-5+deb12u1 [39.8 kB]
+#9 6.599 Get:6 http://deb.debian.org/debian bookworm/main amd64 zip amd64 3.0-13 [230 kB]
+#9 6.836 debconf: delaying package configuration, since apt-utils is not installed
+#9 6.914 Fetched 1571 kB in 0s (17.3 MB/s)
+#9 7.050 Selecting previously unselected package libzip4:amd64.
+#9 7.050 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14158 files and directories currently installed.)
+#9 7.058 Preparing to unpack .../0-libzip4_1.7.3-1+b1_amd64.deb ...
+#9 7.111 Unpacking libzip4:amd64 (1.7.3-1+b1) ...
+#9 7.289 Selecting previously unselected package zlib1g-dev:amd64.
+#9 7.289 Preparing to unpack .../1-zlib1g-dev_1%3a1.2.13.dfsg-1_amd64.deb ...
+#9 7.313 Unpacking zlib1g-dev:amd64 (1:1.2.13.dfsg-1) ...
+#9 7.500 Selecting previously unselected package libzip-dev:amd64.
+#9 7.500 Preparing to unpack .../2-libzip-dev_1.7.3-1+b1_amd64.deb ...
+#9 7.524 Unpacking libzip-dev:amd64 (1.7.3-1+b1) ...
+#9 ...
+
+#7 FROM docker.io/library/composer:latest@sha256:6d2b5386580c3ba67399c6ccfb50873146d68fcd7c31549f8802781559bed709
+#7 resolve docker.io/library/composer:latest@sha256:6d2b5386580c3ba67399c6ccfb50873146d68fcd7c31549f8802781559bed709 2.6s done
+#7 sha256:6d2b5386580c3ba67399c6ccfb50873146d68fcd7c31549f8802781559bed709 10.07kB / 10.07kB done
+#7 sha256:dbb1e001ed2c7b71cf83a0d4482e646aa3d63181228f2deb0e12402ae1c26ae3 3.60kB / 3.60kB done
+#7 sha256:a59edfa96e04c4d40ecfe7465485035976d7595276702cd00161632f08edd837 11.32kB / 11.32kB done
+#7 sha256:3ae0d9dfc4dada15e6a030ba7b9c9a3b16f9f5a7597a4d46ff24226e91b91db7 3.27MB / 3.27MB 0.5s done
+#7 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s done
+#7 sha256:ce295ca8623e5dc914104e970c5496db996db5f2abb336389bcbadd10465d21d 941B / 941B 0.8s done
+#7 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.3s done
+#7 sha256:5da48d7a5e0690b25131025f4187cd876e3ef774226b1565897b1d8a7bd5e5dd 12.49MB / 12.49MB 1.4s done
+#7 sha256:60d3eb99f3c122bc8d6c22107602ed9c22fce771289b54bb2598142d1626f693 223B / 223B 0.9s done
+#7 extracting sha256:3ae0d9dfc4dada15e6a030ba7b9c9a3b16f9f5a7597a4d46ff24226e91b91db7 0.3s done
+#7 sha256:61e142cb738903ef1899d23399f4e2e6300c8874a2c664604ec9b2775ef9e258 497B / 497B 1.4s done
+#7 sha256:29730a6e13b27677c98aae645d2b244d383908506ec4529f6e3f3b447d6b1a70 17.21MB / 17.21MB 2.2s done
+#7 extracting sha256:ce295ca8623e5dc914104e970c5496db996db5f2abb336389bcbadd10465d21d done
+#7 sha256:51ea4d2072fa2a974ecf0027c6c9717307073d1cb4e7e4f583505df1c1e58c3d 19.69kB / 19.69kB 1.8s done
+#7 sha256:e6c72ceb0cb5822610cc809ab8555d5d0668bcc1cefae5ec982bae91a0ed6ef1 2.44kB / 2.44kB 1.9s done
+#7 extracting sha256:60d3eb99f3c122bc8d6c22107602ed9c22fce771289b54bb2598142d1626f693 done
+#7 sha256:bddc30664defc9178e7de252e34a38b8d9cd973bf68410e69eda9ede2f2b18fe 30.65MB / 30.65MB 3.0s done
+#7 sha256:8ab37c093bb0c54711c78f5434cbaa709ae1f534353f9b29d2f4710589c38e52 256B / 256B 3.1s done
+#7 sha256:59263a7d833e2240d71355983d8e0d2c4c2bdf546673200077ef628158d6a4bd 946.32kB / 946.32kB 3.2s done
+#7 extracting sha256:5da48d7a5e0690b25131025f4187cd876e3ef774226b1565897b1d8a7bd5e5dd 0.1s done
+#7 extracting sha256:61e142cb738903ef1899d23399f4e2e6300c8874a2c664604ec9b2775ef9e258 done
+#7 sha256:b714dd3075313227921c065d66d109fd72e875b8d96d52fd4761dcd321abc26f 419B / 419B 3.4s done
+#7 sha256:0e98278c16ae19ff7bfb6995b6467b1172e90b1879571538d2ef70a3073b295a 93B / 93B 3.5s done
+#7 extracting sha256:29730a6e13b27677c98aae645d2b244d383908506ec4529f6e3f3b447d6b1a70 1.3s done
+#7 ...
+
+#11 [build  3/10] RUN apt-get update && apt-get install -y git wget zip libmpdec-dev     && pecl install decimal     && docker-php-ext-enable decimal
+#11 1.454 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#11 1.487 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#11 1.499 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#11 1.572 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#11 1.695 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#11 1.708 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#11 3.060 Fetched 9225 kB in 2s (5668 kB/s)
+#11 3.060 Reading package lists...
+#11 3.836 Reading package lists...
+#11 4.617 Building dependency tree...
+#11 4.789 Reading state information...
+#11 4.801 E: Unable to locate package libmpdec-dev
+#11 ERROR: process "/bin/sh -c apt-get update && apt-get install -y git wget zip libmpdec-dev     && pecl install decimal     && docker-php-ext-enable decimal" did not complete successfully: exit code: 100
+
+#7 FROM docker.io/library/composer:latest@sha256:6d2b5386580c3ba67399c6ccfb50873146d68fcd7c31549f8802781559bed709
+#7 CANCELED
+
+#9 [stage-1  3/14] RUN apt-get update && apt-get install -y zip zlib1g-dev libzip-dev uuid-dev     && docker-php-ext-install zip opcache     && pecl install decimal uuid     && docker-php-ext-enable decimal uuid     && a2enmod rewrite
+#9 CANCELED
+------
+ > [build  3/10] RUN apt-get update && apt-get install -y git wget zip libmpdec-dev     && pecl install decimal     && docker-php-ext-enable decimal:
+1.499 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+1.572 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+1.695 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+1.708 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+3.060 Fetched 9225 kB in 2s (5668 kB/s)
+3.060 Reading package lists...
+3.836 Reading package lists...
+4.617 Building dependency tree...
+4.789 Reading state information...
+4.801 E: Unable to locate package libmpdec-dev
+------
+v1_Dockerfile:6
+--------------------
+   5 |     
+   6 | >>> RUN apt-get update && apt-get install -y git wget zip libmpdec-dev \
+   7 | >>>     && pecl install decimal \
+   8 | >>>     && docker-php-ext-enable decimal
+   9 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y git wget zip libmpdec-dev     && pecl install decimal     && docker-php-ext-enable decimal" did not complete successfully: exit code: 100
+Duration: 0:13.27

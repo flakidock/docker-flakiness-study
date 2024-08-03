@@ -1,0 +1,65 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 950B done
+#1 DONE 0.0s
+
+#2 [auth] library/node:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:14-alpine
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/11] FROM docker.io/library/node:14-alpine@sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33
+#5 resolve docker.io/library/node:14-alpine@sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33 0.0s done
+#5 sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33 1.43kB / 1.43kB done
+#5 sha256:4e84c956cd276af9ed14a8b2939a734364c2b0042485e90e1b97175e73dfd548 1.16kB / 1.16kB done
+#5 sha256:0dac3dc27b1ad570e6c3a7f7cd29e88e7130ff0cad31b2ec5a0f222fbe971bdb 6.44kB / 6.44kB done
+#5 sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09 0B / 3.37MB 0.1s
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 0B / 37.17MB 0.1s
+#5 sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6 0B / 2.37MB 0.1s
+#5 sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09 3.15MB / 3.37MB 0.2s
+#5 extracting sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09
+#5 sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09 3.37MB / 3.37MB 0.2s done
+#5 sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6 2.37MB / 2.37MB 0.3s done
+#5 sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf 0B / 448B 0.3s
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 19.92MB / 37.17MB 0.5s
+#5 extracting sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09 0.1s done
+#5 sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf 448B / 448B 0.3s done
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 37.17MB / 37.17MB 0.7s
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 37.17MB / 37.17MB 0.8s done
+#5 extracting sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b
+#5 extracting sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 2.7s done
+#5 extracting sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6
+#5 extracting sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6 0.1s done
+#5 extracting sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf
+#5 extracting sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf done
+#5 DONE 3.9s
+
+#6 [ 2/11] RUN adduser -D -s /bin/bash hubot-matteruser
+#6 DONE 0.7s
+
+#7 [ 3/11] RUN mkdir -p /usr/src/hubot-matteruser && rm -rf /usr/src/hubot-matteruser
+#7 DONE 0.2s
+
+#8 [ 4/11] RUN chown hubot-matteruser:hubot-matteruser /usr/src/hubot-matteruser
+#8 0.252 chown: /usr/src/hubot-matteruser: No such file or directory
+#8 ERROR: process "/bin/sh -c chown hubot-matteruser:hubot-matteruser /usr/src/hubot-matteruser" did not complete successfully: exit code: 1
+------
+ > [ 4/11] RUN chown hubot-matteruser:hubot-matteruser /usr/src/hubot-matteruser:
+0.252 chown: /usr/src/hubot-matteruser: No such file or directory
+------
+v1_Dockerfile:10
+--------------------
+   8 |     
+   9 |     RUN mkdir -p /usr/src/hubot-matteruser && rm -rf /usr/src/hubot-matteruser
+  10 | >>> RUN chown hubot-matteruser:hubot-matteruser /usr/src/hubot-matteruser
+  11 |     RUN chown hubot-matteruser:hubot-matteruser /usr/local/lib/node_modules/
+  12 |     RUN chown hubot-matteruser:hubot-matteruser /usr/local/bin/
+--------------------
+ERROR: failed to solve: process "/bin/sh -c chown hubot-matteruser:hubot-matteruser /usr/src/hubot-matteruser" did not complete successfully: exit code: 1
+Duration: 0:6.32

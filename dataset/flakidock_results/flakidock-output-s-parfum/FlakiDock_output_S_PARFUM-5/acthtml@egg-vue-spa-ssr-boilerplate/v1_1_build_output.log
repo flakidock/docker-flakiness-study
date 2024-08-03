@@ -1,0 +1,81 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 723B done
+#1 DONE 0.0s
+
+#2 [auth] mhart/alpine-node:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/mhart/alpine-node:8.9
+#3 DONE 0.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 233B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 817.49kB 0.0s done
+#5 DONE 0.1s
+
+#6 [1/6] FROM docker.io/mhart/alpine-node:8.9@sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2
+#6 resolve docker.io/mhart/alpine-node:8.9@sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2 0.0s done
+#6 sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2 740B / 740B done
+#6 sha256:9b2702ab4719621becb2c66ce01586674999d447ee903bfd4474ea16df40e3d7 6.87kB / 6.87kB done
+#6 sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32 0B / 1.99MB 0.1s
+#6 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 0B / 20.24MB 0.1s
+#6 extracting sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32
+#6 sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32 1.99MB / 1.99MB 0.2s done
+#6 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 7.34MB / 20.24MB 0.3s
+#6 extracting sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32 0.1s done
+#6 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 18.87MB / 20.24MB 0.4s
+#6 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 20.24MB / 20.24MB 0.4s done
+#6 extracting sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 0.1s
+#6 extracting sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 1.8s done
+#6 DONE 2.4s
+
+#7 [2/6] RUN mkdir -p /usr/local/project/
+#7 DONE 0.5s
+
+#8 [3/6] COPY . /usr/local/project/
+#8 DONE 0.1s
+
+#9 [4/6] WORKDIR /usr/local/project/
+#9 DONE 0.0s
+
+#10 [5/6] RUN npm i --registry=https://registry.npm.taobao.org && npm cache clean --force;
+#10 3.071 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: arr-diff@2.0.0 (node_modules/arr-diff):
+#10 3.072 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: request to https://registry.npm.taobao.org/arr-diff failed, reason: certificate has expired
+#10 3.072 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: array-unique@0.2.1 (node_modules/array-unique):
+#10 3.072 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: request to https://registry.npm.taobao.org/array-unique failed, reason: certificate has expired
+#10 3.072 
+#10 3.075 npm ERR! code CERT_HAS_EXPIRED
+#10 3.075 npm ERR! errno CERT_HAS_EXPIRED
+#10 3.075 npm ERR! request to https://registry.npm.taobao.org/acorn failed, reason: certificate has expired
+#10 3.103 
+#10 3.103 npm ERR! A complete log of this run can be found in:
+#10 3.103 npm ERR!     /root/.npm/_logs/2024-08-01T08_00_31_920Z-debug.log
+#10 ERROR: process "/bin/sh -c npm i --registry=https://registry.npm.taobao.org && npm cache clean --force;" did not complete successfully: exit code: 1
+------
+ > [5/6] RUN npm i --registry=https://registry.npm.taobao.org && npm cache clean --force;:
+3.072 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: request to https://registry.npm.taobao.org/arr-diff failed, reason: certificate has expired
+3.072 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: array-unique@0.2.1 (node_modules/array-unique):
+3.072 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: request to https://registry.npm.taobao.org/array-unique failed, reason: certificate has expired
+3.072 
+3.075 npm ERR! code CERT_HAS_EXPIRED
+3.075 npm ERR! errno CERT_HAS_EXPIRED
+3.075 npm ERR! request to https://registry.npm.taobao.org/acorn failed, reason: certificate has expired
+3.103 
+3.103 npm ERR! A complete log of this run can be found in:
+3.103 npm ERR!     /root/.npm/_logs/2024-08-01T08_00_31_920Z-debug.log
+------
+v1_Dockerfile:14
+--------------------
+  12 |     
+  13 |     # å®è£ä¾èµ
+  14 | >>> RUN npm i --registry=https://registry.npm.taobao.org && npm cache clean --force;
+  15 |     
+  16 |     # ç¼è¯
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm i --registry=https://registry.npm.taobao.org && npm cache clean --force;" did not complete successfully: exit code: 1
+Duration: 0:7.33

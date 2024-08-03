@@ -1,0 +1,260 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 348B done
+#1 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.16.2
+#3 ...
+
+#4 [auth] library/alpine:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [auth] library/golang:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [internal] load metadata for docker.io/library/golang:1.19.2-alpine
+#6 DONE 1.7s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.16.2
+#3 DONE 1.8s
+
+#7 [stage-1 1/3] FROM docker.io/library/alpine:3.16.2@sha256:65a2763f593ae85fab3b5406dc9e80f744ec5b449f269b699b5efd37a07ad32e
+#7 resolve docker.io/library/alpine:3.16.2@sha256:65a2763f593ae85fab3b5406dc9e80f744ec5b449f269b699b5efd37a07ad32e
+#7 resolve docker.io/library/alpine:3.16.2@sha256:65a2763f593ae85fab3b5406dc9e80f744ec5b449f269b699b5efd37a07ad32e 0.3s done
+#7 sha256:1304f174557314a7ed9eddb4eab12fed12cb0cd9809e4c28f29af86979a3c870 528B / 528B done
+#7 sha256:9c6f0724472873bb50a2ae67a9e7adcb57673a183cea8b06eb778dca859181b5 1.47kB / 1.47kB done
+#7 sha256:65a2763f593ae85fab3b5406dc9e80f744ec5b449f269b699b5efd37a07ad32e 1.64kB / 1.64kB done
+#7 sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 0B / 2.81MB 0.1s
+#7 sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 2.10MB / 2.81MB 0.2s
+#7 sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 2.81MB / 2.81MB 0.3s done
+#7 extracting sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 0.1s
+#7 DONE 1.5s
+
+#8 [stage-1 2/3] RUN apk add nmap libpcap-dev bind-tools ca-certificates nmap-scripts
+#8 0.638 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/main/x86_64/APKINDEX.tar.gz
+#8 0.883 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/community/x86_64/APKINDEX.tar.gz
+#8 1.324 (1/25) Installing fstrm (0.6.1-r0)
+#8 1.337 (2/25) Installing krb5-conf (1.0-r2)
+#8 1.337 (3/25) Installing libcom_err (1.46.6-r0)
+#8 1.351 (4/25) Installing keyutils-libs (1.6.3-r1)
+#8 1.351 (5/25) Installing libverto (0.3.2-r0)
+#8 1.351 (6/25) Installing krb5-libs (1.19.4-r0)
+#8 1.388 (7/25) Installing json-c (0.16-r0)
+#8 1.389 (8/25) Installing protobuf-c (1.4.1-r0)
+#8 1.395 (9/25) Installing libuv (1.44.1-r0)
+#8 1.404 (10/25) Installing xz-libs (5.2.5-r1)
+#8 1.560 (11/25) Installing libxml2 (2.9.14-r2)
+#8 1.602 (12/25) Installing bind-libs (9.16.48-r0)
+#8 1.810 (13/25) Installing bind-tools (9.16.48-r0)
+#8 3.784 (14/25) Installing ca-certificates (20240226-r0)
+#8 3.817 (15/25) Installing libpcap (1.10.1-r0)
+#8 3.824 (16/25) Installing pkgconf (1.8.1-r0)
+#8 3.829 (17/25) Installing libpcap-dev (1.10.1-r0)
+#8 3.841 (18/25) Installing libgcc (11.2.1_git20220219-r2)
+#8 3.846 (19/25) Installing lua5.3-libs (5.3.6-r3)
+#8 3.853 (20/25) Installing pcre (8.45-r2)
+#8 3.862 (21/25) Installing libssh2 (1.11.0-r0)
+#8 3.875 (22/25) Installing libstdc++ (11.2.1_git20220219-r2)
+#8 3.900 (23/25) Installing nmap (7.92-r2)
+#8 4.236 (24/25) Installing nmap-nselibs (7.92-r2)
+#8 5.517 (25/25) Installing nmap-scripts (7.92-r2)
+#8 5.889 Executing busybox-1.35.0-r17.trigger
+#8 5.894 Executing ca-certificates-20240226-r0.trigger
+#8 5.933 OK: 41 MiB in 39 packages
+#8 ...
+
+#9 [builder 1/3] FROM docker.io/library/golang:1.19.2-alpine@sha256:e4dcdac3ed37d8c2b3b8bcef2909573b2ad9c2ab53ba53c608909e8b89ccee36
+#9 resolve docker.io/library/golang:1.19.2-alpine@sha256:e4dcdac3ed37d8c2b3b8bcef2909573b2ad9c2ab53ba53c608909e8b89ccee36 0.3s done
+#9 sha256:e4dcdac3ed37d8c2b3b8bcef2909573b2ad9c2ab53ba53c608909e8b89ccee36 1.65kB / 1.65kB done
+#9 sha256:46752c2ee3bd8388608e41362964c84f7a6dffe99d86faeddc82d917740c5968 1.36kB / 1.36kB done
+#9 sha256:f9a40cb7e8ec6730fbc2feaad9b26b429930160c681b6d1e58ad3df1ad72d6f5 5.35kB / 5.35kB done
+#9 sha256:93c1e223e6f2123b855e0c95898eba50cb6a055881ba9023527c0a361761c1cf 153B / 153B 0.4s done
+#9 sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 2.81MB / 2.81MB 0.3s done
+#9 sha256:4583459ba0371c715f926a9bbd37a9dae909234f4b898220160425131eb53bd4 284.73kB / 284.73kB 0.5s done
+#9 extracting sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 0.2s done
+#9 sha256:14bccb3a1cff3b5f09bf1f21ba9ecb17c96329fb82f96605d922cfa4c9a82032 122.25MB / 122.25MB 5.0s done
+#9 sha256:861cc3991b26fba6073631f27a1dc32bb27761195d912d05ee2f14b86fdf923f 156B / 156B 0.7s done
+#9 extracting sha256:4583459ba0371c715f926a9bbd37a9dae909234f4b898220160425131eb53bd4 0.1s done
+#9 extracting sha256:93c1e223e6f2123b855e0c95898eba50cb6a055881ba9023527c0a361761c1cf done
+#9 extracting sha256:14bccb3a1cff3b5f09bf1f21ba9ecb17c96329fb82f96605d922cfa4c9a82032 2.8s
+#9 extracting sha256:14bccb3a1cff3b5f09bf1f21ba9ecb17c96329fb82f96605d922cfa4c9a82032 7.2s done
+#9 ...
+
+#8 [stage-1 2/3] RUN apk add nmap libpcap-dev bind-tools ca-certificates nmap-scripts
+#8 DONE 15.2s
+
+#9 [builder 1/3] FROM docker.io/library/golang:1.19.2-alpine@sha256:e4dcdac3ed37d8c2b3b8bcef2909573b2ad9c2ab53ba53c608909e8b89ccee36
+#9 extracting sha256:861cc3991b26fba6073631f27a1dc32bb27761195d912d05ee2f14b86fdf923f done
+#9 DONE 17.8s
+
+#10 [builder 2/3] RUN apk add build-base libpcap-dev
+#10 0.460 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/main/x86_64/APKINDEX.tar.gz
+#10 0.704 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/community/x86_64/APKINDEX.tar.gz
+#10 1.144 (1/23) Upgrading musl (1.2.3-r0 -> 1.2.3-r3)
+#10 1.156 (2/23) Installing libgcc (11.2.1_git20220219-r2)
+#10 1.161 (3/23) Installing libstdc++ (11.2.1_git20220219-r2)
+#10 1.180 (4/23) Installing binutils (2.38-r3)
+#10 1.309 (5/23) Installing libmagic (5.41-r0)
+#10 1.355 (6/23) Installing file (5.41-r0)
+#10 1.361 (7/23) Installing libgomp (11.2.1_git20220219-r2)
+#10 1.368 (8/23) Installing libatomic (11.2.1_git20220219-r2)
+#10 1.372 (9/23) Installing gmp (6.2.1-r2)
+#10 1.381 (10/23) Installing isl22 (0.22-r0)
+#10 1.403 (11/23) Installing mpfr4 (4.1.0-r0)
+#10 1.437 (12/23) Installing mpc1 (1.2.1-r0)
+#10 1.443 (13/23) Installing gcc (11.2.1_git20220219-r2)
+#10 2.329 (14/23) Installing musl-dev (1.2.3-r3)
+#10 2.444 (15/23) Installing libc-dev (0.7.2-r3)
+#10 2.447 (16/23) Installing g++ (11.2.1_git20220219-r2)
+#10 3.070 (17/23) Installing make (4.3-r0)
+#10 3.077 (18/23) Installing fortify-headers (1.1-r1)
+#10 3.087 (19/23) Installing patch (2.7.6-r7)
+#10 3.092 (20/23) Installing build-base (0.5-r3)
+#10 3.094 (21/23) Installing libpcap (1.10.1-r0)
+#10 3.101 (22/23) Installing pkgconf (1.8.1-r0)
+#10 3.107 (23/23) Installing libpcap-dev (1.10.1-r0)
+#10 3.119 Executing busybox-1.35.0-r17.trigger
+#10 3.126 OK: 188 MiB in 37 packages
+#10 DONE 9.0s
+
+#11 [builder 3/3] RUN go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+#11 0.976 go: downloading github.com/projectdiscovery/naabu/v2 v2.3.1
+#11 1.001 go: downloading github.com/projectdiscovery/naabu v1.1.4
+#11 1.066 go: downloading github.com/projectdiscovery/gologger v1.1.12
+#11 1.066 go: downloading github.com/pkg/errors v0.9.1
+#11 1.067 go: downloading github.com/projectdiscovery/blackrock v0.0.1
+#11 1.067 go: downloading github.com/projectdiscovery/mapcidr v1.1.34
+#11 1.067 go: downloading github.com/projectdiscovery/ratelimit v0.0.40
+#11 1.067 go: downloading github.com/projectdiscovery/dnsx v1.2.1
+#11 1.067 go: downloading github.com/projectdiscovery/fdmax v0.0.4
+#11 1.068 go: downloading github.com/projectdiscovery/retryablehttp-go v1.0.58
+#11 1.069 go: downloading github.com/Mzack9999/gcache v0.0.0-20230410081825-519e28eab057
+#11 1.069 go: downloading github.com/projectdiscovery/goflags v0.1.51
+#11 1.069 go: downloading github.com/miekg/dns v1.1.58
+#11 1.070 go: downloading github.com/projectdiscovery/clistats v0.0.20
+#11 1.073 go: downloading github.com/projectdiscovery/uncover v1.0.7
+#11 1.079 go: downloading github.com/projectdiscovery/utils v0.0.92
+#11 1.107 go: downloading github.com/remeh/sizedwaitgroup v1.0.0
+#11 1.122 go: downloading golang.org/x/exp v0.0.0-20231006140011-7918f672742d
+#11 1.235 go: downloading golang.org/x/sys v0.18.0
+#11 1.250 go: downloading github.com/google/gopacket v1.1.19
+#11 1.266 go: downloading github.com/projectdiscovery/cdncheck v1.0.9
+#11 1.276 go: downloading github.com/projectdiscovery/freeport v0.0.5
+#11 1.276 go: downloading github.com/projectdiscovery/ipranger v0.0.44
+#11 1.284 go: downloading github.com/projectdiscovery/networkpolicy v0.0.8
+#11 1.295 go: downloading golang.org/x/net v0.23.0
+#11 1.371 go: downloading github.com/json-iterator/go v1.1.12
+#11 1.371 go: downloading github.com/logrusorgru/aurora v2.0.3+incompatible
+#11 1.418 go: downloading github.com/projectdiscovery/asnmap v1.1.0
+#11 1.418 go: downloading github.com/Mzack9999/go-http-digest-auth-client v0.6.1-0.20220414142836-eb8883508809
+#11 1.418 go: downloading github.com/projectdiscovery/fastdialer v0.0.70
+#11 1.446 go: downloading github.com/cnf/structhash v0.0.0-20201127153200-e1b16c1ebc08
+#11 1.446 go: downloading gopkg.in/yaml.v3 v3.0.1
+#11 1.524 go: downloading github.com/projectdiscovery/retryabledns v1.0.59
+#11 1.530 go: downloading github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
+#11 1.539 go: downloading go.uber.org/multierr v1.11.0
+#11 1.539 go: downloading github.com/docker/go-units v0.5.0
+#11 1.543 go: downloading github.com/Masterminds/semver/v3 v3.2.1
+#11 1.543 go: downloading github.com/charmbracelet/glamour v0.6.0
+#11 1.544 go: downloading github.com/cheggaaa/pb/v3 v3.1.4
+#11 1.550 go: downloading github.com/google/go-github/v30 v30.1.0
+#11 1.550 go: downloading github.com/google/uuid v1.3.1
+#11 1.559 go: downloading github.com/minio/selfupdate v0.6.1-0.20230907112617-f11e74f84ca7
+#11 1.560 go: downloading github.com/projectdiscovery/machineid v0.0.0-20240226150047-2e2c51e35983
+#11 1.560 go: downloading github.com/zcalusic/sysinfo v1.0.2
+#11 1.562 go: downloading golang.org/x/oauth2 v0.11.0
+#11 1.563 go: downloading github.com/projectdiscovery/hmap v0.0.41
+#11 1.563 go: downloading github.com/yl2chen/cidranger v1.0.2
+#11 1.563 go: downloading github.com/mholt/archiver/v3 v3.5.1
+#11 1.572 go: downloading gopkg.in/djherbis/times.v1 v1.3.0
+#11 1.613 go: downloading github.com/microcosm-cc/bluemonday v1.0.25
+#11 1.619 go: downloading github.com/saintfish/chardet v0.0.0-20230101081208-5e3ef4b5456d
+#11 1.684 go: downloading github.com/tidwall/gjson v1.16.0
+#11 1.684 go: downloading github.com/weppos/publicsuffix-go v0.30.2-0.20230730094716-a20f9abcc222
+#11 1.704 go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+#11 1.706 go: downloading github.com/modern-go/reflect2 v1.0.2
+#11 1.707 go: downloading github.com/dimchansky/utfbom v1.1.1
+#11 1.707 go: downloading github.com/zmap/zcrypto v0.0.0-20230814193918-dbe676986518
+#11 1.707 go: downloading github.com/refraction-networking/utls v1.5.4
+#11 1.712 go: downloading github.com/shirou/gopsutil/v3 v3.23.7
+#11 1.750 go: downloading github.com/VividCortex/ewma v1.2.0
+#11 1.754 go: downloading github.com/fatih/color v1.15.0
+#11 1.754 go: downloading github.com/mattn/go-colorable v0.1.13
+#11 1.757 go: downloading github.com/mattn/go-isatty v0.0.19
+#11 1.764 go: downloading github.com/mattn/go-runewidth v0.0.14
+#11 1.782 go: downloading github.com/andybalholm/brotli v1.0.6
+#11 1.782 go: downloading github.com/dsnet/compress v0.0.2-0.20210315054119-f66993602bf5
+#11 1.784 go: downloading github.com/golang/snappy v0.0.4
+#11 1.791 go: downloading github.com/klauspost/compress v1.16.7
+#11 1.807 go: downloading github.com/klauspost/pgzip v1.2.5
+#11 1.918 go: downloading github.com/nwaples/rardecode v1.1.3
+#11 1.918 go: downloading github.com/pierrec/lz4/v4 v4.1.2
+#11 1.918 go: downloading github.com/ulikunitz/xz v0.5.11
+#11 1.921 go: downloading github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8
+#11 1.944 go: downloading aead.dev/minisign v0.2.0
+#11 1.963 go: downloading golang.org/x/term v0.18.0
+#11 1.964 go: downloading github.com/muesli/termenv v0.15.1
+#11 1.964 go: downloading github.com/yuin/goldmark v1.5.4
+#11 1.964 go: downloading github.com/yuin/goldmark-emoji v1.0.1
+#11 1.978 go: downloading github.com/aymerick/douceur v0.2.0
+#11 1.988 go: downloading github.com/google/go-querystring v1.1.0
+#11 1.989 go: downloading golang.org/x/crypto v0.21.0
+#11 2.014 go: downloading github.com/tidwall/match v1.1.1
+#11 2.022 go: downloading github.com/tidwall/pretty v1.2.1
+#11 2.032 go: downloading github.com/rivo/uniseg v0.4.4
+#11 2.060 go: downloading github.com/tklauser/go-sysconf v0.3.12
+#11 2.061 go: downloading github.com/akrylysov/pogreb v0.10.1
+#11 2.061 go: downloading github.com/syndtr/goleveldb v1.0.0
+#11 2.082 go: downloading github.com/tidwall/buntdb v1.3.0
+#11 2.083 go: downloading go.etcd.io/bbolt v1.3.7
+#11 2.093 go: downloading github.com/alecthomas/chroma v0.10.0
+#11 2.102 go: downloading github.com/muesli/reflow v0.3.0
+#11 2.103 go: downloading github.com/olekukonko/tablewriter v0.0.5
+#11 2.136 go: downloading golang.org/x/text v0.14.0
+#11 2.175 go: downloading github.com/cloudflare/circl v1.3.7
+#11 2.187 go: downloading github.com/gaukas/godicttls v0.0.4
+#11 2.196 go: downloading github.com/quic-go/quic-go v0.42.0
+#11 2.334 go: downloading github.com/gorilla/css v1.0.0
+#11 2.334 go: downloading github.com/zmap/rc2 v0.0.0-20190804163417-abaa70531248
+#11 2.335 go: downloading github.com/aymanbagabas/go-osc52/v2 v2.0.1
+#11 2.337 go: downloading github.com/lucasb-eyer/go-colorful v1.2.0
+#11 2.360 go: downloading github.com/tklauser/numcpus v0.6.1
+#11 2.414 go: downloading github.com/tidwall/btree v1.6.0
+#11 2.414 go: downloading github.com/tidwall/grect v0.1.4
+#11 2.421 go: downloading github.com/tidwall/rtred v0.1.2
+#11 2.471 go: downloading github.com/dlclark/regexp2 v1.8.1
+#11 2.492 go: downloading github.com/tidwall/tinyqueue v0.1.1
+#11 5.891 pkg/mod/github.com/refraction-networking/utls@v1.5.4/cfkem.go:25:2: package crypto/ecdh is not in GOROOT (/usr/local/go/src/crypto/ecdh)
+#11 ERROR: process "/bin/sh -c go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest" did not complete successfully: exit code: 1
+------
+ > [builder 3/3] RUN go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest:
+2.334 go: downloading github.com/zmap/rc2 v0.0.0-20190804163417-abaa70531248
+2.335 go: downloading github.com/aymanbagabas/go-osc52/v2 v2.0.1
+2.337 go: downloading github.com/lucasb-eyer/go-colorful v1.2.0
+2.360 go: downloading github.com/tklauser/numcpus v0.6.1
+2.414 go: downloading github.com/tidwall/btree v1.6.0
+2.414 go: downloading github.com/tidwall/grect v0.1.4
+2.421 go: downloading github.com/tidwall/rtred v0.1.2
+2.471 go: downloading github.com/dlclark/regexp2 v1.8.1
+2.492 go: downloading github.com/tidwall/tinyqueue v0.1.1
+5.891 pkg/mod/github.com/refraction-networking/utls@v1.5.4/cfkem.go:25:2: package crypto/ecdh is not in GOROOT (/usr/local/go/src/crypto/ecdh)
+------
+Dockerfile:3
+--------------------
+   1 |     FROM golang:1.19.2-alpine AS builder
+   2 |     RUN apk add build-base libpcap-dev
+   3 | >>> RUN go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+   4 |     
+   5 |     FROM alpine:3.16.2
+--------------------
+ERROR: failed to solve: process "/bin/sh -c go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest" did not complete successfully: exit code: 1
+Duration: 0:46.06

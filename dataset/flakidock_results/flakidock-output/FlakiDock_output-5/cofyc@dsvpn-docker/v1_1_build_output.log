@@ -1,0 +1,687 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.20kB done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for k8s.gcr.io/debian-base:v1.0.0
+#3 DONE 1.3s
+
+#4 [builder 1/3] FROM k8s.gcr.io/debian-base:v1.0.0@sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742
+#4 resolve k8s.gcr.io/debian-base:v1.0.0@sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742 0.1s done
+#4 DONE 0.1s
+
+#4 [builder 1/3] FROM k8s.gcr.io/debian-base:v1.0.0@sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 0B / 17.74MB 0.1s
+#4 sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742 1.67kB / 1.67kB done
+#4 sha256:5f25d97ece9076612b64bb551e12f1e39a520176b684e2d663ce1bd53c5d0618 529B / 529B done
+#4 sha256:204e96332c912beab21c2cef37a31b98c9b953ac4a0bc705d3ede0ba3c167163 1.51kB / 1.51kB done
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 4.19MB / 17.74MB 0.4s
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 8.39MB / 17.74MB 0.5s
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 12.58MB / 17.74MB 0.6s
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 15.73MB / 17.74MB 0.7s
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 17.74MB / 17.74MB 0.9s
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 17.74MB / 17.74MB 1.0s done
+#4 extracting sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1
+#4 extracting sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 2.5s done
+#4 DONE 4.6s
+
+#5 [builder 2/3] WORKDIR /dsvpn
+#5 DONE 2.1s
+
+#6 [builder 3/3] RUN set -x     && echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list     && echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list     && clean-install clang git ca-certificates make     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn      && git checkout ${GIT_REF} && make
+#6 1.674 + echo deb http://archive.debian.org/debian stretch main
+#6 1.674 + echo deb http://archive.debian.org/debian-security stretch/updates main
+#6 1.674 + clean-install clang git ca-certificates make
+#6 1.819 Ign:1 http://archive.debian.org/debian stretch InRelease
+#6 1.830 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#6 1.906 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#6 1.935 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#6 2.769 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
+#6 3.819 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [7080 kB]
+#6 7.079 Fetched 8042 kB in 5s (1525 kB/s)
+#6 7.079 Reading package lists...
+#6 9.581 Reading package lists...
+#6 11.59 Building dependency tree...
+#6 11.98 Reading state information...
+#6 12.36 The following additional packages will be installed:
+#6 12.36   binutils clang-3.8 git-man libasan3 libatomic1 libbsd0 libc-dev-bin
+#6 12.36   libc6-dev libcilkrts5 libclang-common-3.8-dev libclang1-3.8 libcurl3-gnutls
+#6 12.36   libedit2 liberror-perl libexpat1 libffi6 libgc1c2 libgcc-6-dev libgdbm3
+#6 12.36   libgmp10 libgnutls30 libgomp1 libgssapi-krb5-2 libhogweed4 libidn2-0 libitm1
+#6 12.36   libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2
+#6 12.36   libldap-common libllvm3.8 liblsan0 libmpx2 libncurses5 libnettle6
+#6 12.36   libnghttp2-14 libobjc-6-dev libobjc4 libp11-kit0 libperl5.24 libpsl5
+#6 12.36   libquadmath0 librtmp1 libsasl2-2 libsasl2-modules-db libssh2-1 libssl1.1
+#6 12.36   libstdc++-6-dev libtasn1-6 libtsan0 libubsan0 libunistring0 linux-libc-dev
+#6 12.36   openssl perl perl-base perl-modules-5.24
+#6 12.36 Suggested packages:
+#6 12.36   binutils-doc gnustep gnustep-devel clang-3.8-doc gettext-base git-daemon-run
+#6 12.36   | git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-arch
+#6 12.36   git-cvs git-mediawiki git-svn glibc-doc manpages-dev gnutls-bin krb5-doc
+#6 12.36   krb5-user libstdc++-6-doc make-doc perl-doc libterm-readline-gnu-perl
+#6 12.36   | libterm-readline-perl-perl
+#6 12.36 Recommended packages:
+#6 12.36   llvm-3.8-dev python patch less rsync ssh-client manpages manpages-dev
+#6 12.36   krb5-locales libgpm2 publicsuffix libsasl2-modules netbase rename
+#6 13.27 The following NEW packages will be installed:
+#6 13.27   binutils ca-certificates clang clang-3.8 git git-man libasan3 libatomic1
+#6 13.27   libbsd0 libc-dev-bin libc6-dev libcilkrts5 libclang-common-3.8-dev
+#6 13.27   libclang1-3.8 libcurl3-gnutls libedit2 liberror-perl libexpat1 libffi6
+#6 13.27   libgc1c2 libgcc-6-dev libgdbm3 libgmp10 libgnutls30 libgomp1
+#6 13.27   libgssapi-krb5-2 libhogweed4 libidn2-0 libitm1 libk5crypto3 libkeyutils1
+#6 13.27   libkrb5-3 libkrb5support0 libldap-2.4-2 libldap-common libllvm3.8 liblsan0
+#6 13.27   libmpx2 libncurses5 libnghttp2-14 libobjc-6-dev libobjc4 libp11-kit0
+#6 13.27   libperl5.24 libpsl5 libquadmath0 librtmp1 libsasl2-2 libsasl2-modules-db
+#6 13.27   libssh2-1 libssl1.1 libstdc++-6-dev libtasn1-6 libtsan0 libubsan0
+#6 13.27   libunistring0 linux-libc-dev make openssl perl perl-modules-5.24
+#6 13.27 The following packages will be upgraded:
+#6 13.27   libnettle6 perl-base
+#6 13.35 2 upgraded, 61 newly installed, 0 to remove and 16 not upgraded.
+#6 13.35 Need to get 73.0 MB of archives.
+#6 13.35 After this operation, 344 MB of additional disk space will be used.
+#6 13.35 Get:1 http://archive.debian.org/debian stretch/main amd64 perl-base amd64 5.24.1-3+deb9u7 [1346 kB]
+#6 13.40 Get:2 http://archive.debian.org/debian stretch/main amd64 perl-modules-5.24 all 5.24.1-3+deb9u7 [2723 kB]
+#6 13.53 Get:3 http://archive.debian.org/debian stretch/main amd64 libgdbm3 amd64 1.8.3-14 [30.0 kB]
+#6 13.54 Get:4 http://archive.debian.org/debian stretch/main amd64 libperl5.24 amd64 5.24.1-3+deb9u7 [3527 kB]
+#6 13.62 Get:5 http://archive.debian.org/debian stretch/main amd64 perl amd64 5.24.1-3+deb9u7 [218 kB]
+#6 13.63 Get:6 http://archive.debian.org/debian-security stretch/updates/main amd64 libgmp10 amd64 2:6.1.2+dfsg-1+deb9u1 [253 kB]
+#6 13.64 Get:7 http://archive.debian.org/debian-security stretch/updates/main amd64 libnettle6 amd64 3.3-1+deb9u1 [192 kB]
+#6 13.65 Get:8 http://archive.debian.org/debian-security stretch/updates/main amd64 libhogweed4 amd64 3.3-1+deb9u1 [136 kB]
+#6 13.65 Get:9 http://archive.debian.org/debian stretch/main amd64 libffi6 amd64 3.2.1-6 [20.4 kB]
+#6 13.65 Get:10 http://archive.debian.org/debian-security stretch/updates/main amd64 libp11-kit0 amd64 0.23.3-2+deb9u1 [112 kB]
+#6 13.65 Get:11 http://archive.debian.org/debian stretch/main amd64 libtasn1-6 amd64 4.10-1.1+deb9u1 [50.6 kB]
+#6 13.66 Get:12 http://archive.debian.org/debian-security stretch/updates/main amd64 libgnutls30 amd64 3.5.8-5+deb9u6 [897 kB]
+#6 13.68 Get:13 http://archive.debian.org/debian stretch/main amd64 libkeyutils1 amd64 1.5.9-9 [12.4 kB]
+#6 13.68 Get:14 http://archive.debian.org/debian-security stretch/updates/main amd64 libkrb5support0 amd64 1.15-1+deb9u3 [62.3 kB]
+#6 13.68 Get:15 http://archive.debian.org/debian-security stretch/updates/main amd64 libk5crypto3 amd64 1.15-1+deb9u3 [120 kB]
+#6 13.72 Get:16 http://archive.debian.org/debian-security stretch/updates/main amd64 libkrb5-3 amd64 1.15-1+deb9u3 [312 kB]
+#6 13.73 Get:17 http://archive.debian.org/debian-security stretch/updates/main amd64 libgssapi-krb5-2 amd64 1.15-1+deb9u3 [155 kB]
+#6 13.75 Get:18 http://archive.debian.org/debian stretch/main amd64 libunistring0 amd64 0.9.6+really0.9.3-0.1 [279 kB]
+#6 13.75 Get:19 http://archive.debian.org/debian stretch/main amd64 libidn2-0 amd64 0.16-1+deb9u1 [60.7 kB]
+#6 13.75 Get:20 http://archive.debian.org/debian-security stretch/updates/main amd64 libsasl2-modules-db amd64 2.1.27~101-g0780600+dfsg-3+deb9u2 [68.5 kB]
+#6 13.75 Get:21 http://archive.debian.org/debian-security stretch/updates/main amd64 libsasl2-2 amd64 2.1.27~101-g0780600+dfsg-3+deb9u2 [105 kB]
+#6 13.77 Get:22 http://archive.debian.org/debian-security stretch/updates/main amd64 libldap-common all 2.4.44+dfsg-5+deb9u9 [86.3 kB]
+#6 13.78 Get:23 http://archive.debian.org/debian-security stretch/updates/main amd64 libldap-2.4-2 amd64 2.4.44+dfsg-5+deb9u9 [220 kB]
+#6 13.80 Get:24 http://archive.debian.org/debian-security stretch/updates/main amd64 libnghttp2-14 amd64 1.18.1-1+deb9u2 [79.4 kB]
+#6 13.80 Get:25 http://archive.debian.org/debian stretch/main amd64 libpsl5 amd64 0.17.0-3 [41.8 kB]
+#6 13.80 Get:26 http://archive.debian.org/debian stretch/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-1+b1 [60.4 kB]
+#6 13.80 Get:27 http://archive.debian.org/debian-security stretch/updates/main amd64 libssh2-1 amd64 1.7.0-1+deb9u2 [139 kB]
+#6 13.81 Get:28 http://archive.debian.org/debian-security stretch/updates/main amd64 libcurl3-gnutls amd64 7.52.1-5+deb9u16 [296 kB]
+#6 13.84 Get:29 http://archive.debian.org/debian-security stretch/updates/main amd64 libexpat1 amd64 2.2.0-2+deb9u5 [84.7 kB]
+#6 13.84 Get:30 http://archive.debian.org/debian stretch/main amd64 liberror-perl all 0.17024-1 [26.9 kB]
+#6 13.84 Get:31 http://archive.debian.org/debian stretch/main amd64 git-man all 1:2.11.0-3+deb9u7 [1436 kB]
+#6 13.92 Get:32 http://archive.debian.org/debian stretch/main amd64 git amd64 1:2.11.0-3+deb9u7 [4170 kB]
+#6 14.03 Get:33 http://archive.debian.org/debian-security stretch/updates/main amd64 libssl1.1 amd64 1.1.0l-1~deb9u6 [1360 kB]
+#6 14.06 Get:34 http://archive.debian.org/debian-security stretch/updates/main amd64 libbsd0 amd64 0.8.3-1+deb9u1 [82.9 kB]
+#6 14.06 Get:35 http://archive.debian.org/debian stretch/main amd64 libncurses5 amd64 6.0+20161126-1+deb9u2 [93.4 kB]
+#6 14.07 Get:36 http://archive.debian.org/debian stretch/main amd64 libedit2 amd64 3.1-20160903-3 [84.8 kB]
+#6 14.08 Get:37 http://archive.debian.org/debian-security stretch/updates/main amd64 libgc1c2 amd64 1:7.4.2-8+deb9u1 [209 kB]
+#6 14.11 Get:38 http://archive.debian.org/debian stretch/main amd64 binutils amd64 2.28-5 [3770 kB]
+#6 14.23 Get:39 http://archive.debian.org/debian-security stretch/updates/main amd64 openssl amd64 1.1.0l-1~deb9u6 [749 kB]
+#6 14.25 Get:40 http://archive.debian.org/debian-security stretch/updates/main amd64 ca-certificates all 20200601~deb9u2 [168 kB]
+#6 14.52 Get:41 http://archive.debian.org/debian stretch/main amd64 libllvm3.8 amd64 1:3.8.1-24 [10.4 MB]
+#6 15.96 Get:42 http://archive.debian.org/debian stretch/main amd64 libclang1-3.8 amd64 1:3.8.1-24 [4190 kB]
+#6 16.76 Get:43 http://archive.debian.org/debian stretch/main amd64 libgomp1 amd64 6.3.0-18+deb9u1 [73.3 kB]
+#6 16.76 Get:44 http://archive.debian.org/debian stretch/main amd64 libitm1 amd64 6.3.0-18+deb9u1 [27.3 kB]
+#6 16.77 Get:45 http://archive.debian.org/debian stretch/main amd64 libatomic1 amd64 6.3.0-18+deb9u1 [8966 B]
+#6 16.77 Get:46 http://archive.debian.org/debian stretch/main amd64 libasan3 amd64 6.3.0-18+deb9u1 [311 kB]
+#6 16.77 Get:47 http://archive.debian.org/debian stretch/main amd64 liblsan0 amd64 6.3.0-18+deb9u1 [115 kB]
+#6 16.80 Get:48 http://archive.debian.org/debian stretch/main amd64 libtsan0 amd64 6.3.0-18+deb9u1 [257 kB]
+#6 16.80 Get:49 http://archive.debian.org/debian stretch/main amd64 libubsan0 amd64 6.3.0-18+deb9u1 [107 kB]
+#6 16.80 Get:50 http://archive.debian.org/debian stretch/main amd64 libcilkrts5 amd64 6.3.0-18+deb9u1 [40.5 kB]
+#6 16.80 Get:51 http://archive.debian.org/debian stretch/main amd64 libmpx2 amd64 6.3.0-18+deb9u1 [11.2 kB]
+#6 16.80 Get:52 http://archive.debian.org/debian stretch/main amd64 libquadmath0 amd64 6.3.0-18+deb9u1 [131 kB]
+#6 16.82 Get:53 http://archive.debian.org/debian stretch/main amd64 libgcc-6-dev amd64 6.3.0-18+deb9u1 [2296 kB]
+#6 16.93 Get:54 http://archive.debian.org/debian stretch/main amd64 libc-dev-bin amd64 2.24-11+deb9u4 [259 kB]
+#6 16.93 Get:55 http://archive.debian.org/debian-security stretch/updates/main amd64 linux-libc-dev amd64 4.9.320-2 [1633 kB]
+#6 16.99 Get:56 http://archive.debian.org/debian stretch/main amd64 libc6-dev amd64 2.24-11+deb9u4 [2364 kB]
+#6 17.04 Get:57 http://archive.debian.org/debian stretch/main amd64 libstdc++-6-dev amd64 6.3.0-18+deb9u1 [1420 kB]
+#6 17.33 Get:58 http://archive.debian.org/debian stretch/main amd64 libobjc4 amd64 6.3.0-18+deb9u1 [49.5 kB]
+#6 17.99 Get:59 http://archive.debian.org/debian stretch/main amd64 libobjc-6-dev amd64 6.3.0-18+deb9u1 [196 kB]
+#6 18.53 Get:60 http://archive.debian.org/debian stretch/main amd64 libclang-common-3.8-dev amd64 1:3.8.1-24 [2198 kB]
+#6 19.50 Get:61 http://archive.debian.org/debian stretch/main amd64 clang-3.8 amd64 1:3.8.1-24 [22.8 MB]
+#6 21.15 Get:62 http://archive.debian.org/debian stretch/main amd64 clang amd64 1:3.8-36 [5810 B]
+#6 21.15 Get:63 http://archive.debian.org/debian stretch/main amd64 make amd64 4.1-9.1 [302 kB]
+#6 21.72 debconf: delaying package configuration, since apt-utils is not installed
+#6 21.78 Fetched 73.0 MB in 7s (9287 kB/s)
+#6 21.93 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3935 files and directories currently installed.)
+#6 21.97 Preparing to unpack .../perl-base_5.24.1-3+deb9u7_amd64.deb ...
+#6 22.05 Unpacking perl-base (5.24.1-3+deb9u7) over (5.24.1-3+deb9u5) ...
+#6 40.86 Setting up perl-base (5.24.1-3+deb9u7) ...
+#6 41.11 Selecting previously unselected package perl-modules-5.24.
+#6 41.11 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3935 files and directories currently installed.)
+#6 41.11 Preparing to unpack .../00-perl-modules-5.24_5.24.1-3+deb9u7_all.deb ...
+#6 41.15 Unpacking perl-modules-5.24 (5.24.1-3+deb9u7) ...
+#6 43.61 Selecting previously unselected package libgdbm3:amd64.
+#6 43.61 Preparing to unpack .../01-libgdbm3_1.8.3-14_amd64.deb ...
+#6 43.67 Unpacking libgdbm3:amd64 (1.8.3-14) ...
+#6 44.05 Selecting previously unselected package libperl5.24:amd64.
+#6 44.05 Preparing to unpack .../02-libperl5.24_5.24.1-3+deb9u7_amd64.deb ...
+#6 44.08 Unpacking libperl5.24:amd64 (5.24.1-3+deb9u7) ...
+#6 46.04 Selecting previously unselected package perl.
+#6 46.04 Preparing to unpack .../03-perl_5.24.1-3+deb9u7_amd64.deb ...
+#6 46.06 Unpacking perl (5.24.1-3+deb9u7) ...
+#6 46.40 Selecting previously unselected package libgmp10:amd64.
+#6 46.40 Preparing to unpack .../04-libgmp10_2%3a6.1.2+dfsg-1+deb9u1_amd64.deb ...
+#6 46.44 Unpacking libgmp10:amd64 (2:6.1.2+dfsg-1+deb9u1) ...
+#6 46.83 Preparing to unpack .../05-libnettle6_3.3-1+deb9u1_amd64.deb ...
+#6 46.91 Unpacking libnettle6:amd64 (3.3-1+deb9u1) over (3.3-1+b2) ...
+#6 47.28 Selecting previously unselected package libhogweed4:amd64.
+#6 47.28 Preparing to unpack .../06-libhogweed4_3.3-1+deb9u1_amd64.deb ...
+#6 47.30 Unpacking libhogweed4:amd64 (3.3-1+deb9u1) ...
+#6 47.64 Selecting previously unselected package libffi6:amd64.
+#6 47.64 Preparing to unpack .../07-libffi6_3.2.1-6_amd64.deb ...
+#6 47.67 Unpacking libffi6:amd64 (3.2.1-6) ...
+#6 47.95 Selecting previously unselected package libp11-kit0:amd64.
+#6 47.95 Preparing to unpack .../08-libp11-kit0_0.23.3-2+deb9u1_amd64.deb ...
+#6 47.98 Unpacking libp11-kit0:amd64 (0.23.3-2+deb9u1) ...
+#6 48.34 Selecting previously unselected package libtasn1-6:amd64.
+#6 48.34 Preparing to unpack .../09-libtasn1-6_4.10-1.1+deb9u1_amd64.deb ...
+#6 48.38 Unpacking libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+#6 48.79 Selecting previously unselected package libgnutls30:amd64.
+#6 48.79 Preparing to unpack .../10-libgnutls30_3.5.8-5+deb9u6_amd64.deb ...
+#6 48.82 Unpacking libgnutls30:amd64 (3.5.8-5+deb9u6) ...
+#6 49.64 Selecting previously unselected package libkeyutils1:amd64.
+#6 49.64 Preparing to unpack .../11-libkeyutils1_1.5.9-9_amd64.deb ...
+#6 49.66 Unpacking libkeyutils1:amd64 (1.5.9-9) ...
+#6 49.94 Selecting previously unselected package libkrb5support0:amd64.
+#6 49.95 Preparing to unpack .../12-libkrb5support0_1.15-1+deb9u3_amd64.deb ...
+#6 49.97 Unpacking libkrb5support0:amd64 (1.15-1+deb9u3) ...
+#6 50.23 Selecting previously unselected package libk5crypto3:amd64.
+#6 50.23 Preparing to unpack .../13-libk5crypto3_1.15-1+deb9u3_amd64.deb ...
+#6 50.26 Unpacking libk5crypto3:amd64 (1.15-1+deb9u3) ...
+#6 50.58 Selecting previously unselected package libkrb5-3:amd64.
+#6 50.59 Preparing to unpack .../14-libkrb5-3_1.15-1+deb9u3_amd64.deb ...
+#6 50.61 Unpacking libkrb5-3:amd64 (1.15-1+deb9u3) ...
+#6 51.09 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#6 51.09 Preparing to unpack .../15-libgssapi-krb5-2_1.15-1+deb9u3_amd64.deb ...
+#6 51.12 Unpacking libgssapi-krb5-2:amd64 (1.15-1+deb9u3) ...
+#6 51.57 Selecting previously unselected package libunistring0:amd64.
+#6 51.57 Preparing to unpack .../16-libunistring0_0.9.6+really0.9.3-0.1_amd64.deb ...
+#6 51.60 Unpacking libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+#6 52.06 Selecting previously unselected package libidn2-0:amd64.
+#6 52.06 Preparing to unpack .../17-libidn2-0_0.16-1+deb9u1_amd64.deb ...
+#6 52.08 Unpacking libidn2-0:amd64 (0.16-1+deb9u1) ...
+#6 52.32 Selecting previously unselected package libsasl2-modules-db:amd64.
+#6 52.32 Preparing to unpack .../18-libsasl2-modules-db_2.1.27~101-g0780600+dfsg-3+deb9u2_amd64.deb ...
+#6 52.34 Unpacking libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+#6 52.65 Selecting previously unselected package libsasl2-2:amd64.
+#6 52.66 Preparing to unpack .../19-libsasl2-2_2.1.27~101-g0780600+dfsg-3+deb9u2_amd64.deb ...
+#6 52.69 Unpacking libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+#6 52.96 Selecting previously unselected package libldap-common.
+#6 52.96 Preparing to unpack .../20-libldap-common_2.4.44+dfsg-5+deb9u9_all.deb ...
+#6 53.00 Unpacking libldap-common (2.4.44+dfsg-5+deb9u9) ...
+#6 53.31 Selecting previously unselected package libldap-2.4-2:amd64.
+#6 53.31 Preparing to unpack .../21-libldap-2.4-2_2.4.44+dfsg-5+deb9u9_amd64.deb ...
+#6 53.33 Unpacking libldap-2.4-2:amd64 (2.4.44+dfsg-5+deb9u9) ...
+#6 53.71 Selecting previously unselected package libnghttp2-14:amd64.
+#6 53.71 Preparing to unpack .../22-libnghttp2-14_1.18.1-1+deb9u2_amd64.deb ...
+#6 53.73 Unpacking libnghttp2-14:amd64 (1.18.1-1+deb9u2) ...
+#6 54.13 Selecting previously unselected package libpsl5:amd64.
+#6 54.13 Preparing to unpack .../23-libpsl5_0.17.0-3_amd64.deb ...
+#6 54.16 Unpacking libpsl5:amd64 (0.17.0-3) ...
+#6 54.45 Selecting previously unselected package librtmp1:amd64.
+#6 54.45 Preparing to unpack .../24-librtmp1_2.4+20151223.gitfa8646d.1-1+b1_amd64.deb ...
+#6 54.47 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1+b1) ...
+#6 54.80 Selecting previously unselected package libssh2-1:amd64.
+#6 54.80 Preparing to unpack .../25-libssh2-1_1.7.0-1+deb9u2_amd64.deb ...
+#6 54.82 Unpacking libssh2-1:amd64 (1.7.0-1+deb9u2) ...
+#6 55.15 Selecting previously unselected package libcurl3-gnutls:amd64.
+#6 55.15 Preparing to unpack .../26-libcurl3-gnutls_7.52.1-5+deb9u16_amd64.deb ...
+#6 55.18 Unpacking libcurl3-gnutls:amd64 (7.52.1-5+deb9u16) ...
+#6 55.59 Selecting previously unselected package libexpat1:amd64.
+#6 55.59 Preparing to unpack .../27-libexpat1_2.2.0-2+deb9u5_amd64.deb ...
+#6 55.62 Unpacking libexpat1:amd64 (2.2.0-2+deb9u5) ...
+#6 55.89 Selecting previously unselected package liberror-perl.
+#6 55.89 Preparing to unpack .../28-liberror-perl_0.17024-1_all.deb ...
+#6 55.91 Unpacking liberror-perl (0.17024-1) ...
+#6 56.15 Selecting previously unselected package git-man.
+#6 56.15 Preparing to unpack .../29-git-man_1%3a2.11.0-3+deb9u7_all.deb ...
+#6 56.19 Unpacking git-man (1:2.11.0-3+deb9u7) ...
+#6 56.81 Selecting previously unselected package git.
+#6 56.83 Preparing to unpack .../30-git_1%3a2.11.0-3+deb9u7_amd64.deb ...
+#6 57.02 Unpacking git (1:2.11.0-3+deb9u7) ...
+#6 59.13 Selecting previously unselected package libssl1.1:amd64.
+#6 59.13 Preparing to unpack .../31-libssl1.1_1.1.0l-1~deb9u6_amd64.deb ...
+#6 59.16 Unpacking libssl1.1:amd64 (1.1.0l-1~deb9u6) ...
+#6 59.83 Selecting previously unselected package libbsd0:amd64.
+#6 59.83 Preparing to unpack .../32-libbsd0_0.8.3-1+deb9u1_amd64.deb ...
+#6 59.87 Unpacking libbsd0:amd64 (0.8.3-1+deb9u1) ...
+#6 60.20 Selecting previously unselected package libncurses5:amd64.
+#6 60.20 Preparing to unpack .../33-libncurses5_6.0+20161126-1+deb9u2_amd64.deb ...
+#6 60.23 Unpacking libncurses5:amd64 (6.0+20161126-1+deb9u2) ...
+#6 60.59 Selecting previously unselected package libedit2:amd64.
+#6 60.59 Preparing to unpack .../34-libedit2_3.1-20160903-3_amd64.deb ...
+#6 60.63 Unpacking libedit2:amd64 (3.1-20160903-3) ...
+#6 60.95 Selecting previously unselected package libgc1c2:amd64.
+#6 60.95 Preparing to unpack .../35-libgc1c2_1%3a7.4.2-8+deb9u1_amd64.deb ...
+#6 60.97 Unpacking libgc1c2:amd64 (1:7.4.2-8+deb9u1) ...
+#6 61.29 Selecting previously unselected package binutils.
+#6 61.30 Preparing to unpack .../36-binutils_2.28-5_amd64.deb ...
+#6 61.32 Unpacking binutils (2.28-5) ...
+#6 62.79 Selecting previously unselected package openssl.
+#6 62.79 Preparing to unpack .../37-openssl_1.1.0l-1~deb9u6_amd64.deb ...
+#6 62.81 Unpacking openssl (1.1.0l-1~deb9u6) ...
+#6 63.34 Selecting previously unselected package ca-certificates.
+#6 63.34 Preparing to unpack .../38-ca-certificates_20200601~deb9u2_all.deb ...
+#6 63.37 Unpacking ca-certificates (20200601~deb9u2) ...
+#6 63.82 Selecting previously unselected package libllvm3.8:amd64.
+#6 63.83 Preparing to unpack .../39-libllvm3.8_1%3a3.8.1-24_amd64.deb ...
+#6 63.86 Unpacking libllvm3.8:amd64 (1:3.8.1-24) ...
+#6 68.38 Selecting previously unselected package libclang1-3.8:amd64.
+#6 68.38 Preparing to unpack .../40-libclang1-3.8_1%3a3.8.1-24_amd64.deb ...
+#6 68.42 Unpacking libclang1-3.8:amd64 (1:3.8.1-24) ...
+#6 70.43 Selecting previously unselected package libgomp1:amd64.
+#6 70.43 Preparing to unpack .../41-libgomp1_6.3.0-18+deb9u1_amd64.deb ...
+#6 70.46 Unpacking libgomp1:amd64 (6.3.0-18+deb9u1) ...
+#6 70.80 Selecting previously unselected package libitm1:amd64.
+#6 70.80 Preparing to unpack .../42-libitm1_6.3.0-18+deb9u1_amd64.deb ...
+#6 70.82 Unpacking libitm1:amd64 (6.3.0-18+deb9u1) ...
+#6 71.12 Selecting previously unselected package libatomic1:amd64.
+#6 71.12 Preparing to unpack .../43-libatomic1_6.3.0-18+deb9u1_amd64.deb ...
+#6 71.16 Unpacking libatomic1:amd64 (6.3.0-18+deb9u1) ...
+#6 71.46 Selecting previously unselected package libasan3:amd64.
+#6 71.47 Preparing to unpack .../44-libasan3_6.3.0-18+deb9u1_amd64.deb ...
+#6 71.50 Unpacking libasan3:amd64 (6.3.0-18+deb9u1) ...
+#6 72.01 Selecting previously unselected package liblsan0:amd64.
+#6 72.01 Preparing to unpack .../45-liblsan0_6.3.0-18+deb9u1_amd64.deb ...
+#6 72.04 Unpacking liblsan0:amd64 (6.3.0-18+deb9u1) ...
+#6 72.40 Selecting previously unselected package libtsan0:amd64.
+#6 72.40 Preparing to unpack .../46-libtsan0_6.3.0-18+deb9u1_amd64.deb ...
+#6 72.43 Unpacking libtsan0:amd64 (6.3.0-18+deb9u1) ...
+#6 72.83 Selecting previously unselected package libubsan0:amd64.
+#6 72.83 Preparing to unpack .../47-libubsan0_6.3.0-18+deb9u1_amd64.deb ...
+#6 72.86 Unpacking libubsan0:amd64 (6.3.0-18+deb9u1) ...
+#6 73.24 Selecting previously unselected package libcilkrts5:amd64.
+#6 73.25 Preparing to unpack .../48-libcilkrts5_6.3.0-18+deb9u1_amd64.deb ...
+#6 73.28 Unpacking libcilkrts5:amd64 (6.3.0-18+deb9u1) ...
+#6 73.61 Selecting previously unselected package libmpx2:amd64.
+#6 73.61 Preparing to unpack .../49-libmpx2_6.3.0-18+deb9u1_amd64.deb ...
+#6 73.64 Unpacking libmpx2:amd64 (6.3.0-18+deb9u1) ...
+#6 74.02 Selecting previously unselected package libquadmath0:amd64.
+#6 74.02 Preparing to unpack .../50-libquadmath0_6.3.0-18+deb9u1_amd64.deb ...
+#6 74.05 Unpacking libquadmath0:amd64 (6.3.0-18+deb9u1) ...
+#6 74.35 Selecting previously unselected package libgcc-6-dev:amd64.
+#6 74.35 Preparing to unpack .../51-libgcc-6-dev_6.3.0-18+deb9u1_amd64.deb ...
+#6 74.39 Unpacking libgcc-6-dev:amd64 (6.3.0-18+deb9u1) ...
+#6 75.59 Selecting previously unselected package libc-dev-bin.
+#6 75.60 Preparing to unpack .../52-libc-dev-bin_2.24-11+deb9u4_amd64.deb ...
+#6 75.62 Unpacking libc-dev-bin (2.24-11+deb9u4) ...
+#6 75.90 Selecting previously unselected package linux-libc-dev:amd64.
+#6 75.90 Preparing to unpack .../53-linux-libc-dev_4.9.320-2_amd64.deb ...
+#6 75.91 Unpacking linux-libc-dev:amd64 (4.9.320-2) ...
+#6 77.02 Selecting previously unselected package libc6-dev:amd64.
+#6 77.02 Preparing to unpack .../54-libc6-dev_2.24-11+deb9u4_amd64.deb ...
+#6 77.04 Unpacking libc6-dev:amd64 (2.24-11+deb9u4) ...
+#6 78.64 Selecting previously unselected package libstdc++-6-dev:amd64.
+#6 78.64 Preparing to unpack .../55-libstdc++-6-dev_6.3.0-18+deb9u1_amd64.deb ...
+#6 78.68 Unpacking libstdc++-6-dev:amd64 (6.3.0-18+deb9u1) ...
+#6 80.05 Selecting previously unselected package libobjc4:amd64.
+#6 80.06 Preparing to unpack .../56-libobjc4_6.3.0-18+deb9u1_amd64.deb ...
+#6 80.09 Unpacking libobjc4:amd64 (6.3.0-18+deb9u1) ...
+#6 80.34 Selecting previously unselected package libobjc-6-dev:amd64.
+#6 80.34 Preparing to unpack .../57-libobjc-6-dev_6.3.0-18+deb9u1_amd64.deb ...
+#6 80.37 Unpacking libobjc-6-dev:amd64 (6.3.0-18+deb9u1) ...
+#6 80.73 Selecting previously unselected package libclang-common-3.8-dev.
+#6 80.73 Preparing to unpack .../58-libclang-common-3.8-dev_1%3a3.8.1-24_amd64.deb ...
+#6 80.76 Unpacking libclang-common-3.8-dev (1:3.8.1-24) ...
+#6 82.34 Selecting previously unselected package clang-3.8.
+#6 82.35 Preparing to unpack .../59-clang-3.8_1%3a3.8.1-24_amd64.deb ...
+#6 82.38 Unpacking clang-3.8 (1:3.8.1-24) ...
+#6 90.34 Selecting previously unselected package clang.
+#6 90.34 Preparing to unpack .../60-clang_1%3a3.8-36_amd64.deb ...
+#6 90.37 Unpacking clang (1:3.8-36) ...
+#6 90.61 Selecting previously unselected package make.
+#6 90.61 Preparing to unpack .../61-make_4.1-9.1_amd64.deb ...
+#6 90.66 Unpacking make (4.1-9.1) ...
+#6 91.03 Setting up libquadmath0:amd64 (6.3.0-18+deb9u1) ...
+#6 91.13 Setting up libncurses5:amd64 (6.0+20161126-1+deb9u2) ...
+#6 91.23 Setting up libgomp1:amd64 (6.3.0-18+deb9u1) ...
+#6 91.37 Setting up libatomic1:amd64 (6.3.0-18+deb9u1) ...
+#6 91.47 Setting up perl-modules-5.24 (5.24.1-3+deb9u7) ...
+#6 91.57 Setting up libgdbm3:amd64 (1.8.3-14) ...
+#6 91.65 Setting up libperl5.24:amd64 (5.24.1-3+deb9u7) ...
+#6 91.74 Setting up libnettle6:amd64 (3.3-1+deb9u1) ...
+#6 91.84 Setting up git-man (1:2.11.0-3+deb9u7) ...
+#6 91.93 Setting up libexpat1:amd64 (2.2.0-2+deb9u5) ...
+#6 92.01 Setting up make (4.1-9.1) ...
+#6 92.08 Setting up libasan3:amd64 (6.3.0-18+deb9u1) ...
+#6 92.16 Setting up libnghttp2-14:amd64 (1.18.1-1+deb9u2) ...
+#6 92.23 Setting up libldap-common (2.4.44+dfsg-5+deb9u9) ...
+#6 92.33 Setting up libcilkrts5:amd64 (6.3.0-18+deb9u1) ...
+#6 92.41 Setting up libubsan0:amd64 (6.3.0-18+deb9u1) ...
+#6 92.49 Setting up libtsan0:amd64 (6.3.0-18+deb9u1) ...
+#6 92.60 Setting up libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+#6 92.67 Setting up linux-libc-dev:amd64 (4.9.320-2) ...
+#6 92.76 Setting up libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+#6 92.84 Setting up libgc1c2:amd64 (1:7.4.2-8+deb9u1) ...
+#6 92.92 Setting up libbsd0:amd64 (0.8.3-1+deb9u1) ...
+#6 92.99 Setting up libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+#6 93.07 Setting up liblsan0:amd64 (6.3.0-18+deb9u1) ...
+#6 93.14 Setting up perl (5.24.1-3+deb9u7) ...
+#6 93.27 update-alternatives: using /usr/bin/prename to provide /usr/bin/rename (rename) in auto mode
+#6 93.27 update-alternatives: warning: skip creation of /usr/share/man/man1/rename.1.gz because associated file /usr/share/man/man1/prename.1.gz (of link group rename) doesn't exist
+#6 93.34 Setting up libmpx2:amd64 (6.3.0-18+deb9u1) ...
+#6 93.42 Setting up libgmp10:amd64 (2:6.1.2+dfsg-1+deb9u1) ...
+#6 93.52 Setting up libssh2-1:amd64 (1.7.0-1+deb9u2) ...
+#6 93.66 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#6 93.82 Setting up libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+#6 94.09 Setting up libssl1.1:amd64 (1.1.0l-1~deb9u6) ...
+#6 94.66 debconf: unable to initialize frontend: Dialog
+#6 94.66 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 94.66 debconf: falling back to frontend: Readline
+#6 94.82 Setting up openssl (1.1.0l-1~deb9u6) ...
+#6 94.95 Setting up binutils (2.28-5) ...
+#6 95.05 Setting up libffi6:amd64 (3.2.1-6) ...
+#6 95.15 Setting up libc-dev-bin (2.24-11+deb9u4) ...
+#6 95.25 Setting up libkeyutils1:amd64 (1.5.9-9) ...
+#6 95.35 Setting up ca-certificates (20200601~deb9u2) ...
+#6 95.73 debconf: unable to initialize frontend: Dialog
+#6 95.73 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 95.73 debconf: falling back to frontend: Readline
+#6 102.9 Updating certificates in /etc/ssl/certs...
+#6 118.2 137 added, 0 removed; done.
+#6 118.4 Setting up libc6-dev:amd64 (2.24-11+deb9u4) ...
+#6 118.5 Setting up libitm1:amd64 (6.3.0-18+deb9u1) ...
+#6 118.6 Setting up libedit2:amd64 (3.1-20160903-3) ...
+#6 118.7 Setting up libllvm3.8:amd64 (1:3.8.1-24) ...
+#6 118.8 Setting up libclang-common-3.8-dev (1:3.8.1-24) ...
+#6 119.0 Setting up libobjc4:amd64 (6.3.0-18+deb9u1) ...
+#6 119.1 Setting up libidn2-0:amd64 (0.16-1+deb9u1) ...
+#6 119.2 Setting up libgcc-6-dev:amd64 (6.3.0-18+deb9u1) ...
+#6 119.3 Setting up libstdc++-6-dev:amd64 (6.3.0-18+deb9u1) ...
+#6 119.4 Setting up liberror-perl (0.17024-1) ...
+#6 119.5 Setting up libpsl5:amd64 (0.17.0-3) ...
+#6 119.6 Setting up libclang1-3.8:amd64 (1:3.8.1-24) ...
+#6 119.7 Setting up libkrb5support0:amd64 (1.15-1+deb9u3) ...
+#6 119.8 Setting up libhogweed4:amd64 (3.3-1+deb9u1) ...
+#6 119.8 Setting up libobjc-6-dev:amd64 (6.3.0-18+deb9u1) ...
+#6 120.0 Setting up libp11-kit0:amd64 (0.23.3-2+deb9u1) ...
+#6 120.1 Setting up libk5crypto3:amd64 (1.15-1+deb9u3) ...
+#6 120.2 Setting up libgnutls30:amd64 (3.5.8-5+deb9u6) ...
+#6 120.3 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1+b1) ...
+#6 120.3 Setting up clang-3.8 (1:3.8.1-24) ...
+#6 120.4 Setting up libldap-2.4-2:amd64 (2.4.44+dfsg-5+deb9u9) ...
+#6 120.5 Setting up libkrb5-3:amd64 (1.15-1+deb9u3) ...
+#6 120.6 Setting up clang (1:3.8-36) ...
+#6 120.8 Setting up libgssapi-krb5-2:amd64 (1.15-1+deb9u3) ...
+#6 121.0 Setting up libcurl3-gnutls:amd64 (7.52.1-5+deb9u16) ...
+#6 121.1 Setting up git (1:2.11.0-3+deb9u7) ...
+#6 121.4 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#6 121.5 Processing triggers for ca-certificates (20200601~deb9u2) ...
+#6 121.6 Updating certificates in /etc/ssl/certs...
+#6 129.3 0 added, 0 removed; done.
+#6 129.3 Running hooks in /etc/ca-certificates/update.d...
+#6 129.4 done.
+#6 130.0 + git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn
+#6 130.1 Cloning into '/dsvpn'...
+#6 130.9 + git checkout
+#6 130.9 Your branch is up-to-date with 'origin/master'.
+#6 130.9 + make
+#6 131.6 cc $(cat ".cflags")  -Iinclude -o dsvpn src/vpn.c src/charm.c src/os.c
+#6 134.3 strip dsvpn
+#6 DONE 134.7s
+
+#7 [stage-1 2/3] COPY --from=builder /dsvpn/dsvpn /usr/local/bin/dsvpn
+#7 DONE 0.4s
+
+#8 [stage-1 3/3] RUN set -x     && echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list     && echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list     && apt-get update     && apt-get upgrade -y     && clean-install     util-linux     iptables     net-tools     procps     iproute2
+#8 1.543 + echo deb http://archive.debian.org/debian stretch main
+#8 1.543 + echo deb http://archive.debian.org/debian-security stretch/updates main
+#8 1.543 + apt-get update
+#8 1.630 Ign:1 http://archive.debian.org/debian stretch InRelease
+#8 1.634 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#8 1.680 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#8 1.692 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#8 2.551 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
+#8 3.552 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [7080 kB]
+#8 7.393 Fetched 8042 kB in 5s (1400 kB/s)
+#8 7.393 Reading package lists...
+#8 9.249 + apt-get upgrade -y
+#8 9.330 Reading package lists...
+#8 11.44 Building dependency tree...
+#8 11.78 Reading state information...
+#8 11.81 Calculating upgrade...
+#8 12.36 The following packages have been kept back:
+#8 12.36   apt libapt-pkg5.0 passwd
+#8 12.36 The following packages will be upgraded:
+#8 12.36   base-files debian-archive-keyring dpkg gzip libcomerr2 libelf1 libgcrypt20
+#8 12.36   libidn11 liblz4-1 liblzma5 libnettle6 login perl-base tar zlib1g
+#8 12.76 15 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+#8 12.76 Need to get 6692 kB of archives.
+#8 12.76 After this operation, 76.8 kB of additional disk space will be used.
+#8 12.76 Get:1 http://archive.debian.org/debian stretch/main amd64 base-files amd64 9.9+deb9u13 [67.6 kB]
+#8 12.83 Get:2 http://archive.debian.org/debian-security stretch/updates/main amd64 tar amd64 1.29b-1.1+deb9u1 [760 kB]
+#8 12.88 Get:3 http://archive.debian.org/debian-security stretch/updates/main amd64 dpkg amd64 1.18.26 [2117 kB]
+#8 13.08 Get:4 http://archive.debian.org/debian-security stretch/updates/main amd64 gzip amd64 1.6-5+deb9u1 [114 kB]
+#8 13.11 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 login amd64 1:4.4-4.1+deb9u1 [790 kB]
+#8 13.18 Get:6 http://archive.debian.org/debian stretch/main amd64 perl-base amd64 5.24.1-3+deb9u7 [1346 kB]
+#8 13.23 Get:7 http://archive.debian.org/debian-security stretch/updates/main amd64 liblzma5 amd64 5.2.2-1.2+deb9u1 [234 kB]
+#8 13.25 Get:8 http://archive.debian.org/debian-security stretch/updates/main amd64 zlib1g amd64 1:1.2.8.dfsg-5+deb9u1 [87.8 kB]
+#8 13.25 Get:9 http://archive.debian.org/debian-security stretch/updates/main amd64 debian-archive-keyring all 2017.5+deb9u2 [92.4 kB]
+#8 13.25 Get:10 http://archive.debian.org/debian-security stretch/updates/main amd64 libgcrypt20 amd64 1.7.6-2+deb9u4 [523 kB]
+#8 13.28 Get:11 http://archive.debian.org/debian-security stretch/updates/main amd64 liblz4-1 amd64 0.0~r131-2+deb9u1 [33.2 kB]
+#8 13.48 Get:12 http://archive.debian.org/debian-security stretch/updates/main amd64 libcomerr2 amd64 1.43.4-2+deb9u2 [63.8 kB]
+#8 13.53 Get:13 http://archive.debian.org/debian stretch/main amd64 libidn11 amd64 1.33-1+deb9u1 [115 kB]
+#8 13.55 Get:14 http://archive.debian.org/debian-security stretch/updates/main amd64 libelf1 amd64 0.168-1+deb9u1 [156 kB]
+#8 13.55 Get:15 http://archive.debian.org/debian-security stretch/updates/main amd64 libnettle6 amd64 3.3-1+deb9u1 [192 kB]
+#8 14.11 debconf: delaying package configuration, since apt-utils is not installed
+#8 14.19 Fetched 6692 kB in 1s (5753 kB/s)
+#8 14.37 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3935 files and directories currently installed.)
+#8 14.37 Preparing to unpack .../base-files_9.9+deb9u13_amd64.deb ...
+#8 14.45 Unpacking base-files (9.9+deb9u13) over (9.9+deb9u8) ...
+#8 17.04 Setting up base-files (9.9+deb9u13) ...
+#8 17.06 Installing new version of config file /etc/debian_version ...
+#8 17.68 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3935 files and directories currently installed.)
+#8 17.69 Preparing to unpack .../tar_1.29b-1.1+deb9u1_amd64.deb ...
+#8 17.81 Unpacking tar (1.29b-1.1+deb9u1) over (1.29b-1.1) ...
+#8 18.81 Setting up tar (1.29b-1.1+deb9u1) ...
+#8 18.91 update-alternatives: warning: forcing reinstallation of alternative /usr/sbin/rmt-tar because link group rmt is broken
+#8 18.91 update-alternatives: warning: skip creation of /usr/share/man/man8/rmt.8.gz because associated file /usr/share/man/man8/rmt-tar.8.gz (of link group rmt) doesn't exist
+#8 19.14 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3935 files and directories currently installed.)
+#8 19.15 Preparing to unpack .../dpkg_1.18.26_amd64.deb ...
+#8 19.27 Unpacking dpkg (1.18.26) over (1.18.25) ...
+#8 20.44 Setting up dpkg (1.18.26) ...
+#8 20.86 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3935 files and directories currently installed.)
+#8 20.86 Preparing to unpack .../gzip_1.6-5+deb9u1_amd64.deb ...
+#8 20.96 Unpacking gzip (1.6-5+deb9u1) over (1.6-5+b1) ...
+#8 21.64 Setting up gzip (1.6-5+deb9u1) ...
+#8 21.92 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3934 files and directories currently installed.)
+#8 21.92 Preparing to unpack .../login_1%3a4.4-4.1+deb9u1_amd64.deb ...
+#8 22.03 Unpacking login (1:4.4-4.1+deb9u1) over (1:4.4-4.1) ...
+#8 22.75 Setting up login (1:4.4-4.1+deb9u1) ...
+#8 22.86 Installing new version of config file /etc/securetty ...
+#8 23.12 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3934 files and directories currently installed.)
+#8 23.14 Preparing to unpack .../perl-base_5.24.1-3+deb9u7_amd64.deb ...
+#8 23.24 Unpacking perl-base (5.24.1-3+deb9u7) over (5.24.1-3+deb9u5) ...
+#8 39.57 Setting up perl-base (5.24.1-3+deb9u7) ...
+#8 39.84 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3934 files and directories currently installed.)
+#8 39.85 Preparing to unpack .../liblzma5_5.2.2-1.2+deb9u1_amd64.deb ...
+#8 39.97 Unpacking liblzma5:amd64 (5.2.2-1.2+deb9u1) over (5.2.2-1.2+b1) ...
+#8 40.26 Setting up liblzma5:amd64 (5.2.2-1.2+deb9u1) ...
+#8 40.51 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3933 files and directories currently installed.)
+#8 40.52 Preparing to unpack .../zlib1g_1%3a1.2.8.dfsg-5+deb9u1_amd64.deb ...
+#8 40.59 Unpacking zlib1g:amd64 (1:1.2.8.dfsg-5+deb9u1) over (1:1.2.8.dfsg-5) ...
+#8 40.88 Setting up zlib1g:amd64 (1:1.2.8.dfsg-5+deb9u1) ...
+#8 41.24 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3933 files and directories currently installed.)
+#8 41.25 Preparing to unpack .../debian-archive-keyring_2017.5+deb9u2_all.deb ...
+#8 41.92 Unpacking debian-archive-keyring (2017.5+deb9u2) over (2017.5) ...
+#8 42.35 Setting up debian-archive-keyring (2017.5+deb9u2) ...
+#8 42.99 Removing obsolete conffile /etc/apt/trusted.gpg.d/debian-archive-wheezy-automatic.gpg ...
+#8 43.06 Removing obsolete conffile /etc/apt/trusted.gpg.d/debian-archive-wheezy-stable.gpg ...
+#8 43.35 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3937 files and directories currently installed.)
+#8 43.35 Preparing to unpack .../libgcrypt20_1.7.6-2+deb9u4_amd64.deb ...
+#8 43.46 Unpacking libgcrypt20:amd64 (1.7.6-2+deb9u4) over (1.7.6-2+deb9u3) ...
+#8 43.95 Setting up libgcrypt20:amd64 (1.7.6-2+deb9u4) ...
+#8 44.24 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3937 files and directories currently installed.)
+#8 44.24 Preparing to unpack .../liblz4-1_0.0~r131-2+deb9u1_amd64.deb ...
+#8 44.32 Unpacking liblz4-1:amd64 (0.0~r131-2+deb9u1) over (0.0~r131-2+b1) ...
+#8 44.66 Setting up liblz4-1:amd64 (0.0~r131-2+deb9u1) ...
+#8 44.95 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3936 files and directories currently installed.)
+#8 44.95 Preparing to unpack .../libcomerr2_1.43.4-2+deb9u2_amd64.deb ...
+#8 45.22 Unpacking libcomerr2:amd64 (1.43.4-2+deb9u2) over (1.43.4-2) ...
+#8 45.53 Preparing to unpack .../libidn11_1.33-1+deb9u1_amd64.deb ...
+#8 45.61 Unpacking libidn11:amd64 (1.33-1+deb9u1) over (1.33-1) ...
+#8 45.99 Preparing to unpack .../libelf1_0.168-1+deb9u1_amd64.deb ...
+#8 46.09 Unpacking libelf1:amd64 (0.168-1+deb9u1) over (0.168-1) ...
+#8 46.54 Preparing to unpack .../libnettle6_3.3-1+deb9u1_amd64.deb ...
+#8 46.63 Unpacking libnettle6:amd64 (3.3-1+deb9u1) over (3.3-1+b2) ...
+#8 46.92 Setting up libnettle6:amd64 (3.3-1+deb9u1) ...
+#8 46.99 Setting up libelf1:amd64 (0.168-1+deb9u1) ...
+#8 47.08 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#8 47.19 Setting up libcomerr2:amd64 (1.43.4-2+deb9u2) ...
+#8 47.33 Setting up libidn11:amd64 (1.33-1+deb9u1) ...
+#8 47.41 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#8 47.66 + clean-install util-linux iptables net-tools procps iproute2
+#8 47.85 Ign:1 http://archive.debian.org/debian stretch InRelease
+#8 47.92 Hit:2 http://archive.debian.org/debian-security stretch/updates InRelease
+#8 47.93 Hit:3 http://archive.debian.org/debian stretch Release
+#8 49.68 Reading package lists...
+#8 52.74 Reading package lists...
+#8 54.58 Building dependency tree...
+#8 55.10 Reading state information...
+#8 55.39 iproute2 is already the newest version (4.9.0-1+deb9u1).
+#8 55.39 The following additional packages will be installed:
+#8 55.39   libblkid1 libfdisk1 libip4tc0 libip6tc0 libiptc0 libmount1 libncurses5
+#8 55.39   libncursesw5 libnetfilter-conntrack3 libnfnetlink0 libprocps6 libsmartcols1
+#8 55.39   libsystemd0 libudev1 libxtables12
+#8 55.39 Suggested packages:
+#8 55.39   kmod dosfstools kbd | console-tools util-linux-locales
+#8 55.39 Recommended packages:
+#8 55.39   libgpm2 psmisc
+#8 56.14 The following NEW packages will be installed:
+#8 56.14   iptables libblkid1 libfdisk1 libip4tc0 libip6tc0 libiptc0 libmount1
+#8 56.14   libncurses5 libncursesw5 libnetfilter-conntrack3 libnfnetlink0 libprocps6
+#8 56.14   libsmartcols1 libsystemd0 libudev1 libxtables12 net-tools procps util-linux
+#8 56.50 0 upgraded, 19 newly installed, 0 to remove and 3 not upgraded.
+#8 56.50 Need to get 3439 kB of archives.
+#8 56.50 After this operation, 10.7 MB of additional disk space will be used.
+#8 56.50 Get:1 http://archive.debian.org/debian stretch/main amd64 libblkid1 amd64 2.29.2-1+deb9u1 [168 kB]
+#8 57.02 Get:2 http://archive.debian.org/debian stretch/main amd64 libfdisk1 amd64 2.29.2-1+deb9u1 [203 kB]
+#8 57.53 Get:3 http://archive.debian.org/debian stretch/main amd64 libmount1 amd64 2.29.2-1+deb9u1 [178 kB]
+#8 58.03 Get:4 http://archive.debian.org/debian stretch/main amd64 libncursesw5 amd64 6.0+20161126-1+deb9u2 [115 kB]
+#8 58.51 Get:5 http://archive.debian.org/debian stretch/main amd64 libsmartcols1 amd64 2.29.2-1+deb9u1 [126 kB]
+#8 58.69 Get:6 http://archive.debian.org/debian-security stretch/updates/main amd64 libsystemd0 amd64 232-25+deb9u14 [282 kB]
+#8 58.69 Get:7 http://archive.debian.org/debian-security stretch/updates/main amd64 libudev1 amd64 232-25+deb9u14 [126 kB]
+#8 58.98 Get:8 http://archive.debian.org/debian stretch/main amd64 util-linux amd64 2.29.2-1+deb9u1 [981 kB]
+#8 59.50 Get:9 http://archive.debian.org/debian stretch/main amd64 libnfnetlink0 amd64 1.0.1-3 [13.5 kB]
+#8 59.50 Get:10 http://archive.debian.org/debian stretch/main amd64 libip4tc0 amd64 1.6.0+snapshot20161117-6 [67.8 kB]
+#8 59.65 Get:11 http://archive.debian.org/debian stretch/main amd64 libip6tc0 amd64 1.6.0+snapshot20161117-6 [68.1 kB]
+#8 60.00 Get:12 http://archive.debian.org/debian stretch/main amd64 libiptc0 amd64 1.6.0+snapshot20161117-6 [57.5 kB]
+#8 60.34 Get:13 http://archive.debian.org/debian stretch/main amd64 libxtables12 amd64 1.6.0+snapshot20161117-6 [75.9 kB]
+#8 60.40 Get:14 http://archive.debian.org/debian stretch/main amd64 libnetfilter-conntrack3 amd64 1.0.6-2 [38.7 kB]
+#8 60.71 Get:15 http://archive.debian.org/debian stretch/main amd64 iptables amd64 1.6.0+snapshot20161117-6 [288 kB]
+#8 61.02 Get:16 http://archive.debian.org/debian stretch/main amd64 libprocps6 amd64 2:3.3.12-3+deb9u1 [58.5 kB]
+#8 61.02 Get:17 http://archive.debian.org/debian stretch/main amd64 libncurses5 amd64 6.0+20161126-1+deb9u2 [93.4 kB]
+#8 61.04 Get:18 http://archive.debian.org/debian stretch/main amd64 procps amd64 2:3.3.12-3+deb9u1 [250 kB]
+#8 61.04 Get:19 http://archive.debian.org/debian stretch/main amd64 net-tools amd64 1.60+git20161116.90da8a0-1 [248 kB]
+#8 61.52 debconf: delaying package configuration, since apt-utils is not installed
+#8 61.61 Fetched 3439 kB in 4s (705 kB/s)
+#8 61.78 Selecting previously unselected package libblkid1:amd64.
+#8 61.78 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3935 files and directories currently installed.)
+#8 61.78 Preparing to unpack .../libblkid1_2.29.2-1+deb9u1_amd64.deb ...
+#8 61.84 Unpacking libblkid1:amd64 (2.29.2-1+deb9u1) ...
+#8 62.11 Setting up libblkid1:amd64 (2.29.2-1+deb9u1) ...
+#8 62.41 Selecting previously unselected package libfdisk1:amd64.
+#8 62.41 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3941 files and directories currently installed.)
+#8 62.41 Preparing to unpack .../libfdisk1_2.29.2-1+deb9u1_amd64.deb ...
+#8 62.45 Unpacking libfdisk1:amd64 (2.29.2-1+deb9u1) ...
+#8 62.71 Setting up libfdisk1:amd64 (2.29.2-1+deb9u1) ...
+#8 62.95 Selecting previously unselected package libmount1:amd64.
+#8 62.95 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3947 files and directories currently installed.)
+#8 62.98 Preparing to unpack .../libmount1_2.29.2-1+deb9u1_amd64.deb ...
+#8 63.01 Unpacking libmount1:amd64 (2.29.2-1+deb9u1) ...
+#8 63.33 Setting up libmount1:amd64 (2.29.2-1+deb9u1) ...
+#8 63.75 Selecting previously unselected package libncursesw5:amd64.
+#8 63.75 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3953 files and directories currently installed.)
+#8 63.75 Preparing to unpack .../libncursesw5_6.0+20161126-1+deb9u2_amd64.deb ...
+#8 63.78 Unpacking libncursesw5:amd64 (6.0+20161126-1+deb9u2) ...
+#8 64.06 Setting up libncursesw5:amd64 (6.0+20161126-1+deb9u2) ...
+#8 64.41 Selecting previously unselected package libsmartcols1:amd64.
+#8 64.41 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3962 files and directories currently installed.)
+#8 64.41 Preparing to unpack .../libsmartcols1_2.29.2-1+deb9u1_amd64.deb ...
+#8 64.45 Unpacking libsmartcols1:amd64 (2.29.2-1+deb9u1) ...
+#8 64.66 Setting up libsmartcols1:amd64 (2.29.2-1+deb9u1) ...
+#8 64.96 Selecting previously unselected package libsystemd0:amd64.
+#8 64.96 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3968 files and directories currently installed.)
+#8 64.97 Preparing to unpack .../libsystemd0_232-25+deb9u14_amd64.deb ...
+#8 64.99 Unpacking libsystemd0:amd64 (232-25+deb9u14) ...
+#8 65.31 Setting up libsystemd0:amd64 (232-25+deb9u14) ...
+#8 65.59 Selecting previously unselected package libudev1:amd64.
+#8 65.59 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3973 files and directories currently installed.)
+#8 65.59 Preparing to unpack .../libudev1_232-25+deb9u14_amd64.deb ...
+#8 65.63 Unpacking libudev1:amd64 (232-25+deb9u14) ...
+#8 65.84 Setting up libudev1:amd64 (232-25+deb9u14) ...
+#8 66.16 Selecting previously unselected package util-linux.
+#8 66.16 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3978 files and directories currently installed.)
+#8 66.16 Preparing to unpack .../util-linux_2.29.2-1+deb9u1_amd64.deb ...
+#8 66.20 Unpacking util-linux (2.29.2-1+deb9u1) ...
+#8 67.05 Setting up util-linux (2.29.2-1+deb9u1) ...
+#8 67.28 update-alternatives: using /bin/more to provide /usr/bin/pager (pager) in auto mode
+#8 67.28 update-alternatives: warning: skip creation of /usr/share/man/man1/pager.1.gz because associated file /usr/share/man/man1/more.1.gz (of link group pager) doesn't exist
+#8 67.66 Selecting previously unselected package libnfnetlink0:amd64.
+#8 67.66 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4283 files and directories currently installed.)
+#8 67.67 Preparing to unpack .../00-libnfnetlink0_1.0.1-3_amd64.deb ...
+#8 67.70 Unpacking libnfnetlink0:amd64 (1.0.1-3) ...
+#8 67.96 Selecting previously unselected package libip4tc0:amd64.
+#8 67.97 Preparing to unpack .../01-libip4tc0_1.6.0+snapshot20161117-6_amd64.deb ...
+#8 67.99 Unpacking libip4tc0:amd64 (1.6.0+snapshot20161117-6) ...
+#8 68.31 Selecting previously unselected package libip6tc0:amd64.
+#8 68.31 Preparing to unpack .../02-libip6tc0_1.6.0+snapshot20161117-6_amd64.deb ...
+#8 68.34 Unpacking libip6tc0:amd64 (1.6.0+snapshot20161117-6) ...
+#8 68.79 Selecting previously unselected package libiptc0:amd64.
+#8 68.80 Preparing to unpack .../03-libiptc0_1.6.0+snapshot20161117-6_amd64.deb ...
+#8 68.84 Unpacking libiptc0:amd64 (1.6.0+snapshot20161117-6) ...
+#8 69.18 Selecting previously unselected package libxtables12:amd64.
+#8 69.18 Preparing to unpack .../04-libxtables12_1.6.0+snapshot20161117-6_amd64.deb ...
+#8 69.20 Unpacking libxtables12:amd64 (1.6.0+snapshot20161117-6) ...
+#8 69.44 Selecting previously unselected package libnetfilter-conntrack3:amd64.
+#8 69.45 Preparing to unpack .../05-libnetfilter-conntrack3_1.0.6-2_amd64.deb ...
+#8 69.49 Unpacking libnetfilter-conntrack3:amd64 (1.0.6-2) ...
+#8 69.77 Selecting previously unselected package iptables.
+#8 69.77 Preparing to unpack .../06-iptables_1.6.0+snapshot20161117-6_amd64.deb ...
+#8 69.80 Unpacking iptables (1.6.0+snapshot20161117-6) ...
+#8 70.33 Selecting previously unselected package libprocps6:amd64.
+#8 70.33 Preparing to unpack .../07-libprocps6_2%3a3.3.12-3+deb9u1_amd64.deb ...
+#8 70.36 Unpacking libprocps6:amd64 (2:3.3.12-3+deb9u1) ...
+#8 70.66 Selecting previously unselected package libncurses5:amd64.
+#8 70.66 Preparing to unpack .../08-libncurses5_6.0+20161126-1+deb9u2_amd64.deb ...
+#8 70.69 Unpacking libncurses5:amd64 (6.0+20161126-1+deb9u2) ...
+#8 71.06 Selecting previously unselected package procps.
+#8 71.06 Preparing to unpack .../09-procps_2%3a3.3.12-3+deb9u1_amd64.deb ...
+#8 71.08 Unpacking procps (2:3.3.12-3+deb9u1) ...
+#8 71.52 Selecting previously unselected package net-tools.
+#8 71.52 Preparing to unpack .../10-net-tools_1.60+git20161116.90da8a0-1_amd64.deb ...
+#8 71.56 Unpacking net-tools (1.60+git20161116.90da8a0-1) ...
+#8 71.90 Setting up libncurses5:amd64 (6.0+20161126-1+deb9u2) ...
+#8 71.98 Setting up libip4tc0:amd64 (1.6.0+snapshot20161117-6) ...
+#8 72.05 Setting up libprocps6:amd64 (2:3.3.12-3+deb9u1) ...
+#8 72.13 Setting up procps (2:3.3.12-3+deb9u1) ...
+#8 72.30 update-alternatives: using /usr/bin/w.procps to provide /usr/bin/w (w) in auto mode
+#8 72.30 update-alternatives: warning: skip creation of /usr/share/man/man1/w.1.gz because associated file /usr/share/man/man1/w.procps.1.gz (of link group w) doesn't exist
+#8 72.38 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#8 72.49 Setting up libxtables12:amd64 (1.6.0+snapshot20161117-6) ...
+#8 72.62 Setting up libnfnetlink0:amd64 (1.0.1-3) ...
+#8 72.75 Setting up net-tools (1.60+git20161116.90da8a0-1) ...
+#8 72.86 Setting up libip6tc0:amd64 (1.6.0+snapshot20161117-6) ...
+#8 72.94 Setting up libnetfilter-conntrack3:amd64 (1.0.6-2) ...
+#8 73.04 Setting up libiptc0:amd64 (1.6.0+snapshot20161117-6) ...
+#8 73.14 Setting up iptables (1.6.0+snapshot20161117-6) ...
+#8 73.24 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#8 DONE 73.9s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 0.8s done
+#9 writing image sha256:db0213066497bd3cd7ab73aa119c9a0d963de7af96e9654ea205431abaa04eec 0.0s done
+#9 naming to docker.io/library/image_name_v1_1 0.0s done
+#9 DONE 0.8s
+Duration: 3:40.11

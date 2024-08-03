@@ -1,0 +1,167 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v3_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 1.09kB done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 150B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.14
+#3 DONE 1.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [base 1/5] FROM docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#5 resolve docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 0.1s done
+#5 sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 1.64kB / 1.64kB done
+#5 sha256:71859b0c62df47efaeae4f93698b56a8dddafbf041778fd668bbd1ab45a864f8 528B / 528B done
+#5 sha256:9e179bacf43c4d3428d57cf459799ba0285b901945f9eccb17b6da056d3532c7 1.47kB / 1.47kB done
+#5 DONE 0.5s
+
+#4 [internal] load build context
+#4 transferring context: 61.19MB 0.7s done
+#4 DONE 1.0s
+
+#6 [base 2/5] RUN apk add --no-cache --virtual .base-deps     nodejs     npm     tini
+#6 0.527 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#6 0.748 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#6 1.248 (1/10) Installing ca-certificates (20230506-r0)
+#6 1.271 (2/10) Installing nghttp2-libs (1.43.0-r0)
+#6 1.276 (3/10) Installing brotli-libs (1.0.9-r5)
+#6 1.307 (4/10) Installing c-ares (1.17.2-r0)
+#6 1.316 (5/10) Installing libgcc (10.3.1_git20210424-r2)
+#6 1.366 (6/10) Installing libstdc++ (10.3.1_git20210424-r2)
+#6 1.386 (7/10) Installing nodejs (14.21.3-r0)
+#6 1.707 (8/10) Installing npm (7.17.0-r0)
+#6 2.077 (9/10) Installing tini (0.19.0-r0)
+#6 2.081 (10/10) Installing .base-deps (20240731.004334)
+#6 2.084 Executing busybox-1.33.1-r8.trigger
+#6 2.090 Executing ca-certificates-20230506-r0.trigger
+#6 2.127 OK: 58 MiB in 24 packages
+#6 DONE 4.3s
+
+#7 [base 3/5] RUN npm install -g npm@6.14.15
+#7 7.478 
+#7 7.478 added 1 package, and audited 438 packages in 7s
+#7 7.478 
+#7 7.478 3 packages are looking for funding
+#7 7.478   run `npm fund` for details
+#7 7.548 
+#7 7.548 35 vulnerabilities (12 moderate, 20 high, 3 critical)
+#7 7.548 
+#7 7.548 To address issues that do not require attention, run:
+#7 7.548   npm audit fix
+#7 7.548 
+#7 7.548 To address all issues, run:
+#7 7.548   npm audit fix --force
+#7 7.548 
+#7 7.548 Run `npm audit` for details.
+#7 DONE 8.7s
+
+#8 [base 4/5] RUN npm install -g pm2
+#8 11.17 /usr/local/bin/pm2 -> /usr/local/lib/node_modules/pm2/bin/pm2
+#8 11.17 /usr/local/bin/pm2-dev -> /usr/local/lib/node_modules/pm2/bin/pm2-dev
+#8 11.17 /usr/local/bin/pm2-docker -> /usr/local/lib/node_modules/pm2/bin/pm2-docker
+#8 11.17 /usr/local/bin/pm2-runtime -> /usr/local/lib/node_modules/pm2/bin/pm2-runtime
+#8 11.25 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.2 (node_modules/pm2/node_modules/chokidar/node_modules/fsevents):
+#8 11.25 npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+#8 11.25 
+#8 11.25 + pm2@5.4.2
+#8 11.25 added 138 packages from 172 contributors in 9.866s
+#8 DONE 12.7s
+
+#9 [base 5/5] RUN adduser -D octofarm --home /app &&     mkdir -p /scripts &&     chown -R octofarm:octofarm /scripts/
+#9 DONE 1.1s
+
+#10 [compiler 1/8] RUN apk add --no-cache --virtual .build-deps     alpine-sdk     make     gcc     g++     python3
+#10 0.669 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#10 0.896 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#10 1.432 (1/45) Upgrading musl (1.2.2-r4 -> 1.2.2-r5)
+#10 1.444 (2/45) Installing fakeroot (1.25.3-r3)
+#10 1.449 (3/45) Installing openssl (1.1.1t-r2)
+#10 1.458 (4/45) Installing libattr (2.5.1-r0)
+#10 1.462 (5/45) Installing attr (2.5.1-r0)
+#10 1.466 (6/45) Installing libacl (2.2.53-r0)
+#10 1.469 (7/45) Installing tar (1.34-r1)
+#10 1.479 (8/45) Installing pkgconf (1.7.4-r1)
+#10 1.484 (9/45) Installing patch (2.7.6-r7)
+#10 1.490 (10/45) Installing lzip (1.22-r0)
+#10 1.494 (11/45) Installing libcurl (8.0.1-r0)
+#10 1.505 (12/45) Installing curl (8.0.1-r0)
+#10 1.511 (13/45) Installing abuild (3.8.0_rc4-r0)
+#10 1.516 Executing abuild-3.8.0_rc4-r0.pre-install
+#10 1.538 (14/45) Installing binutils (2.35.2-r2)
+#10 1.634 (15/45) Installing libmagic (5.40-r1)
+#10 1.663 (16/45) Installing file (5.40-r1)
+#10 1.667 (17/45) Installing libgomp (10.3.1_git20210424-r2)
+#10 1.673 (18/45) Installing libatomic (10.3.1_git20210424-r2)
+#10 1.677 (19/45) Installing libgphobos (10.3.1_git20210424-r2)
+#10 1.732 (20/45) Installing gmp (6.2.1-r1)
+#10 1.740 (21/45) Installing isl22 (0.22-r0)
+#10 1.761 (22/45) Installing mpfr4 (4.1.0-r0)
+#10 1.812 (23/45) Installing mpc1 (1.2.1-r0)
+#10 1.867 (24/45) Installing gcc (10.3.1_git20210424-r2)
+#10 2.740 (25/45) Installing musl-dev (1.2.2-r5)
+#10 2.846 (26/45) Installing libc-dev (0.7.2-r3)
+#10 2.849 (27/45) Installing g++ (10.3.1_git20210424-r2)
+#10 3.454 (28/45) Installing make (4.3-r0)
+#10 3.461 (29/45) Installing fortify-headers (1.1-r1)
+#10 3.479 (30/45) Installing build-base (0.5-r3)
+#10 3.482 (31/45) Installing expat (2.5.0-r0)
+#10 3.488 (32/45) Installing pcre2 (10.36-r1)
+#10 3.498 (33/45) Installing git (2.32.7-r0)
+#10 3.637 (34/45) Installing alpine-sdk (1.0-r1)
+#10 3.640 (35/45) Installing libbz2 (1.0.8-r1)
+#10 3.644 (36/45) Installing libffi (3.3-r2)
+#10 3.647 (37/45) Installing gdbm (1.19-r0)
+#10 3.653 (38/45) Installing xz-libs (5.2.5-r1)
+#10 3.658 (39/45) Installing mpdecimal (2.5.1-r1)
+#10 3.664 (40/45) Installing ncurses-terminfo-base (6.2_p20210612-r1)
+#10 3.690 (41/45) Installing ncurses-libs (6.2_p20210612-r1)
+#10 3.701 (42/45) Installing readline (8.1.0-r0)
+#10 3.708 (43/45) Installing sqlite-libs (3.35.5-r0)
+#10 3.724 (44/45) Installing python3 (3.9.17-r0)
+#10 4.435 (45/45) Installing .build-deps (20240731.004402)
+#10 4.436 Executing busybox-1.33.1-r8.trigger
+#10 4.446 OK: 310 MiB in 68 packages
+#10 DONE 9.1s
+
+#11 [compiler 2/8] WORKDIR /tmp/app
+#11 DONE 0.6s
+
+#12 [compiler 3/8] COPY server/package.json ./server/package.json
+#12 DONE 0.4s
+
+#13 [compiler 4/8] COPY server/package-lock.json ./server/package-lock.json
+#13 DONE 0.4s
+
+#14 [compiler 5/8] WORKDIR /tmp/app/server
+#14 DONE 0.4s
+
+#15 [compiler 6/8] RUN npm ci --omit=dev
+#15 1.449 npm ERR! fsevents not accessible from chokidar
+#15 1.475 
+#15 1.475 npm ERR! A complete log of this run can be found in:
+#15 1.475 npm ERR!     /root/.npm/_logs/2024-07-31T00_44_13_101Z-debug.log
+#15 ERROR: process "/bin/sh -c npm ci --omit=dev" did not complete successfully: exit code: 1
+------
+ > [compiler 6/8] RUN npm ci --omit=dev:
+ ERR! fsevents not accessible from chokidar
+1.475 
+1.475 npm ERR! A complete log of this run can be found in:
+1.475 npm ERR!     /root/.npm/_logs/2024-07-31T00_44_13_101Z-debug.log
+------
+v3_Dockerfile:35
+--------------------
+  33 |     WORKDIR /tmp/app/server
+  34 |     
+  35 | >>> RUN npm ci --omit=dev
+  36 |     
+  37 |     RUN apk del .build-deps
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm ci --omit=dev" did not complete successfully: exit code: 1
+Duration: 0:42.26

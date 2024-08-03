@@ -1,0 +1,96 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 1.03kB done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 332B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.0s
+
+#4 [internal] load build context
+#4 transferring context: 73.19kB done
+#4 DONE 0.2s
+
+#5 [1/4] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.3s done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.2s done
+#5 DONE 1.3s
+
+#6 [2/4] RUN   apk --update --upgrade add       py3-pip       privoxy   && rm /var/cache/apk/*
+#6 0.459 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.703 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 1.226 (1/27) Installing pcre (8.45-r3)
+#6 1.234 (2/27) Installing privoxy (3.0.34-r2)
+#6 1.239 Executing privoxy-3.0.34-r2.pre-install
+#6 1.389 (3/27) Installing libbz2 (1.0.8-r6)
+#6 1.393 (4/27) Installing libexpat (2.6.2-r0)
+#6 1.399 (5/27) Installing libffi (3.4.6-r0)
+#6 1.414 (6/27) Installing gdbm (1.23-r1)
+#6 1.423 (7/27) Installing xz-libs (5.6.1-r3)
+#6 1.432 (8/27) Installing libgcc (13.2.1_git20240309-r0)
+#6 1.437 (9/27) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 1.463 (10/27) Installing mpdecimal (4.0.0-r0)
+#6 1.468 (11/27) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 1.507 (12/27) Installing libncursesw (6.4_p20240420-r0)
+#6 1.514 (13/27) Installing libpanelw (6.4_p20240420-r0)
+#6 1.516 (14/27) Installing readline (8.2.10-r0)
+#6 1.523 (15/27) Installing sqlite-libs (3.45.3-r1)
+#6 1.544 (16/27) Installing python3 (3.12.3-r1)
+#6 1.857 (17/27) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 2.101 (18/27) Installing pyc (3.12.3-r1)
+#6 2.104 (19/27) Installing py3-setuptools-pyc (69.5.1-r0)
+#6 2.232 (20/27) Installing py3-pip-pyc (24.0-r2)
+#6 2.475 (21/27) Installing py3-parsing (3.1.2-r1)
+#6 2.483 (22/27) Installing py3-parsing-pyc (3.1.2-r1)
+#6 2.493 (23/27) Installing py3-packaging-pyc (24.0-r1)
+#6 2.500 (24/27) Installing python3-pyc (3.12.3-r1)
+#6 2.502 (25/27) Installing py3-packaging (24.0-r1)
+#6 2.592 (26/27) Installing py3-setuptools (69.5.1-r0)
+#6 2.689 (27/27) Installing py3-pip (24.0-r2)
+#6 2.901 Executing busybox-1.36.1-r29.trigger
+#6 2.908 OK: 77 MiB in 41 packages
+#6 DONE 5.3s
+
+#7 [3/4] RUN python3 -m venv /venv   && . /venv/bin/activate   && pip install shadowsocks   && deactivate
+#7 6.476 Collecting shadowsocks
+#7 6.518   Downloading shadowsocks-2.8.2.tar.gz (36 kB)
+#7 6.579   Installing build dependencies: started
+#7 9.852   Installing build dependencies: finished with status 'done'
+#7 9.854   Getting requirements to build wheel: started
+#7 10.13   Getting requirements to build wheel: finished with status 'done'
+#7 10.14   Preparing metadata (pyproject.toml): started
+#7 10.43   Preparing metadata (pyproject.toml): finished with status 'done'
+#7 10.44 Building wheels for collected packages: shadowsocks
+#7 10.44   Building wheel for shadowsocks (pyproject.toml): started
+#7 10.81   Building wheel for shadowsocks (pyproject.toml): finished with status 'done'
+#7 10.81   Created wheel for shadowsocks: filename=shadowsocks-2.8.2-py3-none-any.whl size=51643 sha256=d2c1b02ed88754b11e7f87e50c7d8c3e0ce670f9db4699c15929b5e1ed4f4f0f
+#7 10.81   Stored in directory: /root/.cache/pip/wheels/10/8d/d0/a5311baf54b17c0cad3b4730acd8913a5f44caa5581bb6346b
+#7 10.82 Successfully built shadowsocks
+#7 10.82 Installing collected packages: shadowsocks
+#7 10.95 Successfully installed shadowsocks-2.8.2
+#7 10.96 
+#7 10.96 [notice] A new release of pip is available: 24.0 -> 24.2
+#7 10.96 [notice] To update, run: pip install --upgrade pip
+#7 DONE 11.7s
+
+#8 [4/4] ADD rootfs /
+#8 DONE 0.5s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 1.3s done
+#9 writing image sha256:476a39a92c888f79016f06828a34e328f39ca5e45f747ceb8d7f67ffcc49aaae 0.0s done
+#9 naming to docker.io/library/image_name_v1_1 0.0s done
+#9 DONE 1.3s
+Duration: 0:22.11

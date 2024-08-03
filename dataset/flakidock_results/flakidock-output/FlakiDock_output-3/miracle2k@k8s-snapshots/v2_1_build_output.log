@@ -1,0 +1,349 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v2_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 380B done
+#1 DONE 0.3s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/python:3.9-alpine
+#3 DONE 1.2s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/python:3.9-alpine@sha256:3beee521e2eec6a3a9ba0c2fdac1bf30969e7f275e379f5b0dd8b45b25f50955
+#5 resolve docker.io/library/python:3.9-alpine@sha256:3beee521e2eec6a3a9ba0c2fdac1bf30969e7f275e379f5b0dd8b45b25f50955
+#5 resolve docker.io/library/python:3.9-alpine@sha256:3beee521e2eec6a3a9ba0c2fdac1bf30969e7f275e379f5b0dd8b45b25f50955 0.2s done
+#5 sha256:3beee521e2eec6a3a9ba0c2fdac1bf30969e7f275e379f5b0dd8b45b25f50955 10.29kB / 10.29kB done
+#5 sha256:60416108887d6e64e01f719f6901371f9f603d07614b35e990540e053994e041 1.93kB / 1.93kB done
+#5 sha256:f214f2d92214f673c96aa471957456460d1e8a2b390ebfbf43895ca5c9ab093e 6.21kB / 6.21kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 551.90kB 0.0s done
+#4 DONE 0.3s
+
+#5 [1/9] FROM docker.io/library/python:3.9-alpine@sha256:3beee521e2eec6a3a9ba0c2fdac1bf30969e7f275e379f5b0dd8b45b25f50955
+#5 sha256:c430fb000139fd22f3225bbb87833a2c7928d6daa3874c13ff7c277213cf5eed 0B / 461.79kB 0.3s
+#5 sha256:f1f123496ad3e808c17dec013c5220aaeb219a95925799a9454f5ff16df371db 0B / 229B 0.3s
+#5 sha256:c430fb000139fd22f3225bbb87833a2c7928d6daa3874c13ff7c277213cf5eed 461.79kB / 461.79kB 0.4s done
+#5 sha256:f1f123496ad3e808c17dec013c5220aaeb219a95925799a9454f5ff16df371db 229B / 229B 0.5s done
+#5 extracting sha256:c430fb000139fd22f3225bbb87833a2c7928d6daa3874c13ff7c277213cf5eed
+#5 sha256:8869f56a453ae572b2e8b80c71b14c22c3348e47bb6c391c146e40362b8a09cf 0B / 11.61MB 0.5s
+#5 extracting sha256:c430fb000139fd22f3225bbb87833a2c7928d6daa3874c13ff7c277213cf5eed 0.2s done
+#5 sha256:8869f56a453ae572b2e8b80c71b14c22c3348e47bb6c391c146e40362b8a09cf 2.10MB / 11.61MB 0.6s
+#5 sha256:fb800bab7c104e705cc46da75158ffdb10c4e36d75db185473226ec2d688079d 0B / 2.69MB 0.6s
+#5 sha256:8869f56a453ae572b2e8b80c71b14c22c3348e47bb6c391c146e40362b8a09cf 9.44MB / 11.61MB 0.8s
+#5 sha256:fb800bab7c104e705cc46da75158ffdb10c4e36d75db185473226ec2d688079d 1.05MB / 2.69MB 0.8s
+#5 sha256:8869f56a453ae572b2e8b80c71b14c22c3348e47bb6c391c146e40362b8a09cf 11.61MB / 11.61MB 1.0s
+#5 sha256:fb800bab7c104e705cc46da75158ffdb10c4e36d75db185473226ec2d688079d 2.69MB / 2.69MB 1.0s
+#5 sha256:8869f56a453ae572b2e8b80c71b14c22c3348e47bb6c391c146e40362b8a09cf 11.61MB / 11.61MB 1.1s done
+#5 sha256:fb800bab7c104e705cc46da75158ffdb10c4e36d75db185473226ec2d688079d 2.69MB / 2.69MB 1.2s done
+#5 extracting sha256:8869f56a453ae572b2e8b80c71b14c22c3348e47bb6c391c146e40362b8a09cf 0.1s
+#5 extracting sha256:8869f56a453ae572b2e8b80c71b14c22c3348e47bb6c391c146e40362b8a09cf 0.7s done
+#5 extracting sha256:f1f123496ad3e808c17dec013c5220aaeb219a95925799a9454f5ff16df371db
+#5 extracting sha256:f1f123496ad3e808c17dec013c5220aaeb219a95925799a9454f5ff16df371db done
+#5 extracting sha256:fb800bab7c104e705cc46da75158ffdb10c4e36d75db185473226ec2d688079d
+#5 extracting sha256:fb800bab7c104e705cc46da75158ffdb10c4e36d75db185473226ec2d688079d 0.3s done
+#5 DONE 4.0s
+
+#6 [2/9] ADD . /app
+#6 DONE 1.2s
+
+#7 [3/9] WORKDIR /app
+#7 DONE 0.3s
+
+#8 [4/9] RUN apk add --no-cache --virtual .build_deps gcc musl-dev libffi-dev
+#8 0.576 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#8 0.832 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#8 1.317 (1/17) Installing libgcc (13.2.1_git20240309-r0)
+#8 1.324 (2/17) Installing jansson (2.14-r4)
+#8 1.328 (3/17) Installing libstdc++ (13.2.1_git20240309-r0)
+#8 1.354 (4/17) Installing zstd-libs (1.5.6-r0)
+#8 1.367 (5/17) Installing binutils (2.42-r0)
+#8 1.493 (6/17) Installing libgomp (13.2.1_git20240309-r0)
+#8 1.500 (7/17) Installing libatomic (13.2.1_git20240309-r0)
+#8 1.504 (8/17) Installing gmp (6.3.0-r1)
+#8 1.513 (9/17) Installing isl26 (0.26-r1)
+#8 1.546 (10/17) Installing mpfr4 (4.2.1-r0)
+#8 1.566 (11/17) Installing mpc1 (1.3.1-r1)
+#8 1.570 (12/17) Installing gcc (13.2.1_git20240309-r0)
+#8 2.787 (13/17) Installing musl-dev (1.2.5-r0)
+#8 2.903 (14/17) Installing linux-headers (6.6-r0)
+#8 3.074 (15/17) Installing pkgconf (2.2.0-r0)
+#8 3.080 (16/17) Installing libffi-dev (3.4.6-r0)
+#8 3.086 (17/17) Installing .build_deps (20240731.023020)
+#8 3.087 Executing busybox-1.36.1-r29.trigger
+#8 3.095 OK: 173 MiB in 54 packages
+#8 DONE 6.1s
+
+#9 [5/9] RUN pip3 install poetry
+#9 4.203 Collecting poetry
+#9 4.250   Downloading poetry-1.8.3-py3-none-any.whl (249 kB)
+#9 4.302      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 249.9/249.9 kB 5.1 MB/s eta 0:00:00
+#9 4.448 Collecting requests<3.0,>=2.26
+#9 4.458   Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#9 4.486      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 2.4 MB/s eta 0:00:00
+#9 4.622 Collecting keyring<25.0.0,>=24.0.0
+#9 4.632   Downloading keyring-24.3.1-py3-none-any.whl (38 kB)
+#9 4.684 Collecting pexpect<5.0.0,>=4.7.0
+#9 4.694   Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+#9 4.720      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.8/63.8 kB 2.3 MB/s eta 0:00:00
+#9 4.805 Collecting poetry-core==1.9.0
+#9 4.816   Downloading poetry_core-1.9.0-py3-none-any.whl (309 kB)
+#9 4.855      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 309.5/309.5 kB 8.5 MB/s eta 0:00:00
+#9 5.147 Collecting dulwich<0.22.0,>=0.21.2
+#9 5.159   Downloading dulwich-0.21.7-cp39-cp39-musllinux_1_1_x86_64.whl (527 kB)
+#9 5.230      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 527.3/527.3 kB 7.7 MB/s eta 0:00:00
+#9 5.288 Collecting build<2.0.0,>=1.0.3
+#9 5.304   Downloading build-1.2.1-py3-none-any.whl (21 kB)
+#9 5.363 Collecting poetry-plugin-export<2.0.0,>=1.6.0
+#9 5.373   Downloading poetry_plugin_export-1.8.0-py3-none-any.whl (10 kB)
+#9 5.425 Collecting crashtest<0.5.0,>=0.4.1
+#9 5.435   Downloading crashtest-0.4.1-py3-none-any.whl (7.6 kB)
+#9 5.601 Collecting importlib-metadata>=4.4
+#9 5.610   Downloading importlib_metadata-8.2.0-py3-none-any.whl (25 kB)
+#9 5.694 Collecting cleo<3.0.0,>=2.1.0
+#9 5.703   Downloading cleo-2.1.0-py3-none-any.whl (78 kB)
+#9 5.732      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.7/78.7 kB 2.7 MB/s eta 0:00:00
+#9 5.809 Collecting trove-classifiers>=2022.5.19
+#9 5.819   Downloading trove_classifiers-2024.7.2-py3-none-any.whl (13 kB)
+#9 5.899 Collecting packaging>=23.1
+#9 5.909   Downloading packaging-24.1-py3-none-any.whl (53 kB)
+#9 5.933      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 kB 2.1 MB/s eta 0:00:00
+#9 5.968 Collecting pyproject-hooks<2.0.0,>=1.0.0
+#9 5.977   Downloading pyproject_hooks-1.1.0-py3-none-any.whl (9.2 kB)
+#9 6.040 Collecting fastjsonschema<3.0.0,>=2.18.0
+#9 6.049   Downloading fastjsonschema-2.20.0-py3-none-any.whl (23 kB)
+#9 6.127 Collecting shellingham<2.0,>=1.5
+#9 6.136   Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+#9 6.203 Collecting cachecontrol[filecache]<0.15.0,>=0.14.0
+#9 6.212   Downloading cachecontrol-0.14.0-py3-none-any.whl (22 kB)
+#9 6.313 Collecting tomlkit<1.0.0,>=0.11.4
+#9 6.324   Downloading tomlkit-0.13.0-py3-none-any.whl (37 kB)
+#9 6.388 Collecting requests-toolbelt<2.0.0,>=1.0.0
+#9 6.397   Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+#9 6.419      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.5/54.5 kB 2.4 MB/s eta 0:00:00
+#9 6.471 Collecting pkginfo<2.0,>=1.10
+#9 6.480   Downloading pkginfo-1.11.1-py3-none-any.whl (31 kB)
+#9 6.554 Collecting tomli<3.0.0,>=2.0.1
+#9 6.563   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
+#9 6.800 Collecting virtualenv<21.0.0,>=20.23.0
+#9 6.810   Downloading virtualenv-20.26.3-py3-none-any.whl (5.7 MB)
+#9 7.007      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 29.3 MB/s eta 0:00:00
+#9 7.100 Collecting platformdirs<5,>=3.0.0
+#9 7.109   Downloading platformdirs-4.2.2-py3-none-any.whl (18 kB)
+#9 7.186 Collecting installer<0.8.0,>=0.7.0
+#9 7.195   Downloading installer-0.7.0-py3-none-any.whl (453 kB)
+#9 7.232      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 453.8/453.8 kB 13.9 MB/s eta 0:00:00
+#9 7.540 Collecting msgpack<2.0.0,>=0.5.2
+#9 7.551   Downloading msgpack-1.0.8-cp39-cp39-musllinux_1_1_x86_64.whl (383 kB)
+#9 7.582      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.6/383.6 kB 14.2 MB/s eta 0:00:00
+#9 7.682 Collecting filelock>=3.8.0
+#9 7.691   Downloading filelock-3.15.4-py3-none-any.whl (16 kB)
+#9 9.267 Collecting rapidfuzz<4.0.0,>=3.0.0
+#9 9.279   Downloading rapidfuzz-3.9.5-cp39-cp39-musllinux_1_2_x86_64.whl (4.4 MB)
+#9 9.435      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 29.0 MB/s eta 0:00:00
+#9 9.578 Collecting urllib3>=1.25
+#9 9.588   Downloading urllib3-2.2.2-py3-none-any.whl (121 kB)
+#9 9.617      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.4/121.4 kB 4.6 MB/s eta 0:00:00
+#9 9.732 Collecting zipp>=0.5
+#9 9.742   Downloading zipp-3.19.2-py3-none-any.whl (9.0 kB)
+#9 9.844 Collecting jaraco.classes
+#9 9.854   Downloading jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+#9 9.911 Collecting SecretStorage>=3.2
+#9 9.921   Downloading SecretStorage-3.3.3-py3-none-any.whl (15 kB)
+#9 10.01 Collecting jeepney>=0.4.2
+#9 10.02   Downloading jeepney-0.8.0-py3-none-any.whl (48 kB)
+#9 10.04      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.4/48.4 kB 1.9 MB/s eta 0:00:00
+#9 10.09 Collecting ptyprocess>=0.5
+#9 10.10   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+#9 10.42 Collecting charset-normalizer<4,>=2
+#9 10.43   Downloading charset_normalizer-3.3.2-cp39-cp39-musllinux_1_1_x86_64.whl (142 kB)
+#9 10.46      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.7/142.7 kB 5.0 MB/s eta 0:00:00
+#9 10.52 Collecting certifi>=2017.4.17
+#9 10.53   Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#9 10.56      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.0/163.0 kB 6.3 MB/s eta 0:00:00
+#9 10.64 Collecting idna<4,>=2.5
+#9 10.64   Downloading idna-3.7-py3-none-any.whl (66 kB)
+#9 10.67      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.8/66.8 kB 2.6 MB/s eta 0:00:00
+#9 10.84 Collecting distlib<1,>=0.3.7
+#9 10.85   Downloading distlib-0.3.8-py2.py3-none-any.whl (468 kB)
+#9 10.88      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.9/468.9 kB 16.4 MB/s eta 0:00:00
+#9 11.52 Collecting cryptography>=2.0
+#9 11.53   Downloading cryptography-43.0.0-cp39-abi3-musllinux_1_2_x86_64.whl (4.1 MB)
+#9 11.68      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 27.8 MB/s eta 0:00:00
+#9 11.86 Collecting more-itertools
+#9 11.87   Downloading more_itertools-10.3.0-py3-none-any.whl (59 kB)
+#9 11.90      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.2/59.2 kB 1.8 MB/s eta 0:00:00
+#9 12.22 Collecting cffi>=1.12
+#9 12.24   Downloading cffi-1.16.0-cp39-cp39-musllinux_1_1_x86_64.whl (465 kB)
+#9 12.27      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 465.3/465.3 kB 13.9 MB/s eta 0:00:00
+#9 12.34 Collecting pycparser
+#9 12.35   Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+#9 12.37      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.6/117.6 kB 6.8 MB/s eta 0:00:00
+#9 12.85 Installing collected packages: trove-classifiers, ptyprocess, fastjsonschema, distlib, zipp, urllib3, tomlkit, tomli, shellingham, rapidfuzz, pyproject-hooks, pycparser, poetry-core, platformdirs, pkginfo, pexpect, packaging, msgpack, more-itertools, jeepney, installer, idna, filelock, crashtest, charset-normalizer, certifi, virtualenv, requests, jaraco.classes, importlib-metadata, dulwich, cleo, cffi, requests-toolbelt, cryptography, cachecontrol, build, SecretStorage, keyring, poetry-plugin-export, poetry
+#9 18.26 Successfully installed SecretStorage-3.3.3 build-1.2.1 cachecontrol-0.14.0 certifi-2024.7.4 cffi-1.16.0 charset-normalizer-3.3.2 cleo-2.1.0 crashtest-0.4.1 cryptography-43.0.0 distlib-0.3.8 dulwich-0.21.7 fastjsonschema-2.20.0 filelock-3.15.4 idna-3.7 importlib-metadata-8.2.0 installer-0.7.0 jaraco.classes-3.4.0 jeepney-0.8.0 keyring-24.3.1 more-itertools-10.3.0 msgpack-1.0.8 packaging-24.1 pexpect-4.9.0 pkginfo-1.11.1 platformdirs-4.2.2 poetry-1.8.3 poetry-core-1.9.0 poetry-plugin-export-1.8.0 ptyprocess-0.7.0 pycparser-2.22 pyproject-hooks-1.1.0 rapidfuzz-3.9.5 requests-2.32.3 requests-toolbelt-1.0.0 shellingham-1.5.4 tomli-2.0.1 tomlkit-0.13.0 trove-classifiers-2024.7.2 urllib3-2.2.2 virtualenv-20.26.3 zipp-3.19.2
+#9 18.26 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 18.45 
+#9 18.45 [notice] A new release of pip is available: 23.0.1 -> 24.2
+#9 18.45 [notice] To update, run: pip install --upgrade pip
+#9 DONE 20.3s
+
+#10 [6/9] RUN poetry config virtualenvs.create false
+#10 DONE 1.6s
+
+#11 [7/9] RUN pip3 install "cython<3"
+#11 1.926 Collecting cython<3
+#11 1.971   Downloading Cython-0.29.37-cp39-cp39-musllinux_1_1_x86_64.whl (2.0 MB)
+#11 2.079      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 19.8 MB/s eta 0:00:00
+#11 2.539 Installing collected packages: cython
+#11 3.572 Successfully installed cython-0.29.37
+#11 3.572 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#11 3.583 
+#11 3.583 [notice] A new release of pip is available: 23.0.1 -> 24.2
+#11 3.583 [notice] To update, run: pip install --upgrade pip
+#11 DONE 4.1s
+
+#12 [8/9] RUN poetry install --no-dev
+#12 1.288 Skipping virtualenv creation, as specified in config file.
+#12 1.595 The `--no-dev` option is deprecated, use the `--only main` notation instead.
+#12 1.595 Installing dependencies from lock file
+#12 1.901 
+#12 1.901 Package operations: 45 installs, 6 updates, 0 removals
+#12 1.901 
+#12 1.902   - Installing pyasn1 (0.4.8)
+#12 1.903   - Installing six (1.16.0)
+#12 2.173   - Installing cachetools (5.0.0)
+#12 2.174   - Downgrading certifi (2024.7.4 -> 2021.10.8)
+#12 2.175   - Downgrading charset-normalizer (3.3.2 -> 2.0.12)
+#12 2.179   - Downgrading idna (3.7 -> 3.3)
+#12 2.183   - Installing jmespath (0.10.0)
+#12 2.186   - Installing protobuf (3.19.4)
+#12 2.187   - Installing pyasn1-modules (0.2.8)
+#12 2.189   - Installing pyparsing (3.0.7)
+#12 2.192   - Installing python-dateutil (2.8.2)
+#12 2.196   - Installing rsa (4.8)
+#12 2.199   - Installing tzdata (2021.5)
+#12 2.209   - Downgrading urllib3 (2.2.2 -> 1.26.8)
+#12 3.112   - Installing botocore (1.24.11)
+#12 3.113   - Installing frozenlist (1.3.0)
+#12 3.115   - Installing google-auth (2.6.0)
+#12 3.116   - Installing googleapis-common-protos (1.55.0)
+#12 3.118   - Installing httplib2 (0.20.4)
+#12 3.118   - Installing multidict (6.0.2)
+#12 3.120   - Installing oauthlib (3.2.0)
+#12 3.125   - Installing pytz-deprecation-shim (0.1.0.post0)
+#12 3.125   - Downgrading requests (2.32.3 -> 2.27.1)
+#12 4.623   - Installing aiosignal (1.2.0)
+#12 4.630   - Installing argparse (1.4.0)
+#12 4.630   - Installing async-timeout (4.0.2)
+#12 4.632   - Installing attrs (17.4.0)
+#12 4.634   - Installing google-api-core (2.5.0)
+#12 4.636   - Installing google-auth-httplib2 (0.1.0)
+#12 4.640   - Installing jsonpickle (2.1.0)
+#12 4.642   - Installing oauth2client (4.1.3)
+#12 4.647   - Downgrading pexpect (4.9.0 -> 4.8.0)
+#12 4.650   - Installing pytzdata (2020.1)
+#12 4.655   - Installing pyyaml (6.0)
+#12 4.658   - Installing requests-oauthlib (1.3.1)
+#12 4.661   - Installing s3transfer (0.5.2)
+#12 4.666   - Installing tzlocal (4.1)
+#12 4.670   - Installing uritemplate (3.0.1)
+#12 4.675   - Installing yarl (1.7.2)
+#12 8.205 
+#12 8.205   ChefBuildError
+#12 8.205 
+#12 8.205   Backend subprocess exited when trying to invoke get_requires_for_build_wheel
+#12 8.205   
+#12 8.205   running egg_info
+#12 8.205   writing lib/PyYAML.egg-info/PKG-INFO
+#12 8.205   writing dependency_links to lib/PyYAML.egg-info/dependency_links.txt
+#12 8.205   writing top-level names to lib/PyYAML.egg-info/top_level.txt
+#12 8.205   Traceback (most recent call last):
+#12 8.205     File "/usr/local/lib/python3.9/site-packages/pyproject_hooks/_in_process/_in_process.py", line 373, in <module>
+#12 8.205       main()
+#12 8.205     File "/usr/local/lib/python3.9/site-packages/pyproject_hooks/_in_process/_in_process.py", line 357, in main
+#12 8.205       json_out["return_val"] = hook(**hook_input["kwargs"])
+#12 8.205     File "/usr/local/lib/python3.9/site-packages/pyproject_hooks/_in_process/_in_process.py", line 134, in get_requires_for_build_wheel
+#12 8.205       return hook(config_settings)
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/build_meta.py", line 327, in get_requires_for_build_wheel
+#12 8.205       return self._get_build_requires(config_settings, requirements=[])
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/build_meta.py", line 297, in _get_build_requires
+#12 8.205       self.run_setup()
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/build_meta.py", line 313, in run_setup
+#12 8.205       exec(code, locals())
+#12 8.205     File "<string>", line 288, in <module>
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/__init__.py", line 108, in setup
+#12 8.205       return distutils.core.setup(**attrs)
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/_distutils/core.py", line 184, in setup
+#12 8.205       return run_commands(dist)
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/_distutils/core.py", line 200, in run_commands
+#12 8.205       dist.run_commands()
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/_distutils/dist.py", line 970, in run_commands
+#12 8.205       self.run_command(cmd)
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/dist.py", line 945, in run_command
+#12 8.205       super().run_command(command)
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/_distutils/dist.py", line 989, in run_command
+#12 8.205       cmd_obj.run()
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/command/egg_info.py", line 310, in run
+#12 8.205       self.find_sources()
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/command/egg_info.py", line 318, in find_sources
+#12 8.205       mm.run()
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/command/egg_info.py", line 539, in run
+#12 8.205       self.add_defaults()
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/command/egg_info.py", line 577, in add_defaults
+#12 8.205       sdist.add_defaults(self)
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/command/sdist.py", line 102, in add_defaults
+#12 8.205       super().add_defaults()
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/_distutils/command/sdist.py", line 250, in add_defaults
+#12 8.205       self._add_defaults_ext()
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/_distutils/command/sdist.py", line 335, in _add_defaults_ext
+#12 8.205       self.filelist.extend(build_ext.get_source_files())
+#12 8.205     File "<string>", line 204, in get_source_files
+#12 8.205     File "/tmp/tmplyh5qg45/.venv/lib/python3.9/site-packages/setuptools/_distutils/cmd.py", line 107, in __getattr__
+#12 8.205       raise AttributeError(attr)
+#12 8.205   AttributeError: cython_sources
+#12 8.205   
+#12 8.205 
+#12 8.205   at /usr/local/lib/python3.9/site-packages/poetry/installation/chef.py:164 in _prepare
+#12 8.230       160│ 
+#12 8.231       161│                 error = ChefBuildError("\n\n".join(message_parts))
+#12 8.231       162│ 
+#12 8.231       163│             if error is not None:
+#12 8.231     → 164│                 raise error from None
+#12 8.231       165│ 
+#12 8.231       166│             return path
+#12 8.231       167│ 
+#12 8.235       168│     def _prepare_sdist(self, archive: Path, destination: Path | None = None) -> Path:
+#12 8.235 
+#12 8.235 Note: This error originates from the build backend, and is likely not a problem with poetry but with pyyaml (6.0) not supporting PEP 517 builds. You can verify this by running 'pip wheel --no-cache-dir --use-pep517 "pyyaml (==6.0)"'.
+#12 8.235 
+#12 ERROR: process "/bin/sh -c poetry install --no-dev" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN poetry install --no-dev:
+8.231       162│ 
+8.231       163│             if error is not None:
+8.231     → 164│                 raise error from None
+8.231       165│ 
+8.231       166│             return path
+8.231       167│ 
+8.235       168│     def _prepare_sdist(self, archive: Path, destination: Path | None = None) -> Path:
+8.235 
+8.235 Note: This error originates from the build backend, and is likely not a problem with poetry but with pyyaml (6.0) not supporting PEP 517 builds. You can verify this by running 'pip wheel --no-cache-dir --use-pep517 "pyyaml (==6.0)"'.
+8.235 
+------
+v2_Dockerfile:9
+--------------------
+   7 |     RUN poetry config virtualenvs.create false
+   8 |     RUN pip3 install "cython<3"
+   9 | >>> RUN poetry install --no-dev
+  10 |     RUN apk del .build_deps gcc musl-dev libffi-dev
+  11 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c poetry install --no-dev" did not complete successfully: exit code: 1
+Duration: 0:50.86

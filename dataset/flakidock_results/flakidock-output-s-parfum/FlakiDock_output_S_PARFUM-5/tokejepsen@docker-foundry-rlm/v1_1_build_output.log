@@ -1,0 +1,93 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.08kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:latest
+#2 ...
+
+#3 [auth] library/ubuntu:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:latest
+#2 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 413B done
+#5 DONE 0.0s
+
+#6 [ 1/12] FROM docker.io/library/ubuntu:latest@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
+#6 resolve docker.io/library/ubuntu:latest@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30 0.0s done
+#6 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 0B / 29.71MB 0.1s
+#6 sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30 1.13kB / 1.13kB done
+#6 sha256:c920ba4cfca05503764b785c16b76d43c83a6df8d1ab107e7e6610000d94315c 424B / 424B done
+#6 sha256:35a88802559dd2077e584394471ddaa1a2c5bfd16893b829ea57619301eb3908 2.30kB / 2.30kB done
+#6 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 9.44MB / 29.71MB 0.3s
+#6 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 23.07MB / 29.71MB 0.5s
+#6 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 29.71MB / 29.71MB 0.6s
+#6 extracting sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809
+#6 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 29.71MB / 29.71MB 0.6s done
+#6 extracting sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 1.1s done
+#6 DONE 2.0s
+
+#7 [ 2/12] RUN apt-get -qq update && apt-get install --no-install-recommends wget -y && rm -rf /var/lib/apt/lists/*;
+#7 5.190 Reading package lists...
+#7 5.890 Building dependency tree...
+#7 6.016 Reading state information...
+#7 6.176 The following additional packages will be installed:
+#7 6.176   libpsl5t64
+#7 6.177 Recommended packages:
+#7 6.177   publicsuffix ca-certificates
+#7 6.199 The following NEW packages will be installed:
+#7 6.199   libpsl5t64 wget
+#7 6.358 0 upgraded, 2 newly installed, 0 to remove and 3 not upgraded.
+#7 6.358 Need to get 391 kB of archives.
+#7 6.358 After this operation, 1039 kB of additional disk space will be used.
+#7 6.358 Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libpsl5t64 amd64 0.21.2-1.1build1 [57.1 kB]
+#7 6.604 Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 wget amd64 1.21.4-1ubuntu4.1 [334 kB]
+#7 6.923 debconf: delaying package configuration, since apt-utils is not installed
+#7 6.945 Fetched 391 kB in 1s (642 kB/s)
+#7 6.981 Selecting previously unselected package libpsl5t64:amd64.
+#7 6.981 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4376 files and directories currently installed.)
+#7 6.983 Preparing to unpack .../libpsl5t64_0.21.2-1.1build1_amd64.deb ...
+#7 6.996 Unpacking libpsl5t64:amd64 (0.21.2-1.1build1) ...
+#7 7.039 Selecting previously unselected package wget.
+#7 7.041 Preparing to unpack .../wget_1.21.4-1ubuntu4.1_amd64.deb ...
+#7 7.047 Unpacking wget (1.21.4-1ubuntu4.1) ...
+#7 7.093 Setting up libpsl5t64:amd64 (0.21.2-1.1build1) ...
+#7 7.113 Setting up wget (1.21.4-1ubuntu4.1) ...
+#7 7.137 Processing triggers for libc-bin (2.39-0ubuntu8.2) ...
+#7 DONE 7.5s
+
+#8 [ 3/12] RUN wget https://thefoundry.s3.amazonaws.com/tools/FLT/7.1v1/FLT7.1v1-linux-x86-release-64.tgz
+#8 0.172 --2024-08-01 07:49:31--  https://thefoundry.s3.amazonaws.com/tools/FLT/7.1v1/FLT7.1v1-linux-x86-release-64.tgz
+#8 0.174 Resolving thefoundry.s3.amazonaws.com (thefoundry.s3.amazonaws.com)... 16.182.68.161, 52.217.133.65, 3.5.29.214, ...
+#8 0.177 Connecting to thefoundry.s3.amazonaws.com (thefoundry.s3.amazonaws.com)|16.182.68.161|:443... connected.
+#8 0.306 ERROR: cannot verify thefoundry.s3.amazonaws.com's certificate, issued by 'CN=Amazon RSA 2048 M01,O=Amazon,C=US':
+#8 0.306   Unable to locally verify the issuer's authority.
+#8 0.306 To connect to thefoundry.s3.amazonaws.com insecurely, use `--no-check-certificate'.
+#8 ERROR: process "/bin/sh -c wget https://thefoundry.s3.amazonaws.com/tools/FLT/7.1v1/FLT7.1v1-linux-x86-release-64.tgz" did not complete successfully: exit code: 5
+------
+ > [ 3/12] RUN wget https://thefoundry.s3.amazonaws.com/tools/FLT/7.1v1/FLT7.1v1-linux-x86-release-64.tgz:
+0.172 --2024-08-01 07:49:31--  https://thefoundry.s3.amazonaws.com/tools/FLT/7.1v1/FLT7.1v1-linux-x86-release-64.tgz
+0.174 Resolving thefoundry.s3.amazonaws.com (thefoundry.s3.amazonaws.com)... 16.182.68.161, 52.217.133.65, 3.5.29.214, ...
+0.177 Connecting to thefoundry.s3.amazonaws.com (thefoundry.s3.amazonaws.com)|16.182.68.161|:443... connected.
+0.306 ERROR: cannot verify thefoundry.s3.amazonaws.com's certificate, issued by 'CN=Amazon RSA 2048 M01,O=Amazon,C=US':
+0.306   Unable to locally verify the issuer's authority.
+0.306 To connect to thefoundry.s3.amazonaws.com insecurely, use `--no-check-certificate'.
+------
+v1_Dockerfile:5
+--------------------
+   3 |     # Download/Install Foundry Licensing Tools
+   4 |     RUN apt-get -qq update && apt-get install --no-install-recommends wget -y && rm -rf /var/lib/apt/lists/*;
+   5 | >>> RUN wget https://thefoundry.s3.amazonaws.com/tools/FLT/7.1v1/FLT7.1v1-linux-x86-release-64.tgz
+   6 |     RUN tar xzf FLT7.1v1-linux-x86-release-64.tgz && rm FLT7.1v1-linux-x86-release-64.tgz
+   7 |     RUN rm FLT7.1v1-linux-x86-release-64.tgz
+--------------------
+ERROR: failed to solve: process "/bin/sh -c wget https://thefoundry.s3.amazonaws.com/tools/FLT/7.1v1/FLT7.1v1-linux-x86-release-64.tgz" did not complete successfully: exit code: 5
+Duration: 0:10.95

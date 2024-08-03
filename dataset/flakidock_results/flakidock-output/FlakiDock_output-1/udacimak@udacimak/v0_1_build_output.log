@@ -1,0 +1,72 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.27kB done
+#1 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/debian:latest
+#3 DONE 1.2s
+
+#4 [ 1/11] FROM docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#4 resolve docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#4 resolve docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 0.2s done
+#4 sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 1.85kB / 1.85kB done
+#4 sha256:b1ae8b5bfaa9afa86b50c2a151a442d832c4449cf3731bddf8a728e5628ebb59 529B / 529B done
+#4 sha256:2e5b8d3ef33ebde2b2a943fadb241a63de1535a007a7bd185e7037abfff99f63 1.46kB / 1.46kB done
+#4 DONE 0.4s
+
+#5 [ 2/11] RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+#5 DONE 0.8s
+
+#6 [ 3/11] RUN apt-get update     && apt-get install -y curl python     && apt-get install -y git     && apt-get -y autoclean
+#6 1.176 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#6 1.218 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#6 1.219 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#6 1.339 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#6 1.467 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#6 1.485 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#6 2.777 Fetched 9225 kB in 2s (5659 kB/s)
+#6 2.777 Reading package lists...
+#6 3.484 Reading package lists...
+#6 4.170 Building dependency tree...
+#6 4.296 Reading state information...
+#6 4.312 Package python is not available, but is referred to by another package.
+#6 4.312 This may mean that the package is missing, has been obsoleted, or
+#6 4.312 is only available from another source
+#6 4.312 However the following packages replace it:
+#6 4.312   python-is-python3 2to3
+#6 4.312 
+#6 4.317 E: Package 'python' has no installation candidate
+#6 ERROR: process "/bin/sh -c apt-get update     && apt-get install -y curl python     && apt-get install -y git     && apt-get -y autoclean" did not complete successfully: exit code: 100
+------
+ > [ 3/11] RUN apt-get update     && apt-get install -y curl python     && apt-get install -y git     && apt-get -y autoclean:
+
+
+
+4.312 Package python is not available, but is referred to by another package.
+4.312 This may mean that the package is missing, has been obsoleted, or
+4.312 is only available from another source
+4.312 However the following packages replace it:
+4.312   python-is-python3 2to3
+4.312 
+4.317 E: Package 'python' has no installation candidate
+------
+Dockerfile:10
+--------------------
+   9 |     # and install dependencies
+  10 | >>> RUN apt-get update \
+  11 | >>>     && apt-get install -y curl python \
+  12 | >>>     && apt-get install -y git \
+  13 | >>>     && apt-get -y autoclean
+  14 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update     && apt-get install -y curl python     && apt-get install -y git     && apt-get -y autoclean" did not complete successfully: exit code: 100
+Duration: 0:8.62

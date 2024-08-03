@@ -1,0 +1,170 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v2_Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.3s
+
+#1 [internal] load build definition from v2_Dockerfile
+#1 transferring dockerfile: 896B done
+#1 DONE 0.4s
+
+#3 [auth] library/alpine:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/ekidd/rust-musl-builder:stable
+#4 DONE 1.0s
+
+#5 [internal] load metadata for docker.io/library/alpine:latest
+#5 DONE 1.4s
+
+#6 [internal] load build context
+#6 DONE 0.0s
+
+#7 [stage-1 1/5] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#7 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#7 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.3s done
+#7 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#7 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#7 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#7 ...
+
+#6 [internal] load build context
+#6 transferring context: 7.75MB 0.1s done
+#6 DONE 0.5s
+
+#7 [stage-1 1/5] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#7 DONE 1.0s
+
+#8 [builder 1/3] FROM docker.io/ekidd/rust-musl-builder:stable@sha256:f9dcff1c3ec683e2ccdd3c9c1771d12590b7c4d64505bac89aa8e552a038aeaf
+#8 resolve docker.io/ekidd/rust-musl-builder:stable@sha256:f9dcff1c3ec683e2ccdd3c9c1771d12590b7c4d64505bac89aa8e552a038aeaf 0.2s done
+#8 sha256:6d1d997f786d7e966de056cbff7c97868b47f0cb7834720a19507d755ff705e4 14.49kB / 14.49kB done
+#8 sha256:f9dcff1c3ec683e2ccdd3c9c1771d12590b7c4d64505bac89aa8e552a038aeaf 3.46kB / 3.46kB done
+#8 sha256:68e7bb398b9ff421236990bfeaf5c1feab26c590eed93489e245375c23551e2a 13.63MB / 26.71MB 0.6s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 2.10MB / 142.87MB 0.6s
+#8 sha256:46f56320f9ce91c4fa9e4497db9323a99d0d64e10bb2cdd0acc37f2480287589 9.44MB / 25.02MB 0.6s
+#8 sha256:68e7bb398b9ff421236990bfeaf5c1feab26c590eed93489e245375c23551e2a 20.97MB / 26.71MB 0.8s
+#8 sha256:46f56320f9ce91c4fa9e4497db9323a99d0d64e10bb2cdd0acc37f2480287589 19.71MB / 25.02MB 0.8s
+#8 sha256:68e7bb398b9ff421236990bfeaf5c1feab26c590eed93489e245375c23551e2a 26.71MB / 26.71MB 1.0s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 13.63MB / 142.87MB 1.0s
+#8 sha256:46f56320f9ce91c4fa9e4497db9323a99d0d64e10bb2cdd0acc37f2480287589 25.02MB / 25.02MB 1.0s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 24.12MB / 142.87MB 1.2s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 34.60MB / 142.87MB 1.5s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 50.33MB / 142.87MB 1.7s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 65.01MB / 142.87MB 2.0s
+#8 sha256:46f56320f9ce91c4fa9e4497db9323a99d0d64e10bb2cdd0acc37f2480287589 25.02MB / 25.02MB 1.9s done
+#8 ...
+
+#9 [stage-1 2/5] COPY  /etc/ssl/certs/
+#9 DONE 1.5s
+
+#8 [builder 1/3] FROM docker.io/ekidd/rust-musl-builder:stable@sha256:f9dcff1c3ec683e2ccdd3c9c1771d12590b7c4d64505bac89aa8e552a038aeaf
+#8 sha256:68e7bb398b9ff421236990bfeaf5c1feab26c590eed93489e245375c23551e2a 26.71MB / 26.71MB 2.1s done
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 75.50MB / 142.87MB 2.3s
+#8 extracting sha256:68e7bb398b9ff421236990bfeaf5c1feab26c590eed93489e245375c23551e2a
+#8 sha256:0ae7f17d4af5e7dda74a981efbf4ab08e2a8481c1431a2af0df7b65e30917160 0B / 5.94MB 2.3s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 82.84MB / 142.87MB 2.4s
+#8 sha256:ec9380afcabfdc52e72179688befee7eea7dff9e232e2896431ac094ff1d5b02 150B / 150B 2.4s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 90.18MB / 142.87MB 2.5s
+#8 sha256:0ae7f17d4af5e7dda74a981efbf4ab08e2a8481c1431a2af0df7b65e30917160 2.10MB / 5.94MB 2.5s
+#8 sha256:ec9380afcabfdc52e72179688befee7eea7dff9e232e2896431ac094ff1d5b02 150B / 150B 2.4s done
+#8 sha256:bc514681c88f2036f6e1610e8c67b812ca67bd09f6aa27e32ffced62fe77d069 0B / 102.17kB 2.5s
+#8 sha256:0ae7f17d4af5e7dda74a981efbf4ab08e2a8481c1431a2af0df7b65e30917160 5.94MB / 5.94MB 2.6s
+#8 sha256:bc514681c88f2036f6e1610e8c67b812ca67bd09f6aa27e32ffced62fe77d069 102.17kB / 102.17kB 2.6s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 104.86MB / 142.87MB 2.7s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 113.25MB / 142.87MB 2.8s
+#8 sha256:0ae7f17d4af5e7dda74a981efbf4ab08e2a8481c1431a2af0df7b65e30917160 5.94MB / 5.94MB 2.7s done
+#8 sha256:bc514681c88f2036f6e1610e8c67b812ca67bd09f6aa27e32ffced62fe77d069 102.17kB / 102.17kB 2.8s done
+#8 sha256:86e7606d03f8d528ef9dd6e2eae330f6d06d059fb91a4761252e8d4f893723c5 0B / 157.80kB 2.9s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 125.83MB / 142.87MB 3.0s
+#8 sha256:073d431edceb2dcda96d544b99e7e1419ef6db8576de5624aa70b39219318212 0B / 1.44kB 3.0s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 141.56MB / 142.87MB 3.2s
+#8 sha256:86e7606d03f8d528ef9dd6e2eae330f6d06d059fb91a4761252e8d4f893723c5 157.80kB / 157.80kB 3.0s done
+#8 sha256:073d431edceb2dcda96d544b99e7e1419ef6db8576de5624aa70b39219318212 1.44kB / 1.44kB 3.1s done
+#8 sha256:04656ab977e2bcde13e0f721034239243f8487c24b3add76e2494dcf1230568e 0B / 182B 3.2s
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 0B / 214.71MB 3.2s
+#8 sha256:04656ab977e2bcde13e0f721034239243f8487c24b3add76e2494dcf1230568e 182B / 182B 3.2s done
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 12.58MB / 214.71MB 3.6s
+#8 extracting sha256:68e7bb398b9ff421236990bfeaf5c1feab26c590eed93489e245375c23551e2a 1.6s done
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 36.70MB / 214.71MB 3.9s
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 53.48MB / 214.71MB 4.2s
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 75.50MB / 214.71MB 4.7s
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 88.08MB / 214.71MB 5.1s
+#8 sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 142.87MB / 142.87MB 5.3s done
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 110.10MB / 214.71MB 5.5s
+#8 sha256:d4b48ad78f5a9cf54030d64956134f0b35b02c05a6396d4036b6dd60714ae3c6 0B / 293B 5.5s
+#8 sha256:d4b48ad78f5a9cf54030d64956134f0b35b02c05a6396d4036b6dd60714ae3c6 293B / 293B 5.6s
+#8 sha256:57a89ae650c7b537c0e4d100a3c9293ea0baf80d16af8db5c1b8ead859519f6c 0B / 1.66MB 5.6s
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 122.68MB / 214.71MB 5.7s
+#8 sha256:d4b48ad78f5a9cf54030d64956134f0b35b02c05a6396d4036b6dd60714ae3c6 293B / 293B 5.6s done
+#8 extracting sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 0.1s
+#8 sha256:d6d5940fd417be2ee0b239acd20109b1279d4615506d0eaa8cbc3ced1d6b5dbf 0B / 239B 5.7s
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 137.36MB / 214.71MB 6.0s
+#8 sha256:57a89ae650c7b537c0e4d100a3c9293ea0baf80d16af8db5c1b8ead859519f6c 1.66MB / 1.66MB 5.8s done
+#8 sha256:d6d5940fd417be2ee0b239acd20109b1279d4615506d0eaa8cbc3ced1d6b5dbf 239B / 239B 5.8s done
+#8 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 0B / 32B 6.0s
+#8 sha256:5f836c41d490ca2d31f44ca70554fdd00e6d81a2e690973442bbdd62f741c614 0B / 289B 6.0s
+#8 sha256:5f836c41d490ca2d31f44ca70554fdd00e6d81a2e690973442bbdd62f741c614 289B / 289B 6.0s done
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 150.99MB / 214.71MB 6.2s
+#8 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 6.1s done
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 167.77MB / 214.71MB 6.5s
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 180.36MB / 214.71MB 6.8s
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 195.04MB / 214.71MB 7.2s
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 211.81MB / 214.71MB 7.6s
+#8 extracting sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 5.2s
+#8 sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 214.71MB / 214.71MB 11.1s done
+#8 extracting sha256:3d6a97170cd5f5b8792474cf227001fc1580fe39a5308e15d1cd2dce89206361 8.7s done
+#8 extracting sha256:46f56320f9ce91c4fa9e4497db9323a99d0d64e10bb2cdd0acc37f2480287589
+#8 extracting sha256:46f56320f9ce91c4fa9e4497db9323a99d0d64e10bb2cdd0acc37f2480287589 1.2s done
+#8 extracting sha256:ec9380afcabfdc52e72179688befee7eea7dff9e232e2896431ac094ff1d5b02
+#8 extracting sha256:ec9380afcabfdc52e72179688befee7eea7dff9e232e2896431ac094ff1d5b02 done
+#8 extracting sha256:0ae7f17d4af5e7dda74a981efbf4ab08e2a8481c1431a2af0df7b65e30917160
+#8 extracting sha256:0ae7f17d4af5e7dda74a981efbf4ab08e2a8481c1431a2af0df7b65e30917160 0.9s done
+#8 extracting sha256:bc514681c88f2036f6e1610e8c67b812ca67bd09f6aa27e32ffced62fe77d069
+#8 extracting sha256:bc514681c88f2036f6e1610e8c67b812ca67bd09f6aa27e32ffced62fe77d069 0.1s done
+#8 extracting sha256:86e7606d03f8d528ef9dd6e2eae330f6d06d059fb91a4761252e8d4f893723c5
+#8 extracting sha256:86e7606d03f8d528ef9dd6e2eae330f6d06d059fb91a4761252e8d4f893723c5 0.1s done
+#8 extracting sha256:073d431edceb2dcda96d544b99e7e1419ef6db8576de5624aa70b39219318212
+#8 extracting sha256:073d431edceb2dcda96d544b99e7e1419ef6db8576de5624aa70b39219318212 done
+#8 extracting sha256:04656ab977e2bcde13e0f721034239243f8487c24b3add76e2494dcf1230568e
+#8 extracting sha256:04656ab977e2bcde13e0f721034239243f8487c24b3add76e2494dcf1230568e done
+#8 extracting sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46
+#8 extracting sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 5.1s
+#8 extracting sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 10.1s
+#8 extracting sha256:00207b4d38753b35b4bf64e7e28c0dde8d6b260eb9bd3c797fb412601c56ce46 12.7s done
+#8 extracting sha256:d4b48ad78f5a9cf54030d64956134f0b35b02c05a6396d4036b6dd60714ae3c6
+#8 extracting sha256:d4b48ad78f5a9cf54030d64956134f0b35b02c05a6396d4036b6dd60714ae3c6 done
+#8 extracting sha256:57a89ae650c7b537c0e4d100a3c9293ea0baf80d16af8db5c1b8ead859519f6c
+#8 extracting sha256:57a89ae650c7b537c0e4d100a3c9293ea0baf80d16af8db5c1b8ead859519f6c 0.1s done
+#8 extracting sha256:d6d5940fd417be2ee0b239acd20109b1279d4615506d0eaa8cbc3ced1d6b5dbf
+#8 extracting sha256:d6d5940fd417be2ee0b239acd20109b1279d4615506d0eaa8cbc3ced1d6b5dbf done
+#8 extracting sha256:5f836c41d490ca2d31f44ca70554fdd00e6d81a2e690973442bbdd62f741c614
+#8 extracting sha256:5f836c41d490ca2d31f44ca70554fdd00e6d81a2e690973442bbdd62f741c614 done
+#8 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+#8 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+#8 DONE 35.3s
+
+#10 [builder 2/3] COPY . /home/rust/src
+#10 DONE 21.0s
+
+#11 [builder 3/3] RUN sudo chown -R rust . &&    rustup update stable &&    cargo build --release --verbose
+#11 1.635 info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+#11 1.636 error: could not create temp file /opt/rust/rustup/tmp/_jqfav5pkewpgddc_file: Permission denied (os error 13)
+#11 ERROR: process "/bin/sh -c sudo chown -R rust . &&    rustup update stable &&    cargo build --release --verbose" did not complete successfully: exit code: 1
+------
+ > [builder 3/3] RUN sudo chown -R rust . &&    rustup update stable &&    cargo build --release --verbose:
+1.635 info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+1.636 error: could not create temp file /opt/rust/rustup/tmp/_jqfav5pkewpgddc_file: Permission denied (os error 13)
+------
+v2_Dockerfile:8
+--------------------
+   7 |     # Need to have the rust user own our copied source files
+   8 | >>> RUN sudo chown -R rust . &&\
+   9 | >>>     rustup update stable &&\
+  10 | >>>     cargo build --release --verbose
+  11 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c sudo chown -R rust . &&    rustup update stable &&    cargo build --release --verbose" did not complete successfully: exit code: 1
+Duration: 1:0.51

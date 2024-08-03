@@ -1,0 +1,26 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 901B 0.0s done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 48B done
+#1 DONE 0.3s
+
+#3 [internal] load metadata for docker.io/library/openjdk:8u222-buster
+#3 ERROR: docker.io/library/openjdk:8u222-buster: not found
+------
+ > [internal] load metadata for docker.io/library/openjdk:8u222-buster:
+------
+v1_Dockerfile:1
+--------------------
+   1 | >>> FROM openjdk:8u222-buster
+   2 |     
+   3 |     ENV SDK=https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip \
+--------------------
+ERROR: failed to solve: openjdk:8u222-buster: docker.io/library/openjdk:8u222-buster: not found
+Duration: 0:1.96

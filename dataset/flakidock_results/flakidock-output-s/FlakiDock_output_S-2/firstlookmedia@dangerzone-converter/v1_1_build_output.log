@@ -1,0 +1,131 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 3.06kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:latest
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 13.20kB done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.0s done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.2s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s done
+#5 DONE 0.4s
+
+#6 [2/5] RUN apk -U upgrade &&     apk add --no-cache     ghostscript     graphicsmagick     libreoffice     openjdk8     poppler-utils     py3-magic     py3-pillow     sudo     tesseract-ocr     tesseract-ocr-data-afr     tesseract-ocr-data-ara     tesseract-ocr-data-aze     tesseract-ocr-data-bel     tesseract-ocr-data-ben     tesseract-ocr-data-bul     tesseract-ocr-data-cat     tesseract-ocr-data-ces     tesseract-ocr-data-chi_sim     tesseract-ocr-data-chi_tra     tesseract-ocr-data-chr     tesseract-ocr-data-dan     tesseract-ocr-data-deu     tesseract-ocr-data-ell     tesseract-ocr-data-enm     tesseract-ocr-data-epo     tesseract-ocr-data-equ     tesseract-ocr-data-est     tesseract-ocr-data-eus     tesseract-ocr-data-fin     tesseract-ocr-data-fra     tesseract-ocr-data-frk     tesseract-ocr-data-frm     tesseract-ocr-data-glg     tesseract-ocr-data-grc     tesseract-ocr-data-heb     tesseract-ocr-data-hin     tesseract-ocr-data-hrv     tesseract-ocr-data-hun     tesseract-ocr-data-ind     tesseract-ocr-data-isl     tesseract-ocr-data-ita     tesseract-ocr-data-ita_old     tesseract-ocr-data-jpn     tesseract-ocr-data-kan     tesseract-ocr-data-kat     tesseract-ocr-data-kor     tesseract-ocr-data-lav     tesseract-ocr-data-lit     tesseract-ocr-data-mal     tesseract-ocr-data-mkd     tesseract-ocr-data-mlt     tesseract-ocr-data-msa     tesseract-ocr-data-nld     tesseract-ocr-data-nor     tesseract-ocr-data-pol     tesseract-ocr-data-por     tesseract-ocr-data-ron     tesseract-ocr-data-rus     tesseract-ocr-data-slk     tesseract-ocr-data-slv     tesseract-ocr-data-spa     tesseract-ocr-data-spa_old     tesseract-ocr-data-sqi     tesseract-ocr-data-srp     tesseract-ocr-data-swa     tesseract-ocr-data-swe     tesseract-ocr-data-tam     tesseract-ocr-data-tel     tesseract-ocr-data-tgl     tesseract-ocr-data-tha     tesseract-ocr-data-tur     tesseract-ocr-data-ukr     tesseract-ocr-data-vie
+#6 0.183 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.310 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 0.680 OK: 8 MiB in 14 packages
+#6 0.751 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.861 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 1.195 ERROR: unable to select packages:
+#6 1.195   tesseract-ocr-data-ell (no such package):
+#6 1.195     required by: world[tesseract-ocr-data-ell]
+#6 ERROR: process "/bin/sh -c apk -U upgrade &&     apk add --no-cache     ghostscript     graphicsmagick     libreoffice     openjdk8     poppler-utils     py3-magic     py3-pillow     sudo     tesseract-ocr     tesseract-ocr-data-afr     tesseract-ocr-data-ara     tesseract-ocr-data-aze     tesseract-ocr-data-bel     tesseract-ocr-data-ben     tesseract-ocr-data-bul     tesseract-ocr-data-cat     tesseract-ocr-data-ces     tesseract-ocr-data-chi_sim     tesseract-ocr-data-chi_tra     tesseract-ocr-data-chr     tesseract-ocr-data-dan     tesseract-ocr-data-deu     tesseract-ocr-data-ell     tesseract-ocr-data-enm     tesseract-ocr-data-epo     tesseract-ocr-data-equ     tesseract-ocr-data-est     tesseract-ocr-data-eus     tesseract-ocr-data-fin     tesseract-ocr-data-fra     tesseract-ocr-data-frk     tesseract-ocr-data-frm     tesseract-ocr-data-glg     tesseract-ocr-data-grc     tesseract-ocr-data-heb     tesseract-ocr-data-hin     tesseract-ocr-data-hrv     tesseract-ocr-data-hun     tesseract-ocr-data-ind     tesseract-ocr-data-isl     tesseract-ocr-data-ita     tesseract-ocr-data-ita_old     tesseract-ocr-data-jpn     tesseract-ocr-data-kan     tesseract-ocr-data-kat     tesseract-ocr-data-kor     tesseract-ocr-data-lav     tesseract-ocr-data-lit     tesseract-ocr-data-mal     tesseract-ocr-data-mkd     tesseract-ocr-data-mlt     tesseract-ocr-data-msa     tesseract-ocr-data-nld     tesseract-ocr-data-nor     tesseract-ocr-data-pol     tesseract-ocr-data-por     tesseract-ocr-data-ron     tesseract-ocr-data-rus     tesseract-ocr-data-slk     tesseract-ocr-data-slv     tesseract-ocr-data-spa     tesseract-ocr-data-spa_old     tesseract-ocr-data-sqi     tesseract-ocr-data-srp     tesseract-ocr-data-swa     tesseract-ocr-data-swe     tesseract-ocr-data-tam     tesseract-ocr-data-tel     tesseract-ocr-data-tgl     tesseract-ocr-data-tha     tesseract-ocr-data-tur     tesseract-ocr-data-ukr     tesseract-ocr-data-vie" did not complete successfully: exit code: 1
+------
+ > [2/5] RUN apk -U upgrade &&     apk add --no-cache     ghostscript     graphicsmagick     libreoffice     openjdk8     poppler-utils     py3-magic     py3-pillow     sudo     tesseract-ocr     tesseract-ocr-data-afr     tesseract-ocr-data-ara     tesseract-ocr-data-aze     tesseract-ocr-data-bel     tesseract-ocr-data-ben     tesseract-ocr-data-bul     tesseract-ocr-data-cat     tesseract-ocr-data-ces     tesseract-ocr-data-chi_sim     tesseract-ocr-data-chi_tra     tesseract-ocr-data-chr     tesseract-ocr-data-dan     tesseract-ocr-data-deu     tesseract-ocr-data-ell     tesseract-ocr-data-enm     tesseract-ocr-data-epo     tesseract-ocr-data-equ     tesseract-ocr-data-est     tesseract-ocr-data-eus     tesseract-ocr-data-fin     tesseract-ocr-data-fra     tesseract-ocr-data-frk     tesseract-ocr-data-frm     tesseract-ocr-data-glg     tesseract-ocr-data-grc     tesseract-ocr-data-heb     tesseract-ocr-data-hin     tesseract-ocr-data-hrv     tesseract-ocr-data-hun     tesseract-ocr-data-ind     tesseract-ocr-data-isl     tesseract-ocr-data-ita     tesseract-ocr-data-ita_old     tesseract-ocr-data-jpn     tesseract-ocr-data-kan     tesseract-ocr-data-kat     tesseract-ocr-data-kor     tesseract-ocr-data-lav     tesseract-ocr-data-lit     tesseract-ocr-data-mal     tesseract-ocr-data-mkd     tesseract-ocr-data-mlt     tesseract-ocr-data-msa     tesseract-ocr-data-nld     tesseract-ocr-data-nor     tesseract-ocr-data-pol     tesseract-ocr-data-por     tesseract-ocr-data-ron     tesseract-ocr-data-rus     tesseract-ocr-data-slk     tesseract-ocr-data-slv     tesseract-ocr-data-spa     tesseract-ocr-data-spa_old     tesseract-ocr-data-sqi     tesseract-ocr-data-srp     tesseract-ocr-data-swa     tesseract-ocr-data-swe     tesseract-ocr-data-tam     tesseract-ocr-data-tel     tesseract-ocr-data-tgl     tesseract-ocr-data-tha     tesseract-ocr-data-tur     tesseract-ocr-data-ukr     tesseract-ocr-data-vie:
+0.183 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+0.310 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+0.680 OK: 8 MiB in 14 packages
+0.751 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+0.861 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+1.195 ERROR: unable to select packages:
+1.195   tesseract-ocr-data-ell (no such package):
+1.195     required by: world[tesseract-ocr-data-ell]
+------
+v1_Dockerfile:5
+--------------------
+   4 |     # Install dependencies
+   5 | >>> RUN apk -U upgrade && \
+   6 | >>>     apk add --no-cache \
+   7 | >>>     ghostscript \
+   8 | >>>     graphicsmagick \
+   9 | >>>     libreoffice \
+  10 | >>>     openjdk8 \
+  11 | >>>     poppler-utils \
+  12 | >>>     py3-magic \
+  13 | >>>     py3-pillow \
+  14 | >>>     sudo \
+  15 | >>>     tesseract-ocr \
+  16 | >>>     tesseract-ocr-data-afr \
+  17 | >>>     tesseract-ocr-data-ara \
+  18 | >>>     tesseract-ocr-data-aze \
+  19 | >>>     tesseract-ocr-data-bel \
+  20 | >>>     tesseract-ocr-data-ben \
+  21 | >>>     tesseract-ocr-data-bul \
+  22 | >>>     tesseract-ocr-data-cat \
+  23 | >>>     tesseract-ocr-data-ces \
+  24 | >>>     tesseract-ocr-data-chi_sim \
+  25 | >>>     tesseract-ocr-data-chi_tra \
+  26 | >>>     tesseract-ocr-data-chr \
+  27 | >>>     tesseract-ocr-data-dan \
+  28 | >>>     tesseract-ocr-data-deu \
+  29 | >>>     tesseract-ocr-data-ell \
+  30 | >>>     tesseract-ocr-data-enm \
+  31 | >>>     tesseract-ocr-data-epo \
+  32 | >>>     tesseract-ocr-data-equ \
+  33 | >>>     tesseract-ocr-data-est \
+  34 | >>>     tesseract-ocr-data-eus \
+  35 | >>>     tesseract-ocr-data-fin \
+  36 | >>>     tesseract-ocr-data-fra \
+  37 | >>>     tesseract-ocr-data-frk \
+  38 | >>>     tesseract-ocr-data-frm \
+  39 | >>>     tesseract-ocr-data-glg \
+  40 | >>>     tesseract-ocr-data-grc \
+  41 | >>>     tesseract-ocr-data-heb \
+  42 | >>>     tesseract-ocr-data-hin \
+  43 | >>>     tesseract-ocr-data-hrv \
+  44 | >>>     tesseract-ocr-data-hun \
+  45 | >>>     tesseract-ocr-data-ind \
+  46 | >>>     tesseract-ocr-data-isl \
+  47 | >>>     tesseract-ocr-data-ita \
+  48 | >>>     tesseract-ocr-data-ita_old \
+  49 | >>>     tesseract-ocr-data-jpn \
+  50 | >>>     tesseract-ocr-data-kan \
+  51 | >>>     tesseract-ocr-data-kat \
+  52 | >>>     tesseract-ocr-data-kor \
+  53 | >>>     tesseract-ocr-data-lav \
+  54 | >>>     tesseract-ocr-data-lit \
+  55 | >>>     tesseract-ocr-data-mal \
+  56 | >>>     tesseract-ocr-data-mkd \
+  57 | >>>     tesseract-ocr-data-mlt \
+  58 | >>>     tesseract-ocr-data-msa \
+  59 | >>>     tesseract-ocr-data-nld \
+  60 | >>>     tesseract-ocr-data-nor \
+  61 | >>>     tesseract-ocr-data-pol \
+  62 | >>>     tesseract-ocr-data-por \
+  63 | >>>     tesseract-ocr-data-ron \
+  64 | >>>     tesseract-ocr-data-rus \
+  65 | >>>     tesseract-ocr-data-slk \
+  66 | >>>     tesseract-ocr-data-slv \
+  67 | >>>     tesseract-ocr-data-spa \
+  68 | >>>     tesseract-ocr-data-spa_old \
+  69 | >>>     tesseract-ocr-data-sqi \
+  70 | >>>     tesseract-ocr-data-srp \
+  71 | >>>     tesseract-ocr-data-swa \
+  72 | >>>     tesseract-ocr-data-swe \
+  73 | >>>     tesseract-ocr-data-tam \
+  74 | >>>     tesseract-ocr-data-tel \
+  75 | >>>     tesseract-ocr-data-tgl \
+  76 | >>>     tesseract-ocr-data-tha \
+  77 | >>>     tesseract-ocr-data-tur \
+  78 | >>>     tesseract-ocr-data-ukr \
+  79 | >>>     tesseract-ocr-data-vie
+  80 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk -U upgrade &&     apk add --no-cache     ghostscript     graphicsmagick     libreoffice     openjdk8     poppler-utils     py3-magic     py3-pillow     sudo     tesseract-ocr     tesseract-ocr-data-afr     tesseract-ocr-data-ara     tesseract-ocr-data-aze     tesseract-ocr-data-bel     tesseract-ocr-data-ben     tesseract-ocr-data-bul     tesseract-ocr-data-cat     tesseract-ocr-data-ces     tesseract-ocr-data-chi_sim     tesseract-ocr-data-chi_tra     tesseract-ocr-data-chr     tesseract-ocr-data-dan     tesseract-ocr-data-deu     tesseract-ocr-data-ell     tesseract-ocr-data-enm     tesseract-ocr-data-epo     tesseract-ocr-data-equ     tesseract-ocr-data-est     tesseract-ocr-data-eus     tesseract-ocr-data-fin     tesseract-ocr-data-fra     tesseract-ocr-data-frk     tesseract-ocr-data-frm     tesseract-ocr-data-glg     tesseract-ocr-data-grc     tesseract-ocr-data-heb     tesseract-ocr-data-hin     tesseract-ocr-data-hrv     tesseract-ocr-data-hun     tesseract-ocr-data-ind     tesseract-ocr-data-isl     tesseract-ocr-data-ita     tesseract-ocr-data-ita_old     tesseract-ocr-data-jpn     tesseract-ocr-data-kan     tesseract-ocr-data-kat     tesseract-ocr-data-kor     tesseract-ocr-data-lav     tesseract-ocr-data-lit     tesseract-ocr-data-mal     tesseract-ocr-data-mkd     tesseract-ocr-data-mlt     tesseract-ocr-data-msa     tesseract-ocr-data-nld     tesseract-ocr-data-nor     tesseract-ocr-data-pol     tesseract-ocr-data-por     tesseract-ocr-data-ron     tesseract-ocr-data-rus     tesseract-ocr-data-slk     tesseract-ocr-data-slv     tesseract-ocr-data-spa     tesseract-ocr-data-spa_old     tesseract-ocr-data-sqi     tesseract-ocr-data-srp     tesseract-ocr-data-swa     tesseract-ocr-data-swe     tesseract-ocr-data-tam     tesseract-ocr-data-tel     tesseract-ocr-data-tgl     tesseract-ocr-data-tha     tesseract-ocr-data-tur     tesseract-ocr-data-ukr     tesseract-ocr-data-vie" did not complete successfully: exit code: 1
+Duration: 0:2.72

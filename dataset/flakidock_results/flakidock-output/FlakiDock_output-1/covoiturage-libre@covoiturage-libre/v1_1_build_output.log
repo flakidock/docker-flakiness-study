@@ -1,0 +1,551 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 796B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/ruby:2.5.0
+#3 DONE 1.0s
+
+#4 [1/6] FROM docker.io/library/ruby:2.5.0@sha256:cde5649ea901f6b36714b69a0ad8717ddaffa42131343dba30a02b61f3177fca
+#4 resolve docker.io/library/ruby:2.5.0@sha256:cde5649ea901f6b36714b69a0ad8717ddaffa42131343dba30a02b61f3177fca
+#4 resolve docker.io/library/ruby:2.5.0@sha256:cde5649ea901f6b36714b69a0ad8717ddaffa42131343dba30a02b61f3177fca 0.3s done
+#4 sha256:213a086149f6b857c21f0e968fabaa11349613ba43339022d98bad90a3d390eb 7.54kB / 7.54kB done
+#4 sha256:4947ec4b29a808d17901bbf117fb02004b59da22e2613306f9734d95bc0da0f2 2.00kB / 2.00kB done
+#4 sha256:cde5649ea901f6b36714b69a0ad8717ddaffa42131343dba30a02b61f3177fca 2.37kB / 2.37kB done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 5.28MB 0.1s done
+#5 DONE 0.6s
+
+#4 [1/6] FROM docker.io/library/ruby:2.5.0@sha256:cde5649ea901f6b36714b69a0ad8717ddaffa42131343dba30a02b61f3177fca
+#4 sha256:1ab373b3deaed929a15574ac1912afc6e173f80d400aba0e96c89f6a58961f2d 2.10MB / 11.11MB 0.4s
+#4 sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 0B / 45.14MB 0.4s
+#4 sha256:1ab373b3deaed929a15574ac1912afc6e173f80d400aba0e96c89f6a58961f2d 9.44MB / 11.11MB 0.6s
+#4 sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 5.24MB / 45.14MB 0.6s
+#4 sha256:b542772b417703c0311c0b90136091369bcd9c2176c0e3ceed5a0114d743ee3c 0B / 4.34MB 0.6s
+#4 sha256:1ab373b3deaed929a15574ac1912afc6e173f80d400aba0e96c89f6a58961f2d 11.11MB / 11.11MB 0.8s
+#4 sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 12.58MB / 45.14MB 0.8s
+#4 sha256:b542772b417703c0311c0b90136091369bcd9c2176c0e3ceed5a0114d743ee3c 1.05MB / 4.34MB 0.8s
+#4 sha256:1ab373b3deaed929a15574ac1912afc6e173f80d400aba0e96c89f6a58961f2d 11.11MB / 11.11MB 0.8s done
+#4 sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 20.97MB / 45.14MB 1.0s
+#4 sha256:b542772b417703c0311c0b90136091369bcd9c2176c0e3ceed5a0114d743ee3c 4.34MB / 4.34MB 1.0s
+#4 sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c 0B / 50.02MB 1.0s
+#4 sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 26.21MB / 45.14MB 1.1s
+#4 sha256:b542772b417703c0311c0b90136091369bcd9c2176c0e3ceed5a0114d743ee3c 4.34MB / 4.34MB 1.0s done
+#4 sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c 4.19MB / 50.02MB 1.1s
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 0B / 213.16MB 1.1s
+#4 sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 29.36MB / 45.14MB 1.3s
+#4 sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c 14.68MB / 50.02MB 1.3s
+#4 sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 33.55MB / 45.14MB 1.5s
+#4 sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c 25.17MB / 50.02MB 1.5s
+#4 sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 37.75MB / 45.14MB 1.7s
+#4 sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c 30.41MB / 50.02MB 1.7s
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 14.68MB / 213.16MB 1.7s
+#4 sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 45.14MB / 45.14MB 1.9s
+#4 sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c 38.80MB / 50.02MB 1.9s
+#4 sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c 46.14MB / 50.02MB 2.1s
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 31.46MB / 213.16MB 2.1s
+#4 sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c 50.02MB / 50.02MB 2.3s
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 52.43MB / 213.16MB 2.6s
+#4 sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 45.14MB / 45.14MB 2.6s done
+#4 extracting sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 76.55MB / 213.16MB 2.9s
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 89.13MB / 213.16MB 3.1s
+#4 sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c 50.02MB / 50.02MB 3.4s done
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 111.15MB / 213.16MB 3.5s
+#4 sha256:953e617a9c219c94b8de48800e0f9a918162365fe012481cbbd44f43b2940b03 0B / 207B 3.6s
+#4 sha256:aa1f26029ba5253e256c4afec7533ac7ef450056866818643e750d7c92770484 0B / 21.49MB 3.6s
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 124.78MB / 213.16MB 3.7s
+#4 sha256:953e617a9c219c94b8de48800e0f9a918162365fe012481cbbd44f43b2940b03 207B / 207B 3.6s done
+#4 sha256:aa1f26029ba5253e256c4afec7533ac7ef450056866818643e750d7c92770484 6.29MB / 21.49MB 3.8s
+#4 sha256:0ee3623a364d614e28b2a3f1ac2ec793dd27b5f0990981d43704ea8e86e3a299 0B / 164B 3.8s
+#4 sha256:aa1f26029ba5253e256c4afec7533ac7ef450056866818643e750d7c92770484 11.53MB / 21.49MB 3.9s
+#4 sha256:0ee3623a364d614e28b2a3f1ac2ec793dd27b5f0990981d43704ea8e86e3a299 164B / 164B 3.8s done
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 140.51MB / 213.16MB 4.0s
+#4 sha256:aa1f26029ba5253e256c4afec7533ac7ef450056866818643e750d7c92770484 17.83MB / 21.49MB 4.0s
+#4 sha256:aa1f26029ba5253e256c4afec7533ac7ef450056866818643e750d7c92770484 21.49MB / 21.49MB 4.2s
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 157.29MB / 213.16MB 4.3s
+#4 sha256:aa1f26029ba5253e256c4afec7533ac7ef450056866818643e750d7c92770484 21.49MB / 21.49MB 4.4s done
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 171.97MB / 213.16MB 4.6s
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 183.50MB / 213.16MB 4.8s
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 199.23MB / 213.16MB 5.1s
+#4 extracting sha256:c73ab1c6897bf5c11da3c95cab103e7ca8cf10a6d041eda2ff836f45a40e3d3b 2.6s done
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 213.16MB / 213.16MB 5.6s
+#4 sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 213.16MB / 213.16MB 8.7s done
+#4 extracting sha256:1ab373b3deaed929a15574ac1912afc6e173f80d400aba0e96c89f6a58961f2d
+#4 extracting sha256:1ab373b3deaed929a15574ac1912afc6e173f80d400aba0e96c89f6a58961f2d 0.5s done
+#4 extracting sha256:b542772b417703c0311c0b90136091369bcd9c2176c0e3ceed5a0114d743ee3c
+#4 extracting sha256:b542772b417703c0311c0b90136091369bcd9c2176c0e3ceed5a0114d743ee3c 0.2s done
+#4 extracting sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c
+#4 extracting sha256:57c8de432dbe337bb6cb1ad328e6c564303a3d3fd05b5e872fd9c47c16fdd02c 3.2s done
+#4 extracting sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1
+#4 extracting sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 5.0s
+#4 extracting sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 10.1s
+#4 extracting sha256:1785850988c5179b2b83fc5877b21c5d95fd9b769561956798b83cb4c86d7de1 12.0s done
+#4 extracting sha256:953e617a9c219c94b8de48800e0f9a918162365fe012481cbbd44f43b2940b03
+#4 extracting sha256:953e617a9c219c94b8de48800e0f9a918162365fe012481cbbd44f43b2940b03 done
+#4 extracting sha256:aa1f26029ba5253e256c4afec7533ac7ef450056866818643e750d7c92770484
+#4 extracting sha256:aa1f26029ba5253e256c4afec7533ac7ef450056866818643e750d7c92770484 1.0s done
+#4 extracting sha256:0ee3623a364d614e28b2a3f1ac2ec793dd27b5f0990981d43704ea8e86e3a299
+#4 extracting sha256:0ee3623a364d614e28b2a3f1ac2ec793dd27b5f0990981d43704ea8e86e3a299 done
+#4 DONE 29.5s
+
+#6 [2/6] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update -qq &&     apt-get install -y       build-essential       libpq-dev       nodejs --allow-unauthenticated
+#6 4.686 Reading package lists...
+#6 5.397 Building dependency tree...
+#6 5.502 Reading state information...
+#6 5.584 The following additional packages will be installed:
+#6 5.584   dpkg-dev fakeroot libalgorithm-diff-perl libalgorithm-diff-xs-perl
+#6 5.584   libalgorithm-merge-perl libdpkg-perl libfakeroot libpq5 libuv1
+#6 5.585 Suggested packages:
+#6 5.585   debian-keyring postgresql-doc-9.6
+#6 5.585 Recommended packages:
+#6 5.585   libfile-fcntllock-perl liblocale-gettext-perl
+#6 5.645 The following NEW packages will be installed:
+#6 5.645   build-essential dpkg-dev fakeroot libalgorithm-diff-perl
+#6 5.645   libalgorithm-diff-xs-perl libalgorithm-merge-perl libfakeroot libuv1 nodejs
+#6 5.646 The following packages will be upgraded:
+#6 5.646   libdpkg-perl libpq-dev libpq5
+#6 5.665 3 upgraded, 9 newly installed, 0 to remove and 180 not upgraded.
+#6 5.665 Need to get 6983 kB of archives.
+#6 5.665 After this operation, 17.0 MB of additional disk space will be used.
+#6 5.665 Get:1 http://archive.debian.org/debian-security stretch/updates/main amd64 libdpkg-perl all 1.18.26 [1290 kB]
+#6 5.692 Get:2 http://archive.debian.org/debian-security stretch/updates/main amd64 dpkg-dev all 1.18.26 [1597 kB]
+#6 5.721 Get:3 http://archive.debian.org/debian stretch/main amd64 build-essential amd64 12.3 [7346 B]
+#6 5.721 Get:4 http://archive.debian.org/debian stretch/main amd64 libfakeroot amd64 1.21-3.1 [45.7 kB]
+#6 5.722 Get:5 http://archive.debian.org/debian stretch/main amd64 fakeroot amd64 1.21-3.1 [85.6 kB]
+#6 5.723 Get:6 http://archive.debian.org/debian stretch/main amd64 libalgorithm-diff-perl all 1.19.03-1 [48.7 kB]
+#6 5.724 Get:7 http://archive.debian.org/debian stretch/main amd64 libalgorithm-diff-xs-perl amd64 0.04-4+b2 [11.6 kB]
+#6 5.724 Get:8 http://archive.debian.org/debian stretch/main amd64 libalgorithm-merge-perl all 0.08-3 [12.7 kB]
+#6 5.724 Get:9 http://archive.debian.org/debian-security stretch/updates/main amd64 libpq-dev amd64 9.6.24-0+deb9u1 [220 kB]
+#6 5.729 Get:10 http://archive.debian.org/debian-security stretch/updates/main amd64 libpq5 amd64 9.6.24-0+deb9u1 [140 kB]
+#6 5.731 Get:11 http://archive.debian.org/debian stretch/main amd64 libuv1 amd64 1.9.1-3 [84.4 kB]
+#6 5.732 Get:12 http://archive.debian.org/debian stretch/main amd64 nodejs amd64 4.8.2~dfsg-1 [3440 kB]
+#6 6.017 debconf: delaying package configuration, since apt-utils is not installed
+#6 6.093 Fetched 6983 kB in 0s (57.7 MB/s)
+#6 6.178 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 29386 files and directories currently installed.)
+#6 6.193 Preparing to unpack .../00-libdpkg-perl_1.18.26_all.deb ...
+#6 6.274 Unpacking libdpkg-perl (1.18.26) over (1.18.24) ...
+#6 12.54 Selecting previously unselected package dpkg-dev.
+#6 12.54 Preparing to unpack .../01-dpkg-dev_1.18.26_all.deb ...
+#6 12.57 Unpacking dpkg-dev (1.18.26) ...
+#6 12.91 Selecting previously unselected package build-essential.
+#6 12.92 Preparing to unpack .../02-build-essential_12.3_amd64.deb ...
+#6 12.94 Unpacking build-essential (12.3) ...
+#6 13.30 Selecting previously unselected package libfakeroot:amd64.
+#6 13.30 Preparing to unpack .../03-libfakeroot_1.21-3.1_amd64.deb ...
+#6 13.36 Unpacking libfakeroot:amd64 (1.21-3.1) ...
+#6 23.19 Selecting previously unselected package fakeroot.
+#6 23.19 Preparing to unpack .../04-fakeroot_1.21-3.1_amd64.deb ...
+#6 23.22 Unpacking fakeroot (1.21-3.1) ...
+#6 23.41 Selecting previously unselected package libalgorithm-diff-perl.
+#6 23.41 Preparing to unpack .../05-libalgorithm-diff-perl_1.19.03-1_all.deb ...
+#6 23.44 Unpacking libalgorithm-diff-perl (1.19.03-1) ...
+#6 23.64 Selecting previously unselected package libalgorithm-diff-xs-perl.
+#6 23.64 Preparing to unpack .../06-libalgorithm-diff-xs-perl_0.04-4+b2_amd64.deb ...
+#6 23.67 Unpacking libalgorithm-diff-xs-perl (0.04-4+b2) ...
+#6 23.85 Selecting previously unselected package libalgorithm-merge-perl.
+#6 23.85 Preparing to unpack .../07-libalgorithm-merge-perl_0.08-3_all.deb ...
+#6 23.88 Unpacking libalgorithm-merge-perl (0.08-3) ...
+#6 24.05 Preparing to unpack .../08-libpq-dev_9.6.24-0+deb9u1_amd64.deb ...
+#6 24.13 Unpacking libpq-dev (9.6.24-0+deb9u1) over (9.6.7-0+deb9u1) ...
+#6 25.36 Preparing to unpack .../09-libpq5_9.6.24-0+deb9u1_amd64.deb ...
+#6 25.43 Unpacking libpq5:amd64 (9.6.24-0+deb9u1) over (9.6.7-0+deb9u1) ...
+#6 26.13 Selecting previously unselected package libuv1:amd64.
+#6 26.13 Preparing to unpack .../10-libuv1_1.9.1-3_amd64.deb ...
+#6 26.16 Unpacking libuv1:amd64 (1.9.1-3) ...
+#6 26.36 Selecting previously unselected package nodejs.
+#6 26.36 Preparing to unpack .../11-nodejs_4.8.2~dfsg-1_amd64.deb ...
+#6 26.38 Unpacking nodejs (4.8.2~dfsg-1) ...
+#6 31.47 Setting up libuv1:amd64 (1.9.1-3) ...
+#6 31.55 Setting up libdpkg-perl (1.18.26) ...
+#6 31.64 Setting up dpkg-dev (1.18.26) ...
+#6 31.77 Setting up libpq5:amd64 (9.6.24-0+deb9u1) ...
+#6 31.84 Processing triggers for libc-bin (2.24-11+deb9u3) ...
+#6 31.93 Setting up libfakeroot:amd64 (1.21-3.1) ...
+#6 32.05 Setting up libalgorithm-diff-perl (1.19.03-1) ...
+#6 32.13 Setting up libpq-dev (9.6.24-0+deb9u1) ...
+#6 32.20 Setting up nodejs (4.8.2~dfsg-1) ...
+#6 32.28 update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
+#6 32.32 Setting up build-essential (12.3) ...
+#6 32.40 Setting up fakeroot (1.21-3.1) ...
+#6 32.46 update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+#6 32.57 Setting up libalgorithm-merge-perl (0.08-3) ...
+#6 32.73 Setting up libalgorithm-diff-xs-perl (0.04-4+b2) ...
+#6 32.84 Processing triggers for libc-bin (2.24-11+deb9u3) ...
+#6 DONE 33.6s
+
+#7 [3/6] WORKDIR /covoiturage-libre
+#7 DONE 0.4s
+
+#8 [4/6] COPY Gemfile Gemfile.lock /covoiturage-libre/
+#8 DONE 0.4s
+
+#9 [5/6] RUN bundle install
+#9 1.904 Fetching gem metadata from https://rubygems.org/.........
+#9 5.055 Fetching rake 12.3.1
+#9 5.087 Installing rake 12.3.1
+#9 5.175 Fetching concurrent-ruby 1.0.5
+#9 5.224 Installing concurrent-ruby 1.0.5
+#9 5.358 Fetching i18n 0.9.5
+#9 5.378 Installing i18n 0.9.5
+#9 5.451 Fetching minitest 5.11.3
+#9 5.474 Installing minitest 5.11.3
+#9 5.509 Fetching thread_safe 0.3.6
+#9 5.531 Installing thread_safe 0.3.6
+#9 5.594 Fetching tzinfo 1.2.5
+#9 5.623 Installing tzinfo 1.2.5
+#9 5.772 Fetching activesupport 5.0.7
+#9 5.814 Installing activesupport 5.0.7
+#9 5.988 Fetching builder 3.2.3
+#9 6.010 Installing builder 3.2.3
+#9 6.046 Fetching erubis 2.7.0
+#9 6.075 Installing erubis 2.7.0
+#9 6.258 Fetching mini_portile2 2.3.0
+#9 6.280 Installing mini_portile2 2.3.0
+#9 6.328 Fetching nokogiri 1.8.2
+#9 6.639 Installing nokogiri 1.8.2 with native extensions
+#9 59.34 Fetching rails-dom-testing 2.0.3
+#9 59.36 Installing rails-dom-testing 2.0.3
+#9 59.39 Fetching crass 1.0.4
+#9 59.42 Installing crass 1.0.4
+#9 59.49 Fetching loofah 2.2.2
+#9 59.51 Installing loofah 2.2.2
+#9 59.57 Fetching rails-html-sanitizer 1.0.4
+#9 59.59 Installing rails-html-sanitizer 1.0.4
+#9 59.62 Fetching actionview 5.0.7
+#9 59.65 Installing actionview 5.0.7
+#9 59.75 Fetching rack 2.0.5
+#9 59.80 Installing rack 2.0.5
+#9 59.94 Fetching rack-test 0.6.3
+#9 59.96 Installing rack-test 0.6.3
+#9 60.01 Fetching actionpack 5.0.7
+#9 60.04 Installing actionpack 5.0.7
+#9 60.16 Fetching nio4r 2.1.0
+#9 60.18 Installing nio4r 2.1.0 with native extensions
+#9 62.90 Fetching websocket-extensions 0.1.3
+#9 62.93 Installing websocket-extensions 0.1.3
+#9 62.95 Fetching websocket-driver 0.6.5
+#9 62.97 Installing websocket-driver 0.6.5 with native extensions
+#9 63.33 Fetching actioncable 5.0.7
+#9 63.35 Installing actioncable 5.0.7
+#9 63.48 Fetching globalid 0.4.1
+#9 63.51 Installing globalid 0.4.1
+#9 63.54 Fetching activejob 5.0.7
+#9 63.56 Installing activejob 5.0.7
+#9 63.61 Fetching mini_mime 1.0.0
+#9 63.63 Installing mini_mime 1.0.0
+#9 63.67 Fetching mail 2.7.0
+#9 63.71 Installing mail 2.7.0
+#9 63.84 Fetching actionmailer 5.0.7
+#9 63.86 Installing actionmailer 5.0.7
+#9 63.91 Fetching public_suffix 3.0.1
+#9 63.94 Installing public_suffix 3.0.1
+#9 64.00 Fetching addressable 2.5.2
+#9 64.02 Installing addressable 2.5.2
+#9 64.08 Fetching active_link_to 1.0.5
+#9 64.10 Installing active_link_to 1.0.5
+#9 64.13 Fetching activemodel 5.0.7
+#9 64.16 Installing activemodel 5.0.7
+#9 64.22 Fetching arel 7.1.4
+#9 64.24 Installing arel 7.1.4
+#9 64.30 Fetching activerecord 5.0.7
+#9 64.36 Installing activerecord 5.0.7
+#9 64.53 Fetching rgeo 1.0.0
+#9 64.56 Installing rgeo 1.0.0 with native extensions
+#9 64.97 Fetching rgeo-activerecord 6.0.0
+#9 64.99 Installing rgeo-activerecord 6.0.0
+#9 65.03 Fetching activerecord-postgis-adapter 4.1.1
+#9 65.06 Installing activerecord-postgis-adapter 4.1.1
+#9 65.10 Fetching execjs 2.7.0
+#9 65.12 Installing execjs 2.7.0
+#9 65.16 Fetching autoprefixer-rails 6.7.7.2
+#9 65.20 Installing autoprefixer-rails 6.7.7.2
+#9 65.28 Fetching awesome_print 1.8.0
+#9 65.31 Installing awesome_print 1.8.0
+#9 65.38 Fetching bcrypt 3.1.11
+#9 65.41 Installing bcrypt 3.1.11 with native extensions
+#9 66.84 Fetching bindex 0.5.0
+#9 66.87 Installing bindex 0.5.0 with native extensions
+#9 67.23 Fetching rb-fsevent 0.10.2
+#9 67.26 Installing rb-fsevent 0.10.2
+#9 67.31 Fetching ffi 1.9.21
+#9 67.36 Installing ffi 1.9.21 with native extensions
+#9 75.50 Fetching rb-inotify 0.9.10
+#9 75.52 Installing rb-inotify 0.9.10
+#9 75.56 Fetching sass-listen 4.0.0
+#9 75.59 Installing sass-listen 4.0.0
+#9 75.64 Fetching sass 3.5.4
+#9 75.68 Installing sass 3.5.4
+#9 75.85 Fetching bootstrap-sass 3.3.7
+#9 75.88 Installing bootstrap-sass 3.3.7
+#9 76.02 Using bundler 1.16.1
+#9 76.02 Fetching byebug 10.0.0
+#9 76.05 Installing byebug 10.0.0 with native extensions
+#9 77.81 Fetching xpath 3.0.0
+#9 77.83 Installing xpath 3.0.0
+#9 77.87 Fetching capybara 2.17.0
+#9 77.91 Installing capybara 2.17.0
+#9 78.08 Fetching chartkick 2.2.5
+#9 78.11 Installing chartkick 2.2.5
+#9 78.16 Fetching cocoon 1.2.11
+#9 78.19 Installing cocoon 1.2.11
+#9 78.26 Fetching daemons 1.2.6
+#9 78.28 Installing daemons 1.2.6
+#9 78.34 Fetching database_cleaner 1.6.2
+#9 78.36 Installing database_cleaner 1.6.2
+#9 78.74 Fetching delayed_job 4.1.4
+#9 78.76 Installing delayed_job 4.1.4
+#9 78.81 Fetching delayed_job_active_record 4.1.2
+#9 78.83 Installing delayed_job_active_record 4.1.2
+#9 78.85 Fetching orm_adapter 0.5.0
+#9 79.10 Installing orm_adapter 0.5.0
+#9 79.15 Fetching method_source 0.9.0
+#9 79.17 Installing method_source 0.9.0
+#9 79.20 Fetching thor 0.20.0
+#9 79.22 Installing thor 0.20.0
+#9 79.27 Fetching railties 5.0.7
+#9 79.30 Installing railties 5.0.7
+#9 79.50 Fetching responders 2.4.0
+#9 79.53 Installing responders 2.4.0
+#9 79.57 Fetching warden 1.2.7
+#9 79.59 Installing warden 1.2.7
+#9 79.64 Fetching devise 4.4.0
+#9 79.67 Installing devise 4.4.0
+#9 79.83 Fetching devise-i18n 1.5.0
+#9 79.86 Installing devise-i18n 1.5.0
+#9 79.98 Fetching devise-i18n-views 0.3.7
+#9 80.00 Installing devise-i18n-views 0.3.7
+#9 80.06 Fetching diff-lcs 1.3
+#9 80.08 Installing diff-lcs 1.3
+#9 80.14 Fetching unf_ext 0.0.7.4
+#9 80.18 Installing unf_ext 0.0.7.4 with native extensions
+#9 83.11 Fetching unf 0.1.4
+#9 83.14 Installing unf 0.1.4
+#9 83.18 Fetching domain_name 0.5.20170404
+#9 83.22 Installing domain_name 0.5.20170404
+#9 83.26 Fetching domp 0.0.7
+#9 83.33 Installing domp 0.0.7
+#9 83.37 Fetching multi_json 1.12.2
+#9 83.39 Installing multi_json 1.12.2
+#9 83.48 Fetching dragonfly 1.1.3
+#9 83.52 Installing dragonfly 1.1.3
+#9 83.63 Fetching elasticsearch-api 6.0.0
+#9 83.71 Installing elasticsearch-api 6.0.0
+#9 83.90 Fetching multipart-post 2.0.0
+#9 83.91 Installing multipart-post 2.0.0
+#9 83.95 Fetching faraday 0.12.2
+#9 83.98 Installing faraday 0.12.2
+#9 84.03 Fetching elasticsearch-transport 6.0.0
+#9 84.06 Installing elasticsearch-transport 6.0.0
+#9 84.11 Fetching elasticsearch 6.0.0
+#9 84.14 Installing elasticsearch 6.0.0
+#9 84.17 Fetching htmlentities 4.3.4
+#9 84.19 Installing htmlentities 4.3.4
+#9 84.23 Fetching launchy 2.4.3
+#9 84.25 Installing launchy 2.4.3
+#9 84.31 Fetching email_spec 2.1.1
+#9 84.34 Installing email_spec 2.1.1
+#9 84.47 Fetching ethon 0.11.0
+#9 84.49 Installing ethon 0.11.0
+#9 84.58 Fetching factory_bot 4.8.2
+#9 84.60 Installing factory_bot 4.8.2
+#9 84.67 Fetching factory_bot_rails 4.8.2
+#9 84.69 Installing factory_bot_rails 4.8.2
+#9 84.77 Fetching font-awesome-sass 4.7.0
+#9 84.81 Installing font-awesome-sass 4.7.0
+#9 84.87 Fetching groupdate 3.2.0
+#9 84.89 Installing groupdate 3.2.0
+#9 84.94 Fetching tilt 2.0.8
+#9 84.96 Installing tilt 2.0.8
+#9 85.03 Fetching haml 4.0.7
+#9 85.12 Installing haml 4.0.7
+#9 85.19 Fetching hashie 3.5.7
+#9 85.21 Installing hashie 3.5.7
+#9 85.29 Fetching http-cookie 1.0.3
+#9 85.31 Installing http-cookie 1.0.3
+#9 85.35 Fetching jbuilder 2.7.0
+#9 85.41 Installing jbuilder 2.7.0
+#9 85.46 Fetching jquery-rails 4.3.1
+#9 85.50 Installing jquery-rails 4.3.1
+#9 85.58 Fetching jquery-ui-rails 5.0.5
+#9 85.61 Installing jquery-ui-rails 5.0.5
+#9 85.73 Fetching jwt 1.5.6
+#9 85.75 Installing jwt 1.5.6
+#9 85.80 Fetching kaminari 0.17.0
+#9 85.82 Installing kaminari 0.17.0
+#9 86.68 Fetching sprockets 3.7.1
+#9 86.71 Installing sprockets 3.7.1
+#9 86.79 Fetching sprockets-rails 3.2.1
+#9 86.81 Installing sprockets-rails 3.2.1
+#9 86.84 Fetching rails 5.0.7
+#9 86.86 Installing rails 5.0.7
+#9 86.89 Fetching kaminari-bootstrap 3.0.1
+#9 86.91 Installing kaminari-bootstrap 3.0.1
+#9 86.95 Fetching kiba 0.6.1
+#9 87.08 Installing kiba 0.6.1
+#9 87.13 Fetching letter_opener 1.6.0
+#9 87.15 Installing letter_opener 1.6.0
+#9 87.18 Fetching letter_opener_web 1.3.3
+#9 87.21 Installing letter_opener_web 1.3.3
+#9 87.29 Fetching ruby_dep 1.5.0
+#9 87.31 Installing ruby_dep 1.5.0
+#9 87.35 Fetching listen 3.1.5
+#9 87.37 Installing listen 3.1.5
+#9 87.42 Fetching mime-types-data 3.2016.0521
+#9 87.45 Installing mime-types-data 3.2016.0521
+#9 87.49 Fetching mime-types 3.1
+#9 87.52 Installing mime-types 3.1
+#9 87.57 Fetching netrc 0.11.0
+#9 87.58 Installing netrc 0.11.0
+#9 87.62 Fetching rest-client 2.0.2
+#9 87.64 Installing rest-client 2.0.2
+#9 87.71 Fetching mailjet 1.5.4
+#9 87.73 Installing mailjet 1.5.4
+#9 88.08 Fetching multi_xml 0.6.0
+#9 88.10 Installing multi_xml 0.6.0
+#9 88.14 Fetching mysql2 0.4.10
+#9 88.16 Installing mysql2 0.4.10 with native extensions
+#9 94.41 Fetching oauth2 1.4.0
+#9 94.44 Installing oauth2 1.4.0
+#9 94.49 Fetching oj 2.18.5
+#9 94.52 Installing oj 2.18.5 with native extensions
+#9 102.2 Fetching omniauth 1.7.1
+#9 102.2 Installing omniauth 1.7.1
+#9 102.2 Fetching omniauth-oauth2 1.5.0
+#9 102.3 Installing omniauth-oauth2 1.5.0
+#9 102.3 Fetching omniauth-facebook 4.0.0
+#9 102.4 Installing omniauth-facebook 4.0.0
+#9 102.4 Fetching omniauth-google-oauth2 0.5.2
+#9 102.4 Installing omniauth-google-oauth2 0.5.2
+#9 102.5 Fetching pg 0.21.0
+#9 102.5 Installing pg 0.21.0 with native extensions
+#9 114.9 Fetching puma 3.11.0
+#9 115.0 Installing puma 3.11.0 with native extensions
+#9 116.9 Fetching rack-rewrite 1.5.1
+#9 116.9 Installing rack-rewrite 1.5.1
+#9 116.9 Fetching rails-controller-testing 1.0.2
+#9 117.0 Installing rails-controller-testing 1.0.2
+#9 117.1 Fetching rails_serve_static_assets 0.0.5
+#9 117.1 Installing rails_serve_static_assets 0.0.5
+#9 117.2 Fetching rails_stdout_logging 0.0.5
+#9 117.2 Installing rails_stdout_logging 0.0.5
+#9 117.3 Fetching rails_12factor 0.0.3
+#9 117.3 Installing rails_12factor 0.0.3
+#9 117.4 Fetching redcarpet 3.4.0
+#9 117.4 Installing redcarpet 3.4.0 with native extensions
+#9 120.7 Fetching route_translator 5.5.3
+#9 120.7 Installing route_translator 5.5.3
+#9 120.7 Fetching rspec-support 3.7.1
+#9 120.8 Installing rspec-support 3.7.1
+#9 120.8 Fetching rspec-core 3.7.1
+#9 120.8 Installing rspec-core 3.7.1
+#9 120.9 Fetching rspec-expectations 3.7.0
+#9 120.9 Installing rspec-expectations 3.7.0
+#9 121.0 Fetching rspec-mocks 3.7.0
+#9 121.0 Installing rspec-mocks 3.7.0
+#9 121.1 Fetching rspec 3.7.0
+#9 121.1 Installing rspec 3.7.0
+#9 121.1 Fetching rspec-rails 3.7.2
+#9 121.2 Installing rspec-rails 3.7.2
+#9 121.3 Fetching sass-rails 5.0.7
+#9 121.3 Installing sass-rails 5.0.7
+#9 121.3 Fetching searchkick 2.4.0
+#9 121.4 Installing searchkick 2.4.0
+#9 121.4 Fetching seed_dump 3.2.4
+#9 121.5 Installing seed_dump 3.2.4
+#9 121.5 Fetching seedbank 0.4.0
+#9 121.5 Installing seedbank 0.4.0
+#9 121.6 Fetching sentry-raven 2.7.1
+#9 121.6 Installing sentry-raven 2.7.1
+#9 121.7 Fetching shoulda-matchers 3.1.2
+#9 121.7 Installing shoulda-matchers 3.1.2
+#9 121.9 Fetching simple_form 3.5.0
+#9 121.9 Installing simple_form 3.5.0
+#9 122.0 Fetching spring 2.0.2
+#9 122.1 Installing spring 2.0.2
+#9 122.1 Fetching spring-watcher-listen 2.0.1
+#9 122.1 Installing spring-watcher-listen 2.0.1
+#9 122.2 Fetching turbolinks-source 5.0.3
+#9 122.2 Installing turbolinks-source 5.0.3
+#9 122.2 Fetching turbolinks 5.0.1
+#9 122.2 Installing turbolinks 5.0.1
+#9 122.2 Fetching typhoeus 1.3.0
+#9 122.3 Installing typhoeus 1.3.0
+#9 122.3 Fetching uglifier 3.2.0
+#9 122.4 Installing uglifier 3.2.0
+#9 122.4 Fetching utf8-cleaner 0.2.5
+#9 122.4 Installing utf8-cleaner 0.2.5
+#9 122.5 Fetching web-console 3.5.1
+#9 122.5 Installing web-console 3.5.1
+#9 122.6 Bundle complete! 61 Gemfile dependencies, 148 gems now installed.
+#9 122.6 Bundled gems are installed into `/usr/local/bundle`
+#9 122.6 Post-install message from rgeo:
+#9 122.6 
+#9 122.6 rgeo has moved Proj4 support to a separate gem. If you use Proj4, add this to your Gemfile:
+#9 122.6 
+#9 122.6 gem "rgeo-proj4"
+#9 122.6 Post-install message from haml:
+#9 122.6 
+#9 122.6 HEADS UP! Haml 4.0 has many improvements, but also has changes that may break
+#9 122.6 your application:
+#9 122.6 
+#9 122.6 * Support for Ruby 1.8.6 dropped
+#9 122.6 * Support for Rails 2 dropped
+#9 122.6 * Sass filter now always outputs <style> tags
+#9 122.6 * Data attributes are now hyphenated, not underscored
+#9 122.6 * html2haml utility moved to the html2haml gem
+#9 122.6 * Textile and Maruku filters moved to the haml-contrib gem
+#9 122.6 
+#9 122.6 For more info see:
+#9 122.6 
+#9 122.6 http://rubydoc.info/github/haml/haml/file/CHANGELOG.md
+#9 122.6 
+#9 122.6 Post-install message from mailjet:
+#9 122.6 
+#9 122.6   The Ruby wrapper for Mailjet has just been installed successfully, congrats!
+#9 122.6   Maybe you want to configure your credentials to use your account.
+#9 122.6   All informations available on https://github.com/mailjet/mailjet-gem.
+#9 122.6   But if you are using Rails, you'll be glad to generate it easily using:
+#9 122.6 
+#9 122.6     $ rails generate mailjet:initializer
+#9 122.6 
+#9 122.6   We hope you will enjoy Mailjet!
+#9 122.6 
+#9 122.6 Post-install message from seedbank:
+#9 122.6 
+#9 122.6   ================================================================================
+#9 122.6 
+#9 122.6   Rails 2.x
+#9 122.6   ---------
+#9 122.6   If you are using Seedbank with Rails 2.x you will need to place the following at
+#9 122.6   the end of your Rakefile so Rubygems can load the seedbank tasks;
+#9 122.6 
+#9 122.6     require 'seedbank'
+#9 122.6     Seedbank.load_tasks if defined?(Seedbank)
+#9 122.6 
+#9 122.6   Rails 3.x and 4.x
+#9 122.6   ---------
+#9 122.6   Your work here is done!
+#9 122.6 
+#9 122.6   ================================================================================
+#9 122.6   
+#9 DONE 123.6s
+
+#10 [6/6] COPY . 
+#10 DONE 0.7s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 3.2s done
+#11 writing image sha256:36ce8bd3ef3a8dac10bf652fafa6bfdc0b452a4eb18633246588038f1ab4704b 0.0s done
+#11 naming to docker.io/library/image_name_v1_1 0.0s done
+#11 DONE 3.2s
+Duration: 3:13.59

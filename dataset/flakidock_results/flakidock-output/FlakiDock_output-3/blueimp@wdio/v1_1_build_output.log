@@ -1,0 +1,167 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 98B done
+#1 DONE 0.5s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 933B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.14
+#3 DONE 1.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#5 resolve docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#5 resolve docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 0.2s done
+#5 sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 1.64kB / 1.64kB done
+#5 sha256:71859b0c62df47efaeae4f93698b56a8dddafbf041778fd668bbd1ab45a864f8 528B / 528B done
+#5 sha256:9e179bacf43c4d3428d57cf459799ba0285b901945f9eccb17b6da056d3532c7 1.47kB / 1.47kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 351.34kB done
+#4 DONE 0.5s
+
+#5 [1/8] FROM docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#5 DONE 0.7s
+
+#6 [2/8] RUN apk --no-cache add   tini   nodejs-current   npm   ffmpeg   android-tools   && npm install -g   npm@latest   && rm -rf   /tmp/*   /root/.npm
+#6 0.469 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#6 0.694 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#6 1.045 (1/76) Installing brotli-libs (1.0.9-r5)
+#6 1.071 (2/76) Installing libgcc (10.3.1_git20210424-r2)
+#6 1.075 (3/76) Installing lz4-libs (1.9.3-r1)
+#6 1.096 (4/76) Installing libstdc++ (10.3.1_git20210424-r2)
+#6 1.116 (5/76) Installing libprotobuf (3.15.7-r1)
+#6 1.140 (6/76) Installing libusb (1.0.24-r2)
+#6 1.144 (7/76) Installing zstd-libs (1.4.9-r1)
+#6 1.158 (8/76) Installing android-tools (31.0.0p1-r2)
+#6 1.205 (9/76) Installing sdl2 (2.0.14-r1)
+#6 1.221 (10/76) Installing libxau (1.0.9-r0)
+#6 1.223 (11/76) Installing libmd (1.0.3-r0)
+#6 1.226 (12/76) Installing libbsd (0.11.3-r0)
+#6 1.229 (13/76) Installing libxdmcp (1.1.3-r0)
+#6 1.232 (14/76) Installing libxcb (1.14-r2)
+#6 1.248 (15/76) Installing libx11 (1.7.3.1-r0)
+#6 1.304 (16/76) Installing aom-libs (1.0.0-r3)
+#6 1.344 (17/76) Installing alsa-lib (1.2.5-r2)
+#6 1.386 (18/76) Installing expat (2.5.0-r0)
+#6 1.391 (19/76) Installing libbz2 (1.0.8-r1)
+#6 1.394 (20/76) Installing libpng (1.6.37-r1)
+#6 1.398 (21/76) Installing freetype (2.10.4-r3)
+#6 1.410 (22/76) Installing libuuid (2.37.4-r0)
+#6 1.413 (23/76) Installing fontconfig (2.13.1-r4)
+#6 1.449 (24/76) Installing fribidi (1.0.10-r0)
+#6 1.453 (25/76) Installing libffi (3.3-r2)
+#6 1.455 (26/76) Installing libintl (0.21-r0)
+#6 1.458 (27/76) Installing libblkid (2.37.4-r0)
+#6 1.466 (28/76) Installing libmount (2.37.4-r0)
+#6 1.472 (29/76) Installing pcre (8.44-r0)
+#6 1.480 (30/76) Installing glib (2.68.3-r0)
+#6 1.520 (31/76) Installing graphite2 (1.3.14-r0)
+#6 1.526 (32/76) Installing harfbuzz (2.8.1-r0)
+#6 1.547 (33/76) Installing libass (0.15.1-r0)
+#6 1.552 (34/76) Installing libdav1d (0.9.0-r0)
+#6 1.566 (35/76) Installing gmp (6.2.1-r1)
+#6 1.575 (36/76) Installing nettle (3.7.3-r0)
+#6 1.585 (37/76) Installing p11-kit (0.23.22-r0)
+#6 1.599 (38/76) Installing libtasn1 (4.17.0-r1)
+#6 1.603 (39/76) Installing libunistring (0.9.10-r1)
+#6 1.620 (40/76) Installing gnutls (3.7.1-r2)
+#6 1.642 (41/76) Installing ncurses-terminfo-base (6.2_p20210612-r1)
+#6 1.670 (42/76) Installing ncurses-libs (6.2_p20210612-r1)
+#6 1.679 (43/76) Installing lame (3.100-r0)
+#6 1.690 (44/76) Installing opus (1.3.1-r1)
+#6 1.699 (45/76) Installing libgomp (10.3.1_git20210424-r2)
+#6 1.707 (46/76) Installing soxr (0.1.3-r2)
+#6 1.712 (47/76) Installing libsrt (1.4.2-r0)
+#6 1.721 (48/76) Installing libssh (0.9.6-r0)
+#6 1.729 (49/76) Installing libogg (1.3.5-r0)
+#6 1.732 (50/76) Installing libtheora (1.1.1-r16)
+#6 1.744 (51/76) Installing libjpeg-turbo (2.1.0-r0)
+#6 1.756 (52/76) Installing v4l-utils-libs (1.20.0-r0)
+#6 1.763 (53/76) Installing libxext (1.3.4-r0)
+#6 1.766 (54/76) Installing libxfixes (6.0.0-r0)
+#6 1.768 (55/76) Installing libpciaccess (0.16-r0)
+#6 1.771 (56/76) Installing libdrm (2.4.106-r0)
+#6 1.782 (57/76) Installing wayland-libs-client (1.19.0-r0)
+#6 1.785 (58/76) Installing libva (2.11.0-r0)
+#6 1.797 (59/76) Installing libvdpau (1.4-r0)
+#6 1.805 (60/76) Installing vidstab (1.1.0-r1)
+#6 1.813 (61/76) Installing libvorbis (1.3.7-r0)
+#6 1.826 (62/76) Installing libvpx (1.10.0-r0)
+#6 1.853 (63/76) Installing vulkan-loader (1.2.170-r1)
+#6 1.859 (64/76) Installing libwebp (1.2.0-r2)
+#6 1.870 (65/76) Installing x264-libs (20210211-r0)
+#6 1.895 (66/76) Installing x265-libs (3.4-r0)
+#6 1.922 (67/76) Installing xvidcore (1.3.7-r1)
+#6 1.930 (68/76) Installing ffmpeg-libs (4.4.1-r0)
+#6 2.148 (69/76) Installing ffmpeg (4.4.1-r0)
+#6 2.164 (70/76) Installing ca-certificates (20230506-r0)
+#6 2.189 (71/76) Installing c-ares (1.17.2-r0)
+#6 2.193 (72/76) Installing nghttp2-libs (1.43.0-r0)
+#6 2.198 (73/76) Installing libuv (1.41.0-r0)
+#6 2.355 (74/76) Installing nodejs-current (16.11.1-r0)
+#6 14.29 (75/76) Installing npm (7.17.0-r0)
+#6 14.77 (76/76) Installing tini (0.19.0-r0)
+#6 14.77 Executing busybox-1.33.1-r8.trigger
+#6 14.78 Executing ca-certificates-20230506-r0.trigger
+#6 14.82 OK: 160 MiB in 90 packages
+#6 15.66 npm WARN EBADENGINE Unsupported engine {
+#6 15.66 npm WARN EBADENGINE   package: 'npm@10.8.2',
+#6 15.66 npm WARN EBADENGINE   required: { node: '^18.17.0 || >=20.5.0' },
+#6 15.66 npm WARN EBADENGINE   current: { node: 'v16.11.1', npm: '7.17.0' }
+#6 15.66 npm WARN EBADENGINE }
+#6 17.33 
+#6 17.33 added 1 package, and audited 203 packages in 2s
+#6 17.33 
+#6 17.33 22 packages are looking for funding
+#6 17.33   run `npm fund` for details
+#6 17.33 
+#6 17.33 found 0 vulnerabilities
+#6 DONE 20.5s
+
+#7 [3/8] WORKDIR /usr/lib/wdio
+#7 DONE 0.3s
+
+#8 [4/8] COPY package.json package-lock.json ./
+#8 DONE 0.4s
+
+#9 [5/8] RUN npm install --production   && rm -rf   /tmp/*   /root/.npm
+#9 0.777 npm warn cli npm v10.8.2 does not support Node.js v16.11.1. This version of npm supports the following node versions: `^18.17.0 || >=20.5.0`. You can find the latest version at https://nodejs.org/.
+#9 0.778 npm warn config production Use `--omit=dev` instead.
+#9 12.94 
+#9 12.94 added 394 packages, and audited 395 packages in 12s
+#9 12.94 
+#9 12.94 50 packages are looking for funding
+#9 12.94   run `npm fund` for details
+#9 13.03 
+#9 13.03 20 vulnerabilities (3 moderate, 15 high, 2 critical)
+#9 13.03 
+#9 13.03 To address all issues, run:
+#9 13.03   npm audit fix
+#9 13.03 
+#9 13.03 Run `npm audit` for details.
+#9 DONE 15.6s
+
+#10 [6/8] COPY bin/wait-for-hosts.sh /usr/local/bin/wait-for-hosts
+#10 DONE 0.4s
+
+#11 [7/8] WORKDIR /app
+#11 DONE 0.3s
+
+#12 [8/8] RUN adduser -D -u 1000 wdio
+#12 DONE 1.0s
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 3.0s done
+#13 writing image sha256:fe7d050f4453e961a54b1cbf73e3a0b80912c8e5b11a65383a9351ab290b9a2b 0.0s done
+#13 naming to docker.io/library/image_name_v1_1 0.0s done
+#13 DONE 3.0s
+Duration: 0:44.34

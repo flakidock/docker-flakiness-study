@@ -1,0 +1,87 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 180B 0.0s done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 45B 0.0s done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/debian:latest
+#3 ...
+
+#4 [auth] library/debian:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/debian:latest
+#3 DONE 1.6s
+
+#5 [1/3] FROM docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#5 resolve docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 1.12kB done
+#6 DONE 0.3s
+
+#5 [1/3] FROM docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#5 resolve docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 0.4s done
+#5 sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 1.85kB / 1.85kB done
+#5 sha256:b1ae8b5bfaa9afa86b50c2a151a442d832c4449cf3731bddf8a728e5628ebb59 529B / 529B done
+#5 sha256:2e5b8d3ef33ebde2b2a943fadb241a63de1535a007a7bd185e7037abfff99f63 1.46kB / 1.46kB done
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 0B / 49.55MB 0.2s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 6.29MB / 49.55MB 0.3s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 11.53MB / 49.55MB 0.4s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 23.07MB / 49.55MB 0.6s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 28.31MB / 49.55MB 0.7s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 34.60MB / 49.55MB 0.8s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 46.14MB / 49.55MB 1.0s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 49.55MB / 49.55MB 1.1s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 49.55MB / 49.55MB 1.8s done
+#5 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0
+#5 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 5.2s
+#5 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 6.9s done
+#5 DONE 10.0s
+
+#7 [2/3] RUN apt-get update && apt-get install -y netcat
+#7 1.612 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#7 1.674 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#7 1.674 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#7 1.975 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#7 2.568 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#7 3.199 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#7 5.718 Fetched 9225 kB in 4s (2228 kB/s)
+#7 5.718 Reading package lists...
+#7 7.544 Reading package lists...
+#7 9.715 Building dependency tree...
+#7 10.26 Reading state information...
+#7 10.28 Package netcat is a virtual package provided by:
+#7 10.28   netcat-openbsd 1.219-1
+#7 10.28   netcat-traditional 1.10-47
+#7 10.28 
+#7 10.29 E: Package 'netcat' has no installation candidate
+#7 ERROR: process "/bin/sh -c apt-get update && apt-get install -y netcat" did not complete successfully: exit code: 100
+------
+ > [2/3] RUN apt-get update && apt-get install -y netcat:
+2.568 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+3.199 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+
+
+10.26 Reading state information...
+10.28 Package netcat is a virtual package provided by:
+10.28   netcat-openbsd 1.219-1
+10.28   netcat-traditional 1.10-47
+10.28 
+10.29 E: Package 'netcat' has no installation candidate
+------
+Dockerfile:4
+--------------------
+   2 |     MAINTAINER Neil Chambers <n3llyb0y.uk@gmail.com>
+   3 |     
+   4 | >>> RUN apt-get update && apt-get install -y netcat
+   5 |     
+   6 |     ADD wait /wait
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y netcat" did not complete successfully: exit code: 100
+Duration: 0:30.52

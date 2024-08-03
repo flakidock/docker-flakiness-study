@@ -1,0 +1,489 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 1.13kB done
+#1 DONE 0.3s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 71B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/elixir:1.11.4-alpine
+#3 ...
+
+#4 [auth] library/elixir:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/elixir:1.11.4-alpine
+#3 DONE 3.1s
+
+#5 [1/8] FROM docker.io/library/elixir:1.11.4-alpine@sha256:5ed22658cdc85e4b192d1671c793f8969523d921e4b8e51fd89db66ff6b643ab
+#5 resolve docker.io/library/elixir:1.11.4-alpine@sha256:5ed22658cdc85e4b192d1671c793f8969523d921e4b8e51fd89db66ff6b643ab
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 2.56kB done
+#6 DONE 0.2s
+
+#5 [1/8] FROM docker.io/library/elixir:1.11.4-alpine@sha256:5ed22658cdc85e4b192d1671c793f8969523d921e4b8e51fd89db66ff6b643ab
+#5 resolve docker.io/library/elixir:1.11.4-alpine@sha256:5ed22658cdc85e4b192d1671c793f8969523d921e4b8e51fd89db66ff6b643ab 0.3s done
+#5 sha256:5ed22658cdc85e4b192d1671c793f8969523d921e4b8e51fd89db66ff6b643ab 984B / 984B done
+#5 sha256:55413b9b6f8e9849b2eef7f86803788dcf7b8d7cd2f072c3bac999974c02fdce 951B / 951B done
+#5 sha256:7715e0e098ee9a79df4eaa8a79b6172d658181e5076bcc8c1db45532f84d1ebe 6.28kB / 6.28kB done
+#5 sha256:070eb51debd997eca763a31532c01e2579afe94e43b110d84282a81cb576e342 0B / 2.81MB 0.2s
+#5 sha256:74e2248e921ab347ade99fbc1cd202e890b6b9a424f3955cd55c3fbec4e4cd95 0B / 7.01MB 0.2s
+#5 sha256:74e2248e921ab347ade99fbc1cd202e890b6b9a424f3955cd55c3fbec4e4cd95 3.15MB / 7.01MB 0.3s
+#5 sha256:1be7dd9ce30ef32fa18fada5462c7d7d2fa1cc9f36fa25aea7bff924804baa16 0B / 42.72MB 0.3s
+#5 sha256:070eb51debd997eca763a31532c01e2579afe94e43b110d84282a81cb576e342 2.81MB / 2.81MB 0.3s done
+#5 sha256:74e2248e921ab347ade99fbc1cd202e890b6b9a424f3955cd55c3fbec4e4cd95 7.01MB / 7.01MB 0.3s
+#5 sha256:1be7dd9ce30ef32fa18fada5462c7d7d2fa1cc9f36fa25aea7bff924804baa16 3.15MB / 42.72MB 0.3s
+#5 extracting sha256:070eb51debd997eca763a31532c01e2579afe94e43b110d84282a81cb576e342 0.1s
+#5 sha256:74e2248e921ab347ade99fbc1cd202e890b6b9a424f3955cd55c3fbec4e4cd95 7.01MB / 7.01MB 0.4s done
+#5 sha256:1be7dd9ce30ef32fa18fada5462c7d7d2fa1cc9f36fa25aea7bff924804baa16 12.58MB / 42.72MB 0.4s
+#5 extracting sha256:070eb51debd997eca763a31532c01e2579afe94e43b110d84282a81cb576e342 0.2s done
+#5 sha256:1be7dd9ce30ef32fa18fada5462c7d7d2fa1cc9f36fa25aea7bff924804baa16 32.51MB / 42.72MB 0.7s
+#5 sha256:1be7dd9ce30ef32fa18fada5462c7d7d2fa1cc9f36fa25aea7bff924804baa16 42.72MB / 42.72MB 0.8s
+#5 sha256:1be7dd9ce30ef32fa18fada5462c7d7d2fa1cc9f36fa25aea7bff924804baa16 42.72MB / 42.72MB 1.4s done
+#5 extracting sha256:1be7dd9ce30ef32fa18fada5462c7d7d2fa1cc9f36fa25aea7bff924804baa16
+#5 extracting sha256:1be7dd9ce30ef32fa18fada5462c7d7d2fa1cc9f36fa25aea7bff924804baa16 1.5s done
+#5 extracting sha256:74e2248e921ab347ade99fbc1cd202e890b6b9a424f3955cd55c3fbec4e4cd95
+#5 extracting sha256:74e2248e921ab347ade99fbc1cd202e890b6b9a424f3955cd55c3fbec4e4cd95 0.4s done
+#5 DONE 4.8s
+
+#7 [2/8] RUN echo "http://nl.alpinelinux.org/alpine/latest-stable/main" >> /etc/apk/repositories     && apk update     && apk add git gcc g++ musl-dev make cmake file-dev     exiftool imagemagick libmagic ncurses postgresql-client ffmpeg
+#7 0.464 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/main/x86_64/APKINDEX.tar.gz
+#7 0.713 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/community/x86_64/APKINDEX.tar.gz
+#7 1.026 fetch http://nl.alpinelinux.org/alpine/latest-stable/main/x86_64/APKINDEX.tar.gz
+#7 2.224 v3.16.9-124-g7ebe731c813 [https://dl-cdn.alpinelinux.org/alpine/v3.16/main]
+#7 2.224 v3.16.9-125-gec300a94000 [https://dl-cdn.alpinelinux.org/alpine/v3.16/community]
+#7 2.224 v3.20.2-45-g194e307d75d [http://nl.alpinelinux.org/alpine/latest-stable/main]
+#7 2.224 OK: 22567 distinct packages available
+#7 2.597 (1/141) Upgrading musl (1.2.3-r3 -> 1.2.5-r0)
+#7 3.357 (2/141) Installing libacl (2.3.2-r0)
+#7 3.865 (3/141) Installing libbz2 (1.0.8-r6)
+#7 4.445 (4/141) Installing expat (2.6.2-r0)
+#7 4.477 (5/141) Installing lz4-libs (1.9.4-r5)
+#7 5.083 (6/141) Installing xz-libs (5.6.1-r3)
+#7 5.765 (7/141) Installing zstd-libs (1.5.6-r0)
+#7 6.526 (8/141) Installing libarchive (3.7.4-r0)
+#7 6.551 (9/141) Installing libcrypto3 (3.3.1-r3)
+#7 7.521 (10/141) Installing libgcc (13.2.1_git20240309-r0)
+#7 8.120 (11/141) Installing rhash-libs (1.4.4-r0)
+#7 8.837 (12/141) Installing libssl3 (3.3.1-r3)
+#7 9.590 (13/141) Installing libstdc++ (13.2.1_git20240309-r0)
+#7 10.47 (14/141) Installing libuv (1.48.0-r0)
+#7 11.17 (15/141) Installing cmake (3.29.3-r0)
+#7 13.06 (16/141) Installing perl (5.38.2-r0)
+#7 14.51 (17/141) Installing perl-image-exiftool (12.40-r0)
+#7 14.91 (18/141) Installing exiftool (12.40-r0)
+#7 14.92 (19/141) Installing sdl2 (2.0.22-r0)
+#7 14.94 (20/141) Installing libxau (1.0.11-r4)
+#7 15.45 (21/141) Installing libmd (1.1.0-r0)
+#7 15.95 (22/141) Installing libbsd (0.12.2-r0)
+#7 16.46 (23/141) Installing libxdmcp (1.1.5-r1)
+#7 16.94 (24/141) Installing libxcb (1.16.1-r0)
+#7 17.64 (25/141) Installing libx11 (1.8.9-r1)
+#7 18.55 (26/141) Installing aom-libs (3.9.0-r0)
+#7 19.55 (27/141) Installing alsa-lib (1.2.11-r0)
+#7 20.35 (28/141) Installing brotli-libs (1.1.0-r2)
+#7 26.91 (29/141) Installing libpng (1.6.43-r0)
+#7 28.28 (30/141) Installing freetype (2.13.2-r0)
+#7 29.07 (31/141) Installing fontconfig (2.15.0-r1)
+#7 29.73 (32/141) Installing fribidi (1.0.15-r0)
+#7 30.28 (33/141) Installing libffi (3.4.6-r0)
+#7 30.82 (34/141) Installing libintl (0.22.5-r0)
+#7 31.36 (35/141) Installing libeconf (0.6.3-r0)
+#7 31.94 (36/141) Installing libblkid (2.40.1-r1)
+#7 32.59 (37/141) Installing libmount (2.40.1-r1)
+#7 33.25 (38/141) Installing pcre2 (10.43-r0)
+#7 33.97 (39/141) Installing glib (2.80.2-r0)
+#7 34.98 (40/141) Installing graphite2 (1.3.14-r6)
+#7 35.56 (41/141) Installing harfbuzz (8.5.0-r0)
+#7 36.35 (42/141) Installing libass (0.16.0-r0)
+#7 36.36 (43/141) Installing libdav1d (1.0.0-r0)
+#7 36.38 (44/141) Installing hwids-pci (20210613-r0)
+#7 36.39 (45/141) Installing libpciaccess (0.18.1-r0)
+#7 36.89 (46/141) Installing libdrm (2.4.120-r0)
+#7 37.58 (47/141) Installing gmp (6.3.0-r1)
+#7 38.30 (48/141) Installing nettle (3.9.1-r0)
+#7 39.07 (49/141) Installing libunistring (1.2-r0)
+#7 39.93 (50/141) Installing libidn2 (2.3.7-r0)
+#7 40.56 (51/141) Installing libtasn1 (4.19.0-r2)
+#7 41.09 (52/141) Installing p11-kit (0.25.3-r0)
+#7 41.86 (53/141) Installing gnutls (3.8.5-r0)
+#7 42.83 (54/141) Installing lame (3.100-r0)
+#7 42.84 (55/141) Installing opus (1.5.2-r0)
+#7 43.63 (56/141) Installing libasyncns (0.8-r1)
+#7 43.63 (57/141) Installing dbus-libs (1.14.10-r1)
+#7 44.31 (58/141) Installing libltdl (2.4.7-r3)
+#7 44.82 (59/141) Installing orc (0.4.37-r0)
+#7 45.54 (60/141) Installing libogg (1.3.5-r5)
+#7 46.07 (61/141) Installing libflac (1.4.3-r1)
+#7 46.82 (62/141) Installing libvorbis (1.3.7-r2)
+#7 47.49 (63/141) Installing libsndfile (1.2.2-r0)
+#7 48.23 (64/141) Installing libgomp (13.2.1_git20240309-r0)
+#7 48.87 (65/141) Installing soxr (0.1.3-r2)
+#7 48.88 (66/141) Installing speexdsp (1.2.1-r2)
+#7 49.39 (67/141) Installing tdb-libs (1.4.9-r1)
+#7 50.02 (68/141) Installing libpulse (15.0-r2)
+#7 50.04 (69/141) Installing cjson (1.7.18-r0)
+#7 50.54 (70/141) Installing mbedtls (2.28.8-r0)
+#7 50.56 (71/141) Installing librist (0.2.6-r1)
+#7 50.71 (72/141) Installing libsrt (1.4.4-r0)
+#7 50.73 (73/141) Installing libssh (0.9.6-r1)
+#7 50.74 (74/141) Installing libtheora (1.1.1-r18)
+#7 51.42 (75/141) Installing libjpeg-turbo (3.0.3-r0)
+#7 52.15 (76/141) Installing v4l-utils-libs (1.22.1-r1)
+#7 52.16 (77/141) Installing libxext (1.3.6-r2)
+#7 52.71 (78/141) Installing libxfixes (6.0.1-r4)
+#7 53.20 (79/141) Installing wayland-libs-client (1.22.0-r4)
+#7 53.73 (80/141) Installing libva (2.21.0-r0)
+#7 54.39 (81/141) Installing libvdpau (1.5-r3)
+#7 54.89 (82/141) Installing vidstab (1.1.0-r1)
+#7 54.89 (83/141) Installing libvpx (1.11.0-r1)
+#7 55.59 (84/141) Installing libsharpyuv (1.3.2-r0)
+#7 56.04 (85/141) Installing libwebp (1.3.2-r0)
+#7 56.73 (86/141) Installing libwebpmux (1.3.2-r0)
+#7 57.26 (87/141) Installing x264-libs (0.163_git20210613-r0)
+#7 57.29 (88/141) Installing numactl (2.0.18-r0)
+#7 57.82 (89/141) Installing x265-libs (3.5-r3)
+#7 58.08 (90/141) Installing xvidcore (1.3.7-r1)
+#7 58.09 (91/141) Installing ffmpeg-libs (5.0.3-r0)
+#7 59.58 (92/141) Installing ffmpeg (5.0.3-r0)
+#7 59.60 (93/141) Installing libmagic (5.45-r1)
+#7 60.35 (94/141) Installing pkgconf (2.2.0-r0)
+#7 60.97 (95/141) Installing file-dev (5.45-r1)
+#7 61.44 (96/141) Installing libstdc++-dev (13.2.1_git20240309-r0)
+#7 62.56 (97/141) Installing jansson (2.14-r4)
+#7 63.09 (98/141) Installing binutils (2.42-r0)
+#7 64.05 (99/141) Installing libatomic (13.2.1_git20240309-r0)
+#7 64.49 (100/141) Installing isl26 (0.26-r1)
+#7 65.44 (101/141) Installing mpfr4 (4.2.1-r0)
+#7 66.21 (102/141) Installing mpc1 (1.3.1-r1)
+#7 66.81 (103/141) Installing gcc (13.2.1_git20240309-r0)
+#7 69.50 (104/141) Installing musl-dev (1.2.5-r0)
+#7 70.54 (105/141) Installing g++ (13.2.1_git20240309-r0)
+#7 71.78 (106/141) Installing c-ares (1.28.1-r0)
+#7 72.40 (107/141) Installing nghttp2-libs (1.62.1-r0)
+#7 73.64 (108/141) Installing libpsl (0.21.5-r1)
+#7 74.24 (109/141) Installing libcurl (8.9.0-r0)
+#7 74.94 (110/141) Installing git (2.45.2-r0)
+#7 75.93 (111/141) Installing git-init-template (2.45.2-r0)
+#7 76.38 (112/141) Installing perl-error (0.17029-r2)
+#7 76.90 (113/141) Installing perl-git (2.45.2-r0)
+#7 77.44 (114/141) Installing git-perl (2.45.2-r0)
+#7 77.95 (115/141) Installing lcms2 (2.16-r0)
+#7 78.61 (116/141) Installing libxml2 (2.12.7-r0)
+#7 79.41 (117/141) Installing imagemagick-libs (7.1.0.50-r0)
+#7 79.61 (118/141) Installing libxrender (0.9.11-r5)
+#7 80.20 (119/141) Installing pixman (0.43.2-r0)
+#7 80.97 (120/141) Installing cairo (1.18.0-r0)
+#7 81.77 (121/141) Installing avahi-libs (0.8-r17)
+#7 82.38 (122/141) Installing cups-libs (2.4.9-r0)
+#7 83.11 (123/141) Installing jbig2dec (0.20-r0)
+#7 83.71 (124/141) Installing tiff (4.4.0-r4)
+#7 83.72 (125/141) Installing ghostscript (9.56.1-r2)
+#7 84.65 (126/141) Installing libde265 (1.0.15-r0)
+#7 84.66 (127/141) Installing libheif (1.12.0-r2)
+#7 84.67 (128/141) Installing libjxl (0.6.1_git20220218-r0)
+#7 85.35 (129/141) Installing cairo-gobject (1.18.0-r0)
+#7 85.83 (130/141) Installing shared-mime-info (2.4-r0)
+#7 86.64 (131/141) Installing gdk-pixbuf (2.42.8-r0)
+#7 86.69 (132/141) Installing libxft (2.3.8-r3)
+#7 87.23 (133/141) Installing pango (1.52.2-r0)
+#7 87.94 (134/141) Installing librsvg (2.54.3-r0)
+#7 88.63 (135/141) Installing libwebpdemux (1.3.2-r0)
+#7 89.10 (136/141) Installing imagemagick (7.1.0.50-r0)
+#7 90.08 (137/141) Installing make (4.4.1-r2)
+#7 90.81 (138/141) Installing ncurses (6.4_p20240420-r0)
+#7 91.43 (139/141) Installing postgresql-common (1.2-r1)
+#7 91.87 Executing postgresql-common-1.2-r1.pre-install
+#7 91.95 (140/141) Installing libpq (16.3-r0)
+#7 92.67 (141/141) Installing postgresql16-client (16.3-r0)
+#7 93.56 Executing busybox-1.35.0-r17.trigger
+#7 93.56 Executing ca-certificates-20230506-r0.trigger
+#7 93.59 Executing fontconfig-2.15.0-r1.trigger
+#7 93.61 Executing glib-2.80.2-r0.trigger
+#7 93.61 Executing shared-mime-info-2.4-r0.trigger
+#7 94.24 Executing gdk-pixbuf-2.42.8-r0.trigger
+#7 94.25 Executing postgresql-common-1.2-r1.trigger
+#7 94.26 * Setting postgresql16 as the default version
+#7 94.71 OK: 550 MiB in 162 packages
+#7 DONE 99.6s
+
+#8 [3/8] RUN addgroup -g 911 pleroma     && adduser -h /pleroma -s /bin/false -D -G pleroma -u 911 pleroma
+#8 DONE 0.9s
+
+#9 [4/8] RUN mkdir -p /etc/pleroma     && chown -R pleroma /etc/pleroma     && mkdir -p /var/lib/pleroma/uploads     && mkdir -p /var/lib/pleroma/static     && chown -R pleroma /var/lib/pleroma
+#9 DONE 0.8s
+
+#10 [5/8] WORKDIR /pleroma
+#10 DONE 0.4s
+
+#11 [6/8] RUN git clone -b develop https://git.pleroma.social/pleroma/pleroma.git /pleroma     && git checkout develop
+#11 0.554 Cloning into '/pleroma'...
+#11 31.71 Already on 'develop'
+#11 31.71 Your branch is up to date with 'origin/develop'.
+#11 DONE 33.8s
+
+#12 [7/8] RUN echo "import Mix.Config" > config/prod.secret.exs     && mix local.hex --force     && mix local.rebar --force     && mix deps.get --only prod     && mkdir release     && mix release --path /pleroma
+#12 1.884 * creating .mix/archives/hex-2.1.1
+#12 2.792 * creating .mix/rebar
+#12 2.910 * creating .mix/rebar3
+#12 3.714 * Getting remote_ip (https://git.pleroma.social/pleroma/remote_ip.git - b647d0deecaa3acb140854fe4bda5b7e1dc6d1c8)
+#12 4.231 remote: Enumerating objects: 141, done.        
+#12 4.334 remote: Total 141 (delta 0), reused 0 (delta 0), pack-reused 141 (from 1)        
+#12 4.456 * Getting captcha (https://git.pleroma.social/pleroma/elixir-libraries/elixir-captcha.git - 6630c42aaaab124e697b4e513190c89d8b64e410)
+#12 5.031 remote: Enumerating objects: 129, done.        
+#12 5.031 remote: Counting objects:   1% (1/56)        remote: Counting objects:   3% (2/56)        remote: Counting objects:   5% (3/56)        remote: Counting objects:   7% (4/56)        remote: Counting objects:   8% (5/56)        remote: Counting objects:  10% (6/56)        remote: Counting objects:  12% (7/56)        remote: Counting objects:  14% (8/56)        remote: Counting objects:  16% (9/56)        remote: Counting objects:  17% (10/56)        remote: Counting objects:  19% (11/56)        remote: Counting objects:  21% (12/56)        remote: Counting objects:  23% (13/56)        remote: Counting objects:  25% (14/56)        remote: Counting objects:  26% (15/56)        remote: Counting objects:  28% (16/56)        remote: Counting objects:  30% (17/56)        remote: Counting objects:  32% (18/56)        remote: Counting objects:  33% (19/56)        remote: Counting objects:  35% (20/56)        remote: Counting objects:  37% (21/56)        remote: Counting objects:  39% (22/56)        remote: Counting objects:  41% (23/56)        remote: Counting objects:  42% (24/56)        remote: Counting objects:  44% (25/56)        remote: Counting objects:  46% (26/56)        remote: Counting objects:  48% (27/56)        remote: Counting objects:  50% (28/56)        remote: Counting objects:  51% (29/56)        remote: Counting objects:  53% (30/56)        remote: Counting objects:  55% (31/56)        remote: Counting objects:  57% (32/56)        remote: Counting objects:  58% (33/56)        remote: Counting objects:  60% (34/56)        remote: Counting objects:  62% (35/56)        remote: Counting objects:  64% (36/56)        remote: Counting objects:  66% (37/56)        remote: Counting objects:  67% (38/56)        remote: Counting objects:  69% (39/56)        remote: Counting objects:  71% (40/56)        remote: Counting objects:  73% (41/56)        remote: Counting objects:  75% (42/56)        remote: Counting objects:  76% (43/56)        remote: Counting objects:  78% (44/56)        remote: Counting objects:  80% (45/56)        remote: Counting objects:  82% (46/56)        remote: Counting objects:  83% (47/56)        remote: Counting objects:  85% (48/56)        remote: Counting objects:  87% (49/56)        remote: Counting objects:  89% (50/56)        remote: Counting objects:  91% (51/56)        remote: Counting objects:  92% (52/56)        remote: Counting objects:  94% (53/56)        remote: Counting objects:  96% (54/56)        remote: Counting objects:  98% (55/56)        remote: Counting objects: 100% (56/56)        remote: Counting objects: 100% (56/56), done.        
+#12 5.031 remote: Compressing objects:   3% (1/33)        remote: Compressing objects:   6% (2/33)        remote: Compressing objects:   9% (3/33)        remote: Compressing objects:  12% (4/33)        remote: Compressing objects:  15% (5/33)        remote: Compressing objects:  18% (6/33)        remote: Compressing objects:  21% (7/33)        remote: Compressing objects:  24% (8/33)        remote: Compressing objects:  27% (9/33)        remote: Compressing objects:  30% (10/33)        remote: Compressing objects:  33% (11/33)        remote: Compressing objects:  36% (12/33)        remote: Compressing objects:  39% (13/33)        remote: Compressing objects:  42% (14/33)        remote: Compressing objects:  45% (15/33)        remote: Compressing objects:  48% (16/33)        remote: Compressing objects:  51% (17/33)        remote: Compressing objects:  54% (18/33)        remote: Compressing objects:  57% (19/33)        remote: Compressing objects:  60% (20/33)        remote: Compressing objects:  63% (21/33)        remote: Compressing objects:  66% (22/33)        remote: Compressing objects:  69% (23/33)        remote: Compressing objects:  72% (24/33)        remote: Compressing objects:  75% (25/33)        remote: Compressing objects:  78% (26/33)        remote: Compressing objects:  81% (27/33)        remote: Compressing objects:  84% (28/33)        remote: Compressing objects:  87% (29/33)        remote: Compressing objects:  90% (30/33)        remote: Compressing objects:  93% (31/33)        remote: Compressing objects:  96% (32/33)        remote: Compressing objects: 100% (33/33)        remote: Compressing objects: 100% (33/33), done.        
+#12 5.091 remote: Total 129 (delta 33), reused 30 (delta 22), pack-reused 73 (from 1)        
+#12 6.594 Resolving Hex dependencies...
+#12 9.442 Resolution completed in 2.844s
+#12 10.09 Unchanged:
+#12 10.09   bandit 1.5.5
+#12 10.09   base62 1.2.2
+#12 10.09   bbcode_pleroma 0.2.0
+#12 10.09   bcrypt_elixir 2.3.1
+#12 10.09   cachex 3.6.0
+#12 10.09   calendar 1.0.0
+#12 10.09   castore 0.1.22
+#12 10.09   cc_precompiler 0.1.9
+#12 10.09   certifi 2.12.0
+#12 10.09   combine 0.10.0
+#12 10.09   comeonin 5.4.0
+#12 10.09   concurrent_limiter 0.1.1
+#12 10.09   cors_plug 2.0.3
+#12 10.09   cowboy 2.12.0
+#12 10.09   cowboy_telemetry 0.4.0
+#12 10.09   cowlib 2.13.0
+#12 10.09   custom_base 0.2.1
+#12 10.09   db_connection 2.7.0
+#12 10.09   decimal 2.1.1
+#12 10.09   earmark 1.4.46
+#12 10.09   ecto 3.11.2
+#12 10.09   ecto_enum 1.4.0
+#12 10.09   ecto_psql_extras 0.7.15
+#12 10.09   ecto_sql 3.11.3
+#12 10.09   elixir_make 0.7.8
+#12 10.09   eternal 1.2.2
+#12 10.09   ex_aws 2.1.9
+#12 10.09   ex_aws_s3 2.5.3
+#12 10.09   ex_const 0.2.4
+#12 10.09   ex_syslogger 1.5.2
+#12 10.09   exile 0.10.0
+#12 10.09   expo 0.5.1
+#12 10.09   fast_html 2.2.0
+#12 10.09   fast_sanitize 0.2.3
+#12 10.09   finch 0.18.0
+#12 10.09   flake_id 0.1.0
+#12 10.09   floki 0.35.2
+#12 10.09   gen_smtp 0.15.0
+#12 10.09   gettext 0.24.0
+#12 10.09   gun 2.0.1
+#12 10.09   hackney 1.18.2
+#12 10.09   hpax 0.2.0
+#12 10.09   html_entities 0.5.2
+#12 10.09   http_signatures 0.1.2
+#12 10.09   httpoison 1.8.2
+#12 10.09   idna 6.1.1
+#12 10.09   inet_cidr 1.0.8
+#12 10.09   jason 1.4.3
+#12 10.09   joken 2.6.0
+#12 10.09   jose 1.11.6
+#12 10.09   jumper 1.0.2
+#12 10.09   linkify 0.5.3
+#12 10.09   majic 1.0.0
+#12 10.09   metrics 1.0.1
+#12 10.09   mime 1.6.0
+#12 10.09   mimerl 1.3.0
+#12 10.09   mint 1.6.1
+#12 10.09   mogrify 0.8.0
+#12 10.09   nimble_options 1.1.1
+#12 10.09   nimble_parsec 0.6.0
+#12 10.09   nimble_pool 0.2.6
+#12 10.09   oban 2.17.12
+#12 10.09   oban_live_dashboard 0.1.1
+#12 10.09   octo_fetch 0.4.0
+#12 10.09   open_api_spex 3.18.2
+#12 10.09   parse_trans 3.4.1
+#12 10.09   phoenix 1.7.14
+#12 10.09   phoenix_ecto 4.4.3
+#12 10.09   phoenix_html 3.3.4
+#12 10.09   phoenix_live_dashboard 0.8.3
+#12 10.09   phoenix_live_view 0.19.5
+#12 10.09   phoenix_pubsub 2.1.3
+#12 10.09   phoenix_swoosh 1.2.1
+#12 10.09   phoenix_template 1.0.4
+#12 10.09   phoenix_view 2.0.4
+#12 10.09   plug 1.16.1
+#12 10.09   plug_cowboy 2.7.1
+#12 10.09   plug_crypto 2.1.0
+#12 10.09   plug_static_index_html 1.0.0
+#12 10.09   poolboy 1.5.2
+#12 10.09   postgrex 0.17.5
+#12 10.09   pot 1.0.2
+#12 10.09   prom_ex 1.9.0
+#12 10.09   ranch 1.8.0
+#12 10.09   recon 2.5.4
+#12 10.09   rinpatch_blurhash 0.1.0
+#12 10.09   sleeplocks 1.1.2
+#12 10.09   ssl_verify_fun 1.1.7
+#12 10.09   sweet_xml 0.7.4
+#12 10.09   swoosh 1.16.9
+#12 10.09   syslog 1.1.0
+#12 10.09   table_rex 4.0.0
+#12 10.09   telemetry 1.0.0
+#12 10.09   telemetry_metrics 0.6.2
+#12 10.09   telemetry_metrics_prometheus_core 1.2.0
+#12 10.09   telemetry_poller 1.0.0
+#12 10.09   tesla 1.11.0
+#12 10.09   thousand_island 1.3.5
+#12 10.09   timex 3.7.7
+#12 10.09   trailing_format_plug 0.0.7
+#12 10.09   tzdata 1.0.5
+#12 10.09   ueberauth 0.10.7
+#12 10.09   unicode_util_compat 0.7.0
+#12 10.09   unsafe 1.0.2
+#12 10.09   vix 0.26.0
+#12 10.09   web_push_encryption 0.3.1
+#12 10.09   websock 0.5.3
+#12 10.09   websock_adapter 0.5.6
+#12 10.13 * Getting phoenix (Hex package)
+#12 11.17 * Getting phoenix_ecto (Hex package)
+#12 11.18 * Getting ecto_sql (Hex package)
+#12 11.21 * Getting ecto_enum (Hex package)
+#12 11.22 * Getting postgrex (Hex package)
+#12 11.26 * Getting phoenix_html (Hex package)
+#12 11.27 * Getting phoenix_live_view (Hex package)
+#12 11.33 * Getting phoenix_live_dashboard (Hex package)
+#12 11.37 * Getting telemetry_metrics (Hex package)
+#12 11.37 * Getting telemetry_poller (Hex package)
+#12 11.38 * Getting tzdata (Hex package)
+#12 11.43 * Getting plug_cowboy (Hex package)
+#12 11.44 * Getting oban (Hex package)
+#12 11.47 * Getting gettext (Hex package)
+#12 11.49 * Getting bcrypt_elixir (Hex package)
+#12 11.50 * Getting trailing_format_plug (Hex package)
+#12 11.50 * Getting fast_sanitize (Hex package)
+#12 11.51 * Getting html_entities (Hex package)
+#12 11.51 * Getting calendar (Hex package)
+#12 11.53 * Getting cachex (Hex package)
+#12 11.56 * Getting tesla (Hex package)
+#12 11.59 * Getting castore (Hex package)
+#12 11.60 * Getting cowlib (Hex package)
+#12 11.62 * Getting gun (Hex package)
+#12 11.65 * Getting finch (Hex package)
+#12 11.67 * Getting jason (Hex package)
+#12 11.68 * Getting mogrify (Hex package)
+#12 11.69 * Getting ex_aws (Hex package)
+#12 11.72 * Getting ex_aws_s3 (Hex package)
+#12 11.73 * Getting sweet_xml (Hex package)
+#12 11.74 * Getting earmark (Hex package)
+#12 11.78 * Getting bbcode_pleroma (Hex package)
+#12 11.79 * Getting cors_plug (Hex package)
+#12 11.80 * Getting web_push_encryption (Hex package)
+#12 11.81 * Getting swoosh (Hex package)
+#12 11.85 * Getting phoenix_swoosh (Hex package)
+#12 11.86 * Getting gen_smtp (Hex package)
+#12 11.87 * Getting ex_syslogger (Hex package)
+#12 11.87 * Getting floki (Hex package)
+#12 11.89 * Getting timex (Hex package)
+#12 12.09 * Getting ueberauth (Hex package)
+#12 12.10 * Getting linkify (Hex package)
+#12 12.11 * Getting http_signatures (Hex package)
+#12 12.12 * Getting telemetry (Hex package)
+#12 12.12 * Getting poolboy (Hex package)
+#12 12.13 * Getting prom_ex (Hex package)
+#12 12.17 * Getting recon (Hex package)
+#12 12.18 * Getting joken (Hex package)
+#12 12.20 * Getting pot (Hex package)
+#12 12.20 * Getting ex_const (Hex package)
+#12 12.21 * Getting plug_static_index_html (Hex package)
+#12 12.22 * Getting flake_id (Hex package)
+#12 12.23 * Getting concurrent_limiter (Hex package)
+#12 12.23 * Getting majic (Hex package)
+#12 12.25 * Getting open_api_spex (Hex package)
+#12 12.29 * Getting ecto_psql_extras (Hex package)
+#12 12.31 * Getting vix (Hex package)
+#12 12.34 * Getting elixir_make (Hex package)
+#12 12.35 * Getting blurhash (Hex package)
+#12 12.36 * Getting exile (Hex package)
+#12 12.37 * Getting bandit (Hex package)
+#12 12.41 * Getting websock_adapter (Hex package)
+#12 12.42 * Getting oban_live_dashboard (Hex package)
+#12 12.43 * Getting hackney (Hex package)
+#12 12.73 * Getting certifi (Hex package)
+#12 12.75 * Getting idna (Hex package)
+#12 12.77 * Getting metrics (Hex package)
+#12 12.78 * Getting mimerl (Hex package)
+#12 12.78 * Getting parse_trans (Hex package)
+#12 12.80 * Getting ssl_verify_fun (Hex package)
+#12 12.80 * Getting unicode_util_compat (Hex package)
+#12 12.82 * Getting plug (Hex package)
+#12 12.85 * Getting websock (Hex package)
+#12 12.86 * Getting mime (Hex package)
+#12 12.86 * Getting plug_crypto (Hex package)
+#12 12.87 * Getting hpax (Hex package)
+#12 12.88 * Getting thousand_island (Hex package)
+#12 12.90 * Getting cc_precompiler (Hex package)
+#12 12.91 * Getting table_rex (Hex package)
+#12 12.92 * Getting nimble_pool (Hex package)
+#12 12.93 * Getting combine (Hex package)
+#12 12.93 * Getting inet_cidr (Hex package)
+#12 12.94 * Getting base62 (Hex package)
+#12 12.95 * Getting custom_base (Hex package)
+#12 12.95 * Getting jose (Hex package)
+#12 13.02 * Getting octo_fetch (Hex package)
+#12 13.03 * Getting telemetry_metrics_prometheus_core (Hex package)
+#12 13.04 * Getting syslog (Hex package)
+#12 13.05 * Getting phoenix_view (Hex package)
+#12 13.06 * Getting phoenix_template (Hex package)
+#12 13.06 * Getting httpoison (Hex package)
+#12 13.07 * Getting nimble_parsec (Hex package)
+#12 13.08 * Getting mint (Hex package)
+#12 13.11 * Getting nimble_options (Hex package)
+#12 13.12 * Getting eternal (Hex package)
+#12 13.12 * Getting jumper (Hex package)
+#12 13.13 * Getting sleeplocks (Hex package)
+#12 13.14 * Getting unsafe (Hex package)
+#12 13.14 * Getting fast_html (Hex package)
+#12 15.16 * Getting comeonin (Hex package)
+#12 15.17 * Getting expo (Hex package)
+#12 15.18 * Getting cowboy (Hex package)
+#12 15.21 * Getting cowboy_telemetry (Hex package)
+#12 15.21 * Getting ranch (Hex package)
+#12 15.23 * Getting db_connection (Hex package)
+#12 15.24 * Getting decimal (Hex package)
+#12 15.25 * Getting ecto (Hex package)
+#12 15.29 * Getting phoenix_pubsub (Hex package)
+#12 15.30 You have added/upgraded packages you could sponsor, run `mix hex.sponsor` to learn more
+#12 16.05 ** (Mix) You're trying to run :pleroma on Elixir v1.11.4 but it has declared in its mix.exs file it supports only Elixir ~> 1.13
+#12 ERROR: process "/bin/sh -c echo \"import Mix.Config\" > config/prod.secret.exs     && mix local.hex --force     && mix local.rebar --force     && mix deps.get --only prod     && mkdir release     && mix release --path /pleroma" did not complete successfully: exit code: 1
+------
+ > [7/8] RUN echo "import Mix.Config" > config/prod.secret.exs     && mix local.hex --force     && mix local.rebar --force     && mix deps.get --only prod     && mkdir release     && mix release --path /pleroma:
+15.17 * Getting expo (Hex package)
+15.18 * Getting cowboy (Hex package)
+15.21 * Getting cowboy_telemetry (Hex package)
+15.21 * Getting ranch (Hex package)
+15.23 * Getting db_connection (Hex package)
+15.24 * Getting decimal (Hex package)
+15.25 * Getting ecto (Hex package)
+15.29 * Getting phoenix_pubsub (Hex package)
+15.30 You have added/upgraded packages you could sponsor, run `mix hex.sponsor` to learn more
+16.05 ** (Mix) You're trying to run :pleroma on Elixir v1.11.4 but it has declared in its mix.exs file it supports only Elixir ~> 1.13
+------
+Dockerfile:29
+--------------------
+  28 |     
+  29 | >>> RUN echo "import Mix.Config" > config/prod.secret.exs \
+  30 | >>>     && mix local.hex --force \
+  31 | >>>     && mix local.rebar --force \
+  32 | >>>     && mix deps.get --only prod \
+  33 | >>>     && mkdir release \
+  34 | >>>     && mix release --path /pleroma
+  35 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c echo \"import Mix.Config\" > config/prod.secret.exs     && mix local.hex --force     && mix local.rebar --force     && mix deps.get --only prod     && mkdir release     && mix release --path /pleroma" did not complete successfully: exit code: 1
+Duration: 2:43.31

@@ -1,0 +1,111 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 800B done
+#2 DONE 0.3s
+
+#3 [internal] load metadata for k8s.gcr.io/debian-base:v1.0.0
+#3 DONE 1.5s
+
+#4 [builder 1/3] FROM k8s.gcr.io/debian-base:v1.0.0@sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742
+#4 resolve k8s.gcr.io/debian-base:v1.0.0@sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742
+#4 resolve k8s.gcr.io/debian-base:v1.0.0@sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742 0.2s done
+#4 sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742 1.67kB / 1.67kB done
+#4 sha256:5f25d97ece9076612b64bb551e12f1e39a520176b684e2d663ce1bd53c5d0618 529B / 529B done
+#4 sha256:204e96332c912beab21c2cef37a31b98c9b953ac4a0bc705d3ede0ba3c167163 1.51kB / 1.51kB done
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 0B / 17.74MB 0.2s
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 13.63MB / 17.74MB 0.5s
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 17.74MB / 17.74MB 0.6s
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 17.74MB / 17.74MB 0.9s done
+#4 extracting sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1
+#4 extracting sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 5.0s done
+#4 DONE 7.0s
+
+#5 [builder 2/3] WORKDIR /dsvpn
+#5 DONE 2.2s
+
+#6 [builder 3/3] RUN set -x     && clean-install clang git ca-certificates make     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn      && git checkout ${GIT_REF} && make
+#6 1.363 + clean-install clang git ca-certificates make
+#6 1.563 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+#6 1.569 Ign:2 http://deb.debian.org/debian stretch InRelease
+#6 1.578 Ign:3 http://security.debian.org/debian-security stretch/updates Release
+#6 1.587 Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+#6 1.602 Ign:5 http://deb.debian.org/debian stretch Release
+#6 1.616 Ign:6 http://deb.debian.org/debian stretch-updates Release
+#6 1.775 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.777 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.782 Ign:9 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.788 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 1.800 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.946 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.951 Ign:9 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.958 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.105 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 2.116 Ign:9 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 2.117 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.130 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 2.141 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.268 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 2.272 Ign:9 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 2.304 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.430 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 2.434 Ign:9 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 2.463 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.475 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 2.487 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.587 Err:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 2.587   404  Not Found [IP: 151.101.2.132 80]
+#6 2.599 Ign:9 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 2.646 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.805 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.816 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 2.832 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.996 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 3.162 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 3.173 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 3.183 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 3.342 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 3.500 Err:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 3.500   404  Not Found
+#6 3.527 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 3.538 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 3.697 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 3.697   404  Not Found
+#6 3.718 Reading package lists...
+#6 3.781 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 3.781 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 3.781 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 3.781 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.2.132 80]
+#6 3.781 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 3.781 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 3.781 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c set -x     && clean-install clang git ca-certificates make     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn      && git checkout ${GIT_REF} && make" did not complete successfully: exit code: 100
+------
+ > [builder 3/3] RUN set -x     && clean-install clang git ca-certificates make     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn      && git checkout ${GIT_REF} && make:
+3.527 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+3.538 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+
+3.781 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+3.781 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+3.781 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+3.781 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.2.132 80]
+3.781 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+3.781 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+3.781 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+Dockerfile:6
+--------------------
+   5 |     
+   6 | >>> RUN set -x \
+   7 | >>>     && clean-install clang git ca-certificates make \
+   8 | >>>     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn  \
+   9 | >>>     && git checkout ${GIT_REF} && make
+  10 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c set -x     && clean-install clang git ca-certificates make     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn      && git checkout ${GIT_REF} && make" did not complete successfully: exit code: 100
+Duration: 0:16.80

@@ -1,0 +1,37 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 600B 0.0s done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 127B done
+#2 DONE 0.3s
+
+#3 [internal] load metadata for docker.io/library/python:3.10-buster
+#3 ...
+
+#4 [auth] virtool/workflow-tools:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [auth] library/python:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [internal] load metadata for docker.io/virtool/workflow-tools:2.0.1
+#6 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+
+#3 [internal] load metadata for docker.io/library/python:3.10-buster
+#3 CANCELED
+------
+ > [internal] load metadata for docker.io/virtool/workflow-tools:2.0.1:
+------
+Dockerfile:10
+--------------------
+   8 |     RUN pip install --user .
+   9 |     
+  10 | >>> FROM virtool/workflow-tools:2.0.1
+  11 |     WORKDIR /virtool
+  12 |     COPY --from=server /root/.local /root/.local
+--------------------
+ERROR: failed to solve: virtool/workflow-tools:2.0.1: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+Duration: 0:2.57

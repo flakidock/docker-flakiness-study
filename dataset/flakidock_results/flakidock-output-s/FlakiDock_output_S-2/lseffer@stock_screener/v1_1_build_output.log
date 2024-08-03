@@ -1,0 +1,98 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 501B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.7-slim
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.7-slim
+#2 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 858B done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b
+#6 resolve docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b 0.0s done
+#6 sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b 1.86kB / 1.86kB done
+#6 sha256:ffd28e36ef37b3a4a24f6a771a48d7c5499ea42d6309ac911a3f699e122060be 1.37kB / 1.37kB done
+#6 sha256:a255ffcb469f2ec40f2958a76beb0c2bbebfe92ce9af67a9b48d84b4cb695ac8 7.54kB / 7.54kB done
+#6 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 0B / 29.12MB 0.1s
+#6 sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 0B / 3.50MB 0.1s
+#6 sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 0B / 11.38MB 0.1s
+#6 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 10.49MB / 29.12MB 0.3s
+#6 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 14.68MB / 29.12MB 0.4s
+#6 sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 3.50MB / 3.50MB 0.3s done
+#6 sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 2.10MB / 11.38MB 0.4s
+#6 sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095 0B / 244B 0.4s
+#6 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 25.17MB / 29.12MB 0.6s
+#6 sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 11.38MB / 11.38MB 0.5s done
+#6 sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095 244B / 244B 0.5s done
+#6 sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 0B / 3.13MB 0.6s
+#6 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 29.12MB / 29.12MB 0.7s
+#6 sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 3.13MB / 3.13MB 0.7s
+#6 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 29.12MB / 29.12MB 0.7s done
+#6 sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 3.13MB / 3.13MB 0.7s done
+#6 extracting sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886
+#6 extracting sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 1.9s done
+#6 extracting sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 0.1s
+#6 extracting sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 0.2s done
+#6 extracting sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b
+#6 extracting sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 0.6s done
+#6 extracting sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095
+#6 extracting sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095 done
+#6 extracting sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 0.1s
+#6 extracting sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 0.3s done
+#6 DONE 4.3s
+
+#7 [2/5] RUN useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat     && rm -rf /var/lib/apt/lists/*
+#7 0.307 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#7 0.347 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#7 0.357 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#7 0.418 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#7 0.550 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#7 0.551 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#7 1.695 Fetched 9225 kB in 1s (6491 kB/s)
+#7 1.695 Reading package lists...
+#7 2.305 Reading package lists...
+#7 2.900 Building dependency tree...
+#7 3.071 Reading state information...
+#7 3.077 Package netcat is a virtual package provided by:
+#7 3.077   netcat-openbsd 1.219-1
+#7 3.077   netcat-traditional 1.10-47
+#7 3.077 
+#7 3.079 E: Package 'netcat' has no installation candidate
+#7 ERROR: process "/bin/sh -c useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [2/5] RUN useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat     && rm -rf /var/lib/apt/lists/*:
+0.551 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+
+
+
+3.071 Reading state information...
+3.077 Package netcat is a virtual package provided by:
+3.077   netcat-openbsd 1.219-1
+3.077   netcat-traditional 1.10-47
+3.077 
+3.079 E: Package 'netcat' has no installation candidate
+------
+v1_Dockerfile:4
+--------------------
+   3 |     
+   4 | >>> RUN useradd -ms /bin/bash worker \
+   5 | >>>     && apt-get update \
+   6 | >>>     && apt-get install -y git netcat \
+   7 | >>>     && rm -rf /var/lib/apt/lists/*
+   8 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+Duration: 0:9.19

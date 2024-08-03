@@ -1,0 +1,111 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 603B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:lts-alpine
+#2 ...
+
+#3 [internal] load metadata for docker.io/library/alpine:3
+#3 DONE 0.7s
+
+#2 [internal] load metadata for docker.io/library/node:lts-alpine
+#2 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 144B done
+#4 DONE 0.0s
+
+#5 [stage-1 1/5] FROM docker.io/library/alpine:3@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:3@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.0s done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 631.18kB 0.0s done
+#6 DONE 0.1s
+
+#5 [stage-1 1/5] FROM docker.io/library/alpine:3@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.2s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s done
+#5 DONE 0.5s
+
+#7 [builder 1/4] FROM docker.io/library/node:lts-alpine@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52
+#7 resolve docker.io/library/node:lts-alpine@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52 0.0s done
+#7 sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52 7.67kB / 7.67kB done
+#7 sha256:375518d70893d14665b99393079e77bd4947884f123a66ade28744eb8340d229 1.72kB / 1.72kB done
+#7 sha256:e2997a3fdff8b88aee369a7de727d89bff21c0e2927d7c0487dbbaab6eaf8f14 6.38kB / 6.38kB done
+#7 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.2s done
+#7 sha256:d9aac50bc34e2a0199701ebddca85c36acd90c4d1ad915ca0849364c41547d70 9.44MB / 42.24MB 0.4s
+#7 sha256:0150f131fd2fb613a281e43d320d5772ad190446bcbb177a28f53838f53fdd3c 1.39MB / 1.39MB 0.2s done
+#7 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s done
+#7 sha256:c0ce3bd8f30377d0ed394d1177e5009ffc3f6907a980562779583174e8b04acc 446B / 446B 0.4s done
+#7 sha256:d9aac50bc34e2a0199701ebddca85c36acd90c4d1ad915ca0849364c41547d70 25.17MB / 42.24MB 0.6s
+#7 sha256:d9aac50bc34e2a0199701ebddca85c36acd90c4d1ad915ca0849364c41547d70 42.24MB / 42.24MB 0.8s
+#7 sha256:d9aac50bc34e2a0199701ebddca85c36acd90c4d1ad915ca0849364c41547d70 42.24MB / 42.24MB 0.9s done
+#7 extracting sha256:d9aac50bc34e2a0199701ebddca85c36acd90c4d1ad915ca0849364c41547d70 0.1s
+#7 extracting sha256:d9aac50bc34e2a0199701ebddca85c36acd90c4d1ad915ca0849364c41547d70 1.8s done
+#7 extracting sha256:0150f131fd2fb613a281e43d320d5772ad190446bcbb177a28f53838f53fdd3c
+#7 extracting sha256:0150f131fd2fb613a281e43d320d5772ad190446bcbb177a28f53838f53fdd3c 0.1s done
+#7 extracting sha256:c0ce3bd8f30377d0ed394d1177e5009ffc3f6907a980562779583174e8b04acc done
+#7 DONE 3.1s
+
+#8 [builder 2/4] COPY . /app
+#8 DONE 0.5s
+
+#9 [builder 3/4] WORKDIR /app
+#9 DONE 0.0s
+
+#10 [builder 4/4] RUN npm audit && npm i && npm run build && npm cache clean --force;
+#10 1.180 # npm audit report
+#10 1.180 
+#10 1.180 vue-template-compiler  >=2.0.0
+#10 1.180 Severity: moderate
+#10 1.180 vue-template-compiler vulnerable to client-side Cross-Site Scripting (XSS) - https://github.com/advisories/GHSA-g3ch-rx76-35fx
+#10 1.180 fix available via `npm audit fix --force`
+#10 1.180 Will install vue-tsc@2.0.29, which is a breaking change
+#10 1.180 node_modules/vue-template-compiler
+#10 1.180   @vue/language-core  <=2.0.28
+#10 1.180   Depends on vulnerable versions of vue-template-compiler
+#10 1.180   node_modules/@vue/language-core
+#10 1.180     vue-tsc  1.7.0-alpha.0 - 2.0.28
+#10 1.180     Depends on vulnerable versions of @vue/language-core
+#10 1.180     node_modules/vue-tsc
+#10 1.180 
+#10 1.180 3 moderate severity vulnerabilities
+#10 1.180 
+#10 1.180 To address all issues (including breaking changes), run:
+#10 1.180   npm audit fix --force
+#10 1.181 npm notice
+#10 1.181 npm notice New patch version of npm available! 10.8.1 -> 10.8.2
+#10 1.181 npm notice Changelog: https://github.com/npm/cli/releases/tag/v10.8.2
+#10 1.181 npm notice To update run: npm install -g npm@10.8.2
+#10 1.181 npm notice
+#10 ERROR: process "/bin/sh -c npm audit && npm i && npm run build && npm cache clean --force;" did not complete successfully: exit code: 1
+------
+ > [builder 4/4] RUN npm audit && npm i && npm run build && npm cache clean --force;:
+1.180 
+1.180 3 moderate severity vulnerabilities
+1.180 
+1.180 To address all issues (including breaking changes), run:
+1.180   npm audit fix --force
+1.181 npm notice
+1.181 npm notice New patch version of npm available! 10.8.1 -> 10.8.2
+1.181 npm notice Changelog: https://github.com/npm/cli/releases/tag/v10.8.2
+1.181 npm notice To update run: npm install -g npm@10.8.2
+1.181 npm notice
+------
+v1_Dockerfile:4
+--------------------
+   2 |     COPY . /app
+   3 |     WORKDIR /app
+   4 | >>> RUN npm audit && npm i && npm run build && npm cache clean --force;
+   5 |     
+   6 |     FROM alpine:3
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm audit && npm i && npm run build && npm cache clean --force;" did not complete successfully: exit code: 1
+Duration: 0:5.88

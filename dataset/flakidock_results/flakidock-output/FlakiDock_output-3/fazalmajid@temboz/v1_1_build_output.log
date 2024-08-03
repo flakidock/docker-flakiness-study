@@ -1,0 +1,245 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 663B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [ 1/15] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 5.74MB 0.1s done
+#4 DONE 0.5s
+
+#5 [ 1/15] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 DONE 0.7s
+
+#6 [ 2/15] RUN apk add --update python3-dev py3-cffi gcc linux-headers musl-dev sqlite
+#6 0.482 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.726 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 1.246 (1/36) Installing libgcc (13.2.1_git20240309-r0)
+#6 1.251 (2/36) Installing jansson (2.14-r4)
+#6 1.253 (3/36) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 1.279 (4/36) Installing zstd-libs (1.5.6-r0)
+#6 1.291 (5/36) Installing binutils (2.42-r0)
+#6 1.402 (6/36) Installing libgomp (13.2.1_git20240309-r0)
+#6 1.408 (7/36) Installing libatomic (13.2.1_git20240309-r0)
+#6 1.411 (8/36) Installing gmp (6.3.0-r1)
+#6 1.419 (9/36) Installing isl26 (0.26-r1)
+#6 1.443 (10/36) Installing mpfr4 (4.2.1-r0)
+#6 1.454 (11/36) Installing mpc1 (1.3.1-r1)
+#6 1.459 (12/36) Installing gcc (13.2.1_git20240309-r0)
+#6 2.605 (13/36) Installing linux-headers (6.6-r0)
+#6 2.780 (14/36) Installing musl-dev (1.2.5-r0)
+#6 2.899 (15/36) Installing libbz2 (1.0.8-r6)
+#6 2.903 (16/36) Installing libexpat (2.6.2-r0)
+#6 2.907 (17/36) Installing libffi (3.4.6-r0)
+#6 2.910 (18/36) Installing gdbm (1.23-r1)
+#6 2.913 (19/36) Installing xz-libs (5.6.1-r3)
+#6 2.918 (20/36) Installing mpdecimal (4.0.0-r0)
+#6 2.923 (21/36) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 2.947 (22/36) Installing libncursesw (6.4_p20240420-r0)
+#6 2.953 (23/36) Installing libpanelw (6.4_p20240420-r0)
+#6 2.956 (24/36) Installing readline (8.2.10-r0)
+#6 2.962 (25/36) Installing sqlite-libs (3.45.3-r1)
+#6 2.985 (26/36) Installing python3 (3.12.3-r1)
+#6 3.295 (27/36) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 3.545 (28/36) Installing pyc (3.12.3-r1)
+#6 3.547 (29/36) Installing py3-cparser-pyc (2.22-r1)
+#6 3.570 (30/36) Installing py3-cffi-pyc (1.16.0-r1)
+#6 3.580 (31/36) Installing python3-pyc (3.12.3-r1)
+#6 3.582 (32/36) Installing py3-cparser (2.22-r1)
+#6 3.592 (33/36) Installing py3-cffi (1.16.0-r1)
+#6 3.620 (34/36) Installing pkgconf (2.2.0-r0)
+#6 3.626 (35/36) Installing python3-dev (3.12.3-r1)
+#6 4.466 (36/36) Installing sqlite (3.45.3-r1)
+#6 4.492 Executing busybox-1.36.1-r29.trigger
+#6 4.499 OK: 301 MiB in 50 packages
+#6 DONE 10.3s
+
+#7 [ 3/15] RUN python3 -m venv /venv
+#7 DONE 6.3s
+
+#8 [ 4/15] RUN pip install --upgrade pip
+#8 1.137 Requirement already satisfied: pip in /venv/lib/python3.12/site-packages (24.0)
+#8 1.301 Collecting pip
+#8 1.346   Downloading pip-24.2-py3-none-any.whl.metadata (3.6 kB)
+#8 1.403 Downloading pip-24.2-py3-none-any.whl (1.8 MB)
+#8 1.594    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 9.7 MB/s eta 0:00:00
+#8 1.621 Installing collected packages: pip
+#8 1.621   Attempting uninstall: pip
+#8 1.625     Found existing installation: pip 24.0
+#8 1.705     Uninstalling pip-24.0:
+#8 2.448       Successfully uninstalled pip-24.0
+#8 4.169 Successfully installed pip-24.2
+#8 DONE 4.9s
+
+#9 [ 5/15] RUN pip install flask
+#9 1.202 Collecting flask
+#9 1.247   Downloading flask-3.0.3-py3-none-any.whl.metadata (3.2 kB)
+#9 1.376 Collecting Werkzeug>=3.0.0 (from flask)
+#9 1.384   Downloading werkzeug-3.0.3-py3-none-any.whl.metadata (3.7 kB)
+#9 1.481 Collecting Jinja2>=3.1.2 (from flask)
+#9 1.489   Downloading jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
+#9 1.586 Collecting itsdangerous>=2.1.2 (from flask)
+#9 1.600   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+#9 1.769 Collecting click>=8.1.3 (from flask)
+#9 1.778   Downloading click-8.1.7-py3-none-any.whl.metadata (3.0 kB)
+#9 1.877 Collecting blinker>=1.6.2 (from flask)
+#9 1.886   Downloading blinker-1.8.2-py3-none-any.whl.metadata (1.6 kB)
+#9 2.050 Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->flask)
+#9 2.058   Downloading MarkupSafe-2.1.5-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (3.0 kB)
+#9 2.128 Downloading flask-3.0.3-py3-none-any.whl (101 kB)
+#9 2.179 Downloading blinker-1.8.2-py3-none-any.whl (9.5 kB)
+#9 2.229 Downloading click-8.1.7-py3-none-any.whl (97 kB)
+#9 2.280 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#9 2.413 Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+#9 2.464 Downloading werkzeug-3.0.3-py3-none-any.whl (227 kB)
+#9 2.514 Downloading MarkupSafe-2.1.5-cp312-cp312-musllinux_1_1_x86_64.whl (33 kB)
+#9 2.580 Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, flask
+#9 3.532 Successfully installed Jinja2-3.1.4 MarkupSafe-2.1.5 Werkzeug-3.0.3 blinker-1.8.2 click-8.1.7 flask-3.0.3 itsdangerous-2.2.0
+#9 DONE 3.9s
+
+#10 [ 6/15] RUN pip install requests
+#10 1.251 Collecting requests
+#10 1.296   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+#10 1.511 Collecting charset-normalizer<4,>=2 (from requests)
+#10 1.521   Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (33 kB)
+#10 1.630 Collecting idna<4,>=2.5 (from requests)
+#10 1.639   Downloading idna-3.7-py3-none-any.whl.metadata (9.9 kB)
+#10 1.791 Collecting urllib3<3,>=1.21.1 (from requests)
+#10 1.808   Downloading urllib3-2.2.2-py3-none-any.whl.metadata (6.4 kB)
+#10 1.917 Collecting certifi>=2017.4.17 (from requests)
+#10 1.925   Downloading certifi-2024.7.4-py3-none-any.whl.metadata (2.2 kB)
+#10 1.972 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#10 2.018 Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#10 2.086 Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl (142 kB)
+#10 2.151 Downloading idna-3.7-py3-none-any.whl (66 kB)
+#10 2.194 Downloading urllib3-2.2.2-py3-none-any.whl (121 kB)
+#10 2.284 Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
+#10 2.852 Successfully installed certifi-2024.7.4 charset-normalizer-3.3.2 idna-3.7 requests-2.32.3 urllib3-2.2.2
+#10 DONE 3.2s
+
+#11 [ 7/15] RUN pip install html5lib
+#11 1.408 Collecting html5lib
+#11 1.453   Downloading html5lib-1.1-py2.py3-none-any.whl.metadata (16 kB)
+#11 1.554 Collecting six>=1.9 (from html5lib)
+#11 1.563   Downloading six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+#11 1.645 Collecting webencodings (from html5lib)
+#11 1.653   Downloading webencodings-0.5.1-py2.py3-none-any.whl.metadata (2.1 kB)
+#11 1.706 Downloading html5lib-1.1-py2.py3-none-any.whl (112 kB)
+#11 1.760 Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#11 1.810 Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+#11 1.884 Installing collected packages: webencodings, six, html5lib
+#11 2.209 Successfully installed html5lib-1.1 six-1.16.0 webencodings-0.5.1
+#11 DONE 2.5s
+
+#12 [ 8/15] RUN pip install passlib
+#12 1.206 Collecting passlib
+#12 1.252   Downloading passlib-1.7.4-py2.py3-none-any.whl.metadata (1.7 kB)
+#12 1.304 Downloading passlib-1.7.4-py2.py3-none-any.whl (525 kB)
+#12 1.393    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 525.6/525.6 kB 4.5 MB/s eta 0:00:00
+#12 1.422 Installing collected packages: passlib
+#12 1.946 Successfully installed passlib-1.7.4
+#12 DONE 2.3s
+
+#13 [ 9/15] RUN pip install argon2_cffi
+#13 1.538 Collecting argon2_cffi
+#13 1.584   Downloading argon2_cffi-23.1.0-py3-none-any.whl.metadata (5.2 kB)
+#13 1.676 Collecting argon2-cffi-bindings (from argon2_cffi)
+#13 1.686   Downloading argon2_cffi_bindings-21.2.0-cp36-abi3-musllinux_1_1_x86_64.whl.metadata (6.7 kB)
+#13 1.970 Collecting cffi>=1.0.1 (from argon2-cffi-bindings->argon2_cffi)
+#13 1.979   Downloading cffi-1.16.0-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (1.5 kB)
+#13 2.069 Collecting pycparser (from cffi>=1.0.1->argon2-cffi-bindings->argon2_cffi)
+#13 2.096   Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+#13 2.159 Downloading argon2_cffi-23.1.0-py3-none-any.whl (15 kB)
+#13 2.209 Downloading argon2_cffi_bindings-21.2.0-cp36-abi3-musllinux_1_1_x86_64.whl (88 kB)
+#13 2.267 Downloading cffi-1.16.0-cp312-cp312-musllinux_1_1_x86_64.whl (487 kB)
+#13 2.332 Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+#13 2.425 Installing collected packages: pycparser, cffi, argon2-cffi-bindings, argon2_cffi
+#13 3.006 Successfully installed argon2-cffi-bindings-21.2.0 argon2_cffi-23.1.0 cffi-1.16.0 pycparser-2.22
+#13 DONE 3.4s
+
+#14 [10/15] RUN pip install translitcodec
+#14 1.281 Collecting translitcodec
+#14 1.326   Downloading translitcodec-0.7.0.tar.gz (52 kB)
+#14 1.389   Installing build dependencies: started
+#14 4.421   Installing build dependencies: finished with status 'done'
+#14 4.422   Getting requirements to build wheel: started
+#14 4.715   Getting requirements to build wheel: finished with status 'done'
+#14 4.717   Preparing metadata (pyproject.toml): started
+#14 5.015   Preparing metadata (pyproject.toml): finished with status 'done'
+#14 5.019 Building wheels for collected packages: translitcodec
+#14 5.021   Building wheel for translitcodec (pyproject.toml): started
+#14 5.361   Building wheel for translitcodec (pyproject.toml): finished with status 'done'
+#14 5.362   Created wheel for translitcodec: filename=translitcodec-0.7.0-py3-none-any.whl size=10131 sha256=f7cffc1a45292693445ca81aabf80e0407c7d18134dc97d1a7df318c68f5d4c1
+#14 5.363   Stored in directory: /root/.cache/pip/wheels/f5/14/f8/bb26108007bbc431e0a2fbf291b2d0ae79d9dcb110903c2f34
+#14 5.368 Successfully built translitcodec
+#14 5.397 Installing collected packages: translitcodec
+#14 5.477 Successfully installed translitcodec-0.7.0
+#14 DONE 5.8s
+
+#15 [11/15] RUN pip install waitress
+#15 1.264 Collecting waitress
+#15 1.335   Downloading waitress-3.0.0-py3-none-any.whl.metadata (4.2 kB)
+#15 1.417 Downloading waitress-3.0.0-py3-none-any.whl (56 kB)
+#15 1.506 Installing collected packages: waitress
+#15 1.619 Successfully installed waitress-3.0.0
+#15 DONE 1.9s
+
+#16 [12/15] RUN pip install feedparser
+#16 1.254 Collecting feedparser
+#16 1.299   Downloading feedparser-6.0.11-py3-none-any.whl.metadata (2.4 kB)
+#16 1.442 Collecting sgmllib3k (from feedparser)
+#16 1.450   Downloading sgmllib3k-1.0.0.tar.gz (5.8 kB)
+#16 1.500   Installing build dependencies: started
+#16 4.237   Installing build dependencies: finished with status 'done'
+#16 4.238   Getting requirements to build wheel: started
+#16 4.521   Getting requirements to build wheel: finished with status 'done'
+#16 4.522   Preparing metadata (pyproject.toml): started
+#16 4.821   Preparing metadata (pyproject.toml): finished with status 'done'
+#16 4.846 Downloading feedparser-6.0.11-py3-none-any.whl (81 kB)
+#16 5.213 Building wheels for collected packages: sgmllib3k
+#16 5.214   Building wheel for sgmllib3k (pyproject.toml): started
+#16 5.560   Building wheel for sgmllib3k (pyproject.toml): finished with status 'done'
+#16 5.561   Created wheel for sgmllib3k: filename=sgmllib3k-1.0.0-py3-none-any.whl size=6047 sha256=e5352d56672d1878a321eda89fdb6d1625eaa0946d7f4e463676487579dea189
+#16 5.561   Stored in directory: /root/.cache/pip/wheels/03/f5/1a/23761066dac1d0e8e683e5fdb27e12de53209d05a4a37e6246
+#16 5.564 Successfully built sgmllib3k
+#16 5.598 Installing collected packages: sgmllib3k, feedparser
+#16 5.773 Successfully installed feedparser-6.0.11 sgmllib3k-1.0.0
+#16 DONE 6.1s
+
+#17 [13/15] COPY . /temboz
+#17 DONE 0.7s
+
+#18 [14/15] RUN rm -f /temboz/tembozapp/feedparser.py
+#18 DONE 0.7s
+
+#19 [15/15] WORKDIR /temboz/data
+#19 DONE 0.3s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 4.9s done
+#20 writing image sha256:155d0322ff6a2ccf56b1cb4f2774fe8b5d5d1efcb24888b3c7f0cab773fcf61e 0.0s done
+#20 naming to docker.io/library/image_name_v1_1 0.0s done
+#20 DONE 5.0s
+Duration: 1:0.61

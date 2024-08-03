@@ -1,0 +1,218 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 1.66kB done
+#1 DONE 0.5s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.6s
+
+#3 [auth] library/alpine:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/alpine:3.9
+#4 DONE 1.5s
+
+#5 [builder 1/4] FROM docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011
+#5 resolve docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011
+#5 resolve docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011 0.6s done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 12.90kB done
+#6 DONE 0.6s
+
+#5 [builder 1/4] FROM docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011
+#5 sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011 1.64kB / 1.64kB done
+#5 sha256:65b3a80ebe7471beecbc090c5b2cdd0aafeaefa0715f8f12e40dc918a3a70e32 528B / 528B done
+#5 sha256:78a2ce922f8665f5a227dc5cd9fda87221acba8a7a952b9665f99bc771a29963 1.51kB / 1.51kB done
+#5 sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 0B / 2.77MB 0.1s
+#5 sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 2.77MB / 2.77MB 0.2s
+#5 extracting sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5
+#5 sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 2.77MB / 2.77MB 0.3s done
+#5 extracting sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 0.2s done
+#5 DONE 1.6s
+
+#7 [production  2/10] RUN set -eux 	&& mkdir -p /var/www 	&& apk add --no-cache 		bash 		bind-tools 		curl 		jq 		python3 	&& ln -sf /usr/bin/python3 /usr/bin/python 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+#7 0.856 + mkdir -p /var/www
+#7 0.857 + apk add --no-cache bash bind-tools curl jq python3
+#7 0.863 fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/main/x86_64/APKINDEX.tar.gz
+#7 1.097 fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/community/x86_64/APKINDEX.tar.gz
+#7 1.852 (1/29) Installing ncurses-terminfo-base (6.1_p20190105-r0)
+#7 2.144 (2/29) Installing ncurses-terminfo (6.1_p20190105-r0)
+#7 2.829 (3/29) Installing ncurses-libs (6.1_p20190105-r0)
+#7 3.082 (4/29) Installing readline (7.0.003-r1)
+#7 3.305 (5/29) Installing bash (4.4.19-r1)
+#7 3.553 Executing bash-4.4.19-r1.post-install
+#7 3.556 (6/29) Installing libgcc (8.3.0-r0)
+#7 3.582 (7/29) Installing krb5-conf (1.0-r1)
+#7 3.815 (8/29) Installing libcom_err (1.44.5-r2)
+#7 4.012 (9/29) Installing keyutils-libs (1.6-r0)
+#7 4.212 (10/29) Installing libverto (0.3.0-r1)
+#7 4.552 (11/29) Installing krb5-libs (1.15.5-r1)
+#7 4.849 (12/29) Installing json-c (0.13.1-r1)
+#7 5.064 (13/29) Installing libxml2 (2.9.9-r3)
+#7 5.291 (14/29) Installing bind-libs (9.12.4_p2-r0)
+#7 5.592 (15/29) Installing bind-tools (9.12.4_p2-r0)
+#7 5.802 (16/29) Installing ca-certificates (20191127-r2)
+#7 6.353 (17/29) Installing nghttp2-libs (1.35.1-r2)
+#7 6.568 (18/29) Installing libssh2 (1.9.0-r1)
+#7 6.784 (19/29) Installing libcurl (7.64.0-r5)
+#7 6.799 (20/29) Installing curl (7.64.0-r5)
+#7 7.202 (21/29) Installing oniguruma (6.9.4-r1)
+#7 7.532 (22/29) Installing jq (1.6-r0)
+#7 7.808 (23/29) Installing libbz2 (1.0.6-r7)
+#7 8.012 (24/29) Installing expat (2.2.8-r0)
+#7 8.252 (25/29) Installing libffi (3.2.1-r6)
+#7 8.274 (26/29) Installing gdbm (1.13-r1)
+#7 8.522 (27/29) Installing xz-libs (5.2.4-r0)
+#7 8.782 (28/29) Installing sqlite-libs (3.28.0-r3)
+#7 9.095 (29/29) Installing python3 (3.6.9-r3)
+#7 ...
+
+#8 [builder 2/4] RUN set -x 	&& apk add --no-cache 		gcc 		libffi-dev 		make 		musl-dev 		openssl-dev 		python3 		python3-dev
+#8 0.853 + apk add --no-cache gcc libffi-dev make musl-dev openssl-dev python3 python3-dev
+#8 0.858 fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/main/x86_64/APKINDEX.tar.gz
+#8 1.096 fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/community/x86_64/APKINDEX.tar.gz
+#8 1.853 (1/32) Upgrading musl (1.1.20-r5 -> 1.1.20-r6)
+#8 2.071 (2/32) Upgrading libcrypto1.1 (1.1.1g-r0 -> 1.1.1k-r0)
+#8 2.122 (3/32) Upgrading libssl1.1 (1.1.1g-r0 -> 1.1.1k-r0)
+#8 2.130 (4/32) Installing binutils (2.31.1-r2)
+#8 2.403 (5/32) Installing gmp (6.1.2-r1)
+#8 2.602 (6/32) Installing isl (0.18-r0)
+#8 2.845 (7/32) Installing libgomp (8.3.0-r0)
+#8 3.062 (8/32) Installing libatomic (8.3.0-r0)
+#8 3.321 (9/32) Installing libgcc (8.3.0-r0)
+#8 3.541 (10/32) Installing mpfr3 (3.1.5-r1)
+#8 3.752 (11/32) Installing mpc1 (1.0.3-r1)
+#8 3.998 (12/32) Installing libstdc++ (8.3.0-r0)
+#8 4.242 (13/32) Installing gcc (8.3.0-r0)
+#8 6.389 (14/32) Upgrading musl-utils (1.1.20-r5 -> 1.1.20-r6)
+#8 6.592 (15/32) Installing linux-headers (4.18.13-r1)
+#8 6.895 (16/32) Installing libffi (3.2.1-r6)
+#8 7.110 (17/32) Installing pkgconf (1.6.0-r0)
+#8 7.317 (18/32) Installing libffi-dev (3.2.1-r6)
+#8 7.526 (19/32) Installing make (4.2.1-r2)
+#8 7.732 (20/32) Installing musl-dev (1.1.20-r6)
+#8 8.075 (21/32) Installing openssl-dev (1.1.1k-r0)
+#8 8.436 (22/32) Installing libbz2 (1.0.6-r7)
+#8 8.440 (23/32) Installing expat (2.2.8-r0)
+#8 8.450 (24/32) Installing gdbm (1.13-r1)
+#8 8.654 (25/32) Installing xz-libs (5.2.4-r0)
+#8 8.862 (26/32) Installing ncurses-terminfo-base (6.1_p20190105-r0)
+#8 8.867 (27/32) Installing ncurses-terminfo (6.1_p20190105-r0)
+#8 9.226 (28/32) Installing ncurses-libs (6.1_p20190105-r0)
+#8 9.236 (29/32) Installing readline (7.0.003-r1)
+#8 9.242 (30/32) Installing sqlite-libs (3.28.0-r3)
+#8 9.257 (31/32) Installing python3 (3.6.9-r3)
+#8 ...
+
+#7 [production  2/10] RUN set -eux 	&& mkdir -p /var/www 	&& apk add --no-cache 		bash 		bind-tools 		curl 		jq 		python3 	&& ln -sf /usr/bin/python3 /usr/bin/python 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+#7 11.24 Executing busybox-1.29.3-r10.trigger
+#7 11.25 Executing ca-certificates-20191127-r2.trigger
+#7 11.31 OK: 79 MiB in 43 packages
+#7 11.33 + ln -sf /usr/bin/python3 /usr/bin/python
+#7 11.34 + find /usr/lib/ -name __pycache__ -print0
+#7 11.34 + xargs -0 -n1 rm -rf
+#7 11.48 + find /usr/lib/ -name '*.pyc' -print0
+#7 11.48 + xargs -0 -n1 rm -rf
+#7 ...
+
+#8 [builder 2/4] RUN set -x 	&& apk add --no-cache 		gcc 		libffi-dev 		make 		musl-dev 		openssl-dev 		python3 		python3-dev
+#8 11.27 (32/32) Installing python3-dev (3.6.9-r3)
+#8 22.20 Executing busybox-1.29.3-r10.trigger
+#8 22.40 OK: 228 MiB in 42 packages
+#8 ...
+
+#7 [production  2/10] RUN set -eux 	&& mkdir -p /var/www 	&& apk add --no-cache 		bash 		bind-tools 		curl 		jq 		python3 	&& ln -sf /usr/bin/python3 /usr/bin/python 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+#7 DONE 25.5s
+
+#8 [builder 2/4] RUN set -x 	&& apk add --no-cache 		gcc 		libffi-dev 		make 		musl-dev 		openssl-dev 		python3 		python3-dev
+#8 DONE 25.7s
+
+#9 [builder 3/4] RUN set -x 	&& pip3 install --no-cache-dir --no-compile awscli 	&& rm -r /usr/lib/python3.6/site-packages/awscli/examples 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf 	&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+'
+#9 0.804 + pip3 install --no-cache-dir --no-compile awscli
+#9 1.266 Collecting awscli
+#9 3.807   Downloading https://files.pythonhosted.org/packages/6c/48/8cf68d31f3f8606904acc4d98965a2c020acd5e1b9a821b8a7fafdbbc81a/awscli-1.24.10-py3-none-any.whl (3.9MB)
+#9 5.150 Collecting rsa<4.8,>=3.1.2 (from awscli)
+#9 5.216   Downloading https://files.pythonhosted.org/packages/e9/93/0c0f002031f18b53af7a6166103c02b9c0667be528944137cc954ec921b3/rsa-4.7.2-py3-none-any.whl
+#9 5.237 Collecting docutils<0.17,>=0.10 (from awscli)
+#9 5.309   Downloading https://files.pythonhosted.org/packages/81/44/8a15e45ffa96e6cf82956dd8d7af9e666357e16b0d93b253903475ee947f/docutils-0.16-py2.py3-none-any.whl (548kB)
+#9 5.418 Collecting s3transfer<0.6.0,>=0.5.0 (from awscli)
+#9 5.484   Downloading https://files.pythonhosted.org/packages/7b/9c/f51775ebe7df5a7aa4e7c79ed671bde94e154bd968aca8d65bb24aba0c8c/s3transfer-0.5.2-py3-none-any.whl (79kB)
+#9 5.509 Collecting botocore==1.26.10 (from awscli)
+#9 7.952   Downloading https://files.pythonhosted.org/packages/09/b8/794e0bd260198538ded90c26b353ddb632eab01950d4e7e2e2b8ee510d12/botocore-1.26.10-py3-none-any.whl (8.8MB)
+#9 8.665 Collecting PyYAML<5.5,>=3.10 (from awscli)
+#9 8.929   Downloading https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz (175kB)
+#9 9.246   Installing build dependencies: started
+#9 15.03   Installing build dependencies: finished with status 'done'
+#9 15.55     Complete output from command python setup.py egg_info:
+#9 15.55     running egg_info
+#9 15.55     creating pip-egg-info/PyYAML.egg-info
+#9 15.55     writing pip-egg-info/PyYAML.egg-info/PKG-INFO
+#9 15.55     writing dependency_links to pip-egg-info/PyYAML.egg-info/dependency_links.txt
+#9 15.55     writing top-level names to pip-egg-info/PyYAML.egg-info/top_level.txt
+#9 15.55     writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+#9 15.55     Traceback (most recent call last):
+#9 15.55       File "<string>", line 1, in <module>
+#9 15.55       File "/tmp/pip-install-q6ehdefi/PyYAML/setup.py", line 295, in <module>
+#9 15.55         python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+#9 15.55       File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/__init__.py", line 153, in setup
+#9 15.55         return distutils.core.setup(**attrs)
+#9 15.55       File "/usr/lib/python3.6/distutils/core.py", line 148, in setup
+#9 15.55         dist.run_commands()
+#9 15.55       File "/usr/lib/python3.6/distutils/dist.py", line 955, in run_commands
+#9 15.55         self.run_command(cmd)
+#9 15.55       File "/usr/lib/python3.6/distutils/dist.py", line 974, in run_command
+#9 15.55         cmd_obj.run()
+#9 15.55       File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 299, in run
+#9 15.55         self.find_sources()
+#9 15.55       File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 306, in find_sources
+#9 15.55         mm.run()
+#9 15.55       File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 541, in run
+#9 15.55         self.add_defaults()
+#9 15.55       File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 578, in add_defaults
+#9 15.55         sdist.add_defaults(self)
+#9 15.55       File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 34, in add_defaults
+#9 15.55         self._add_defaults_ext()
+#9 15.55       File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 118, in _add_defaults_ext
+#9 15.55         self.filelist.extend(build_ext.get_source_files())
+#9 15.55       File "/tmp/pip-install-q6ehdefi/PyYAML/setup.py", line 201, in get_source_files
+#9 15.55         self.cython_sources(ext.sources, ext)
+#9 15.55       File "/usr/lib/python3.6/distutils/cmd.py", line 103, in __getattr__
+#9 15.55         raise AttributeError(attr)
+#9 15.55     AttributeError: cython_sources
+#9 15.55     
+#9 15.55     ----------------------------------------
+#9 16.12 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-q6ehdefi/PyYAML/
+#9 16.32 You are using pip version 18.1, however version 21.3.1 is available.
+#9 16.32 You should consider upgrading via the 'pip install --upgrade pip' command.
+#9 ERROR: process "/bin/sh -c set -x \t&& pip3 install --no-cache-dir --no-compile awscli \t&& rm -r /usr/lib/python3.6/site-packages/awscli/examples \t&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \t&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf \t&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+'" did not complete successfully: exit code: 1
+------
+ > [builder 3/4] RUN set -x 	&& pip3 install --no-cache-dir --no-compile awscli 	&& rm -r /usr/lib/python3.6/site-packages/awscli/examples 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf 	&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+':
+15.55       File "/tmp/pip-install-q6ehdefi/PyYAML/setup.py", line 201, in get_source_files
+15.55         self.cython_sources(ext.sources, ext)
+15.55       File "/usr/lib/python3.6/distutils/cmd.py", line 103, in __getattr__
+15.55         raise AttributeError(attr)
+15.55     AttributeError: cython_sources
+15.55     
+15.55     ----------------------------------------
+16.12 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-q6ehdefi/PyYAML/
+16.32 You are using pip version 18.1, however version 21.3.1 is available.
+16.32 You should consider upgrading via the 'pip install --upgrade pip' command.
+------
+Dockerfile:13
+--------------------
+  12 |     
+  13 | >>> RUN set -x \
+  14 | >>> 	&& pip3 install --no-cache-dir --no-compile awscli \
+  15 | >>> 	&& rm -r /usr/lib/python3.6/site-packages/awscli/examples \
+  16 | >>> 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
+  17 | >>> 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf \
+  18 | >>> 	&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+'
+  19 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c set -x \t&& pip3 install --no-cache-dir --no-compile awscli \t&& rm -r /usr/lib/python3.6/site-packages/awscli/examples \t&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \t&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf \t&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+'" did not complete successfully: exit code: 1
+Duration: 0:46.72

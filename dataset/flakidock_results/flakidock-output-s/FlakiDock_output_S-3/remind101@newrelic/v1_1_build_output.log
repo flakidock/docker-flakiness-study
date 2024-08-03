@@ -1,0 +1,70 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 335B done
+#1 DONE 0.0s
+
+#2 [auth] library/golang:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/golang:1.4
+#3 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/6] FROM docker.io/library/golang:1.4@sha256:538916ff09975b8f610c251e59ddfe131dd6c1bfdbc02cbd9724196a3d719a30
+#6 resolve docker.io/library/golang:1.4@sha256:538916ff09975b8f610c251e59ddfe131dd6c1bfdbc02cbd9724196a3d719a30 0.1s done
+#6 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 3.38MB 0.0s done
+#5 DONE 0.1s
+
+#6 [1/6] FROM docker.io/library/golang:1.4@sha256:538916ff09975b8f610c251e59ddfe131dd6c1bfdbc02cbd9724196a3d719a30
+#6 resolve docker.io/library/golang:1.4@sha256:538916ff09975b8f610c251e59ddfe131dd6c1bfdbc02cbd9724196a3d719a30 done
+#6 extracting sha256:7268d8f794c449e593d3a48f62e7e22b7c3a4b6e615caaf9494ec3cb2d48f503
+#6 sha256:25f4a8c55a9b41b38beed2e3e9e0d43e76655173450a9d4302bd0de73628878d 123B / 123B done
+#6 sha256:d45512a784a33b701cb3b02b025dec57ccedeb84e8fc2d907d8cf9ade1801559 1.35kB / 1.35kB done
+#6 sha256:7268d8f794c449e593d3a48f62e7e22b7c3a4b6e615caaf9494ec3cb2d48f503 51.37MB / 51.37MB done
+#6 sha256:d9a49bc2b1b0cdba4093d4ef5d276883a81a3141f05bdb46eb8bacb5b5d94acf 18.53MB / 18.53MB done
+#6 sha256:b965864d2d455f06e4ad8165d12456219dcaeed2e49b0f13ada623aa00d9e822 42.49MB / 42.49MB done
+#6 sha256:bad3f2daf720952bee23d5dc4baf526bfaac8f0629de7db640058c3d8f632c3e 56.89MB / 56.89MB done
+#6 sha256:61db11059a7f7b24e125090c65f70b544236ee47090e1deadc5962969092f776 35.42MB / 35.42MB done
+#6 extracting sha256:7268d8f794c449e593d3a48f62e7e22b7c3a4b6e615caaf9494ec3cb2d48f503 3.1s done
+#6 extracting sha256:d9a49bc2b1b0cdba4093d4ef5d276883a81a3141f05bdb46eb8bacb5b5d94acf
+#6 extracting sha256:d9a49bc2b1b0cdba4093d4ef5d276883a81a3141f05bdb46eb8bacb5b5d94acf 0.6s done
+#6 extracting sha256:b965864d2d455f06e4ad8165d12456219dcaeed2e49b0f13ada623aa00d9e822
+#6 extracting sha256:b965864d2d455f06e4ad8165d12456219dcaeed2e49b0f13ada623aa00d9e822 2.5s done
+#6 extracting sha256:bad3f2daf720952bee23d5dc4baf526bfaac8f0629de7db640058c3d8f632c3e
+#6 extracting sha256:bad3f2daf720952bee23d5dc4baf526bfaac8f0629de7db640058c3d8f632c3e 2.0s done
+#6 extracting sha256:61db11059a7f7b24e125090c65f70b544236ee47090e1deadc5962969092f776
+#6 extracting sha256:61db11059a7f7b24e125090c65f70b544236ee47090e1deadc5962969092f776 2.5s done
+#6 extracting sha256:25f4a8c55a9b41b38beed2e3e9e0d43e76655173450a9d4302bd0de73628878d
+#6 extracting sha256:25f4a8c55a9b41b38beed2e3e9e0d43e76655173450a9d4302bd0de73628878d done
+#6 extracting sha256:d45512a784a33b701cb3b02b025dec57ccedeb84e8fc2d907d8cf9ade1801559 done
+#6 DONE 15.0s
+
+#7 [2/6] RUN go get github.com/remind101/newrelic
+#7 0.772 package github.com/remind101/newrelic
+#7 0.772 	imports golang.org/x/net/context: unrecognized import path "golang.org/x/net/context"
+#7 ERROR: process "/bin/sh -c go get github.com/remind101/newrelic" did not complete successfully: exit code: 1
+------
+ > [2/6] RUN go get github.com/remind101/newrelic:
+0.772 package github.com/remind101/newrelic
+0.772 	imports golang.org/x/net/context: unrecognized import path "golang.org/x/net/context"
+------
+v1_Dockerfile:4
+--------------------
+   2 |     FROM golang:1.4
+   3 |     
+   4 | >>> RUN go get github.com/remind101/newrelic
+   5 |     
+   6 |     COPY . /go/src/github.com/remind101/newrelic
+--------------------
+ERROR: failed to solve: process "/bin/sh -c go get github.com/remind101/newrelic" did not complete successfully: exit code: 1
+Duration: 0:20.59

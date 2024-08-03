@@ -1,0 +1,99 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 200B done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 175B done
+#2 DONE 0.3s
+
+#3 [internal] load metadata for docker.io/library/node:16
+#3 DONE 0.5s
+
+#4 [ 1/14] FROM docker.io/library/node:16@sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0b
+#4 resolve docker.io/library/node:16@sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0b 0.2s done
+#4 sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0b 776B / 776B done
+#4 sha256:c94b82f9827cab6e421b350965a9ef11b25b13ffbd1030536203d541f55dcbe2 2.00kB / 2.00kB done
+#4 sha256:1ddc7e4055fdb6f6bf31063b593befda814294f9f904b6ddfc21ab1513bafa8e 7.23kB / 7.23kB done
+#4 sha256:7e9bf114588c05b2df612b083b96582f3b8dbf51647aa6138a50d09d42df2454 17.58MB / 17.58MB 1.0s done
+#4 sha256:311da6c465ea1576925360eba391bcd32dece9be95960a0bc9ffcb25fe712017 50.50MB / 50.50MB 2.0s done
+#4 sha256:ffd9397e94b74abcb54e514f1430e00f604328d1f895eadbd482f08cc02444e5 51.89MB / 51.89MB 2.8s done
+#4 sha256:ae3b95bbaa61ce24cefdd89e7c74d6fbd7713b2bcae93af47063d06bd7e02172 4.20kB / 4.20kB 3.2s done
+#4 sha256:ca266fd6192108b67fb57b74753a8c4ca5d8bd458baae3d4df7ce9f42dedcc1d 2.27MB / 2.27MB 3.5s done
+#4 sha256:0e421f66aff42bb069dffc26af6d132194b22a1082b08c5ef7cd69c627783c04 34.79MB / 34.79MB 4.2s done
+#4 sha256:ee7d78be1eb92caf6ae84fc3af736b23eca018d5dedc967ae5bdee6d7082403b 450B / 450B 4.3s done
+#4 sha256:513d779256048c961239af5f500589330546b072775217272e19ffae1635e98e 191.90MB / 191.90MB 7.6s done
+#4 extracting sha256:311da6c465ea1576925360eba391bcd32dece9be95960a0bc9ffcb25fe712017 8.4s done
+#4 extracting sha256:7e9bf114588c05b2df612b083b96582f3b8dbf51647aa6138a50d09d42df2454 1.7s done
+#4 extracting sha256:ffd9397e94b74abcb54e514f1430e00f604328d1f895eadbd482f08cc02444e5 8.3s done
+#4 extracting sha256:513d779256048c961239af5f500589330546b072775217272e19ffae1635e98e 30.6s done
+#4 extracting sha256:ae3b95bbaa61ce24cefdd89e7c74d6fbd7713b2bcae93af47063d06bd7e02172 0.5s done
+#4 extracting sha256:0e421f66aff42bb069dffc26af6d132194b22a1082b08c5ef7cd69c627783c04 5.4s done
+#4 extracting sha256:ca266fd6192108b67fb57b74753a8c4ca5d8bd458baae3d4df7ce9f42dedcc1d 0.7s done
+#4 extracting sha256:ee7d78be1eb92caf6ae84fc3af736b23eca018d5dedc967ae5bdee6d7082403b done
+#4 DONE 65.5s
+
+#5 [internal] load build context
+#5 transferring context: 557.79kB 0.7s done
+#5 DONE 2.2s
+
+#6 [2/5] WORKDIR /usr/src/app
+#6 DONE 2.2s
+
+#7 [3/5] COPY package.json ./
+#7 DONE 0.4s
+
+#8 [4/5] RUN npm install && npm cache clean --force
+#8 52.30 npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+#8 54.86 npm WARN deprecated items@2.2.1: This module has been deprecated. It's not used by modern hapi versions anymore. Please refer to https://hapi.dev for migration to latest versions.
+#8 54.86 npm WARN deprecated hoek@4.3.1: This module has moved and is now available at @hapi/hoek. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues.
+#8 55.18 npm WARN deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+#8 55.39 npm WARN deprecated topo@2.1.1: This module has moved and is now available at @hapi/topo. Please update your dependencies as this version is no longer maintained and may contain bugs and security issues.
+#8 55.59 npm WARN deprecated circular-json@0.3.3: CircularJSON is in maintenance only, flatted is its successor.
+#8 55.75 npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#8 56.39 npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#8 56.84 npm WARN deprecated glob@7.1.2: Glob versions prior to v9 are no longer supported
+#8 57.11 npm WARN deprecated express-pino-logger@2.0.0: use pino-http instead
+#8 57.29 npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+#8 57.72 npm WARN deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+#8 58.07 npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+#8 59.80 npm WARN deprecated joi@10.6.0: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+#8 90.86 
+#8 90.86 added 377 packages, and audited 515 packages in 1m
+#8 90.86 
+#8 90.86 34 packages are looking for funding
+#8 90.86   run `npm fund` for details
+#8 91.03 
+#8 91.03 27 vulnerabilities (1 low, 14 moderate, 9 high, 3 critical)
+#8 91.03 
+#8 91.03 To address issues that do not require attention, run:
+#8 91.03   npm audit fix
+#8 91.03 
+#8 91.03 To address all issues possible (including breaking changes), run:
+#8 91.03   npm audit fix --force
+#8 91.03 
+#8 91.03 Some issues need review, and may require choosing
+#8 91.03 a different dependency.
+#8 91.03 
+#8 91.03 Run `npm audit` for details.
+#8 91.04 npm notice 
+#8 91.04 npm notice New major version of npm available! 8.19.4 -> 10.8.2
+#8 91.04 npm notice Changelog: <https://github.com/npm/cli/releases/tag/v10.8.2>
+#8 91.04 npm notice Run `npm install -g npm@10.8.2` to update!
+#8 91.04 npm notice 
+#8 93.80 npm WARN using --force Recommended protections disabled.
+#8 DONE 98.8s
+
+#9 [5/5] COPY . .
+#9 DONE 0.7s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 5.6s done
+#10 writing image sha256:9b2c3f0cfd91b024b2b64f0a95d5131e2f3d00fe3b1747afc6e2f7a2ba63d1e4
+#10 writing image sha256:9b2c3f0cfd91b024b2b64f0a95d5131e2f3d00fe3b1747afc6e2f7a2ba63d1e4 0.0s done
+#10 naming to docker.io/library/image_name_v1_1 0.0s done
+#10 DONE 5.7s
+Duration: 1:50.07

@@ -1,0 +1,143 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 484B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.8.1-alpine3.11
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 3.67kB done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.8.1-alpine3.11@sha256:50c60fffe5451e18af2c53d75b6864b5a0fcb458e239302cc218064ce4946ce7
+#5 resolve docker.io/library/python:3.8.1-alpine3.11@sha256:50c60fffe5451e18af2c53d75b6864b5a0fcb458e239302cc218064ce4946ce7 0.0s done
+#5 sha256:50c60fffe5451e18af2c53d75b6864b5a0fcb458e239302cc218064ce4946ce7 1.65kB / 1.65kB done
+#5 sha256:8201994534b8574f71075e68ab6a356ed5f323b7eb6e2bc10e6a1349805431ae 1.37kB / 1.37kB done
+#5 sha256:a1cd5654cf3ce767a9370886016b90604827da9ad3eb9f170389a23bab8f6c0f 7.11kB / 7.11kB done
+#5 sha256:c9b1b535fdd91a9855fb7f82348177e5f019329a58c53c47272962dd60f71fc9 0B / 2.80MB 0.1s
+#5 sha256:2cc5ad85d9abaadf23d5ae53c3f32e7ccb2df1956869980bfd2491ff396d348a 0B / 301.26kB 0.1s
+#5 sha256:61614c1a5710c76af6b2a9c7170a81eb0dd76ccf90e921abc0c9dcc1d5ed490e 0B / 31.51MB 0.1s
+#5 sha256:c9b1b535fdd91a9855fb7f82348177e5f019329a58c53c47272962dd60f71fc9 2.80MB / 2.80MB 0.2s done
+#5 extracting sha256:c9b1b535fdd91a9855fb7f82348177e5f019329a58c53c47272962dd60f71fc9 0.1s done
+#5 sha256:0522d30cde10ac29ae2c555b9bde76c2b50aafc7ef7435bbc7e19de706bcadcd 0B / 230B 0.2s
+#5 sha256:2cc5ad85d9abaadf23d5ae53c3f32e7ccb2df1956869980bfd2491ff396d348a 301.26kB / 301.26kB 0.2s done
+#5 sha256:61614c1a5710c76af6b2a9c7170a81eb0dd76ccf90e921abc0c9dcc1d5ed490e 8.39MB / 31.51MB 0.4s
+#5 sha256:0522d30cde10ac29ae2c555b9bde76c2b50aafc7ef7435bbc7e19de706bcadcd 230B / 230B 0.3s done
+#5 sha256:938854eeb444c026810a9a4a73d3ed5e4dfba91570f1e07b1331cd979c541c17 1.89MB / 1.89MB 0.3s done
+#5 extracting sha256:2cc5ad85d9abaadf23d5ae53c3f32e7ccb2df1956869980bfd2491ff396d348a
+#5 sha256:61614c1a5710c76af6b2a9c7170a81eb0dd76ccf90e921abc0c9dcc1d5ed490e 14.68MB / 31.51MB 0.5s
+#5 extracting sha256:2cc5ad85d9abaadf23d5ae53c3f32e7ccb2df1956869980bfd2491ff396d348a 0.1s done
+#5 sha256:61614c1a5710c76af6b2a9c7170a81eb0dd76ccf90e921abc0c9dcc1d5ed490e 26.21MB / 31.51MB 0.7s
+#5 sha256:61614c1a5710c76af6b2a9c7170a81eb0dd76ccf90e921abc0c9dcc1d5ed490e 31.51MB / 31.51MB 0.8s
+#5 extracting sha256:61614c1a5710c76af6b2a9c7170a81eb0dd76ccf90e921abc0c9dcc1d5ed490e
+#5 sha256:61614c1a5710c76af6b2a9c7170a81eb0dd76ccf90e921abc0c9dcc1d5ed490e 31.51MB / 31.51MB 0.8s done
+#5 extracting sha256:61614c1a5710c76af6b2a9c7170a81eb0dd76ccf90e921abc0c9dcc1d5ed490e 1.7s done
+#5 extracting sha256:0522d30cde10ac29ae2c555b9bde76c2b50aafc7ef7435bbc7e19de706bcadcd
+#5 extracting sha256:0522d30cde10ac29ae2c555b9bde76c2b50aafc7ef7435bbc7e19de706bcadcd done
+#5 extracting sha256:938854eeb444c026810a9a4a73d3ed5e4dfba91570f1e07b1331cd979c541c17 0.1s
+#5 extracting sha256:938854eeb444c026810a9a4a73d3ed5e4dfba91570f1e07b1331cd979c541c17 0.2s done
+#5 DONE 3.2s
+
+#6 [2/5] COPY includes/requirements.txt /
+#6 DONE 0.4s
+
+#7 [3/5] RUN apk add --no-cache tzdata     && pip install --no-cache-dir -r /requirements.txt     && addgroup -g 1000 holiday     && adduser -D -u 1000 -G holiday holiday     && rm requirements.txt
+#7 0.174 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#7 0.250 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#7 0.344 (1/1) Installing tzdata (2021e-r0)
+#7 0.440 Executing busybox-1.31.1-r9.trigger
+#7 0.446 OK: 21 MiB in 36 packages
+#7 1.764 Collecting pyyaml==5.4
+#7 1.805   Downloading PyYAML-5.4.tar.gz (174 kB)
+#7 1.998   Installing build dependencies: started
+#7 6.206   Installing build dependencies: finished with status 'done'
+#7 6.206   Getting requirements to build wheel: started
+#7 6.510   ERROR: Command errored out with exit status 1:
+#7 6.510    command: /usr/local/bin/python /usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpwhghqh2_
+#7 6.510        cwd: /tmp/pip-install-ls_z_zae/pyyaml
+#7 6.510   Complete output (48 lines):
+#7 6.510   running egg_info
+#7 6.510   writing lib3/PyYAML.egg-info/PKG-INFO
+#7 6.510   writing dependency_links to lib3/PyYAML.egg-info/dependency_links.txt
+#7 6.510   writing top-level names to lib3/PyYAML.egg-info/top_level.txt
+#7 6.510   Traceback (most recent call last):
+#7 6.510     File "/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py", line 257, in <module>
+#7 6.510       main()
+#7 6.510     File "/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py", line 240, in main
+#7 6.510       json_out['return_val'] = hook(**hook_input['kwargs'])
+#7 6.510     File "/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py", line 91, in get_requires_for_build_wheel
+#7 6.510       return hook(config_settings)
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 327, in get_requires_for_build_wheel
+#7 6.510       return self._get_build_requires(config_settings, requirements=[])
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 297, in _get_build_requires
+#7 6.510       self.run_setup()
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 313, in run_setup
+#7 6.510       exec(code, locals())
+#7 6.510     File "<string>", line 271, in <module>
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/__init__.py", line 108, in setup
+#7 6.510       return distutils.core.setup(**attrs)
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/_distutils/core.py", line 184, in setup
+#7 6.510       return run_commands(dist)
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/_distutils/core.py", line 200, in run_commands
+#7 6.510       dist.run_commands()
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/_distutils/dist.py", line 970, in run_commands
+#7 6.510       self.run_command(cmd)
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/dist.py", line 945, in run_command
+#7 6.510       super().run_command(command)
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/_distutils/dist.py", line 989, in run_command
+#7 6.510       cmd_obj.run()
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 310, in run
+#7 6.510       self.find_sources()
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 318, in find_sources
+#7 6.510       mm.run()
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 539, in run
+#7 6.510       self.add_defaults()
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 577, in add_defaults
+#7 6.510       sdist.add_defaults(self)
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/command/sdist.py", line 102, in add_defaults
+#7 6.510       super().add_defaults()
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/_distutils/command/sdist.py", line 250, in add_defaults
+#7 6.510       self._add_defaults_ext()
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/_distutils/command/sdist.py", line 335, in _add_defaults_ext
+#7 6.510       self.filelist.extend(build_ext.get_source_files())
+#7 6.510     File "<string>", line 201, in get_source_files
+#7 6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/_distutils/cmd.py", line 107, in __getattr__
+#7 6.510       raise AttributeError(attr)
+#7 6.510   AttributeError: cython_sources
+#7 6.510   ----------------------------------------
+#7 6.512   Getting requirements to build wheel: finished with status 'error'
+#7 6.563 ERROR: Command errored out with exit status 1: /usr/local/bin/python /usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpwhghqh2_ Check the logs for full command output.
+#7 6.702 WARNING: You are using pip version 20.0.2; however, version 24.2 is available.
+#7 6.702 You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+#7 ERROR: process "/bin/sh -c apk add --no-cache tzdata     && pip install --no-cache-dir -r /requirements.txt     && addgroup -g 1000 holiday     && adduser -D -u 1000 -G holiday holiday     && rm requirements.txt" did not complete successfully: exit code: 1
+------
+ > [3/5] RUN apk add --no-cache tzdata     && pip install --no-cache-dir -r /requirements.txt     && addgroup -g 1000 holiday     && adduser -D -u 1000 -G holiday holiday     && rm requirements.txt:
+6.510       self.filelist.extend(build_ext.get_source_files())
+6.510     File "<string>", line 201, in get_source_files
+6.510     File "/tmp/pip-build-env-mhdfa1io/overlay/lib/python3.8/site-packages/setuptools/_distutils/cmd.py", line 107, in __getattr__
+6.510       raise AttributeError(attr)
+6.510   AttributeError: cython_sources
+6.510   ----------------------------------------
+6.512   Getting requirements to build wheel: finished with status 'error'
+6.563 ERROR: Command errored out with exit status 1: /usr/local/bin/python /usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpwhghqh2_ Check the logs for full command output.
+6.702 WARNING: You are using pip version 20.0.2; however, version 24.2 is available.
+6.702 You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+------
+v1_Dockerfile:4
+--------------------
+   3 |     COPY includes/requirements.txt /
+   4 | >>> RUN apk add --no-cache tzdata \
+   5 | >>>     && pip install --no-cache-dir -r /requirements.txt \
+   6 | >>>     && addgroup -g 1000 holiday \
+   7 | >>>     && adduser -D -u 1000 -G holiday holiday \
+   8 | >>>     && rm requirements.txt
+   9 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk add --no-cache tzdata     && pip install --no-cache-dir -r /requirements.txt     && addgroup -g 1000 holiday     && adduser -D -u 1000 -G holiday holiday     && rm requirements.txt" did not complete successfully: exit code: 1
+Duration: 0:11.42

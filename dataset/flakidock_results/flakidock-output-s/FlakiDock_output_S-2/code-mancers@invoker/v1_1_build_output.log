@@ -1,0 +1,48 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 359B done
+#1 DONE 0.0s
+
+#2 [auth] library/ruby:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ruby:2.3
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 313B done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/ruby:2.3@sha256:78cc821d95c48621e577b6b0d44c9d509f0f2a4e089b9fd0ca2ae86f274773a8
+#6 resolve docker.io/library/ruby:2.3@sha256:78cc821d95c48621e577b6b0d44c9d509f0f2a4e089b9fd0ca2ae86f274773a8 0.0s done
+#6 sha256:79c9f9a430a66c7e307573c8220d0a83a834fdcf4f5034a91730b7015742c75b 2.00kB / 2.00kB done
+#6 sha256:78cc821d95c48621e577b6b0d44c9d509f0f2a4e089b9fd0ca2ae86f274773a8 2.37kB / 2.37kB done
+#6 sha256:c0d23ebb3ed63af928b7c4a954de87a5d3c1fe98a2dfcb2a44e685a3e65c3c61 7.50kB / 7.50kB done
+#6 CANCELED
+
+#7 [3/5] WORKDIR /invoker
+#7 CACHED
+
+#8 [2/5] RUN apt-get update && apt-get -y install dnsmasq socat && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [4/5] COPY Gemfile Gemfile.lock ./
+#9 ERROR: failed to calculate checksum of ref c3596534-6799-4d12-ab1d-6e022b2d94ff::wf3y9th7koxn47yzbd96v7s22: "/Gemfile.lock": not found
+------
+ > [4/5] COPY Gemfile Gemfile.lock ./:
+------
+v1_Dockerfile:10
+--------------------
+   8 |     WORKDIR /invoker
+   9 |     
+  10 | >>> COPY Gemfile Gemfile.lock ./
+  11 |     
+  12 |     RUN bundle install --path vendor/
+--------------------
+ERROR: failed to solve: failed to compute cache key: failed to calculate checksum of ref c3596534-6799-4d12-ab1d-6e022b2d94ff::wf3y9th7koxn47yzbd96v7s22: "/Gemfile.lock": not found
+Duration: 0:1.42

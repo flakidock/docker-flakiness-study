@@ -1,0 +1,126 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 484B done
+#1 DONE 0.3s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 66B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.9s
+
+#4 [1/3] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 17.77kB done
+#5 DONE 0.3s
+
+#4 [1/3] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.3s done
+#4 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#4 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#4 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.2s
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s done
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.2s done
+#4 DONE 1.3s
+
+#6 [2/3] RUN apk update --no-progress &&     apk add --no-cache --no-progress         bash         python3         py3-pip         git         mercurial &&     python3 -m venv /opt/venv &&     . /opt/venv/bin/activate &&     pip install --upgrade pip &&     pip install 'requests>=2.8.1'
+#6 0.438 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.688 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 1.206 v3.20.2-45-g194e307d75d [https://dl-cdn.alpinelinux.org/alpine/v3.20/main]
+#6 1.206 v3.20.2-43-g4fdd3a681b2 [https://dl-cdn.alpinelinux.org/alpine/v3.20/community]
+#6 1.206 OK: 24154 distinct packages available
+#6 1.272 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 1.358 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 1.699 (1/40) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 1.722 (2/40) Installing libncursesw (6.4_p20240420-r0)
+#6 1.730 (3/40) Installing readline (8.2.10-r0)
+#6 1.736 (4/40) Installing bash (5.2.26-r0)
+#6 1.760 Executing bash-5.2.26-r0.post-install
+#6 1.764 (5/40) Installing ca-certificates (20240705-r0)
+#6 1.789 (6/40) Installing brotli-libs (1.1.0-r2)
+#6 1.802 (7/40) Installing c-ares (1.28.1-r0)
+#6 1.806 (8/40) Installing libunistring (1.2-r0)
+#6 1.825 (9/40) Installing libidn2 (2.3.7-r0)
+#6 1.830 (10/40) Installing nghttp2-libs (1.62.1-r0)
+#6 1.834 (11/40) Installing libpsl (0.21.5-r1)
+#6 1.838 (12/40) Installing zstd-libs (1.5.6-r0)
+#6 1.850 (13/40) Installing libcurl (8.9.0-r0)
+#6 1.861 (14/40) Installing libexpat (2.6.2-r0)
+#6 1.865 (15/40) Installing pcre2 (10.43-r0)
+#6 1.876 (16/40) Installing git (2.45.2-r0)
+#6 1.982 (17/40) Installing git-init-template (2.45.2-r0)
+#6 1.985 (18/40) Installing libbz2 (1.0.8-r6)
+#6 1.989 (19/40) Installing libffi (3.4.6-r0)
+#6 1.991 (20/40) Installing gdbm (1.23-r1)
+#6 1.995 (21/40) Installing xz-libs (5.6.1-r3)
+#6 2.000 (22/40) Installing libgcc (13.2.1_git20240309-r0)
+#6 2.004 (23/40) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 2.031 (24/40) Installing mpdecimal (4.0.0-r0)
+#6 2.036 (25/40) Installing libpanelw (6.4_p20240420-r0)
+#6 2.039 (26/40) Installing sqlite-libs (3.45.3-r1)
+#6 2.059 (27/40) Installing python3 (3.12.3-r1)
+#6 2.381 (28/40) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 2.633 (29/40) Installing pyc (3.12.3-r1)
+#6 2.636 (30/40) Installing mercurial-pyc (6.7.4-r0)
+#6 2.867 (31/40) Installing python3-pyc (3.12.3-r1)
+#6 2.869 (32/40) Installing mercurial (6.7.4-r0)
+#6 3.072 (33/40) Installing py3-parsing (3.1.2-r1)
+#6 3.090 (34/40) Installing py3-parsing-pyc (3.1.2-r1)
+#6 3.100 (35/40) Installing py3-packaging (24.0-r1)
+#6 3.126 (36/40) Installing py3-packaging-pyc (24.0-r1)
+#6 3.132 (37/40) Installing py3-setuptools (69.5.1-r0)
+#6 3.233 (38/40) Installing py3-setuptools-pyc (69.5.1-r0)
+#6 3.354 (39/40) Installing py3-pip (24.0-r2)
+#6 3.526 (40/40) Installing py3-pip-pyc (24.0-r2)
+#6 3.753 Executing busybox-1.36.1-r29.trigger
+#6 3.759 Executing ca-certificates-20240705-r0.trigger
+#6 3.805 OK: 110 MiB in 54 packages
+#6 9.545 Requirement already satisfied: pip in /opt/venv/lib/python3.12/site-packages (24.0)
+#6 10.44 Collecting pip
+#6 10.49   Downloading pip-24.2-py3-none-any.whl.metadata (3.6 kB)
+#6 10.53 Downloading pip-24.2-py3-none-any.whl (1.8 MB)
+#6 10.70    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 10.6 MB/s eta 0:00:00
+#6 10.73 Installing collected packages: pip
+#6 10.73   Attempting uninstall: pip
+#6 10.73     Found existing installation: pip 24.0
+#6 10.81     Uninstalling pip-24.0:
+#6 10.82       Successfully uninstalled pip-24.0
+#6 12.54 Successfully installed pip-24.2
+#6 13.44 Collecting requests>=2.8.1
+#6 13.48   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+#6 13.69 Collecting charset-normalizer<4,>=2 (from requests>=2.8.1)
+#6 13.70   Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (33 kB)
+#6 13.81 Collecting idna<4,>=2.5 (from requests>=2.8.1)
+#6 13.81   Downloading idna-3.7-py3-none-any.whl.metadata (9.9 kB)
+#6 13.98 Collecting urllib3<3,>=1.21.1 (from requests>=2.8.1)
+#6 13.99   Downloading urllib3-2.2.2-py3-none-any.whl.metadata (6.4 kB)
+#6 14.11 Collecting certifi>=2017.4.17 (from requests>=2.8.1)
+#6 14.12   Downloading certifi-2024.7.4-py3-none-any.whl.metadata (2.2 kB)
+#6 14.17 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#6 14.21 Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#6 14.27 Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl (142 kB)
+#6 14.32 Downloading idna-3.7-py3-none-any.whl (66 kB)
+#6 14.36 Downloading urllib3-2.2.2-py3-none-any.whl (121 kB)
+#6 14.43 Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
+#6 19.67 Successfully installed certifi-2024.7.4 charset-normalizer-3.3.2 idna-3.7 requests-2.32.3 urllib3-2.2.2
+#6 DONE 20.4s
+
+#7 [3/3] ADD scripts /opt/resource
+#7 DONE 0.4s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 1.8s done
+#8 writing image sha256:53fd298242678c4755b020494968b9b10237e7c634c9c9f9b6f7151936a91842 0.0s done
+#8 naming to docker.io/library/image_name_v1_1 0.0s done
+#8 DONE 1.9s
+Duration: 0:25.77

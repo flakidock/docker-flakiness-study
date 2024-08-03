@@ -1,0 +1,77 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 319B done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/debian:latest
+#3 DONE 1.2s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#5 resolve docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#5 resolve docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 0.2s done
+#5 sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 1.85kB / 1.85kB done
+#5 sha256:b1ae8b5bfaa9afa86b50c2a151a442d832c4449cf3731bddf8a728e5628ebb59 529B / 529B done
+#5 sha256:2e5b8d3ef33ebde2b2a943fadb241a63de1535a007a7bd185e7037abfff99f63 1.46kB / 1.46kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 12.44MB 0.6s done
+#4 DONE 1.0s
+
+#5 [1/8] FROM docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#5 DONE 1.2s
+
+#6 [2/8] RUN apt-get -y update &&     apt-get -y install zip build-essential autoconf bison python vim git &&     apt-get clean
+#6 0.522 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#6 0.551 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#6 0.563 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#6 0.633 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#6 0.746 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#6 0.757 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#6 2.053 Fetched 9225 kB in 2s (5942 kB/s)
+#6 2.053 Reading package lists...
+#6 2.745 Reading package lists...
+#6 3.422 Building dependency tree...
+#6 3.545 Reading state information...
+#6 3.550 Package python is not available, but is referred to by another package.
+#6 3.550 This may mean that the package is missing, has been obsoleted, or
+#6 3.550 is only available from another source
+#6 3.550 However the following packages replace it:
+#6 3.550   python-is-python3 2to3
+#6 3.550 
+#6 3.554 E: Package 'python' has no installation candidate
+#6 ERROR: process "/bin/sh -c apt-get -y update &&     apt-get -y install zip build-essential autoconf bison python vim git &&     apt-get clean" did not complete successfully: exit code: 100
+------
+ > [2/8] RUN apt-get -y update &&     apt-get -y install zip build-essential autoconf bison python vim git &&     apt-get clean:
+
+
+
+3.550 Package python is not available, but is referred to by another package.
+3.550 This may mean that the package is missing, has been obsoleted, or
+3.550 is only available from another source
+3.550 However the following packages replace it:
+3.550   python-is-python3 2to3
+3.550 
+3.554 E: Package 'python' has no installation candidate
+------
+Dockerfile:2
+--------------------
+   1 |     FROM debian
+   2 | >>> RUN apt-get -y update && \
+   3 | >>>     apt-get -y install zip build-essential autoconf bison python vim git && \
+   4 | >>>     apt-get clean
+   5 |     WORKDIR /opt
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get -y update &&     apt-get -y install zip build-essential autoconf bison python vim git &&     apt-get clean" did not complete successfully: exit code: 100
+Duration: 0:7.73

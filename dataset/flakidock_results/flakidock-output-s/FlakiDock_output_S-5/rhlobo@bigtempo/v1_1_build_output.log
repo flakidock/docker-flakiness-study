@@ -1,0 +1,26 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 778B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/rhlobo/base-bigtempo:latest
+#2 ...
+
+#3 [auth] rhlobo/base-bigtempo:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/rhlobo/base-bigtempo:latest
+#2 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+------
+ > [internal] load metadata for docker.io/rhlobo/base-bigtempo:latest:
+------
+v1_Dockerfile:2
+--------------------
+   1 |     # Dockerfile
+   2 | >>> FROM rhlobo/base-bigtempo
+   3 |     
+   4 |     MAINTAINER Roberto Lobo <rhlobo@gmail.com>
+--------------------
+ERROR: failed to solve: rhlobo/base-bigtempo: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+Duration: 0:0.79

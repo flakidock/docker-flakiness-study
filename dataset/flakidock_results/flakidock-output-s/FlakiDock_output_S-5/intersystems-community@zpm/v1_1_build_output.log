@@ -1,0 +1,21 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 690B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0
+#2 ERROR: unexpected status from HEAD request to https://containers.intersystems.com/v2/intersystems/irishealth-community/manifests/2022.2.0.368.0: 403 Forbidden
+------
+ > [internal] load metadata for containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0:
+------
+v1_Dockerfile:3
+--------------------
+   1 |     # Dockerfile
+   2 |     ARG BASE=containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0
+   3 | >>> FROM ${BASE}
+   4 |     
+   5 |     ARG REGISTRY=https://pm.community.intersystems.com
+--------------------
+ERROR: failed to solve: containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0: unexpected status from HEAD request to https://containers.intersystems.com/v2/intersystems/irishealth-community/manifests/2022.2.0.368.0: 403 Forbidden
+Duration: 0:1.08

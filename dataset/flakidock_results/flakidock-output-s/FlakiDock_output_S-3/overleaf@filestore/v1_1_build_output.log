@@ -1,0 +1,51 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 740B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:12.22.3
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 199B done
+#3 DONE 0.0s
+
+#4 [base 1/4] FROM docker.io/library/node:12.22.3@sha256:b37688949b774df8a3474e9f2a26be5cdaccc97c28b99e06a8a07ec9f29819bc
+#4 resolve docker.io/library/node:12.22.3@sha256:b37688949b774df8a3474e9f2a26be5cdaccc97c28b99e06a8a07ec9f29819bc 0.0s done
+#4 sha256:2d21de0e7d1b20cbd212a7668f2c2be61d614484c61ccb05b27018147084f430 2.21kB / 2.21kB done
+#4 sha256:b37688949b774df8a3474e9f2a26be5cdaccc97c28b99e06a8a07ec9f29819bc 776B / 776B done
+#4 sha256:52b352c9906eb54ae97886a02165bae4cd5b490a10ad1912dabf3d1e8a2d79ae 7.63kB / 7.63kB done
+#4 CANCELED
+
+#5 [internal] load build context
+#5 transferring context: 499.68kB 0.0s done
+#5 DONE 0.0s
+
+#6 [base 3/4] COPY install_deps.sh /app
+#6 CACHED
+
+#7 [base 4/4] RUN chmod 0755 ./install_deps.sh && ./install_deps.sh
+#7 CACHED
+
+#8 [app 1/4] COPY package*.json /app/
+#8 CACHED
+
+#9 [base 2/4] WORKDIR /app
+#9 CACHED
+
+#10 [app 2/4] COPY npm-shrinkwrap.json /app/
+#10 ERROR: failed to calculate checksum of ref ca901240-34ca-43c8-9123-05f66ccec874::mi2tt5a7sytuo7t2vcpmay9lq: "/npm-shrinkwrap.json": not found
+------
+ > [app 2/4] COPY npm-shrinkwrap.json /app/:
+------
+v1_Dockerfile:16
+--------------------
+  14 |     #wildcard as some files may not be in all repos
+  15 |     COPY package*.json /app/
+  16 | >>> COPY npm-shrinkwrap.json /app/
+  17 |     
+  18 |     RUN npm ci --quiet
+--------------------
+ERROR: failed to solve: failed to compute cache key: failed to calculate checksum of ref ca901240-34ca-43c8-9123-05f66ccec874::mi2tt5a7sytuo7t2vcpmay9lq: "/npm-shrinkwrap.json": not found
+Duration: 0:1.07

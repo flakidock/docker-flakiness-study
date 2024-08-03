@@ -1,0 +1,170 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 601B done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/debian:buster
+#3 DONE 1.1s
+
+#4 [1/5] FROM docker.io/library/debian:buster@sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225
+#4 resolve docker.io/library/debian:buster@sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225
+#4 resolve docker.io/library/debian:buster@sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225 0.3s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 4.98kB done
+#5 DONE 0.4s
+
+#4 [1/5] FROM docker.io/library/debian:buster@sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225
+#4 sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225 984B / 984B done
+#4 sha256:2a0c1b9175adf759420fe0fbd7f5b449038319171eb76554bb76cbe172b62b42 529B / 529B done
+#4 sha256:69530eaa9e7e18d0aad40c38b75a22b40c6ebdc374c059bd5f2eb07042caa50a 1.46kB / 1.46kB done
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 5.24MB / 50.66MB 0.2s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 15.73MB / 50.66MB 0.4s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 22.02MB / 50.66MB 0.5s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 36.70MB / 50.66MB 0.7s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 44.04MB / 50.66MB 0.9s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 50.66MB / 50.66MB 1.1s
+#4 sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 50.66MB / 50.66MB 1.8s done
+#4 extracting sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 0.1s
+#4 extracting sha256:3892befd2c3f36ceb247ba7d906de12601d69b806597e65c4c837cf3d93df119 2.9s done
+#4 DONE 5.6s
+
+#6 [2/5] RUN apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y         slapd=2.4.47* &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 0.512 Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+#6 0.688 Get:2 http://deb.debian.org/debian-security buster/updates InRelease [34.8 kB]
+#6 0.699 Get:3 http://deb.debian.org/debian buster-updates InRelease [56.6 kB]
+#6 0.711 Get:4 http://deb.debian.org/debian buster/main amd64 Packages [7909 kB]
+#6 0.842 Get:5 http://deb.debian.org/debian-security buster/updates/main amd64 Packages [610 kB]
+#6 0.950 Get:6 http://deb.debian.org/debian buster-updates/main amd64 Packages [8788 B]
+#6 2.329 Fetched 8741 kB in 2s (4775 kB/s)
+#6 2.329 Reading package lists...
+#6 3.089 Reading package lists...
+#6 3.830 Building dependency tree...
+#6 3.949 Reading state information...
+#6 4.055 The following additional packages will be installed:
+#6 4.055   libgdbm-compat4 libgdbm6 libldap-2.4-2 libldap-common libltdl7 libodbc1
+#6 4.055   libperl5.28 libsasl2-2 libsasl2-modules-db libwrap0 lsb-base perl
+#6 4.055   perl-modules-5.28 psmisc
+#6 4.056 Suggested packages:
+#6 4.056   gdbm-l10n libmyodbc odbc-postgresql tdsodbc unixodbc-bin sensible-utils
+#6 4.056   perl-doc libterm-readline-gnu-perl | libterm-readline-perl-perl make
+#6 4.056   libb-debug-perl liblocale-codes-perl ldap-utils libsasl2-modules-gssapi-mit
+#6 4.056   | libsasl2-modules-gssapi-heimdal
+#6 4.056 Recommended packages:
+#6 4.056   libsasl2-modules netbase
+#6 4.244 The following NEW packages will be installed:
+#6 4.244   libgdbm-compat4 libgdbm6 libldap-2.4-2 libldap-common libltdl7 libodbc1
+#6 4.244   libperl5.28 libsasl2-2 libsasl2-modules-db libwrap0 lsb-base perl
+#6 4.244   perl-modules-5.28 psmisc slapd
+#6 4.289 0 upgraded, 15 newly installed, 0 to remove and 2 not upgraded.
+#6 4.289 Need to get 9835 kB of archives.
+#6 4.289 After this operation, 65.9 MB of additional disk space will be used.
+#6 4.289 Get:1 http://deb.debian.org/debian buster/main amd64 perl-modules-5.28 all 5.28.1-6+deb10u1 [2873 kB]
+#6 4.367 Get:2 http://deb.debian.org/debian buster/main amd64 libgdbm6 amd64 1.18.1-4 [64.7 kB]
+#6 4.368 Get:3 http://deb.debian.org/debian buster/main amd64 libgdbm-compat4 amd64 1.18.1-4 [44.1 kB]
+#6 4.369 Get:4 http://deb.debian.org/debian buster/main amd64 libperl5.28 amd64 5.28.1-6+deb10u1 [3894 kB]
+#6 4.421 Get:5 http://deb.debian.org/debian buster/main amd64 perl amd64 5.28.1-6+deb10u1 [204 kB]
+#6 4.424 Get:6 http://deb.debian.org/debian buster/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-1+deb10u2 [69.2 kB]
+#6 4.425 Get:7 http://deb.debian.org/debian buster/main amd64 libsasl2-2 amd64 2.1.27+dfsg-1+deb10u2 [106 kB]
+#6 4.427 Get:8 http://deb.debian.org/debian buster/main amd64 libldap-common all 2.4.47+dfsg-3+deb10u7 [90.1 kB]
+#6 4.428 Get:9 http://deb.debian.org/debian buster/main amd64 libldap-2.4-2 amd64 2.4.47+dfsg-3+deb10u7 [224 kB]
+#6 4.431 Get:10 http://deb.debian.org/debian buster/main amd64 libltdl7 amd64 2.4.6-9 [390 kB]
+#6 4.436 Get:11 http://deb.debian.org/debian buster/main amd64 libodbc1 amd64 2.3.6-0.1 [223 kB]
+#6 4.439 Get:12 http://deb.debian.org/debian buster/main amd64 libwrap0 amd64 7.6.q-28 [58.7 kB]
+#6 4.440 Get:13 http://deb.debian.org/debian buster/main amd64 psmisc amd64 23.2-1+deb10u1 [126 kB]
+#6 4.442 Get:14 http://deb.debian.org/debian buster/main amd64 lsb-base all 10.2019051400 [28.4 kB]
+#6 4.639 Get:15 http://deb.debian.org/debian buster/main amd64 slapd amd64 2.4.47+dfsg-3+deb10u7 [1438 kB]
+#6 5.046 debconf: delaying package configuration, since apt-utils is not installed
+#6 5.065 Fetched 9835 kB in 1s (16.4 MB/s)
+#6 5.136 Selecting previously unselected package perl-modules-5.28.
+#6 5.136 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6650 files and directories currently installed.)
+#6 5.138 Preparing to unpack .../00-perl-modules-5.28_5.28.1-6+deb10u1_all.deb ...
+#6 5.165 Unpacking perl-modules-5.28 (5.28.1-6+deb10u1) ...
+#6 6.554 Selecting previously unselected package libgdbm6:amd64.
+#6 6.554 Preparing to unpack .../01-libgdbm6_1.18.1-4_amd64.deb ...
+#6 6.602 Unpacking libgdbm6:amd64 (1.18.1-4) ...
+#6 6.814 Selecting previously unselected package libgdbm-compat4:amd64.
+#6 6.814 Preparing to unpack .../02-libgdbm-compat4_1.18.1-4_amd64.deb ...
+#6 6.837 Unpacking libgdbm-compat4:amd64 (1.18.1-4) ...
+#6 7.066 Selecting previously unselected package libperl5.28:amd64.
+#6 7.066 Preparing to unpack .../03-libperl5.28_5.28.1-6+deb10u1_amd64.deb ...
+#6 7.089 Unpacking libperl5.28:amd64 (5.28.1-6+deb10u1) ...
+#6 8.204 Selecting previously unselected package perl.
+#6 8.204 Preparing to unpack .../04-perl_5.28.1-6+deb10u1_amd64.deb ...
+#6 8.233 Unpacking perl (5.28.1-6+deb10u1) ...
+#6 8.424 Selecting previously unselected package libsasl2-modules-db:amd64.
+#6 8.424 Preparing to unpack .../05-libsasl2-modules-db_2.1.27+dfsg-1+deb10u2_amd64.deb ...
+#6 8.455 Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#6 8.693 Selecting previously unselected package libsasl2-2:amd64.
+#6 8.693 Preparing to unpack .../06-libsasl2-2_2.1.27+dfsg-1+deb10u2_amd64.deb ...
+#6 8.724 Unpacking libsasl2-2:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#6 8.911 Selecting previously unselected package libldap-common.
+#6 8.911 Preparing to unpack .../07-libldap-common_2.4.47+dfsg-3+deb10u7_all.deb ...
+#6 8.934 Unpacking libldap-common (2.4.47+dfsg-3+deb10u7) ...
+#6 9.171 Selecting previously unselected package libldap-2.4-2:amd64.
+#6 9.171 Preparing to unpack .../08-libldap-2.4-2_2.4.47+dfsg-3+deb10u7_amd64.deb ...
+#6 9.195 Unpacking libldap-2.4-2:amd64 (2.4.47+dfsg-3+deb10u7) ...
+#6 9.416 Selecting previously unselected package libltdl7:amd64.
+#6 9.416 Preparing to unpack .../09-libltdl7_2.4.6-9_amd64.deb ...
+#6 9.448 Unpacking libltdl7:amd64 (2.4.6-9) ...
+#6 9.694 Selecting previously unselected package libodbc1:amd64.
+#6 9.694 Preparing to unpack .../10-libodbc1_2.3.6-0.1_amd64.deb ...
+#6 9.725 Unpacking libodbc1:amd64 (2.3.6-0.1) ...
+#6 10.01 Selecting previously unselected package libwrap0:amd64.
+#6 10.01 Preparing to unpack .../11-libwrap0_7.6.q-28_amd64.deb ...
+#6 10.04 Unpacking libwrap0:amd64 (7.6.q-28) ...
+#6 10.23 Selecting previously unselected package psmisc.
+#6 10.23 Preparing to unpack .../12-psmisc_23.2-1+deb10u1_amd64.deb ...
+#6 10.25 Unpacking psmisc (23.2-1+deb10u1) ...
+#6 10.49 Selecting previously unselected package lsb-base.
+#6 10.49 Preparing to unpack .../13-lsb-base_10.2019051400_all.deb ...
+#6 10.53 Unpacking lsb-base (10.2019051400) ...
+#6 10.96 Selecting previously unselected package slapd.
+#6 10.96 Preparing to unpack .../14-slapd_2.4.47+dfsg-3+deb10u7_amd64.deb ...
+#6 11.17 Unpacking slapd (2.4.47+dfsg-3+deb10u7) ...
+#6 11.60 Setting up perl-modules-5.28 (5.28.1-6+deb10u1) ...
+#6 11.69 Setting up lsb-base (10.2019051400) ...
+#6 11.76 Setting up psmisc (23.2-1+deb10u1) ...
+#6 11.85 Setting up libldap-common (2.4.47+dfsg-3+deb10u7) ...
+#6 11.96 Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#6 12.06 Setting up libwrap0:amd64 (7.6.q-28) ...
+#6 12.17 Setting up libltdl7:amd64 (2.4.6-9) ...
+#6 12.25 Setting up libsasl2-2:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#6 12.35 Setting up libgdbm6:amd64 (1.18.1-4) ...
+#6 12.44 Setting up libldap-2.4-2:amd64 (2.4.47+dfsg-3+deb10u7) ...
+#6 12.51 Setting up libgdbm-compat4:amd64 (1.18.1-4) ...
+#6 12.59 Setting up libodbc1:amd64 (2.3.6-0.1) ...
+#6 12.66 Setting up libperl5.28:amd64 (5.28.1-6+deb10u1) ...
+#6 12.74 Setting up perl (5.28.1-6+deb10u1) ...
+#6 12.85 Setting up slapd (2.4.47+dfsg-3+deb10u7) ...
+#6 13.96   Creating new user openldap... done.
+#6 14.31   Creating initial configuration... done.
+#6 14.36   Creating LDAP directory... done.
+#6 14.50 invoke-rc.d: could not determine current runlevel
+#6 14.51 invoke-rc.d: policy-rc.d denied execution of start.
+#6 14.64 Processing triggers for libc-bin (2.28-10+deb10u3) ...
+#6 DONE 20.4s
+
+#7 [3/5] RUN mv /etc/ldap /etc/ldap.dist
+#7 DONE 1.1s
+
+#8 [4/5] COPY modules/ /etc/ldap.dist/modules
+#8 DONE 0.5s
+
+#9 [5/5] COPY entrypoint.sh /entrypoint.sh
+#9 DONE 0.4s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 1.3s done
+#10 writing image sha256:0b090b1829e824d18f2590e89e7beac9a82b5aec4151c1a2dcadff7a0836245a 0.0s done
+#10 naming to docker.io/library/image_name_v1_1 0.0s done
+#10 DONE 1.3s
+Duration: 0:31.37

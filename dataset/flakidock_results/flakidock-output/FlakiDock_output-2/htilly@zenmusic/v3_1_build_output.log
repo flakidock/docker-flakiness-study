@@ -1,0 +1,128 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v3_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 379B done
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 62B done
+#2 DONE 0.6s
+
+#1 [internal] load build definition from v3_Dockerfile
+#1 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/node:17-alpine
+#3 DONE 0.5s
+
+#4 [intermediate 1/2] FROM docker.io/library/node:17-alpine@sha256:76e638eb0d73ac5f0b76d70df3ce1ddad941ac63595d44092b625e2cd557ddbf
+#4 resolve docker.io/library/node:17-alpine@sha256:76e638eb0d73ac5f0b76d70df3ce1ddad941ac63595d44092b625e2cd557ddbf 0.1s done
+#4 sha256:57488723f0872b65eb586f4fde54d5c25c16cde94da3bde8b338cf2af2aceb1c 6.67kB / 6.67kB done
+#4 sha256:76e638eb0d73ac5f0b76d70df3ce1ddad941ac63595d44092b625e2cd557ddbf 1.43kB / 1.43kB done
+#4 sha256:c7bde48048debf58dba50f8d2ba674854bdf7dfc8c43bd468f19a5212facfdbe 1.16kB / 1.16kB done
+#4 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 0B / 45.89MB 0.1s
+#4 sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 0B / 2.81MB 0.3s
+#4 sha256:6463b5f3dbb1d524374fd51f430ea4837e794edd1c508bad449f93a86be57ccb 0B / 2.34MB 0.3s
+#4 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 4.19MB / 45.89MB 0.4s
+#4 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 14.68MB / 45.89MB 0.6s
+#4 sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 2.81MB / 2.81MB 0.6s
+#4 sha256:6463b5f3dbb1d524374fd51f430ea4837e794edd1c508bad449f93a86be57ccb 2.34MB / 2.34MB 0.5s done
+#4 sha256:885e68a88c76f90ebf7b390469107ac661410a590df8939c237fa720ca91efb3 0B / 451B 0.6s
+#4 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 18.87MB / 45.89MB 0.7s
+#4 sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 2.81MB / 2.81MB 0.7s done
+#4 sha256:885e68a88c76f90ebf7b390469107ac661410a590df8939c237fa720ca91efb3 451B / 451B 0.7s
+#4 extracting sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139
+#4 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 27.26MB / 45.89MB 0.8s
+#4 sha256:885e68a88c76f90ebf7b390469107ac661410a590df8939c237fa720ca91efb3 451B / 451B 0.8s done
+#4 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 39.85MB / 45.89MB 1.0s
+#4 extracting sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 0.2s done
+#4 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 45.09MB / 45.89MB 1.2s
+#4 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 45.89MB / 45.89MB 2.0s done
+#4 extracting sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f
+#4 extracting sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 3.2s done
+#4 extracting sha256:6463b5f3dbb1d524374fd51f430ea4837e794edd1c508bad449f93a86be57ccb
+#4 extracting sha256:6463b5f3dbb1d524374fd51f430ea4837e794edd1c508bad449f93a86be57ccb 0.2s done
+#4 extracting sha256:885e68a88c76f90ebf7b390469107ac661410a590df8939c237fa720ca91efb3
+#4 extracting sha256:885e68a88c76f90ebf7b390469107ac661410a590df8939c237fa720ca91efb3 done
+#4 DONE 7.4s
+
+#5 [stage-1 2/5] RUN mkdir app
+#5 ...
+
+#6 [intermediate 2/2] RUN apk update &&     apk upgrade &&     apk add git &&     git clone https://github.com/htilly/zenmusic.git
+#6 0.791 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz
+#6 1.029 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/APKINDEX.tar.gz
+#6 1.422 v3.15.11-7-g438bf8e758d [https://dl-cdn.alpinelinux.org/alpine/v3.15/main]
+#6 1.422 v3.15.10-165-g73b5f3b6fbe [https://dl-cdn.alpinelinux.org/alpine/v3.15/community]
+#6 1.422 OK: 15865 distinct packages available
+#6 1.707 (1/8) Upgrading musl (1.2.2-r7 -> 1.2.2-r9)
+#6 1.746 (2/8) Upgrading busybox (1.34.1-r5 -> 1.34.1-r7)
+#6 1.761 Executing busybox-1.34.1-r7.post-upgrade
+#6 1.775 (3/8) Upgrading ca-certificates-bundle (20211220-r0 -> 20230506-r0)
+#6 1.782 (4/8) Upgrading libcrypto1.1 (1.1.1n-r0 -> 1.1.1w-r1)
+#6 2.739 (5/8) Upgrading libssl1.1 (1.1.1n-r0 -> 1.1.1w-r1)
+#6 2.748 (6/8) Upgrading ssl_client (1.34.1-r5 -> 1.34.1-r7)
+#6 2.752 (7/8) Upgrading zlib (1.2.12-r0 -> 1.2.12-r3)
+#6 2.756 (8/8) Upgrading musl-utils (1.2.2-r7 -> 1.2.2-r9)
+#6 2.762 Executing busybox-1.34.1-r7.trigger
+#6 2.766 OK: 7 MiB in 16 packages
+#6 3.064 (1/7) Installing ca-certificates (20230506-r0)
+#6 3.117 (2/7) Installing brotli-libs (1.0.9-r5)
+#6 3.131 (3/7) Installing nghttp2-libs (1.46.0-r2)
+#6 6.207 (4/7) Installing libcurl (8.5.0-r0)
+#6 6.219 (5/7) Installing expat (2.5.0-r0)
+#6 6.224 (6/7) Installing pcre2 (10.42-r0)
+#6 6.235 (7/7) Installing git (2.34.8-r0)
+#6 6.925 Executing busybox-1.34.1-r7.trigger
+#6 6.929 Executing ca-certificates-20230506-r0.trigger
+#6 6.987 OK: 21 MiB in 23 packages
+#6 7.028 Cloning into 'zenmusic'...
+#6 ...
+
+#5 [stage-1 2/5] RUN mkdir app
+#5 DONE 7.2s
+
+#6 [intermediate 2/2] RUN apk update &&     apk upgrade &&     apk add git &&     git clone https://github.com/htilly/zenmusic.git
+#6 DONE 8.8s
+
+#7 [stage-1 3/5] COPY --from=intermediate /zenmusic /app
+#7 DONE 0.6s
+
+#8 [stage-1 4/5] WORKDIR /app
+#8 DONE 1.7s
+
+#9 [stage-1 5/5] RUN npm install -g npm@10.8.2 && npm install
+#9 1.117 npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+#9 1.498 npm ERR! code EBADENGINE
+#9 1.500 npm ERR! engine Unsupported engine
+#9 1.500 npm ERR! engine Not compatible with your version of node/npm: npm@10.8.2
+#9 1.501 npm ERR! notsup Not compatible with your version of node/npm: npm@10.8.2
+#9 1.501 npm ERR! notsup Required: {"node":"^18.17.0 || >=20.5.0"}
+#9 1.501 npm ERR! notsup Actual:   {"npm":"8.11.0","node":"v17.9.1"}
+#9 1.503 
+#9 1.503 npm ERR! A complete log of this run can be found in:
+#9 1.503 npm ERR!     /root/.npm/_logs/2024-07-31T23_39_12_722Z-debug-0.log
+#9 ERROR: process "/bin/sh -c npm install -g npm@10.8.2 && npm install" did not complete successfully: exit code: 1
+------
+ > [stage-1 5/5] RUN npm install -g npm@10.8.2 && npm install:
+ WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+ERR! code EBADENGINE
+1.500 npm ERR! engine Unsupported engine
+1.500 npm ERR! engine Not compatible with your version of node/npm: npm@10.8.2
+1.501 npm ERR! notsup Not compatible with your version of node/npm: npm@10.8.2
+1.501 npm ERR! notsup Required: {"node":"^18.17.0 || >=20.5.0"}
+1.501 npm ERR! notsup Actual:   {"npm":"8.11.0","node":"v17.9.1"}
+1.503 
+1.503 npm ERR! A complete log of this run can be found in:
+1.503 npm ERR!     /root/.npm/_logs/2024-07-31T23_39_12_722Z-debug-0.log
+------
+v3_Dockerfile:13
+--------------------
+  11 |     COPY --from=intermediate /zenmusic /app
+  12 |     WORKDIR /app
+  13 | >>> RUN npm install -g npm@10.8.2 && npm install
+  14 |     
+  15 |     CMD [ "node", "index.js" ]
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm install -g npm@10.8.2 && npm install" did not complete successfully: exit code: 1
+Duration: 0:22.37

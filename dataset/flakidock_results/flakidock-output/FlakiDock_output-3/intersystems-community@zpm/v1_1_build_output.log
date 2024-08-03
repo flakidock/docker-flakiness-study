@@ -1,0 +1,27 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.3s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 549B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0
+#3 ERROR: pulling from host containers.intersystems.com failed with status code [manifests 2022.2.0.368.0]: 403 Forbidden
+------
+ > [internal] load metadata for containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0:
+------
+v1_Dockerfile:2
+--------------------
+   1 |     ARG BASE=containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0
+   2 | >>> FROM containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0
+   3 |     
+   4 |     ARG REGISTRY=https://pm.community.intersystems.com
+--------------------
+ERROR: failed to solve: containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0: pulling from host containers.intersystems.com failed with status code [manifests 2022.2.0.368.0]: 403 Forbidden
+Duration: 0:1.07

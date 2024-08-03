@@ -1,0 +1,143 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 936B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:2.7.15-slim
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/python:2.7.15-slim@sha256:f222681beee592084ccdf0b4bfb6855a179f4337a37a131cfa738e74e8a3cfaf
+#4 resolve docker.io/library/python:2.7.15-slim@sha256:f222681beee592084ccdf0b4bfb6855a179f4337a37a131cfa738e74e8a3cfaf 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 1.24MB 0.0s done
+#5 DONE 0.1s
+
+#4 [1/4] FROM docker.io/library/python:2.7.15-slim@sha256:f222681beee592084ccdf0b4bfb6855a179f4337a37a131cfa738e74e8a3cfaf
+#4 sha256:59b1b30ca434692bacd2beb3257cf7c4d5416532f04c1e4c475d2e76663d358b 1.16kB / 1.16kB done
+#4 sha256:f2ac6489d8179d58e0c1006fff8be4ad3946a55e46e079b6e755a3e759ec81f8 6.36kB / 6.36kB done
+#4 sha256:6ae821421a7debccb4151f7a50dc8ec0317674429bec0f275402d697047a8e96 3.15MB / 22.50MB 0.2s
+#4 sha256:ead11ecb9832a8d3d1e01b8c0d78727ef62157cfb912408ad711f2a09b3a6836 0B / 2.53MB 0.2s
+#4 sha256:d1ef2eb755bd72d2c16c74ec7c1daef10f93876dbd784de97d606b3bb0f9b8b4 0B / 17.10MB 0.2s
+#4 sha256:f222681beee592084ccdf0b4bfb6855a179f4337a37a131cfa738e74e8a3cfaf 2.37kB / 2.37kB done
+#4 sha256:6ae821421a7debccb4151f7a50dc8ec0317674429bec0f275402d697047a8e96 17.83MB / 22.50MB 0.4s
+#4 sha256:ead11ecb9832a8d3d1e01b8c0d78727ef62157cfb912408ad711f2a09b3a6836 2.53MB / 2.53MB 0.3s done
+#4 sha256:d1ef2eb755bd72d2c16c74ec7c1daef10f93876dbd784de97d606b3bb0f9b8b4 3.15MB / 17.10MB 0.4s
+#4 sha256:1c63dfc85c0a5cb390e9cd33a08b86e02300ef0e046a8f73fc57621128d0a938 0B / 2.09MB 0.4s
+#4 sha256:6ae821421a7debccb4151f7a50dc8ec0317674429bec0f275402d697047a8e96 20.97MB / 22.50MB 0.5s
+#4 sha256:d1ef2eb755bd72d2c16c74ec7c1daef10f93876dbd784de97d606b3bb0f9b8b4 8.39MB / 17.10MB 0.5s
+#4 sha256:1c63dfc85c0a5cb390e9cd33a08b86e02300ef0e046a8f73fc57621128d0a938 1.05MB / 2.09MB 0.5s
+#4 extracting sha256:6ae821421a7debccb4151f7a50dc8ec0317674429bec0f275402d697047a8e96
+#4 sha256:6ae821421a7debccb4151f7a50dc8ec0317674429bec0f275402d697047a8e96 22.50MB / 22.50MB 0.6s done
+#4 sha256:d1ef2eb755bd72d2c16c74ec7c1daef10f93876dbd784de97d606b3bb0f9b8b4 17.10MB / 17.10MB 0.6s done
+#4 sha256:1c63dfc85c0a5cb390e9cd33a08b86e02300ef0e046a8f73fc57621128d0a938 2.09MB / 2.09MB 0.6s done
+#4 extracting sha256:6ae821421a7debccb4151f7a50dc8ec0317674429bec0f275402d697047a8e96 1.7s done
+#4 extracting sha256:ead11ecb9832a8d3d1e01b8c0d78727ef62157cfb912408ad711f2a09b3a6836 0.1s
+#4 extracting sha256:ead11ecb9832a8d3d1e01b8c0d78727ef62157cfb912408ad711f2a09b3a6836 0.2s done
+#4 extracting sha256:d1ef2eb755bd72d2c16c74ec7c1daef10f93876dbd784de97d606b3bb0f9b8b4 0.1s
+#4 extracting sha256:d1ef2eb755bd72d2c16c74ec7c1daef10f93876dbd784de97d606b3bb0f9b8b4 0.9s done
+#4 extracting sha256:1c63dfc85c0a5cb390e9cd33a08b86e02300ef0e046a8f73fc57621128d0a938
+#4 extracting sha256:1c63dfc85c0a5cb390e9cd33a08b86e02300ef0e046a8f73fc57621128d0a938 0.2s done
+#4 DONE 4.0s
+
+#6 [2/4] WORKDIR /usr/src/app
+#6 DONE 0.5s
+
+#7 [3/4] COPY . .
+#7 DONE 0.1s
+
+#8 [4/4] RUN set -ex && apt-get update && apt-get install --no-install-recommends -y build-essential python-dev && pip install --no-cache-dir -r requirements.txt && python manage.py collectstatic --noinput && apt-get remove build-essential -y && apt-get autoremove -y && mkdir /root/.netease-musicbox/ && touch /root/.netease-musicbox/musicbox.log && mkdir /usr/src/app/.netease-musicbox/ && touch /usr/src/app/.netease-musicbox/musicbox.log && echo "#LWP-Cookies-2.0" > /root/.netease-musicbox/cookie && echo "#LWP-Cookies-2.0" > /usr/src/app/.netease-musicbox/cookie && rm -rf /usr/src/app/.netease-musicbox/ && rm -rf /var/lib/apt/lists/*;
+#8 0.184 + apt-get update
+#8 0.227 Ign:1 http://deb.debian.org/debian stretch InRelease
+#8 0.227 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#8 0.239 Ign:3 http://deb.debian.org/debian stretch-updates InRelease
+#8 0.240 Ign:4 http://security.debian.org/debian-security stretch/updates Release
+#8 0.250 Ign:5 http://deb.debian.org/debian stretch Release
+#8 0.253 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.262 Ign:7 http://deb.debian.org/debian stretch-updates Release
+#8 0.266 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.274 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.279 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.288 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.293 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.298 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.305 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.308 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.319 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.319 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.333 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.346 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.359 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.370 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.383 Err:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.383   404  Not Found
+#8 0.396 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.473 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.484 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.495 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.507 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.515 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.526 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.537 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.550 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.561 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.573 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.584 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.597 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.744 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.755 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.767 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.777 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.799 Err:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.799   404  Not Found
+#8 0.809 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.809   404  Not Found
+#8 0.819 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.824 Reading package lists...
+#8 0.834 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#8 0.834 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#8 0.834 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#8 0.834 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+#8 0.834 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#8 0.834 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#8 0.834 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#8 ERROR: process "/bin/sh -c set -ex && apt-get update && apt-get install --no-install-recommends -y build-essential python-dev && pip install --no-cache-dir -r requirements.txt && python manage.py collectstatic --noinput && apt-get remove build-essential -y && apt-get autoremove -y && mkdir /root/.netease-musicbox/ && touch /root/.netease-musicbox/musicbox.log && mkdir /usr/src/app/.netease-musicbox/ && touch /usr/src/app/.netease-musicbox/musicbox.log && echo \"#LWP-Cookies-2.0\" > /root/.netease-musicbox/cookie && echo \"#LWP-Cookies-2.0\" > /usr/src/app/.netease-musicbox/cookie && rm -rf /usr/src/app/.netease-musicbox/ && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+------
+ > [4/4] RUN set -ex && apt-get update && apt-get install --no-install-recommends -y build-essential python-dev && pip install --no-cache-dir -r requirements.txt && python manage.py collectstatic --noinput && apt-get remove build-essential -y && apt-get autoremove -y && mkdir /root/.netease-musicbox/ && touch /root/.netease-musicbox/musicbox.log && mkdir /usr/src/app/.netease-musicbox/ && touch /usr/src/app/.netease-musicbox/musicbox.log && echo "#LWP-Cookies-2.0" > /root/.netease-musicbox/cookie && echo "#LWP-Cookies-2.0" > /usr/src/app/.netease-musicbox/cookie && rm -rf /usr/src/app/.netease-musicbox/ && rm -rf /var/lib/apt/lists/*;:
+0.809   404  Not Found
+0.819 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+0.824 Reading package lists...
+0.834 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.834 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.834 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.834 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+0.834 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.834 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.834 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:7
+--------------------
+   6 |     
+   7 | >>> RUN set -ex \
+   8 | >>> && apt-get update \
+   9 | >>> && apt-get install --no-install-recommends -y build-essential python-dev \
+  10 | >>> && pip install --no-cache-dir -r requirements.txt \
+  11 | >>> && python manage.py collectstatic --noinput \
+  12 | >>> && apt-get remove build-essential -y \
+  13 | >>> && apt-get autoremove -y \
+  14 | >>> && mkdir /root/.netease-musicbox/ \
+  15 | >>> && touch /root/.netease-musicbox/musicbox.log \
+  16 | >>> && mkdir /usr/src/app/.netease-musicbox/ \
+  17 | >>> && touch /usr/src/app/.netease-musicbox/musicbox.log \
+  18 | >>> && echo "#LWP-Cookies-2.0" > /root/.netease-musicbox/cookie \
+  19 | >>> && echo "#LWP-Cookies-2.0" > /usr/src/app/.netease-musicbox/cookie && rm -rf /usr/src/app/.netease-musicbox/ && rm -rf /var/lib/apt/lists/*;
+  20 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c set -ex && apt-get update && apt-get install --no-install-recommends -y build-essential python-dev && pip install --no-cache-dir -r requirements.txt && python manage.py collectstatic --noinput && apt-get remove build-essential -y && apt-get autoremove -y && mkdir /root/.netease-musicbox/ && touch /root/.netease-musicbox/musicbox.log && mkdir /usr/src/app/.netease-musicbox/ && touch /usr/src/app/.netease-musicbox/musicbox.log && echo \"#LWP-Cookies-2.0\" > /root/.netease-musicbox/cookie && echo \"#LWP-Cookies-2.0\" > /usr/src/app/.netease-musicbox/cookie && rm -rf /usr/src/app/.netease-musicbox/ && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+Duration: 0:6.39

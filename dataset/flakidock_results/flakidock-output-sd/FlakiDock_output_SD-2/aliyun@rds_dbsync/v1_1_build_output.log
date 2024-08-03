@@ -1,0 +1,151 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 2.05kB done
+#1 DONE 0.5s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 96B done
+#2 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/centos:7
+#3 DONE 0.5s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/library/centos:7@sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916d6487418ea4
+#5 resolve docker.io/library/centos:7@sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916d6487418ea4
+#5 resolve docker.io/library/centos:7@sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916d6487418ea4 0.2s done
+#5 sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916d6487418ea4 1.20kB / 1.20kB done
+#5 sha256:dead07b4d8ed7e29e98de0f4504d87e8880d4347859d839686a31da35a3b532f 529B / 529B done
+#5 sha256:eeb6ee3f44bd0b5103bb561b4c16bcb82328cfe5809ab675bb17ab3a16c517c9 2.75kB / 2.75kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 238.43kB done
+#4 DONE 0.4s
+
+#5 [1/4] FROM docker.io/library/centos:7@sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916d6487418ea4
+#5 sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 3.15MB / 76.10MB 0.4s
+#5 sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 12.58MB / 76.10MB 0.6s
+#5 sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 17.83MB / 76.10MB 0.7s
+#5 sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 28.31MB / 76.10MB 0.9s
+#5 sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 34.60MB / 76.10MB 1.0s
+#5 sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 45.09MB / 76.10MB 1.2s
+#5 sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 51.38MB / 76.10MB 1.3s
+#5 sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 66.06MB / 76.10MB 1.5s
+#5 sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 73.40MB / 76.10MB 1.6s
+#5 sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 76.10MB / 76.10MB 2.7s done
+#5 extracting sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc
+#5 extracting sha256:2d473b07cdd5f0912cd6f1a703352c82b512407db6b05b43f2553732b55df3bc 4.8s done
+#5 DONE 8.7s
+
+#6 [2/4] COPY . /tmp/aliyun/
+#6 DONE 9.3s
+
+#7 [3/4] RUN set -ex     && {         echo '[mysql57-community]';         echo 'name=mysql57-community';         echo 'baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/';         echo 'enabled=1';         echo 'gpgcheck=0';         echo '[pgdg10]';         echo 'name=pgdg10';         echo 'baseurl=https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-$basearch';         echo 'enabled=1';         echo 'gpgcheck=0';     } > /etc/yum.repos.d/dbsync_deps.repo     && cp -ra /var/log/yum.log /tmp/yum.log.old     && yum install mysql-community-client mysql-community-devel postgresql10-devel gcc gcc-c++ make unzip -y     && update-alternatives --install /usr/bin/pg_config pgsql-pg_config /usr/pgsql-10/bin/pg_config 300     && (         cd /tmp/aliyun/dbsync         && make         && install -D -d /dbsync/bin /dbsync/lib         && install -p -D -m 0755 *2pgsql /dbsync/bin         && install -p -D -m 0755 ali_recvlogical.so /dbsync/lib         && install -p -D -m 0644 my.cfg ../LICENSE ../README.md /dbsync         && ln -sf /usr/share/mysql /dbsync/share     )     && update-alternatives --remove pgsql-pg_config /usr/pgsql-10/bin/pg_config     && mkdir -p /tmp/extbin     && curl -L https://github.com/aliyun/rds_dbsync/files/1555186/mysql2pgsql.bin.el7.20171213.zip -o /tmp/extbin/bin.zip     && (cd /tmp/extbin && unzip -o bin.zip && install -p -D -m 0755 mysql2pgsql.bin*/bin/binlog_* /dbsync/bin)     && yum remove -y mysql-community-devel postgresql10-devel unzip gcc gcc-c++ make cpp glibc-devel glibc-headers libicu-devel libstdc++-devel kernel-headers     && yum clean all && mv /tmp/yum.log.old /var/log/yum.log     && rm -rf /tmp/aliyun /tmp/extbin /var/cache/yum/* /etc/yum.repos.d/dbsync_deps.repo     && ls -alhR /dbsync && ldd /dbsync/bin/* && mysql --version && psql --version && mysql2pgsql -h
+#7 0.826 + echo '[mysql57-community]'
+#7 0.826 + echo name=mysql57-community
+#7 0.826 + echo 'baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/'
+#7 0.826 + echo enabled=1
+#7 0.826 + echo gpgcheck=0
+#7 0.826 + echo '[pgdg10]'
+#7 0.826 + echo name=pgdg10
+#7 0.826 + echo 'baseurl=https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-$basearch'
+#7 0.826 + echo enabled=1
+#7 0.826 + echo gpgcheck=0
+#7 0.827 + cp -ra /var/log/yum.log /tmp/yum.log.old
+#7 0.829 + yum install mysql-community-client mysql-community-devel postgresql10-devel gcc gcc-c++ make unzip -y
+#7 1.077 Loaded plugins: fastestmirror, ovl
+#7 1.760 Determining fastest mirrors
+#7 1.765 Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&arch=x86_64&repo=os&infra=container error was
+#7 1.765 14: curl#6 - "Could not resolve host: mirrorlist.centos.org; Unknown error"
+#7 1.769 
+#7 1.769 
+#7 1.769  One of the configured repositories failed (Unknown),
+#7 1.769  and yum doesn't have enough cached data to continue. At this point the only
+#7 1.769  safe thing yum can do is fail. There are a few ways to work "fix" this:
+#7 1.769 
+#7 1.769      1. Contact the upstream for the repository and get them to fix the problem.
+#7 1.769 
+#7 1.769      2. Reconfigure the baseurl/etc. for the repository, to point to a working
+#7 1.769         upstream. This is most often useful if you are using a newer
+#7 1.769         distribution release than is supported by the repository (and the
+#7 1.769         packages for the previous distribution release still work).
+#7 1.769 
+#7 1.769      3. Run the command with the repository temporarily disabled
+#7 1.769             yum --disablerepo=<repoid> ...
+#7 1.769 
+#7 1.769      4. Disable the repository permanently, so yum won't use it by default. Yum
+#7 1.769         will then just ignore the repository until you permanently enable it
+#7 1.769         again or use --enablerepo for temporary usage:
+#7 1.769 
+#7 1.769             yum-config-manager --disable <repoid>
+#7 1.769         or
+#7 1.769             subscription-manager repos --disable=<repoid>
+#7 1.769 
+#7 1.769      5. Configure the failing repository to be skipped, if it is unavailable.
+#7 1.769         Note that yum will try to contact the repo. when it runs most commands,
+#7 1.769         so will have to try and fail each time (and thus. yum will be be much
+#7 1.769         slower). If it is a very temporary problem though, this is often a nice
+#7 1.769         compromise:
+#7 1.769 
+#7 1.769             yum-config-manager --save --setopt=<repoid>.skip_if_unavailable=true
+#7 1.769 
+#7 1.769 Cannot find a valid baseurl for repo: base/7/x86_64
+#7 ERROR: process "/bin/sh -c set -ex     && {         echo '[mysql57-community]';         echo 'name=mysql57-community';         echo 'baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/';         echo 'enabled=1';         echo 'gpgcheck=0';         echo '[pgdg10]';         echo 'name=pgdg10';         echo 'baseurl=https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-$basearch';         echo 'enabled=1';         echo 'gpgcheck=0';     } > /etc/yum.repos.d/dbsync_deps.repo     && cp -ra /var/log/yum.log /tmp/yum.log.old     && yum install mysql-community-client mysql-community-devel postgresql10-devel gcc gcc-c++ make unzip -y     && update-alternatives --install /usr/bin/pg_config pgsql-pg_config /usr/pgsql-10/bin/pg_config 300     && (         cd /tmp/aliyun/dbsync         && make         && install -D -d /dbsync/bin /dbsync/lib         && install -p -D -m 0755 *2pgsql /dbsync/bin         && install -p -D -m 0755 ali_recvlogical.so /dbsync/lib         && install -p -D -m 0644 my.cfg ../LICENSE ../README.md /dbsync         && ln -sf /usr/share/mysql /dbsync/share     )     && update-alternatives --remove pgsql-pg_config /usr/pgsql-10/bin/pg_config     && mkdir -p /tmp/extbin     && curl -L https://github.com/aliyun/rds_dbsync/files/1555186/mysql2pgsql.bin.el7.20171213.zip -o /tmp/extbin/bin.zip     && (cd /tmp/extbin && unzip -o bin.zip && install -p -D -m 0755 mysql2pgsql.bin*/bin/binlog_* /dbsync/bin)     && yum remove -y mysql-community-devel postgresql10-devel unzip gcc gcc-c++ make cpp glibc-devel glibc-headers libicu-devel libstdc++-devel kernel-headers     && yum clean all && mv /tmp/yum.log.old /var/log/yum.log     && rm -rf /tmp/aliyun /tmp/extbin /var/cache/yum/* /etc/yum.repos.d/dbsync_deps.repo     && ls -alhR /dbsync && ldd /dbsync/bin/* && mysql --version && psql --version && mysql2pgsql -h" did not complete successfully: exit code: 1
+------
+ > [3/4] RUN set -ex     && {         echo '[mysql57-community]';         echo 'name=mysql57-community';         echo 'baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/';         echo 'enabled=1';         echo 'gpgcheck=0';         echo '[pgdg10]';         echo 'name=pgdg10';         echo 'baseurl=https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-$basearch';         echo 'enabled=1';         echo 'gpgcheck=0';     } > /etc/yum.repos.d/dbsync_deps.repo     && cp -ra /var/log/yum.log /tmp/yum.log.old     && yum install mysql-community-client mysql-community-devel postgresql10-devel gcc gcc-c++ make unzip -y     && update-alternatives --install /usr/bin/pg_config pgsql-pg_config /usr/pgsql-10/bin/pg_config 300     && (         cd /tmp/aliyun/dbsync         && make         && install -D -d /dbsync/bin /dbsync/lib         && install -p -D -m 0755 *2pgsql /dbsync/bin         && install -p -D -m 0755 ali_recvlogical.so /dbsync/lib         && install -p -D -m 0644 my.cfg ../LICENSE ../README.md /dbsync         && ln -sf /usr/share/mysql /dbsync/share     )     && update-alternatives --remove pgsql-pg_config /usr/pgsql-10/bin/pg_config     && mkdir -p /tmp/extbin     && curl -L https://github.com/aliyun/rds_dbsync/files/1555186/mysql2pgsql.bin.el7.20171213.zip -o /tmp/extbin/bin.zip     && (cd /tmp/extbin && unzip -o bin.zip && install -p -D -m 0755 mysql2pgsql.bin*/bin/binlog_* /dbsync/bin)     && yum remove -y mysql-community-devel postgresql10-devel unzip gcc gcc-c++ make cpp glibc-devel glibc-headers libicu-devel libstdc++-devel kernel-headers     && yum clean all && mv /tmp/yum.log.old /var/log/yum.log     && rm -rf /tmp/aliyun /tmp/extbin /var/cache/yum/* /etc/yum.repos.d/dbsync_deps.repo     && ls -alhR /dbsync && ldd /dbsync/bin/* && mysql --version && psql --version && mysql2pgsql -h:
+1.769 
+1.769      5. Configure the failing repository to be skipped, if it is unavailable.
+1.769         Note that yum will try to contact the repo. when it runs most commands,
+1.769         so will have to try and fail each time (and thus. yum will be be much
+1.769         slower). If it is a very temporary problem though, this is often a nice
+1.769         compromise:
+1.769 
+1.769             yum-config-manager --save --setopt=<repoid>.skip_if_unavailable=true
+1.769 
+1.769 Cannot find a valid baseurl for repo: base/7/x86_64
+------
+v1_Dockerfile:7
+--------------------
+   6 |     
+   7 | >>> RUN set -ex \
+   8 | >>>     && { \
+   9 | >>>         echo '[mysql57-community]'; \
+  10 | >>>         echo 'name=mysql57-community'; \
+  11 | >>>         echo 'baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/'; \
+  12 | >>>         echo 'enabled=1'; \
+  13 | >>>         echo 'gpgcheck=0'; \
+  14 | >>>         echo '[pgdg10]'; \
+  15 | >>>         echo 'name=pgdg10'; \
+  16 | >>>         echo 'baseurl=https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-$basearch'; \
+  17 | >>>         echo 'enabled=1'; \
+  18 | >>>         echo 'gpgcheck=0'; \
+  19 | >>>     } > /etc/yum.repos.d/dbsync_deps.repo \
+  20 | >>>     && cp -ra /var/log/yum.log /tmp/yum.log.old \
+  21 | >>>     && yum install mysql-community-client mysql-community-devel postgresql10-devel gcc gcc-c++ make unzip -y \
+  22 | >>>     && update-alternatives --install /usr/bin/pg_config pgsql-pg_config /usr/pgsql-10/bin/pg_config 300 \
+  23 | >>>     && ( \
+  24 | >>>         cd /tmp/aliyun/dbsync \
+  25 | >>>         && make \
+  26 | >>>         && install -D -d /dbsync/bin /dbsync/lib \
+  27 | >>>         && install -p -D -m 0755 *2pgsql /dbsync/bin \
+  28 | >>>         && install -p -D -m 0755 ali_recvlogical.so /dbsync/lib \
+  29 | >>>         && install -p -D -m 0644 my.cfg ../LICENSE ../README.md /dbsync \
+  30 | >>>         && ln -sf /usr/share/mysql /dbsync/share \
+  31 | >>>     ) \
+  32 | >>>     && update-alternatives --remove pgsql-pg_config /usr/pgsql-10/bin/pg_config \
+  33 | >>>     && mkdir -p /tmp/extbin \
+  34 | >>>     && curl -L https://github.com/aliyun/rds_dbsync/files/1555186/mysql2pgsql.bin.el7.20171213.zip -o /tmp/extbin/bin.zip \
+  35 | >>>     && (cd /tmp/extbin && unzip -o bin.zip && install -p -D -m 0755 mysql2pgsql.bin*/bin/binlog_* /dbsync/bin) \
+  36 | >>>     && yum remove -y mysql-community-devel postgresql10-devel unzip gcc gcc-c++ make cpp glibc-devel glibc-headers libicu-devel libstdc++-devel kernel-headers \
+  37 | >>>     && yum clean all && mv /tmp/yum.log.old /var/log/yum.log \
+  38 | >>>     && rm -rf /tmp/aliyun /tmp/extbin /var/cache/yum/* /etc/yum.repos.d/dbsync_deps.repo \
+  39 | >>>     && ls -alhR /dbsync && ldd /dbsync/bin/* && mysql --version && psql --version && mysql2pgsql -h
+  40 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c set -ex     && {         echo '[mysql57-community]';         echo 'name=mysql57-community';         echo 'baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/';         echo 'enabled=1';         echo 'gpgcheck=0';         echo '[pgdg10]';         echo 'name=pgdg10';         echo 'baseurl=https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-$basearch';         echo 'enabled=1';         echo 'gpgcheck=0';     } > /etc/yum.repos.d/dbsync_deps.repo     && cp -ra /var/log/yum.log /tmp/yum.log.old     && yum install mysql-community-client mysql-community-devel postgresql10-devel gcc gcc-c++ make unzip -y     && update-alternatives --install /usr/bin/pg_config pgsql-pg_config /usr/pgsql-10/bin/pg_config 300     && (         cd /tmp/aliyun/dbsync         && make         && install -D -d /dbsync/bin /dbsync/lib         && install -p -D -m 0755 *2pgsql /dbsync/bin         && install -p -D -m 0755 ali_recvlogical.so /dbsync/lib         && install -p -D -m 0644 my.cfg ../LICENSE ../README.md /dbsync         && ln -sf /usr/share/mysql /dbsync/share     )     && update-alternatives --remove pgsql-pg_config /usr/pgsql-10/bin/pg_config     && mkdir -p /tmp/extbin     && curl -L https://github.com/aliyun/rds_dbsync/files/1555186/mysql2pgsql.bin.el7.20171213.zip -o /tmp/extbin/bin.zip     && (cd /tmp/extbin && unzip -o bin.zip && install -p -D -m 0755 mysql2pgsql.bin*/bin/binlog_* /dbsync/bin)     && yum remove -y mysql-community-devel postgresql10-devel unzip gcc gcc-c++ make cpp glibc-devel glibc-headers libicu-devel libstdc++-devel kernel-headers     && yum clean all && mv /tmp/yum.log.old /var/log/yum.log     && rm -rf /tmp/aliyun /tmp/extbin /var/cache/yum/* /etc/yum.repos.d/dbsync_deps.repo     && ls -alhR /dbsync && ldd /dbsync/bin/* && mysql --version && psql --version && mysql2pgsql -h" did not complete successfully: exit code: 1
+Duration: 0:21.77

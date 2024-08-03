@@ -1,0 +1,157 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 531B done
+#2 DONE 0.3s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.6s
+
+#4 [1/6] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.3s done
+#4 DONE 0.3s
+
+#4 [1/6] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#4 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#4 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.2s
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s done
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.8s done
+#4 DONE 1.8s
+
+#5 [2/6] RUN apk --update add --no-cache python3 py3-pip openssl ca-certificates
+#5 1.492 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#5 1.978 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#5 3.278 (1/27) Installing ca-certificates (20240705-r0)
+#5 3.355 (2/27) Installing openssl (3.3.1-r3)
+#5 3.379 (3/27) Installing libbz2 (1.0.8-r6)
+#5 3.394 (4/27) Installing libexpat (2.6.2-r0)
+#5 3.400 (5/27) Installing libffi (3.4.6-r0)
+#5 3.403 (6/27) Installing gdbm (1.23-r1)
+#5 3.448 (7/27) Installing xz-libs (5.6.1-r3)
+#5 3.507 (8/27) Installing libgcc (13.2.1_git20240309-r0)
+#5 3.522 (9/27) Installing libstdc++ (13.2.1_git20240309-r0)
+#5 3.591 (10/27) Installing mpdecimal (4.0.0-r0)
+#5 3.607 (11/27) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#5 3.648 (12/27) Installing libncursesw (6.4_p20240420-r0)
+#5 3.667 (13/27) Installing libpanelw (6.4_p20240420-r0)
+#5 3.679 (14/27) Installing readline (8.2.10-r0)
+#5 3.688 (15/27) Installing sqlite-libs (3.45.3-r1)
+#5 3.739 (16/27) Installing python3 (3.12.3-r1)
+#5 4.627 (17/27) Installing python3-pycache-pyc0 (3.12.3-r1)
+#5 6.692 (18/27) Installing pyc (3.12.3-r1)
+#5 6.700 (19/27) Installing py3-setuptools-pyc (69.5.1-r0)
+#5 6.983 (20/27) Installing py3-pip-pyc (24.0-r2)
+#5 7.382 (21/27) Installing py3-parsing (3.1.2-r1)
+#5 7.403 (22/27) Installing py3-parsing-pyc (3.1.2-r1)
+#5 7.437 (23/27) Installing py3-packaging-pyc (24.0-r1)
+#5 7.453 (24/27) Installing python3-pyc (3.12.3-r1)
+#5 7.462 (25/27) Installing py3-packaging (24.0-r1)
+#5 7.493 (26/27) Installing py3-setuptools (69.5.1-r0)
+#5 7.722 (27/27) Installing py3-pip (24.0-r2)
+#5 8.103 Executing busybox-1.36.1-r29.trigger
+#5 8.131 Executing ca-certificates-20240705-r0.trigger
+#5 8.346 OK: 77 MiB in 41 packages
+#5 DONE 12.0s
+
+#6 [3/6] RUN apk --update add --virtual build-dependencies python3-dev build-base wget git py3-lxml   && git clone https://github.com/UnkL4b/GitMiner.git
+#6 1.662 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 2.093 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 3.003 (1/39) Installing pkgconf (2.2.0-r0)
+#6 3.011 (2/39) Installing python3-dev (3.12.3-r1)
+#6 4.677 (3/39) Installing jansson (2.14-r4)
+#6 4.692 (4/39) Installing zstd-libs (1.5.6-r0)
+#6 4.735 (5/39) Installing binutils (2.42-r0)
+#6 4.937 (6/39) Installing libmagic (5.45-r1)
+#6 5.034 (7/39) Installing file (5.45-r1)
+#6 5.049 (8/39) Installing libgomp (13.2.1_git20240309-r0)
+#6 5.060 (9/39) Installing libatomic (13.2.1_git20240309-r0)
+#6 5.072 (10/39) Installing gmp (6.3.0-r1)
+#6 5.083 (11/39) Installing isl26 (0.26-r1)
+#6 5.154 (12/39) Installing mpfr4 (4.2.1-r0)
+#6 5.168 (13/39) Installing mpc1 (1.3.1-r1)
+#6 5.185 (14/39) Installing gcc (13.2.1_git20240309-r0)
+#6 8.372 (15/39) Installing libstdc++-dev (13.2.1_git20240309-r0)
+#6 9.010 (16/39) Installing musl-dev (1.2.5-r0)
+#6 9.353 (17/39) Installing g++ (13.2.1_git20240309-r0)
+#6 10.26 (18/39) Installing make (4.4.1-r2)
+#6 10.27 (19/39) Installing fortify-headers (1.1-r3)
+#6 10.31 (20/39) Installing patch (2.7.6-r10)
+#6 10.33 (21/39) Installing build-base (0.5-r3)
+#6 10.34 (22/39) Installing libunistring (1.2-r0)
+#6 10.38 (23/39) Installing libidn2 (2.3.7-r0)
+#6 10.39 (24/39) Installing pcre2 (10.43-r0)
+#6 10.41 (25/39) Installing wget (1.24.5-r0)
+#6 10.43 (26/39) Installing brotli-libs (1.1.0-r2)
+#6 10.46 (27/39) Installing c-ares (1.28.1-r0)
+#6 10.47 (28/39) Installing nghttp2-libs (1.62.1-r0)
+#6 10.47 (29/39) Installing libpsl (0.21.5-r1)
+#6 10.48 (30/39) Installing libcurl (8.9.0-r0)
+#6 10.52 (31/39) Installing git (2.45.2-r0)
+#6 10.67 (32/39) Installing git-init-template (2.45.2-r0)
+#6 10.69 (33/39) Installing libgpg-error (1.49-r0)
+#6 10.70 (34/39) Installing libgcrypt (1.10.3-r0)
+#6 10.73 (35/39) Installing libxml2 (2.12.7-r0)
+#6 10.77 (36/39) Installing libxslt (1.1.39-r1)
+#6 10.79 (37/39) Installing py3-lxml (5.1.0-r0)
+#6 10.92 (38/39) Installing py3-lxml-pyc (5.1.0-r0)
+#6 10.93 (39/39) Installing build-dependencies (20240801.084551)
+#6 10.94 Executing busybox-1.36.1-r29.trigger
+#6 10.99 OK: 401 MiB in 80 packages
+#6 11.23 Cloning into 'GitMiner'...
+#6 DONE 19.1s
+
+#7 [4/6] WORKDIR GitMiner
+#7 DONE 0.6s
+
+#8 [5/6] RUN python3 -m venv venv
+#8 DONE 18.2s
+
+#9 [6/6] RUN . venv/bin/activate && pip install -r requirements.txt
+#9 4.492 Collecting lxml (from -r requirements.txt (line 1))
+#9 4.594   Downloading lxml-5.2.2-cp312-cp312-musllinux_1_2_x86_64.whl.metadata (3.4 kB)
+#9 4.927 Collecting requests (from -r requirements.txt (line 2))
+#9 4.953   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+#9 5.661 Collecting charset-normalizer<4,>=2 (from requests->-r requirements.txt (line 2))
+#9 5.679   Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (33 kB)
+#9 5.867 Collecting idna<4,>=2.5 (from requests->-r requirements.txt (line 2))
+#9 5.902   Downloading idna-3.7-py3-none-any.whl.metadata (9.9 kB)
+#9 6.291 Collecting urllib3<3,>=1.21.1 (from requests->-r requirements.txt (line 2))
+#9 6.304   Downloading urllib3-2.2.2-py3-none-any.whl.metadata (6.4 kB)
+#9 6.502 Collecting certifi>=2017.4.17 (from requests->-r requirements.txt (line 2))
+#9 6.517   Downloading certifi-2024.7.4-py3-none-any.whl.metadata (2.2 kB)
+#9 6.631 Downloading lxml-5.2.2-cp312-cp312-musllinux_1_2_x86_64.whl (5.0 MB)
+#9 7.178    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 9.4 MB/s eta 0:00:00
+#9 7.194 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#9 7.264    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 991.9 kB/s eta 0:00:00
+#9 7.280 Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#9 7.355    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.0/163.0 kB 2.5 MB/s eta 0:00:00
+#9 7.371 Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl (142 kB)
+#9 7.442    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.2/142.2 kB 2.4 MB/s eta 0:00:00
+#9 7.457 Downloading idna-3.7-py3-none-any.whl (66 kB)
+#9 7.514    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.8/66.8 kB 1.4 MB/s eta 0:00:00
+#9 7.527 Downloading urllib3-2.2.2-py3-none-any.whl (121 kB)
+#9 7.608    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.4/121.4 kB 1.7 MB/s eta 0:00:00
+#9 7.897 Installing collected packages: urllib3, lxml, idna, charset-normalizer, certifi, requests
+#9 10.31 Successfully installed certifi-2024.7.4 charset-normalizer-3.3.2 idna-3.7 lxml-5.2.2 requests-2.32.3 urllib3-2.2.2
+#9 10.84 
+#9 10.84 [notice] A new release of pip is available: 24.0 -> 24.2
+#9 10.84 [notice] To update, run: pip install --upgrade pip
+#9 DONE 11.9s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 6.6s done
+#10 writing image sha256:663a336418245856c4c648fe24631b94f59e6843e1946d41e95fc5886e30ecde
+#10 writing image sha256:663a336418245856c4c648fe24631b94f59e6843e1946d41e95fc5886e30ecde 0.0s done
+#10 naming to docker.io/library/image_name_v1_1 0.0s done
+#10 DONE 6.6s
+Duration: 1:12.69

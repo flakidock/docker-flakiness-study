@@ -1,0 +1,176 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 997B done
+#1 DONE 0.0s
+
+#2 [auth] library/alpine:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.14
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 157B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 351.58kB done
+#5 DONE 0.0s
+
+#6 [1/8] FROM docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#6 resolve docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 0.0s done
+#6 sha256:71859b0c62df47efaeae4f93698b56a8dddafbf041778fd668bbd1ab45a864f8 528B / 528B done
+#6 sha256:9e179bacf43c4d3428d57cf459799ba0285b901945f9eccb17b6da056d3532c7 1.47kB / 1.47kB done
+#6 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 2.10MB / 2.83MB 0.2s
+#6 sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 1.64kB / 1.64kB done
+#6 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 2.83MB / 2.83MB 0.2s done
+#6 extracting sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 0.1s done
+#6 DONE 0.5s
+
+#7 [2/8] RUN apk --no-cache add   tini   nodejs   npm   ffmpeg   android-tools   && npm install -g   npm@latest   && rm -rf   /tmp/*   /root/.npm
+#7 0.171 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#7 0.299 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#7 0.487 (1/75) Installing brotli-libs (1.0.9-r5)
+#7 0.511 (2/75) Installing libgcc (10.3.1_git20210424-r2)
+#7 0.523 (3/75) Installing lz4-libs (1.9.3-r1)
+#7 0.538 (4/75) Installing libstdc++ (10.3.1_git20210424-r2)
+#7 0.561 (5/75) Installing libprotobuf (3.15.7-r1)
+#7 0.606 (6/75) Installing libusb (1.0.24-r2)
+#7 0.620 (7/75) Installing zstd-libs (1.4.9-r1)
+#7 0.642 (8/75) Installing android-tools (31.0.0p1-r2)
+#7 0.697 (9/75) Installing sdl2 (2.0.14-r1)
+#7 0.718 (10/75) Installing libxau (1.0.9-r0)
+#7 0.731 (11/75) Installing libmd (1.0.3-r0)
+#7 0.745 (12/75) Installing libbsd (0.11.3-r0)
+#7 0.758 (13/75) Installing libxdmcp (1.1.3-r0)
+#7 0.771 (14/75) Installing libxcb (1.14-r2)
+#7 0.800 (15/75) Installing libx11 (1.7.3.1-r0)
+#7 0.844 (16/75) Installing aom-libs (1.0.0-r3)
+#7 0.892 (17/75) Installing alsa-lib (1.2.5-r2)
+#7 0.922 (18/75) Installing expat (2.5.0-r0)
+#7 0.936 (19/75) Installing libbz2 (1.0.8-r1)
+#7 0.951 (20/75) Installing libpng (1.6.37-r1)
+#7 0.966 (21/75) Installing freetype (2.10.4-r3)
+#7 0.986 (22/75) Installing libuuid (2.37.4-r0)
+#7 1.003 (23/75) Installing fontconfig (2.13.1-r4)
+#7 1.027 (24/75) Installing fribidi (1.0.10-r0)
+#7 1.050 (25/75) Installing libffi (3.3-r2)
+#7 1.063 (26/75) Installing libintl (0.21-r0)
+#7 1.078 (27/75) Installing libblkid (2.37.4-r0)
+#7 1.095 (28/75) Installing libmount (2.37.4-r0)
+#7 1.111 (29/75) Installing pcre (8.44-r0)
+#7 1.129 (30/75) Installing glib (2.68.3-r0)
+#7 1.173 (31/75) Installing graphite2 (1.3.14-r0)
+#7 1.187 (32/75) Installing harfbuzz (2.8.1-r0)
+#7 1.214 (33/75) Installing libass (0.15.1-r0)
+#7 1.228 (34/75) Installing libdav1d (0.9.0-r0)
+#7 1.253 (35/75) Installing gmp (6.2.1-r1)
+#7 1.271 (36/75) Installing nettle (3.7.3-r0)
+#7 1.289 (37/75) Installing p11-kit (0.23.22-r0)
+#7 1.310 (38/75) Installing libtasn1 (4.17.0-r1)
+#7 1.324 (39/75) Installing libunistring (0.9.10-r1)
+#7 1.347 (40/75) Installing gnutls (3.7.1-r2)
+#7 1.378 (41/75) Installing ncurses-terminfo-base (6.2_p20210612-r1)
+#7 1.393 (42/75) Installing ncurses-libs (6.2_p20210612-r1)
+#7 1.416 (43/75) Installing lame (3.100-r0)
+#7 1.435 (44/75) Installing opus (1.3.1-r1)
+#7 1.461 (45/75) Installing libgomp (10.3.1_git20210424-r2)
+#7 1.476 (46/75) Installing soxr (0.1.3-r2)
+#7 1.490 (47/75) Installing libsrt (1.4.2-r0)
+#7 1.510 (48/75) Installing libssh (0.9.6-r0)
+#7 1.527 (49/75) Installing libogg (1.3.5-r0)
+#7 1.540 (50/75) Installing libtheora (1.1.1-r16)
+#7 1.564 (51/75) Installing libjpeg-turbo (2.1.0-r0)
+#7 1.584 (52/75) Installing v4l-utils-libs (1.20.0-r0)
+#7 1.603 (53/75) Installing libxext (1.3.4-r0)
+#7 1.616 (54/75) Installing libxfixes (6.0.0-r0)
+#7 1.629 (55/75) Installing libpciaccess (0.16-r0)
+#7 1.641 (56/75) Installing libdrm (2.4.106-r0)
+#7 1.659 (57/75) Installing wayland-libs-client (1.19.0-r0)
+#7 1.673 (58/75) Installing libva (2.11.0-r0)
+#7 1.687 (59/75) Installing libvdpau (1.4-r0)
+#7 1.701 (60/75) Installing vidstab (1.1.0-r1)
+#7 1.718 (61/75) Installing libvorbis (1.3.7-r0)
+#7 1.738 (62/75) Installing libvpx (1.10.0-r0)
+#7 1.771 (63/75) Installing vulkan-loader (1.2.170-r1)
+#7 1.786 (64/75) Installing libwebp (1.2.0-r2)
+#7 1.807 (65/75) Installing x264-libs (20210211-r0)
+#7 1.840 (66/75) Installing x265-libs (3.4-r0)
+#7 1.873 (67/75) Installing xvidcore (1.3.7-r1)
+#7 1.891 (68/75) Installing ffmpeg-libs (4.4.1-r0)
+#7 2.108 (69/75) Installing ffmpeg (4.4.1-r0)
+#7 2.128 (70/75) Installing ca-certificates (20230506-r0)
+#7 2.155 (71/75) Installing nghttp2-libs (1.43.0-r0)
+#7 2.169 (72/75) Installing c-ares (1.17.2-r0)
+#7 2.182 (73/75) Installing nodejs (14.21.3-r0)
+#7 2.494 (74/75) Installing npm (7.17.0-r0)
+#7 2.692 (75/75) Installing tini (0.19.0-r0)
+#7 2.706 Executing busybox-1.33.1-r8.trigger
+#7 2.710 Executing ca-certificates-20230506-r0.trigger
+#7 2.738 OK: 130 MiB in 89 packages
+#7 3.478 npm WARN EBADENGINE Unsupported engine {
+#7 3.478 npm WARN EBADENGINE   package: 'npm@10.8.2',
+#7 3.478 npm WARN EBADENGINE   required: { node: '^18.17.0 || >=20.5.0' },
+#7 3.478 npm WARN EBADENGINE   current: { node: 'v14.21.3', npm: '7.17.0' }
+#7 3.478 npm WARN EBADENGINE }
+#7 4.757 
+#7 4.757 added 1 package, and audited 203 packages in 2s
+#7 4.757 
+#7 4.757 22 packages are looking for funding
+#7 4.757   run `npm fund` for details
+#7 4.758 
+#7 4.758 found 0 vulnerabilities
+#7 DONE 5.4s
+
+#8 [3/8] WORKDIR /usr/lib/wdio
+#8 DONE 0.0s
+
+#9 [4/8] COPY package.json package-lock.json ./
+#9 DONE 0.1s
+
+#10 [5/8] RUN npm install --production   && rm -rf   /tmp/*   /root/.npm
+#10 0.264 ERROR: npm v10.8.2 is known not to run on Node.js v14.21.3.  This version of npm supports the following node versions: `^18.17.0 || >=20.5.0`. You can find the latest version at https://nodejs.org/.
+#10 0.264 
+#10 0.264 ERROR:
+#10 0.265 /usr/local/lib/node_modules/npm/lib/utils/error-message.js:11
+#10 0.265   er.message &&= replaceInfo(er.message)
+#10 0.265              ^^^
+#10 0.265 
+#10 0.265 SyntaxError: Unexpected token '&&='
+#10 0.265     at wrapSafe (internal/modules/cjs/loader.js:1029:16)
+#10 0.265     at Module._compile (internal/modules/cjs/loader.js:1078:27)
+#10 0.265     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+#10 0.265     at Module.load (internal/modules/cjs/loader.js:979:32)
+#10 0.265     at Function.Module._load (internal/modules/cjs/loader.js:819:12)
+#10 0.265     at Module.require (internal/modules/cjs/loader.js:1003:19)
+#10 0.265     at require (internal/modules/cjs/helpers.js:107:18)
+#10 0.265     at Object.<anonymous> (/usr/local/lib/node_modules/npm/lib/cli/exit-handler.js:2:48)
+#10 0.265     at Module._compile (internal/modules/cjs/loader.js:1114:14)
+#10 0.265     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+#10 ERROR: process "/bin/sh -c npm install --production   && rm -rf   /tmp/*   /root/.npm" did not complete successfully: exit code: 1
+------
+ > [5/8] RUN npm install --production   && rm -rf   /tmp/*   /root/.npm:
+0.265     at wrapSafe (internal/modules/cjs/loader.js:1029:16)
+0.265     at Module._compile (internal/modules/cjs/loader.js:1078:27)
+0.265     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+0.265     at Module.load (internal/modules/cjs/loader.js:979:32)
+0.265     at Function.Module._load (internal/modules/cjs/loader.js:819:12)
+0.265     at Module.require (internal/modules/cjs/loader.js:1003:19)
+0.265     at require (internal/modules/cjs/helpers.js:107:18)
+0.265     at Object.<anonymous> (/usr/local/lib/node_modules/npm/lib/cli/exit-handler.js:2:48)
+0.265     at Module._compile (internal/modules/cjs/loader.js:1114:14)
+0.265     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+------
+v1_Dockerfile:19
+--------------------
+  18 |     COPY package.json package-lock.json ./
+  19 | >>> RUN npm install --production \
+  20 | >>>   # Clean up obsolete files:
+  21 | >>>   && rm -rf \
+  22 | >>>   /tmp/* \
+  23 | >>>   /root/.npm
+  24 |     # Set NODE_PATH to be able to require installed packages:
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm install --production   && rm -rf   /tmp/*   /root/.npm" did not complete successfully: exit code: 1
+Duration: 0:7.51

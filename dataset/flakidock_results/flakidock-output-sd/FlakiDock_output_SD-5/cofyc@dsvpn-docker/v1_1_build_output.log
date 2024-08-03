@@ -1,0 +1,24 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 957B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for k8s.gcr.io/debian-base:v2.1.0
+#3 ERROR: k8s.gcr.io/debian-base:v2.1.0: not found
+------
+ > [internal] load metadata for k8s.gcr.io/debian-base:v2.1.0:
+------
+v1_Dockerfile:2
+--------------------
+   1 |     ARG GIT_REF=master
+   2 | >>> FROM k8s.gcr.io/debian-base:v2.1.0 as builder
+   3 |     
+   4 |     WORKDIR /dsvpn
+--------------------
+ERROR: failed to solve: k8s.gcr.io/debian-base:v2.1.0: k8s.gcr.io/debian-base:v2.1.0: not found
+Duration: 0:2.03

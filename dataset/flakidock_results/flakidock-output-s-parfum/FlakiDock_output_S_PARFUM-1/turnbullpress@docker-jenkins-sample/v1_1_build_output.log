@@ -1,0 +1,223 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 357B done
+#1 DONE 0.0s
+
+#2 [auth] library/ubuntu:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:16.04
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/3] FROM docker.io/library/ubuntu:16.04@sha256:1f1a2d56de1d604801a9671f301190704c25d604a416f59e03c04f5c6ffee0d6
+#5 resolve docker.io/library/ubuntu:16.04@sha256:1f1a2d56de1d604801a9671f301190704c25d604a416f59e03c04f5c6ffee0d6 0.0s done
+#5 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 0B / 46.50MB 0.1s
+#5 sha256:b51569e7c50720acf6860327847fe342a1afbe148d24c529fb81df105e3eed01 0B / 857B 0.1s
+#5 sha256:da8ef40b9ecabc2679fe2419957220c0272a965c5cf7e0269fa1aeeb8c56f2e1 0B / 528B 0.1s
+#5 sha256:1f1a2d56de1d604801a9671f301190704c25d604a416f59e03c04f5c6ffee0d6 1.42kB / 1.42kB done
+#5 sha256:a3785f78ab8547ae2710c89e627783cfa7ee7824d3468cae6835c9f4eae23ff7 1.15kB / 1.15kB done
+#5 sha256:b6f50765242581c887ff1acc2511fa2d885c52d8fb3ac8c4bba131fd86567f2e 3.36kB / 3.36kB done
+#5 sha256:b51569e7c50720acf6860327847fe342a1afbe148d24c529fb81df105e3eed01 857B / 857B 0.2s done
+#5 sha256:da8ef40b9ecabc2679fe2419957220c0272a965c5cf7e0269fa1aeeb8c56f2e1 528B / 528B 0.2s done
+#5 sha256:fb15d46c38dcd1ea0b1990006c3366ecd10c79d374f341687eb2cb23a2c8672e 0B / 170B 0.3s
+#5 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 6.29MB / 46.50MB 0.5s
+#5 sha256:fb15d46c38dcd1ea0b1990006c3366ecd10c79d374f341687eb2cb23a2c8672e 170B / 170B 0.3s done
+#5 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 22.02MB / 46.50MB 0.7s
+#5 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 32.51MB / 46.50MB 0.8s
+#5 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 46.50MB / 46.50MB 1.0s
+#5 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 46.50MB / 46.50MB 1.1s done
+#5 extracting sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50
+#5 extracting sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 2.7s done
+#5 extracting sha256:b51569e7c50720acf6860327847fe342a1afbe148d24c529fb81df105e3eed01
+#5 extracting sha256:b51569e7c50720acf6860327847fe342a1afbe148d24c529fb81df105e3eed01 done
+#5 extracting sha256:da8ef40b9ecabc2679fe2419957220c0272a965c5cf7e0269fa1aeeb8c56f2e1 done
+#5 extracting sha256:fb15d46c38dcd1ea0b1990006c3366ecd10c79d374f341687eb2cb23a2c8672e done
+#5 DONE 4.1s
+
+#6 [2/3] RUN apt-get update && apt-get -y --no-install-recommends install ruby rake && rm -rf /var/lib/apt/lists/*;
+#6 0.328 Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [106 kB]
+#6 0.502 Get:2 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+#6 0.723 Get:3 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [1150 kB]
+#6 1.073 Get:4 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [15.9 kB]
+#6 1.073 Get:5 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [928 kB]
+#6 1.112 Get:6 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [8820 B]
+#6 1.383 Get:7 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [106 kB]
+#6 1.591 Get:8 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [106 kB]
+#6 1.748 Get:9 http://archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1558 kB]
+#6 2.191 Get:10 http://archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [14.1 kB]
+#6 2.194 Get:11 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [9827 kB]
+#6 3.151 Get:12 http://archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [176 kB]
+#6 3.166 Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1608 kB]
+#6 3.320 Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [16.4 kB]
+#6 3.321 Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [1483 kB]
+#6 3.463 Get:16 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [25.0 kB]
+#6 3.467 Get:17 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [11.3 kB]
+#6 3.468 Get:18 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [12.9 kB]
+#6 4.048 Fetched 17.4 MB in 3s (4510 kB/s)
+#6 4.048 Reading package lists...
+#6 4.861 Reading package lists...
+#6 5.666 Building dependency tree...
+#6 5.800 Reading state information...
+#6 5.881 The following additional packages will be installed:
+#6 5.881   ca-certificates libffi6 libgdbm3 libgmp10 libruby2.3 libssl1.0.0 libyaml-0-2
+#6 5.881   openssl ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert
+#6 5.881   ruby-test-unit ruby2.3 rubygems-integration
+#6 5.882 Suggested packages:
+#6 5.882   ri ruby-dev bundler
+#6 5.882 Recommended packages:
+#6 5.882   zip fonts-lato libjs-jquery
+#6 5.882 The following NEW packages will be installed:
+#6 5.882   ca-certificates libffi6 libgdbm3 libgmp10 libruby2.3 libssl1.0.0 libyaml-0-2
+#6 5.882   openssl rake ruby ruby-did-you-mean ruby-minitest ruby-net-telnet
+#6 5.882   ruby-power-assert ruby-test-unit ruby2.3 rubygems-integration
+#6 6.084 0 upgraded, 17 newly installed, 0 to remove and 2 not upgraded.
+#6 6.084 Need to get 5239 kB of archives.
+#6 6.084 After this operation, 20.5 MB of additional disk space will be used.
+#6 6.084 Get:1 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgdbm3 amd64 1.8.3-13.1 [16.9 kB]
+#6 6.228 Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 libyaml-0-2 amd64 0.1.6-3 [47.6 kB]
+#6 6.320 Get:3 http://archive.ubuntu.com/ubuntu xenial/main amd64 libffi6 amd64 3.2.1-4 [17.8 kB]
+#6 6.353 Get:4 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgmp10 amd64 2:6.1.0+dfsg-2 [240 kB]
+#6 6.497 Get:5 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libssl1.0.0 amd64 1.0.2g-1ubuntu4.20 [1083 kB]
+#6 6.661 Get:6 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openssl amd64 1.0.2g-1ubuntu4.20 [492 kB]
+#6 6.698 Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ca-certificates all 20210119~16.04.1 [148 kB]
+#6 6.705 Get:8 http://archive.ubuntu.com/ubuntu xenial/main amd64 rubygems-integration all 1.10 [4966 B]
+#6 6.705 Get:9 http://archive.ubuntu.com/ubuntu xenial/main amd64 ruby-did-you-mean all 1.0.0-2 [8390 B]
+#6 6.706 Get:10 http://archive.ubuntu.com/ubuntu xenial/main amd64 ruby-minitest all 5.8.4-2 [36.6 kB]
+#6 6.709 Get:11 http://archive.ubuntu.com/ubuntu xenial/main amd64 ruby-net-telnet all 0.1.1-2 [12.6 kB]
+#6 6.709 Get:12 http://archive.ubuntu.com/ubuntu xenial/main amd64 ruby-power-assert all 0.2.7-1 [7668 B]
+#6 6.709 Get:13 http://archive.ubuntu.com/ubuntu xenial/main amd64 ruby-test-unit all 3.1.7-2 [60.3 kB]
+#6 6.714 Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libruby2.3 amd64 2.3.1-2~ubuntu16.04.16 [2969 kB]
+#6 6.840 Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ruby2.3 amd64 2.3.1-2~ubuntu16.04.16 [41.0 kB]
+#6 6.842 Get:16 http://archive.ubuntu.com/ubuntu xenial/main amd64 ruby all 1:2.3.0+1 [5530 B]
+#6 6.842 Get:17 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 rake all 10.5.0-2ubuntu0.1 [48.1 kB]
+#6 6.910 debconf: delaying package configuration, since apt-utils is not installed
+#6 6.924 Fetched 5239 kB in 0s (5792 kB/s)
+#6 6.949 Selecting previously unselected package libgdbm3:amd64.
+#6 6.949 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4785 files and directories currently installed.)
+#6 6.953 Preparing to unpack .../libgdbm3_1.8.3-13.1_amd64.deb ...
+#6 6.959 Unpacking libgdbm3:amd64 (1.8.3-13.1) ...
+#6 7.006 Selecting previously unselected package libyaml-0-2:amd64.
+#6 7.007 Preparing to unpack .../libyaml-0-2_0.1.6-3_amd64.deb ...
+#6 7.013 Unpacking libyaml-0-2:amd64 (0.1.6-3) ...
+#6 7.061 Selecting previously unselected package libffi6:amd64.
+#6 7.062 Preparing to unpack .../libffi6_3.2.1-4_amd64.deb ...
+#6 7.075 Unpacking libffi6:amd64 (3.2.1-4) ...
+#6 7.125 Selecting previously unselected package libgmp10:amd64.
+#6 7.126 Preparing to unpack .../libgmp10_2%3a6.1.0+dfsg-2_amd64.deb ...
+#6 7.132 Unpacking libgmp10:amd64 (2:6.1.0+dfsg-2) ...
+#6 7.208 Selecting previously unselected package libssl1.0.0:amd64.
+#6 7.208 Preparing to unpack .../libssl1.0.0_1.0.2g-1ubuntu4.20_amd64.deb ...
+#6 7.216 Unpacking libssl1.0.0:amd64 (1.0.2g-1ubuntu4.20) ...
+#6 7.343 Selecting previously unselected package openssl.
+#6 7.343 Preparing to unpack .../openssl_1.0.2g-1ubuntu4.20_amd64.deb ...
+#6 7.348 Unpacking openssl (1.0.2g-1ubuntu4.20) ...
+#6 7.444 Selecting previously unselected package ca-certificates.
+#6 7.444 Preparing to unpack .../ca-certificates_20210119~16.04.1_all.deb ...
+#6 7.448 Unpacking ca-certificates (20210119~16.04.1) ...
+#6 7.518 Selecting previously unselected package rubygems-integration.
+#6 7.519 Preparing to unpack .../rubygems-integration_1.10_all.deb ...
+#6 7.525 Unpacking rubygems-integration (1.10) ...
+#6 7.562 Selecting previously unselected package ruby-did-you-mean.
+#6 7.563 Preparing to unpack .../ruby-did-you-mean_1.0.0-2_all.deb ...
+#6 7.569 Unpacking ruby-did-you-mean (1.0.0-2) ...
+#6 7.610 Selecting previously unselected package ruby-minitest.
+#6 7.611 Preparing to unpack .../ruby-minitest_5.8.4-2_all.deb ...
+#6 7.617 Unpacking ruby-minitest (5.8.4-2) ...
+#6 7.653 Selecting previously unselected package ruby-net-telnet.
+#6 7.653 Preparing to unpack .../ruby-net-telnet_0.1.1-2_all.deb ...
+#6 7.657 Unpacking ruby-net-telnet (0.1.1-2) ...
+#6 7.693 Selecting previously unselected package ruby-power-assert.
+#6 7.696 Preparing to unpack .../ruby-power-assert_0.2.7-1_all.deb ...
+#6 7.701 Unpacking ruby-power-assert (0.2.7-1) ...
+#6 7.738 Selecting previously unselected package ruby-test-unit.
+#6 7.739 Preparing to unpack .../ruby-test-unit_3.1.7-2_all.deb ...
+#6 7.743 Unpacking ruby-test-unit (3.1.7-2) ...
+#6 7.794 Selecting previously unselected package libruby2.3:amd64.
+#6 7.797 Preparing to unpack .../libruby2.3_2.3.1-2~ubuntu16.04.16_amd64.deb ...
+#6 7.802 Unpacking libruby2.3:amd64 (2.3.1-2~ubuntu16.04.16) ...
+#6 8.162 Selecting previously unselected package ruby2.3.
+#6 8.162 Preparing to unpack .../ruby2.3_2.3.1-2~ubuntu16.04.16_amd64.deb ...
+#6 8.166 Unpacking ruby2.3 (2.3.1-2~ubuntu16.04.16) ...
+#6 8.209 Selecting previously unselected package ruby.
+#6 8.211 Preparing to unpack .../ruby_1%3a2.3.0+1_all.deb ...
+#6 8.221 Unpacking ruby (1:2.3.0+1) ...
+#6 8.258 Selecting previously unselected package rake.
+#6 8.259 Preparing to unpack .../rake_10.5.0-2ubuntu0.1_all.deb ...
+#6 8.264 Unpacking rake (10.5.0-2ubuntu0.1) ...
+#6 8.299 Processing triggers for libc-bin (2.23-0ubuntu11.3) ...
+#6 8.337 Setting up libgdbm3:amd64 (1.8.3-13.1) ...
+#6 8.364 Setting up libyaml-0-2:amd64 (0.1.6-3) ...
+#6 8.391 Setting up libffi6:amd64 (3.2.1-4) ...
+#6 8.407 Setting up libgmp10:amd64 (2:6.1.0+dfsg-2) ...
+#6 8.423 Setting up libssl1.0.0:amd64 (1.0.2g-1ubuntu4.20) ...
+#6 8.491 debconf: unable to initialize frontend: Dialog
+#6 8.491 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 8.491 debconf: falling back to frontend: Readline
+#6 8.492 debconf: unable to initialize frontend: Readline
+#6 8.492 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#6 8.492 debconf: falling back to frontend: Teletype
+#6 8.526 Setting up openssl (1.0.2g-1ubuntu4.20) ...
+#6 8.554 Setting up ca-certificates (20210119~16.04.1) ...
+#6 8.626 debconf: unable to initialize frontend: Dialog
+#6 8.626 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 8.626 debconf: falling back to frontend: Readline
+#6 8.626 debconf: unable to initialize frontend: Readline
+#6 8.626 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#6 8.626 debconf: falling back to frontend: Teletype
+#6 9.182 Setting up rubygems-integration (1.10) ...
+#6 9.205 Setting up ruby-did-you-mean (1.0.0-2) ...
+#6 9.224 Setting up ruby-minitest (5.8.4-2) ...
+#6 9.237 Setting up ruby-net-telnet (0.1.1-2) ...
+#6 9.253 Setting up ruby-power-assert (0.2.7-1) ...
+#6 9.268 Setting up ruby-test-unit (3.1.7-2) ...
+#6 9.286 Setting up libruby2.3:amd64 (2.3.1-2~ubuntu16.04.16) ...
+#6 9.307 Setting up ruby2.3 (2.3.1-2~ubuntu16.04.16) ...
+#6 9.325 Setting up ruby (1:2.3.0+1) ...
+#6 9.347 Setting up rake (10.5.0-2ubuntu0.1) ...
+#6 9.365 Processing triggers for libc-bin (2.23-0ubuntu11.3) ...
+#6 9.384 Processing triggers for ca-certificates (20210119~16.04.1) ...
+#6 9.390 Updating certificates in /etc/ssl/certs...
+#6 10.92 129 added, 0 removed; done.
+#6 10.92 Running hooks in /etc/ca-certificates/update.d...
+#6 10.92 done.
+#6 DONE 11.5s
+
+#7 [3/3] RUN gem install --no-rdoc --no-ri rspec ci_reporter_rspec
+#7 31.18 ERROR:  Error installing ci_reporter_rspec:
+#7 31.18 	strscan requires Ruby version >= 2.4.0.
+#7 31.25 Successfully installed diff-lcs-1.5.1
+#7 31.25 Successfully installed rspec-support-3.13.1
+#7 31.25 Successfully installed rspec-mocks-3.13.1
+#7 31.25 Successfully installed rspec-expectations-3.13.1
+#7 31.25 Successfully installed rspec-core-3.13.0
+#7 31.25 Successfully installed rspec-3.13.0
+#7 31.25 6 gems installed
+#7 ERROR: process "/bin/sh -c gem install --no-rdoc --no-ri rspec ci_reporter_rspec" did not complete successfully: exit code: 1
+------
+ > [3/3] RUN gem install --no-rdoc --no-ri rspec ci_reporter_rspec:
+31.18 ERROR:  Error installing ci_reporter_rspec:
+31.18 	strscan requires Ruby version >= 2.4.0.
+31.25 Successfully installed diff-lcs-1.5.1
+31.25 Successfully installed rspec-support-3.13.1
+31.25 Successfully installed rspec-mocks-3.13.1
+31.25 Successfully installed rspec-expectations-3.13.1
+31.25 Successfully installed rspec-core-3.13.0
+31.25 Successfully installed rspec-3.13.0
+31.25 6 gems installed
+------
+v1_Dockerfile:5
+--------------------
+   3 |     ENV REFRESHED_AT 2016-06-01
+   4 |     RUN apt-get update && apt-get -y --no-install-recommends install ruby rake && rm -rf /var/lib/apt/lists/*;
+   5 | >>> RUN gem install --no-rdoc --no-ri rspec ci_reporter_rspec
+--------------------
+ERROR: failed to solve: process "/bin/sh -c gem install --no-rdoc --no-ri rspec ci_reporter_rspec" did not complete successfully: exit code: 1
+Duration: 0:48.14

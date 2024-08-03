@@ -1,0 +1,176 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.07kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:latest
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/11] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 536.60kB 0.0s done
+#5 DONE 0.1s
+
+#4 [ 1/11] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#4 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#4 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#4 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.2s done
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s done
+#4 DONE 0.4s
+
+#6 [ 2/11] RUN mkdir -p /k8s-topo
+#6 DONE 0.2s
+
+#7 [ 3/11] WORKDIR /k8s-topo
+#7 DONE 0.0s
+
+#8 [ 4/11] COPY requirements.txt .
+#8 DONE 0.0s
+
+#9 [ 5/11] RUN apk add --no-cache python3 build-base python3-dev openssl-dev libffi-dev libstdc++ nginx curl jq &&     python3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --no-cache-dir --upgrade pip setuptools &&     pip3 install --no-cache-dir -r requirements.txt &&     apk del build-base python3-dev openssl-dev libffi-dev &&     rm -r /root/.cache &&     rm -rf /var/cache/apk/*
+#9 0.192 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#9 0.319 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#9 0.603 (1/54) Installing libgcc (13.2.1_git20240309-r0)
+#9 0.616 (2/54) Installing jansson (2.14-r4)
+#9 0.628 (3/54) Installing libstdc++ (13.2.1_git20240309-r0)
+#9 0.662 (4/54) Installing zstd-libs (1.5.6-r0)
+#9 0.683 (5/54) Installing binutils (2.42-r0)
+#9 0.779 (6/54) Installing libmagic (5.45-r1)
+#9 0.815 (7/54) Installing file (5.45-r1)
+#9 0.827 (8/54) Installing libgomp (13.2.1_git20240309-r0)
+#9 0.843 (9/54) Installing libatomic (13.2.1_git20240309-r0)
+#9 0.855 (10/54) Installing gmp (6.3.0-r1)
+#9 0.872 (11/54) Installing isl26 (0.26-r1)
+#9 0.904 (12/54) Installing mpfr4 (4.2.1-r0)
+#9 0.923 (13/54) Installing mpc1 (1.3.1-r1)
+#9 0.935 (14/54) Installing gcc (13.2.1_git20240309-r0)
+#9 1.998 (15/54) Installing libstdc++-dev (13.2.1_git20240309-r0)
+#9 2.166 (16/54) Installing musl-dev (1.2.5-r0)
+#9 2.255 (17/54) Installing g++ (13.2.1_git20240309-r0)
+#9 2.582 (18/54) Installing make (4.4.1-r2)
+#9 2.595 (19/54) Installing fortify-headers (1.1-r3)
+#9 2.608 (20/54) Installing patch (2.7.6-r10)
+#9 2.622 (21/54) Installing build-base (0.5-r3)
+#9 2.633 (22/54) Installing ca-certificates (20240705-r0)
+#9 2.660 (23/54) Installing brotli-libs (1.1.0-r2)
+#9 2.680 (24/54) Installing c-ares (1.28.1-r0)
+#9 2.694 (25/54) Installing libunistring (1.2-r0)
+#9 2.722 (26/54) Installing libidn2 (2.3.7-r0)
+#9 2.740 (27/54) Installing nghttp2-libs (1.62.1-r0)
+#9 2.754 (28/54) Installing libpsl (0.21.5-r1)
+#9 2.766 (29/54) Installing libcurl (8.9.0-r0)
+#9 2.786 (30/54) Installing curl (8.9.0-r0)
+#9 2.802 (31/54) Installing oniguruma (6.9.9-r0)
+#9 2.820 (32/54) Installing jq (1.7.1-r0)
+#9 2.839 (33/54) Installing linux-headers (6.6-r0)
+#9 2.956 (34/54) Installing libffi (3.4.6-r0)
+#9 2.968 (35/54) Installing pkgconf (2.2.0-r0)
+#9 2.982 (36/54) Installing libffi-dev (3.4.6-r0)
+#9 2.997 (37/54) Installing pcre (8.45-r3)
+#9 3.013 (38/54) Installing nginx (1.26.1-r0)
+#9 3.027 Executing nginx-1.26.1-r0.pre-install
+#9 3.075 Executing nginx-1.26.1-r0.post-install
+#9 3.078 (39/54) Installing openssl-dev (3.3.1-r3)
+#9 3.113 (40/54) Installing libbz2 (1.0.8-r6)
+#9 3.126 (41/54) Installing libexpat (2.6.2-r0)
+#9 3.139 (42/54) Installing gdbm (1.23-r1)
+#9 3.151 (43/54) Installing xz-libs (5.6.1-r3)
+#9 3.166 (44/54) Installing mpdecimal (4.0.0-r0)
+#9 3.179 (45/54) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#9 3.195 (46/54) Installing libncursesw (6.4_p20240420-r0)
+#9 3.211 (47/54) Installing libpanelw (6.4_p20240420-r0)
+#9 3.224 (48/54) Installing readline (8.2.10-r0)
+#9 3.238 (49/54) Installing sqlite-libs (3.45.3-r1)
+#9 3.267 (50/54) Installing python3 (3.12.3-r1)
+#9 3.509 (51/54) Installing python3-pycache-pyc0 (3.12.3-r1)
+#9 3.657 (52/54) Installing pyc (3.12.3-r1)
+#9 3.668 (53/54) Installing python3-pyc (3.12.3-r1)
+#9 3.680 (54/54) Installing python3-dev (3.12.3-r1)
+#9 4.364 Executing busybox-1.36.1-r29.trigger
+#9 4.370 Executing ca-certificates-20240705-r0.trigger
+#9 4.402 OK: 374 MiB in 68 packages
+#9 6.632 error: externally-managed-environment
+#9 6.632 
+#9 6.632 × This environment is externally managed
+#9 6.632 ╰─> 
+#9 6.632     The system-wide python installation should be maintained using the system
+#9 6.632     package manager (apk) only.
+#9 6.632     
+#9 6.632     If the package in question is not packaged already (and hence installable via
+#9 6.632     "apk add py3-somepackage"), please consider installing it inside a virtual
+#9 6.632     environment, e.g.:
+#9 6.632     
+#9 6.632     python3 -m venv /path/to/venv
+#9 6.632     . /path/to/venv/bin/activate
+#9 6.632     pip install mypackage
+#9 6.632     
+#9 6.632     To exit the virtual environment, run:
+#9 6.632     
+#9 6.632     deactivate
+#9 6.632     
+#9 6.632     The virtual environment is not deleted, and can be re-entered by re-sourcing
+#9 6.632     the activate file.
+#9 6.632     
+#9 6.632     To automatically manage virtual environments, consider using pipx (from the
+#9 6.632     pipx package).
+#9 6.632 
+#9 6.632 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+#9 6.632 hint: See PEP 668 for the detailed specification.
+#9 6.691 Traceback (most recent call last):
+#9 6.691   File "<frozen runpy>", line 198, in _run_module_as_main
+#9 6.691   File "<frozen runpy>", line 88, in _run_code
+#9 6.691   File "/usr/lib/python3.12/ensurepip/__main__.py", line 5, in <module>
+#9 6.691     sys.exit(ensurepip._main())
+#9 6.691              ^^^^^^^^^^^^^^^^^
+#9 6.691   File "/usr/lib/python3.12/ensurepip/__init__.py", line 284, in _main
+#9 6.691     return _bootstrap(
+#9 6.691            ^^^^^^^^^^^
+#9 6.691   File "/usr/lib/python3.12/ensurepip/__init__.py", line 200, in _bootstrap
+#9 6.691     return _run_pip([*args, *_PACKAGE_NAMES], additional_paths)
+#9 6.691            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#9 6.691   File "/usr/lib/python3.12/ensurepip/__init__.py", line 101, in _run_pip
+#9 6.691     return subprocess.run(cmd, check=True).returncode
+#9 6.691            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#9 6.691   File "/usr/lib/python3.12/subprocess.py", line 571, in run
+#9 6.691     raise CalledProcessError(retcode, process.args,
+#9 6.691 subprocess.CalledProcessError: Command '['/usr/bin/python3', '-W', 'ignore::DeprecationWarning', '-c', '\nimport runpy\nimport sys\nsys.path = [\'/tmp/tmpg_6urn9p/pip-24.0-py3-none-any.whl\'] + sys.path\nsys.argv[1:] = [\'install\', \'--no-cache-dir\', \'--no-index\', \'--find-links\', \'/tmp/tmpg_6urn9p\', \'pip\']\nrunpy.run_module("pip", run_name="__main__", alter_sys=True)\n']' returned non-zero exit status 1.
+#9 ERROR: process "/bin/sh -c apk add --no-cache python3 build-base python3-dev openssl-dev libffi-dev libstdc++ nginx curl jq &&     python3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --no-cache-dir --upgrade pip setuptools &&     pip3 install --no-cache-dir -r requirements.txt &&     apk del build-base python3-dev openssl-dev libffi-dev &&     rm -r /root/.cache &&     rm -rf /var/cache/apk/*" did not complete successfully: exit code: 1
+------
+ > [ 5/11] RUN apk add --no-cache python3 build-base python3-dev openssl-dev libffi-dev libstdc++ nginx curl jq &&     python3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --no-cache-dir --upgrade pip setuptools &&     pip3 install --no-cache-dir -r requirements.txt &&     apk del build-base python3-dev openssl-dev libffi-dev &&     rm -r /root/.cache &&     rm -rf /var/cache/apk/*:
+6.691            ^^^^^^^^^^^
+6.691   File "/usr/lib/python3.12/ensurepip/__init__.py", line 200, in _bootstrap
+6.691     return _run_pip([*args, *_PACKAGE_NAMES], additional_paths)
+6.691            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+6.691   File "/usr/lib/python3.12/ensurepip/__init__.py", line 101, in _run_pip
+6.691     return subprocess.run(cmd, check=True).returncode
+6.691            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+6.691   File "/usr/lib/python3.12/subprocess.py", line 571, in run
+6.691     raise CalledProcessError(retcode, process.args,
+6.691 subprocess.CalledProcessError: Command '['/usr/bin/python3', '-W', 'ignore::DeprecationWarning', '-c', '\nimport runpy\nimport sys\nsys.path = [\'/tmp/tmpg_6urn9p/pip-24.0-py3-none-any.whl\'] + sys.path\nsys.argv[1:] = [\'install\', \'--no-cache-dir\', \'--no-index\', \'--find-links\', \'/tmp/tmpg_6urn9p\', \'pip\']\nrunpy.run_module("pip", run_name="__main__", alter_sys=True)\n']' returned non-zero exit status 1.
+------
+v1_Dockerfile:7
+--------------------
+   6 |     
+   7 | >>> RUN apk add --no-cache python3 build-base python3-dev openssl-dev libffi-dev libstdc++ nginx curl jq && \
+   8 | >>>     python3 -m ensurepip && \
+   9 | >>>     rm -r /usr/lib/python*/ensurepip && \
+  10 | >>>     pip3 install --no-cache-dir --upgrade pip setuptools && \
+  11 | >>>     pip3 install --no-cache-dir -r requirements.txt && \
+  12 | >>>     apk del build-base python3-dev openssl-dev libffi-dev && \
+  13 | >>>     rm -r /root/.cache && \
+  14 | >>>     rm -rf /var/cache/apk/*
+  15 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk add --no-cache python3 build-base python3-dev openssl-dev libffi-dev libstdc++ nginx curl jq &&     python3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --no-cache-dir --upgrade pip setuptools &&     pip3 install --no-cache-dir -r requirements.txt &&     apk del build-base python3-dev openssl-dev libffi-dev &&     rm -r /root/.cache &&     rm -rf /var/cache/apk/*" did not complete successfully: exit code: 1
+Duration: 0:9.81

@@ -1,0 +1,131 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 511B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/golang:1.9
+#2 ...
+
+#3 [auth] bitnami/minideb:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [auth] library/golang:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/bitnami/minideb:stretch
+#5 ...
+
+#2 [internal] load metadata for docker.io/library/golang:1.9
+#2 DONE 1.0s
+
+#5 [internal] load metadata for docker.io/bitnami/minideb:stretch
+#5 DONE 1.0s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 DONE 0.0s
+
+#8 [stage-1 1/3] FROM docker.io/bitnami/minideb:stretch@sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f
+#8 resolve docker.io/bitnami/minideb:stretch@sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f 0.0s done
+#8 sha256:b0671f4930e13f9b839bc0c795727951b7ab1e0e5c46fcb3b639f8bdd9dd2b7f 528B / 528B done
+#8 sha256:e398a222dbd61796b392b33bf534e8372bce2b552fcd97534f5a1203c69a231f 910B / 910B done
+#8 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 0B / 22.15MB 0.1s
+#8 sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f 741B / 741B done
+#8 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 6.29MB / 22.15MB 0.3s
+#8 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 9.44MB / 22.15MB 0.4s
+#8 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 14.68MB / 22.15MB 0.5s
+#8 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 17.83MB / 22.15MB 0.6s
+#8 ...
+
+#7 [internal] load build context
+#7 transferring context: 25.39MB 0.7s done
+#7 DONE 0.8s
+
+#8 [stage-1 1/3] FROM docker.io/bitnami/minideb:stretch@sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f
+#8 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 22.15MB / 22.15MB 0.7s
+#8 sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 22.15MB / 22.15MB 0.7s done
+#8 extracting sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 0.1s
+#8 extracting sha256:0e9cbea7213538713bd6e034abe4f22cfe7a694d7e54ef4bacbc66431afe1fc1 2.0s done
+#8 DONE 2.9s
+
+#9 [stage-1 2/3] RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+#9 0.237 Ign:1 http://deb.debian.org/debian stretch InRelease
+#9 0.239 Ign:2 http://security.debian.org stretch/updates InRelease
+#9 0.246 Ign:3 http://deb.debian.org/debian stretch Release
+#9 0.251 Ign:4 http://security.debian.org stretch/updates Release
+#9 0.256 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#9 0.266 Ign:6 http://security.debian.org stretch/updates/main all Packages
+#9 0.267 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.277 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#9 0.277 Ign:8 http://security.debian.org stretch/updates/main amd64 Packages
+#9 0.287 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.289 Ign:6 http://security.debian.org stretch/updates/main all Packages
+#9 0.298 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#9 0.302 Ign:8 http://security.debian.org stretch/updates/main amd64 Packages
+#9 0.308 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.314 Ign:6 http://security.debian.org stretch/updates/main all Packages
+#9 0.319 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#9 0.328 Ign:8 http://security.debian.org stretch/updates/main amd64 Packages
+#9 0.329 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.338 Ign:6 http://security.debian.org stretch/updates/main all Packages
+#9 0.341 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#9 0.353 Ign:8 http://security.debian.org stretch/updates/main amd64 Packages
+#9 0.355 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.364 Ign:6 http://security.debian.org stretch/updates/main all Packages
+#9 0.365 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#9 0.375 Ign:8 http://security.debian.org stretch/updates/main amd64 Packages
+#9 0.377 Err:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.377   404  Not Found
+#9 0.388 Ign:6 http://security.debian.org stretch/updates/main all Packages
+#9 0.402 Err:8 http://security.debian.org stretch/updates/main amd64 Packages
+#9 0.402   404  Not Found [IP: 151.101.66.132 80]
+#9 0.405 Reading package lists...
+#9 0.412 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#9 0.412 W: The repository 'http://security.debian.org stretch/updates Release' does not have a Release file.
+#9 0.412 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#9 0.412 E: Failed to fetch http://security.debian.org/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+#9 0.412 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#9 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+
+#10 [gobuild 1/4] FROM docker.io/library/golang:1.9@sha256:8b5968585131604a92af02f5690713efadf029cc8dad53f79280b87a80eb1354
+#10 resolve docker.io/library/golang:1.9@sha256:8b5968585131604a92af02f5690713efadf029cc8dad53f79280b87a80eb1354 0.0s done
+#10 sha256:8b5968585131604a92af02f5690713efadf029cc8dad53f79280b87a80eb1354 3.10kB / 3.10kB done
+#10 sha256:ef89ef5c42a90ec98bda7bbef0495c1ca6f43a31d059148c368b71858de463d2 5.79kB / 5.79kB done
+#10 sha256:55cbf04beb7001d222c71bfdeae780bda19d5cb37b8dbd65ff0d3e6a0b9b74e6 45.31MB / 45.31MB 1.2s done
+#10 sha256:adc30ee332f9c780c4498376a6e426d39761ee5ff5e583dc293a601802b938ac 2.00kB / 2.00kB done
+#10 sha256:1607093a898cc241de8712e4361dcd907898fff35b945adca42db3963f3827b3 10.74MB / 10.74MB 0.6s done
+#10 sha256:9a8ea045c9261c180a34df19cfc9bb3c3f28f29b279bf964ee801536e8244f2f 4.34MB / 4.34MB 0.8s done
+#10 sha256:d4eee24d4dacb41c21411e0477a741655303cdc48b18a948632c31f0f3a70bb8 50.06MB / 50.06MB 2.0s done
+#10 sha256:9c35c9787a2f7a0fbd6829b8ee0df1aebe44929788186d352b3a12f2046b3948 57.59MB / 57.59MB 2.3s done
+#10 extracting sha256:55cbf04beb7001d222c71bfdeae780bda19d5cb37b8dbd65ff0d3e6a0b9b74e6 3.3s done
+#10 sha256:8b376bbb244fec17e33ac56b13cc704d03f6fb06325a0cddcb88960fef7eb754 118.30MB / 118.30MB 3.5s done
+#10 sha256:0d4eafcc732affec32a903b8897a068e60656b4b63d052a66feb1c8fedb3ba75 126B / 126B 2.3s done
+#10 sha256:186b06a99029b895a2934a57fcb86731eace7009cc059210358cabec2e8309e2 1.37kB / 1.37kB 2.4s done
+#10 CANCELED
+------
+ > [stage-1 2/3] RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*:
+0.377   404  Not Found
+0.388 Ign:6 http://security.debian.org stretch/updates/main all Packages
+0.402 Err:8 http://security.debian.org stretch/updates/main amd64 Packages
+0.402   404  Not Found [IP: 151.101.66.132 80]
+0.405 Reading package lists...
+0.412 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.412 W: The repository 'http://security.debian.org stretch/updates Release' does not have a Release file.
+0.412 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.412 E: Failed to fetch http://security.debian.org/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+0.412 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:8
+--------------------
+   6 |     
+   7 |     FROM bitnami/minideb:stretch
+   8 | >>> RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+   9 |     COPY --from=gobuild /go/src/github.com/bitnami-labs/helm-crd/controller-static /controller
+  10 |     CMD ["/controller"]
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+Duration: 0:6.10

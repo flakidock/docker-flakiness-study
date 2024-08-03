@@ -1,0 +1,175 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 429B done
+#1 DONE 0.5s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B 0.0s done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:edge
+#3 ...
+
+#4 [auth] library/alpine:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:edge
+#3 DONE 1.4s
+
+#5 [1/5] FROM docker.io/library/alpine:edge@sha256:166710df254975d4a6c4c407c315951c22753dcaa829e020a3fd5d18fff70dd2
+#5 resolve docker.io/library/alpine:edge@sha256:166710df254975d4a6c4c407c315951c22753dcaa829e020a3fd5d18fff70dd2 0.1s done
+#5 sha256:5f3877672d1e408d63126ebcd62fa84183a627955762876ac64315722fb7fa87 528B / 528B done
+#5 sha256:55617791c9de4f227b2b701123ab5d1a3ae1adc9fdbc817f1df15e258d7692ee 1.47kB / 1.47kB done
+#5 sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 0B / 3.62MB 0.1s
+#5 sha256:166710df254975d4a6c4c407c315951c22753dcaa829e020a3fd5d18fff70dd2 1.85kB / 1.85kB done
+#5 sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 3.62MB / 3.62MB 0.3s
+#5 extracting sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259
+#5 sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 3.62MB / 3.62MB 0.3s done
+#5 extracting sha256:3fb2a2b49db682505384b14d22d96bc936100841fe02a98c73717cf225922259 0.3s done
+#5 DONE 1.1s
+
+#6 [2/5] RUN apk --update add --no-cache python3 py3-requests py3-pip openssl ca-certificates
+#6 0.471 fetch https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz
+#6 0.727 fetch https://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz
+#6 1.239 (1/39) Upgrading libcrypto3 (3.3.0-r2 -> 3.3.1-r3)
+#6 1.290 (2/39) Upgrading libssl3 (3.3.0-r2 -> 3.3.1-r3)
+#6 1.306 (3/39) Installing ca-certificates (20240705-r0)
+#6 1.648 (4/39) Installing openssl (3.3.1-r3)
+#6 1.661 (5/39) Installing libbz2 (1.0.8-r6)
+#6 1.825 (6/39) Installing libexpat (2.6.2-r0)
+#6 1.831 (7/39) Installing libffi (3.4.6-r0)
+#6 1.850 (8/39) Installing gdbm (1.24-r0)
+#6 1.859 (9/39) Installing xz-libs (5.6.2-r0)
+#6 1.865 (10/39) Installing libgcc (13.2.1_git20240309-r0)
+#6 1.871 (11/39) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 1.899 (12/39) Installing mpdecimal (4.0.0-r0)
+#6 1.905 (13/39) Installing ncurses-terminfo-base (6.5_p20240601-r0)
+#6 1.926 (14/39) Installing libncursesw (6.5_p20240601-r0)
+#6 2.569 (15/39) Installing libpanelw (6.5_p20240601-r0)
+#6 2.572 (16/39) Installing readline (8.2.10-r0)
+#6 2.580 (17/39) Installing sqlite-libs (3.46.0-r0)
+#6 2.803 (18/39) Installing python3 (3.12.3-r1)
+#6 3.128 (19/39) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 3.379 (20/39) Installing pyc (3.12.3-r1)
+#6 3.382 (21/39) Installing py3-setuptools-pyc (70.3.0-r0)
+#6 3.509 (22/39) Installing py3-pip-pyc (24.2-r0)
+#6 3.707 (23/39) Installing py3-parsing (3.1.2-r1)
+#6 3.717 (24/39) Installing py3-parsing-pyc (3.1.2-r1)
+#6 3.734 (25/39) Installing py3-packaging-pyc (24.1-r0)
+#6 3.742 (26/39) Installing python3-pyc (3.12.3-r1)
+#6 3.745 (27/39) Installing py3-packaging (24.1-r0)
+#6 3.758 (28/39) Installing py3-setuptools (70.3.0-r0)
+#6 3.871 (29/39) Installing py3-pip (24.2-r0)
+#6 4.020 (30/39) Installing py3-certifi (2024.2.2-r1)
+#6 4.468 (31/39) Installing py3-certifi-pyc (2024.2.2-r1)
+#6 4.473 (32/39) Installing py3-charset-normalizer (3.3.2-r1)
+#6 4.654 (33/39) Installing py3-charset-normalizer-pyc (3.3.2-r1)
+#6 4.671 (34/39) Installing py3-idna (3.7-r0)
+#6 4.838 (35/39) Installing py3-idna-pyc (3.7-r0)
+#6 5.079 (36/39) Installing py3-urllib3 (1.26.18-r1)
+#6 5.094 (37/39) Installing py3-urllib3-pyc (1.26.18-r1)
+#6 5.281 (38/39) Installing py3-requests (2.32.3-r0)
+#6 5.289 (39/39) Installing py3-requests-pyc (2.32.3-r0)
+#6 5.612 Executing busybox-1.36.1-r29.trigger
+#6 5.617 Executing ca-certificates-20240705-r0.trigger
+#6 5.664 OK: 76 MiB in 51 packages
+#6 DONE 7.6s
+
+#7 [3/5] RUN apk --update add --virtual build-dependencies python3-dev build-base wget git   && git clone https://github.com/maldevel/EmailHarvester.git
+#7 0.663 fetch https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz
+#7 0.762 fetch https://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz
+#7 1.154 (1/33) Installing pkgconf (2.2.0-r0)
+#7 1.160 (2/33) Installing python3-dev (3.12.3-r1)
+#7 1.966 (3/33) Installing jansson (2.14-r4)
+#7 2.199 (4/33) Installing zstd-libs (1.5.6-r0)
+#7 2.241 (5/33) Installing binutils (2.42-r0)
+#7 2.360 (6/33) Installing libmagic (5.45-r1)
+#7 2.574 (7/33) Installing file (5.45-r1)
+#7 3.573 (8/33) Installing libgomp (13.2.1_git20240309-r0)
+#7 3.581 (9/33) Installing libatomic (13.2.1_git20240309-r0)
+#7 3.586 (10/33) Installing gmp (6.3.0-r1)
+#7 3.595 (11/33) Installing isl26 (0.26-r1)
+#7 4.063 (12/33) Installing mpfr4 (4.2.1-r0)
+#7 4.748 (13/33) Installing mpc1 (1.3.1-r1)
+#7 4.900 (14/33) Installing gcc (13.2.1_git20240309-r0)
+#7 6.118 (15/33) Installing libstdc++-dev (13.2.1_git20240309-r0)
+#7 6.388 (16/33) Installing musl-dev (1.2.5-r1)
+#7 6.662 (17/33) Installing g++ (13.2.1_git20240309-r0)
+#7 7.011 (18/33) Installing make (4.4.1-r2)
+#7 7.239 (19/33) Installing fortify-headers (1.1-r5)
+#7 7.272 (20/33) Installing patch (2.7.6-r10)
+#7 7.443 (21/33) Installing build-base (0.5-r3)
+#7 7.882 (22/33) Installing libunistring (1.2-r0)
+#7 8.994 (23/33) Installing libidn2 (2.3.7-r0)
+#7 9.220 (24/33) Installing pcre2 (10.43-r0)
+#7 9.231 (25/33) Installing wget (1.24.5-r0)
+#7 9.624 (26/33) Installing brotli-libs (1.1.0-r2)
+#7 9.638 (27/33) Installing c-ares (1.32.3-r0)
+#7 9.849 (28/33) Installing nghttp2-libs (1.62.1-r0)
+#7 10.11 (29/33) Installing libpsl (0.21.5-r2)
+#7 10.75 (30/33) Installing libcurl (8.9.0-r0)
+#7 10.76 (31/33) Installing git (2.46.0-r0)
+#7 10.86 (32/33) Installing git-init-template (2.46.0-r0)
+#7 10.86 (33/33) Installing build-dependencies (20240730.230234)
+#7 10.87 Executing busybox-1.36.1-r29.trigger
+#7 10.88 OK: 394 MiB in 84 packages
+#7 10.96 Cloning into 'EmailHarvester'...
+#7 DONE 17.5s
+
+#8 [4/5] WORKDIR EmailHarvester
+#8 DONE 1.2s
+
+#9 [5/5] RUN pip3 install -r requirements.txt
+#9 1.291 error: externally-managed-environment
+#9 1.291 
+#9 1.291 × This environment is externally managed
+#9 1.291 ╰─> 
+#9 1.291     The system-wide python installation should be maintained using the system
+#9 1.291     package manager (apk) only.
+#9 1.291     
+#9 1.291     If the package in question is not packaged already (and hence installable via
+#9 1.291     "apk add py3-somepackage"), please consider installing it inside a virtual
+#9 1.291     environment, e.g.:
+#9 1.291     
+#9 1.291     python3 -m venv /path/to/venv
+#9 1.291     . /path/to/venv/bin/activate
+#9 1.291     pip install mypackage
+#9 1.291     
+#9 1.291     To exit the virtual environment, run:
+#9 1.291     
+#9 1.291     deactivate
+#9 1.291     
+#9 1.291     The virtual environment is not deleted, and can be re-entered by re-sourcing
+#9 1.291     the activate file.
+#9 1.291     
+#9 1.291     To automatically manage virtual environments, consider using pipx (from the
+#9 1.291     pipx package).
+#9 1.291 
+#9 1.291 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+#9 1.291 hint: See PEP 668 for the detailed specification.
+#9 ERROR: process "/bin/sh -c pip3 install -r requirements.txt" did not complete successfully: exit code: 1
+------
+ > [5/5] RUN pip3 install -r requirements.txt:
+1.291     deactivate
+1.291     
+1.291     The virtual environment is not deleted, and can be re-entered by re-sourcing
+1.291     the activate file.
+1.291     
+1.291     To automatically manage virtual environments, consider using pipx (from the
+1.291     pipx package).
+1.291 
+1.291 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+1.291 hint: See PEP 668 for the detailed specification.
+------
+Dockerfile:10
+--------------------
+   8 |     
+   9 |     #COPY requirements.txt .
+  10 | >>> RUN pip3 install -r requirements.txt
+  11 |     ENTRYPOINT ["python3", "EmailHarvester.py"]
+  12 |     CMD ["-h"]
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip3 install -r requirements.txt" did not complete successfully: exit code: 1
+Duration: 0:31.61

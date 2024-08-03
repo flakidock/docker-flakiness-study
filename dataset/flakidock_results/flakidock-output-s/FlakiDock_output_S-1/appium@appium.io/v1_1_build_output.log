@@ -1,0 +1,213 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 556B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:12.22.1-alpine3.11
+#2 ...
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:12.22.1-alpine3.11
+#2 DONE 1.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 81.46MB 0.6s done
+#5 DONE 0.6s
+
+#6 [1/7] FROM docker.io/library/node:12.22.1-alpine3.11@sha256:93b71facf11d471ac035acfaf020ecc05297f6a401781cafceae1d0561704ba4
+#6 resolve docker.io/library/node:12.22.1-alpine3.11@sha256:93b71facf11d471ac035acfaf020ecc05297f6a401781cafceae1d0561704ba4 0.0s done
+#6 sha256:ba59ff60c386d2dc77f7afc5f9211e410ce80e864415c1bafe0006ef76fece1c 6.53kB / 6.53kB done
+#6 sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0 2.82MB / 2.82MB 0.2s done
+#6 sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811 24.60MB / 24.60MB 0.8s
+#6 sha256:5c72c204eb2261d221bcc8b34dbb4727d6a6625dc7dadf87425c3fa8fd8bbf36 2.24MB / 2.24MB 0.5s done
+#6 sha256:93b71facf11d471ac035acfaf020ecc05297f6a401781cafceae1d0561704ba4 1.43kB / 1.43kB done
+#6 sha256:5b8504e22687f25e22254d062558aa18d41d3331b64e771a6a0675e93d357e70 1.16kB / 1.16kB done
+#6 extracting sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0 0.1s done
+#6 sha256:33fce3bc6102e63645ad9b969467728efd17b0cdf8b083b1f505df5af73bd627 281B / 281B 0.5s done
+#6 sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811 24.60MB / 24.60MB 0.9s done
+#6 extracting sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811
+#6 extracting sha256:8a6a62f4b1f37fb03e07275438ef8fd27a421cd1b0790e57f7dbab0c6328f811 2.0s done
+#6 extracting sha256:5c72c204eb2261d221bcc8b34dbb4727d6a6625dc7dadf87425c3fa8fd8bbf36
+#6 extracting sha256:5c72c204eb2261d221bcc8b34dbb4727d6a6625dc7dadf87425c3fa8fd8bbf36 0.1s done
+#6 extracting sha256:33fce3bc6102e63645ad9b969467728efd17b0cdf8b083b1f505df5af73bd627
+#6 extracting sha256:33fce3bc6102e63645ad9b969467728efd17b0cdf8b083b1f505df5af73bd627 done
+#6 DONE 3.3s
+
+#7 [2/7] WORKDIR /root
+#7 DONE 0.9s
+
+#8 [3/7] RUN apk add --no-cache git python2 py2-pip
+#8 0.183 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#8 0.398 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#8 0.633 (1/16) Installing ca-certificates (20191127-r2)
+#8 0.657 (2/16) Installing nghttp2-libs (1.40.0-r1)
+#8 0.668 (3/16) Installing libcurl (7.79.1-r0)
+#8 0.682 (4/16) Installing expat (2.2.9-r1)
+#8 0.694 (5/16) Installing pcre2 (10.34-r1)
+#8 0.708 (6/16) Installing git (2.24.4-r0)
+#8 0.878 (7/16) Installing libbz2 (1.0.8-r1)
+#8 0.889 (8/16) Installing libffi (3.2.1-r6)
+#8 0.900 (9/16) Installing gdbm (1.13-r1)
+#8 0.911 (10/16) Installing ncurses-terminfo-base (6.1_p20200118-r4)
+#8 0.922 (11/16) Installing ncurses-libs (6.1_p20200118-r4)
+#8 0.937 (12/16) Installing readline (8.0.1-r0)
+#8 0.948 (13/16) Installing sqlite-libs (3.30.1-r2)
+#8 0.968 (14/16) Installing python2 (2.7.18-r0)
+#8 1.415 (15/16) Installing py-setuptools (42.0.2-r0)
+#8 1.462 (16/16) Installing py2-pip (18.1-r0)
+#8 1.578 Executing busybox-1.31.1-r10.trigger
+#8 1.583 Executing ca-certificates-20191127-r2.trigger
+#8 1.615 OK: 76 MiB in 32 packages
+#8 DONE 2.0s
+
+#9 [4/7] COPY ./package.json ./
+#9 DONE 0.0s
+
+#10 [5/7] RUN npm install
+#10 1.239 npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+#10 1.457 npm WARN deprecated babel-eslint@10.1.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+#10 1.707 npm WARN deprecated calmcard@0.1.1: no longer maintained
+#10 1.816 npm WARN deprecated nopter@0.3.0: try optionator
+#10 1.911 npm WARN deprecated urlobj@0.0.11: use universal-url, minurl, relateurl, url-relation
+#10 2.336 npm WARN deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+#10 2.842 npm WARN deprecated @humanwhocodes/config-array@0.11.14: Use @eslint/config-array instead
+#10 2.872 npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#10 3.452 npm WARN deprecated npmlog@6.0.2: This package is no longer supported.
+#10 4.637 npm WARN deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+#10 4.751 npm WARN deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+#10 4.772 npm WARN deprecated domexception@4.0.0: Use your platform's native DOMException instead
+#10 5.483 npm WARN deprecated @humanwhocodes/config-array@0.5.0: Use @eslint/config-array instead
+#10 5.838 npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#10 6.178 npm WARN deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+#10 6.513 npm WARN deprecated rimraf@2.4.5: Rimraf versions prior to v4 are no longer supported
+#10 6.594 npm WARN deprecated gauge@4.0.4: This package is no longer supported.
+#10 6.613 npm WARN deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+#10 7.163 npm WARN deprecated uuid@2.0.3: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+#10 7.363 npm WARN deprecated @humanwhocodes/object-schema@1.2.1: Use @eslint/object-schema instead
+#10 8.045 npm WARN deprecated glob@6.0.4: Glob versions prior to v9 are no longer supported
+#10 18.69 
+#10 18.69 > pre-commit@1.2.2 install /root/node_modules/pre-commit
+#10 18.69 > node install.js
+#10 18.69 
+#10 18.80 
+#10 18.80 > core-js@3.37.1 postinstall /root/node_modules/core-js
+#10 18.80 > node -e "try{require('./postinstall')}catch(e){}"
+#10 18.80 
+#10 18.86 [96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+#10 18.86 
+#10 18.86 [96mThe project needs your help! Please consider supporting core-js:[0m
+#10 18.86 [96m>[94m https://opencollective.com/core-js [0m
+#10 18.86 [96m>[94m https://patreon.com/zloirock [0m
+#10 18.86 [96m>[94m https://boosty.to/zloirock [0m
+#10 18.86 [96m>[94m bitcoin: bc1qlea7544qtsmj2rayg0lthvza9fau63ux0fstcz [0m
+#10 18.86 
+#10 18.86 [96mI highly recommend reading this:[94m https://github.com/zloirock/core-js/blob/master/docs/2023-02-14-so-whats-next.md [96m[0m
+#10 18.86 
+#10 18.92 
+#10 18.92 > spawn-sync@1.0.15 postinstall /root/node_modules/spawn-sync
+#10 18.92 > node postinstall
+#10 18.92 
+#10 19.40 npm notice created a lockfile as package-lock.json. You should commit this file.
+#10 19.41 npm WARN notsup Unsupported engine for teen_process@2.2.0: wanted: {"node":"^16.13.0 || >=18.0.0","npm":">=8"} (current: {"node":"12.22.1","npm":"6.14.12"})
+#10 19.41 npm WARN notsup Not compatible with your version of node/npm: teen_process@2.2.0
+#10 19.41 npm WARN notsup Unsupported engine for eslint-plugin-mocha@10.5.0: wanted: {"node":">=14.0.0"} (current: {"node":"12.22.1","npm":"6.14.12"})
+#10 19.41 npm WARN notsup Not compatible with your version of node/npm: eslint-plugin-mocha@10.5.0
+#10 19.41 npm WARN notsup Unsupported engine for mocha@10.7.0: wanted: {"node":">= 14.0.0"} (current: {"node":"12.22.1","npm":"6.14.12"})
+#10 19.41 npm WARN notsup Not compatible with your version of node/npm: mocha@10.7.0
+#10 19.42 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.2 (node_modules/chokidar/node_modules/fsevents):
+#10 19.42 npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+#10 19.42 
+#10 19.42 added 845 packages from 516 contributors and audited 850 packages in 18.855s
+#10 19.64 
+#10 19.64 123 packages are looking for funding
+#10 19.64   run `npm fund` for details
+#10 19.64 
+#10 19.65 found 3 vulnerabilities (2 moderate, 1 high)
+#10 19.65   run `npm audit fix` to fix them, or `npm audit` for details
+#10 DONE 26.7s
+
+#11 [6/7] RUN pip install mkdocs==0.17.5
+#11 1.351 Collecting mkdocs==0.17.5
+#11 1.498   Downloading https://files.pythonhosted.org/packages/f9/49/cf13bb1e0d079624ce145bbe80e7a11a7cd7ace16149c3f28a43c8a72a43/mkdocs-0.17.5-py2.py3-none-any.whl (1.2MB)
+#11 1.605 Collecting tornado<5.0,>=4.1 (from mkdocs==0.17.5)
+#11 1.787   Downloading https://files.pythonhosted.org/packages/e3/7b/e29ab3d51c8df66922fea216e2bddfcb6430fb29620e5165b16a216e0d3c/tornado-4.5.3.tar.gz (484kB)
+#11 2.125 Collecting Markdown>=2.3.1 (from mkdocs==0.17.5)
+#11 2.191   Downloading https://files.pythonhosted.org/packages/c0/4e/fd492e91abdc2d2fcb70ef453064d980688762079397f779758e055f6575/Markdown-3.1.1-py2.py3-none-any.whl (87kB)
+#11 2.212 Collecting click>=3.3 (from mkdocs==0.17.5)
+#11 2.293   Downloading https://files.pythonhosted.org/packages/d2/3d/fa76db83bf75c4f8d338c2fd15c8d33fdd7ad23a9b5e57eb6c5de26b430e/click-7.1.2-py2.py3-none-any.whl (82kB)
+#11 2.310 Collecting Jinja2>=2.7.1 (from mkdocs==0.17.5)
+#11 2.366   Downloading https://files.pythonhosted.org/packages/7e/c2/1eece8c95ddbc9b1aeb64f5783a9e07a286de42191b7204d67b7496ddf35/Jinja2-2.11.3-py2.py3-none-any.whl (125kB)
+#11 2.387 Collecting PyYAML>=3.10 (from mkdocs==0.17.5)
+#11 2.563   Downloading https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz (175kB)
+#11 2.728   Installing build dependencies: started
+#11 6.217   Installing build dependencies: finished with status 'done'
+#11 6.450     Complete output from command python setup.py egg_info:
+#11 6.450     running egg_info
+#11 6.450     creating pip-egg-info/PyYAML.egg-info
+#11 6.450     writing pip-egg-info/PyYAML.egg-info/PKG-INFO
+#11 6.450     writing top-level names to pip-egg-info/PyYAML.egg-info/top_level.txt
+#11 6.450     writing dependency_links to pip-egg-info/PyYAML.egg-info/dependency_links.txt
+#11 6.450     writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+#11 6.450     Traceback (most recent call last):
+#11 6.450       File "<string>", line 1, in <module>
+#11 6.450       File "/tmp/pip-install-8TC6fh/PyYAML/setup.py", line 295, in <module>
+#11 6.450         python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+#11 6.450       File "/tmp/pip-build-env-2xNGks/lib/python2.7/site-packages/setuptools/__init__.py", line 162, in setup
+#11 6.450         return distutils.core.setup(**attrs)
+#11 6.450       File "/usr/lib/python2.7/distutils/core.py", line 151, in setup
+#11 6.450         dist.run_commands()
+#11 6.450       File "/usr/lib/python2.7/distutils/dist.py", line 953, in run_commands
+#11 6.450         self.run_command(cmd)
+#11 6.450       File "/usr/lib/python2.7/distutils/dist.py", line 972, in run_command
+#11 6.450         cmd_obj.run()
+#11 6.450       File "/tmp/pip-build-env-2xNGks/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 296, in run
+#11 6.450         self.find_sources()
+#11 6.450       File "/tmp/pip-build-env-2xNGks/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 303, in find_sources
+#11 6.450         mm.run()
+#11 6.450       File "/tmp/pip-build-env-2xNGks/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 534, in run
+#11 6.450         self.add_defaults()
+#11 6.450       File "/tmp/pip-build-env-2xNGks/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 570, in add_defaults
+#11 6.450         sdist.add_defaults(self)
+#11 6.450       File "/tmp/pip-build-env-2xNGks/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 36, in add_defaults
+#11 6.450         self._add_defaults_ext()
+#11 6.450       File "/tmp/pip-build-env-2xNGks/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+#11 6.450         self.filelist.extend(build_ext.get_source_files())
+#11 6.450       File "/tmp/pip-install-8TC6fh/PyYAML/setup.py", line 201, in get_source_files
+#11 6.450         self.cython_sources(ext.sources, ext)
+#11 6.450       File "/usr/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+#11 6.450         raise AttributeError, attr
+#11 6.450     AttributeError: cython_sources
+#11 6.450     
+#11 6.450     ----------------------------------------
+#11 6.506 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-8TC6fh/PyYAML/
+#11 ERROR: process "/bin/sh -c pip install mkdocs==0.17.5" did not complete successfully: exit code: 1
+------
+ > [6/7] RUN pip install mkdocs==0.17.5:
+6.450       File "/tmp/pip-build-env-2xNGks/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+6.450         self.filelist.extend(build_ext.get_source_files())
+6.450       File "/tmp/pip-install-8TC6fh/PyYAML/setup.py", line 201, in get_source_files
+6.450         self.cython_sources(ext.sources, ext)
+6.450       File "/usr/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+6.450         raise AttributeError, attr
+6.450     AttributeError: cython_sources
+6.450     
+6.450     ----------------------------------------
+6.506 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-8TC6fh/PyYAML/
+------
+v1_Dockerfile:15
+--------------------
+  13 |     
+  14 |     # Install mkdocs
+  15 | >>> RUN pip install mkdocs==0.17.5
+  16 |     
+  17 |     # Copy the rest of the application code
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip install mkdocs==0.17.5" did not complete successfully: exit code: 1
+Duration: 0:41.11

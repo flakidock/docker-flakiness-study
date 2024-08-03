@@ -1,0 +1,311 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 800B 0.0s done
+#2 DONE 0.3s
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/node:14-alpine
+#4 DONE 0.7s
+
+#5 [ 1/11] FROM docker.io/library/node:14-alpine@sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33
+#5 resolve docker.io/library/node:14-alpine@sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33 0.1s done
+#5 DONE 0.1s
+
+#5 [ 1/11] FROM docker.io/library/node:14-alpine@sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33
+#5 sha256:434215b487a329c9e867202ff89e704d3a75e554822e07f3e0c0f9e606121b33 1.43kB / 1.43kB done
+#5 sha256:4e84c956cd276af9ed14a8b2939a734364c2b0042485e90e1b97175e73dfd548 1.16kB / 1.16kB done
+#5 sha256:0dac3dc27b1ad570e6c3a7f7cd29e88e7130ff0cad31b2ec5a0f222fbe971bdb 6.44kB / 6.44kB done
+#5 sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09 0B / 3.37MB 0.2s
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 0B / 37.17MB 0.2s
+#5 sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09 3.15MB / 3.37MB 0.3s
+#5 sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6 0B / 2.37MB 0.3s
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 4.19MB / 37.17MB 0.4s
+#5 extracting sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09
+#5 sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09 3.37MB / 3.37MB 0.3s done
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 11.53MB / 37.17MB 0.6s
+#5 sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6 2.37MB / 2.37MB 0.5s done
+#5 sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf 0B / 448B 0.6s
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 17.83MB / 37.17MB 0.7s
+#5 sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf 448B / 448B 0.6s done
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 30.41MB / 37.17MB 0.9s
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 37.17MB / 37.17MB 1.0s
+#5 extracting sha256:f56be85fc22e46face30e2c3de3f7fe7c15f8fd7c4e5add29d7f64b87abdaa09 0.8s done
+#5 sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 37.17MB / 37.17MB 1.5s done
+#5 extracting sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 0.1s
+#5 extracting sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 5.2s
+#5 extracting sha256:8f665685b215c7daf9164545f1bbdd74d800af77d0d267db31fe0345c0c8fb8b 6.2s done
+#5 extracting sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6
+#5 extracting sha256:e5fca6c395a62ec277102af9e5283f6edb43b3e4f20f798e3ce7e425be226ba6 0.6s done
+#5 extracting sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf
+#5 extracting sha256:561cb69653d56a9725be56e02128e4e96fb434a8b4b4decf2bdeb479a225feaf 0.0s done
+#5 DONE 10.5s
+
+#6 [ 2/11] RUN adduser -D -s /bin/bash hubot-matteruser
+#6 DONE 5.4s
+
+#7 [ 3/11] RUN mkdir -p /usr/src/hubot-matteruser
+#7 DONE 2.2s
+
+#8 [ 4/11] RUN chown hubot-matteruser:hubot-matteruser /usr/src/hubot-matteruser
+#8 DONE 2.0s
+
+#9 [ 5/11] RUN chown hubot-matteruser:hubot-matteruser /usr/local/lib/node_modules/
+#9 DONE 3.5s
+
+#10 [ 6/11] RUN chown hubot-matteruser:hubot-matteruser /usr/local/bin/
+#10 DONE 2.0s
+
+#11 [ 7/11] WORKDIR /usr/src/hubot-matteruser
+#11 DONE 0.5s
+
+#12 [ 8/11] RUN npm install -g yo
+#12 35.28 npm WARN deprecated npmlog@2.0.4: This package is no longer supported.
+#12 38.28 npm WARN deprecated gauge@1.2.7: This package is no longer supported.
+#12 38.30 npm WARN deprecated are-we-there-yet@1.1.7: This package is no longer supported.
+#12 115.5 /usr/local/bin/yo -> /usr/local/lib/node_modules/yo/lib/cli.js
+#12 115.5 /usr/local/bin/yo-complete -> /usr/local/lib/node_modules/yo/lib/completion/index.js
+#12 116.3 
+#12 116.3 > core-js@3.37.1 postinstall /usr/local/lib/node_modules/yo/node_modules/core-js
+#12 116.3 > node -e "try{require('./postinstall')}catch(e){}"
+#12 116.3 
+#12 117.3 [96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+#12 117.3 
+#12 117.3 [96mThe project needs your help! Please consider supporting core-js:[0m
+#12 117.3 [96m>[94m https://opencollective.com/core-js [0m
+#12 117.3 [96m>[94m https://patreon.com/zloirock [0m
+#12 117.3 [96m>[94m https://boosty.to/zloirock [0m
+#12 117.3 [96m>[94m bitcoin: bc1qlea7544qtsmj2rayg0lthvza9fau63ux0fstcz [0m
+#12 117.3 
+#12 117.3 [96mI highly recommend reading this:[94m https://github.com/zloirock/core-js/blob/master/docs/2023-02-14-so-whats-next.md [96m[0m
+#12 117.3 
+#12 117.6 
+#12 117.6 > spawn-sync@1.0.15 postinstall /usr/local/lib/node_modules/yo/node_modules/spawn-sync
+#12 117.6 > node postinstall
+#12 117.6 
+#12 118.0 
+#12 118.0 > yo@5.0.0 postinstall /usr/local/lib/node_modules/yo
+#12 118.0 > yodoctor
+#12 118.0 
+#12 118.9 
+#12 118.9 Yeoman Doctor
+#12 118.9 Running sanity checks on your system
+#12 118.9 
+#12 119.7 ✔ No .bowerrc file in home directory
+#12 119.7 ✔ Global configuration file is valid
+#12 119.7 ✔ NODE_PATH matches the npm root
+#12 119.7 ✔ No .yo-rc.json file in home directory
+#12 119.7 ✔ Node.js version
+#12 121.1 ✔ npm version
+#12 122.8 ✔ yo version
+#12 122.8 
+#12 122.8 Everything looks all right!
+#12 122.9 npm WARN notsup Unsupported engine for yo@5.0.0: wanted: {"node":"^18.17.0 || >=20.5.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 122.9 npm WARN notsup Not compatible with your version of node/npm: yo@5.0.0
+#12 123.0 npm WARN notsup Unsupported engine for yeoman-environment@4.4.1: wanted: {"node":"^18.17.0 || >=20.5.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.0 npm WARN notsup Not compatible with your version of node/npm: yeoman-environment@4.4.1
+#12 123.0 npm WARN notsup Unsupported engine for execa@8.0.1: wanted: {"node":">=16.17"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.0 npm WARN notsup Not compatible with your version of node/npm: execa@8.0.1
+#12 123.1 npm WARN notsup Unsupported engine for commander@11.1.0: wanted: {"node":">=16"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.1 npm WARN notsup Not compatible with your version of node/npm: commander@11.1.0
+#12 123.1 npm WARN notsup Unsupported engine for @yeoman/adapter@1.4.0: wanted: {"node":"^16.13.0 || >=18.12.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.1 npm WARN notsup Not compatible with your version of node/npm: @yeoman/adapter@1.4.0
+#12 123.2 npm WARN notsup Unsupported engine for @yeoman/transform@1.2.0: wanted: {"node":"^16.13.0 || >=18.12.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.2 npm WARN notsup Not compatible with your version of node/npm: @yeoman/transform@1.2.0
+#12 123.2 npm WARN notsup Unsupported engine for @yeoman/namespace@1.0.0: wanted: {"node":"^16.13.0 || >=18.12.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.2 npm WARN notsup Not compatible with your version of node/npm: @yeoman/namespace@1.0.0
+#12 123.3 npm WARN notsup Unsupported engine for @yeoman/types@1.2.0: wanted: {"node":"^16.13.0 || >=18.12.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.3 npm WARN notsup Not compatible with your version of node/npm: @yeoman/types@1.2.0
+#12 123.3 npm WARN notsup Unsupported engine for fly-import@0.4.0: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.3 npm WARN notsup Not compatible with your version of node/npm: fly-import@0.4.0
+#12 123.4 npm WARN notsup Unsupported engine for @yeoman/conflicter@2.0.0: wanted: {"node":">=18.12.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.4 npm WARN notsup Not compatible with your version of node/npm: @yeoman/conflicter@2.0.0
+#12 123.4 npm WARN notsup Unsupported engine for globby@14.0.2: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.4 npm WARN notsup Not compatible with your version of node/npm: globby@14.0.2
+#12 123.4 npm WARN notsup Unsupported engine for mem-fs@4.1.0: wanted: {"node":">=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.4 npm WARN notsup Not compatible with your version of node/npm: mem-fs@4.1.0
+#12 123.5 npm WARN notsup Unsupported engine for mem-fs-editor@11.0.1: wanted: {"node":">=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.5 npm WARN notsup Not compatible with your version of node/npm: mem-fs-editor@11.0.1
+#12 123.5 npm WARN notsup Unsupported engine for which-package-manager@0.0.1: wanted: {"node":"^16.13.0 || >=18.12.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.5 npm WARN notsup Not compatible with your version of node/npm: which-package-manager@0.0.1
+#12 123.5 npm WARN notsup Unsupported engine for untildify@5.0.0: wanted: {"node":">=16"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.5 npm WARN notsup Not compatible with your version of node/npm: untildify@5.0.0
+#12 123.6 npm WARN notsup Unsupported engine for inquirer@9.3.6: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.6 npm WARN notsup Not compatible with your version of node/npm: inquirer@9.3.6
+#12 123.6 npm WARN notsup Unsupported engine for yoctocolors-cjs@2.1.2: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.6 npm WARN notsup Not compatible with your version of node/npm: yoctocolors-cjs@2.1.2
+#12 123.7 npm WARN notsup Unsupported engine for @inquirer/figures@1.0.5: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.7 npm WARN notsup Not compatible with your version of node/npm: @inquirer/figures@1.0.5
+#12 123.7 npm WARN notsup Unsupported engine for p-transform@4.1.5: wanted: {"node":">=16.13.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.7 npm WARN notsup Not compatible with your version of node/npm: p-transform@4.1.5
+#12 123.7 npm WARN notsup Unsupported engine for isbinaryfile@5.0.2: wanted: {"node":">= 18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.7 npm WARN notsup Not compatible with your version of node/npm: isbinaryfile@5.0.2
+#12 123.8 npm WARN notsup Unsupported engine for get-stream@8.0.1: wanted: {"node":">=16"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.8 npm WARN notsup Not compatible with your version of node/npm: get-stream@8.0.1
+#12 123.8 npm WARN notsup Unsupported engine for human-signals@5.0.0: wanted: {"node":">=16.17.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.8 npm WARN notsup Not compatible with your version of node/npm: human-signals@5.0.0
+#12 123.9 npm WARN notsup Unsupported engine for @npmcli/arborist@7.5.4: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.9 npm WARN notsup Not compatible with your version of node/npm: @npmcli/arborist@7.5.4
+#12 123.9 npm WARN notsup Unsupported engine for cacache@18.0.4: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 123.9 npm WARN notsup Not compatible with your version of node/npm: cacache@18.0.4
+#12 124.0 npm WARN notsup Unsupported engine for pacote@18.0.6: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.0 npm WARN notsup Not compatible with your version of node/npm: pacote@18.0.6
+#12 124.0 npm WARN notsup Unsupported engine for hosted-git-info@7.0.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.0 npm WARN notsup Not compatible with your version of node/npm: hosted-git-info@7.0.2
+#12 124.0 npm WARN notsup Unsupported engine for npm-package-arg@11.0.3: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.0 npm WARN notsup Not compatible with your version of node/npm: npm-package-arg@11.0.3
+#12 124.1 npm WARN notsup Unsupported engine for npm-pick-manifest@9.1.0: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.1 npm WARN notsup Not compatible with your version of node/npm: npm-pick-manifest@9.1.0
+#12 124.1 npm WARN notsup Unsupported engine for @npmcli/redact@2.0.1: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.1 npm WARN notsup Not compatible with your version of node/npm: @npmcli/redact@2.0.1
+#12 124.2 npm WARN notsup Unsupported engine for npm-registry-fetch@17.1.0: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.2 npm WARN notsup Not compatible with your version of node/npm: npm-registry-fetch@17.1.0
+#12 124.2 npm WARN notsup Unsupported engine for @npmcli/run-script@8.1.0: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.2 npm WARN notsup Not compatible with your version of node/npm: @npmcli/run-script@8.1.0
+#12 124.3 npm WARN notsup Unsupported engine for @npmcli/package-json@5.2.0: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.3 npm WARN notsup Not compatible with your version of node/npm: @npmcli/package-json@5.2.0
+#12 124.4 npm WARN notsup Unsupported engine for @npmcli/metavuln-calculator@7.1.1: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.4 npm WARN notsup Not compatible with your version of node/npm: @npmcli/metavuln-calculator@7.1.1
+#12 124.4 npm WARN notsup Unsupported engine for sigstore@2.3.1: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.4 npm WARN notsup Not compatible with your version of node/npm: sigstore@2.3.1
+#12 124.4 npm WARN notsup Unsupported engine for @npmcli/git@5.0.8: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.4 npm WARN notsup Not compatible with your version of node/npm: @npmcli/git@5.0.8
+#12 124.4 npm WARN notsup Unsupported engine for @npmcli/promise-spawn@7.0.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.4 npm WARN notsup Not compatible with your version of node/npm: @npmcli/promise-spawn@7.0.2
+#12 124.4 npm WARN notsup Unsupported engine for which@4.0.0: wanted: {"node":"^16.13.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.4 npm WARN notsup Not compatible with your version of node/npm: which@4.0.0
+#12 124.5 npm WARN notsup Unsupported engine for which@4.0.0: wanted: {"node":"^16.13.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.5 npm WARN notsup Not compatible with your version of node/npm: which@4.0.0
+#12 124.5 npm WARN notsup Unsupported engine for isexe@3.1.1: wanted: {"node":">=16"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.5 npm WARN notsup Not compatible with your version of node/npm: isexe@3.1.1
+#12 124.6 npm WARN notsup Unsupported engine for hosted-git-info@7.0.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.6 npm WARN notsup Not compatible with your version of node/npm: hosted-git-info@7.0.2
+#12 124.7 npm WARN notsup Unsupported engine for isexe@3.1.1: wanted: {"node":">=16"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.7 npm WARN notsup Not compatible with your version of node/npm: isexe@3.1.1
+#12 124.7 npm WARN notsup Unsupported engine for hosted-git-info@7.0.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.7 npm WARN notsup Not compatible with your version of node/npm: hosted-git-info@7.0.2
+#12 124.7 npm WARN notsup Unsupported engine for normalize-package-data@6.0.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.7 npm WARN notsup Not compatible with your version of node/npm: normalize-package-data@6.0.2
+#12 124.7 npm WARN notsup Unsupported engine for which@4.0.0: wanted: {"node":"^16.13.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.7 npm WARN notsup Not compatible with your version of node/npm: which@4.0.0
+#12 124.8 npm WARN notsup Unsupported engine for node-gyp@10.2.0: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.8 npm WARN notsup Not compatible with your version of node/npm: node-gyp@10.2.0
+#12 124.8 npm WARN notsup Unsupported engine for which@4.0.0: wanted: {"node":"^16.13.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.8 npm WARN notsup Not compatible with your version of node/npm: which@4.0.0
+#12 124.8 npm WARN notsup Unsupported engine for make-fetch-happen@13.0.1: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.8 npm WARN notsup Not compatible with your version of node/npm: make-fetch-happen@13.0.1
+#12 124.9 npm WARN notsup Unsupported engine for @npmcli/agent@2.2.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.9 npm WARN notsup Not compatible with your version of node/npm: @npmcli/agent@2.2.2
+#12 124.9 npm WARN notsup Unsupported engine for isexe@3.1.1: wanted: {"node":">=16"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.9 npm WARN notsup Not compatible with your version of node/npm: isexe@3.1.1
+#12 124.9 npm WARN notsup Unsupported engine for isexe@3.1.1: wanted: {"node":">=16"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.9 npm WARN notsup Not compatible with your version of node/npm: isexe@3.1.1
+#12 124.9 npm WARN notsup Unsupported engine for @sigstore/bundle@2.3.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.9 npm WARN notsup Not compatible with your version of node/npm: @sigstore/bundle@2.3.2
+#12 124.9 npm WARN notsup Unsupported engine for @sigstore/core@1.1.0: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.9 npm WARN notsup Not compatible with your version of node/npm: @sigstore/core@1.1.0
+#12 124.9 npm WARN notsup Unsupported engine for @sigstore/protobuf-specs@0.3.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 124.9 npm WARN notsup Not compatible with your version of node/npm: @sigstore/protobuf-specs@0.3.2
+#12 125.0 npm WARN notsup Unsupported engine for @sigstore/sign@2.3.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 125.0 npm WARN notsup Not compatible with your version of node/npm: @sigstore/sign@2.3.2
+#12 125.0 npm WARN notsup Unsupported engine for @sigstore/tuf@2.3.4: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 125.0 npm WARN notsup Not compatible with your version of node/npm: @sigstore/tuf@2.3.4
+#12 125.0 npm WARN notsup Unsupported engine for @sigstore/verify@1.2.1: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 125.0 npm WARN notsup Not compatible with your version of node/npm: @sigstore/verify@1.2.1
+#12 125.0 npm WARN notsup Unsupported engine for tuf-js@2.2.1: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 125.0 npm WARN notsup Not compatible with your version of node/npm: tuf-js@2.2.1
+#12 125.0 npm WARN notsup Unsupported engine for @tufjs/models@2.0.1: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 125.0 npm WARN notsup Not compatible with your version of node/npm: @tufjs/models@2.0.1
+#12 125.1 npm WARN notsup Unsupported engine for @tufjs/canonical-json@2.0.0: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 125.1 npm WARN notsup Not compatible with your version of node/npm: @tufjs/canonical-json@2.0.0
+#12 125.1 npm WARN notsup Unsupported engine for unicorn-magic@0.1.0: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 125.1 npm WARN notsup Not compatible with your version of node/npm: unicorn-magic@0.1.0
+#12 125.1 npm WARN notsup Unsupported engine for @sindresorhus/merge-streams@2.3.0: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#12 125.1 npm WARN notsup Not compatible with your version of node/npm: @sindresorhus/merge-streams@2.3.0
+#12 125.1 
+#12 125.1 + yo@5.0.0
+#12 125.1 added 794 packages from 316 contributors in 120.957s
+#12 DONE 126.2s
+
+#13 [ 9/11] RUN npm install -g generator-hubot
+#13 38.95 npm WARN notsup Unsupported engine for generator-hubot@2.0.3: wanted: {"node":">= 18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 38.95 npm WARN notsup Not compatible with your version of node/npm: generator-hubot@2.0.3
+#13 39.01 npm WARN notsup Unsupported engine for yeoman-generator@7.3.2: wanted: {"node":"^18.17.0 || >=20.5.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.01 npm WARN notsup Not compatible with your version of node/npm: yeoman-generator@7.3.2
+#13 39.03 npm WARN notsup Unsupported engine for mem-fs-editor@11.0.1: wanted: {"node":">=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.03 npm WARN notsup Not compatible with your version of node/npm: mem-fs-editor@11.0.1
+#13 39.05 npm WARN notsup Unsupported engine for @yeoman/namespace@1.0.0: wanted: {"node":"^16.13.0 || >=18.12.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.05 npm WARN notsup Not compatible with your version of node/npm: @yeoman/namespace@1.0.0
+#13 39.06 npm WARN notsup Unsupported engine for execa@8.0.1: wanted: {"node":">=16.17"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.06 npm WARN notsup Not compatible with your version of node/npm: execa@8.0.1
+#13 39.11 npm WARN notsup Unsupported engine for read-package-up@11.0.0: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.11 npm WARN notsup Not compatible with your version of node/npm: read-package-up@11.0.0
+#13 39.16 npm WARN notsup Unsupported engine for get-stream@8.0.1: wanted: {"node":">=16"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.16 npm WARN notsup Not compatible with your version of node/npm: get-stream@8.0.1
+#13 39.21 npm WARN notsup Unsupported engine for human-signals@5.0.0: wanted: {"node":">=16.17.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.21 npm WARN notsup Not compatible with your version of node/npm: human-signals@5.0.0
+#13 39.24 npm WARN notsup Unsupported engine for isbinaryfile@5.0.2: wanted: {"node":">= 18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.24 npm WARN notsup Not compatible with your version of node/npm: isbinaryfile@5.0.2
+#13 39.27 npm WARN notsup Unsupported engine for read-pkg@9.0.1: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.27 npm WARN notsup Not compatible with your version of node/npm: read-pkg@9.0.1
+#13 39.32 npm WARN notsup Unsupported engine for type-fest@4.23.0: wanted: {"node":">=16"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.32 npm WARN notsup Not compatible with your version of node/npm: type-fest@4.23.0
+#13 39.35 npm WARN notsup Unsupported engine for find-up-simple@1.0.0: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.35 npm WARN notsup Not compatible with your version of node/npm: find-up-simple@1.0.0
+#13 39.38 npm WARN notsup Unsupported engine for normalize-package-data@6.0.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.38 npm WARN notsup Not compatible with your version of node/npm: normalize-package-data@6.0.2
+#13 39.41 npm WARN notsup Unsupported engine for parse-json@8.1.0: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.41 npm WARN notsup Not compatible with your version of node/npm: parse-json@8.1.0
+#13 39.44 npm WARN notsup Unsupported engine for unicorn-magic@0.1.0: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.44 npm WARN notsup Not compatible with your version of node/npm: unicorn-magic@0.1.0
+#13 39.47 npm WARN notsup Unsupported engine for hosted-git-info@7.0.2: wanted: {"node":"^16.14.0 || >=18.0.0"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.47 npm WARN notsup Not compatible with your version of node/npm: hosted-git-info@7.0.2
+#13 39.48 npm WARN notsup Unsupported engine for index-to-position@0.1.2: wanted: {"node":">=18"} (current: {"node":"14.21.3","npm":"6.14.18"})
+#13 39.48 npm WARN notsup Not compatible with your version of node/npm: index-to-position@0.1.2
+#13 39.52 npm WARN yeoman-generator@7.3.2 requires a peer of @yeoman/types@^1.1.1 but none is installed. You must install peer dependencies yourself.
+#13 39.55 npm WARN yeoman-generator@7.3.2 requires a peer of mem-fs@^4.0.0 but none is installed. You must install peer dependencies yourself.
+#13 39.60 npm WARN mem-fs-editor@11.0.1 requires a peer of mem-fs@^4.0.0 but none is installed. You must install peer dependencies yourself.
+#13 39.60 
+#13 39.60 + generator-hubot@2.0.3
+#13 39.60 added 190 packages from 183 contributors in 34.745s
+#13 DONE 40.9s
+
+#14 [10/11] RUN echo "No" | yo hubot --adapter matteruser --owner="${hubot_owner}" --name="${hubot_name}" --description="${hubot_description}" --defaults && sed -i '/heroku/d' external-scripts.json
+#14 8.116 Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'stream' imported from /usr/local/lib/node_modules/yo/node_modules/mem-fs/dist/index.js
+#14 8.116     at new NodeError (internal/errors.js:322:7)
+#14 8.116     at packageResolve (internal/modules/esm/resolve.js:732:9)
+#14 8.116     at moduleResolve (internal/modules/esm/resolve.js:773:18)
+#14 8.116     at Loader.defaultResolve [as _resolve] (internal/modules/esm/resolve.js:887:11)
+#14 8.116     at Loader.resolve (internal/modules/esm/loader.js:89:40)
+#14 8.116     at Loader.getModuleJob (internal/modules/esm/loader.js:242:28)
+#14 8.116     at ModuleWrap.<anonymous> (internal/modules/esm/module_job.js:76:40)
+#14 8.116     at link (internal/modules/esm/module_job.js:75:36)
+#14 ERROR: process "/bin/sh -c echo \"No\" | yo hubot --adapter matteruser --owner=\"${hubot_owner}\" --name=\"${hubot_name}\" --description=\"${hubot_description}\" --defaults && sed -i '/heroku/d' external-scripts.json" did not complete successfully: exit code: 1
+------
+ > [10/11] RUN echo "No" | yo hubot --adapter matteruser --owner="${hubot_owner}" --name="${hubot_name}" --description="${hubot_description}" --defaults && sed -i '/heroku/d' external-scripts.json:
+8.116 Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'stream' imported from /usr/local/lib/node_modules/yo/node_modules/mem-fs/dist/index.js
+8.116     at new NodeError (internal/errors.js:322:7)
+8.116     at packageResolve (internal/modules/esm/resolve.js:732:9)
+8.116     at moduleResolve (internal/modules/esm/resolve.js:773:18)
+8.116     at Loader.defaultResolve [as _resolve] (internal/modules/esm/resolve.js:887:11)
+8.116     at Loader.resolve (internal/modules/esm/loader.js:89:40)
+8.116     at Loader.getModuleJob (internal/modules/esm/loader.js:242:28)
+8.116     at ModuleWrap.<anonymous> (internal/modules/esm/module_job.js:76:40)
+8.116     at link (internal/modules/esm/module_job.js:75:36)
+------
+v1_Dockerfile:19
+--------------------
+  18 |     
+  19 | >>> RUN echo "No" | yo hubot --adapter matteruser --owner="${hubot_owner}" --name="${hubot_name}" --description="${hubot_description}" --defaults \
+  20 | >>> && sed -i '/heroku/d' external-scripts.json
+  21 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c echo \"No\" | yo hubot --adapter matteruser --owner=\"${hubot_owner}\" --name=\"${hubot_name}\" --description=\"${hubot_description}\" --defaults && sed -i '/heroku/d' external-scripts.json" did not complete successfully: exit code: 1
+Duration: 3:24.25

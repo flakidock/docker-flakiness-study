@@ -1,0 +1,67 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 664B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/fedora:rawhide
+#2 ...
+
+#3 [auth] library/fedora:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/fedora:rawhide
+#2 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/fedora:rawhide@sha256:0c0d2dfc0f570a33b7bfbc10f4899a81e99c4236ab2c4ec3df43ce358517a08f
+#5 resolve docker.io/library/fedora:rawhide@sha256:0c0d2dfc0f570a33b7bfbc10f4899a81e99c4236ab2c4ec3df43ce358517a08f 0.0s done
+#5 sha256:51ac04c4802ebcfcf6279f03517abeefab6957eec725f3de609a53f00f57105e 1.03kB / 1.03kB done
+#5 sha256:07cf83396dfad0399b1af0a42ed904c222244185de8689da0056e6031f9416b6 1.04kB / 1.04kB done
+#5 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 0B / 58.48MB 0.1s
+#5 sha256:0c0d2dfc0f570a33b7bfbc10f4899a81e99c4236ab2c4ec3df43ce358517a08f 4.66kB / 4.66kB done
+#5 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 4.19MB / 58.48MB 0.2s
+#5 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 24.12MB / 58.48MB 0.4s
+#5 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 47.19MB / 58.48MB 0.6s
+#5 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 57.67MB / 58.48MB 0.7s
+#5 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 58.48MB / 58.48MB 0.8s done
+#5 extracting sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 0.1s
+#5 extracting sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 2.3s done
+#5 DONE 3.4s
+
+#6 [2/2] RUN INSTALL_PKGS="gcc tox python3.6 python3.7 python3.8 python3.9 python3.10                   python3-setuptools python3-pip" &&     dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs                    --setopt=deltarpm=false $INSTALL_PKGS &&     dnf clean all
+#6 0.239 Updating and loading repositories:
+#6 1.229  Fedora rawhide openh264 (From Cisco) - 100% |   6.0 KiB/s |   6.0 KiB |  00m01s
+#6 2.769  Fedora - Rawhide - Developmental packa 100% |  13.9 MiB/s |  21.4 MiB |  00m02s
+#6 6.217 Repositories loaded.
+#6 7.648 Failed to resolve the transaction:
+#6 7.648 No match for argument: python3.7
+#6 7.648 You can try to add to command line:
+#6 7.648   --skip-unavailable to skip unavailable packages
+#6 ERROR: process "/bin/sh -c INSTALL_PKGS=\"gcc tox python3.6 python3.7 python3.8 python3.9 python3.10                   python3-setuptools python3-pip\" &&     dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs                    --setopt=deltarpm=false $INSTALL_PKGS &&     dnf clean all" did not complete successfully: exit code: 1
+------
+ > [2/2] RUN INSTALL_PKGS="gcc tox python3.6 python3.7 python3.8 python3.9 python3.10                   python3-setuptools python3-pip" &&     dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs                    --setopt=deltarpm=false $INSTALL_PKGS &&     dnf clean all:
+0.239 Updating and loading repositories:
+
+
+6.217 Repositories loaded.
+7.648 Failed to resolve the transaction:
+7.648 No match for argument: python3.7
+7.648 You can try to add to command line:
+7.648   --skip-unavailable to skip unavailable packages
+------
+v1_Dockerfile:11
+--------------------
+  10 |     
+  11 | >>> RUN INSTALL_PKGS="gcc tox python3.6 python3.7 python3.8 python3.9 python3.10 \
+  12 | >>>                   python3-setuptools python3-pip" && \
+  13 | >>>     dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs \
+  14 | >>>                    --setopt=deltarpm=false $INSTALL_PKGS && \
+  15 | >>>     dnf clean all
+  16 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c INSTALL_PKGS=\"gcc tox python3.6 python3.7 python3.8 python3.9 python3.10                   python3-setuptools python3-pip\" &&     dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs                    --setopt=deltarpm=false $INSTALL_PKGS &&     dnf clean all" did not complete successfully: exit code: 1
+Duration: 0:12.93

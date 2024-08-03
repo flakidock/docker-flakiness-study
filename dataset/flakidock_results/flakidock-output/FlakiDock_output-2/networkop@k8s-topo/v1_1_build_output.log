@@ -1,0 +1,278 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 966B done
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.6s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.6s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [ 1/11] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.2s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 516.04kB 0.0s done
+#4 DONE 0.4s
+
+#5 [ 1/11] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 1.05MB / 3.62MB 0.3s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.3s done
+#5 DONE 1.5s
+
+#6 [ 2/11] RUN mkdir -p /k8s-topo
+#6 DONE 1.1s
+
+#7 [ 3/11] WORKDIR /k8s-topo
+#7 DONE 0.5s
+
+#8 [ 4/11] COPY requirements.txt .
+#8 DONE 0.4s
+
+#9 [ 5/11] RUN apk add --no-cache python3 build-base python3-dev openssl-dev libffi-dev libstdc++ nginx curl jq &&     python3 -m venv /venv &&     . /venv/bin/activate &&     pip install --upgrade pip setuptools &&     pip install -r requirements.txt &&     apk del build-base python3-dev openssl-dev libffi-dev &&     rm -r /root/.cache &&     rm -rf /var/cache/apk/*
+#9 0.668 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#9 0.903 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#9 1.421 (1/54) Installing libgcc (13.2.1_git20240309-r0)
+#9 1.426 (2/54) Installing jansson (2.14-r4)
+#9 1.430 (3/54) Installing libstdc++ (13.2.1_git20240309-r0)
+#9 1.457 (4/54) Installing zstd-libs (1.5.6-r0)
+#9 1.470 (5/54) Installing binutils (2.42-r0)
+#9 1.580 (6/54) Installing libmagic (5.45-r1)
+#9 1.614 (7/54) Installing file (5.45-r1)
+#9 1.627 (8/54) Installing libgomp (13.2.1_git20240309-r0)
+#9 1.635 (9/54) Installing libatomic (13.2.1_git20240309-r0)
+#9 1.638 (10/54) Installing gmp (6.3.0-r1)
+#9 1.647 (11/54) Installing isl26 (0.26-r1)
+#9 1.671 (12/54) Installing mpfr4 (4.2.1-r0)
+#9 1.683 (13/54) Installing mpc1 (1.3.1-r1)
+#9 1.687 (14/54) Installing gcc (13.2.1_git20240309-r0)
+#9 2.887 (15/54) Installing libstdc++-dev (13.2.1_git20240309-r0)
+#9 3.286 (16/54) Installing musl-dev (1.2.5-r0)
+#9 3.408 (17/54) Installing g++ (13.2.1_git20240309-r0)
+#9 3.757 (18/54) Installing make (4.4.1-r2)
+#9 3.766 (19/54) Installing fortify-headers (1.1-r3)
+#9 3.781 (20/54) Installing patch (2.7.6-r10)
+#9 3.787 (21/54) Installing build-base (0.5-r3)
+#9 3.789 (22/54) Installing ca-certificates (20240705-r0)
+#9 3.814 (23/54) Installing brotli-libs (1.1.0-r2)
+#9 3.829 (24/54) Installing c-ares (1.28.1-r0)
+#9 3.833 (25/54) Installing libunistring (1.2-r0)
+#9 3.852 (26/54) Installing libidn2 (2.3.7-r0)
+#9 3.857 (27/54) Installing nghttp2-libs (1.62.1-r0)
+#9 3.862 (28/54) Installing libpsl (0.21.5-r1)
+#9 3.865 (29/54) Installing libcurl (8.9.0-r0)
+#9 3.876 (30/54) Installing curl (8.9.0-r0)
+#9 3.883 (31/54) Installing oniguruma (6.9.9-r0)
+#9 3.892 (32/54) Installing jq (1.7.1-r0)
+#9 3.903 (33/54) Installing linux-headers (6.6-r0)
+#9 4.092 (34/54) Installing libffi (3.4.6-r0)
+#9 4.094 (35/54) Installing pkgconf (2.2.0-r0)
+#9 4.100 (36/54) Installing libffi-dev (3.4.6-r0)
+#9 4.107 (37/54) Installing pcre (8.45-r3)
+#9 4.115 (38/54) Installing nginx (1.26.1-r0)
+#9 4.120 Executing nginx-1.26.1-r0.pre-install
+#9 4.289 Executing nginx-1.26.1-r0.post-install
+#9 4.293 (39/54) Installing openssl-dev (3.3.1-r3)
+#9 4.326 (40/54) Installing libbz2 (1.0.8-r6)
+#9 4.330 (41/54) Installing libexpat (2.6.2-r0)
+#9 4.334 (42/54) Installing gdbm (1.23-r1)
+#9 4.338 (43/54) Installing xz-libs (5.6.1-r3)
+#9 4.344 (44/54) Installing mpdecimal (4.0.0-r0)
+#9 4.356 (45/54) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#9 4.381 (46/54) Installing libncursesw (6.4_p20240420-r0)
+#9 4.390 (47/54) Installing libpanelw (6.4_p20240420-r0)
+#9 4.398 (48/54) Installing readline (8.2.10-r0)
+#9 4.409 (49/54) Installing sqlite-libs (3.45.3-r1)
+#9 4.439 (50/54) Installing python3 (3.12.3-r1)
+#9 4.750 (51/54) Installing python3-pycache-pyc0 (3.12.3-r1)
+#9 5.002 (52/54) Installing pyc (3.12.3-r1)
+#9 5.004 (53/54) Installing python3-pyc (3.12.3-r1)
+#9 5.006 (54/54) Installing python3-dev (3.12.3-r1)
+#9 5.840 Executing busybox-1.36.1-r29.trigger
+#9 5.845 Executing ca-certificates-20240705-r0.trigger
+#9 5.893 OK: 374 MiB in 68 packages
+#9 11.76 Requirement already satisfied: pip in /venv/lib/python3.12/site-packages (24.0)
+#9 11.93 Collecting pip
+#9 11.97   Downloading pip-24.2-py3-none-any.whl.metadata (3.6 kB)
+#9 12.41 Collecting setuptools
+#9 12.42   Downloading setuptools-72.1.0-py3-none-any.whl.metadata (6.6 kB)
+#9 12.53 Downloading pip-24.2-py3-none-any.whl (1.8 MB)
+#9 12.64    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 16.4 MB/s eta 0:00:00
+#9 12.65 Downloading setuptools-72.1.0-py3-none-any.whl (2.3 MB)
+#9 12.76    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 22.2 MB/s eta 0:00:00
+#9 12.87 Installing collected packages: setuptools, pip
+#9 14.53   Attempting uninstall: pip
+#9 14.53     Found existing installation: pip 24.0
+#9 14.61     Uninstalling pip-24.0:
+#9 14.62       Successfully uninstalled pip-24.0
+#9 16.36 Successfully installed pip-24.2 setuptools-72.1.0
+#9 18.32 Collecting pyyaml>=4.2b1 (from -r requirements.txt (line 1))
+#9 18.44   Downloading PyYAML-6.0.2rc1-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (2.2 kB)
+#9 18.52 Collecting netaddr==0.7.19 (from -r requirements.txt (line 2))
+#9 18.53   Downloading netaddr-0.7.19-py2.py3-none-any.whl.metadata (4.3 kB)
+#9 18.73 Collecting kubernetes==7.0.0 (from -r requirements.txt (line 3))
+#9 18.74   Downloading kubernetes-7.0.0-py2.py3-none-any.whl.metadata (1.4 kB)
+#9 18.89 Collecting urllib3>=1.23 (from -r requirements.txt (line 4))
+#9 18.90   Downloading urllib3-2.2.2-py3-none-any.whl.metadata (6.4 kB)
+#9 19.09 Collecting networkx==2.2 (from -r requirements.txt (line 5))
+#9 19.10   Downloading networkx-2.2.zip (1.7 MB)
+#9 19.28      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 10.1 MB/s eta 0:00:00
+#9 19.49   Installing build dependencies: started
+#9 22.19   Installing build dependencies: finished with status 'done'
+#9 22.19   Getting requirements to build wheel: started
+#9 22.60   Getting requirements to build wheel: finished with status 'done'
+#9 22.61   Preparing metadata (pyproject.toml): started
+#9 23.03   Preparing metadata (pyproject.toml): finished with status 'done'
+#9 23.12 Collecting certifi>=14.05.14 (from kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 23.13   Downloading certifi-2024.7.4-py3-none-any.whl.metadata (2.2 kB)
+#9 23.31 Collecting six>=1.9.0 (from kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 23.32   Downloading six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+#9 23.42 Collecting python-dateutil>=2.5.3 (from kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 23.43   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#9 23.47 Requirement already satisfied: setuptools>=21.0.0 in /venv/lib/python3.12/site-packages (from kubernetes==7.0.0->-r requirements.txt (line 3)) (72.1.0)
+#9 23.72 Collecting google-auth>=1.0.1 (from kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 23.73   Downloading google_auth-2.32.0-py2.py3-none-any.whl.metadata (4.7 kB)
+#9 23.88 Collecting websocket-client!=0.40.0,!=0.41.*,!=0.42.*,>=0.32.0 (from kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 23.89   Downloading websocket_client-1.8.0-py3-none-any.whl.metadata (8.0 kB)
+#9 24.04 Collecting requests (from kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 24.05   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+#9 24.14 Collecting requests-oauthlib (from kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 24.15   Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB)
+#9 24.24 Collecting adal>=1.0.2 (from kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 24.25   Downloading adal-1.2.7-py2.py3-none-any.whl.metadata (6.9 kB)
+#9 24.41 Collecting decorator>=4.3.0 (from networkx==2.2->-r requirements.txt (line 5))
+#9 24.42   Downloading decorator-5.1.1-py3-none-any.whl.metadata (4.0 kB)
+#9 24.53 Collecting PyJWT<3,>=1.0.0 (from adal>=1.0.2->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 24.53   Downloading PyJWT-2.8.0-py3-none-any.whl.metadata (4.2 kB)
+#9 25.00 Collecting cryptography>=1.1.0 (from adal>=1.0.2->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 25.01   Downloading cryptography-43.0.0-cp39-abi3-musllinux_1_2_x86_64.whl.metadata (5.4 kB)
+#9 26.08 Collecting cachetools<6.0,>=2.0.0 (from google-auth>=1.0.1->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 26.09   Downloading cachetools-5.4.0-py3-none-any.whl.metadata (5.3 kB)
+#9 26.20 Collecting pyasn1-modules>=0.2.1 (from google-auth>=1.0.1->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 26.21   Downloading pyasn1_modules-0.4.0-py3-none-any.whl.metadata (3.4 kB)
+#9 26.31 Collecting rsa<5,>=3.1.4 (from google-auth>=1.0.1->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 26.32   Downloading rsa-4.9-py3-none-any.whl.metadata (4.2 kB)
+#9 26.53 Collecting charset-normalizer<4,>=2 (from requests->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 26.54   Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (33 kB)
+#9 26.63 Collecting idna<4,>=2.5 (from requests->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 26.64   Downloading idna-3.7-py3-none-any.whl.metadata (9.9 kB)
+#9 26.81 Collecting oauthlib>=3.0.0 (from requests-oauthlib->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 26.82   Downloading oauthlib-3.2.2-py3-none-any.whl.metadata (7.5 kB)
+#9 27.12 Collecting cffi>=1.12 (from cryptography>=1.1.0->adal>=1.0.2->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 27.13   Downloading cffi-1.16.0-cp312-cp312-musllinux_1_1_x86_64.whl.metadata (1.5 kB)
+#9 27.32 Collecting pyasn1<0.7.0,>=0.4.6 (from pyasn1-modules>=0.2.1->google-auth>=1.0.1->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 27.33   Downloading pyasn1-0.6.0-py2.py3-none-any.whl.metadata (8.3 kB)
+#9 27.42 Collecting pycparser (from cffi>=1.12->cryptography>=1.1.0->adal>=1.0.2->kubernetes==7.0.0->-r requirements.txt (line 3))
+#9 27.43   Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+#9 27.48 Downloading netaddr-0.7.19-py2.py3-none-any.whl (1.6 MB)
+#9 27.61    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 12.0 MB/s eta 0:00:00
+#9 27.62 Downloading kubernetes-7.0.0-py2.py3-none-any.whl (1.3 MB)
+#9 27.72    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 11.1 MB/s eta 0:00:00
+#9 27.73 Downloading PyYAML-6.0.2rc1-cp312-cp312-musllinux_1_1_x86_64.whl (756 kB)
+#9 27.80    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 756.5/756.5 kB 7.2 MB/s eta 0:00:00
+#9 27.81 Downloading urllib3-2.2.2-py3-none-any.whl (121 kB)
+#9 27.86 Downloading adal-1.2.7-py2.py3-none-any.whl (55 kB)
+#9 27.91 Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#9 27.96 Downloading decorator-5.1.1-py3-none-any.whl (9.1 kB)
+#9 28.00 Downloading google_auth-2.32.0-py2.py3-none-any.whl (195 kB)
+#9 28.05 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#9 28.09 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#9 28.14 Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#9 28.29 Downloading websocket_client-1.8.0-py3-none-any.whl (58 kB)
+#9 28.33 Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+#9 28.37 Downloading cachetools-5.4.0-py3-none-any.whl (9.5 kB)
+#9 28.42 Downloading charset_normalizer-3.3.2-cp312-cp312-musllinux_1_1_x86_64.whl (142 kB)
+#9 28.46 Downloading cryptography-43.0.0-cp39-abi3-musllinux_1_2_x86_64.whl (4.1 MB)
+#9 28.63    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 23.6 MB/s eta 0:00:00
+#9 28.64 Downloading idna-3.7-py3-none-any.whl (66 kB)
+#9 28.68 Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)
+#9 28.73 Downloading pyasn1_modules-0.4.0-py3-none-any.whl (181 kB)
+#9 28.78 Downloading PyJWT-2.8.0-py3-none-any.whl (22 kB)
+#9 28.84 Downloading rsa-4.9-py3-none-any.whl (34 kB)
+#9 28.89 Downloading cffi-1.16.0-cp312-cp312-musllinux_1_1_x86_64.whl (487 kB)
+#9 28.94 Downloading pyasn1-0.6.0-py2.py3-none-any.whl (85 kB)
+#9 29.01 Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+#9 29.13 Building wheels for collected packages: networkx
+#9 29.13   Building wheel for networkx (pyproject.toml): started
+#9 30.36   Building wheel for networkx (pyproject.toml): finished with status 'done'
+#9 30.37   Created wheel for networkx: filename=networkx-2.2-py2.py3-none-any.whl size=1526911 sha256=c28a8390ebb9b3cc8bf7a3cf40e12033064199b1ef3efc81a731f15eabd7634a
+#9 30.37   Stored in directory: /root/.cache/pip/wheels/fb/84/f8/31f4d11269251c5cfe6b08caf8ef61b0d80ea39c81dde1be3b
+#9 30.38 Successfully built networkx
+#9 30.47 Installing collected packages: netaddr, websocket-client, urllib3, six, pyyaml, PyJWT, pycparser, pyasn1, oauthlib, idna, decorator, charset-normalizer, certifi, cachetools, rsa, requests, python-dateutil, pyasn1-modules, networkx, cffi, requests-oauthlib, google-auth, cryptography, adal, kubernetes
+#9 45.50 Successfully installed PyJWT-2.8.0 adal-1.2.7 cachetools-5.4.0 certifi-2024.7.4 cffi-1.16.0 charset-normalizer-3.3.2 cryptography-43.0.0 decorator-5.1.1 google-auth-2.32.0 idna-3.7 kubernetes-7.0.0 netaddr-0.7.19 networkx-2.2 oauthlib-3.2.2 pyasn1-0.6.0 pyasn1-modules-0.4.0 pycparser-2.22 python-dateutil-2.9.0.post0 pyyaml-6.0.2rc1 requests-2.32.3 requests-oauthlib-2.0.0 rsa-4.9 six-1.16.0 urllib3-2.2.2 websocket-client-1.8.0
+#9 45.82 WARNING: opening from cache https://dl-cdn.alpinelinux.org/alpine/v3.20/main: No such file or directory
+#9 45.82 WARNING: opening from cache https://dl-cdn.alpinelinux.org/alpine/v3.20/community: No such file or directory
+#9 45.82 (1/23) Purging build-base (0.5-r3)
+#9 45.82 (2/23) Purging file (5.45-r1)
+#9 45.82 (3/23) Purging g++ (13.2.1_git20240309-r0)
+#9 45.82 (4/23) Purging libstdc++-dev (13.2.1_git20240309-r0)
+#9 45.87 (5/23) Purging gcc (13.2.1_git20240309-r0)
+#9 45.93 (6/23) Purging binutils (2.42-r0)
+#9 45.93 (7/23) Purging libatomic (13.2.1_git20240309-r0)
+#9 45.93 (8/23) Purging libgomp (13.2.1_git20240309-r0)
+#9 45.94 (9/23) Purging make (4.4.1-r2)
+#9 45.94 (10/23) Purging fortify-headers (1.1-r3)
+#9 45.94 (11/23) Purging patch (2.7.6-r10)
+#9 45.94 (12/23) Purging isl26 (0.26-r1)
+#9 45.94 (13/23) Purging jansson (2.14-r4)
+#9 45.94 (14/23) Purging libffi-dev (3.4.6-r0)
+#9 45.94 (15/23) Purging linux-headers (6.6-r0)
+#9 45.99 (16/23) Purging libmagic (5.45-r1)
+#9 45.99 (17/23) Purging mpc1 (1.3.1-r1)
+#9 45.99 (18/23) Purging mpfr4 (4.2.1-r0)
+#9 45.99 (19/23) Purging musl-dev (1.2.5-r0)
+#9 46.00 (20/23) Purging openssl-dev (3.3.1-r3)
+#9 46.01 (21/23) Purging python3-dev (3.12.3-r1)
+#9 46.04 (22/23) Purging gmp (6.3.0-r1)
+#9 46.04 (23/23) Purging pkgconf (2.2.0-r0)
+#9 46.04 Executing busybox-1.36.1-r29.trigger
+#9 46.04 OK: 58 MiB in 45 packages
+#9 DONE 49.5s
+
+#10 [ 6/11] COPY . .
+#10 DONE 0.6s
+
+#11 [ 7/11] COPY web/nginx.conf /etc/nginx/conf.d/default.conf
+#11 DONE 0.4s
+
+#12 [ 8/11] RUN mkdir -p /run/nginx
+#12 DONE 0.9s
+
+#13 [ 9/11] RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
+#13 DONE 1.0s
+
+#14 [10/11] RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+#14 0.812   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#14 0.812                                  Dload  Upload   Total   Spent    Left  Speed
+#14 0.812   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 49.0M  100 49.0M    0     0  88.5M      0 --:--:-- --:--:-- --:--:-- 88.7M
+#14 DONE 2.4s
+
+#15 [11/11] RUN chmod +x kubectl
+#15 DONE 1.8s
+
+#16 exporting to image
+#16 exporting layers
+#16 exporting layers 2.9s done
+#16 writing image sha256:dc15567c72661c5639bc2345409a4978c4c6265bc57b90be8a6e86a0431779e0 0.0s done
+#16 naming to docker.io/library/image_name_v1_1 0.0s done
+#16 DONE 2.9s
+Duration: 1:5.38

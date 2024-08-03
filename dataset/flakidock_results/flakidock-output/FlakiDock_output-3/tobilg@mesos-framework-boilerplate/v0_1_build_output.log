@@ -1,0 +1,279 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 769B done
+#1 DONE 0.3s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 945B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/mhart/alpine-node:6.3.0
+#3 ...
+
+#4 [auth] mhart/alpine-node:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/mhart/alpine-node:6.3.0
+#3 DONE 1.5s
+
+#5 [1/5] FROM docker.io/mhart/alpine-node:6.3.0@sha256:cf643279ade5a6064c9238775d47a6096c3b3c2cba6fde8960e96ad306672b24
+#5 resolve docker.io/mhart/alpine-node:6.3.0@sha256:cf643279ade5a6064c9238775d47a6096c3b3c2cba6fde8960e96ad306672b24 0.1s done
+#5 sha256:cf643279ade5a6064c9238775d47a6096c3b3c2cba6fde8960e96ad306672b24 740B / 740B done
+#5 sha256:fffb49210fed867bdebeee68aa529b2e7c154767cdfff37b67398be88af83a24 5.55kB / 5.55kB done
+#5 sha256:e110a4a1794126ef308a49f2d65785af2f25538f06700721aad8283b81fdfa58 0B / 2.31MB 0.2s
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 443.77kB 0.0s done
+#6 DONE 0.3s
+
+#5 [1/5] FROM docker.io/mhart/alpine-node:6.3.0@sha256:cf643279ade5a6064c9238775d47a6096c3b3c2cba6fde8960e96ad306672b24
+#5 sha256:710e5c1bdc5adec9692c95113f545651b89be0ccfadfb0bf7543db30fdc35726 0B / 14.20MB 0.3s
+#5 sha256:e110a4a1794126ef308a49f2d65785af2f25538f06700721aad8283b81fdfa58 2.31MB / 2.31MB 0.4s
+#5 sha256:e110a4a1794126ef308a49f2d65785af2f25538f06700721aad8283b81fdfa58 2.31MB / 2.31MB 0.4s done
+#5 extracting sha256:e110a4a1794126ef308a49f2d65785af2f25538f06700721aad8283b81fdfa58
+#5 extracting sha256:e110a4a1794126ef308a49f2d65785af2f25538f06700721aad8283b81fdfa58 0.2s done
+#5 sha256:710e5c1bdc5adec9692c95113f545651b89be0ccfadfb0bf7543db30fdc35726 1.05MB / 14.20MB 0.8s
+#5 sha256:710e5c1bdc5adec9692c95113f545651b89be0ccfadfb0bf7543db30fdc35726 5.24MB / 14.20MB 0.9s
+#5 sha256:710e5c1bdc5adec9692c95113f545651b89be0ccfadfb0bf7543db30fdc35726 11.53MB / 14.20MB 1.0s
+#5 sha256:710e5c1bdc5adec9692c95113f545651b89be0ccfadfb0bf7543db30fdc35726 14.20MB / 14.20MB 1.2s
+#5 sha256:710e5c1bdc5adec9692c95113f545651b89be0ccfadfb0bf7543db30fdc35726 14.20MB / 14.20MB 1.2s done
+#5 extracting sha256:710e5c1bdc5adec9692c95113f545651b89be0ccfadfb0bf7543db30fdc35726
+#5 extracting sha256:710e5c1bdc5adec9692c95113f545651b89be0ccfadfb0bf7543db30fdc35726 1.1s done
+#5 DONE 3.1s
+
+#7 [2/5] RUN apk add --no-cache git &&     apk add --no-cache ca-certificates openssl &&     mkdir -p /mnt/mesos/sandbox/logs &&     npm set progress=false
+#7 0.443 fetch http://dl-cdn.alpinelinux.org/alpine/v3.4/main/x86_64/APKINDEX.tar.gz
+#7 0.837 fetch http://dl-cdn.alpinelinux.org/alpine/v3.4/community/x86_64/APKINDEX.tar.gz
+#7 1.363 (1/6) Installing ca-certificates (20161130-r0)
+#7 2.274 (2/6) Installing libssh2 (1.7.0-r0)
+#7 3.086 (3/6) Installing libcurl (7.60.0-r1)
+#7 4.238 (4/6) Installing expat (2.2.0-r1)
+#7 4.750 (5/6) Installing pcre (8.38-r1)
+#7 5.763 (6/6) Installing git (2.8.6-r0)
+#7 7.372 Executing busybox-1.24.2-r9.trigger
+#7 7.377 Executing ca-certificates-20161130-r0.trigger
+#7 7.419 OK: 23 MiB in 19 packages
+#7 7.431 fetch http://dl-cdn.alpinelinux.org/alpine/v3.4/main/x86_64/APKINDEX.tar.gz
+#7 7.480 fetch http://dl-cdn.alpinelinux.org/alpine/v3.4/community/x86_64/APKINDEX.tar.gz
+#7 7.502 (1/1) Installing openssl (1.0.2n-r0)
+#7 8.247 Executing busybox-1.24.2-r9.trigger
+#7 8.251 Executing ca-certificates-20161130-r0.trigger
+#7 8.286 OK: 24 MiB in 20 packages
+#7 DONE 11.3s
+
+#8 [3/5] ADD . /usr/local/mesos-framework-boilerplate
+#8 DONE 0.4s
+
+#9 [4/5] WORKDIR /usr/local/mesos-framework-boilerplate
+#9 DONE 0.3s
+
+#10 [5/5] RUN npm install --silent &&     npm install bower -g &&     bower install --allow-root
+#10 14.29 mesos-framework-boilerplate@0.1.2 /usr/local/mesos-framework-boilerplate
+#10 14.29 +-- async@2.6.4 
+#10 14.29 +-- body-parser@1.20.2 
+#10 14.29 | +-- bytes@3.1.2 
+#10 14.29 | +-- content-type@1.0.5 
+#10 14.29 | +-- debug@2.6.9 
+#10 14.29 | | `-- ms@2.0.0 
+#10 14.29 | +-- depd@2.0.0 
+#10 14.29 | +-- destroy@1.2.0 
+#10 14.29 | +-- http-errors@2.0.0 
+#10 14.29 | | +-- inherits@2.0.4 
+#10 14.29 | | `-- toidentifier@1.0.1 
+#10 14.29 | +-- iconv-lite@0.4.24 
+#10 14.29 | | `-- safer-buffer@2.1.2 
+#10 14.29 | +-- on-finished@2.4.1 
+#10 14.29 | | `-- ee-first@1.1.1 
+#10 14.29 | +-- qs@6.11.0 
+#10 14.29 | | `-- side-channel@1.0.6 
+#10 14.29 | |   +-- call-bind@1.0.7 
+#10 14.29 | |   | +-- es-define-property@1.0.0 
+#10 14.29 | |   | +-- function-bind@1.1.2 
+#10 14.29 | |   | `-- set-function-length@1.2.2 
+#10 14.29 | |   |   +-- define-data-property@1.1.4 
+#10 14.29 | |   |   +-- gopd@1.0.1 
+#10 14.29 | |   |   `-- has-property-descriptors@1.0.2 
+#10 14.29 | |   +-- es-errors@1.3.0 
+#10 14.29 | |   +-- get-intrinsic@1.2.4 
+#10 14.29 | |   | +-- has-proto@1.0.3 
+#10 14.29 | |   | +-- has-symbols@1.0.3 
+#10 14.29 | |   | `-- hasown@2.0.2 
+#10 14.29 | |   `-- object-inspect@1.13.2 
+#10 14.29 | +-- raw-body@2.5.2 
+#10 14.29 | +-- type-is@1.6.18 
+#10 14.29 | | `-- media-typer@0.3.0 
+#10 14.29 | `-- unpipe@1.0.0 
+#10 14.29 +-- cookie-parser@1.4.6 
+#10 14.29 | +-- cookie@0.4.1 
+#10 14.29 | `-- cookie-signature@1.0.6 
+#10 14.29 +-- cookie-session@2.1.0 
+#10 14.29 | +-- cookies@0.9.1 
+#10 14.29 | | `-- keygrip@1.1.0 
+#10 14.29 | |   `-- tsscmp@1.0.6 
+#10 14.29 | +-- debug@3.2.7 
+#10 14.29 | | `-- ms@2.1.3 
+#10 14.29 | +-- on-headers@1.0.2 
+#10 14.29 | `-- safe-buffer@5.2.1 
+#10 14.29 +-- ejs@2.7.4 
+#10 14.29 +-- express@4.19.2 
+#10 14.29 | +-- accepts@1.3.8 
+#10 14.29 | | `-- negotiator@0.6.3 
+#10 14.29 | +-- array-flatten@1.1.1 
+#10 14.29 | +-- content-disposition@0.5.4 
+#10 14.29 | +-- cookie@0.6.0 
+#10 14.29 | +-- encodeurl@1.0.2 
+#10 14.29 | +-- escape-html@1.0.3 
+#10 14.29 | +-- etag@1.8.1 
+#10 14.29 | +-- finalhandler@1.2.0 
+#10 14.29 | +-- fresh@0.5.2 
+#10 14.29 | +-- merge-descriptors@1.0.1 
+#10 14.29 | +-- methods@1.1.2 
+#10 14.29 | +-- parseurl@1.3.3 
+#10 14.29 | +-- path-to-regexp@0.1.7 
+#10 14.29 | +-- proxy-addr@2.0.7 
+#10 14.29 | | +-- forwarded@0.2.0 
+#10 14.29 | | `-- ipaddr.js@1.9.1 
+#10 14.29 | +-- range-parser@1.2.1 
+#10 14.29 | +-- send@0.18.0 
+#10 14.29 | | +-- mime@1.6.0 
+#10 14.29 | | `-- ms@2.1.3 
+#10 14.29 | +-- serve-static@1.15.0 
+#10 14.29 | +-- setprototypeof@1.2.0 
+#10 14.29 | +-- statuses@2.0.1 
+#10 14.29 | +-- utils-merge@1.0.1 
+#10 14.29 | `-- vary@1.1.2 
+#10 14.29 +-- lodash@4.17.21 
+#10 14.29 +-- mesos-framework@0.5.3 
+#10 14.29 | `-- uuid@3.4.0 
+#10 14.29 +-- node-zookeeper-client@0.2.3 
+#10 14.29 | +-- async@0.2.10 
+#10 14.29 | `-- underscore@1.4.4 
+#10 14.29 +-- passport@0.3.2 
+#10 14.29 | +-- passport-strategy@1.0.0 
+#10 14.29 | `-- pause@0.0.1 
+#10 14.29 +-- passport-gitlab2@2.2.0 
+#10 14.29 | `-- passport-oauth2@1.8.0 
+#10 14.29 |   +-- base64url@3.0.1 
+#10 14.29 |   +-- oauth@0.10.0 
+#10 14.29 |   `-- uid2@0.0.4 
+#10 14.29 +-- passport-google-oauth20@1.0.0 
+#10 14.29 +-- protobufjs@5.0.3 
+#10 14.29 | +-- ascli@1.0.1 
+#10 14.29 | | +-- colour@0.7.1 
+#10 14.29 | | `-- optjs@3.2.2 
+#10 14.29 | +-- bytebuffer@5.0.1 
+#10 14.29 | | `-- long@3.2.0 
+#10 14.29 | +-- glob@7.2.3 
+#10 14.29 | | +-- fs.realpath@1.0.0 
+#10 14.29 | | +-- inflight@1.0.6 
+#10 14.29 | | | `-- wrappy@1.0.2 
+#10 14.29 | | +-- minimatch@3.1.2 
+#10 14.29 | | | `-- brace-expansion@1.1.11 
+#10 14.29 | | |   +-- balanced-match@1.0.2 
+#10 14.29 | | |   `-- concat-map@0.0.1 
+#10 14.29 | | +-- once@1.4.0 
+#10 14.29 | | `-- path-is-absolute@1.0.1 
+#10 14.29 | `-- yargs@3.32.0 
+#10 14.29 |   +-- camelcase@2.1.1 
+#10 14.29 |   +-- cliui@3.2.0 
+#10 14.29 |   | +-- strip-ansi@3.0.1 
+#10 14.29 |   | | `-- ansi-regex@2.1.1 
+#10 14.29 |   | `-- wrap-ansi@2.1.0 
+#10 14.29 |   +-- decamelize@1.2.0 
+#10 14.29 |   +-- os-locale@1.4.0 
+#10 14.29 |   | `-- lcid@1.0.0 
+#10 14.29 |   |   `-- invert-kv@1.0.0 
+#10 14.29 |   +-- string-width@1.0.2 
+#10 14.29 |   | +-- code-point-at@1.1.0 
+#10 14.29 |   | `-- is-fullwidth-code-point@1.0.0 
+#10 14.29 |   |   `-- number-is-nan@1.0.1 
+#10 14.29 |   +-- window-size@0.1.4 
+#10 14.29 |   `-- y18n@3.2.2 
+#10 14.29 +-- request@2.88.2 
+#10 14.29 | +-- aws-sign2@0.7.0 
+#10 14.29 | +-- aws4@1.13.0 
+#10 14.29 | +-- caseless@0.12.0 
+#10 14.29 | +-- combined-stream@1.0.8 
+#10 14.29 | | `-- delayed-stream@1.0.0 
+#10 14.29 | +-- extend@3.0.2 
+#10 14.29 | +-- forever-agent@0.6.1 
+#10 14.29 | +-- form-data@2.3.3 
+#10 14.29 | | `-- asynckit@0.4.0 
+#10 14.29 | +-- har-validator@5.1.5 
+#10 14.29 | | +-- ajv@6.12.6 
+#10 14.29 | | | +-- fast-deep-equal@3.1.3 
+#10 14.29 | | | +-- fast-json-stable-stringify@2.1.0 
+#10 14.29 | | | +-- json-schema-traverse@0.4.1 
+#10 14.29 | | | `-- uri-js@4.4.1 
+#10 14.29 | | `-- har-schema@2.0.0 
+#10 14.29 | +-- http-signature@1.2.0 
+#10 14.29 | | +-- assert-plus@1.0.0 
+#10 14.29 | | +-- jsprim@1.4.2 
+#10 14.29 | | | +-- extsprintf@1.3.0 
+#10 14.29 | | | +-- json-schema@0.4.0 
+#10 14.29 | | | `-- verror@1.10.0 
+#10 14.29 | | |   `-- core-util-is@1.0.2 
+#10 14.29 | | `-- sshpk@1.18.0 
+#10 14.29 | |   +-- asn1@0.2.6 
+#10 14.29 | |   +-- bcrypt-pbkdf@1.0.2 
+#10 14.29 | |   +-- dashdash@1.14.1 
+#10 14.29 | |   +-- ecc-jsbn@0.1.2 
+#10 14.29 | |   +-- getpass@0.1.7 
+#10 14.29 | |   +-- jsbn@0.1.1 
+#10 14.29 | |   `-- tweetnacl@0.14.5 
+#10 14.29 | +-- is-typedarray@1.0.0 
+#10 14.29 | +-- isstream@0.1.2 
+#10 14.29 | +-- json-stringify-safe@5.0.1 
+#10 14.29 | +-- mime-types@2.1.35 
+#10 14.29 | | `-- mime-db@1.52.0 
+#10 14.29 | +-- oauth-sign@0.9.0 
+#10 14.29 | +-- performance-now@2.1.0 
+#10 14.29 | +-- qs@6.5.3 
+#10 14.29 | +-- tough-cookie@2.5.0 
+#10 14.29 | | +-- psl@1.9.0 
+#10 14.29 | | `-- punycode@2.3.1 
+#10 14.29 | +-- tunnel-agent@0.6.0 
+#10 14.29 | `-- uuid@3.4.0 
+#10 14.29 +-- require-environment-variables@1.2.0 
+#10 14.29 +-- uuid@2.0.3 
+#10 14.29 +-- winston@2.4.7 
+#10 14.29 | +-- colors@1.0.3 
+#10 14.29 | +-- cycle@1.0.3 
+#10 14.29 | +-- eyes@0.1.8 
+#10 14.29 | `-- stack-trace@0.0.10 
+#10 14.29 `-- winston-daily-rotate-file@1.7.2 
+#10 14.29   `-- mkdirp@0.5.1 
+#10 14.29     `-- minimist@0.0.8 
+#10 14.29 
+#10 20.70 /usr/bin/bower -> /usr/lib/node_modules/bower/bin/bower
+#10 20.71 /usr/lib
+#10 20.71 `-- bower@1.8.14 
+#10 20.71 
+#10 21.73 bower json-formatter#0.4.2 CERT_HAS_EXPIRED Request to https://registry.bower.io/packages/json-formatter failed: certificate has expired
+#10 ERROR: process "/bin/sh -c npm install --silent &&     npm install bower -g &&     bower install --allow-root" did not complete successfully: exit code: 1
+------
+ > [5/5] RUN npm install --silent &&     npm install bower -g &&     bower install --allow-root:
+14.29 | `-- stack-trace@0.0.10 
+14.29 `-- winston-daily-rotate-file@1.7.2 
+14.29   `-- mkdirp@0.5.1 
+14.29     `-- minimist@0.0.8 
+14.29 
+20.70 /usr/bin/bower -> /usr/lib/node_modules/bower/bin/bower
+20.71 /usr/lib
+20.71 `-- bower@1.8.14 
+20.71 
+21.73 bower json-formatter#0.4.2 CERT_HAS_EXPIRED Request to https://registry.bower.io/packages/json-formatter failed: certificate has expired
+------
+Dockerfile:27
+--------------------
+  26 |     # Setup of the application
+  27 | >>> RUN npm install --silent && \
+  28 | >>>     npm install bower -g && \
+  29 | >>>     bower install --allow-root
+  30 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm install --silent &&     npm install bower -g &&     bower install --allow-root" did not complete successfully: exit code: 1
+Duration: 0:40.48

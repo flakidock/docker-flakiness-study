@@ -1,0 +1,140 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 258B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 64B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/node:18-alpine
+#3 DONE 1.0s
+
+#4 [1/7] FROM docker.io/library/node:18-alpine@sha256:17514b20acef0e79691285e7a59f3ae561f7a1702a9adc72a515aef23f326729
+#4 resolve docker.io/library/node:18-alpine@sha256:17514b20acef0e79691285e7a59f3ae561f7a1702a9adc72a515aef23f326729 0.1s done
+#4 sha256:17514b20acef0e79691285e7a59f3ae561f7a1702a9adc72a515aef23f326729 7.67kB / 7.67kB done
+#4 sha256:b322b7878816ed74992920dcc59c4a4e30eb3d027b9488afac30b4d8d17bc692 1.72kB / 1.72kB done
+#4 sha256:e64c650c0cf3f9e9d60f662499a88e4f49355cad017f05936dab04e3bc564706 6.36kB / 6.36kB done
+#4 sha256:1475bb19bdb76a034cba9b274ea9e4298897d6e108dbc81268740d70639f2b69 0B / 39.84MB 0.1s
+#4 sha256:bc6e437c6fa911e43ef82fe79ec3cf94625557d8426639ee7758448b8a4fb464 0B / 1.38MB 0.2s
+#4 sha256:1475bb19bdb76a034cba9b274ea9e4298897d6e108dbc81268740d70639f2b69 7.34MB / 39.84MB 0.3s
+#4 sha256:bc6e437c6fa911e43ef82fe79ec3cf94625557d8426639ee7758448b8a4fb464 1.38MB / 1.38MB 0.3s
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.3s
+#4 sha256:1475bb19bdb76a034cba9b274ea9e4298897d6e108dbc81268740d70639f2b69 24.12MB / 39.84MB 0.5s
+#4 sha256:bc6e437c6fa911e43ef82fe79ec3cf94625557d8426639ee7758448b8a4fb464 1.38MB / 1.38MB 0.4s done
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.5s
+#4 sha256:62c7e5ec2b01a374e0ad0f2299c63d7940a5bdb466c580b243b9977dc12b8ecb 0B / 444B 0.5s
+#4 sha256:1475bb19bdb76a034cba9b274ea9e4298897d6e108dbc81268740d70639f2b69 33.55MB / 39.84MB 0.6s
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 22.95MB 0.3s done
+#5 DONE 0.8s
+
+#4 [1/7] FROM docker.io/library/node:18-alpine@sha256:17514b20acef0e79691285e7a59f3ae561f7a1702a9adc72a515aef23f326729
+#4 sha256:1475bb19bdb76a034cba9b274ea9e4298897d6e108dbc81268740d70639f2b69 39.84MB / 39.84MB 0.7s
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.6s done
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s
+#4 sha256:62c7e5ec2b01a374e0ad0f2299c63d7940a5bdb466c580b243b9977dc12b8ecb 444B / 444B 0.7s done
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.2s done
+#4 sha256:1475bb19bdb76a034cba9b274ea9e4298897d6e108dbc81268740d70639f2b69 39.84MB / 39.84MB 1.4s done
+#4 extracting sha256:1475bb19bdb76a034cba9b274ea9e4298897d6e108dbc81268740d70639f2b69
+#4 extracting sha256:1475bb19bdb76a034cba9b274ea9e4298897d6e108dbc81268740d70639f2b69 2.4s done
+#4 extracting sha256:bc6e437c6fa911e43ef82fe79ec3cf94625557d8426639ee7758448b8a4fb464
+#4 extracting sha256:bc6e437c6fa911e43ef82fe79ec3cf94625557d8426639ee7758448b8a4fb464 0.2s done
+#4 extracting sha256:62c7e5ec2b01a374e0ad0f2299c63d7940a5bdb466c580b243b9977dc12b8ecb
+#4 extracting sha256:62c7e5ec2b01a374e0ad0f2299c63d7940a5bdb466c580b243b9977dc12b8ecb done
+#4 DONE 5.6s
+
+#6 [2/7] COPY . /src
+#6 DONE 4.5s
+
+#7 [3/7] WORKDIR /src
+#7 DONE 0.4s
+
+#8 [4/7] RUN npm install
+#8 10.91 npm warn deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+#8 11.83 npm warn deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+#8 11.88 npm warn deprecated sane@4.1.0: some dependency vulnerabilities fixed, support for node < 10 dropped, and newer ECMAScript syntax/features added
+#8 12.11 npm warn deprecated querystring@0.2.1: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+#8 17.31 npm warn deprecated popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+#8 21.88 npm warn deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+#8 67.78 
+#8 67.78 added 1983 packages, and audited 1986 packages in 1m
+#8 67.78 
+#8 67.78 122 packages are looking for funding
+#8 67.78   run `npm fund` for details
+#8 68.11 
+#8 68.11 50 vulnerabilities (17 moderate, 29 high, 4 critical)
+#8 68.11 
+#8 68.11 To address issues that do not require attention, run:
+#8 68.11   npm audit fix
+#8 68.11 
+#8 68.11 To address all issues (including breaking changes), run:
+#8 68.11   npm audit fix --force
+#8 68.11 
+#8 68.11 Run `npm audit` for details.
+#8 68.11 npm notice
+#8 68.11 npm notice New minor version of npm available! 10.7.0 -> 10.8.2
+#8 68.11 npm notice Changelog: https://github.com/npm/cli/releases/tag/v10.8.2
+#8 68.11 npm notice To update run: npm install -g npm@10.8.2
+#8 68.11 npm notice
+#8 DONE 72.3s
+
+#9 [5/7] RUN npm -w bids-validator run build
+#9 0.939 
+#9 0.939 > bids-validator@1.10.1-dev.0 build
+#9 0.939 > node ./esbuild.mjs
+#9 0.939 
+#9 DONE 2.9s
+
+#10 [6/7] RUN npm -w bids-validator pack
+#10 4.866 npm notice
+#10 4.866 npm notice package: bids-validator@1.10.1-dev.0
+#10 4.866 npm notice Tarball Contents
+#10 4.867 npm notice 38.0kB README.md
+#10 4.867 npm notice 554B bin/bids-validator
+#10 4.867 npm notice 8.1MB dist/commonjs/cli.js
+#10 4.867 npm notice 8.7MB dist/commonjs/cli.js.map
+#10 4.867 npm notice 7.8MB dist/commonjs/index.js
+#10 4.867 npm notice 8.4MB dist/commonjs/index.js.map
+#10 4.867 npm notice 260.3kB dist/commonjs/utils/consoleFormat.js
+#10 4.867 npm notice 421.2kB dist/commonjs/utils/consoleFormat.js.map
+#10 4.867 npm notice 6.4MB dist/esm/index.js
+#10 4.867 npm notice 7.4MB dist/esm/index.js.map
+#10 4.867 npm notice 2.1kB package.json
+#10 4.867 npm notice Tarball Details
+#10 4.868 npm notice name: bids-validator
+#10 4.868 npm notice version: 1.10.1-dev.0
+#10 4.868 npm notice filename: bids-validator-1.10.1-dev.0.tgz
+#10 4.868 npm notice package size: 8.2 MB
+#10 4.868 npm notice unpacked size: 47.6 MB
+#10 4.868 npm notice shasum: 9be987ae6863076cf2e3932872fe5e0aceb1d416
+#10 4.868 npm notice integrity: sha512-UrJY63qjDykqY[...]EqX8Mq/ZYDJAg==
+#10 4.868 npm notice total files: 11
+#10 4.869 npm notice
+#10 4.869 bids-validator-1.10.1-dev.0.tgz
+#10 DONE 5.4s
+
+#11 [7/7] RUN npm install -g bids-validator-*.tgz
+#11 9.743 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#11 10.94 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#11 27.82 
+#11 27.82 added 237 packages in 27s
+#11 27.82 
+#11 27.82 15 packages are looking for funding
+#11 27.82   run `npm fund` for details
+#11 DONE 32.0s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 14.6s done
+#12 writing image sha256:c2316636fd359fc12c9f6738f6e7303f54c8c6456a0b913b477d603f1fac529d 0.0s done
+#12 naming to docker.io/library/image_name_v1_1 0.0s done
+#12 DONE 14.6s
+Duration: 2:20.03

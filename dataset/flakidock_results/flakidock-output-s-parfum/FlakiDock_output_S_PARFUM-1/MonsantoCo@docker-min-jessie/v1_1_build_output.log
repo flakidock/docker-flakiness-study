@@ -1,0 +1,89 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 473B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:jessie
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM docker.io/library/debian:jessie@sha256:32ad5050caffb2c7e969dac873bce2c370015c2256ff984b70c1c08b3a2816a0
+#4 resolve docker.io/library/debian:jessie@sha256:32ad5050caffb2c7e969dac873bce2c370015c2256ff984b70c1c08b3a2816a0 0.0s done
+#4 sha256:23f6c1ca631220b4a17c659e70e4c20092965590b406b1fb02780475680622f4 529B / 529B done
+#4 sha256:3aaeab7a47777b5ca21fc6de40a6f9e7ee7ebb7302e7a025795eb9e73200c404 1.46kB / 1.46kB done
+#4 sha256:b82b9923b08dfd4c2a83d1669b67a3a0c12f2d17fc989315c05f201eabc33b52 0B / 54.39MB 0.1s
+#4 sha256:32ad5050caffb2c7e969dac873bce2c370015c2256ff984b70c1c08b3a2816a0 982B / 982B done
+#4 sha256:b82b9923b08dfd4c2a83d1669b67a3a0c12f2d17fc989315c05f201eabc33b52 10.49MB / 54.39MB 0.3s
+#4 sha256:b82b9923b08dfd4c2a83d1669b67a3a0c12f2d17fc989315c05f201eabc33b52 29.36MB / 54.39MB 0.5s
+#4 sha256:b82b9923b08dfd4c2a83d1669b67a3a0c12f2d17fc989315c05f201eabc33b52 40.89MB / 54.39MB 0.6s
+#4 sha256:b82b9923b08dfd4c2a83d1669b67a3a0c12f2d17fc989315c05f201eabc33b52 54.39MB / 54.39MB 0.8s
+#4 sha256:b82b9923b08dfd4c2a83d1669b67a3a0c12f2d17fc989315c05f201eabc33b52 54.39MB / 54.39MB 0.8s done
+#4 extracting sha256:b82b9923b08dfd4c2a83d1669b67a3a0c12f2d17fc989315c05f201eabc33b52
+#4 extracting sha256:b82b9923b08dfd4c2a83d1669b67a3a0c12f2d17fc989315c05f201eabc33b52 3.4s done
+#4 DONE 4.4s
+
+#5 [2/2] RUN apt-get update &&   apt-get upgrade -y &&   apt-get clean -y &&   apt-get autoclean -y &&   apt-get autoremove -y &&   rm -rf /usr/share/locale/* &&   rm -rf /var/cache/debconf/*-old &&   rm -rf /var/lib/apt/lists/* &&   rm -rf /usr/share/doc/*
+#5 0.210 Ign http://deb.debian.org jessie InRelease
+#5 0.210 Ign http://security.debian.org jessie/updates InRelease
+#5 0.218 Ign http://deb.debian.org jessie-updates InRelease
+#5 0.220 Ign http://security.debian.org jessie/updates Release.gpg
+#5 0.229 Ign http://deb.debian.org jessie Release.gpg
+#5 0.230 Ign http://security.debian.org jessie/updates Release
+#5 0.240 Ign http://deb.debian.org jessie-updates Release.gpg
+#5 0.240 Err http://security.debian.org jessie/updates/main amd64 Packages
+#5 0.240   
+#5 0.250 Ign http://deb.debian.org jessie Release
+#5 0.250 Err http://security.debian.org jessie/updates/main amd64 Packages
+#5 0.250   
+#5 0.259 Ign http://deb.debian.org jessie-updates Release
+#5 0.260 Err http://security.debian.org jessie/updates/main amd64 Packages
+#5 0.260   
+#5 0.270 Err http://security.debian.org jessie/updates/main amd64 Packages
+#5 0.270   
+#5 0.282 Err http://security.debian.org jessie/updates/main amd64 Packages
+#5 0.282   404  Not Found [IP: 151.101.130.132 80]
+#5 0.344 Err http://deb.debian.org jessie/main amd64 Packages
+#5 0.344   404  Not Found
+#5 0.357 Err http://deb.debian.org jessie-updates/main amd64 Packages
+#5 0.357   404  Not Found
+#5 0.358 W: Failed to fetch http://security.debian.org/debian-security/dists/jessie/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+#5 0.358 
+#5 0.358 W: Failed to fetch http://deb.debian.org/debian/dists/jessie/main/binary-amd64/Packages  404  Not Found
+#5 0.358 
+#5 0.358 W: Failed to fetch http://deb.debian.org/debian/dists/jessie-updates/main/binary-amd64/Packages  404  Not Found
+#5 0.358 
+#5 0.358 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#5 ERROR: process "/bin/sh -c apt-get update &&   apt-get upgrade -y &&   apt-get clean -y &&   apt-get autoclean -y &&   apt-get autoremove -y &&   rm -rf /usr/share/locale/* &&   rm -rf /var/cache/debconf/*-old &&   rm -rf /var/lib/apt/lists/* &&   rm -rf /usr/share/doc/*" did not complete successfully: exit code: 100
+------
+ > [2/2] RUN apt-get update &&   apt-get upgrade -y &&   apt-get clean -y &&   apt-get autoclean -y &&   apt-get autoremove -y &&   rm -rf /usr/share/locale/* &&   rm -rf /var/cache/debconf/*-old &&   rm -rf /var/lib/apt/lists/* &&   rm -rf /usr/share/doc/*:
+0.344   404  Not Found
+0.357 Err http://deb.debian.org jessie-updates/main amd64 Packages
+0.357   404  Not Found
+0.358 W: Failed to fetch http://security.debian.org/debian-security/dists/jessie/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+0.358 
+0.358 W: Failed to fetch http://deb.debian.org/debian/dists/jessie/main/binary-amd64/Packages  404  Not Found
+0.358 
+0.358 W: Failed to fetch http://deb.debian.org/debian/dists/jessie-updates/main/binary-amd64/Packages  404  Not Found
+0.358 
+0.358 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:7
+--------------------
+   6 |     # Update packages
+   7 | >>> RUN apt-get update && \
+   8 | >>>   apt-get upgrade -y && \
+   9 | >>>   apt-get clean -y && \
+  10 | >>>   apt-get autoclean -y && \
+  11 | >>>   apt-get autoremove -y && \
+  12 | >>>   rm -rf /usr/share/locale/* && \
+  13 | >>>   rm -rf /var/cache/debconf/*-old && \
+  14 | >>>   rm -rf /var/lib/apt/lists/* && \
+  15 | >>>   rm -rf /usr/share/doc/*
+  16 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update &&   apt-get upgrade -y &&   apt-get clean -y &&   apt-get autoclean -y &&   apt-get autoremove -y &&   rm -rf /usr/share/locale/* &&   rm -rf /var/cache/debconf/*-old &&   rm -rf /var/lib/apt/lists/* &&   rm -rf /usr/share/doc/*" did not complete successfully: exit code: 100
+Duration: 0:6.28

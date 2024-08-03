@@ -1,0 +1,128 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 616B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.6-slim-stretch
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/8] FROM docker.io/library/python:3.6-slim-stretch@sha256:66f641652a3549459fe8f72e2daebbb5be383cf3120d0abbf911042e5059e749
+#4 resolve docker.io/library/python:3.6-slim-stretch@sha256:66f641652a3549459fe8f72e2daebbb5be383cf3120d0abbf911042e5059e749 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 9.37MB 0.1s done
+#5 DONE 0.1s
+
+#4 [1/8] FROM docker.io/library/python:3.6-slim-stretch@sha256:66f641652a3549459fe8f72e2daebbb5be383cf3120d0abbf911042e5059e749
+#4 sha256:0e3a508508d3c34799fac29ec02b56c5d4c9940ef077c4b54fe5579988256216 0B / 9.63MB 0.2s
+#4 sha256:66f641652a3549459fe8f72e2daebbb5be383cf3120d0abbf911042e5059e749 1.22kB / 1.22kB done
+#4 sha256:15c2b35ce4a026d8d52bd4b8ff13904030c2f4c2809b4368f180390b1a18c284 1.37kB / 1.37kB done
+#4 sha256:6820b3264fd5eee9e213bffa6440383302c2593fe9bf8274487d90c1f222c357 8.29kB / 8.29kB done
+#4 sha256:778066204fb734c2fb80cb8127cb35d67d742806a4eaf1aba0b5393c4ae6f2a4 6.29MB / 22.53MB 0.2s
+#4 sha256:0036158cfada887e9e472c44b22307e0b37f084c2ab602660a4cf0d12ca8003c 0B / 2.51MB 0.2s
+#4 sha256:0e3a508508d3c34799fac29ec02b56c5d4c9940ef077c4b54fe5579988256216 6.29MB / 9.63MB 0.4s
+#4 sha256:778066204fb734c2fb80cb8127cb35d67d742806a4eaf1aba0b5393c4ae6f2a4 18.87MB / 22.53MB 0.4s
+#4 sha256:0e3a508508d3c34799fac29ec02b56c5d4c9940ef077c4b54fe5579988256216 9.63MB / 9.63MB 0.5s done
+#4 sha256:778066204fb734c2fb80cb8127cb35d67d742806a4eaf1aba0b5393c4ae6f2a4 22.53MB / 22.53MB 0.6s
+#4 sha256:0036158cfada887e9e472c44b22307e0b37f084c2ab602660a4cf0d12ca8003c 2.51MB / 2.51MB 0.5s done
+#4 sha256:5c9866230de7294d9372b404a2197fd6d3a145e06f1a1e2a8a2045210bf2b931 0B / 241B 0.6s
+#4 sha256:778066204fb734c2fb80cb8127cb35d67d742806a4eaf1aba0b5393c4ae6f2a4 22.53MB / 22.53MB 0.6s done
+#4 sha256:5c9866230de7294d9372b404a2197fd6d3a145e06f1a1e2a8a2045210bf2b931 241B / 241B 0.6s done
+#4 extracting sha256:778066204fb734c2fb80cb8127cb35d67d742806a4eaf1aba0b5393c4ae6f2a4 0.1s
+#4 sha256:4d2393ffbbeb791b9b187bfe44bb89023bb8b12b2297fcd1745c167b7a091abd 0B / 2.49MB 0.7s
+#4 sha256:4d2393ffbbeb791b9b187bfe44bb89023bb8b12b2297fcd1745c167b7a091abd 2.49MB / 2.49MB 0.8s done
+#4 extracting sha256:778066204fb734c2fb80cb8127cb35d67d742806a4eaf1aba0b5393c4ae6f2a4 1.5s done
+#4 extracting sha256:0036158cfada887e9e472c44b22307e0b37f084c2ab602660a4cf0d12ca8003c
+#4 extracting sha256:0036158cfada887e9e472c44b22307e0b37f084c2ab602660a4cf0d12ca8003c 0.2s done
+#4 extracting sha256:0e3a508508d3c34799fac29ec02b56c5d4c9940ef077c4b54fe5579988256216
+#4 extracting sha256:0e3a508508d3c34799fac29ec02b56c5d4c9940ef077c4b54fe5579988256216 0.5s done
+#4 extracting sha256:5c9866230de7294d9372b404a2197fd6d3a145e06f1a1e2a8a2045210bf2b931 done
+#4 extracting sha256:4d2393ffbbeb791b9b187bfe44bb89023bb8b12b2297fcd1745c167b7a091abd 0.1s
+#4 extracting sha256:4d2393ffbbeb791b9b187bfe44bb89023bb8b12b2297fcd1745c167b7a091abd 0.3s done
+#4 DONE 3.5s
+
+#6 [2/8] RUN apt-get update &&     apt-get install -y libxml2-dev gdal-bin &&     apt-get clean &&     rm -rf /var/cache/apt/* /var/lib/apt/lists/*
+#6 0.220 Ign:1 http://deb.debian.org/debian stretch InRelease
+#6 0.220 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#6 0.231 Ign:3 http://security.debian.org/debian-security stretch/updates Release
+#6 0.234 Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+#6 0.243 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.245 Ign:6 http://deb.debian.org/debian stretch Release
+#6 0.255 Ign:7 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.259 Ign:8 http://deb.debian.org/debian stretch-updates Release
+#6 0.266 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.268 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.278 Ign:7 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.278 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.286 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.290 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.298 Ign:7 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.301 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.308 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.309 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.320 Ign:7 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.321 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.330 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.331 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.341 Ign:7 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.342 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.352 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.353 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.366 Err:7 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.366   404  Not Found
+#6 0.366 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.379 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.391 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.401 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.413 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.424 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.437 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.448 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.460 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.470 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.481 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.492 Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.492   404  Not Found
+#6 0.514 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.526 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.526   404  Not Found
+#6 0.536 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.540 Reading package lists...
+#6 0.549 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 0.549 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 0.549 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 0.549 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+#6 0.549 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 0.549 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 0.549 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c apt-get update &&     apt-get install -y libxml2-dev gdal-bin &&     apt-get clean &&     rm -rf /var/cache/apt/* /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [2/8] RUN apt-get update &&     apt-get install -y libxml2-dev gdal-bin &&     apt-get clean &&     rm -rf /var/cache/apt/* /var/lib/apt/lists/*:
+0.526   404  Not Found
+0.536 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+0.540 Reading package lists...
+0.549 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.549 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.549 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.549 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+0.549 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.549 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.549 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:7
+--------------------
+   6 |     
+   7 | >>> RUN apt-get update && \
+   8 | >>>     apt-get install -y libxml2-dev gdal-bin && \
+   9 | >>>     apt-get clean && \
+  10 | >>>     rm -rf /var/cache/apt/* /var/lib/apt/lists/*
+  11 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update &&     apt-get install -y libxml2-dev gdal-bin &&     apt-get clean &&     rm -rf /var/cache/apt/* /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+Duration: 0:5.56

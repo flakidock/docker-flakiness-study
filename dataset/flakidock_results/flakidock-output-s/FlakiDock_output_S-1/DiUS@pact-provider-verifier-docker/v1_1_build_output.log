@@ -1,0 +1,105 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 454B done
+#1 DONE 0.0s
+
+#2 [auth] library/ruby:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ruby:2-alpine
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 6.20kB done
+#5 DONE 0.0s
+
+#6 [1/6] FROM docker.io/library/ruby:2-alpine@sha256:371668748735a808d1fd1c506878e09f40cb542ffc758cfa7eb124f90827e8d9
+#6 resolve docker.io/library/ruby:2-alpine@sha256:371668748735a808d1fd1c506878e09f40cb542ffc758cfa7eb124f90827e8d9 0.0s done
+#6 sha256:371668748735a808d1fd1c506878e09f40cb542ffc758cfa7eb124f90827e8d9 1.65kB / 1.65kB done
+#6 sha256:45ca5ff1e098ddc85430bad09d433dfab4be9417477a5778568a7877408f1cd0 1.36kB / 1.36kB done
+#6 sha256:3d97617184c42d64792083f39c516c84b3073b4ed1ff6b8235c7d7096acc1dcc 6.28kB / 6.28kB done
+#6 sha256:91d30c5bc19582de1415b18f1ec5bcbf52a558b62cf6cc201c9669df9f748c22 1.05MB / 2.81MB 0.2s
+#6 sha256:c52a5fbef9a7ca13abdb787ccddf6fb7d2ecad991b7d37fb776cd6d717b4e3d7 0B / 3.85MB 0.2s
+#6 sha256:669ebe35e8508ac4a673ebf6ad67a95e27550896cb835fdd7a80cd80d9c0dc98 0B / 222B 0.2s
+#6 sha256:91d30c5bc19582de1415b18f1ec5bcbf52a558b62cf6cc201c9669df9f748c22 2.81MB / 2.81MB 0.2s done
+#6 sha256:c52a5fbef9a7ca13abdb787ccddf6fb7d2ecad991b7d37fb776cd6d717b4e3d7 3.22MB / 3.85MB 0.3s
+#6 sha256:669ebe35e8508ac4a673ebf6ad67a95e27550896cb835fdd7a80cd80d9c0dc98 222B / 222B 0.3s done
+#6 extracting sha256:91d30c5bc19582de1415b18f1ec5bcbf52a558b62cf6cc201c9669df9f748c22 0.1s done
+#6 sha256:c0b2360bc8a61145966a48dadc4627a325c755f7a05419ad1776f76704302306 0B / 13.90MB 0.3s
+#6 sha256:ca2bfe3c7e591e13f24752feb93c7337e9236e26b0c0d8e58e942f28ff441d81 0B / 172B 0.3s
+#6 sha256:c52a5fbef9a7ca13abdb787ccddf6fb7d2ecad991b7d37fb776cd6d717b4e3d7 3.85MB / 3.85MB 0.3s done
+#6 sha256:c0b2360bc8a61145966a48dadc4627a325c755f7a05419ad1776f76704302306 13.90MB / 13.90MB 0.5s
+#6 sha256:ca2bfe3c7e591e13f24752feb93c7337e9236e26b0c0d8e58e942f28ff441d81 172B / 172B 0.4s done
+#6 extracting sha256:c52a5fbef9a7ca13abdb787ccddf6fb7d2ecad991b7d37fb776cd6d717b4e3d7
+#6 sha256:c0b2360bc8a61145966a48dadc4627a325c755f7a05419ad1776f76704302306 13.90MB / 13.90MB 0.5s done
+#6 extracting sha256:c52a5fbef9a7ca13abdb787ccddf6fb7d2ecad991b7d37fb776cd6d717b4e3d7 0.5s done
+#6 extracting sha256:669ebe35e8508ac4a673ebf6ad67a95e27550896cb835fdd7a80cd80d9c0dc98
+#6 extracting sha256:669ebe35e8508ac4a673ebf6ad67a95e27550896cb835fdd7a80cd80d9c0dc98 done
+#6 extracting sha256:c0b2360bc8a61145966a48dadc4627a325c755f7a05419ad1776f76704302306 0.1s
+#6 extracting sha256:c0b2360bc8a61145966a48dadc4627a325c755f7a05419ad1776f76704302306 0.7s done
+#6 extracting sha256:ca2bfe3c7e591e13f24752feb93c7337e9236e26b0c0d8e58e942f28ff441d81 done
+#6 DONE 2.0s
+
+#7 [2/6] COPY Gemfile /app/
+#7 DONE 0.2s
+
+#8 [3/6] COPY Gemfile.lock /app/
+#8 DONE 0.0s
+
+#9 [4/6] RUN apk add --no-cache --virtual .build-deps build-base &&     gem install bundler &&     cd /app && bundle install &&     apk del .build-deps &&     rm -r ~/.bundle/ /usr/local/bundle/cache
+#9 0.171 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/main/x86_64/APKINDEX.tar.gz
+#9 0.292 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/community/x86_64/APKINDEX.tar.gz
+#9 0.512 (1/18) Upgrading musl (1.2.3-r2 -> 1.2.3-r3)
+#9 0.532 (2/18) Installing binutils (2.38-r3)
+#9 0.619 (3/18) Installing libmagic (5.41-r0)
+#9 0.651 (4/18) Installing file (5.41-r0)
+#9 0.661 (5/18) Installing libgomp (11.2.1_git20220219-r2)
+#9 0.675 (6/18) Installing libatomic (11.2.1_git20220219-r2)
+#9 0.687 (7/18) Installing isl22 (0.22-r0)
+#9 0.713 (8/18) Installing mpfr4 (4.1.0-r0)
+#9 0.757 (9/18) Installing mpc1 (1.2.1-r0)
+#9 0.767 (10/18) Installing gcc (11.2.1_git20220219-r2)
+#9 1.560 (11/18) Installing musl-dev (1.2.3-r3)
+#9 1.648 (12/18) Installing libc-dev (0.7.2-r3)
+#9 1.658 (13/18) Installing g++ (11.2.1_git20220219-r2)
+#9 2.150 (14/18) Installing make (4.3-r0)
+#9 2.171 (15/18) Installing fortify-headers (1.1-r1)
+#9 2.184 (16/18) Installing patch (2.7.6-r7)
+#9 2.197 (17/18) Installing build-base (0.5-r3)
+#9 2.209 (18/18) Installing .build-deps (20240801.000323)
+#9 2.209 Executing busybox-1.35.0-r17.trigger
+#9 2.215 OK: 199 MiB in 53 packages
+#9 63.43 ERROR:  Error installing bundler:
+#9 63.43 	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+#9 63.43 	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.8.225.
+#9 ERROR: process "/bin/sh -c apk add --no-cache --virtual .build-deps build-base &&     gem install bundler &&     cd /app && bundle install &&     apk del .build-deps &&     rm -r ~/.bundle/ /usr/local/bundle/cache" did not complete successfully: exit code: 1
+------
+ > [4/6] RUN apk add --no-cache --virtual .build-deps build-base &&     gem install bundler &&     cd /app && bundle install &&     apk del .build-deps &&     rm -r ~/.bundle/ /usr/local/bundle/cache:
+2.150 (14/18) Installing make (4.3-r0)
+2.171 (15/18) Installing fortify-headers (1.1-r1)
+2.184 (16/18) Installing patch (2.7.6-r7)
+2.197 (17/18) Installing build-base (0.5-r3)
+2.209 (18/18) Installing .build-deps (20240801.000323)
+2.209 Executing busybox-1.35.0-r17.trigger
+2.215 OK: 199 MiB in 53 packages
+63.43 ERROR:  Error installing bundler:
+63.43 	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+63.43 	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.8.225.
+------
+v1_Dockerfile:6
+--------------------
+   5 |     COPY Gemfile.lock /app/
+   6 | >>> RUN apk add --no-cache --virtual .build-deps build-base && \
+   7 | >>>     gem install bundler && \
+   8 | >>>     cd /app && bundle install && \
+   9 | >>>     apk del .build-deps && \
+  10 | >>>     rm -r ~/.bundle/ /usr/local/bundle/cache
+  11 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk add --no-cache --virtual .build-deps build-base &&     gem install bundler &&     cd /app && bundle install &&     apk del .build-deps &&     rm -r ~/.bundle/ /usr/local/bundle/cache" did not complete successfully: exit code: 1
+Duration: 1:7.11

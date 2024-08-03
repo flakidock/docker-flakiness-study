@@ -1,0 +1,125 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from v2_Dockerfile
+#2 transferring dockerfile: 753B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 52B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/debian:stretch
+#3 DONE 1.2s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 0.3s done
+#5 sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 1.21kB / 1.21kB done
+#5 sha256:16ee3e11da473f6565ef94a715f1a38b3079e0664913be78869c336a71cb6085 529B / 529B done
+#5 sha256:662c05203bab4c59568d24689fa5c3955439360a35c483178598d226b9a5ad10 1.46kB / 1.46kB done
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 0B / 45.43MB 0.2s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 828.43kB 0.1s done
+#4 DONE 0.4s
+
+#5 [1/7] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 9.44MB / 45.43MB 0.4s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 14.68MB / 45.43MB 0.5s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 20.97MB / 45.43MB 0.6s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 32.51MB / 45.43MB 0.8s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 44.04MB / 45.43MB 1.0s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 1.7s done
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 5.2s
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 7.0s done
+#5 DONE 9.9s
+
+#6 [2/7] RUN apt-get update &&     apt-get install -y --no-install-recommends python3 python3.5-dev python3-virtualenv libsnappy1v5 libsnappy-dev build-essential &&     python3 -m virtualenv --python /usr/bin/python3 /opt/venv &&     /opt/venv/bin/pip install python-snappy &&     apt-get remove -y build-essential python3.5-dev libsnappy-dev &&     apt-get autoremove -y
+#6 1.781 Ign:1 http://deb.debian.org/debian stretch InRelease
+#6 1.785 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#6 1.787 Ign:3 http://security.debian.org/debian-security stretch/updates Release
+#6 1.789 Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+#6 1.801 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.801 Ign:6 http://deb.debian.org/debian stretch Release
+#6 1.815 Ign:7 http://deb.debian.org/debian stretch-updates Release
+#6 1.815 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.827 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 1.827 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.839 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.839 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.866 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.866 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.872 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.880 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.882 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 1.886 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.895 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.895 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.898 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.908 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.911 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.919 Ign:5 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.922 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.928 Err:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.928   404  Not Found [IP: 151.101.194.132 80]
+#6 1.931 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 1.943 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.959 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.971 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.985 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 1.999 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.016 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.030 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.044 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 2.063 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.077 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.089 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.101 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 2.121 Err:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.121   404  Not Found
+#6 2.133 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.133   404  Not Found
+#6 2.145 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.182 Reading package lists...
+#6 2.222 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 2.222 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 2.222 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 2.222 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+#6 2.222 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 2.222 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 2.222 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c apt-get update &&     apt-get install -y --no-install-recommends python3 python3.5-dev python3-virtualenv libsnappy1v5 libsnappy-dev build-essential &&     python3 -m virtualenv --python /usr/bin/python3 $VIRTUAL_ENV &&     $VIRTUAL_ENV/bin/pip install python-snappy &&     apt-get remove -y build-essential python3.5-dev libsnappy-dev &&     apt-get autoremove -y" did not complete successfully: exit code: 100
+------
+ > [2/7] RUN apt-get update &&     apt-get install -y --no-install-recommends python3 python3.5-dev python3-virtualenv libsnappy1v5 libsnappy-dev build-essential &&     python3 -m virtualenv --python /usr/bin/python3 /opt/venv &&     /opt/venv/bin/pip install python-snappy &&     apt-get remove -y build-essential python3.5-dev libsnappy-dev &&     apt-get autoremove -y:
+2.133   404  Not Found
+2.145 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+2.182 Reading package lists...
+2.222 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+2.222 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+2.222 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+2.222 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+2.222 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+2.222 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+2.222 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v2_Dockerfile:6
+--------------------
+   5 |     # TODO: build python-snappy wheel on a separate container instead of installing build-essential
+   6 | >>> RUN apt-get update && \
+   7 | >>>     apt-get install -y --no-install-recommends python3 python3.5-dev python3-virtualenv libsnappy1v5 libsnappy-dev build-essential && \
+   8 | >>>     python3 -m virtualenv --python /usr/bin/python3 $VIRTUAL_ENV && \
+   9 | >>>     $VIRTUAL_ENV/bin/pip install python-snappy && \
+  10 | >>>     apt-get remove -y build-essential python3.5-dev libsnappy-dev && \
+  11 | >>>     apt-get autoremove -y
+  12 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update &&     apt-get install -y --no-install-recommends python3 python3.5-dev python3-virtualenv libsnappy1v5 libsnappy-dev build-essential &&     python3 -m virtualenv --python /usr/bin/python3 $VIRTUAL_ENV &&     $VIRTUAL_ENV/bin/pip install python-snappy &&     apt-get remove -y build-essential python3.5-dev libsnappy-dev &&     apt-get autoremove -y" did not complete successfully: exit code: 100
+Duration: 0:20.14

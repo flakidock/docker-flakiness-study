@@ -1,0 +1,120 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 473B done
+#1 DONE 0.3s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 327.16kB done
+#4 DONE 0.3s
+
+#5 [1/8] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.2s done
+#5 DONE 1.3s
+
+#6 [2/8] RUN apk add --no-cache python3 py3-pip
+#6 0.446 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.680 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 1.169 (1/25) Installing libbz2 (1.0.8-r6)
+#6 1.173 (2/25) Installing libexpat (2.6.2-r0)
+#6 1.182 (3/25) Installing libffi (3.4.6-r0)
+#6 1.184 (4/25) Installing gdbm (1.23-r1)
+#6 1.276 (5/25) Installing xz-libs (5.6.1-r3)
+#6 1.286 (6/25) Installing libgcc (13.2.1_git20240309-r0)
+#6 1.293 (7/25) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 1.318 (8/25) Installing mpdecimal (4.0.0-r0)
+#6 1.332 (9/25) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 1.353 (10/25) Installing libncursesw (6.4_p20240420-r0)
+#6 1.360 (11/25) Installing libpanelw (6.4_p20240420-r0)
+#6 1.364 (12/25) Installing readline (8.2.10-r0)
+#6 1.371 (13/25) Installing sqlite-libs (3.45.3-r1)
+#6 1.392 (14/25) Installing python3 (3.12.3-r1)
+#6 1.704 (15/25) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 1.956 (16/25) Installing pyc (3.12.3-r1)
+#6 1.960 (17/25) Installing py3-setuptools-pyc (69.5.1-r0)
+#6 2.087 (18/25) Installing py3-pip-pyc (24.0-r2)
+#6 2.322 (19/25) Installing py3-parsing (3.1.2-r1)
+#6 2.330 (20/25) Installing py3-parsing-pyc (3.1.2-r1)
+#6 2.348 (21/25) Installing py3-packaging-pyc (24.0-r1)
+#6 2.355 (22/25) Installing python3-pyc (3.12.3-r1)
+#6 2.364 (23/25) Installing py3-packaging (24.0-r1)
+#6 2.381 (24/25) Installing py3-setuptools (69.5.1-r0)
+#6 2.478 (25/25) Installing py3-pip (24.0-r2)
+#6 2.691 Executing busybox-1.36.1-r29.trigger
+#6 2.699 OK: 75 MiB in 39 packages
+#6 DONE 4.6s
+
+#7 [3/8] RUN pip3 install --upgrade pip setuptools
+#7 2.416 error: externally-managed-environment
+#7 2.416 
+#7 2.416 × This environment is externally managed
+#7 2.416 ╰─> 
+#7 2.416     The system-wide python installation should be maintained using the system
+#7 2.416     package manager (apk) only.
+#7 2.416     
+#7 2.416     If the package in question is not packaged already (and hence installable via
+#7 2.416     "apk add py3-somepackage"), please consider installing it inside a virtual
+#7 2.416     environment, e.g.:
+#7 2.416     
+#7 2.416     python3 -m venv /path/to/venv
+#7 2.416     . /path/to/venv/bin/activate
+#7 2.416     pip install mypackage
+#7 2.416     
+#7 2.416     To exit the virtual environment, run:
+#7 2.416     
+#7 2.416     deactivate
+#7 2.416     
+#7 2.416     The virtual environment is not deleted, and can be re-entered by re-sourcing
+#7 2.416     the activate file.
+#7 2.416     
+#7 2.416     To automatically manage virtual environments, consider using pipx (from the
+#7 2.416     pipx package).
+#7 2.416 
+#7 2.416 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+#7 2.416 hint: See PEP 668 for the detailed specification.
+#7 ERROR: process "/bin/sh -c pip3 install --upgrade pip setuptools" did not complete successfully: exit code: 1
+------
+ > [3/8] RUN pip3 install --upgrade pip setuptools:
+2.416     deactivate
+2.416     
+2.416     The virtual environment is not deleted, and can be re-entered by re-sourcing
+2.416     the activate file.
+2.416     
+2.416     To automatically manage virtual environments, consider using pipx (from the
+2.416     pipx package).
+2.416 
+2.416 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+2.416 hint: See PEP 668 for the detailed specification.
+------
+v1_Dockerfile:8
+--------------------
+   6 |     
+   7 |     # Upgrade pip and setuptools
+   8 | >>> RUN pip3 install --upgrade pip setuptools
+   9 |     
+  10 |     COPY ./web_app/requirements.txt /tmp/requirements.txt
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip3 install --upgrade pip setuptools" did not complete successfully: exit code: 1
+Duration: 0:10.82

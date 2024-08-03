@@ -1,0 +1,122 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from v2_Dockerfile
+#2 transferring dockerfile: 941B done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/node:12.13.0-stretch
+#3 DONE 0.9s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [ 1/11] FROM docker.io/library/node:12.13.0-stretch@sha256:fc6c1371e3a0883f17e34492bcaffb4d8ad986ebb4a5eeafa8817bd425446566
+#5 resolve docker.io/library/node:12.13.0-stretch@sha256:fc6c1371e3a0883f17e34492bcaffb4d8ad986ebb4a5eeafa8817bd425446566 0.1s done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 476.82kB done
+#4 DONE 0.3s
+
+#5 [ 1/11] FROM docker.io/library/node:12.13.0-stretch@sha256:fc6c1371e3a0883f17e34492bcaffb4d8ad986ebb4a5eeafa8817bd425446566
+#5 sha256:fc6c1371e3a0883f17e34492bcaffb4d8ad986ebb4a5eeafa8817bd425446566 1.21kB / 1.21kB done
+#5 sha256:11e92fc50c4a4f575757aa1d3d1d89a732b426269a9beb29d97b31b68950bd6f 7.77kB / 7.77kB done
+#5 sha256:834225bc3af578aee9486fe3c5ad850a957c3c72c9f45688a9e0ce2eeee16794 2.21kB / 2.21kB done
+#5 sha256:2c9863d012f52da0e48c18cc1d6ece21e8c0c22e76c4d776bae0b79504bff141 0B / 1.40MB 0.3s
+#5 sha256:2c9863d012f52da0e48c18cc1d6ece21e8c0c22e76c4d776bae0b79504bff141 1.40MB / 1.40MB 0.5s done
+#5 sha256:524be717efb1e5a1cc0998f4ffeb8b3c2613195141ca4aa490da82e0353b235c 0B / 4.16kB 0.5s
+#5 sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a 4.19MB / 22.27MB 0.5s
+#5 sha256:524be717efb1e5a1cc0998f4ffeb8b3c2613195141ca4aa490da82e0353b235c 4.16kB / 4.16kB 0.6s done
+#5 sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a 14.68MB / 22.27MB 0.6s
+#5 extracting sha256:524be717efb1e5a1cc0998f4ffeb8b3c2613195141ca4aa490da82e0353b235c
+#5 sha256:06cd084e76f0b4935953486edc4062e8ba0e8813401b19e1983830bc2c0f8044 0B / 293B 0.6s
+#5 sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a 22.27MB / 22.27MB 0.7s
+#5 extracting sha256:524be717efb1e5a1cc0998f4ffeb8b3c2613195141ca4aa490da82e0353b235c 0.1s done
+#5 sha256:06cd084e76f0b4935953486edc4062e8ba0e8813401b19e1983830bc2c0f8044 293B / 293B 0.7s done
+#5 sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a 22.27MB / 22.27MB 1.2s done
+#5 extracting sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a
+#5 extracting sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a 3.1s done
+#5 extracting sha256:2c9863d012f52da0e48c18cc1d6ece21e8c0c22e76c4d776bae0b79504bff141
+#5 extracting sha256:2c9863d012f52da0e48c18cc1d6ece21e8c0c22e76c4d776bae0b79504bff141 0.2s done
+#5 extracting sha256:06cd084e76f0b4935953486edc4062e8ba0e8813401b19e1983830bc2c0f8044
+#5 extracting sha256:06cd084e76f0b4935953486edc4062e8ba0e8813401b19e1983830bc2c0f8044 done
+#5 DONE 7.6s
+
+#6 [ 2/11] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid-until &&     apt-get update --no-install-recommends &&     apt-get install -y python python-pip
+#6 0.479 Ign:1 http://archive.debian.org/debian stretch InRelease
+#6 0.481 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#6 0.491 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#6 0.496 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#6 0.599 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
+#6 0.703 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [7080 kB]
+#6 2.520 Fetched 8042 kB in 2s (3966 kB/s)
+#6 2.520 Reading package lists...
+#6 3.226 Reading package lists...
+#6 3.920 Building dependency tree...
+#6 4.026 Reading state information...
+#6 4.110 python is already the newest version (2.7.13-2).
+#6 4.110 python set to manually installed.
+#6 4.110 The following additional packages will be installed:
+#6 4.110   build-essential dbus libapparmor1 libdbus-1-3 libdbus-glib-1-2
+#6 4.110   libpython-all-dev libpython-dev libpython2.7 libpython2.7-dev
+#6 4.110   libpython2.7-minimal libpython2.7-stdlib python-all python-all-dev
+#6 4.110   python-cffi-backend python-crypto python-cryptography python-dbus python-dev
+#6 4.110   python-enum34 python-gi python-idna python-ipaddress python-keyring
+#6 4.110   python-keyrings.alt python-pip-whl python-pkg-resources python-pyasn1
+#6 4.110   python-secretstorage python-setuptools python-wheel python-xdg python2.7
+#6 4.110   python2.7-dev python2.7-minimal
+#6 4.111 Suggested packages:
+#6 4.111   default-dbus-session-bus | dbus-session-bus python-crypto-dbg
+#6 4.111   python-crypto-doc python-cryptography-doc python-cryptography-vectors
+#6 4.111   python-dbus-dbg python-dbus-doc python-enum34-doc python-gi-cairo
+#6 4.111   gnome-keyring libkf5wallet-bin gir1.2-gnomekeyring-1.0 python-fs
+#6 4.111   python-gdata python-kde4 python-keyczar doc-base python-secretstorage-doc
+#6 4.111   python-setuptools-doc python2.7-doc binfmt-support
+#6 4.422 The following NEW packages will be installed:
+#6 4.422   build-essential dbus libapparmor1 libdbus-glib-1-2 libpython-all-dev
+#6 4.423   libpython-dev libpython2.7 libpython2.7-dev python-all python-all-dev
+#6 4.423   python-cffi-backend python-crypto python-cryptography python-dbus python-dev
+#6 4.423   python-enum34 python-gi python-idna python-ipaddress python-keyring
+#6 4.423   python-keyrings.alt python-pip python-pip-whl python-pkg-resources
+#6 4.423   python-pyasn1 python-secretstorage python-setuptools python-wheel python-xdg
+#6 4.423   python2.7-dev
+#6 4.423 The following packages will be upgraded:
+#6 4.423   libdbus-1-3 libpython2.7-minimal libpython2.7-stdlib python2.7
+#6 4.424   python2.7-minimal
+#6 4.430 5 upgraded, 30 newly installed, 0 to remove and 160 not upgraded.
+#6 4.430 Need to get 37.8 MB of archives.
+#6 4.430 After this operation, 56.8 MB of additional disk space will be used.
+#6 4.430 E: You don't have enough free space in /var/cache/apt/archives/.
+#6 ERROR: process "/bin/sh -c echo \"deb http://archive.debian.org/debian stretch main\" > /etc/apt/sources.list &&     echo \"deb http://archive.debian.org/debian-security stretch/updates main\" >> /etc/apt/sources.list &&     echo 'Acquire::Check-Valid-Until \"false\";' > /etc/apt/apt.conf.d/99no-check-valid-until &&     apt-get update --no-install-recommends &&     apt-get install -y python python-pip" did not complete successfully: exit code: 100
+------
+ > [ 2/11] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid-until &&     apt-get update --no-install-recommends &&     apt-get install -y python python-pip:
+4.423   python-keyrings.alt python-pip python-pip-whl python-pkg-resources
+4.423   python-pyasn1 python-secretstorage python-setuptools python-wheel python-xdg
+4.423   python2.7-dev
+4.423 The following packages will be upgraded:
+4.423   libdbus-1-3 libpython2.7-minimal libpython2.7-stdlib python2.7
+4.424   python2.7-minimal
+4.430 5 upgraded, 30 newly installed, 0 to remove and 160 not upgraded.
+4.430 Need to get 37.8 MB of archives.
+4.430 After this operation, 56.8 MB of additional disk space will be used.
+4.430 E: You don't have enough free space in /var/cache/apt/archives/.
+------
+v2_Dockerfile:6
+--------------------
+   5 |     # Use archived Debian repositories
+   6 | >>> RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+   7 | >>>     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list && \
+   8 | >>>     echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid-until && \
+   9 | >>>     apt-get update --no-install-recommends && \
+  10 | >>>     apt-get install -y python python-pip
+  11 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c echo \"deb http://archive.debian.org/debian stretch main\" > /etc/apt/sources.list &&     echo \"deb http://archive.debian.org/debian-security stretch/updates main\" >> /etc/apt/sources.list &&     echo 'Acquire::Check-Valid-Until \"false\";' > /etc/apt/apt.conf.d/99no-check-valid-until &&     apt-get update --no-install-recommends &&     apt-get install -y python python-pip" did not complete successfully: exit code: 100
+Duration: 0:13.93

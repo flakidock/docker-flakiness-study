@@ -1,0 +1,21 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.53kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:stable-slim
+#2 DONE 0.7s
+
+#3 [internal] load metadata for gcr.io/distroless/base:latest
+#3 DONE 1.0s
+v1_Dockerfile:12
+--------------------
+  10 |     LABEL version="dev"
+  11 |     LABEL maintainer="Michael[tm] Smith <mike@w3.org>"
+  12 | >>> COPY https://github.com/validator/validator/releases/download/latest/vnu.linux.zip .
+  13 |     COPY https://github.com/validator/validator/releases/download/latest/vnu.linux.zip.sha1 .
+  14 |     SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+--------------------
+ERROR: failed to solve: source can't be a URL for COPY
+Duration: 0:1.32

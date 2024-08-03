@@ -1,0 +1,280 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.3s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 882B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/golang:latest
+#3 ...
+
+#4 [internal] load metadata for docker.io/bitnami/minideb:stretch
+#4 DONE 1.3s
+
+#3 [internal] load metadata for docker.io/library/golang:latest
+#3 DONE 1.5s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [stage-1 1/3] FROM docker.io/bitnami/minideb:stretch@sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f
+#6 resolve docker.io/bitnami/minideb:stretch@sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f
+#6 resolve docker.io/bitnami/minideb:stretch@sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f 0.3s done
+#6 sha256:a6f24bce85d037d47cc552635b0f0a3623472bbcf16b33711fb0fe4e6a34480f 741B / 741B done
+#6 sha256:b0671f4930e13f9b839bc0c795727951b7ab1e0e5c46fcb3b639f8bdd9dd2b7f 528B / 528B done
+#6 sha256:e398a222dbd61796b392b33bf534e8372bce2b552fcd97534f5a1203c69a231f 910B / 910B done
+#6 DONE 1.0s
+
+#5 [internal] load build context
+#5 transferring context: 35.83MB 0.4s done
+#5 DONE 0.7s
+
+#7 [builder 1/4] FROM docker.io/library/golang@sha256:86a3c48a61915a8c62c0e1d7594730399caa3feb73655dfe96c7bc17710e96cf
+#7 resolve docker.io/library/golang@sha256:86a3c48a61915a8c62c0e1d7594730399caa3feb73655dfe96c7bc17710e96cf 0.3s done
+#7 sha256:86a3c48a61915a8c62c0e1d7594730399caa3feb73655dfe96c7bc17710e96cf 9.74kB / 9.74kB done
+#7 sha256:a07daa84ec6c320c62f1fddb40b84698de004aac1c5ceb28243d674952d536f3 2.32kB / 2.32kB done
+#7 sha256:a61b645b609b758e4c0a9c57efbba8ccc610abb4d96544cedd8411aa1c9e4b09 2.82kB / 2.82kB done
+#7 sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 11.53MB / 24.05MB 0.5s
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 6.29MB / 64.14MB 0.5s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 0B / 92.23MB 0.5s
+#7 sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 23.07MB / 24.05MB 0.7s
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 12.58MB / 64.14MB 0.7s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 5.24MB / 92.23MB 0.8s
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 16.78MB / 64.14MB 1.0s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 14.68MB / 92.23MB 1.0s
+#7 sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 24.05MB / 24.05MB 1.1s done
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 22.02MB / 64.14MB 1.2s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 23.07MB / 92.23MB 1.2s
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 0B / 69.35MB 1.2s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 28.31MB / 92.23MB 1.3s
+#7 extracting sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 27.26MB / 64.14MB 1.4s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 37.75MB / 92.23MB 1.5s
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 7.34MB / 69.35MB 1.5s
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 31.46MB / 64.14MB 1.7s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 47.19MB / 92.23MB 1.7s
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 15.73MB / 69.35MB 1.7s
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 19.92MB / 69.35MB 1.8s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 52.43MB / 92.23MB 1.9s
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 26.21MB / 69.35MB 1.9s
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 36.70MB / 64.14MB 2.0s
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 30.41MB / 69.35MB 2.0s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 60.82MB / 92.23MB 2.1s
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 44.04MB / 64.14MB 2.3s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 68.16MB / 92.23MB 2.3s
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 34.60MB / 69.35MB 2.3s
+#7 extracting sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 1.2s done
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 40.89MB / 69.35MB 2.5s
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 50.33MB / 64.14MB 2.7s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 78.64MB / 92.23MB 2.7s
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 50.33MB / 69.35MB 2.7s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 83.89MB / 92.23MB 2.9s
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 58.72MB / 69.35MB 2.9s
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 56.62MB / 64.14MB 3.0s
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 64.14MB / 64.14MB 3.2s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 92.23MB / 92.23MB 3.2s
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 68.16MB / 69.35MB 3.2s
+#7 sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 92.23MB / 92.23MB 4.7s done
+#7 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 64.14MB / 64.14MB 5.7s done
+#7 extracting sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4
+#7 sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 69.35MB / 69.35MB 6.7s done
+#7 sha256:ddb1467b736f6b84ad01493f98b050ed46efd37c54e4307fffc56ed028fdeab6 0B / 126B 6.9s
+#7 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 0B / 32B 7.1s
+#7 sha256:ddb1467b736f6b84ad01493f98b050ed46efd37c54e4307fffc56ed028fdeab6 126B / 126B 7.2s done
+#7 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 7.2s
+#7 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 7.2s done
+#7 extracting sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 4.5s done
+#7 ...
+
+#8 [stage-1 2/3] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update &&     install_packages ca-certificates
+#8 0.908 Ign:1 http://archive.debian.org/debian stretch InRelease
+#8 0.910 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#8 0.921 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#8 0.926 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#8 1.029 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [996 kB]
+#8 1.319 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [9610 kB]
+#8 2.784 Fetched 10.8 MB in 1s (5749 kB/s)
+#8 2.784 Reading package lists...
+#8 4.467 Reading package lists...
+#8 5.187 Building dependency tree...
+#8 5.301 Reading state information...
+#8 5.388 The following additional packages will be installed:
+#8 5.388   libssl1.1 openssl
+#8 5.406 The following NEW packages will be installed:
+#8 5.407   ca-certificates libssl1.1 openssl
+#8 5.422 0 upgraded, 3 newly installed, 0 to remove and 2 not upgraded.
+#8 5.422 Need to get 2277 kB of archives.
+#8 5.422 After this operation, 5410 kB of additional disk space will be used.
+#8 5.422 Get:1 http://archive.debian.org/debian-security stretch/updates/main amd64 libssl1.1 amd64 1.1.0l-1~deb9u6 [1360 kB]
+#8 5.448 Get:2 http://archive.debian.org/debian-security stretch/updates/main amd64 openssl amd64 1.1.0l-1~deb9u6 [749 kB]
+#8 5.467 Get:3 http://archive.debian.org/debian-security stretch/updates/main amd64 ca-certificates all 20200601~deb9u2 [168 kB]
+#8 6.271 debconf: delaying package configuration, since apt-utils is not installed
+#8 6.287 Fetched 2277 kB in 0s (41.6 MB/s)
+#8 6.529 Selecting previously unselected package libssl1.1:amd64.
+#8 6.529 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6252 files and directories currently installed.)
+#8 6.529 Preparing to unpack .../libssl1.1_1.1.0l-1~deb9u6_amd64.deb ...
+#8 6.610 Unpacking libssl1.1:amd64 (1.1.0l-1~deb9u6) ...
+#8 6.975 Selecting previously unselected package openssl.
+#8 6.975 Preparing to unpack .../openssl_1.1.0l-1~deb9u6_amd64.deb ...
+#8 7.000 Unpacking openssl (1.1.0l-1~deb9u6) ...
+#8 9.068 Selecting previously unselected package ca-certificates.
+#8 9.068 Preparing to unpack .../ca-certificates_20200601~deb9u2_all.deb ...
+#8 9.099 Unpacking ca-certificates (20200601~deb9u2) ...
+#8 ...
+
+#7 [builder 1/4] FROM docker.io/library/golang@sha256:86a3c48a61915a8c62c0e1d7594730399caa3feb73655dfe96c7bc17710e96cf
+#7 extracting sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca
+#7 extracting sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 5.1s
+#7 extracting sha256:5e53f8e7a11a56a5e15226ca5d9a2f740b0e5aa702ca2616748207531fee32ca 5.3s done
+#7 ...
+
+#8 [stage-1 2/3] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update &&     install_packages ca-certificates
+#8 10.18 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#8 10.26 Setting up libssl1.1:amd64 (1.1.0l-1~deb9u6) ...
+#8 10.52 Setting up openssl (1.1.0l-1~deb9u6) ...
+#8 10.64 Setting up ca-certificates (20200601~deb9u2) ...
+#8 11.23 Updating certificates in /etc/ssl/certs...
+#8 12.84 137 added, 0 removed; done.
+#8 13.02 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#8 13.09 Processing triggers for ca-certificates (20200601~deb9u2) ...
+#8 13.12 Updating certificates in /etc/ssl/certs...
+#8 13.56 0 added, 0 removed; done.
+#8 13.56 Running hooks in /etc/ca-certificates/update.d...
+#8 13.56 done.
+#8 DONE 23.9s
+
+#7 [builder 1/4] FROM docker.io/library/golang@sha256:86a3c48a61915a8c62c0e1d7594730399caa3feb73655dfe96c7bc17710e96cf
+#7 extracting sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f
+#7 extracting sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 5.2s
+#7 extracting sha256:32a2f51ff3dde07bfa1ce35b5597b2d97295e64a461d98e696feda7b25a6dc5f 5.4s done
+#7 extracting sha256:ddb1467b736f6b84ad01493f98b050ed46efd37c54e4307fffc56ed028fdeab6
+#7 extracting sha256:ddb1467b736f6b84ad01493f98b050ed46efd37c54e4307fffc56ed028fdeab6 done
+#7 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+#7 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+#7 DONE 32.5s
+
+#9 [builder 2/4] RUN apt-get update &&     apt-get install -y --no-install-recommends build-essential &&     apt-get clean &&     mkdir -p "/go/src/github.com/bitnami-labs/kubewatch"
+#9 0.976 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#9 1.013 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#9 1.021 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#9 1.151 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#9 1.289 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#9 1.301 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#9 2.593 Fetched 9225 kB in 2s (5616 kB/s)
+#9 2.593 Reading package lists...
+#9 3.287 Reading package lists...
+#9 3.977 Building dependency tree...
+#9 4.106 Reading state information...
+#9 4.255 The following additional packages will be installed:
+#9 4.257   bzip2 dpkg-dev libdpkg-perl patch xz-utils
+#9 4.258 Suggested packages:
+#9 4.258   bzip2-doc debian-keyring bzr ed diffutils-doc
+#9 4.258 Recommended packages:
+#9 4.258   fakeroot libalgorithm-merge-perl libfile-fcntllock-perl
+#9 4.258   liblocale-gettext-perl
+#9 4.333 The following NEW packages will be installed:
+#9 4.334   build-essential bzip2 dpkg-dev libdpkg-perl patch xz-utils
+#9 4.373 0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+#9 4.373 Need to get 2613 kB of archives.
+#9 4.373 After this operation, 5458 kB of additional disk space will be used.
+#9 4.373 Get:1 http://deb.debian.org/debian bookworm/main amd64 bzip2 amd64 1.0.8-5+b1 [49.8 kB]
+#9 4.393 Get:2 http://deb.debian.org/debian bookworm/main amd64 xz-utils amd64 5.4.1-0.2 [471 kB]
+#9 4.415 Get:3 http://deb.debian.org/debian bookworm/main amd64 libdpkg-perl all 1.21.22 [603 kB]
+#9 4.426 Get:4 http://deb.debian.org/debian bookworm/main amd64 patch amd64 2.7.6-7 [128 kB]
+#9 4.429 Get:5 http://deb.debian.org/debian bookworm/main amd64 dpkg-dev all 1.21.22 [1353 kB]
+#9 4.451 Get:6 http://deb.debian.org/debian bookworm/main amd64 build-essential amd64 12.9 [7704 B]
+#9 4.787 debconf: delaying package configuration, since apt-utils is not installed
+#9 4.846 Fetched 2613 kB in 0s (23.6 MB/s)
+#9 4.958 Selecting previously unselected package bzip2.
+#9 4.958 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 15601 files and directories currently installed.)
+#9 4.966 Preparing to unpack .../0-bzip2_1.0.8-5+b1_amd64.deb ...
+#9 4.995 Unpacking bzip2 (1.0.8-5+b1) ...
+#9 5.250 Selecting previously unselected package xz-utils.
+#9 5.250 Preparing to unpack .../1-xz-utils_5.4.1-0.2_amd64.deb ...
+#9 5.273 Unpacking xz-utils (5.4.1-0.2) ...
+#9 5.519 Selecting previously unselected package libdpkg-perl.
+#9 5.519 Preparing to unpack .../2-libdpkg-perl_1.21.22_all.deb ...
+#9 5.542 Unpacking libdpkg-perl (1.21.22) ...
+#9 5.805 Selecting previously unselected package patch.
+#9 5.805 Preparing to unpack .../3-patch_2.7.6-7_amd64.deb ...
+#9 5.828 Unpacking patch (2.7.6-7) ...
+#9 6.014 Selecting previously unselected package dpkg-dev.
+#9 6.014 Preparing to unpack .../4-dpkg-dev_1.21.22_all.deb ...
+#9 6.037 Unpacking dpkg-dev (1.21.22) ...
+#9 7.512 Selecting previously unselected package build-essential.
+#9 7.512 Preparing to unpack .../5-build-essential_12.9_amd64.deb ...
+#9 7.535 Unpacking build-essential (12.9) ...
+#9 7.695 Setting up bzip2 (1.0.8-5+b1) ...
+#9 7.787 Setting up xz-utils (5.4.1-0.2) ...
+#9 7.864 update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+#9 7.929 Setting up patch (2.7.6-7) ...
+#9 8.005 Setting up libdpkg-perl (1.21.22) ...
+#9 8.080 Setting up dpkg-dev (1.21.22) ...
+#9 8.206 Setting up build-essential (12.9) ...
+#9 DONE 13.3s
+
+#10 [builder 3/4] ADD . /go/src/github.com/bitnami-labs/kubewatch
+#10 DONE 1.0s
+
+#11 [builder 4/4] RUN cd "/go/src/github.com/bitnami-labs/kubewatch" &&     CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a --installsuffix cgo --ldflags="-s" -o /kubewatch
+#11 1.051 go: downloading github.com/spf13/viper v1.0.0
+#11 1.051 go: downloading github.com/sirupsen/logrus v1.6.0
+#11 1.051 go: downloading github.com/spf13/cobra v0.0.1
+#11 1.059 go: downloading k8s.io/api v0.16.8
+#11 1.090 go: downloading github.com/mkmik/multierror v0.3.0
+#11 1.112 go: downloading gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c
+#11 1.114 go: downloading github.com/tbruyelle/hipchat-go v0.0.0-20160921153256-749fb9e14beb
+#11 1.120 go: downloading k8s.io/apimachinery v0.16.8
+#11 1.132 go: downloading k8s.io/client-go v0.16.8
+#11 1.156 go: downloading github.com/fsnotify/fsnotify v1.4.9
+#11 1.156 go: downloading github.com/hashicorp/hcl v0.0.0-20171017181929-23c074d0eceb
+#11 1.156 go: downloading github.com/magiconair/properties v1.7.4
+#11 1.162 go: downloading github.com/mitchellh/mapstructure v0.0.0-20180111000720-b4575eea38cc
+#11 1.168 go: downloading github.com/pelletier/go-toml v1.0.1
+#11 1.174 go: downloading github.com/spf13/afero v1.2.2
+#11 1.174 go: downloading github.com/spf13/cast v1.1.0
+#11 1.181 go: downloading github.com/spf13/jwalterweatherman v0.0.0-20180109140146-7c0cea34c8ec
+#11 1.187 go: downloading github.com/spf13/pflag v1.0.5
+#11 1.187 go: downloading gopkg.in/yaml.v2 v2.3.0
+#11 1.231 go: downloading golang.org/x/sys v0.0.0-20200519105757-fe76b779f299
+#11 1.368 go: downloading github.com/slack-go/slack v0.6.5
+#11 1.464 go: downloading github.com/google/go-querystring v0.0.0-20170111101155-53e6ce116135
+#11 1.471 go: downloading golang.org/x/text v0.3.2
+#11 1.564 go: downloading github.com/gogo/protobuf v1.2.2-0.20190723190241-65acae22fc9d
+#11 1.564 go: downloading github.com/google/gofuzz v1.0.0
+#11 1.581 go: downloading k8s.io/klog v1.0.0
+#11 1.600 go: downloading github.com/gorilla/websocket v1.4.2
+#11 1.609 go: downloading github.com/pkg/errors v0.8.0
+#11 1.630 go: downloading gopkg.in/inf.v0 v0.9.1
+#11 1.641 go: downloading golang.org/x/net v0.0.0-20200520004742-59133d7f0dd7
+#11 1.788 go: downloading github.com/golang/protobuf v1.4.2
+#11 1.788 go: downloading github.com/googleapis/gnostic v0.1.0
+#11 2.081 go: downloading k8s.io/utils v0.0.0-20190801114015-581e00157fb1
+#11 2.081 go: downloading golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
+#11 2.081 go: downloading github.com/imdario/mergo v0.3.5
+#11 2.081 go: downloading golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975
+#11 2.081 go: downloading github.com/davecgh/go-spew v1.1.1
+#11 2.081 go: downloading golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
+#11 2.081 go: downloading google.golang.org/protobuf v1.23.0
+#11 2.082 go: downloading github.com/hashicorp/golang-lru v0.5.1
+#11 2.082 go: downloading github.com/google/go-cmp v0.4.0
+#11 2.091 go: downloading github.com/json-iterator/go v1.1.7
+#11 2.091 go: downloading github.com/modern-go/reflect2 v1.0.1
+#11 2.098 go: downloading sigs.k8s.io/yaml v1.1.0
+#11 2.167 go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+#11 DONE 34.1s
+
+#12 [stage-1 3/3] COPY --from=builder /kubewatch /bin/kubewatch
+#12 DONE 0.8s
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 0.5s done
+#13 writing image sha256:311b74113af597a8a0ee86b097e10ae15f07b2881d90c22962e5bfbf2bf69a9d 0.0s done
+#13 naming to docker.io/library/image_name_v1_1 0.0s done
+#13 DONE 0.5s
+Duration: 1:25.69

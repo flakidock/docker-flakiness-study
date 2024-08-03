@@ -1,0 +1,984 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 65B done
+#1 DONE 0.6s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 322B done
+#2 DONE 0.8s
+
+#3 [internal] load metadata for docker.io/library/rust:latest
+#3 DONE 1.2s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/rust:latest@sha256:fcbb950e8fa0de7f8ada015ea78e97ad09fcc4120bf23485664e418e0ec5087b
+#5 resolve docker.io/library/rust:latest@sha256:fcbb950e8fa0de7f8ada015ea78e97ad09fcc4120bf23485664e418e0ec5087b
+#5 resolve docker.io/library/rust:latest@sha256:fcbb950e8fa0de7f8ada015ea78e97ad09fcc4120bf23485664e418e0ec5087b 0.2s done
+#5 sha256:fcbb950e8fa0de7f8ada015ea78e97ad09fcc4120bf23485664e418e0ec5087b 7.75kB / 7.75kB done
+#5 sha256:e86a571e4e2dffa277b723db12d74da4f053bd89fe984f48e772dcfa0e7a8302 1.94kB / 1.94kB done
+#5 sha256:df113326a08e594499b5a5da5ebe12bdd11b708926d7013f5030431b6efacfa2 4.37kB / 4.37kB done
+#5 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 0B / 64.14MB 0.2s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 218.87kB done
+#4 DONE 0.5s
+
+#5 [1/8] FROM docker.io/library/rust:latest@sha256:fcbb950e8fa0de7f8ada015ea78e97ad09fcc4120bf23485664e418e0ec5087b
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 0B / 49.55MB 0.3s
+#5 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 18.87MB / 64.14MB 0.5s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 6.29MB / 49.55MB 0.5s
+#5 sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 0B / 24.05MB 0.5s
+#5 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 23.07MB / 64.14MB 0.6s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 11.53MB / 49.55MB 0.6s
+#5 sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 2.10MB / 24.05MB 0.6s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 14.68MB / 49.55MB 0.7s
+#5 sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 7.34MB / 24.05MB 0.7s
+#5 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 28.31MB / 64.14MB 0.8s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 18.87MB / 49.55MB 0.8s
+#5 sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 13.63MB / 24.05MB 0.8s
+#5 sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 19.92MB / 24.05MB 0.9s
+#5 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 37.75MB / 64.14MB 1.1s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 30.41MB / 49.55MB 1.1s
+#5 sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 24.05MB / 24.05MB 1.1s
+#5 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 44.04MB / 64.14MB 1.2s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 35.65MB / 49.55MB 1.2s
+#5 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 53.48MB / 64.14MB 1.4s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 47.19MB / 49.55MB 1.4s
+#5 sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 24.05MB / 24.05MB 1.3s done
+#5 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 61.90MB / 64.14MB 1.5s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 0B / 211.24MB 1.5s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 23.07MB / 211.24MB 1.8s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 39.85MB / 211.24MB 2.0s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 49.55MB / 49.55MB 2.2s done
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 57.67MB / 211.24MB 2.2s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 73.40MB / 211.24MB 2.4s
+#5 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 88.08MB / 211.24MB 2.6s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 117.44MB / 211.24MB 2.9s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 132.12MB / 211.24MB 3.1s
+#5 sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 64.14MB / 64.14MB 3.3s done
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 148.90MB / 211.24MB 3.3s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 0B / 180.24MB 3.4s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 167.77MB / 211.24MB 3.5s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 179.31MB / 211.24MB 3.7s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 12.58MB / 180.24MB 3.7s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 26.21MB / 180.24MB 3.9s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 193.99MB / 211.24MB 4.0s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 39.85MB / 180.24MB 4.1s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 211.24MB / 211.24MB 4.4s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 58.97MB / 180.24MB 4.4s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 68.16MB / 180.24MB 4.5s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 78.64MB / 180.24MB 4.6s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 89.13MB / 180.24MB 4.7s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 99.61MB / 180.24MB 4.8s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 110.10MB / 180.24MB 4.9s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 131.07MB / 180.24MB 5.1s
+#5 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 3.0s done
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 142.22MB / 180.24MB 5.2s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 163.58MB / 180.24MB 5.4s
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 180.24MB / 180.24MB 5.6s
+#5 sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 211.24MB / 211.24MB 7.5s done
+#5 sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 180.24MB / 180.24MB 10.4s done
+#5 extracting sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876
+#5 extracting sha256:30b93c12a9c9326732b35d9e3ebe57148abe33f8fa6e25ab76867410b0ccf876 1.0s done
+#5 extracting sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4
+#5 extracting sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 5.0s
+#5 extracting sha256:10d643a5fa823cd013a108b2076f4d2edf1b2a921f863b533e83ea5ed8d09bd4 6.2s done
+#5 extracting sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05
+#5 extracting sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 5.0s
+#5 extracting sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 10.1s
+#5 extracting sha256:d6dc1019d7935fe82827434da11bf96cf14e24979f8155e73b794286f10b7f05 11.9s done
+#5 extracting sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7
+#5 extracting sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 5.1s
+#5 extracting sha256:c34c1cdc051d10b9e63228d887d5c14440b25711b6eed03b9db90e7e53ed1ad7 9.5s done
+#5 DONE 42.0s
+
+#6 [2/8] WORKDIR /usr/local/byzan
+#6 DONE 28.9s
+
+#7 [3/8] COPY . .
+#7 DONE 0.5s
+
+#8 [4/8] RUN apt-get update -y && apt-get install cmake golang -y
+#8 0.743 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#8 0.774 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#8 0.786 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#8 0.865 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#8 0.984 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#8 1.004 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#8 2.292 Fetched 9225 kB in 2s (5868 kB/s)
+#8 2.292 Reading package lists...
+#8 2.980 Reading package lists...
+#8 3.658 Building dependency tree...
+#8 3.784 Reading state information...
+#8 3.932 The following additional packages will be installed:
+#8 3.932   cmake-data golang-1.19 golang-1.19-doc golang-1.19-go golang-1.19-src
+#8 3.933   golang-doc golang-go golang-src libarchive13 libjsoncpp25 librhash0 libuv1
+#8 3.934 Suggested packages:
+#8 3.934   cmake-doc cmake-format elpa-cmake-mode ninja-build bzr | brz lrzip
+#8 4.030 The following NEW packages will be installed:
+#8 4.030   cmake cmake-data golang golang-1.19 golang-1.19-doc golang-1.19-go
+#8 4.030   golang-1.19-src golang-doc golang-go golang-src libarchive13 libjsoncpp25
+#8 4.031   librhash0 libuv1
+#8 4.070 0 upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
+#8 4.070 Need to get 92.6 MB of archives.
+#8 4.070 After this operation, 507 MB of additional disk space will be used.
+#8 4.070 Get:1 http://deb.debian.org/debian bookworm/main amd64 libarchive13 amd64 3.6.2-1+deb12u1 [343 kB]
+#8 4.112 Get:2 http://deb.debian.org/debian bookworm/main amd64 libjsoncpp25 amd64 1.9.5-4 [78.6 kB]
+#8 4.113 Get:3 http://deb.debian.org/debian bookworm/main amd64 librhash0 amd64 1.4.3-3 [134 kB]
+#8 4.115 Get:4 http://deb.debian.org/debian bookworm/main amd64 libuv1 amd64 1.44.2-1+deb12u1 [136 kB]
+#8 4.117 Get:5 http://deb.debian.org/debian bookworm/main amd64 cmake-data all 3.25.1-1 [2026 kB]
+#8 4.145 Get:6 http://deb.debian.org/debian bookworm/main amd64 cmake amd64 3.25.1-1 [8692 kB]
+#8 4.329 Get:7 http://deb.debian.org/debian bookworm/main amd64 golang-1.19-doc all 1.19.8-2 [97.3 kB]
+#8 4.484 Get:8 http://deb.debian.org/debian bookworm/main amd64 golang-1.19-src all 1.19.8-2 [18.3 MB]
+#8 4.644 Get:9 http://deb.debian.org/debian bookworm/main amd64 golang-1.19-go amd64 1.19.8-2 [62.7 MB]
+#8 5.193 Get:10 http://deb.debian.org/debian bookworm/main amd64 golang-1.19 all 1.19.8-2 [18.2 kB]
+#8 5.193 Get:11 http://deb.debian.org/debian bookworm/main amd64 golang-src all 2:1.19~1 [5756 B]
+#8 5.429 Get:12 http://deb.debian.org/debian bookworm/main amd64 golang-go amd64 2:1.19~1 [45.0 kB]
+#8 5.457 Get:13 http://deb.debian.org/debian bookworm/main amd64 golang-doc all 2:1.19~1 [5804 B]
+#8 5.458 Get:14 http://deb.debian.org/debian bookworm/main amd64 golang amd64 2:1.19~1 [5744 B]
+#8 6.549 debconf: delaying package configuration, since apt-utils is not installed
+#8 6.629 Fetched 92.6 MB in 1s (65.2 MB/s)
+#8 6.772 Selecting previously unselected package libarchive13:amd64.
+#8 6.772 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 23243 files and directories currently installed.)
+#8 6.790 Preparing to unpack .../00-libarchive13_3.6.2-1+deb12u1_amd64.deb ...
+#8 6.917 Unpacking libarchive13:amd64 (3.6.2-1+deb12u1) ...
+#8 7.165 Selecting previously unselected package libjsoncpp25:amd64.
+#8 7.165 Preparing to unpack .../01-libjsoncpp25_1.9.5-4_amd64.deb ...
+#8 7.186 Unpacking libjsoncpp25:amd64 (1.9.5-4) ...
+#8 7.415 Selecting previously unselected package librhash0:amd64.
+#8 7.415 Preparing to unpack .../02-librhash0_1.4.3-3_amd64.deb ...
+#8 7.446 Unpacking librhash0:amd64 (1.4.3-3) ...
+#8 7.633 Selecting previously unselected package libuv1:amd64.
+#8 7.633 Preparing to unpack .../03-libuv1_1.44.2-1+deb12u1_amd64.deb ...
+#8 7.664 Unpacking libuv1:amd64 (1.44.2-1+deb12u1) ...
+#8 7.962 Selecting previously unselected package cmake-data.
+#8 7.962 Preparing to unpack .../04-cmake-data_3.25.1-1_all.deb ...
+#8 7.989 Unpacking cmake-data (3.25.1-1) ...
+#8 9.134 Selecting previously unselected package cmake.
+#8 9.134 Preparing to unpack .../05-cmake_3.25.1-1_amd64.deb ...
+#8 9.156 Unpacking cmake (3.25.1-1) ...
+#8 10.16 Selecting previously unselected package golang-1.19-doc.
+#8 10.16 Preparing to unpack .../06-golang-1.19-doc_1.19.8-2_all.deb ...
+#8 10.18 Unpacking golang-1.19-doc (1.19.8-2) ...
+#8 10.40 Selecting previously unselected package golang-1.19-src.
+#8 10.40 Preparing to unpack .../07-golang-1.19-src_1.19.8-2_all.deb ...
+#8 10.42 Unpacking golang-1.19-src (1.19.8-2) ...
+#8 17.27 Selecting previously unselected package golang-1.19-go.
+#8 17.28 Preparing to unpack .../08-golang-1.19-go_1.19.8-2_amd64.deb ...
+#8 17.31 Unpacking golang-1.19-go (1.19.8-2) ...
+#8 24.75 Selecting previously unselected package golang-1.19.
+#8 24.75 Preparing to unpack .../09-golang-1.19_1.19.8-2_all.deb ...
+#8 24.78 Unpacking golang-1.19 (1.19.8-2) ...
+#8 24.95 Selecting previously unselected package golang-src.
+#8 24.95 Preparing to unpack .../10-golang-src_2%3a1.19~1_all.deb ...
+#8 24.98 Unpacking golang-src (2:1.19~1) ...
+#8 25.14 Selecting previously unselected package golang-go:amd64.
+#8 25.14 Preparing to unpack .../11-golang-go_2%3a1.19~1_amd64.deb ...
+#8 25.17 Unpacking golang-go:amd64 (2:1.19~1) ...
+#8 25.38 Selecting previously unselected package golang-doc.
+#8 25.38 Preparing to unpack .../12-golang-doc_2%3a1.19~1_all.deb ...
+#8 25.41 Unpacking golang-doc (2:1.19~1) ...
+#8 25.57 Selecting previously unselected package golang:amd64.
+#8 25.57 Preparing to unpack .../13-golang_2%3a1.19~1_amd64.deb ...
+#8 25.60 Unpacking golang:amd64 (2:1.19~1) ...
+#8 25.86 Setting up libarchive13:amd64 (3.6.2-1+deb12u1) ...
+#8 26.56 Setting up golang-1.19-src (1.19.8-2) ...
+#8 26.65 Setting up libuv1:amd64 (1.44.2-1+deb12u1) ...
+#8 26.73 Setting up libjsoncpp25:amd64 (1.9.5-4) ...
+#8 26.92 Setting up golang-1.19-doc (1.19.8-2) ...
+#8 27.00 Setting up librhash0:amd64 (1.4.3-3) ...
+#8 27.08 Setting up cmake-data (3.25.1-1) ...
+#8 27.16 Setting up golang-src (2:1.19~1) ...
+#8 27.26 Setting up golang-1.19-go (1.19.8-2) ...
+#8 27.34 Setting up golang-1.19 (1.19.8-2) ...
+#8 27.42 Setting up golang-go:amd64 (2:1.19~1) ...
+#8 27.50 Setting up cmake (3.25.1-1) ...
+#8 27.57 Setting up golang-doc (2:1.19~1) ...
+#8 27.65 Setting up golang:amd64 (2:1.19~1) ...
+#8 27.72 Processing triggers for libc-bin (2.36-9+deb12u7) ...
+#8 DONE 28.5s
+
+#9 [5/8] RUN rustup default stable
+#9 0.780 info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+#9 1.237 info: latest update on 2024-07-25, rust version 1.80.0 (051478957 2024-07-21)
+#9 1.237 info: downloading component 'cargo'
+#9 2.361 info: downloading component 'rust-std'
+#9 4.520 info: downloading component 'rustc'
+#9 6.603 info: installing component 'cargo'
+#9 8.392 info: installing component 'rust-std'
+#9 10.88 info: installing component 'rustc'
+#9 16.79 info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+#9 16.79 
+#9 16.81   stable-x86_64-unknown-linux-gnu installed - rustc 1.80.0 (051478957 2024-07-21)
+#9 16.81 
+#9 DONE 24.8s
+
+#10 [6/8] RUN cargo install protobuf-codegen
+#10 0.872     Updating crates.io index
+#10 1.029  Downloading crates ...
+#10 1.186   Downloaded protobuf-codegen v3.5.0
+#10 1.330   Installing protobuf-codegen v3.5.0
+#10 1.388     Updating crates.io index
+#10 1.636      Locking 42 packages to latest compatible versions
+#10 1.637       Adding linux-raw-sys v0.4.14 (latest: v0.6.4)
+#10 1.649       Adding which v4.4.2 (latest: v6.0.2)
+#10 1.649       Adding windows-sys v0.52.0 (latest: v0.59.0)
+#10 1.650  Downloading crates ...
+#10 1.685   Downloaded bitflags v2.6.0
+#10 1.695   Downloaded errno v0.3.9
+#10 1.700   Downloaded equivalent v1.0.1
+#10 1.702   Downloaded either v1.13.0
+#10 1.706   Downloaded cfg-if v1.0.0
+#10 1.709   Downloaded thiserror-impl v1.0.63
+#10 1.713   Downloaded which v4.4.2
+#10 1.717   Downloaded thiserror v1.0.63
+#10 1.731   Downloaded tempfile v3.10.1
+#10 1.739   Downloaded proc-macro2 v1.0.86
+#10 1.745   Downloaded protobuf-support v3.5.0
+#10 1.750   Downloaded quote v1.0.36
+#10 1.757   Downloaded unicode-ident v1.0.12
+#10 1.765   Downloaded protobuf-parse v3.5.0
+#10 1.776   Downloaded memchr v2.7.4
+#10 1.791   Downloaded hashbrown v0.14.5
+#10 1.803   Downloaded indexmap v2.3.0
+#10 1.813   Downloaded once_cell v1.19.0
+#10 1.821   Downloaded log v0.4.22
+#10 1.827   Downloaded anyhow v1.0.86
+#10 1.838   Downloaded syn v2.0.72
+#10 1.864   Downloaded regex v1.10.5
+#10 1.899   Downloaded rustix v0.38.34
+#10 1.965   Downloaded regex-syntax v0.8.4
+#10 1.983   Downloaded protobuf v3.5.0
+#10 2.016   Downloaded regex-automata v0.4.7
+#10 2.055   Downloaded libc v0.2.155
+#10 2.126   Downloaded aho-corasick v1.1.3
+#10 2.139   Downloaded home v0.5.9
+#10 2.141   Downloaded fastrand v2.1.0
+#10 2.145   Downloaded linux-raw-sys v0.4.14
+#10 2.344    Compiling proc-macro2 v1.0.86
+#10 2.344    Compiling unicode-ident v1.0.12
+#10 2.344    Compiling thiserror v1.0.63
+#10 2.344    Compiling rustix v0.38.34
+#10 2.344    Compiling linux-raw-sys v0.4.14
+#10 2.345    Compiling bitflags v2.6.0
+#10 2.345    Compiling anyhow v1.0.86
+#10 2.347    Compiling protobuf v3.5.0
+#10 2.351    Compiling memchr v2.7.4
+#10 2.353    Compiling cfg-if v1.0.0
+#10 2.353    Compiling fastrand v2.1.0
+#10 2.353    Compiling regex-syntax v0.8.4
+#10 2.356    Compiling hashbrown v0.14.5
+#10 2.357    Compiling equivalent v1.0.1
+#10 2.360    Compiling once_cell v1.19.0
+#10 2.363    Compiling either v1.13.0
+#10 2.364    Compiling home v0.5.9
+#10 2.367    Compiling log v0.4.22
+#10 3.149    Compiling aho-corasick v1.1.3
+#10 3.268    Compiling indexmap v2.3.0
+#10 3.332    Compiling quote v1.0.36
+#10 3.559    Compiling syn v2.0.72
+#10 5.133    Compiling regex-automata v0.4.7
+#10 5.561    Compiling tempfile v3.10.1
+#10 5.561    Compiling which v4.4.2
+#10 6.990    Compiling thiserror-impl v1.0.63
+#10 8.123    Compiling protobuf-support v3.5.0
+#10 8.638    Compiling regex v1.10.5
+#10 13.02    Compiling protobuf-parse v3.5.0
+#10 14.35    Compiling protobuf-codegen v3.5.0
+#10 23.76     Finished `release` profile [optimized] target(s) in 22.91s
+#10 23.78   Installing /usr/local/cargo/bin/protoc-gen-rust
+#10 23.78    Installed package `protobuf-codegen v3.5.0` (executable `protoc-gen-rust`)
+#10 DONE 25.7s
+
+#11 [7/8] RUN cargo install grpcio-compiler
+#11 0.881     Updating crates.io index
+#11 0.919  Downloading crates ...
+#11 0.951   Downloaded grpcio-compiler v0.13.0
+#11 1.087   Installing grpcio-compiler v0.13.0
+#11 1.145     Updating crates.io index
+#11 1.170      Locking 2 packages to latest compatible versions
+#11 1.174       Adding protobuf v2.28.0 (latest: v3.5.0)
+#11 1.174  Downloading crates ...
+#11 1.203   Downloaded protobuf v2.28.0
+#11 1.299    Compiling protobuf v2.28.0
+#11 4.728    Compiling grpcio-compiler v0.13.0
+#11 12.71     Finished `release` profile [optimized] target(s) in 11.85s
+#11 12.71   Installing /usr/local/cargo/bin/grpc_rust_plugin
+#11 12.71    Installed package `grpcio-compiler v0.13.0` (executable `grpc_rust_plugin`)
+#11 DONE 13.2s
+
+#12 [8/8] RUN cargo build --release
+#12 0.955     Updating crates.io index
+#12 1.549  Downloading crates ...
+#12 1.582   Downloaded cfg-if v0.1.5
+#12 1.587   Downloaded atty v0.2.11
+#12 1.591   Downloaded matches v0.1.8
+#12 1.594   Downloaded humantime v1.1.1
+#12 1.599   Downloaded ansi_term v0.11.0
+#12 1.603   Downloaded net2 v0.2.33
+#12 1.609   Downloaded percent-encoding v1.0.1
+#12 1.611   Downloaded ucd-util v0.1.1
+#12 1.616   Downloaded vec_map v0.8.1
+#12 1.619   Downloaded unicode-xid v0.1.0
+#12 1.623   Downloaded proc-macro2 v0.4.19
+#12 1.628   Downloaded textwrap v0.10.0
+#12 1.632   Downloaded grpcio v0.3.1
+#12 1.642   Downloaded version_check v0.1.5
+#12 1.645   Downloaded term v0.5.1
+#12 1.655   Downloaded ws v0.7.8
+#12 1.666   Downloaded url v1.7.1
+#12 1.674   Downloaded serde_json v1.0.31
+#12 1.681   Downloaded rand v0.4.3
+#12 1.690   Downloaded syn v0.15.6
+#12 1.704   Downloaded rand v0.5.5
+#12 1.718   Downloaded protobuf v2.0.5
+#12 1.732   Downloaded regex-syntax v0.6.2
+#12 1.746   Downloaded untrusted v0.6.2
+#12 1.749   Downloaded libc v0.2.43
+#12 1.792   Downloaded unicode-normalization v0.1.7
+#12 1.811   Downloaded regex v1.0.5
+#12 1.836   Downloaded idna v0.1.5
+#12 1.849   Downloaded futures v0.1.24
+#12 1.878   Downloaded chrono v0.4.6
+#12 1.889   Downloaded mio v0.6.16
+#12 1.910   Downloaded clap v2.32.0
+#12 1.927   Downloaded serde_derive v1.0.79
+#12 1.933   Downloaded serde v1.0.79
+#12 1.943   Downloaded libsqlite3-sys v0.9.3
+#12 2.013   Downloaded rusqlite v0.14.0
+#12 2.025   Downloaded unicode-bidi v0.3.4
+#12 2.029   Downloaded sha1 v0.6.0
+#12 2.034   Downloaded ryu v0.2.6
+#12 2.041   Downloaded num-bigint v0.2.0
+#12 2.051   Downloaded utf8-ranges v1.0.1
+#12 2.055   Downloaded unicode-width v0.1.5
+#12 2.060   Downloaded time v0.1.40
+#12 2.065   Downloaded num-traits v0.2.6
+#12 2.073   Downloaded cc v1.0.25
+#12 2.079   Downloaded slab v0.4.1
+#12 2.082   Downloaded quote v0.6.8
+#12 2.085   Downloaded pkg-config v0.3.14
+#12 2.088   Downloaded num v0.2.0
+#12 2.093   Downloaded memchr v2.1.0
+#12 2.100   Downloaded lru-cache v0.1.1
+#12 2.102   Downloaded iovec v0.1.2
+#12 2.106   Downloaded ring v0.13.2
+#12 2.296   Downloaded env_logger v0.5.13
+#12 2.307   Downloaded bytes v0.4.10
+#12 2.314   Downloaded num-integer v0.1.39
+#12 2.318   Downloaded num-complex v0.2.0
+#12 2.321   Downloaded mio-extras v2.0.5
+#12 2.324   Downloaded linked-hash-map v0.4.2
+#12 2.327   Downloaded aho-corasick v0.6.8
+#12 2.332   Downloaded rand_core v0.2.1
+#12 2.335   Downloaded quick-error v1.2.2
+#12 2.337   Downloaded lazy_static v1.1.0
+#12 2.341   Downloaded colored v1.6.1
+#12 2.345   Downloaded thread_local v0.3.6
+#12 2.347   Downloaded termcolor v1.0.4
+#12 2.350   Downloaded strsim v0.7.0
+#12 2.353   Downloaded simplelog v0.5.2
+#12 2.356   Downloaded num-rational v0.2.1
+#12 2.360   Downloaded num-iter v0.1.37
+#12 2.363   Downloaded httparse v1.3.2
+#12 2.367   Downloaded cmake v0.1.34
+#12 2.369   Downloaded log v0.4.5
+#12 2.372   Downloaded grpcio-sys v0.3.1
+#12 3.860   Downloaded lazycell v1.2.0
+#12 3.863   Downloaded byteorder v1.2.6
+#12 3.866   Downloaded itoa v0.4.3
+#12 3.869   Downloaded bitflags v1.0.4
+#12 3.995    Compiling libc v0.2.43
+#12 3.995    Compiling version_check v0.1.5
+#12 3.995    Compiling cfg-if v0.1.5
+#12 3.995    Compiling num-traits v0.2.6
+#12 3.995    Compiling cc v1.0.25
+#12 3.995    Compiling pkg-config v0.3.14
+#12 3.996    Compiling num-integer v0.1.39
+#12 3.999    Compiling proc-macro2 v0.4.19
+#12 4.001    Compiling rand_core v0.2.1
+#12 4.005    Compiling matches v0.1.8
+#12 4.008    Compiling byteorder v1.2.6
+#12 4.008    Compiling unicode-xid v0.1.0
+#12 4.008    Compiling num-bigint v0.2.0
+#12 4.008    Compiling num-iter v0.1.37
+#12 4.012    Compiling num-complex v0.2.0
+#12 4.016    Compiling slab v0.4.1
+#12 4.016    Compiling ryu v0.2.6
+#12 4.019    Compiling protobuf v2.0.5
+#12 4.022    Compiling unicode-normalization v0.1.7
+#12 4.024    Compiling num-rational v0.2.1
+#12 4.026    Compiling httparse v1.3.2
+#12 4.026    Compiling ucd-util v0.1.1
+#12 4.026    Compiling serde v1.0.79
+#12 4.028    Compiling regex v1.0.5
+#12 4.059    Compiling log v0.4.5
+#12 4.086    Compiling unicode-bidi v0.3.4
+#12 4.207    Compiling lazycell v1.2.0
+#12 4.223    Compiling regex-syntax v0.6.2
+#12 4.332    Compiling bitflags v1.0.4
+#12 4.360    Compiling quick-error v1.2.2
+#12 4.397    Compiling utf8-ranges v1.0.1
+#12 4.443    Compiling lazy_static v1.1.0
+#12 4.449    Compiling memchr v2.1.0
+#12 4.481    Compiling percent-encoding v1.0.1
+#12 4.483    Compiling unicode-width v0.1.5
+#12 4.551    Compiling linked-hash-map v0.4.2
+#12 4.592    Compiling cmake v0.1.34
+#12 4.612    Compiling textwrap v0.10.0
+#12 4.620    Compiling humantime v1.1.1
+#12 4.628    Compiling term v0.5.1
+#12 4.633    Compiling ansi_term v0.11.0
+#12 4.797    Compiling termcolor v1.0.4
+#12 4.833    Compiling futures v0.1.24
+#12 4.841    Compiling sha1 v0.6.0
+#12 4.868    Compiling lru-cache v0.1.1
+#12 4.909    Compiling rand v0.5.5
+#12 4.975    Compiling iovec v0.1.2
+#12 5.000    Compiling libsqlite3-sys v0.9.3
+#12 5.004    Compiling time v0.1.40
+#12 5.129    Compiling net2 v0.2.33
+#12 5.242    Compiling thread_local v0.3.6
+#12 5.306    Compiling quote v0.6.8
+#12 5.375    Compiling atty v0.2.11
+#12 5.474    Compiling bytes v0.4.10
+#12 5.510    Compiling mio v0.6.16
+#12 5.552    Compiling rand v0.4.3
+#12 5.624    Compiling aho-corasick v0.6.8
+#12 5.769    Compiling syn v0.15.6
+#12 5.810    Compiling strsim v0.7.0
+#12 5.820    Compiling vec_map v0.8.1
+#12 6.043    Compiling grpcio-sys v0.3.1
+#12 6.075    Compiling ring v0.13.2
+#12 6.121    Compiling itoa v0.4.3
+#12 6.132    Compiling untrusted v0.6.2
+#12 6.212    Compiling clap v2.32.0
+#12 6.293    Compiling rusqlite v0.14.0
+#12 6.301    Compiling colored v1.6.1
+#12 6.524    Compiling chrono v0.4.6
+#12 6.840    Compiling idna v0.1.5
+#12 7.015    Compiling mio-extras v2.0.5
+#12 7.871    Compiling url v1.7.1
+#12 8.167    Compiling simplelog v0.5.2
+#12 8.979    Compiling ws v0.7.8
+#12 9.331    Compiling env_logger v0.5.13
+#12 9.464    Compiling serde_derive v1.0.79
+#12 10.04    Compiling num v0.2.0
+#12 10.68    Compiling serde_json v1.0.31
+#12 34.34 error: failed to run custom build command for `grpcio-sys v0.3.1`
+#12 34.34 
+#12 34.34 Caused by:
+#12 34.34   process didn't exit successfully: `/usr/local/byzan/target/release/build/grpcio-sys-762b67809e4e5ca3/build-script-build` (exit status: 101)
+#12 34.34   --- stdout
+#12 34.34   cargo:rerun-if-changed=grpc_wrap.c
+#12 34.34   cargo:rerun-if-changed=grpc
+#12 34.34   cargo:rerun-if-env-changed=GRPCIO_SYS_USE_PKG_CONFIG
+#12 34.34   running: cd "/usr/local/byzan/target/release/build/grpcio-sys-684569b0b2ec6999/out/build" && CMAKE_PREFIX_PATH="" "cmake" "/usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc" "-DCMAKE_INSTALL_PREFIX=/usr/local/byzan/target/release/build/grpcio-sys-684569b0b2ec6999/out" "-DCMAKE_C_FLAGS= -ffunction-sections -fdata-sections -fPIC -m64" "-DCMAKE_C_COMPILER=/usr/bin/cc" "-DCMAKE_CXX_FLAGS= -ffunction-sections -fdata-sections -fPIC -m64" "-DCMAKE_CXX_COMPILER=/usr/bin/c++" "-DCMAKE_BUILD_TYPE=Release"
+#12 34.34   -- The C compiler identification is GNU 12.2.0
+#12 34.34   -- The CXX compiler identification is GNU 12.2.0
+#12 34.34   -- Detecting C compiler ABI info
+#12 34.34   -- Detecting C compiler ABI info - done
+#12 34.34   -- Check for working C compiler: /usr/bin/cc - skipped
+#12 34.34   -- Detecting C compile features
+#12 34.34   -- Detecting C compile features - done
+#12 34.34   -- Detecting CXX compiler ABI info
+#12 34.34   -- Detecting CXX compiler ABI info - done
+#12 34.34   -- Check for working CXX compiler: /usr/bin/c++ - skipped
+#12 34.34   -- Detecting CXX compile features
+#12 34.34   -- Detecting CXX compile features - done
+#12 34.34   -- Looking for sys/types.h
+#12 34.34   -- Looking for sys/types.h - found
+#12 34.34   -- Looking for stdint.h
+#12 34.34   -- Looking for stdint.h - found
+#12 34.34   -- Looking for stddef.h
+#12 34.34   -- Looking for stddef.h - found
+#12 34.34   -- Check size of off64_t
+#12 34.34   -- Check size of off64_t - done
+#12 34.34   -- Looking for fseeko
+#12 34.34   -- Looking for fseeko - found
+#12 34.34   -- Looking for unistd.h
+#12 34.34   -- Looking for unistd.h - found
+#12 34.34   -- Renaming
+#12 34.34   --     /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/zlib/zconf.h
+#12 34.34   -- to 'zconf.h.included' because this file is included with zlib
+#12 34.34   -- but CMake generates it automatically in the build directory.
+#12 34.34   -- Looking for res_servicename in resolv
+#12 34.34   -- Looking for res_servicename in resolv - not found
+#12 34.34   -- Looking for gethostbyname in nsl
+#12 34.34   -- Looking for gethostbyname in nsl - found
+#12 34.34   -- Looking for gethostbyname in socket
+#12 34.34   -- Looking for gethostbyname in socket - not found
+#12 34.34   -- Looking for clock_gettime in rt
+#12 34.34   -- Looking for clock_gettime in rt - found
+#12 34.34   -- Looking for include file sys/socket.h
+#12 34.34   -- Looking for include file sys/socket.h - found
+#12 34.34   -- Looking for include file arpa/inet.h
+#12 34.34   -- Looking for include file arpa/inet.h - found
+#12 34.34   -- Looking for include file arpa/nameser_compat.h
+#12 34.34   -- Looking for include file arpa/nameser_compat.h - found
+#12 34.34   -- Looking for include file arpa/nameser.h
+#12 34.34   -- Looking for include file arpa/nameser.h - found
+#12 34.34   -- Looking for include file assert.h
+#12 34.34   -- Looking for include file assert.h - found
+#12 34.34   -- Looking for include file errno.h
+#12 34.34   -- Looking for include file errno.h - found
+#12 34.34   -- Looking for include file fcntl.h
+#12 34.34   -- Looking for include file fcntl.h - found
+#12 34.34   -- Looking for include file inttypes.h
+#12 34.34   -- Looking for include file inttypes.h - found
+#12 34.34   -- Looking for include file limits.h
+#12 34.34   -- Looking for include file limits.h - found
+#12 34.34   -- Looking for include file malloc.h
+#12 34.34   -- Looking for include file malloc.h - found
+#12 34.34   -- Looking for include file memory.h
+#12 34.34   -- Looking for include file memory.h - found
+#12 34.34   -- Looking for include file netdb.h
+#12 34.34   -- Looking for include file netdb.h - found
+#12 34.34   -- Looking for include file netinet/in.h
+#12 34.34   -- Looking for include file netinet/in.h - found
+#12 34.34   -- Looking for include file netinet/tcp.h
+#12 34.34   -- Looking for include file netinet/tcp.h - found
+#12 34.34   -- Looking for include file net/if.h
+#12 34.34   -- Looking for include file net/if.h - found
+#12 34.34   -- Looking for include file signal.h
+#12 34.34   -- Looking for include file signal.h - found
+#12 34.34   -- Looking for include file socket.h
+#12 34.34   -- Looking for include file socket.h - not found
+#12 34.34   -- Looking for include file stdbool.h
+#12 34.34   -- Looking for include file stdbool.h - found
+#12 34.34   -- Looking for include file stdlib.h
+#12 34.34   -- Looking for include file stdlib.h - found
+#12 34.34   -- Looking for include file strings.h
+#12 34.34   -- Looking for include file strings.h - found
+#12 34.34   -- Looking for include file string.h
+#12 34.34   -- Looking for include file string.h - found
+#12 34.34   -- Looking for include file stropts.h
+#12 34.34   -- Looking for include file stropts.h - not found
+#12 34.34   -- Looking for include file sys/ioctl.h
+#12 34.34   -- Looking for include file sys/ioctl.h - found
+#12 34.34   -- Looking for include file sys/param.h
+#12 34.34   -- Looking for include file sys/param.h - found
+#12 34.34   -- Looking for include file sys/select.h
+#12 34.34   -- Looking for include file sys/select.h - found
+#12 34.34   -- Looking for include file sys/stat.h
+#12 34.34   -- Looking for include file sys/stat.h - found
+#12 34.34   -- Looking for include file sys/time.h
+#12 34.34   -- Looking for include file sys/time.h - found
+#12 34.34   -- Looking for include file sys/uio.h
+#12 34.34   -- Looking for include file sys/uio.h - found
+#12 34.34   -- Looking for include file time.h
+#12 34.34   -- Looking for include file time.h - found
+#12 34.34   -- Looking for include file dlfcn.h
+#12 34.34   -- Looking for include file dlfcn.h - found
+#12 34.34   -- Looking for include file unistd.h
+#12 34.34   -- Looking for include file unistd.h - found
+#12 34.34   -- Looking for include files winsock2.h, windows.h
+#12 34.34   -- Looking for include files winsock2.h, windows.h - not found
+#12 34.34   -- Looking for 3 include files winsock2.h, ..., windows.h
+#12 34.34   -- Looking for 3 include files winsock2.h, ..., windows.h - not found
+#12 34.34   -- Looking for include files winsock.h, windows.h
+#12 34.34   -- Looking for include files winsock.h, windows.h - not found
+#12 34.34   -- Looking for include file windows.h
+#12 34.34   -- Looking for include file windows.h - not found
+#12 34.34   -- Performing Test HAVE_SOCKLEN_T
+#12 34.34   -- Performing Test HAVE_SOCKLEN_T - Success
+#12 34.34   -- Performing Test HAVE_TYPE_SOCKET
+#12 34.34   -- Performing Test HAVE_TYPE_SOCKET - Failed
+#12 34.34   -- Performing Test HAVE_BOOL_T
+#12 34.34   -- Performing Test HAVE_BOOL_T - Success
+#12 34.34   -- Performing Test HAVE_SSIZE_T
+#12 34.34   -- Performing Test HAVE_SSIZE_T - Success
+#12 34.34   -- Performing Test HAVE_LONGLONG
+#12 34.34   -- Performing Test HAVE_LONGLONG - Success
+#12 34.34   -- Performing Test HAVE_SIG_ATOMIC_T
+#12 34.34   -- Performing Test HAVE_SIG_ATOMIC_T - Success
+#12 34.34   -- Performing Test HAVE_STRUCT_ADDRINFO
+#12 34.34   -- Performing Test HAVE_STRUCT_ADDRINFO - Success
+#12 34.34   -- Performing Test HAVE_STRUCT_IN6_ADDR
+#12 34.34   -- Performing Test HAVE_STRUCT_IN6_ADDR - Success
+#12 34.34   -- Performing Test HAVE_STRUCT_SOCKADDR_IN6
+#12 34.34   -- Performing Test HAVE_STRUCT_SOCKADDR_IN6 - Success
+#12 34.34   -- Performing Test HAVE_STRUCT_SOCKADDR_STORAGE
+#12 34.34   -- Performing Test HAVE_STRUCT_SOCKADDR_STORAGE - Success
+#12 34.34   -- Performing Test HAVE_STRUCT_TIMEVAL
+#12 34.34   -- Performing Test HAVE_STRUCT_TIMEVAL - Success
+#12 34.34   -- Looking for AF_INET6
+#12 34.34   -- Looking for AF_INET6 - found
+#12 34.34   -- Looking for O_NONBLOCK
+#12 34.34   -- Looking for O_NONBLOCK - found
+#12 34.34   -- Looking for FIONBIO
+#12 34.34   -- Looking for FIONBIO - found
+#12 34.34   -- Looking for SIOCGIFADDR
+#12 34.34   -- Looking for SIOCGIFADDR - found
+#12 34.34   -- Looking for MSG_NOSIGNAL
+#12 34.34   -- Looking for MSG_NOSIGNAL - found
+#12 34.34   -- Looking for PF_INET6
+#12 34.34   -- Looking for PF_INET6 - found
+#12 34.34   -- Looking for SO_NONBLOCK
+#12 34.34   -- Looking for SO_NONBLOCK - not found
+#12 34.34   -- Looking for CLOCK_MONOTONIC
+#12 34.34   -- Looking for CLOCK_MONOTONIC - found
+#12 34.34   -- Performing Test HAVE_SOCKADDR_IN6_SIN6_SCOPE_ID
+#12 34.34   -- Performing Test HAVE_SOCKADDR_IN6_SIN6_SCOPE_ID - Success
+#12 34.34   -- Performing Test HAVE_LL
+#12 34.34   -- Performing Test HAVE_LL - Success
+#12 34.34   -- Looking for bitncmp
+#12 34.34   -- Looking for bitncmp - not found
+#12 34.34   -- Looking for closesocket
+#12 34.34   -- Looking for closesocket - not found
+#12 34.34   -- Looking for CloseSocket
+#12 34.34   -- Looking for CloseSocket - not found
+#12 34.34   -- Looking for connect
+#12 34.34   -- Looking for connect - found
+#12 34.34   -- Looking for fcntl
+#12 34.34   -- Looking for fcntl - found
+#12 34.34   -- Looking for freeaddrinfo
+#12 34.34   -- Looking for freeaddrinfo - found
+#12 34.34   -- Looking for getaddrinfo
+#12 34.34   -- Looking for getaddrinfo - found
+#12 34.34   -- Looking for getenv
+#12 34.34   -- Looking for getenv - found
+#12 34.34   -- Looking for gethostbyaddr
+#12 34.34   -- Looking for gethostbyaddr - found
+#12 34.34   -- Looking for gethostbyname
+#12 34.34   -- Looking for gethostbyname - found
+#12 34.34   -- Looking for gethostname
+#12 34.34   -- Looking for gethostname - found
+#12 34.34   -- Looking for getnameinfo
+#12 34.34   -- Looking for getnameinfo - found
+#12 34.34   -- Looking for getservbyport_r
+#12 34.34   -- Looking for getservbyport_r - found
+#12 34.34   -- Looking for gettimeofday
+#12 34.34   -- Looking for gettimeofday - found
+#12 34.34   -- Looking for if_indextoname
+#12 34.34   -- Looking for if_indextoname - found
+#12 34.34   -- Looking for inet_net_pton
+#12 34.34   -- Looking for inet_net_pton - not found
+#12 34.34   -- Looking for inet_ntop
+#12 34.34   -- Looking for inet_ntop - found
+#12 34.34   -- Looking for inet_pton
+#12 34.34   -- Looking for inet_pton - found
+#12 34.34   -- Looking for ioctl
+#12 34.34   -- Looking for ioctl - found
+#12 34.34   -- Looking for ioctlsocket
+#12 34.34   -- Looking for ioctlsocket - not found
+#12 34.34   -- Looking for IoctlSocket
+#12 34.34   -- Looking for IoctlSocket - not found
+#12 34.34   -- Looking for recv
+#12 34.34   -- Looking for recv - found
+#12 34.34   -- Looking for recvfrom
+#12 34.34   -- Looking for recvfrom - found
+#12 34.34   -- Looking for send
+#12 34.34   -- Looking for send - found
+#12 34.34   -- Looking for setsockopt
+#12 34.34   -- Looking for setsockopt - found
+#12 34.34   -- Looking for socket
+#12 34.34   -- Looking for socket - found
+#12 34.34   -- Looking for strcasecmp
+#12 34.34   -- Looking for strcasecmp - found
+#12 34.34   -- Looking for strcmpi
+#12 34.34   -- Looking for strcmpi - not found
+#12 34.34   -- Looking for strdup
+#12 34.34   -- Looking for strdup - found
+#12 34.34   -- Looking for stricmp
+#12 34.34   -- Looking for stricmp - not found
+#12 34.34   -- Looking for strncasecmp
+#12 34.34   -- Looking for strncasecmp - found
+#12 34.34   -- Looking for strncmpi
+#12 34.34   -- Looking for strncmpi - not found
+#12 34.34   -- Looking for strnicmp
+#12 34.34   -- Looking for strnicmp - not found
+#12 34.34   -- Looking for writev
+#12 34.34   -- Looking for writev - found
+#12 34.34   -- Found Perl: /usr/bin/perl (found version "5.36.0") 
+#12 34.34   -- The ASM compiler identification is GNU
+#12 34.34   -- Found assembler: /usr/bin/cc
+#12 34.34   -- Configuring done
+#12 34.34   -- Generating done
+#12 34.34   -- Build files have been written to: /usr/local/byzan/target/release/build/grpcio-sys-684569b0b2ec6999/out/build
+#12 34.34   running: cd "/usr/local/byzan/target/release/build/grpcio-sys-684569b0b2ec6999/out/build" && MAKEFLAGS="-j --jobserver-fds=9,11 --jobserver-auth=9,11" "cmake" "--build" "." "--target" "grpc" "--config" "Release" "--"
+#12 34.34   [  0%] Generating err_data.c
+#12 34.34   [  0%] Building C object third_party/boringssl/crypto/stack/CMakeFiles/stack.dir/stack.c.o
+#12 34.34   [  0%] Building C object third_party/boringssl/crypto/lhash/CMakeFiles/lhash.dir/lhash.c.o
+#12 34.34   [  0%] Building C object third_party/boringssl/crypto/pkcs8/CMakeFiles/pkcs8_lib.dir/p8_pkey.c.o
+#12 34.34   [  0%] Building C object third_party/boringssl/crypto/pkcs8/CMakeFiles/pkcs8_lib.dir/pkcs8.c.o
+#12 34.34   [  0%] Building C object third_party/boringssl/crypto/bytestring/CMakeFiles/bytestring.dir/cbb.c.o
+#12 34.34   [  0%] Building C object third_party/boringssl/crypto/buf/CMakeFiles/buf.dir/buf.c.o
+#12 34.34   [  0%] Building C object third_party/boringssl/crypto/pool/CMakeFiles/pool.dir/pool.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/bytestring/CMakeFiles/bytestring.dir/cbs.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/bytestring/CMakeFiles/bytestring.dir/ber.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/bytestring/CMakeFiles/bytestring.dir/asn1_compat.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/pkcs8/CMakeFiles/pkcs8_lib.dir/p5_pbev2.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/base64/CMakeFiles/base64.dir/base64.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/sha/CMakeFiles/sha.dir/sha1.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/sha/CMakeFiles/sha.dir/sha1-altivec.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/md4/CMakeFiles/md4.dir/md4.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/modes/CMakeFiles/modes.dir/cbc.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/md5/CMakeFiles/md5.dir/md5.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/aes/CMakeFiles/aes.dir/aes.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/des/CMakeFiles/des.dir/des.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/rc4/CMakeFiles/rc4.dir/rc4.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/chacha/CMakeFiles/chacha.dir/chacha.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/poly1305/CMakeFiles/poly1305.dir/poly1305.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/conf/CMakeFiles/conf.dir/conf.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/sha/CMakeFiles/sha.dir/sha256.c.o
+#12 34.34   [  2%] Built target rc4
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/poly1305/CMakeFiles/poly1305.dir/poly1305_arm.c.o
+#12 34.34   [  2%] Building C object third_party/boringssl/crypto/sha/CMakeFiles/sha.dir/sha512.c.o
+#12 34.34   [  2%] Built target pool
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/curve25519/CMakeFiles/curve25519.dir/spake25519.c.o
+#12 34.34   [  4%] Built target buf
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/curve25519/CMakeFiles/curve25519.dir/curve25519.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/digest/CMakeFiles/digest.dir/digest.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/aes/CMakeFiles/aes.dir/key_wrap.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/poly1305/CMakeFiles/poly1305.dir/poly1305_vec.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/digest/CMakeFiles/digest.dir/digests.c.o
+#12 34.34   [  4%] Built target chacha
+#12 34.34   [  4%] Built target lhash
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/modes/CMakeFiles/modes.dir/cfb.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/curve25519/CMakeFiles/curve25519.dir/x25519-x86_64.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/aes/CMakeFiles/aes.dir/mode_wrappers.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/cipher.c.o
+#12 34.34   [  4%] Built target stack
+#12 34.34   [  4%] Built target base64
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/modes/CMakeFiles/modes.dir/ctr.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/modes/CMakeFiles/modes.dir/gcm.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/bio/CMakeFiles/bio.dir/bio.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/rand/CMakeFiles/rand.dir/deterministic.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/add.c.o
+#12 34.34   [  4%] Built target aes
+#12 34.34   [  4%] Built target md4
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/modes/CMakeFiles/modes.dir/ofb.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/obj/CMakeFiles/obj.dir/obj.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/rand/CMakeFiles/rand.dir/fuchsia.c.o
+#12 34.34   [  4%] Built target digest
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/bio/CMakeFiles/bio.dir/bio_mem.c.o
+#12 34.34   [  4%] Built target pkcs8_lib
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_bitstr.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/bio/CMakeFiles/bio.dir/connect.c.o
+#12 34.34   [  4%] Built target md5
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/modes/CMakeFiles/modes.dir/polyval.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/obj/CMakeFiles/obj.dir/obj_xref.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/rand/CMakeFiles/rand.dir/rand.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/engine/CMakeFiles/engine.dir/engine.c.o
+#12 34.34   [  4%] Built target conf
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/rsa/CMakeFiles/rsa.dir/rsa.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/dsa/CMakeFiles/dsa.dir/dsa.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/dh/CMakeFiles/dh.dir/dh.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/rand/CMakeFiles/rand.dir/urandom.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/rsa/CMakeFiles/rsa.dir/rsa_impl.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/asm/x86_64-gcc.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/ec.c.o
+#12 34.34   [  4%] Built target engine
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ecdh/CMakeFiles/ecdh.dir/ecdh.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/bn.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_bool.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/ec_key.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/ec_asn1.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_d2i_fp.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/ec_montgomery.c.o
+#12 34.34   [  4%] Built target bytestring
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_dup.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/err/CMakeFiles/err.dir/err.c.o
+#12 34.34   [  4%] Built target ecdh
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/rand/CMakeFiles/rand.dir/windows.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/dh/CMakeFiles/dh.dir/params.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/p224-64.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/oct.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ecdsa/CMakeFiles/ecdsa.dir/ecdsa.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/derive_key.c.o
+#12 34.34   [  4%] Built target sha
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/hmac/CMakeFiles/hmac.dir/hmac.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/p256-64.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/p256-x86_64.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_enum.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/aead.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_gentm.c.o
+#12 34.34   [  4%] Built target rand
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_i2d_fp.c.o
+#12 34.34   [  4%] Built target modes
+#12 34.34   [  4%] Built target poly1305
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/err/CMakeFiles/err.dir/err_data.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/rsa/CMakeFiles/rsa.dir/blinding.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/dh/CMakeFiles/dh.dir/check.c.o
+#12 34.34   [  4%] Built target obj
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/rsa/CMakeFiles/rsa.dir/padding.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/rsa/CMakeFiles/rsa.dir/rsa_asn1.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/bn_asn1.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/e_null.c.o
+#12 34.34   [  4%] Built target hmac
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/e_rc2.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/simple.c.o
+#12 34.34   [  4%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/e_rc4.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/dh/CMakeFiles/dh.dir/dh_asn1.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/ecdsa/CMakeFiles/ecdsa.dir/ecdsa_asn1.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/convert.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_int.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/cmp.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/dsa/CMakeFiles/dsa.dir/dsa_asn1.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/e_des.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_mbstr.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/ctx.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/e_chacha20poly1305.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/e_aes.c.o
+#12 34.34   [  9%] Built target des
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_object.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/div.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/util-64.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_octet.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/exponentiation.c.o
+#12 34.34   [  9%] Built target dh
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/generic.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/ec/CMakeFiles/ec.dir/wnaf.c.o
+#12 34.34   [  9%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/e_tls.c.o
+#12 34.34   [ 11%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/tls_cbc.c.o
+#12 34.34   [ 11%] Built target err
+#12 34.34   [ 11%] Building C object third_party/boringssl/crypto/cipher/CMakeFiles/cipher.dir/e_ssl3.c.o
+#12 34.34   [ 14%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/gcd.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_print.c.o
+#12 34.34   [ 16%] Built target dsa
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_strnid.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_time.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_type.c.o
+#12 34.34   [ 16%] Built target ecdsa
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_utctm.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/a_utf8.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/kronecker.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/asn1_lib.c.o
+#12 34.34   [ 16%] Built target rsa
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/montgomery.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/asn_pack.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/f_enum.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/asn1_par.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/f_int.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/mul.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/montgomery_inv.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/prime.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/random.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/f_string.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/t_bitst.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/shift.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/tasn_dec.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/bn/CMakeFiles/bn.dir/sqrt.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/tasn_enc.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/tasn_fre.c.o
+#12 34.34   [ 16%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/tasn_new.c.o
+#12 34.34   [ 16%] Built target cipher
+#12 34.34   [ 19%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/tasn_typ.c.o
+#12 34.34   [ 19%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/tasn_utl.c.o
+#12 34.34   [ 19%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/time_support.c.o
+#12 34.34   [ 19%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/x_long.c.o
+#12 34.34   [ 19%] Building C object third_party/boringssl/crypto/asn1/CMakeFiles/asn1.dir/x_bignum.c.o
+#12 34.34   [ 19%] Built target bn
+#12 34.34   [ 19%] Built target ec
+#12 34.34   [ 19%] Built target asn1
+#12 34.34 
+#12 34.34   --- stderr
+#12 34.34   CMake Deprecation Warning at CMakeLists.txt:24 (cmake_minimum_required):
+#12 34.34     Compatibility with CMake < 2.8.12 will be removed from a future version of
+#12 34.34     CMake.
+#12 34.34 
+#12 34.34     Update the VERSION argument <min> value or use a ...<max> suffix to tell
+#12 34.34     CMake that the project does not need compatibility with older versions.
+#12 34.34 
+#12 34.34 
+#12 34.34   CMake Deprecation Warning at third_party/zlib/CMakeLists.txt:1 (cmake_minimum_required):
+#12 34.34     Compatibility with CMake < 2.8.12 will be removed from a future version of
+#12 34.34     CMake.
+#12 34.34 
+#12 34.34     Update the VERSION argument <min> value or use a ...<max> suffix to tell
+#12 34.34     CMake that the project does not need compatibility with older versions.
+#12 34.34 
+#12 34.34 
+#12 34.34   CMake Warning at CMakeLists.txt:122 (message):
+#12 34.34     gRPC_INSTALL will be forced to FALSE because gRPC_ZLIB_PROVIDER is "module"
+#12 34.34 
+#12 34.34 
+#12 34.34   CMake Warning at CMakeLists.txt:184 (message):
+#12 34.34     gRPC_PROTOBUF_PROVIDER is "module" but PROTOBUF_ROOT_DIR is wrong
+#12 34.34 
+#12 34.34 
+#12 34.34   CMake Deprecation Warning at third_party/boringssl/CMakeLists.txt:1 (cmake_minimum_required):
+#12 34.34     Compatibility with CMake < 2.8.12 will be removed from a future version of
+#12 34.34     CMake.
+#12 34.34 
+#12 34.34     Update the VERSION argument <min> value or use a ...<max> suffix to tell
+#12 34.34     CMake that the project does not need compatibility with older versions.
+#12 34.34 
+#12 34.34 
+#12 34.34   CMake Warning at CMakeLists.txt:251 (message):
+#12 34.34     gRPC_GFLAGS_PROVIDER is "module" but GFLAGS_ROOT_DIR is wrong
+#12 34.34 
+#12 34.34 
+#12 34.34   CMake Warning at CMakeLists.txt:271 (message):
+#12 34.34     gRPC_BENCHMARK_PROVIDER is "module" but BENCHMARK_ROOT_DIR is wrong
+#12 34.34 
+#12 34.34 
+#12 34.34   /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/curve25519/curve25519.c:3497:57: error: argument 2 of type 'const uint8_t *' {aka 'const unsigned char *'} declared as a pointer [-Werror=array-parameter=]
+#12 34.34    3497 | void x25519_ge_scalarmult_base(ge_p3 *h, const uint8_t *a) {
+#12 34.34         |                                          ~~~~~~~~~~~~~~~^
+#12 34.34   In file included from /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/curve25519/curve25519.c:31:
+#12 34.34   /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/curve25519/internal.h:100:56: note: previously declared as an array 'const uint8_t[32]' {aka 'const unsigned char[32]'}
+#12 34.34     100 | void x25519_ge_scalarmult_base(ge_p3 *h, const uint8_t a[32]);
+#12 34.34         |                                          ~~~~~~~~~~~~~~^~~~~
+#12 34.34   /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/curve25519/curve25519.c:4620:27: error: argument 1 of type 'uint8_t *' {aka 'unsigned char *'} declared as a pointer [-Werror=array-parameter=]
+#12 34.34    4620 | int ED25519_sign(uint8_t *out_sig, const uint8_t *message, size_t message_len,
+#12 34.34         |                  ~~~~~~~~~^~~~~~~
+#12 34.34   In file included from /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/curve25519/curve25519.c:22:
+#12 34.34   /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/../include/openssl/curve25519.h:78:41: note: previously declared as an array 'uint8_t[64]' {aka 'unsigned char[64]'}
+#12 34.34      78 | OPENSSL_EXPORT int ED25519_sign(uint8_t out_sig[64], const uint8_t *message,
+#12 34.34         |                                 ~~~~~~~~^~~~~~~~~~~
+#12 34.34   In function 'bio_io',
+#12 34.34       inlined from 'BIO_read' at /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/bio/bio.c:176:10,
+#12 34.34       inlined from 'BIO_read_asn1' at /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/bio/bio.c:530:7:
+#12 34.34   /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/bio/bio.c:147:15: error: 'header' may be used uninitialized [-Werror=maybe-uninitialized]
+#12 34.34     147 |     i = (int) bio->callback(bio, callback_flags, buf, len, 0L, 1L);
+#12 34.34         |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 34.34   /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/bio/bio.c:147:15: note: by argument 3 of type 'const char *' to 'long int(BIO *, int,  const char *, int,  long int,  long int)' {aka 'long int(struct bio_st *, int,  const char *, int,  long int,  long int)'}
+#12 34.34   /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/bio/bio.c: In function 'BIO_read_asn1':
+#12 34.34   /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/grpcio-sys-0.3.1/grpc/third_party/boringssl/crypto/bio/bio.c:527:11: note: 'header' declared here
+#12 34.34     527 |   uint8_t header[6];
+#12 34.34         |           ^~~~~~
+#12 34.34   cc1: all warnings being treated as errors
+#12 34.34   gmake[3]: *** [third_party/boringssl/crypto/bio/CMakeFiles/bio.dir/build.make:76: third_party/boringssl/crypto/bio/CMakeFiles/bio.dir/bio.c.o] Error 1
+#12 34.34   gmake[2]: *** [CMakeFiles/Makefile2:3650: third_party/boringssl/crypto/bio/CMakeFiles/bio.dir/all] Error 2
+#12 34.34   gmake[2]: *** Waiting for unfinished jobs....
+#12 34.34   cc1: all warnings being treated as errors
+#12 34.34   gmake[3]: *** [third_party/boringssl/crypto/curve25519/CMakeFiles/curve25519.dir/build.make:76: third_party/boringssl/crypto/curve25519/CMakeFiles/curve25519.dir/curve25519.c.o] Error 1
+#12 34.34   gmake[2]: *** [CMakeFiles/Makefile2:3386: third_party/boringssl/crypto/curve25519/CMakeFiles/curve25519.dir/all] Error 2
+#12 34.34   gmake[1]: *** [CMakeFiles/Makefile2:1521: CMakeFiles/grpc.dir/rule] Error 2
+#12 34.34   gmake: *** [Makefile:234: grpc] Error 2
+#12 34.34   thread 'main' panicked at /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/cmake-0.1.34/src/lib.rs:776:5:
+#12 34.34 
+#12 34.34   command did not execute successfully, got: exit status: 2
+#12 34.34 
+#12 34.34   build script failed, must exit now
+#12 34.34   note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+#12 ERROR: process "/bin/sh -c cargo build --release" did not complete successfully: exit code: 101
+------
+ > [8/8] RUN cargo build --release:
+34.34   gmake[3]: *** [third_party/boringssl/crypto/curve25519/CMakeFiles/curve25519.dir/build.make:76: third_party/boringssl/crypto/curve25519/CMakeFiles/curve25519.dir/curve25519.c.o] Error 1
+34.34   gmake[2]: *** [CMakeFiles/Makefile2:3386: third_party/boringssl/crypto/curve25519/CMakeFiles/curve25519.dir/all] Error 2
+34.34   gmake[1]: *** [CMakeFiles/Makefile2:1521: CMakeFiles/grpc.dir/rule] Error 2
+34.34   gmake: *** [Makefile:234: grpc] Error 2
+34.34   thread 'main' panicked at /usr/local/cargo/registry/src/index.crates.io-6f17d22bba15001f/cmake-0.1.34/src/lib.rs:776:5:
+34.34 
+34.34   command did not execute successfully, got: exit status: 2
+34.34 
+34.34   build script failed, must exit now
+34.34   note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+------
+v1_Dockerfile:14
+--------------------
+  12 |     RUN cargo install protobuf-codegen
+  13 |     RUN cargo install grpcio-compiler
+  14 | >>> RUN cargo build --release
+--------------------
+ERROR: failed to solve: process "/bin/sh -c cargo build --release" did not complete successfully: exit code: 101
+Duration: 3:22.57

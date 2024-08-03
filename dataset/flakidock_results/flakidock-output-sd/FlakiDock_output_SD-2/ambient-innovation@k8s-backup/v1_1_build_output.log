@@ -1,0 +1,152 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 649B done
+#1 DONE 0.6s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.4s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 4.11kB done
+#4 DONE 0.4s
+
+#5 [1/8] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.2s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 2.10MB / 3.62MB 0.3s
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.3s done
+#5 DONE 1.4s
+
+#6 [2/8] WORKDIR /srv
+#6 DONE 0.7s
+
+#7 [3/8] RUN apk update && apk add --no-cache bash     tzdata less python3 curl mlocate groff openssl py3-pip
+#7 0.713 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#7 0.955 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#7 1.473 v3.20.2-45-g194e307d75d [https://dl-cdn.alpinelinux.org/alpine/v3.20/main]
+#7 1.473 v3.20.2-43-g4fdd3a681b2 [https://dl-cdn.alpinelinux.org/alpine/v3.20/community]
+#7 1.473 OK: 24154 distinct packages available
+#7 1.559 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#7 1.651 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#7 1.997 (1/42) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#7 2.024 (2/42) Installing libncursesw (6.4_p20240420-r0)
+#7 2.032 (3/42) Installing readline (8.2.10-r0)
+#7 2.038 (4/42) Installing bash (5.2.26-r0)
+#7 2.057 Executing bash-5.2.26-r0.post-install
+#7 2.061 (5/42) Installing ca-certificates (20240705-r0)
+#7 2.092 (6/42) Installing brotli-libs (1.1.0-r2)
+#7 2.106 (7/42) Installing c-ares (1.28.1-r0)
+#7 2.116 (8/42) Installing libunistring (1.2-r0)
+#7 2.134 (9/42) Installing libidn2 (2.3.7-r0)
+#7 2.140 (10/42) Installing nghttp2-libs (1.62.1-r0)
+#7 2.145 (11/42) Installing libpsl (0.21.5-r1)
+#7 2.151 (12/42) Installing zstd-libs (1.5.6-r0)
+#7 2.164 (13/42) Installing libcurl (8.9.0-r0)
+#7 2.174 (14/42) Installing curl (8.9.0-r0)
+#7 2.180 (15/42) Installing libbz2 (1.0.8-r6)
+#7 2.187 (16/42) Installing perl (5.38.2-r0)
+#7 2.694 (17/42) Installing libgcc (13.2.1_git20240309-r0)
+#7 2.699 (18/42) Installing libstdc++ (13.2.1_git20240309-r0)
+#7 2.725 (19/42) Installing groff (1.23.0-r2)
+#7 2.867 (20/42) Installing less (643-r2)
+#7 2.873 (21/42) Installing mlocate (0.26-r9)
+#7 2.877 Executing mlocate-0.26-r9.pre-install
+#7 2.922 (22/42) Installing openssl (3.3.1-r3)
+#7 2.933 (23/42) Installing libexpat (2.6.2-r0)
+#7 2.938 (24/42) Installing libffi (3.4.6-r0)
+#7 2.941 (25/42) Installing gdbm (1.23-r1)
+#7 2.946 (26/42) Installing xz-libs (5.6.1-r3)
+#7 2.952 (27/42) Installing mpdecimal (4.0.0-r0)
+#7 2.957 (28/42) Installing libpanelw (6.4_p20240420-r0)
+#7 2.959 (29/42) Installing sqlite-libs (3.45.3-r1)
+#7 2.980 (30/42) Installing python3 (3.12.3-r1)
+#7 3.296 (31/42) Installing python3-pycache-pyc0 (3.12.3-r1)
+#7 3.550 (32/42) Installing pyc (3.12.3-r1)
+#7 3.552 (33/42) Installing py3-setuptools-pyc (69.5.1-r0)
+#7 3.680 (34/42) Installing py3-pip-pyc (24.0-r2)
+#7 3.923 (35/42) Installing py3-parsing (3.1.2-r1)
+#7 3.932 (36/42) Installing py3-parsing-pyc (3.1.2-r1)
+#7 3.950 (37/42) Installing py3-packaging-pyc (24.0-r1)
+#7 3.957 (38/42) Installing python3-pyc (3.12.3-r1)
+#7 3.960 (39/42) Installing py3-packaging (24.0-r1)
+#7 3.983 (40/42) Installing py3-setuptools (69.5.1-r0)
+#7 4.080 (41/42) Installing py3-pip (24.0-r2)
+#7 4.282 (42/42) Installing tzdata (2024a-r1)
+#7 4.376 Executing busybox-1.36.1-r29.trigger
+#7 4.381 Executing ca-certificates-20240705-r0.trigger
+#7 4.428 OK: 133 MiB in 56 packages
+#7 DONE 9.3s
+
+#8 [4/8] RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime && echo Europe/Berlin > /etc/timezone
+#8 DONE 1.3s
+
+#9 [5/8] RUN pip install awscli --upgrade
+#9 2.510 error: externally-managed-environment
+#9 2.510 
+#9 2.510 × This environment is externally managed
+#9 2.510 ╰─> 
+#9 2.510     The system-wide python installation should be maintained using the system
+#9 2.510     package manager (apk) only.
+#9 2.510     
+#9 2.510     If the package in question is not packaged already (and hence installable via
+#9 2.510     "apk add py3-somepackage"), please consider installing it inside a virtual
+#9 2.510     environment, e.g.:
+#9 2.510     
+#9 2.510     python3 -m venv /path/to/venv
+#9 2.510     . /path/to/venv/bin/activate
+#9 2.510     pip install mypackage
+#9 2.510     
+#9 2.510     To exit the virtual environment, run:
+#9 2.510     
+#9 2.510     deactivate
+#9 2.510     
+#9 2.510     The virtual environment is not deleted, and can be re-entered by re-sourcing
+#9 2.510     the activate file.
+#9 2.510     
+#9 2.510     To automatically manage virtual environments, consider using pipx (from the
+#9 2.510     pipx package).
+#9 2.510 
+#9 2.510 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+#9 2.510 hint: See PEP 668 for the detailed specification.
+#9 ERROR: process "/bin/sh -c pip install awscli --upgrade" did not complete successfully: exit code: 1
+------
+ > [5/8] RUN pip install awscli --upgrade:
+2.510     deactivate
+2.510     
+2.510     The virtual environment is not deleted, and can be re-entered by re-sourcing
+2.510     the activate file.
+2.510     
+2.510     To automatically manage virtual environments, consider using pipx (from the
+2.510     pipx package).
+2.510 
+2.510 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+2.510 hint: See PEP 668 for the detailed specification.
+------
+v1_Dockerfile:10
+--------------------
+   8 |     
+   9 |     RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+  10 | >>> RUN pip install awscli --upgrade
+  11 |     RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.17.17/bin/linux/amd64/kubectl \
+  12 |         && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl \
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip install awscli --upgrade" did not complete successfully: exit code: 1
+Duration: 0:17.66

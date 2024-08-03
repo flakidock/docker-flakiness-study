@@ -1,0 +1,27 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.22kB done
+#2 DONE 0.6s
+
+#1 [internal] load .dockerignore
+#1 DONE 0.8s
+
+#3 [internal] load metadata for docker.io/nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
+#3 ERROR: docker.io/nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04: not found
+------
+ > [internal] load metadata for docker.io/nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04:
+------
+v1_Dockerfile:1
+--------------------
+   1 | >>> FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
+   2 |     
+   3 |     ## Cleanup
+--------------------
+ERROR: failed to solve: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04: docker.io/nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04: not found
+Duration: 0:1.42

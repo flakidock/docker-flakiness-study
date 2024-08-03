@@ -1,0 +1,143 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 461B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:3.8
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 3.67kB done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/alpine:3.8@sha256:2bb501e6173d9d006e56de5bce2720eb06396803300fe1687b58a7ff32bf4c14
+#5 resolve docker.io/library/alpine:3.8@sha256:2bb501e6173d9d006e56de5bce2720eb06396803300fe1687b58a7ff32bf4c14 0.0s done
+#5 sha256:c8bccc0af9571ec0d006a43acb5a8d08c4ce42b6cc7194dd6eb167976f501ef1 1.51kB / 1.51kB done
+#5 sha256:486039affc0ad0f17f473efe8fb25c947515a8929198879d1e64210ef142372f 0B / 2.21MB 0.1s
+#5 sha256:2bb501e6173d9d006e56de5bce2720eb06396803300fe1687b58a7ff32bf4c14 1.41kB / 1.41kB done
+#5 sha256:954b378c375d852eb3c63ab88978f640b4348b01c1b3456a024a81536dafbbf4 528B / 528B done
+#5 extracting sha256:486039affc0ad0f17f473efe8fb25c947515a8929198879d1e64210ef142372f
+#5 sha256:486039affc0ad0f17f473efe8fb25c947515a8929198879d1e64210ef142372f 2.21MB / 2.21MB 0.1s done
+#5 extracting sha256:486039affc0ad0f17f473efe8fb25c947515a8929198879d1e64210ef142372f 0.1s done
+#5 DONE 0.5s
+
+#6 [2/8] RUN apk update     && apk add --no-cache python3 py3-pip rsyslog rsyslog-tls ca-certificates openssl     && pip3 install awscli
+#6 0.186 fetch http://dl-cdn.alpinelinux.org/alpine/v3.8/main/x86_64/APKINDEX.tar.gz
+#6 0.432 fetch http://dl-cdn.alpinelinux.org/alpine/v3.8/community/x86_64/APKINDEX.tar.gz
+#6 0.648 v3.8.5-67-gf94de196ca [http://dl-cdn.alpinelinux.org/alpine/v3.8/main]
+#6 0.648 v3.8.5-66-gccbd6a8ae7 [http://dl-cdn.alpinelinux.org/alpine/v3.8/community]
+#6 0.648 OK: 9564 distinct packages available
+#6 0.662 fetch http://dl-cdn.alpinelinux.org/alpine/v3.8/main/x86_64/APKINDEX.tar.gz
+#6 0.749 fetch http://dl-cdn.alpinelinux.org/alpine/v3.8/community/x86_64/APKINDEX.tar.gz
+#6 0.820 (1/33) Installing ca-certificates (20191127-r2)
+#6 0.844 (2/33) Installing libcrypto1.0 (1.0.2u-r0)
+#6 0.878 (3/33) Installing libssl1.0 (1.0.2u-r0)
+#6 0.893 (4/33) Installing openssl (1.0.2u-r0)
+#6 0.910 (5/33) Installing libbz2 (1.0.6-r7)
+#6 0.923 (6/33) Installing expat (2.2.8-r0)
+#6 0.934 (7/33) Installing libffi (3.2.1-r4)
+#6 0.949 (8/33) Installing gdbm (1.13-r1)
+#6 0.963 (9/33) Installing xz-libs (5.2.4-r0)
+#6 0.976 (10/33) Installing ncurses-terminfo-base (6.1_p20180818-r1)
+#6 0.987 (11/33) Installing ncurses-terminfo (6.1_p20180818-r1)
+#6 1.194 (12/33) Installing ncurses-libs (6.1_p20180818-r1)
+#6 1.211 (13/33) Installing readline (7.0.003-r0)
+#6 1.223 (14/33) Installing sqlite-libs (3.25.3-r4)
+#6 1.244 (15/33) Installing python3 (3.6.9-r1)
+#6 1.915 (16/33) Installing nghttp2-libs (1.39.2-r0)
+#6 1.927 (17/33) Installing libssh2 (1.9.0-r1)
+#6 1.938 (18/33) Installing libcurl (7.61.1-r3)
+#6 1.955 (19/33) Installing libestr (0.1.10-r0)
+#6 2.110 (20/33) Installing libfastjson (0.99.8-r1)
+#6 2.259 (21/33) Installing libgpg-error (1.30-r0)
+#6 2.272 (22/33) Installing libgcrypt (1.8.3-r2)
+#6 2.293 (23/33) Installing liblogging (1.0.6-r0)
+#6 2.448 (24/33) Installing libnet (1.1.6-r2)
+#6 2.621 (25/33) Installing libuuid (2.32-r0)
+#6 2.632 (26/33) Installing rsyslog (8.34.0-r1)
+#6 2.840 (27/33) Installing gmp (6.1.2-r1)
+#6 2.859 (28/33) Installing nettle (3.4.1-r0)
+#6 2.873 (29/33) Installing p11-kit (0.23.10-r0)
+#6 2.895 (30/33) Installing libtasn1 (4.14-r0)
+#6 2.908 (31/33) Installing libunistring (0.9.7-r0)
+#6 2.930 (32/33) Installing gnutls (3.6.14-r0)
+#6 2.959 (33/33) Installing rsyslog-tls (8.34.0-r1)
+#6 3.111 Executing busybox-1.28.4-r3.trigger
+#6 3.115 Executing ca-certificates-20191127-r2.trigger
+#6 3.150 OK: 80 MiB in 46 packages
+#6 3.493 Collecting awscli
+#6 5.057   Downloading https://files.pythonhosted.org/packages/6c/48/8cf68d31f3f8606904acc4d98965a2c020acd5e1b9a821b8a7fafdbbc81a/awscli-1.24.10-py3-none-any.whl (3.9MB)
+#6 5.984 Collecting PyYAML<5.5,>=3.10 (from awscli)
+#6 6.172   Downloading https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz (175kB)
+#6 6.372   Installing build dependencies: started
+#6 10.28   Installing build dependencies: finished with status 'done'
+#6 10.66     Complete output from command python setup.py egg_info:
+#6 10.66     running egg_info
+#6 10.66     creating pip-egg-info/PyYAML.egg-info
+#6 10.66     writing pip-egg-info/PyYAML.egg-info/PKG-INFO
+#6 10.66     writing dependency_links to pip-egg-info/PyYAML.egg-info/dependency_links.txt
+#6 10.66     writing top-level names to pip-egg-info/PyYAML.egg-info/top_level.txt
+#6 10.66     writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+#6 10.66     Traceback (most recent call last):
+#6 10.66       File "<string>", line 1, in <module>
+#6 10.66       File "/tmp/pip-install-84ubovdd/PyYAML/setup.py", line 295, in <module>
+#6 10.66         python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+#6 10.66       File "/tmp/pip-build-env-p2qymzq9/lib/python3.6/site-packages/setuptools/__init__.py", line 153, in setup
+#6 10.66         return distutils.core.setup(**attrs)
+#6 10.66       File "/usr/lib/python3.6/distutils/core.py", line 148, in setup
+#6 10.66         dist.run_commands()
+#6 10.66       File "/usr/lib/python3.6/distutils/dist.py", line 955, in run_commands
+#6 10.66         self.run_command(cmd)
+#6 10.66       File "/usr/lib/python3.6/distutils/dist.py", line 974, in run_command
+#6 10.66         cmd_obj.run()
+#6 10.66       File "/tmp/pip-build-env-p2qymzq9/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 299, in run
+#6 10.66         self.find_sources()
+#6 10.66       File "/tmp/pip-build-env-p2qymzq9/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 306, in find_sources
+#6 10.66         mm.run()
+#6 10.66       File "/tmp/pip-build-env-p2qymzq9/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 541, in run
+#6 10.66         self.add_defaults()
+#6 10.66       File "/tmp/pip-build-env-p2qymzq9/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 578, in add_defaults
+#6 10.66         sdist.add_defaults(self)
+#6 10.66       File "/tmp/pip-build-env-p2qymzq9/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 34, in add_defaults
+#6 10.66         self._add_defaults_ext()
+#6 10.66       File "/tmp/pip-build-env-p2qymzq9/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 118, in _add_defaults_ext
+#6 10.66         self.filelist.extend(build_ext.get_source_files())
+#6 10.66       File "/tmp/pip-install-84ubovdd/PyYAML/setup.py", line 201, in get_source_files
+#6 10.66         self.cython_sources(ext.sources, ext)
+#6 10.66       File "/usr/lib/python3.6/distutils/cmd.py", line 103, in __getattr__
+#6 10.66         raise AttributeError(attr)
+#6 10.66     AttributeError: cython_sources
+#6 10.66     
+#6 10.66     ----------------------------------------
+#6 10.85 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-84ubovdd/PyYAML/
+#6 10.86 You are using pip version 18.1, however version 21.3.1 is available.
+#6 10.86 You should consider upgrading via the 'pip install --upgrade pip' command.
+#6 ERROR: process "/bin/sh -c apk update     && apk add --no-cache python3 py3-pip rsyslog rsyslog-tls ca-certificates openssl     && pip3 install awscli" did not complete successfully: exit code: 1
+------
+ > [2/8] RUN apk update     && apk add --no-cache python3 py3-pip rsyslog rsyslog-tls ca-certificates openssl     && pip3 install awscli:
+10.66       File "/tmp/pip-install-84ubovdd/PyYAML/setup.py", line 201, in get_source_files
+10.66         self.cython_sources(ext.sources, ext)
+10.66       File "/usr/lib/python3.6/distutils/cmd.py", line 103, in __getattr__
+10.66         raise AttributeError(attr)
+10.66     AttributeError: cython_sources
+10.66     
+10.66     ----------------------------------------
+10.85 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-84ubovdd/PyYAML/
+10.86 You are using pip version 18.1, however version 21.3.1 is available.
+10.86 You should consider upgrading via the 'pip install --upgrade pip' command.
+------
+v1_Dockerfile:4
+--------------------
+   3 |     
+   4 | >>> RUN apk update \
+   5 | >>>     && apk add --no-cache python3 py3-pip rsyslog rsyslog-tls ca-certificates openssl \
+   6 | >>>     && pip3 install awscli
+   7 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk update     && apk add --no-cache python3 py3-pip rsyslog rsyslog-tls ca-certificates openssl     && pip3 install awscli" did not complete successfully: exit code: 1
+Duration: 0:12.58

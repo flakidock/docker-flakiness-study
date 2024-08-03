@@ -1,0 +1,95 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 515B done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 327.16kB done
+#4 DONE 0.4s
+
+#5 [1/7] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 DONE 0.7s
+
+#6 [2/7] RUN apk add --no-cache python3 &&     python3 -m venv /venv &&     . /venv/bin/activate &&     pip install --upgrade pip setuptools &&     rm -r /root/.cache
+#6 0.482 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 0.719 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 1.204 (1/17) Installing libbz2 (1.0.8-r6)
+#6 1.209 (2/17) Installing libexpat (2.6.2-r0)
+#6 1.214 (3/17) Installing libffi (3.4.6-r0)
+#6 1.218 (4/17) Installing gdbm (1.23-r1)
+#6 1.234 (5/17) Installing xz-libs (5.6.1-r3)
+#6 1.244 (6/17) Installing libgcc (13.2.1_git20240309-r0)
+#6 1.249 (7/17) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 1.278 (8/17) Installing mpdecimal (4.0.0-r0)
+#6 1.285 (9/17) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 1.311 (10/17) Installing libncursesw (6.4_p20240420-r0)
+#6 1.319 (11/17) Installing libpanelw (6.4_p20240420-r0)
+#6 1.324 (12/17) Installing readline (8.2.10-r0)
+#6 1.331 (13/17) Installing sqlite-libs (3.45.3-r1)
+#6 1.352 (14/17) Installing python3 (3.12.3-r1)
+#6 1.769 (15/17) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 2.019 (16/17) Installing pyc (3.12.3-r1)
+#6 2.021 (17/17) Installing python3-pyc (3.12.3-r1)
+#6 2.025 Executing busybox-1.36.1-r29.trigger
+#6 2.032 OK: 50 MiB in 31 packages
+#6 7.806 Requirement already satisfied: pip in /venv/lib/python3.12/site-packages (24.0)
+#6 7.981 Collecting pip
+#6 8.024   Downloading pip-24.2-py3-none-any.whl.metadata (3.6 kB)
+#6 8.486 Collecting setuptools
+#6 8.495   Downloading setuptools-72.1.0-py3-none-any.whl.metadata (6.6 kB)
+#6 8.616 Downloading pip-24.2-py3-none-any.whl (1.8 MB)
+#6 8.733    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 16.1 MB/s eta 0:00:00
+#6 8.743 Downloading setuptools-72.1.0-py3-none-any.whl (2.3 MB)
+#6 8.866    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 19.4 MB/s eta 0:00:00
+#6 8.981 Installing collected packages: setuptools, pip
+#6 10.59   Attempting uninstall: pip
+#6 10.59     Found existing installation: pip 24.0
+#6 10.67     Uninstalling pip-24.0:
+#6 10.68       Successfully uninstalled pip-24.0
+#6 12.47 Successfully installed pip-24.2 setuptools-72.1.0
+#6 DONE 14.9s
+
+#7 [3/7] COPY ./web_app/requirements.txt /tmp/requirements.txt
+#7 DONE 0.5s
+
+#8 [4/7] RUN . /venv/bin/activate && pip install -qr /tmp/requirements.txt
+#8 DONE 39.2s
+
+#9 [5/7] RUN mkdir -p /opt/webapp
+#9 DONE 0.9s
+
+#10 [6/7] COPY ./web_app /opt/webapp/
+#10 DONE 0.4s
+
+#11 [7/7] WORKDIR /opt/webapp
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.7s done
+#12 writing image sha256:4a1c4594e06b31052eddf780abe7963670e406799dd2467aaffcb06b852dffd6 0.0s done
+#12 naming to docker.io/library/image_name_v1_1 0.0s done
+#12 DONE 1.8s
+Duration: 1:0.63

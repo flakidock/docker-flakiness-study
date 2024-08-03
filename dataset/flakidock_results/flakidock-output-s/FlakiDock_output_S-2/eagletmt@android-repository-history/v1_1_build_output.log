@@ -1,0 +1,186 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 466B done
+#1 DONE 0.0s
+
+#2 [auth] library/golang:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/golang:1.10-stretch
+#3 ...
+
+#4 [internal] load metadata for docker.io/library/debian:stretch-slim
+#4 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/golang:1.10-stretch
+#3 DONE 0.9s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 4.99kB done
+#6 DONE 0.0s
+
+#7 [builder 1/5] FROM docker.io/library/golang:1.10-stretch@sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b
+#7 resolve docker.io/library/golang:1.10-stretch@sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b 0.0s done
+#7 sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b 2.04kB / 2.04kB done
+#7 sha256:eac40ba14416262e26def90a2d6f10d6ff579ea61c267963f6cbfbbe63b0ea7b 1.80kB / 1.80kB done
+#7 sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388 0B / 4.34MB 0.1s
+#7 sha256:6fd1f7edb6ab06a00b9d8a68836202042694651c5963f463afca8b76a693e099 5.47kB / 5.47kB done
+#7 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 0B / 45.34MB 0.1s
+#7 sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2 0B / 10.78MB 0.1s
+#7 sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388 2.10MB / 4.34MB 0.4s
+#7 sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2 6.29MB / 10.78MB 0.4s
+#7 sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388 4.34MB / 4.34MB 0.5s done
+#7 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 14.68MB / 45.34MB 0.6s
+#7 sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2 10.78MB / 10.78MB 0.5s done
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 0B / 50.06MB 0.6s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 0B / 57.62MB 0.6s
+#7 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 27.26MB / 45.34MB 0.8s
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 7.34MB / 50.06MB 0.8s
+#7 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 31.46MB / 45.34MB 0.9s
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 10.49MB / 50.06MB 0.9s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 5.24MB / 57.62MB 0.9s
+#7 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 35.65MB / 45.34MB 1.0s
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 14.68MB / 50.06MB 1.0s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 8.39MB / 57.62MB 1.0s
+#7 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 45.34MB / 45.34MB 1.2s
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 23.07MB / 50.06MB 1.2s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 15.73MB / 57.62MB 1.2s
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 28.31MB / 50.06MB 1.3s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 20.97MB / 57.62MB 1.3s
+#7 extracting sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968
+#7 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 45.34MB / 45.34MB 1.3s done
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 33.55MB / 50.06MB 1.4s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 24.12MB / 57.62MB 1.4s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 0B / 102.19MB 1.4s
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 37.75MB / 50.06MB 1.5s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 28.31MB / 57.62MB 1.5s
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 40.89MB / 50.06MB 1.6s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 31.46MB / 57.62MB 1.6s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 7.34MB / 102.19MB 1.6s
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 45.09MB / 50.06MB 1.7s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 35.65MB / 57.62MB 1.7s
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 48.23MB / 50.06MB 1.8s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 40.89MB / 57.62MB 1.8s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 13.63MB / 102.19MB 1.8s
+#7 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 50.06MB / 50.06MB 2.0s done
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 53.48MB / 57.62MB 2.0s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 25.17MB / 102.19MB 2.0s
+#7 sha256:d3d9c96611f1f779cd0bf0d343ff910d5bc1aafb180b4e3aac7190db8269a829 0B / 126B 2.0s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 57.62MB / 57.62MB 2.1s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 31.46MB / 102.19MB 2.1s
+#7 sha256:d3d9c96611f1f779cd0bf0d343ff910d5bc1aafb180b4e3aac7190db8269a829 126B / 126B 2.1s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 40.89MB / 102.19MB 2.2s
+#7 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 57.62MB / 57.62MB 2.2s done
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 56.62MB / 102.19MB 2.4s
+#7 sha256:d3d9c96611f1f779cd0bf0d343ff910d5bc1aafb180b4e3aac7190db8269a829 126B / 126B 2.2s done
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 62.91MB / 102.19MB 2.5s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 68.16MB / 102.19MB 2.6s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 74.45MB / 102.19MB 2.7s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 79.69MB / 102.19MB 2.8s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 84.93MB / 102.19MB 2.9s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 93.32MB / 102.19MB 3.0s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 100.66MB / 102.19MB 3.1s
+#7 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 102.19MB / 102.19MB 3.4s done
+#7 extracting sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 3.0s done
+#7 extracting sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2
+#7 ...
+
+#8 [stage-1 1/4] FROM docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#8 resolve docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 0.0s done
+#8 sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 1.21kB / 1.21kB done
+#8 sha256:c5cd3ffceeb25b683bf5111ea89bf8049a177e00fb237235d48076a19cc80097 529B / 529B done
+#8 sha256:0e23ec2ce5e621c0e8fa57a53c7781d59d57de8c139a8a351b7236530cd85ec2 1.46kB / 1.46kB done
+#8 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 22.57MB / 22.57MB 2.8s done
+#8 extracting sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 1.6s done
+#8 DONE 4.6s
+
+#7 [builder 1/5] FROM docker.io/library/golang:1.10-stretch@sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b
+#7 extracting sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2 0.5s done
+#7 extracting sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388
+#7 extracting sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388 0.1s done
+#7 extracting sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8
+#7 CANCELED
+
+#9 [stage-1 2/4] RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates git && rm -rf /var/lib/apt/lists/*
+#9 0.224 Ign:1 http://deb.debian.org/debian stretch InRelease
+#9 0.225 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#9 0.236 Ign:3 http://deb.debian.org/debian stretch-updates InRelease
+#9 0.236 Ign:4 http://security.debian.org/debian-security stretch/updates Release
+#9 0.243 Ign:5 http://deb.debian.org/debian stretch Release
+#9 0.250 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#9 0.254 Ign:7 http://deb.debian.org/debian stretch-updates Release
+#9 0.262 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.262 Ign:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#9 0.272 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#9 0.272 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#9 0.283 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#9 0.283 Ign:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#9 0.292 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#9 0.293 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#9 0.302 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.307 Ign:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#9 0.311 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#9 0.318 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#9 0.320 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#9 0.328 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#9 0.330 Ign:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#9 0.337 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.341 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#9 0.348 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#9 0.353 Ign:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#9 0.356 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#9 0.367 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#9 0.368 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#9 0.378 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.378 Err:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#9 0.378   404  Not Found [IP: 151.101.130.132 80]
+#9 0.386 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#9 0.394 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#9 0.403 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#9 0.412 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.422 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#9 0.433 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#9 0.445 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#9 0.454 Err:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#9 0.454   404  Not Found
+#9 0.471 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#9 0.480 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#9 0.489 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#9 0.489   404  Not Found
+#9 0.492 Reading package lists...
+#9 0.500 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#9 0.500 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#9 0.500 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#9 0.500 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+#9 0.500 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#9 0.500 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#9 0.500 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#9 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends ca-certificates git && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [stage-1 2/4] RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates git && rm -rf /var/lib/apt/lists/*:
+0.489 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+0.489   404  Not Found
+0.492 Reading package lists...
+0.500 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.500 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.500 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.500 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+0.500 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.500 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.500 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:10
+--------------------
+   8 |     
+   9 |     FROM debian:stretch-slim
+  10 | >>> RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates git && rm -rf /var/lib/apt/lists/*
+  11 |     COPY --from=builder /build/update /root/
+  12 |     COPY auto.sh /root/
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends ca-certificates git && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+Duration: 0:7.32

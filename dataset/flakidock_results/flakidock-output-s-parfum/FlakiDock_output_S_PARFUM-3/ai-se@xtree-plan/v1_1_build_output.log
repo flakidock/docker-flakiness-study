@@ -1,0 +1,144 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 705B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:latest
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/9] FROM docker.io/library/ubuntu:latest@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
+#4 resolve docker.io/library/ubuntu:latest@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30 0.0s done
+#4 sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30 1.13kB / 1.13kB done
+#4 sha256:c920ba4cfca05503764b785c16b76d43c83a6df8d1ab107e7e6610000d94315c 424B / 424B done
+#4 sha256:35a88802559dd2077e584394471ddaa1a2c5bfd16893b829ea57619301eb3908 2.30kB / 2.30kB done
+#4 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 0B / 29.71MB 0.1s
+#4 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 8.39MB / 29.71MB 0.2s
+#4 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 29.71MB / 29.71MB 0.4s
+#4 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 29.71MB / 29.71MB 0.5s done
+#4 extracting sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 154.30MB 1.0s done
+#5 DONE 1.0s
+
+#4 [1/9] FROM docker.io/library/ubuntu:latest@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
+#4 extracting sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 1.6s done
+#4 DONE 2.3s
+
+#6 [2/9] RUN export DEBIAN_FRONTEND=noninteractive
+#6 DONE 1.0s
+
+#7 [3/9] RUN apt-get update
+#7 0.347 Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+#7 0.347 Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+#7 0.735 Get:3 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [327 kB]
+#7 0.752 Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+#7 0.850 Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+#7 0.954 Get:6 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [326 kB]
+#7 0.955 Get:7 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+#7 1.004 Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [261 kB]
+#7 1.051 Get:9 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [12.7 kB]
+#7 1.963 Get:10 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+#7 1.976 Get:11 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+#7 2.055 Get:12 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+#7 2.058 Get:13 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [413 kB]
+#7 2.077 Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [385 kB]
+#7 2.095 Get:15 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [16.9 kB]
+#7 2.097 Get:16 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [261 kB]
+#7 2.108 Get:17 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [11.5 kB]
+#7 3.124 Fetched 24.2 MB in 3s (8288 kB/s)
+#7 3.124 Reading package lists...
+#7 DONE 4.0s
+
+#8 [4/9] RUN apt-get install --no-install-recommends -y tzdata && rm -rf /var/lib/apt/lists/*;
+#8 0.186 Reading package lists...
+#8 0.943 Building dependency tree...
+#8 1.102 Reading state information...
+#8 1.292 The following NEW packages will be installed:
+#8 1.292   tzdata
+#8 1.563 0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+#8 1.563 Need to get 273 kB of archives.
+#8 1.563 After this operation, 1414 kB of additional disk space will be used.
+#8 1.563 Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 tzdata all 2024a-3ubuntu1.1 [273 kB]
+#8 2.282 debconf: delaying package configuration, since apt-utils is not installed
+#8 2.309 Fetched 273 kB in 1s (311 kB/s)
+#8 2.341 Selecting previously unselected package tzdata.
+#8 2.341 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4376 files and directories currently installed.)
+#8 2.344 Preparing to unpack .../tzdata_2024a-3ubuntu1.1_all.deb ...
+#8 2.350 Unpacking tzdata (2024a-3ubuntu1.1) ...
+#8 2.448 Setting up tzdata (2024a-3ubuntu1.1) ...
+#8 2.528 debconf: unable to initialize frontend: Dialog
+#8 2.528 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#8 2.528 debconf: falling back to frontend: Readline
+#8 2.528 debconf: unable to initialize frontend: Readline
+#8 2.528 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.38.2 /usr/local/share/perl/5.38.2 /usr/lib/x86_64-linux-gnu/perl5/5.38 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.38 /usr/share/perl/5.38 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8.)
+#8 2.528 debconf: falling back to frontend: Teletype
+#8 2.561 Configuring tzdata
+#8 2.561 ------------------
+#8 2.561 
+#8 2.561 Please select the geographic area in which you live. Subsequent configuration
+#8 2.561 questions will narrow this down by presenting a list of cities, representing
+#8 2.561 the time zones in which they are located.
+#8 2.561 
+#8 2.561   1. Africa   3. Antarctica  5. Asia      7. Australia  9. Indian    11. Etc
+#8 2.561   2. America  4. Arctic      6. Atlantic  8. Europe     10. Pacific
+#8 2.561 Geographic area: 
+#8 2.561 Use of uninitialized value $_[1] in join or string at /usr/share/perl5/Debconf/DbDriver/Stack.pm line 112.
+#8 2.571 
+#8 2.571 Current default time zone: '/UTC'
+#8 2.572 Local time is now:      Thu Aug  1 07:26:40 UTC 2024.
+#8 2.572 Universal Time is now:  Thu Aug  1 07:26:40 UTC 2024.
+#8 2.572 Run 'dpkg-reconfigure tzdata' if you wish to change it.
+#8 2.572 
+#8 2.575 Use of uninitialized value $val in substitution (s///) at /usr/share/perl5/Debconf/Format/822.pm line 84, <GEN6> line 4.
+#8 2.575 Use of uninitialized value $val in concatenation (.) or string at /usr/share/perl5/Debconf/Format/822.pm line 85, <GEN6> line 4.
+#8 DONE 2.6s
+
+#9 [5/9] RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+#9 DONE 0.2s
+
+#10 [6/9] RUN dpkg-reconfigure --frontend noninteractive tzdata
+#10 0.339 
+#10 0.339 Current default time zone: 'America/New_York'
+#10 0.340 Local time is now:      Thu Aug  1 03:26:41 EDT 2024.
+#10 0.340 Universal Time is now:  Thu Aug  1 07:26:41 UTC 2024.
+#10 0.340 
+#10 DONE 0.4s
+
+#11 [7/9] RUN apt-get install --no-install-recommends -y     python3     python3-pip     python3-setuptools     python3-tk && rm -rf /var/lib/apt/lists/*;
+#11 0.195 Reading package lists...
+#11 0.207 Building dependency tree...
+#11 0.207 Reading state information...
+#11 0.208 E: Unable to locate package python3
+#11 0.208 E: Unable to locate package python3-pip
+#11 0.208 E: Unable to locate package python3-setuptools
+#11 0.208 E: Unable to locate package python3-tk
+#11 ERROR: process "/bin/sh -c apt-get install --no-install-recommends -y     python3     python3-pip     python3-setuptools     python3-tk && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+------
+ > [7/9] RUN apt-get install --no-install-recommends -y     python3     python3-pip     python3-setuptools     python3-tk && rm -rf /var/lib/apt/lists/*;:
+
+0.207 Building dependency tree...
+0.207 Reading state information...
+0.208 E: Unable to locate package python3
+0.208 E: Unable to locate package python3-pip
+0.208 E: Unable to locate package python3-setuptools
+0.208 E: Unable to locate package python3-tk
+------
+v1_Dockerfile:10
+--------------------
+   9 |     RUN dpkg-reconfigure --frontend noninteractive tzdata
+  10 | >>> RUN apt-get install --no-install-recommends -y \
+  11 | >>>     python3 \
+  12 | >>>     python3-pip \
+  13 | >>>     python3-setuptools \
+  14 | >>>     python3-tk && rm -rf /var/lib/apt/lists/*;
+  15 |     COPY . /
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get install --no-install-recommends -y     python3     python3-pip     python3-setuptools     python3-tk && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+Duration: 0:11.87

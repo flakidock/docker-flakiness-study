@@ -1,0 +1,181 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 822B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.11
+#3 DONE 1.2s
+
+#4 [1/7] FROM docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d
+#4 resolve docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 4.76kB done
+#5 DONE 0.4s
+
+#4 [1/7] FROM docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d
+#4 resolve docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d 0.4s done
+#4 sha256:a0ce0e57c6900f6f13cee6f1c1e0337cedd745ebc1bac226c61eb574667c6d04 528B / 528B done
+#4 sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d 1.64kB / 1.64kB done
+#4 sha256:a787cb9865032e5b5a407ecdf34b57a23a4a076aaa043d71742ddb6726ec9229 1.47kB / 1.47kB done
+#4 sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 0B / 2.82MB 0.1s
+#4 sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 2.82MB / 2.82MB 0.2s
+#4 sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 2.82MB / 2.82MB 0.3s done
+#4 extracting sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a
+#4 extracting sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 0.8s done
+#4 DONE 2.0s
+
+#6 [2/7] RUN apk update &&   apk add --update     bash     easy-rsa     git     openssh-client     curl     ca-certificates     jq     python     py-yaml     py2-pip     libstdc++     gpgme     git-crypt     &&   rm -rf /var/cache/apk/*
+#6 1.525 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#6 2.826 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#6 3.441 v3.11.13-12-g2cfa91a2b4 [http://dl-cdn.alpinelinux.org/alpine/v3.11/main]
+#6 3.441 v3.11.11-124-gf2729ece5a [http://dl-cdn.alpinelinux.org/alpine/v3.11/community]
+#6 3.441 OK: 11276 distinct packages available
+#6 3.927 (1/54) Installing ncurses-terminfo-base (6.1_p20200118-r4)
+#6 4.530 (2/54) Installing ncurses-libs (6.1_p20200118-r4)
+#6 4.872 (3/54) Installing readline (8.0.1-r0)
+#6 5.112 (4/54) Installing bash (5.0.11-r1)
+#6 5.371 Executing bash-5.0.11-r1.post-install
+#6 5.398 (5/54) Installing ca-certificates (20191127-r2)
+#6 5.658 (6/54) Installing nghttp2-libs (1.40.0-r1)
+#6 5.915 (7/54) Installing libcurl (7.79.1-r0)
+#6 6.194 (8/54) Installing curl (7.79.1-r0)
+#6 6.491 (9/54) Installing openssl (1.1.1l-r0)
+#6 6.815 (10/54) Installing easy-rsa (3.0.6-r0)
+#6 7.192 (11/54) Installing expat (2.2.9-r1)
+#6 7.475 (12/54) Installing pcre2 (10.34-r1)
+#6 7.891 (13/54) Installing git (2.24.4-r0)
+#6 8.959 (14/54) Installing libgcc (9.3.0-r0)
+#6 9.160 (15/54) Installing libstdc++ (9.3.0-r0)
+#6 9.460 (16/54) Installing git-crypt (0.6.0-r1)
+#6 9.874 (17/54) Installing libgpg-error (1.36-r2)
+#6 10.30 (18/54) Installing libassuan (2.5.3-r0)
+#6 11.13 (19/54) Installing libcap (2.27-r0)
+#6 11.34 (20/54) Installing libffi (3.2.1-r6)
+#6 11.62 (21/54) Installing libintl (0.20.1-r2)
+#6 12.04 (22/54) Installing libblkid (2.34-r1)
+#6 12.91 (23/54) Installing libmount (2.34-r1)
+#6 13.37 (24/54) Installing pcre (8.43-r1)
+#6 13.73 (25/54) Installing glib (2.62.6-r0)
+#6 14.52 (26/54) Installing libgcrypt (1.8.8-r1)
+#6 15.55 (27/54) Installing libsecret (0.19.1-r0)
+#6 16.39 (28/54) Installing pinentry (1.1.0-r2)
+#6 16.75 Executing pinentry-1.1.0-r2.post-install
+#6 16.78 (29/54) Installing libbz2 (1.0.8-r1)
+#6 17.07 (30/54) Installing gmp (6.1.2-r1)
+#6 17.44 (31/54) Installing nettle (3.5.1-r0)
+#6 18.36 (32/54) Installing p11-kit (0.23.18.1-r1)
+#6 18.92 (33/54) Installing libtasn1 (4.15.0-r0)
+#6 19.31 (34/54) Installing libunistring (0.9.10-r0)
+#6 19.96 (35/54) Installing gnutls (3.6.15-r1)
+#6 21.13 (36/54) Installing libksba (1.3.5-r0)
+#6 21.52 (37/54) Installing db (5.3.28-r1)
+#6 22.12 (38/54) Installing libsasl (2.1.27-r5)
+#6 22.53 (39/54) Installing libldap (2.4.48-r3)
+#6 23.48 (40/54) Installing npth (1.6-r0)
+#6 24.12 (41/54) Installing sqlite-libs (3.30.1-r2)
+#6 24.62 (42/54) Installing gnupg (2.2.19-r1)
+#6 25.99 (43/54) Installing gpgme (1.13.1-r1)
+#6 26.40 (44/54) Installing oniguruma (6.9.4-r1)
+#6 27.27 (45/54) Installing jq (1.6-r0)
+#6 27.75 (46/54) Installing openssh-keygen (8.1_p1-r1)
+#6 28.02 (47/54) Installing libedit (20191211.3.1-r0)
+#6 28.34 (48/54) Installing openssh-client (8.1_p1-r1)
+#6 29.00 (49/54) Installing yaml (0.2.2-r1)
+#6 29.37 (50/54) Installing py3-yaml (5.3.1-r1)
+#6 29.78 (51/54) Installing gdbm (1.13-r1)
+#6 30.06 (52/54) Installing python2 (2.7.18-r0)
+#6 31.91 (53/54) Installing py-setuptools (42.0.2-r0)
+#6 32.18 (54/54) Installing py2-pip (18.1-r0)
+#6 32.73 Executing busybox-1.31.1-r11.trigger
+#6 32.76 Executing ca-certificates-20191127-r2.trigger
+#6 32.99 OK: 103 MiB in 68 packages
+#6 DONE 36.7s
+
+#7 [3/7] RUN pip install ijson awscli
+#7 5.759 Collecting ijson
+#7 7.251   Downloading https://files.pythonhosted.org/packages/6c/83/28e9e93a3a61913e334e3a2e78ea9924bb9f9b1ac45898977f9d9dd6133f/ijson-3.3.0.tar.gz (60kB)
+#7 8.470 Collecting awscli
+#7 14.71   Downloading https://files.pythonhosted.org/packages/aa/24/e098cf5ce28a764bca174e88f4ccb70754e9f049c9bf986e582aedcb7420/awscli-1.19.112-py2.py3-none-any.whl (3.6MB)
+#7 17.29 Collecting botocore==1.20.112 (from awscli)
+#7 24.66   Downloading https://files.pythonhosted.org/packages/c7/ea/11c3beca131920f552602b98d7ba9fc5b46bee6a59cbd48a95a85cbb8f41/botocore-1.20.112-py2.py3-none-any.whl (7.7MB)
+#7 26.24 Collecting s3transfer<0.5.0,>=0.4.0 (from awscli)
+#7 26.47   Downloading https://files.pythonhosted.org/packages/63/d0/693477c688348654ddc21dcdce0817653a294aa43f41771084c25e7ff9c7/s3transfer-0.4.2-py2.py3-none-any.whl (79kB)
+#7 26.60 Collecting colorama<0.4.4,>=0.2.5 (from awscli)
+#7 26.76   Downloading https://files.pythonhosted.org/packages/c9/dc/45cdef1b4d119eb96316b3117e6d5708a08029992b2fee2c143c7a0a5cc5/colorama-0.4.3-py2.py3-none-any.whl
+#7 26.82 Collecting PyYAML<5.5,>=3.10 (from awscli)
+#7 27.72   Downloading https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz (175kB)
+#7 28.31   Installing build dependencies: started
+#7 42.91   Installing build dependencies: finished with status 'done'
+#7 44.05     Complete output from command python setup.py egg_info:
+#7 44.05     running egg_info
+#7 44.05     creating pip-egg-info/PyYAML.egg-info
+#7 44.05     writing pip-egg-info/PyYAML.egg-info/PKG-INFO
+#7 44.05     writing top-level names to pip-egg-info/PyYAML.egg-info/top_level.txt
+#7 44.05     writing dependency_links to pip-egg-info/PyYAML.egg-info/dependency_links.txt
+#7 44.05     writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+#7 44.05     Traceback (most recent call last):
+#7 44.05       File "<string>", line 1, in <module>
+#7 44.05       File "/tmp/pip-install-d5m8qZ/PyYAML/setup.py", line 295, in <module>
+#7 44.05         python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+#7 44.05       File "/tmp/pip-build-env-3UB_0L/lib/python2.7/site-packages/setuptools/__init__.py", line 162, in setup
+#7 44.05         return distutils.core.setup(**attrs)
+#7 44.05       File "/usr/lib/python2.7/distutils/core.py", line 151, in setup
+#7 44.05         dist.run_commands()
+#7 44.05       File "/usr/lib/python2.7/distutils/dist.py", line 953, in run_commands
+#7 44.05         self.run_command(cmd)
+#7 44.05       File "/usr/lib/python2.7/distutils/dist.py", line 972, in run_command
+#7 44.05         cmd_obj.run()
+#7 44.05       File "/tmp/pip-build-env-3UB_0L/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 296, in run
+#7 44.05         self.find_sources()
+#7 44.05       File "/tmp/pip-build-env-3UB_0L/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 303, in find_sources
+#7 44.05         mm.run()
+#7 44.05       File "/tmp/pip-build-env-3UB_0L/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 534, in run
+#7 44.05         self.add_defaults()
+#7 44.05       File "/tmp/pip-build-env-3UB_0L/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 570, in add_defaults
+#7 44.05         sdist.add_defaults(self)
+#7 44.05       File "/tmp/pip-build-env-3UB_0L/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 36, in add_defaults
+#7 44.05         self._add_defaults_ext()
+#7 44.05       File "/tmp/pip-build-env-3UB_0L/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+#7 44.05         self.filelist.extend(build_ext.get_source_files())
+#7 44.05       File "/tmp/pip-install-d5m8qZ/PyYAML/setup.py", line 201, in get_source_files
+#7 44.05         self.cython_sources(ext.sources, ext)
+#7 44.05       File "/usr/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+#7 44.05         raise AttributeError, attr
+#7 44.05     AttributeError: cython_sources
+#7 44.05     
+#7 44.05     ----------------------------------------
+#7 45.14 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-d5m8qZ/PyYAML/
+#7 ERROR: process "/bin/sh -c pip install ijson awscli" did not complete successfully: exit code: 1
+------
+ > [3/7] RUN pip install ijson awscli:
+44.05       File "/tmp/pip-build-env-3UB_0L/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+44.05         self.filelist.extend(build_ext.get_source_files())
+44.05       File "/tmp/pip-install-d5m8qZ/PyYAML/setup.py", line 201, in get_source_files
+44.05         self.cython_sources(ext.sources, ext)
+44.05       File "/usr/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+44.05         raise AttributeError, attr
+44.05     AttributeError: cython_sources
+44.05     
+44.05     ----------------------------------------
+45.14 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-d5m8qZ/PyYAML/
+------
+Dockerfile:21
+--------------------
+  19 |       rm -rf /var/cache/apk/*
+  20 |     
+  21 | >>> RUN pip install ijson awscli
+  22 |     RUN adduser -h /backup -D backup
+  23 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip install ijson awscli" did not complete successfully: exit code: 1
+Duration: 1:27.80

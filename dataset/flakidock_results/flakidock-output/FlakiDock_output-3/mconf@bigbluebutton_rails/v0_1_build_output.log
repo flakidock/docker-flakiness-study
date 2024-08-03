@@ -1,0 +1,116 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 30B
+#1 transferring dockerfile: 540B done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B 0.0s done
+#2 DONE 0.3s
+
+#3 [internal] load metadata for docker.io/library/ruby:2.3.8
+#3 ...
+
+#4 [auth] library/ruby:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ruby:2.3.8
+#3 DONE 1.5s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/8] FROM docker.io/library/ruby:2.3.8@sha256:78cc821d95c48621e577b6b0d44c9d509f0f2a4e089b9fd0ca2ae86f274773a8
+#6 resolve docker.io/library/ruby:2.3.8@sha256:78cc821d95c48621e577b6b0d44c9d509f0f2a4e089b9fd0ca2ae86f274773a8
+#6 resolve docker.io/library/ruby:2.3.8@sha256:78cc821d95c48621e577b6b0d44c9d509f0f2a4e089b9fd0ca2ae86f274773a8 0.2s done
+#6 sha256:78cc821d95c48621e577b6b0d44c9d509f0f2a4e089b9fd0ca2ae86f274773a8 2.37kB / 2.37kB done
+#6 sha256:79c9f9a430a66c7e307573c8220d0a83a834fdcf4f5034a91730b7015742c75b 2.00kB / 2.00kB done
+#6 sha256:c0d23ebb3ed63af928b7c4a954de87a5d3c1fe98a2dfcb2a44e685a3e65c3c61 7.50kB / 7.50kB done
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 3.68MB 1.8s done
+#5 DONE 2.2s
+
+#6 [1/8] FROM docker.io/library/ruby:2.3.8@sha256:78cc821d95c48621e577b6b0d44c9d509f0f2a4e089b9fd0ca2ae86f274773a8
+#6 DONE 4.0s
+
+#7 [2/8] RUN apt-get update &&   apt-get install -y qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base                      gstreamer1.0-tools gstreamer1.0-x
+#7 1.119 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+#7 1.130 Ign:2 http://security.debian.org/debian-security stretch/updates Release
+#7 1.140 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 1.267 Ign:4 http://deb.debian.org/debian stretch InRelease
+#7 1.425 Ign:5 http://deb.debian.org/debian stretch-updates InRelease
+#7 1.476 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 1.487 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 1.583 Ign:7 http://deb.debian.org/debian stretch Release
+#7 1.742 Ign:8 http://deb.debian.org/debian stretch-updates Release
+#7 1.815 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 1.826 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 1.899 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 1.995 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 2.006 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 2.057 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 2.215 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 2.336 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 2.346 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 2.373 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 2.530 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 2.682 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 2.687 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 2.692 Ign:3 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 2.845 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 3.004 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 3.028 Err:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 3.028   404  Not Found
+#7 3.162 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 3.320 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 3.478 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 3.635 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 3.793 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 3.952 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 4.109 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 4.267 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 4.426 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 4.583 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 4.742 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 4.900 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 5.058 Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 5.058   404  Not Found
+#7 5.225 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 5.384 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 5.543 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 5.543   404  Not Found
+#7 5.566 Reading package lists...
+#7 5.587 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#7 5.587 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#7 5.587 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#7 5.587 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+#7 5.587 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#7 5.587 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#7 5.587 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#7 ERROR: process "/bin/sh -c apt-get update &&   apt-get install -y qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base                      gstreamer1.0-tools gstreamer1.0-x" did not complete successfully: exit code: 100
+------
+ > [2/8] RUN apt-get update &&   apt-get install -y qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base                      gstreamer1.0-tools gstreamer1.0-x:
+5.543 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+5.543   404  Not Found
+5.566 Reading package lists...
+5.587 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+5.587 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+5.587 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+5.587 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+5.587 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+5.587 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+5.587 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+Dockerfile:3
+--------------------
+   2 |     
+   3 | >>> RUN apt-get update && \
+   4 | >>>   apt-get install -y qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base \
+   5 | >>>                      gstreamer1.0-tools gstreamer1.0-x
+   6 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update &&   apt-get install -y qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base                      gstreamer1.0-tools gstreamer1.0-x" did not complete successfully: exit code: 100
+Duration: 0:12.59

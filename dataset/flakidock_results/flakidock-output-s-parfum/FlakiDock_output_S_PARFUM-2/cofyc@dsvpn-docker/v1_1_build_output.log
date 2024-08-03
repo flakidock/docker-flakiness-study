@@ -1,0 +1,109 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 862B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for k8s.gcr.io/debian-base:v1.0.0
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [stage-1 1/3] FROM k8s.gcr.io/debian-base:v1.0.0@sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742
+#4 resolve k8s.gcr.io/debian-base:v1.0.0@sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742 0.0s done
+#4 sha256:204e96332c912beab21c2cef37a31b98c9b953ac4a0bc705d3ede0ba3c167163 1.51kB / 1.51kB done
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 0B / 17.74MB 0.1s
+#4 sha256:3801f944c765dc1b54900826ca67b1380bb8c73b9caf4a2a27ce613b3ba3e742 1.67kB / 1.67kB done
+#4 sha256:5f25d97ece9076612b64bb551e12f1e39a520176b684e2d663ce1bd53c5d0618 529B / 529B done
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 4.19MB / 17.74MB 0.3s
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 13.63MB / 17.74MB 0.4s
+#4 sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 17.74MB / 17.74MB 0.5s done
+#4 extracting sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 0.1s
+#4 extracting sha256:39fafc05754f195f134ca11ecdb1c9a691ab0848c697fffeb5a85f900caaf6e1 1.0s done
+#4 DONE 1.7s
+
+#5 [builder 2/3] WORKDIR /dsvpn
+#5 DONE 0.2s
+
+#6 [builder 3/3] RUN set -x     && clean-install clang git ca-certificates make     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn      && git checkout ${GIT_REF} && make
+#6 0.184 + clean-install clang git ca-certificates make
+#6 0.225 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+#6 0.228 Ign:2 http://deb.debian.org/debian stretch InRelease
+#6 0.235 Ign:3 http://security.debian.org/debian-security stretch/updates Release
+#6 0.236 Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+#6 0.245 Ign:5 http://deb.debian.org/debian stretch Release
+#6 0.247 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.255 Ign:7 http://deb.debian.org/debian stretch-updates Release
+#6 0.256 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.265 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.273 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.282 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.292 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.299 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.309 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.317 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.326 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.338 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.346 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.357 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.366 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.374 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.384 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.394 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.403 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.414 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.417 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.424 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.427 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.433 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.438 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.445 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.448 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.454 Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.454   404  Not Found
+#6 0.459 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.470 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.470 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.479 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.479   404  Not Found
+#6 0.481 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.486 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.492 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.502 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.513 Err:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.513   404  Not Found [IP: 151.101.66.132 80]
+#6 0.518 Reading package lists...
+#6 0.524 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 0.524 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 0.524 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 0.524 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+#6 0.524 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 0.524 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 0.524 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c set -x     && clean-install clang git ca-certificates make     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn      && git checkout ${GIT_REF} && make" did not complete successfully: exit code: 100
+------
+ > [builder 3/3] RUN set -x     && clean-install clang git ca-certificates make     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn      && git checkout ${GIT_REF} && make:
+0.513 Err:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+0.513   404  Not Found [IP: 151.101.66.132 80]
+0.518 Reading package lists...
+0.524 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.524 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.524 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.524 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+0.524 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.524 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.524 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:6
+--------------------
+   5 |     
+   6 | >>> RUN set -x \
+   7 | >>>     && clean-install clang git ca-certificates make \
+   8 | >>>     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn  \
+   9 | >>>     && git checkout ${GIT_REF} && make
+  10 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c set -x     && clean-install clang git ca-certificates make     && git clone --depth=1 https://github.com/jedisct1/dsvpn /dsvpn      && git checkout ${GIT_REF} && make" did not complete successfully: exit code: 100
+Duration: 0:3.71

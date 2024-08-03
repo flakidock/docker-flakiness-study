@@ -1,0 +1,21 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 924B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker-registry.wikimedia.org/releng/ci-stretch:latest
+#2 ERROR: docker-registry.wikimedia.org/releng/ci-stretch:latest: not found
+------
+ > [internal] load metadata for docker-registry.wikimedia.org/releng/ci-stretch:latest:
+------
+v1_Dockerfile:3
+--------------------
+   1 |     # Dockerfile
+   2 |     # Example build: docker build -t mjolnir:latest
+   3 | >>> FROM docker-registry.wikimedia.org/releng/ci-stretch
+   4 |     
+   5 |     ENV VIRTUAL_ENV=/opt/venv
+--------------------
+ERROR: failed to solve: docker-registry.wikimedia.org/releng/ci-stretch: docker-registry.wikimedia.org/releng/ci-stretch:latest: not found
+Duration: 0:0.70

@@ -1,0 +1,156 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 319B done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/golang:1.10-stretch
+#3 ...
+
+#4 [auth] library/debian:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/debian:stretch-slim
+#5 DONE 1.7s
+
+#3 [internal] load metadata for docker.io/library/golang:1.10-stretch
+#3 DONE 1.7s
+
+#6 [stage-1 1/4] FROM docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#6 resolve docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#6 ...
+
+#7 [internal] load build context
+#7 transferring context: 4.87kB done
+#7 DONE 0.2s
+
+#8 [builder 1/5] FROM docker.io/library/golang:1.10-stretch@sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b
+#8 resolve docker.io/library/golang:1.10-stretch@sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b
+#8 resolve docker.io/library/golang:1.10-stretch@sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b 0.4s done
+#8 sha256:6fd1f7edb6ab06a00b9d8a68836202042694651c5963f463afca8b76a693e099 5.47kB / 5.47kB done
+#8 sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b 2.04kB / 2.04kB done
+#8 sha256:eac40ba14416262e26def90a2d6f10d6ff579ea61c267963f6cbfbbe63b0ea7b 1.80kB / 1.80kB done
+#8 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 0B / 45.34MB 0.2s
+#8 sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2 0B / 10.78MB 0.3s
+#8 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 7.34MB / 45.34MB 0.4s
+#8 sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2 3.15MB / 10.78MB 0.4s
+#8 sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388 0B / 4.34MB 0.4s
+#8 ...
+
+#6 [stage-1 1/4] FROM docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#6 resolve docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 0.5s done
+#6 sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 1.21kB / 1.21kB done
+#6 sha256:c5cd3ffceeb25b683bf5111ea89bf8049a177e00fb237235d48076a19cc80097 529B / 529B done
+#6 sha256:0e23ec2ce5e621c0e8fa57a53c7781d59d57de8c139a8a351b7236530cd85ec2 1.46kB / 1.46kB done
+#6 DONE 1.0s
+
+#8 [builder 1/5] FROM docker.io/library/golang:1.10-stretch@sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b
+#8 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 13.63MB / 45.34MB 0.6s
+#8 sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2 10.78MB / 10.78MB 0.6s
+#8 sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388 3.15MB / 4.34MB 0.6s
+#8 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 30.41MB / 45.34MB 0.8s
+#8 sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388 4.34MB / 4.34MB 0.8s
+#8 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 36.70MB / 45.34MB 0.9s
+#8 sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2 10.78MB / 10.78MB 0.8s done
+#8 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 45.34MB / 45.34MB 1.1s
+#8 sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388 4.34MB / 4.34MB 0.9s done
+#8 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 0B / 50.06MB 1.1s
+#8 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 3.15MB / 50.06MB 1.2s
+#8 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 11.53MB / 50.06MB 1.3s
+#8 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 23.07MB / 50.06MB 1.5s
+#8 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 34.60MB / 50.06MB 1.7s
+#8 ...
+
+#9 [auth] library/golang:pull token for registry-1.docker.io
+#9 DONE 0.0s
+
+#8 [builder 1/5] FROM docker.io/library/golang:1.10-stretch@sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b
+#8 sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 45.34MB / 45.34MB 1.7s done
+#8 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 40.89MB / 50.06MB 1.8s
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 0B / 57.62MB 1.8s
+#8 extracting sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968
+#8 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 47.19MB / 50.06MB 1.9s
+#8 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 50.06MB / 50.06MB 2.0s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 0B / 102.19MB 2.0s
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 6.29MB / 57.62MB 2.4s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 5.24MB / 102.19MB 2.4s
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 16.78MB / 57.62MB 2.6s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 16.78MB / 102.19MB 2.6s
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 24.12MB / 57.62MB 2.7s
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 30.41MB / 57.62MB 2.8s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 26.21MB / 102.19MB 2.8s
+#8 sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 50.06MB / 50.06MB 2.8s done
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 35.65MB / 57.62MB 2.9s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 31.46MB / 102.19MB 2.9s
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 42.99MB / 57.62MB 3.0s
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 48.23MB / 57.62MB 3.1s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 41.94MB / 102.19MB 3.1s
+#8 sha256:d3d9c96611f1f779cd0bf0d343ff910d5bc1aafb180b4e3aac7190db8269a829 0B / 126B 3.1s
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 51.38MB / 57.62MB 3.2s
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 55.57MB / 57.62MB 3.3s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 47.19MB / 102.19MB 3.3s
+#8 sha256:d3d9c96611f1f779cd0bf0d343ff910d5bc1aafb180b4e3aac7190db8269a829 126B / 126B 3.2s done
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 63.96MB / 102.19MB 3.5s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 69.21MB / 102.19MB 3.6s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 77.59MB / 102.19MB 3.7s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 84.93MB / 102.19MB 3.8s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 92.27MB / 102.19MB 3.9s
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 98.57MB / 102.19MB 4.0s
+#8 extracting sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 2.6s done
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 57.62MB / 57.62MB 8.4s
+#8 sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 57.62MB / 57.62MB 8.5s done
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 102.19MB / 102.19MB 9.0s
+#8 ...
+
+#10 [stage-1 2/4] RUN apt update && apt install -y ca-certificates git
+#10 2.470 
+#10 2.470 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#10 2.470 
+#10 2.653 Ign:1 http://deb.debian.org/debian stretch InRelease
+#10 2.786 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#10 2.940 Err:3 http://security.debian.org/debian-security stretch/updates Release
+#10 2.940   404  Not Found [IP: 151.101.130.132 80]
+#10 3.114 Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+#10 3.125 Err:5 http://deb.debian.org/debian stretch Release
+#10 3.125   404  Not Found
+#10 3.443 Err:6 http://deb.debian.org/debian stretch-updates Release
+#10 3.443   404  Not Found
+#10 3.728 Reading package lists...
+#10 3.738 E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#10 3.738 E: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#10 3.738 E: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#10 ERROR: process "/bin/sh -c apt update && apt install -y ca-certificates git" did not complete successfully: exit code: 100
+
+#8 [builder 1/5] FROM docker.io/library/golang:1.10-stretch@sha256:38d06fda52c0bb3682c0b373fe056ced88b70e8b297ea4da9fac661f5b13d71b
+#8 sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 102.19MB / 102.19MB 9.2s done
+#8 CANCELED
+------
+ > [stage-1 2/4] RUN apt update && apt install -y ca-certificates git:
+2.940   404  Not Found [IP: 151.101.130.132 80]
+3.114 Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+3.125 Err:5 http://deb.debian.org/debian stretch Release
+3.125   404  Not Found
+3.443 Err:6 http://deb.debian.org/debian stretch-updates Release
+3.443   404  Not Found
+3.728 Reading package lists...
+3.738 E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+3.738 E: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+3.738 E: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+------
+Dockerfile:9
+--------------------
+   7 |     
+   8 |     FROM debian:stretch-slim
+   9 | >>> RUN apt update && apt install -y ca-certificates git
+  10 |     COPY --from=builder /build/update /root/
+  11 |     COPY auto.sh /root/
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt update && apt install -y ca-certificates git" did not complete successfully: exit code: 100
+Duration: 0:12.78

@@ -1,0 +1,109 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 1.02kB 0.0s done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/node:6
+#4 DONE 1.4s
+
+#5 [ 1/10] FROM docker.io/library/node:6@sha256:e133e66ec3bfc98da0440e552f452e5cdf6413319d27a2db3b01ac4b319759b3
+#5 resolve docker.io/library/node:6@sha256:e133e66ec3bfc98da0440e552f452e5cdf6413319d27a2db3b01ac4b319759b3
+#5 resolve docker.io/library/node:6@sha256:e133e66ec3bfc98da0440e552f452e5cdf6413319d27a2db3b01ac4b319759b3 0.2s done
+#5 sha256:e133e66ec3bfc98da0440e552f452e5cdf6413319d27a2db3b01ac4b319759b3 2.04kB / 2.04kB done
+#5 sha256:92a780ce4191097a1470be20a40a590ac9601e53811c518effeb152ecd41548a 2.01kB / 2.01kB done
+#5 sha256:ab290b853066caedc75778bd4839da568ecb2a6b8e27442e0b1ce3c4741f1184 7.34kB / 7.34kB done
+#5 DONE 2.1s
+
+#6 [ 2/10] RUN apt-get update && apt-get install -y --no-install-recommends     git     unzip     cmake     libv4l-dev     beignet-dev     opencl-headers       && rm -rf /var/lib/apt/lists/*
+#6 0.801 Ign:1 http://deb.debian.org/debian stretch InRelease
+#6 0.802 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#6 0.811 Ign:3 http://deb.debian.org/debian stretch-updates InRelease
+#6 0.812 Ign:4 http://security.debian.org/debian-security stretch/updates Release
+#6 0.821 Ign:5 http://deb.debian.org/debian stretch Release
+#6 0.823 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.830 Ign:7 http://deb.debian.org/debian stretch-updates Release
+#6 0.992 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.002 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 1.005 Ign:10 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.012 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.016 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.172 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.195 Ign:10 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.205 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.337 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.347 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 1.356 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.385 Ign:10 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.395 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.517 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.572 Ign:10 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.582 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.681 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.691 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 1.700 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.762 Ign:10 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.772 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.864 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.952 Err:10 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.952   404  Not Found
+#6 2.024 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.033 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 2.043 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.207 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.373 Ign:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.382 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 2.392 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.556 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.717 Err:8 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.717   404  Not Found
+#6 2.736 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#6 2.745 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.911 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.911   404  Not Found
+#6 2.989 Reading package lists...
+#6 3.002 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 3.002 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 3.002 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 3.002 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+#6 3.002 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 3.002 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 3.002 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends     git     unzip     cmake     libv4l-dev     beignet-dev     opencl-headers       && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [ 2/10] RUN apt-get update && apt-get install -y --no-install-recommends     git     unzip     cmake     libv4l-dev     beignet-dev     opencl-headers       && rm -rf /var/lib/apt/lists/*:
+2.911 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+2.911   404  Not Found
+2.989 Reading package lists...
+3.002 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+3.002 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+3.002 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+3.002 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+3.002 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+3.002 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+3.002 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+Dockerfile:7
+--------------------
+   6 |     
+   7 | >>> RUN apt-get update && apt-get install -y --no-install-recommends \
+   8 | >>>     git \
+   9 | >>>     unzip \
+  10 | >>>     cmake \
+  11 | >>>     libv4l-dev \
+  12 | >>>     beignet-dev \
+  13 | >>>     opencl-headers \
+  14 | >>>     \
+  15 | >>>   && rm -rf /var/lib/apt/lists/*
+  16 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends     git     unzip     cmake     libv4l-dev     beignet-dev     opencl-headers       && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+Duration: 0:7.72

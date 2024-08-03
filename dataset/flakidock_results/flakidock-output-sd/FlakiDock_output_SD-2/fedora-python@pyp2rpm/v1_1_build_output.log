@@ -1,0 +1,272 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 594B done
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.6s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/fedora:rawhide
+#3 DONE 0.5s
+
+#4 [1/2] FROM docker.io/library/fedora:rawhide@sha256:0c0d2dfc0f570a33b7bfbc10f4899a81e99c4236ab2c4ec3df43ce358517a08f
+#4 resolve docker.io/library/fedora:rawhide@sha256:0c0d2dfc0f570a33b7bfbc10f4899a81e99c4236ab2c4ec3df43ce358517a08f
+#4 resolve docker.io/library/fedora:rawhide@sha256:0c0d2dfc0f570a33b7bfbc10f4899a81e99c4236ab2c4ec3df43ce358517a08f 0.2s done
+#4 sha256:0c0d2dfc0f570a33b7bfbc10f4899a81e99c4236ab2c4ec3df43ce358517a08f 4.66kB / 4.66kB done
+#4 sha256:51ac04c4802ebcfcf6279f03517abeefab6957eec725f3de609a53f00f57105e 1.03kB / 1.03kB done
+#4 sha256:07cf83396dfad0399b1af0a42ed904c222244185de8689da0056e6031f9416b6 1.04kB / 1.04kB done
+#4 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 0B / 58.48MB 0.1s
+#4 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 7.34MB / 58.48MB 0.4s
+#4 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 13.63MB / 58.48MB 0.5s
+#4 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 33.55MB / 58.48MB 0.7s
+#4 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 57.89MB / 58.48MB 1.0s
+#4 sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 58.48MB / 58.48MB 1.9s done
+#4 extracting sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb
+#4 extracting sha256:24b4786f8cc9f02371e691b67f9fb79deef36b046fcb435fe791391a82fc5feb 3.6s done
+#4 DONE 6.4s
+
+#5 [2/2] RUN INSTALL_PKGS="gcc tox python3.6 python3.8 python3.9 python3.10                   python3-setuptools python3-pip" &&     dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs                    --setopt=deltarpm=false $INSTALL_PKGS &&     dnf clean all
+#5 0.659 Updating and loading repositories:
+#5 1.484  Fedora rawhide openh264 (From Cisco) - 100% |   5.9 KiB/s |   4.8 KiB |  00m01s
+#5 3.711  Fedora - Rawhide - Developmental packa 100% |   9.6 MiB/s |  21.4 MiB |  00m02s
+#5 8.826 Repositories loaded.
+#5 10.62 Package                     Arch   Version                           Repository      Size
+#5 10.62 Installing:
+#5 10.62  gcc                        x86_64 14.1.1-7.fc41                     rawhide    104.1 MiB
+#5 10.62  python3-pip                noarch 24.1.1-2.fc41                     rawhide     11.4 MiB
+#5 10.62  python3-setuptools         noarch 69.2.0-8.fc41                     rawhide      7.2 MiB
+#5 10.62  python3.10                 x86_64 3.10.14-4.fc41                    rawhide     32.5 KiB
+#5 10.62  python3.6                  x86_64 3.6.15-33.fc41                    rawhide     81.4 MiB
+#5 10.62  python3.8                  x86_64 3.8.19-4.fc41                     rawhide    106.4 MiB
+#5 10.62  python3.9                  x86_64 3.9.19-4.fc41                     rawhide     90.2 MiB
+#5 10.62  tox                        noarch 4.14.2-7.fc41                     rawhide      1.1 MiB
+#5 10.62 Installing dependencies:
+#5 10.62  abattis-cantarell-vf-fonts noarch 0.301-13.fc41                     rawhide    192.7 KiB
+#5 10.62  binutils                   x86_64 2.42.90-1.fc41                    rawhide     27.4 MiB
+#5 10.62  cairo                      x86_64 1.18.0-4.fc41                     rawhide      1.7 MiB
+#5 10.62  cpp                        x86_64 14.1.1-7.fc41                     rawhide     35.0 MiB
+#5 10.62  default-fonts-core-sans    noarch 4.1-2.fc41                        rawhide     11.9 KiB
+#5 10.62  elfutils-debuginfod-client x86_64 0.191-8.fc41                      rawhide     64.9 KiB
+#5 10.62  expat                      x86_64 2.6.2-2.fc41                      rawhide    284.8 KiB
+#5 10.62  fontconfig                 x86_64 2.15.0-7.fc41                     rawhide    768.0 KiB
+#5 10.62  fonts-filesystem           noarch 1:2.0.5-17.fc41                   rawhide      0.0   B
+#5 10.62  freetype                   x86_64 2.13.2-6.fc41                     rawhide    850.6 KiB
+#5 10.62  glibc-devel                x86_64 2.40-2.fc41                       rawhide     35.0 KiB
+#5 10.62  glibc-headers-x86          noarch 2.40-2.fc41                       rawhide      2.2 MiB
+#5 10.62  google-noto-fonts-common   noarch 20240701-2.fc41                   rawhide     17.5 KiB
+#5 10.62  google-noto-sans-vf-fonts  noarch 20240701-2.fc41                   rawhide      1.2 MiB
+#5 10.62  graphite2                  x86_64 1.3.14-16.fc41                    rawhide    192.0 KiB
+#5 10.62  harfbuzz                   x86_64 9.0.0-2.fc41                      rawhide      2.7 MiB
+#5 10.62  jansson                    x86_64 2.13.1-10.fc41                    rawhide     88.3 KiB
+#5 10.62  kernel-headers             x86_64 6.11.0-0.rc1.dc1c8034e31b.16.fc41 rawhide      6.4 MiB
+#5 10.62  libX11                     x86_64 1.8.9-2.fc41                      rawhide      1.3 MiB
+#5 10.62  libX11-common              noarch 1.8.9-2.fc41                      rawhide      1.1 MiB
+#5 10.62  libXau                     x86_64 1.0.11-7.fc41                     rawhide     66.9 KiB
+#5 10.62  libXext                    x86_64 1.3.6-2.fc41                      rawhide     90.1 KiB
+#5 10.62  libXft                     x86_64 2.3.8-7.fc41                      rawhide    164.5 KiB
+#5 10.62  libXrender                 x86_64 0.9.11-7.fc41                     rawhide     50.1 KiB
+#5 10.62  libb2                      x86_64 0.98.1-12.fc41                    rawhide     42.2 KiB
+#5 10.62  libmpc                     x86_64 1.3.1-6.fc41                      rawhide    164.7 KiB
+#5 10.62  libpkgconf                 x86_64 2.1.1-2.fc41                      rawhide     74.2 KiB
+#5 10.62  libpng                     x86_64 2:1.6.40-4.fc41                   rawhide    245.8 KiB
+#5 10.62  libxcb                     x86_64 1.17.0-2.fc41                     rawhide      1.1 MiB
+#5 10.62  libxcrypt-devel            x86_64 4.4.36-7.fc41                     rawhide     30.3 KiB
+#5 10.62  make                       x86_64 1:4.4.1-8.fc41                    rawhide      1.8 MiB
+#5 10.62  mpdecimal                  x86_64 2.5.1-16.fc41                     rawhide    204.9 KiB
+#5 10.62  pixman                     x86_64 0.43.4-2.fc41                     rawhide    718.1 KiB
+#5 10.62  pkgconf                    x86_64 2.1.1-2.fc41                      rawhide     82.8 KiB
+#5 10.62  pkgconf-m4                 noarch 2.1.1-2.fc41                      rawhide     13.9 KiB
+#5 10.62  pkgconf-pkg-config         x86_64 2.1.1-2.fc41                      rawhide    989.0   B
+#5 10.62  python-pip-wheel           noarch 24.1.1-2.fc41                     rawhide      1.2 MiB
+#5 10.62  python-setuptools-wheel    noarch 69.2.0-8.fc41                     rawhide    750.4 KiB
+#5 10.62  python-wheel-wheel         noarch 1:0.43.0-4.fc41                   rawhide     65.1 KiB
+#5 10.62  python-wheel0.37-wheel     noarch 0.37.1-8.fc41                     rawhide     35.5 KiB
+#5 10.62  python3                    x86_64 3.13.0~b4-3.fc41                  rawhide     31.8 KiB
+#5 10.62  python3-cachetools         noarch 5.4.0-2.fc41                      rawhide    144.4 KiB
+#5 10.62  python3-chardet            noarch 5.2.0-14.fc41                     rawhide      2.1 MiB
+#5 10.62  python3-colorama           noarch 0.4.6-9.fc41                      rawhide    191.6 KiB
+#5 10.62  python3-distlib            noarch 0.3.8-3.fc41                      rawhide      1.2 MiB
+#5 10.62  python3-filelock           noarch 3.15.4-2.fc41                     rawhide     90.2 KiB
+#5 10.62  python3-libs               x86_64 3.13.0~b4-3.fc41                  rawhide     40.5 MiB
+#5 10.62  python3-packaging          noarch 24.1-2.fc41                       rawhide    422.3 KiB
+#5 10.62  python3-platformdirs       noarch 4.2.2-2.fc41                      rawhide    168.6 KiB
+#5 10.62  python3-pluggy             noarch 1.3.0-6.fc41                      rawhide    183.2 KiB
+#5 10.62  python3-pyproject-api      noarch 1.6.1-5.fc41                      rawhide     80.6 KiB
+#5 10.62  python3-virtualenv         noarch 20.21.1-21.fc41                   rawhide    693.3 KiB
+#5 10.62  python3.10-libs            x86_64 3.10.14-4.fc41                    rawhide     31.2 MiB
+#5 10.62  tcl                        x86_64 1:8.6.14-2.fc41                   rawhide      4.2 MiB
+#5 10.62  tk                         x86_64 1:8.6.14-2.fc41                   rawhide      3.6 MiB
+#5 10.62  xml-common                 noarch 0.6.3-65.fc41                     rawhide     78.4 KiB
+#5 10.62 
+#5 10.62 Transaction Summary:
+#5 10.62  Installing:       64 packages
+#5 10.62 
+#5 10.62 Total size of inbound packages is 145 MiB. Need to download 145 MiB.
+#5 10.62 After this operation 575 MiB will be used (install 575 MiB, remove 0 B).
+#5 11.46 [ 1/64] tox-0:4.14.2-7.fc41.noarch      100% | 813.9 KiB/s | 398.8 KiB |  00m00s
+#5 11.66 [ 2/64] python3-setuptools-0:69.2.0-8.f 100% |   2.3 MiB/s |   1.6 MiB |  00m01s
+#5 11.86 [ 3/64] python3-pip-0:24.1.1-2.fc41.noa 100% |   6.8 MiB/s |   2.7 MiB |  00m00s
+#5 11.95 [ 4/64] libmpc-0:1.3.1-6.fc41.x86_64    100% | 781.5 KiB/s |  71.1 KiB |  00m00s
+#5 12.10 [ 5/64] make-1:4.4.1-8.fc41.x86_64      100% |   3.8 MiB/s | 586.1 KiB |  00m00s
+#5 12.40 [ 6/64] cpp-0:14.1.1-7.fc41.x86_64      100% |  16.1 MiB/s |  12.0 MiB |  00m01s
+#5 12.42 [ 7/64] python3-cachetools-0:5.4.0-2.fc 100% | 119.3 KiB/s |  37.6 KiB |  00m00s
+#5 12.54 [ 8/64] python3-chardet-0:5.2.0-14.fc41 100% |   2.1 MiB/s | 298.7 KiB |  00m00s
+#5 12.56 [ 9/64] python3-colorama-0:0.4.6-9.fc41 100% | 505.2 KiB/s |  71.2 KiB |  00m00s
+#5 12.65 [10/64] python3-filelock-0:3.15.4-2.fc4 100% | 404.7 KiB/s |  43.3 KiB |  00m00s
+#5 12.67 [11/64] python3-packaging-0:24.1-2.fc41 100% |   1.1 MiB/s | 125.5 KiB |  00m00s
+#5 12.75 [12/64] python3-platformdirs-0:4.2.2-2. 100% | 468.1 KiB/s |  46.3 KiB |  00m00s
+#5 12.78 [13/64] python3-pluggy-0:1.3.0-6.fc41.n 100% | 510.2 KiB/s |  55.6 KiB |  00m00s
+#5 13.60 [14/64] gcc-0:14.1.1-7.fc41.x86_64      100% |  14.1 MiB/s |  37.1 MiB |  00m03s
+#5 13.61 [15/64] python3-pyproject-api-0:1.6.1-5 100% |  49.1 KiB/s |  42.1 KiB |  00m01s
+#5 13.64 [16/64] python3-virtualenv-0:20.21.1-21 100% | 355.0 KiB/s | 304.6 KiB |  00m01s
+#5 13.72 [17/64] python-pip-wheel-0:24.1.1-2.fc4 100% |   9.7 MiB/s |   1.2 MiB |  00m00s
+#5 13.77 [18/64] python-setuptools-wheel-0:69.2. 100% |   4.2 MiB/s | 679.1 KiB |  00m00s
+#5 13.80 [19/64] python-wheel-wheel-1:0.43.0-4.f 100% | 449.3 KiB/s |  71.0 KiB |  00m00s
+#5 13.87 [20/64] python3-distlib-0:0.3.8-3.fc41. 100% |   1.7 MiB/s | 266.3 KiB |  00m00s
+#5 13.91 [21/64] python-wheel0.37-wheel-0:0.37.1 100% | 388.2 KiB/s |  41.9 KiB |  00m00s
+#5 13.96 [22/64] expat-0:2.6.2-2.fc41.x86_64     100% |   1.3 MiB/s | 113.4 KiB |  00m00s
+#5 14.02 [23/64] tcl-1:8.6.14-2.fc41.x86_64      100% |   9.5 MiB/s |   1.1 MiB |  00m00s
+#5 14.11 [24/64] tk-1:8.6.14-2.fc41.x86_64       100% |  10.9 MiB/s |   1.6 MiB |  00m00s
+#5 14.13 [25/64] fontconfig-0:2.15.0-7.fc41.x86_ 100% |   2.5 MiB/s | 270.1 KiB |  00m00s
+#5 14.22 [26/64] libX11-0:1.8.9-2.fc41.x86_64    100% |   5.9 MiB/s | 647.5 KiB |  00m00s
+#5 14.23 [27/64] libXft-0:2.3.8-7.fc41.x86_64    100% | 730.7 KiB/s |  72.3 KiB |  00m00s
+#5 14.33 [28/64] default-fonts-core-sans-0:4.1-2 100% | 288.2 KiB/s |  31.1 KiB |  00m00s
+#5 14.35 [29/64] fonts-filesystem-1:2.0.5-17.fc4 100% |  73.1 KiB/s |   8.5 KiB |  00m00s
+#5 14.42 [30/64] freetype-0:2.13.2-6.fc41.x86_64 100% |   4.4 MiB/s | 410.7 KiB |  00m00s
+#5 14.44 [31/64] xml-common-0:0.6.3-65.fc41.noar 100% | 376.4 KiB/s |  31.2 KiB |  00m00s
+#5 14.51 [32/64] libX11-common-0:1.8.9-2.fc41.no 100% |   1.9 MiB/s | 175.6 KiB |  00m00s
+#5 14.54 [33/64] libxcb-0:1.17.0-2.fc41.x86_64   100% |   2.2 MiB/s | 239.0 KiB |  00m00s
+#5 14.59 [34/64] libXrender-0:0.9.11-7.fc41.x86_ 100% | 371.7 KiB/s |  27.5 KiB |  00m00s
+#5 14.64 [35/64] abattis-cantarell-vf-fonts-0:0. 100% |   1.3 MiB/s | 120.2 KiB |  00m00s
+#5 15.09 [36/64] python3.6-0:3.6.15-33.fc41.x86_ 100% |  14.3 MiB/s |  18.7 MiB |  00m01s
+#5 15.12 [37/64] google-noto-sans-vf-fonts-0:202 100% |   1.1 MiB/s | 594.1 KiB |  00m01s
+#5 15.16 [38/64] harfbuzz-0:9.0.0-2.fc41.x86_64  100% |   1.9 MiB/s |   1.0 MiB |  00m01s
+#5 15.18 [39/64] libpng-2:1.6.40-4.fc41.x86_64   100% |   1.3 MiB/s | 120.3 KiB |  00m00s
+#5 15.20 [40/64] libXau-0:1.0.11-7.fc41.x86_64   100% | 425.2 KiB/s |  31.9 KiB |  00m00s
+#5 15.25 [41/64] google-noto-fonts-common-0:2024 100% | 217.1 KiB/s |  18.0 KiB |  00m00s
+#5 15.29 [42/64] cairo-0:1.18.0-4.fc41.x86_64    100% |   6.4 MiB/s | 709.9 KiB |  00m00s
+#5 15.32 [43/64] graphite2-0:1.3.14-16.fc41.x86_ 100% | 806.2 KiB/s |  95.1 KiB |  00m00s
+#5 15.33 [44/64] libXext-0:1.3.6-2.fc41.x86_64   100% | 465.2 KiB/s |  39.1 KiB |  00m00s
+#5 15.37 [45/64] pixman-0:0.43.4-2.fc41.x86_64   100% |   3.4 MiB/s | 294.1 KiB |  00m00s
+#5 16.97 [46/64] python3.10-0:3.10.14-4.fc41.x86 100% |  16.3 KiB/s |  25.9 KiB |  00m02s
+#5 17.32 [47/64] python3.8-0:3.8.19-4.fc41.x86_6 100% |   8.2 MiB/s |  16.5 MiB |  00m02s
+#5 17.54 [48/64] mpdecimal-0:2.5.1-16.fc41.x86_6 100% | 413.7 KiB/s |  89.0 KiB |  00m00s
+#5 18.04 [49/64] python3.9-0:3.9.19-4.fc41.x86_6 100% |   7.0 MiB/s |  19.0 MiB |  00m03s
+#5 18.23 [50/64] python3.10-libs-0:3.10.14-4.fc4 100% |   6.1 MiB/s |   7.7 MiB |  00m01s
+#5 18.42 [51/64] binutils-0:2.42.90-1.fc41.x86_6 100% |   7.4 MiB/s |   6.4 MiB |  00m01s
+#5 18.43 [52/64] elfutils-debuginfod-client-0:0. 100% |  95.5 KiB/s |  37.2 KiB |  00m00s
+#5 18.46 [53/64] jansson-0:2.13.1-10.fc41.x86_64 100% | 198.4 KiB/s |  44.4 KiB |  00m00s
+#5 18.56 [54/64] python3-0:3.13.0~b4-3.fc41.x86_ 100% | 191.2 KiB/s |  27.0 KiB |  00m00s
+#5 18.59 [55/64] libb2-0:0.98.1-12.fc41.x86_64   100% | 193.1 KiB/s |  25.7 KiB |  00m00s
+#5 18.64 [56/64] pkgconf-pkg-config-0:2.1.1-2.fc 100% | 120.6 KiB/s |  10.0 KiB |  00m00s
+#5 18.73 [57/64] pkgconf-m4-0:2.1.1-2.fc41.noarc 100% | 173.0 KiB/s |  14.2 KiB |  00m00s
+#5 18.74 [58/64] pkgconf-0:2.1.1-2.fc41.x86_64   100% | 294.6 KiB/s |  43.9 KiB |  00m00s
+#5 18.99 [59/64] python3-libs-0:3.13.0~b4-3.fc41 100% |  17.0 MiB/s |   9.1 MiB |  00m01s
+#5 19.01 [60/64] libpkgconf-0:2.1.1-2.fc41.x86_6 100% | 134.9 KiB/s |  38.2 KiB |  00m00s
+#5 19.04 [61/64] glibc-devel-0:2.40-2.fc41.x86_6 100% | 456.7 KiB/s | 132.9 KiB |  00m00s
+#5 19.12 [62/64] libxcrypt-devel-0:4.4.36-7.fc41 100% | 347.7 KiB/s |  28.9 KiB |  00m00s
+#5 19.19 [63/64] glibc-headers-x86-0:2.40-2.fc41 100% |   3.1 MiB/s | 630.3 KiB |  00m00s
+#5 19.43 [64/64] kernel-headers-0:6.11.0-0.rc1.d 100% |   4.2 MiB/s |   1.6 MiB |  00m00s
+#5 19.43 --------------------------------------------------------------------------------
+#5 19.43 [64/64] Total                           100% |  16.5 MiB/s | 145.5 MiB |  00m09s
+#5 19.43 Running transaction
+#5 25.96 [ 1/66] Verify package files            100% |  42.0   B/s |  64.0   B |  00m01s
+#5 26.49 [ 2/66] Prepare transaction             100% | 109.0   B/s |  64.0   B |  00m01s
+#5 26.62 [ 3/66] Installing expat-0:2.6.2-2.fc41 100% |   2.0 MiB/s | 286.8 KiB |  00m00s
+#5 26.74 [ 4/66] Installing python-pip-wheel-0:2 100% |  29.8 MiB/s |   1.2 MiB |  00m00s
+#5 26.77 [ 5/66] Installing tcl-1:8.6.14-2.fc41. 100% |  41.4 MiB/s |   4.2 MiB |  00m00s
+#5 26.79 [ 6/66] Installing python-setuptools-wh 100% |  30.6 MiB/s | 751.1 KiB |  00m00s
+#5 26.82 [ 7/66] Installing fonts-filesystem-1:2 100% |  30.8 KiB/s | 788.0   B |  00m00s
+#5 26.84 [ 8/66] Installing mpdecimal-0:2.5.1-16 100% |   8.0 MiB/s | 206.0 KiB |  00m00s
+#5 26.86 [ 9/66] Installing libpng-2:1.6.40-4.fc 100% |  15.1 MiB/s | 247.1 KiB |  00m00s
+#5 26.94 [10/66] Installing libmpc-0:1.3.1-6.fc4 100% |   6.5 MiB/s | 166.2 KiB |  00m00s
+#5 27.25 [11/66] Installing cpp-0:14.1.1-7.fc41. 100% | 110.0 MiB/s |  35.0 MiB |  00m00s
+#5 27.89 [12/66] Installing python3.10-libs-0:3. 100% |  46.3 MiB/s |  31.6 MiB |  00m01s
+#5 27.93 [13/66] Installing abattis-cantarell-vf 100% |   6.8 MiB/s | 194.4 KiB |  00m00s
+#5 28.23 [14/66] Installing kernel-headers-0:6.1 100% |  23.7 MiB/s |   6.5 MiB |  00m00s
+#5 28.33 [15/66] Installing glibc-headers-x86-0: 100% |  17.2 MiB/s |   2.3 MiB |  00m00s
+#5 28.35 [16/66] Installing libpkgconf-0:2.1.1-2 100% |   3.1 MiB/s |  75.3 KiB |  00m00s
+#5 28.38 [17/66] Installing pkgconf-0:2.1.1-2.fc 100% |   3.3 MiB/s |  85.4 KiB |  00m00s
+#5 28.39 [18/66] Installing pkgconf-m4-0:2.1.1-2 100% | 895.0 KiB/s |  14.3 KiB |  00m00s
+#5 28.41 [19/66] Installing pkgconf-pkg-config-0 100% |  98.5 KiB/s |   1.8 KiB |  00m00s
+#5 28.43 [20/66] Installing glibc-devel-0:2.40-2 100% |   1.6 MiB/s |  38.4 KiB |  00m00s
+#5 28.45 [21/66] Installing libxcrypt-devel-0:4. 100% |   2.0 MiB/s |  32.6 KiB |  00m00s
+#5 28.55 [22/66] Installing libb2-0:0.98.1-12.fc 100% |   1.3 MiB/s |  43.3 KiB |  00m00s
+#5 29.16 [23/66] Installing python3-libs-0:3.13. 100% |  60.6 MiB/s |  40.8 MiB |  00m01s
+#5 29.19 [24/66] Installing python3-0:3.13.0~b4- 100% |   1.4 MiB/s |  33.6 KiB |  00m00s
+#5 29.22 [25/66] Installing python3-filelock-0:3 100% |   2.9 MiB/s |  97.1 KiB |  00m00s
+#5 29.27 [26/66] Installing python3-packaging-0: 100% |   8.5 MiB/s | 433.2 KiB |  00m00s
+#5 29.30 [27/66] Installing python3-platformdirs 100% |   6.8 MiB/s | 175.0 KiB |  00m00s
+#5 29.32 [28/66] Installing python3-pyproject-ap 100% |   3.4 MiB/s |  86.8 KiB |  00m00s
+#5 29.38 [29/66] Installing python3-cachetools-0 100% |   5.8 MiB/s | 148.3 KiB |  00m00s
+#5 29.42 [30/66] Installing python3-chardet-0:5. 100% |  31.3 MiB/s |   2.1 MiB |  00m00s
+#5 29.45 [31/66] Installing python3-colorama-0:0 100% |   4.8 MiB/s | 201.5 KiB |  00m00s
+#5 29.50 [32/66] Installing python3-pluggy-0:1.3 100% |   7.4 MiB/s | 188.9 KiB |  00m00s
+#5 29.53 [33/66] Installing python3-distlib-0:0. 100% |  23.6 MiB/s |   1.2 MiB |  00m00s
+#5 29.55 [34/66] Installing jansson-0:2.13.1-10. 100% |   3.5 MiB/s |  89.7 KiB |  00m00s
+#5 29.66 [35/66] Installing elfutils-debuginfod- 100% |   2.5 MiB/s |  66.9 KiB |  00m00s
+#5 29.77 [36/66] Installing binutils-0:2.42.90-1 100% | 146.1 MiB/s |  27.5 MiB |  00m00s
+#5 29.77 >>> Running post-install scriptlet: binutils-0:2.42.90-1.fc41.x86_64
+#5 29.77 >>> Stop post-install scriptlet: binutils-0:2.42.90-1.fc41.x86_64
+#5 29.80 [37/66] Installing pixman-0:0.43.4-2.fc 100% |  25.1 MiB/s | 719.2 KiB |  00m00s
+#5 29.82 [38/66] Installing graphite2-0:1.3.14-1 100% |   7.6 MiB/s | 194.1 KiB |  00m00s
+#5 29.85 [39/66] Installing google-noto-fonts-co 100% |   1.1 MiB/s |  18.3 KiB |  00m00s
+#5 29.87 [40/66] Installing google-noto-sans-vf- 100% |  37.8 MiB/s |   1.2 MiB |  00m00s
+#5 29.90 [41/66] Installing default-fonts-core-s 100% | 699.2 KiB/s |  18.2 KiB |  00m00s
+#5 29.94 [42/66] Installing libXau-0:1.0.11-7.fc 100% |   3.9 MiB/s |  68.4 KiB |  00m00s
+#5 30.02 [43/66] Installing libxcb-0:1.17.0-2.fc 100% |  11.1 MiB/s |   1.1 MiB |  00m00s
+#5 30.12 [44/66] Installing libX11-common-0:1.8. 100% |  12.9 MiB/s |   1.2 MiB |  00m00s
+#5 30.14 [45/66] Installing libX11-0:1.8.9-2.fc4 100% |  38.7 MiB/s |   1.3 MiB |  00m00s
+#5 30.17 [46/66] Installing libXrender-0:0.9.11- 100% |   2.0 MiB/s |  51.4 KiB |  00m00s
+#5 30.20 [47/66] Installing libXext-0:1.3.6-2.fc 100% |   3.6 MiB/s |  91.3 KiB |  00m00s
+#5 30.20 >>> Running pre-install scriptlet: xml-common-0:0.6.3-65.fc41.noarch
+#5 30.20 >>> Stop pre-install scriptlet: xml-common-0:0.6.3-65.fc41.noarch
+#5 30.22 [48/66] Installing xml-common-0:0.6.3-6 100% |   3.3 MiB/s |  81.1 KiB |  00m00s
+#5 30.29 [49/66] Installing cairo-0:1.18.0-4.fc4 100% |  42.5 MiB/s |   1.7 MiB |  00m00s
+#5 30.32 [50/66] Installing harfbuzz-0:9.0.0-2.f 100% |  54.0 MiB/s |   2.7 MiB |  00m00s
+#5 30.35 [51/66] Installing freetype-0:2.13.2-6. 100% |  24.5 MiB/s | 852.3 KiB |  00m00s
+#5 31.44 [52/66] Installing fontconfig-0:2.15.0- 100% | 720.9 KiB/s | 787.2 KiB |  00m01s
+#5 31.44 >>> Running post-install scriptlet: fontconfig-0:2.15.0-7.fc41.x86_64
+#5 31.44 >>> Stop post-install scriptlet: fontconfig-0:2.15.0-7.fc41.x86_64
+#5 35.82 [53/66] Installing libXft-0:2.3.8-7.fc4 100% |  37.9 KiB/s | 166.0 KiB |  00m04s
+#5 35.82 >>> Running pre-install scriptlet: tk-1:8.6.14-2.fc41.x86_64
+#5 35.82 >>> Stop pre-install scriptlet: tk-1:8.6.14-2.fc41.x86_64
+#5 35.99 [54/66] Installing tk-1:8.6.14-2.fc41.x 100% |  22.3 MiB/s |   3.7 MiB |  00m00s
+#5 36.01 [55/66] Installing python-wheel0.37-whe 100% |   2.2 MiB/s |  36.2 KiB |  00m00s
+#5 36.06 [56/66] Installing python-wheel-wheel-1 100% |   2.5 MiB/s |  65.8 KiB |  00m00s
+#5 36.28 [57/66] Installing python3-virtualenv-0 100% |   3.2 MiB/s | 765.7 KiB |  00m00s
+#5 36.33 [58/66] Installing make-1:4.4.1-8.fc41. 100% |  69.2 MiB/s |   1.8 MiB |  00m00s
+#5 37.04 [59/66] Installing gcc-0:14.1.1-7.fc41. 100% | 140.0 MiB/s | 104.2 MiB |  00m01s
+#5 37.31 [60/66] Installing tox-0:4.14.2-7.fc41. 100% |   5.2 MiB/s |   1.2 MiB |  00m00s
+#5 39.06 [61/66] Installing python3.6-0:3.6.15-3 100% |  46.4 MiB/s |  83.2 MiB |  00m02s
+#5 41.98 [62/66] Installing python3.8-0:3.8.19-4 100% |  36.9 MiB/s | 107.7 MiB |  00m03s
+#5 44.83 [63/66] Installing python3.9-0:3.9.19-4 100% |  32.2 MiB/s |  92.0 MiB |  00m03s
+#5 45.19 [64/66] Installing python3-setuptools-0 100% |  23.6 MiB/s |   7.3 MiB |  00m00s
+#5 46.53 [65/66] Installing python3-pip-0:24.1.1 100% |   8.4 MiB/s |  11.7 MiB |  00m01s
+#5 47.62 warning: posix.fork(): .fork(), .exec(), .wait() and .redirect2null() are deprecated, use rpm.execute() instead
+#5 47.62 warning: posix.wait(): .fork(), .exec(), .wait() and .redirect2null() are deprecated, use rpm.execute() instead
+#5 47.62 warning: posix.exec(): .fork(), .exec(), .wait() and .redirect2null() are deprecated, use rpm.execute() instead
+#5 61.71 [66/66] Installing python3.10-0:3.10.14 100% |   2.2 KiB/s |  33.8 KiB |  00m15s
+#5 61.71 >>> Running post-transaction scriptlet: fontconfig-0:2.15.0-7.fc41.x86_64
+#5 61.71 >>> Stop post-transaction scriptlet: fontconfig-0:2.15.0-7.fc41.x86_64
+#5 61.71 >>> Running trigger-install scriptlet: glibc-common-0:2.40-2.fc41.x86_64
+#5 61.71 >>> Stop trigger-install scriptlet: glibc-common-0:2.40-2.fc41.x86_64
+#5 61.71 >>> Running trigger-install scriptlet: fontconfig-0:2.15.0-7.fc41.x86_64
+#5 61.71 >>> Stop trigger-install scriptlet: fontconfig-0:2.15.0-7.fc41.x86_64
+#5 61.71 Complete!
+#5 61.82 Removed 12 files, 7 directories. 0 errors occurred.
+#5 DONE 62.1s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 7.8s done
+#6 writing image sha256:a701020ff7c0104c8533302be2fd878f0fa663c9e3d752a3bfa6cc6d76d7cbb0 0.0s done
+#6 naming to docker.io/library/image_name_v1_1 0.0s done
+#6 DONE 7.9s
+Duration: 1:18.12

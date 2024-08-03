@@ -1,0 +1,105 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 307B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:stretch
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#4 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 0.0s done
+#4 sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 1.21kB / 1.21kB done
+#4 sha256:16ee3e11da473f6565ef94a715f1a38b3079e0664913be78869c336a71cb6085 529B / 529B done
+#4 sha256:662c05203bab4c59568d24689fa5c3955439360a35c483178598d226b9a5ad10 1.46kB / 1.46kB done
+#4 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 0B / 45.43MB 0.1s
+#4 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 14.68MB / 45.43MB 0.3s
+#4 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 32.51MB / 45.43MB 0.5s
+#4 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 0.7s
+#4 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae
+#4 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 0.8s done
+#4 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 2.9s done
+#4 DONE 3.9s
+
+#5 [2/5] RUN apt-get update && apt-get -y install curl gnupg2 rake
+#5 0.210 Ign:1 http://deb.debian.org/debian stretch InRelease
+#5 0.210 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#5 0.217 Ign:3 http://deb.debian.org/debian stretch-updates InRelease
+#5 0.221 Ign:4 http://security.debian.org/debian-security stretch/updates Release
+#5 0.227 Ign:5 http://deb.debian.org/debian stretch Release
+#5 0.232 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.236 Ign:7 http://deb.debian.org/debian stretch-updates Release
+#5 0.243 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.247 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.255 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.256 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.264 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.267 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.273 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.283 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.290 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.300 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.300 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.311 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.313 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.320 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.325 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.328 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.337 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.340 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.348 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.354 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.361 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.361 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.370 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.371 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.383 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.383 Err:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.383   404  Not Found [IP: 151.101.194.132 80]
+#5 0.396 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.407 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.417 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.425 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.437 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.446 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.491 Err:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.491   404  Not Found
+#5 0.500 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.500   404  Not Found
+#5 0.510 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.513 Reading package lists...
+#5 0.519 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#5 0.519 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#5 0.519 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#5 0.519 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+#5 0.519 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#5 0.519 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#5 0.519 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#5 ERROR: process "/bin/sh -c apt-get update && apt-get -y install curl gnupg2 rake" did not complete successfully: exit code: 100
+------
+ > [2/5] RUN apt-get update && apt-get -y install curl gnupg2 rake:
+0.500   404  Not Found
+0.510 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+0.513 Reading package lists...
+0.519 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.519 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.519 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.519 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+0.519 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.519 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.519 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:4
+--------------------
+   2 |     FROM debian:stretch
+   3 |     
+   4 | >>> RUN apt-get update && apt-get -y install curl gnupg2 rake
+   5 |     RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+   6 |     RUN apt-get -y install nodejs
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get -y install curl gnupg2 rake" did not complete successfully: exit code: 100
+Duration: 0:5.84

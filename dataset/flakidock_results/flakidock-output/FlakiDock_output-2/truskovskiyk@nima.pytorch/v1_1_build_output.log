@@ -1,0 +1,711 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.3s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.22kB done
+#2 DONE 0.3s
+
+#3 [internal] load metadata for docker.io/nvidia/cuda:11.2.2-cudnn8-devel-ubuntu18.04
+#3 DONE 0.9s
+
+#4 [ 1/13] FROM docker.io/nvidia/cuda:11.2.2-cudnn8-devel-ubuntu18.04@sha256:ce5bc805774e9757c39c416c12320801c450673a9c241dfff5f8701432e3bc71
+#4 resolve docker.io/nvidia/cuda:11.2.2-cudnn8-devel-ubuntu18.04@sha256:ce5bc805774e9757c39c416c12320801c450673a9c241dfff5f8701432e3bc71
+#4 resolve docker.io/nvidia/cuda:11.2.2-cudnn8-devel-ubuntu18.04@sha256:ce5bc805774e9757c39c416c12320801c450673a9c241dfff5f8701432e3bc71 0.1s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 114.45kB 0.1s done
+#5 DONE 0.4s
+
+#4 [ 1/13] FROM docker.io/nvidia/cuda:11.2.2-cudnn8-devel-ubuntu18.04@sha256:ce5bc805774e9757c39c416c12320801c450673a9c241dfff5f8701432e3bc71
+#4 sha256:ee7fdbe672a954e51cdde9aa011937754d531b5d2e965b316ec45548427f97fa 15.31kB / 15.31kB done
+#4 sha256:ce5bc805774e9757c39c416c12320801c450673a9c241dfff5f8701432e3bc71 2.43kB / 2.43kB done
+#4 sha256:a404e54162968593b8d92b571f3cdd673e4c9eab5d9be28d7c494595c0aa6682 1.05MB / 26.71MB 0.2s
+#4 sha256:2fbe6fe01f6cc8175532d56cb8fb108ca2f4715b397db15af127412c864b27c2 0B / 7.22MB 0.2s
+#4 sha256:a404e54162968593b8d92b571f3cdd673e4c9eab5d9be28d7c494595c0aa6682 8.39MB / 26.71MB 0.3s
+#4 sha256:804da9db2df734a0c782d9dedd788448295c8a85a05a64ec3dc87a17c9caff00 0B / 11.04MB 0.3s
+#4 sha256:a404e54162968593b8d92b571f3cdd673e4c9eab5d9be28d7c494595c0aa6682 15.73MB / 26.71MB 0.4s
+#4 sha256:a404e54162968593b8d92b571f3cdd673e4c9eab5d9be28d7c494595c0aa6682 24.12MB / 26.71MB 0.6s
+#4 sha256:2fbe6fe01f6cc8175532d56cb8fb108ca2f4715b397db15af127412c864b27c2 7.22MB / 7.22MB 0.6s
+#4 sha256:a404e54162968593b8d92b571f3cdd673e4c9eab5d9be28d7c494595c0aa6682 26.71MB / 26.71MB 0.8s
+#4 sha256:2fbe6fe01f6cc8175532d56cb8fb108ca2f4715b397db15af127412c864b27c2 7.22MB / 7.22MB 0.7s done
+#4 sha256:804da9db2df734a0c782d9dedd788448295c8a85a05a64ec3dc87a17c9caff00 10.58MB / 11.04MB 0.8s
+#4 extracting sha256:a404e54162968593b8d92b571f3cdd673e4c9eab5d9be28d7c494595c0aa6682
+#4 sha256:a404e54162968593b8d92b571f3cdd673e4c9eab5d9be28d7c494595c0aa6682 26.71MB / 26.71MB 1.1s done
+#4 sha256:39f9b93b66689fdf0e24c1f197ed29b9797af9b61707a06893403e53efda2f58 0B / 185B 1.2s
+#4 sha256:804da9db2df734a0c782d9dedd788448295c8a85a05a64ec3dc87a17c9caff00 11.04MB / 11.04MB 1.4s done
+#4 sha256:39f9b93b66689fdf0e24c1f197ed29b9797af9b61707a06893403e53efda2f58 185B / 185B 1.4s
+#4 sha256:39f9b93b66689fdf0e24c1f197ed29b9797af9b61707a06893403e53efda2f58 185B / 185B 1.5s done
+#4 sha256:6446c370e52307eea6dea5c7ab843bc561c29886584804097929108b80ef6e70 0B / 6.43kB 1.5s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 0B / 1.09GB 1.6s
+#4 sha256:f204873f718bd3fbd3dd95cb223cdeca4ae9d571a95514616b6d1025e2fe5d1a 0B / 63.24kB 1.6s
+#4 sha256:6446c370e52307eea6dea5c7ab843bc561c29886584804097929108b80ef6e70 6.43kB / 6.43kB 1.7s done
+#4 sha256:f204873f718bd3fbd3dd95cb223cdeca4ae9d571a95514616b6d1025e2fe5d1a 63.24kB / 63.24kB 1.8s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 0B / 1.20GB 1.8s
+#4 sha256:f204873f718bd3fbd3dd95cb223cdeca4ae9d571a95514616b6d1025e2fe5d1a 63.24kB / 63.24kB 1.8s done
+#4 sha256:924b4ff4ab14c9d1bf36bc13ba7e347cbd148976f9d94fbd89562f139933e034 0B / 88.56kB 1.9s
+#4 sha256:924b4ff4ab14c9d1bf36bc13ba7e347cbd148976f9d94fbd89562f139933e034 88.56kB / 88.56kB 2.1s
+#4 sha256:924b4ff4ab14c9d1bf36bc13ba7e347cbd148976f9d94fbd89562f139933e034 88.56kB / 88.56kB 2.1s done
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 0B / 1.31GB 2.2s
+#4 extracting sha256:a404e54162968593b8d92b571f3cdd673e4c9eab5d9be28d7c494595c0aa6682 1.6s done
+#4 extracting sha256:2fbe6fe01f6cc8175532d56cb8fb108ca2f4715b397db15af127412c864b27c2 0.1s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 54.53MB / 1.09GB 3.2s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 71.30MB / 1.20GB 3.6s
+#4 extracting sha256:2fbe6fe01f6cc8175532d56cb8fb108ca2f4715b397db15af127412c864b27c2 0.4s done
+#4 extracting sha256:804da9db2df734a0c782d9dedd788448295c8a85a05a64ec3dc87a17c9caff00
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 67.11MB / 1.31GB 4.4s
+#4 extracting sha256:804da9db2df734a0c782d9dedd788448295c8a85a05a64ec3dc87a17c9caff00 0.6s done
+#4 extracting sha256:39f9b93b66689fdf0e24c1f197ed29b9797af9b61707a06893403e53efda2f58 done
+#4 extracting sha256:6446c370e52307eea6dea5c7ab843bc561c29886584804097929108b80ef6e70
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 112.20MB / 1.09GB 4.8s
+#4 extracting sha256:6446c370e52307eea6dea5c7ab843bc561c29886584804097929108b80ef6e70 done
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 133.17MB / 1.20GB 5.3s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 136.31MB / 1.31GB 6.1s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 173.02MB / 1.09GB 7.1s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 197.13MB / 1.20GB 7.1s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 202.38MB / 1.31GB 8.0s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 260.05MB / 1.20GB 8.4s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 231.74MB / 1.09GB 9.2s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 324.01MB / 1.20GB 9.7s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 271.58MB / 1.31GB 10.6s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 290.46MB / 1.09GB 10.8s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 390.07MB / 1.20GB 11.1s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 454.03MB / 1.20GB 12.3s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 337.64MB / 1.31GB 12.8s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 350.22MB / 1.09GB 13.0s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 519.05MB / 1.20GB 13.5s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 583.01MB / 1.20GB 14.6s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 406.85MB / 1.09GB 15.0s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 412.09MB / 1.31GB 15.4s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 650.12MB / 1.20GB 16.5s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 465.57MB / 1.09GB 16.9s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 479.20MB / 1.31GB 17.2s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 719.32MB / 1.20GB 17.9s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 520.09MB / 1.09GB 18.7s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 546.31MB / 1.31GB 19.2s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 784.33MB / 1.20GB 19.4s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 578.81MB / 1.09GB 20.4s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 849.35MB / 1.20GB 20.9s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 614.47MB / 1.31GB 21.3s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 638.58MB / 1.09GB 22.4s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 910.16MB / 1.20GB 22.4s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 680.53MB / 1.31GB 22.8s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 747.63MB / 1.31GB 24.1s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 693.11MB / 1.09GB 24.3s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 972.03MB / 1.20GB 24.3s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 1.04GB / 1.20GB 25.7s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 748.68MB / 1.09GB 25.9s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 815.79MB / 1.31GB 26.4s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 1.10GB / 1.20GB 27.2s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 807.40MB / 1.09GB 27.4s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 1.17GB / 1.20GB 28.7s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 881.85MB / 1.31GB 28.7s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 862.98MB / 1.09GB 29.0s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 953.16MB / 1.31GB 30.6s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 923.80MB / 1.09GB 31.1s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.02GB / 1.31GB 32.0s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 983.56MB / 1.09GB 32.3s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.09GB / 1.31GB 33.2s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 1.04GB / 1.09GB 33.7s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 1.20GB / 1.20GB 33.7s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.16GB / 1.31GB 34.5s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.22GB / 1.31GB 35.8s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.29GB / 1.31GB 37.1s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 1.09GB / 1.09GB 38.8s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 1.20GB / 1.20GB 38.8s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.31GB / 1.31GB 42.2s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 1.09GB / 1.09GB 44.0s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 1.20GB / 1.20GB 44.0s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.31GB / 1.31GB 47.3s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 1.09GB / 1.09GB 49.0s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 1.20GB / 1.20GB 49.0s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.31GB / 1.31GB 52.4s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 1.09GB / 1.09GB 54.1s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 1.20GB / 1.20GB 54.1s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.31GB / 1.31GB 57.5s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 1.09GB / 1.09GB 59.2s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 1.20GB / 1.20GB 59.2s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.31GB / 1.31GB 62.6s
+#4 sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 1.20GB / 1.20GB 63.0s done
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 1.09GB / 1.09GB 64.4s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.31GB / 1.31GB 67.7s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 1.09GB / 1.09GB 69.5s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.31GB / 1.31GB 72.8s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 1.09GB / 1.09GB 74.5s
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.31GB / 1.31GB 77.8s
+#4 sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 1.09GB / 1.09GB 78.3s done
+#4 sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 1.31GB / 1.31GB 81.9s done
+#4 extracting sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 0.1s
+#4 extracting sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 5.2s
+#4 extracting sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 10.2s
+#4 extracting sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 15.2s
+#4 extracting sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 20.2s
+#4 extracting sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 25.3s
+#4 extracting sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 30.3s
+#4 extracting sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 35.3s
+#4 extracting sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 40.4s
+#4 extracting sha256:7d403f8e5ce7d952c8bc1b78cac31d305366259c860594620937347192bad531 42.8s done
+#4 extracting sha256:f204873f718bd3fbd3dd95cb223cdeca4ae9d571a95514616b6d1025e2fe5d1a
+#4 extracting sha256:f204873f718bd3fbd3dd95cb223cdeca4ae9d571a95514616b6d1025e2fe5d1a 0.1s done
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 5.1s
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 10.1s
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 15.2s
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 20.3s
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 25.3s
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 30.4s
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 35.4s
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 40.5s
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 45.6s
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 50.7s
+#4 extracting sha256:ae98670f8fc00012c3232c50c1f3f7e4e763e039cc8820b96997952e662aec8c 52.1s done
+#4 extracting sha256:924b4ff4ab14c9d1bf36bc13ba7e347cbd148976f9d94fbd89562f139933e034
+#4 extracting sha256:924b4ff4ab14c9d1bf36bc13ba7e347cbd148976f9d94fbd89562f139933e034 0.1s done
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 5.0s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 10.1s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 15.1s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 20.2s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 25.3s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 30.3s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 35.4s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 40.5s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 45.6s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 50.6s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 55.6s
+#4 extracting sha256:8374f1e9928442f871b70105fe741ba033463d84e2824f6620b5d8bdc9f08a50 59.5s done
+#4 DONE 243.2s
+
+#6 [ 2/13] RUN rm -rf /var/lib/apt/lists/*            /etc/apt/sources.list.d/cuda.list            /etc/apt/sources.list.d/nvidia-ml.list
+#6 DONE 24.8s
+
+#7 [ 3/13] RUN apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         python3.7         python3.7-dev         python3-distutils-extra         git         wget &&     apt-get clean &&     rm /var/lib/apt/lists/*_*
+#7 0.935 Get:1 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+#7 1.127 Get:2 http://security.ubuntu.com/ubuntu bionic-security InRelease [102 kB]
+#7 1.304 Get:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [102 kB]
+#7 1.392 Get:4 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [102 kB]
+#7 1.480 Get:5 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
+#7 1.598 Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
+#7 1.819 Get:7 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
+#7 1.832 Get:8 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [23.8 kB]
+#7 2.123 Get:9 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
+#7 2.190 Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [2411 kB]
+#7 2.245 Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [30.8 kB]
+#7 2.246 Get:12 http://archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [1728 kB]
+#7 2.355 Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [3786 kB]
+#7 2.384 Get:14 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [1688 kB]
+#7 2.623 Get:15 http://archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [64.0 kB]
+#7 2.632 Get:16 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [20.6 kB]
+#7 3.094 Get:17 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [1637 kB]
+#7 3.222 Get:18 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [3373 kB]
+#7 4.521 Fetched 28.2 MB in 4s (7596 kB/s)
+#7 4.521 Reading package lists...
+#7 5.948 Reading package lists...
+#7 7.308 Building dependency tree...
+#7 7.487 Reading state information...
+#7 7.636 The following additional packages will be installed:
+#7 7.636   autoconf automake autotools-dev file gettext gettext-base git-man intltool
+#7 7.636   libcroco3 libcurl3-gnutls libencode-locale-perl liberror-perl libexpat1
+#7 7.637   libexpat1-dev libfile-listing-perl libglib2.0-0 libgssapi-krb5-2
+#7 7.637   libhtml-parser-perl libhtml-tagset-perl libhtml-tree-perl
+#7 7.637   libhttp-cookies-perl libhttp-date-perl libhttp-message-perl
+#7 7.637   libhttp-negotiate-perl libicu60 libio-html-perl libio-socket-ssl-perl
+#7 7.637   libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 liblwp-mediatypes-perl
+#7 7.637   liblwp-protocol-https-perl libmagic-mgc libmagic1 libmpdec2 libnet-http-perl
+#7 7.637   libnet-ssleay-perl libnghttp2-14 libpsl5 libpython3-stdlib
+#7 7.637   libpython3.6-minimal libpython3.6-stdlib libpython3.7 libpython3.7-dev
+#7 7.637   libpython3.7-minimal libpython3.7-stdlib librtmp1 libsigsegv2
+#7 7.637   libtimedate-perl libtry-tiny-perl liburi-perl libwww-perl
+#7 7.637   libwww-robotrules-perl libxml-parser-perl libxml2 m4 mime-support netbase
+#7 7.637   perl-openssl-defaults python3 python3-distutils python3-lib2to3
+#7 7.637   python3-minimal python3.6 python3.6-minimal python3.7-minimal zlib1g-dev
+#7 7.639 Suggested packages:
+#7 7.639   autoconf-archive gnu-standards autoconf-doc libtool gettext-doc autopoint
+#7 7.639   libasprintf-dev libgettextpo-dev git-daemon-run | git-daemon-sysvinit
+#7 7.639   git-doc git-el git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+#7 7.639   krb5-doc krb5-user libdata-dump-perl libcrypt-ssleay-perl
+#7 7.639   libauthen-ntlm-perl m4-doc python3-doc python3-tk python3-venv devscripts
+#7 7.639   python3.6-venv python3.6-doc binfmt-support python3.7-venv python3.7-doc
+#7 7.639 Recommended packages:
+#7 7.639   less ssh-client libglib2.0-data shared-mime-info xdg-user-dirs
+#7 7.639   libhtml-format-perl krb5-locales publicsuffix libdata-dump-perl
+#7 7.639   libhtml-form-perl libhttp-daemon-perl libmailtools-perl
+#7 7.894 The following NEW packages will be installed:
+#7 7.894   autoconf automake autotools-dev file gettext gettext-base git git-man
+#7 7.894   intltool libcroco3 libcurl3-gnutls libencode-locale-perl liberror-perl
+#7 7.895   libexpat1 libexpat1-dev libfile-listing-perl libglib2.0-0 libgssapi-krb5-2
+#7 7.895   libhtml-parser-perl libhtml-tagset-perl libhtml-tree-perl
+#7 7.895   libhttp-cookies-perl libhttp-date-perl libhttp-message-perl
+#7 7.895   libhttp-negotiate-perl libicu60 libio-html-perl libio-socket-ssl-perl
+#7 7.895   libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 liblwp-mediatypes-perl
+#7 7.895   liblwp-protocol-https-perl libmagic-mgc libmagic1 libmpdec2 libnet-http-perl
+#7 7.895   libnet-ssleay-perl libnghttp2-14 libpsl5 libpython3-stdlib
+#7 7.895   libpython3.6-minimal libpython3.6-stdlib libpython3.7 libpython3.7-dev
+#7 7.895   libpython3.7-minimal libpython3.7-stdlib librtmp1 libsigsegv2
+#7 7.895   libtimedate-perl libtry-tiny-perl liburi-perl libwww-perl
+#7 7.895   libwww-robotrules-perl libxml-parser-perl libxml2 m4 mime-support netbase
+#7 7.895   perl-openssl-defaults python3 python3-distutils python3-distutils-extra
+#7 7.895   python3-lib2to3 python3-minimal python3.6 python3.6-minimal python3.7
+#7 7.895   python3.7-dev python3.7-minimal wget zlib1g-dev
+#7 8.181 0 upgraded, 73 newly installed, 0 to remove and 40 not upgraded.
+#7 8.181 Need to get 79.9 MB of archives.
+#7 8.181 After this operation, 237 MB of additional disk space will be used.
+#7 8.181 Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-minimal amd64 3.6.9-1~18.04ubuntu1.12 [533 kB]
+#7 9.057 Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libexpat1 amd64 2.2.5-3ubuntu0.9 [82.8 kB]
+#7 9.071 Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6-minimal amd64 3.6.9-1~18.04ubuntu1.12 [1609 kB]
+#7 9.348 Get:4 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-minimal amd64 3.6.7-1~18.04 [23.7 kB]
+#7 9.351 Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 mime-support all 3.60ubuntu1 [30.1 kB]
+#7 9.353 Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 libmpdec2 amd64 2.4.2-1ubuntu1 [84.1 kB]
+#7 9.360 Get:7 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-stdlib amd64 3.6.9-1~18.04ubuntu1.12 [1713 kB]
+#7 9.482 Get:8 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6 amd64 3.6.9-1~18.04ubuntu1.12 [203 kB]
+#7 9.491 Get:9 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3-stdlib amd64 3.6.7-1~18.04 [7240 B]
+#7 9.491 Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3 amd64 3.6.7-1~18.04 [47.2 kB]
+#7 9.494 Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 libpython3.7-minimal amd64 3.7.5-2ubuntu1~18.04.2 [546 kB]
+#7 9.516 Get:12 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python3.7-minimal amd64 3.7.5-2ubuntu1~18.04.2 [1681 kB]
+#7 9.600 Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libmagic-mgc amd64 1:5.32-2ubuntu0.4 [184 kB]
+#7 9.613 Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libmagic1 amd64 1:5.32-2ubuntu0.4 [68.6 kB]
+#7 9.615 Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 file amd64 1:5.32-2ubuntu0.4 [22.1 kB]
+#7 9.615 Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libglib2.0-0 amd64 2.56.4-0ubuntu0.18.04.9 [1169 kB]
+#7 9.745 Get:17 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libicu60 amd64 60.2-3ubuntu3.2 [8050 kB]
+#7 10.06 Get:18 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libxml2 amd64 2.9.4+dfsg1-6.1ubuntu1.9 [663 kB]
+#7 10.15 Get:19 http://archive.ubuntu.com/ubuntu bionic/main amd64 netbase all 5.4 [12.7 kB]
+#7 10.15 Get:20 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gettext-base amd64 0.19.8.1-6ubuntu0.3 [113 kB]
+#7 10.15 Get:21 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libkrb5support0 amd64 1.16-2ubuntu0.4 [30.9 kB]
+#7 10.16 Get:22 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libk5crypto3 amd64 1.16-2ubuntu0.4 [85.3 kB]
+#7 10.16 Get:23 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libkeyutils1 amd64 1.5.9-9.2ubuntu2.1 [8764 B]
+#7 10.16 Get:24 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libkrb5-3 amd64 1.16-2ubuntu0.4 [278 kB]
+#7 10.16 Get:25 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libgssapi-krb5-2 amd64 1.16-2ubuntu0.4 [122 kB]
+#7 10.17 Get:26 http://archive.ubuntu.com/ubuntu bionic/main amd64 libpsl5 amd64 0.19.1-5build1 [41.8 kB]
+#7 10.30 Get:27 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 wget amd64 1.19.4-1ubuntu2.2 [316 kB]
+#7 10.31 Get:28 http://archive.ubuntu.com/ubuntu bionic/main amd64 libsigsegv2 amd64 2.12-1 [14.7 kB]
+#7 10.31 Get:29 http://archive.ubuntu.com/ubuntu bionic/main amd64 m4 amd64 1.4.18-1 [197 kB]
+#7 10.31 Get:30 http://archive.ubuntu.com/ubuntu bionic/main amd64 autoconf all 2.69-11 [322 kB]
+#7 10.32 Get:31 http://archive.ubuntu.com/ubuntu bionic/main amd64 autotools-dev all 20180224.1 [39.6 kB]
+#7 10.32 Get:32 http://archive.ubuntu.com/ubuntu bionic/main amd64 automake all 1:1.15.1-3ubuntu2 [509 kB]
+#7 10.33 Get:33 http://archive.ubuntu.com/ubuntu bionic/main amd64 libcroco3 amd64 0.6.12-2 [81.3 kB]
+#7 10.33 Get:34 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gettext amd64 0.19.8.1-6ubuntu0.3 [1293 kB]
+#7 10.36 Get:35 http://archive.ubuntu.com/ubuntu bionic/main amd64 libnghttp2-14 amd64 1.30.0-1ubuntu1 [77.8 kB]
+#7 10.37 Get:36 http://archive.ubuntu.com/ubuntu bionic/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-1 [54.2 kB]
+#7 10.49 Get:37 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcurl3-gnutls amd64 7.58.0-2ubuntu3.24 [219 kB]
+#7 10.50 Get:38 http://archive.ubuntu.com/ubuntu bionic/main amd64 liberror-perl all 0.17025-1 [22.8 kB]
+#7 10.50 Get:39 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 git-man all 1:2.17.1-1ubuntu0.18 [804 kB]
+#7 10.51 Get:40 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 git amd64 1:2.17.1-1ubuntu0.18 [3990 kB]
+#7 10.66 Get:41 http://archive.ubuntu.com/ubuntu bionic/main amd64 liburi-perl all 1.73-1 [77.2 kB]
+#7 10.67 Get:42 http://archive.ubuntu.com/ubuntu bionic/main amd64 libencode-locale-perl all 1.05-1 [12.3 kB]
+#7 10.67 Get:43 http://archive.ubuntu.com/ubuntu bionic/main amd64 libtimedate-perl all 2.3000-2 [37.5 kB]
+#7 10.67 Get:44 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhttp-date-perl all 6.02-1 [10.4 kB]
+#7 10.67 Get:45 http://archive.ubuntu.com/ubuntu bionic/main amd64 libfile-listing-perl all 6.04-1 [9774 B]
+#7 10.67 Get:46 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhtml-tagset-perl all 3.20-3 [12.1 kB]
+#7 10.67 Get:47 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhtml-parser-perl amd64 3.72-3build1 [85.9 kB]
+#7 10.67 Get:48 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhtml-tree-perl all 5.07-1 [200 kB]
+#7 10.77 Get:49 http://archive.ubuntu.com/ubuntu bionic/main amd64 libio-html-perl all 1.001-1 [14.9 kB]
+#7 10.81 Get:50 http://archive.ubuntu.com/ubuntu bionic/main amd64 liblwp-mediatypes-perl all 6.02-1 [21.7 kB]
+#7 10.81 Get:51 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhttp-message-perl all 6.14-1 [72.1 kB]
+#7 10.81 Get:52 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhttp-cookies-perl all 6.04-1 [17.2 kB]
+#7 10.81 Get:53 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhttp-negotiate-perl all 6.00-2 [13.4 kB]
+#7 10.81 Get:54 http://archive.ubuntu.com/ubuntu bionic/main amd64 perl-openssl-defaults amd64 3build1 [7012 B]
+#7 10.81 Get:55 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnet-ssleay-perl amd64 1.84-1ubuntu0.2 [283 kB]
+#7 10.82 Get:56 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libio-socket-ssl-perl all 2.060-3~ubuntu18.04.1 [173 kB]
+#7 10.82 Get:57 http://archive.ubuntu.com/ubuntu bionic/main amd64 libnet-http-perl all 6.17-1 [22.7 kB]
+#7 10.90 Get:58 http://archive.ubuntu.com/ubuntu bionic/main amd64 liblwp-protocol-https-perl all 6.07-2 [8284 B]
+#7 10.95 Get:59 http://archive.ubuntu.com/ubuntu bionic/main amd64 libtry-tiny-perl all 0.30-1 [20.5 kB]
+#7 10.96 Get:60 http://archive.ubuntu.com/ubuntu bionic/main amd64 libwww-robotrules-perl all 6.01-1 [14.1 kB]
+#7 10.96 Get:61 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libwww-perl all 6.31-1ubuntu0.1 [137 kB]
+#7 10.96 Get:62 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxml-parser-perl amd64 2.44-2build3 [199 kB]
+#7 10.96 Get:63 http://archive.ubuntu.com/ubuntu bionic/universe amd64 intltool all 0.51.0-5ubuntu1 [44.6 kB]
+#7 10.96 Get:64 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libexpat1-dev amd64 2.2.5-3ubuntu0.9 [124 kB]
+#7 10.97 Get:65 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 libpython3.7-stdlib amd64 3.7.5-2ubuntu1~18.04.2 [1745 kB]
+#7 11.00 Get:66 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 libpython3.7 amd64 3.7.5-2ubuntu1~18.04.2 [1498 kB]
+#7 11.10 Get:67 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 libpython3.7-dev amd64 3.7.5-2ubuntu1~18.04.2 [48.4 MB]
+#7 13.29 Get:68 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-lib2to3 all 3.6.9-1~18.04 [77.4 kB]
+#7 13.29 Get:69 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-distutils all 3.6.9-1~18.04 [144 kB]
+#7 13.31 Get:70 http://archive.ubuntu.com/ubuntu bionic/universe amd64 python3-distutils-extra all 2.41ubuntu1 [15.0 kB]
+#7 13.31 Get:71 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python3.7 amd64 3.7.5-2ubuntu1~18.04.2 [301 kB]
+#7 13.32 Get:72 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 zlib1g-dev amd64 1:1.2.11.dfsg-0ubuntu2.2 [176 kB]
+#7 13.33 Get:73 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python3.7-dev amd64 3.7.5-2ubuntu1~18.04.2 [514 kB]
+#7 13.57 debconf: delaying package configuration, since apt-utils is not installed
+#7 13.62 Fetched 79.9 MB in 5s (14.7 MB/s)
+#7 13.81 Selecting previously unselected package libpython3.6-minimal:amd64.
+#7 13.81 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12428 files and directories currently installed.)
+#7 13.81 Preparing to unpack .../libpython3.6-minimal_3.6.9-1~18.04ubuntu1.12_amd64.deb ...
+#7 13.84 Unpacking libpython3.6-minimal:amd64 (3.6.9-1~18.04ubuntu1.12) ...
+#7 14.26 Selecting previously unselected package libexpat1:amd64.
+#7 14.26 Preparing to unpack .../libexpat1_2.2.5-3ubuntu0.9_amd64.deb ...
+#7 14.31 Unpacking libexpat1:amd64 (2.2.5-3ubuntu0.9) ...
+#7 14.57 Selecting previously unselected package python3.6-minimal.
+#7 14.57 Preparing to unpack .../python3.6-minimal_3.6.9-1~18.04ubuntu1.12_amd64.deb ...
+#7 14.59 Unpacking python3.6-minimal (3.6.9-1~18.04ubuntu1.12) ...
+#7 15.13 Setting up libpython3.6-minimal:amd64 (3.6.9-1~18.04ubuntu1.12) ...
+#7 15.23 Setting up libexpat1:amd64 (2.2.5-3ubuntu0.9) ...
+#7 15.31 Setting up python3.6-minimal (3.6.9-1~18.04ubuntu1.12) ...
+#7 16.23 Selecting previously unselected package python3-minimal.
+#7 16.23 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12675 files and directories currently installed.)
+#7 16.24 Preparing to unpack .../0-python3-minimal_3.6.7-1~18.04_amd64.deb ...
+#7 16.26 Unpacking python3-minimal (3.6.7-1~18.04) ...
+#7 16.52 Selecting previously unselected package mime-support.
+#7 16.52 Preparing to unpack .../1-mime-support_3.60ubuntu1_all.deb ...
+#7 16.54 Unpacking mime-support (3.60ubuntu1) ...
+#7 16.79 Selecting previously unselected package libmpdec2:amd64.
+#7 16.79 Preparing to unpack .../2-libmpdec2_2.4.2-1ubuntu1_amd64.deb ...
+#7 16.82 Unpacking libmpdec2:amd64 (2.4.2-1ubuntu1) ...
+#7 16.99 Selecting previously unselected package libpython3.6-stdlib:amd64.
+#7 16.99 Preparing to unpack .../3-libpython3.6-stdlib_3.6.9-1~18.04ubuntu1.12_amd64.deb ...
+#7 17.01 Unpacking libpython3.6-stdlib:amd64 (3.6.9-1~18.04ubuntu1.12) ...
+#7 17.55 Selecting previously unselected package python3.6.
+#7 17.55 Preparing to unpack .../4-python3.6_3.6.9-1~18.04ubuntu1.12_amd64.deb ...
+#7 17.57 Unpacking python3.6 (3.6.9-1~18.04ubuntu1.12) ...
+#7 17.75 Selecting previously unselected package libpython3-stdlib:amd64.
+#7 17.75 Preparing to unpack .../5-libpython3-stdlib_3.6.7-1~18.04_amd64.deb ...
+#7 17.77 Unpacking libpython3-stdlib:amd64 (3.6.7-1~18.04) ...
+#7 17.94 Setting up python3-minimal (3.6.7-1~18.04) ...
+#7 18.39 Selecting previously unselected package python3.
+#7 18.39 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 13105 files and directories currently installed.)
+#7 18.40 Preparing to unpack .../00-python3_3.6.7-1~18.04_amd64.deb ...
+#7 18.42 Unpacking python3 (3.6.7-1~18.04) ...
+#7 18.67 Selecting previously unselected package libpython3.7-minimal:amd64.
+#7 18.67 Preparing to unpack .../01-libpython3.7-minimal_3.7.5-2ubuntu1~18.04.2_amd64.deb ...
+#7 18.69 Unpacking libpython3.7-minimal:amd64 (3.7.5-2ubuntu1~18.04.2) ...
+#7 19.09 Selecting previously unselected package python3.7-minimal.
+#7 19.09 Preparing to unpack .../02-python3.7-minimal_3.7.5-2ubuntu1~18.04.2_amd64.deb ...
+#7 19.11 Unpacking python3.7-minimal (3.7.5-2ubuntu1~18.04.2) ...
+#7 19.50 Selecting previously unselected package libmagic-mgc.
+#7 19.50 Preparing to unpack .../03-libmagic-mgc_1%3a5.32-2ubuntu0.4_amd64.deb ...
+#7 19.53 Unpacking libmagic-mgc (1:5.32-2ubuntu0.4) ...
+#7 19.85 Selecting previously unselected package libmagic1:amd64.
+#7 19.85 Preparing to unpack .../04-libmagic1_1%3a5.32-2ubuntu0.4_amd64.deb ...
+#7 19.88 Unpacking libmagic1:amd64 (1:5.32-2ubuntu0.4) ...
+#7 20.16 Selecting previously unselected package file.
+#7 20.16 Preparing to unpack .../05-file_1%3a5.32-2ubuntu0.4_amd64.deb ...
+#7 20.19 Unpacking file (1:5.32-2ubuntu0.4) ...
+#7 20.45 Selecting previously unselected package libglib2.0-0:amd64.
+#7 20.45 Preparing to unpack .../06-libglib2.0-0_2.56.4-0ubuntu0.18.04.9_amd64.deb ...
+#7 20.48 Unpacking libglib2.0-0:amd64 (2.56.4-0ubuntu0.18.04.9) ...
+#7 20.84 Selecting previously unselected package libicu60:amd64.
+#7 20.84 Preparing to unpack .../07-libicu60_60.2-3ubuntu3.2_amd64.deb ...
+#7 20.86 Unpacking libicu60:amd64 (60.2-3ubuntu3.2) ...
+#7 22.22 Selecting previously unselected package libxml2:amd64.
+#7 22.22 Preparing to unpack .../08-libxml2_2.9.4+dfsg1-6.1ubuntu1.9_amd64.deb ...
+#7 22.24 Unpacking libxml2:amd64 (2.9.4+dfsg1-6.1ubuntu1.9) ...
+#7 22.54 Selecting previously unselected package netbase.
+#7 22.54 Preparing to unpack .../09-netbase_5.4_all.deb ...
+#7 22.57 Unpacking netbase (5.4) ...
+#7 22.78 Selecting previously unselected package gettext-base.
+#7 22.78 Preparing to unpack .../10-gettext-base_0.19.8.1-6ubuntu0.3_amd64.deb ...
+#7 22.81 Unpacking gettext-base (0.19.8.1-6ubuntu0.3) ...
+#7 23.04 Selecting previously unselected package libkrb5support0:amd64.
+#7 23.04 Preparing to unpack .../11-libkrb5support0_1.16-2ubuntu0.4_amd64.deb ...
+#7 23.06 Unpacking libkrb5support0:amd64 (1.16-2ubuntu0.4) ...
+#7 23.28 Selecting previously unselected package libk5crypto3:amd64.
+#7 23.28 Preparing to unpack .../12-libk5crypto3_1.16-2ubuntu0.4_amd64.deb ...
+#7 23.31 Unpacking libk5crypto3:amd64 (1.16-2ubuntu0.4) ...
+#7 23.53 Selecting previously unselected package libkeyutils1:amd64.
+#7 23.53 Preparing to unpack .../13-libkeyutils1_1.5.9-9.2ubuntu2.1_amd64.deb ...
+#7 23.56 Unpacking libkeyutils1:amd64 (1.5.9-9.2ubuntu2.1) ...
+#7 23.81 Selecting previously unselected package libkrb5-3:amd64.
+#7 23.81 Preparing to unpack .../14-libkrb5-3_1.16-2ubuntu0.4_amd64.deb ...
+#7 23.84 Unpacking libkrb5-3:amd64 (1.16-2ubuntu0.4) ...
+#7 24.14 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#7 24.14 Preparing to unpack .../15-libgssapi-krb5-2_1.16-2ubuntu0.4_amd64.deb ...
+#7 24.16 Unpacking libgssapi-krb5-2:amd64 (1.16-2ubuntu0.4) ...
+#7 24.39 Selecting previously unselected package libpsl5:amd64.
+#7 24.39 Preparing to unpack .../16-libpsl5_0.19.1-5build1_amd64.deb ...
+#7 24.41 Unpacking libpsl5:amd64 (0.19.1-5build1) ...
+#7 24.60 Selecting previously unselected package wget.
+#7 24.60 Preparing to unpack .../17-wget_1.19.4-1ubuntu2.2_amd64.deb ...
+#7 24.62 Unpacking wget (1.19.4-1ubuntu2.2) ...
+#7 24.85 Selecting previously unselected package libsigsegv2:amd64.
+#7 24.85 Preparing to unpack .../18-libsigsegv2_2.12-1_amd64.deb ...
+#7 24.88 Unpacking libsigsegv2:amd64 (2.12-1) ...
+#7 25.12 Selecting previously unselected package m4.
+#7 25.12 Preparing to unpack .../19-m4_1.4.18-1_amd64.deb ...
+#7 25.14 Unpacking m4 (1.4.18-1) ...
+#7 25.36 Selecting previously unselected package autoconf.
+#7 25.36 Preparing to unpack .../20-autoconf_2.69-11_all.deb ...
+#7 25.40 Unpacking autoconf (2.69-11) ...
+#7 25.64 Selecting previously unselected package autotools-dev.
+#7 25.64 Preparing to unpack .../21-autotools-dev_20180224.1_all.deb ...
+#7 25.67 Unpacking autotools-dev (20180224.1) ...
+#7 25.90 Selecting previously unselected package automake.
+#7 25.90 Preparing to unpack .../22-automake_1%3a1.15.1-3ubuntu2_all.deb ...
+#7 25.93 Unpacking automake (1:1.15.1-3ubuntu2) ...
+#7 26.30 Selecting previously unselected package libcroco3:amd64.
+#7 26.30 Preparing to unpack .../23-libcroco3_0.6.12-2_amd64.deb ...
+#7 26.32 Unpacking libcroco3:amd64 (0.6.12-2) ...
+#7 26.49 Selecting previously unselected package gettext.
+#7 26.49 Preparing to unpack .../24-gettext_0.19.8.1-6ubuntu0.3_amd64.deb ...
+#7 26.52 Unpacking gettext (0.19.8.1-6ubuntu0.3) ...
+#7 26.90 Selecting previously unselected package libnghttp2-14:amd64.
+#7 26.90 Preparing to unpack .../25-libnghttp2-14_1.30.0-1ubuntu1_amd64.deb ...
+#7 26.92 Unpacking libnghttp2-14:amd64 (1.30.0-1ubuntu1) ...
+#7 27.15 Selecting previously unselected package librtmp1:amd64.
+#7 27.15 Preparing to unpack .../26-librtmp1_2.4+20151223.gitfa8646d.1-1_amd64.deb ...
+#7 27.18 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1) ...
+#7 27.42 Selecting previously unselected package libcurl3-gnutls:amd64.
+#7 27.42 Preparing to unpack .../27-libcurl3-gnutls_7.58.0-2ubuntu3.24_amd64.deb ...
+#7 27.46 Unpacking libcurl3-gnutls:amd64 (7.58.0-2ubuntu3.24) ...
+#7 27.66 Selecting previously unselected package liberror-perl.
+#7 27.66 Preparing to unpack .../28-liberror-perl_0.17025-1_all.deb ...
+#7 27.68 Unpacking liberror-perl (0.17025-1) ...
+#7 27.84 Selecting previously unselected package git-man.
+#7 27.84 Preparing to unpack .../29-git-man_1%3a2.17.1-1ubuntu0.18_all.deb ...
+#7 27.87 Unpacking git-man (1:2.17.1-1ubuntu0.18) ...
+#7 28.17 Selecting previously unselected package git.
+#7 28.17 Preparing to unpack .../30-git_1%3a2.17.1-1ubuntu0.18_amd64.deb ...
+#7 28.22 Unpacking git (1:2.17.1-1ubuntu0.18) ...
+#7 29.04 Selecting previously unselected package liburi-perl.
+#7 29.04 Preparing to unpack .../31-liburi-perl_1.73-1_all.deb ...
+#7 29.07 Unpacking liburi-perl (1.73-1) ...
+#7 29.25 Selecting previously unselected package libencode-locale-perl.
+#7 29.25 Preparing to unpack .../32-libencode-locale-perl_1.05-1_all.deb ...
+#7 29.27 Unpacking libencode-locale-perl (1.05-1) ...
+#7 29.42 Selecting previously unselected package libtimedate-perl.
+#7 29.42 Preparing to unpack .../33-libtimedate-perl_2.3000-2_all.deb ...
+#7 29.45 Unpacking libtimedate-perl (2.3000-2) ...
+#7 29.63 Selecting previously unselected package libhttp-date-perl.
+#7 29.63 Preparing to unpack .../34-libhttp-date-perl_6.02-1_all.deb ...
+#7 29.65 Unpacking libhttp-date-perl (6.02-1) ...
+#7 29.81 Selecting previously unselected package libfile-listing-perl.
+#7 29.81 Preparing to unpack .../35-libfile-listing-perl_6.04-1_all.deb ...
+#7 29.84 Unpacking libfile-listing-perl (6.04-1) ...
+#7 30.01 Selecting previously unselected package libhtml-tagset-perl.
+#7 30.01 Preparing to unpack .../36-libhtml-tagset-perl_3.20-3_all.deb ...
+#7 30.14 Unpacking libhtml-tagset-perl (3.20-3) ...
+#7 30.29 Selecting previously unselected package libhtml-parser-perl.
+#7 30.29 Preparing to unpack .../37-libhtml-parser-perl_3.72-3build1_amd64.deb ...
+#7 30.32 Unpacking libhtml-parser-perl (3.72-3build1) ...
+#7 30.47 Selecting previously unselected package libhtml-tree-perl.
+#7 30.47 Preparing to unpack .../38-libhtml-tree-perl_5.07-1_all.deb ...
+#7 30.49 Unpacking libhtml-tree-perl (5.07-1) ...
+#7 30.69 Selecting previously unselected package libio-html-perl.
+#7 30.69 Preparing to unpack .../39-libio-html-perl_1.001-1_all.deb ...
+#7 30.71 Unpacking libio-html-perl (1.001-1) ...
+#7 30.87 Selecting previously unselected package liblwp-mediatypes-perl.
+#7 30.87 Preparing to unpack .../40-liblwp-mediatypes-perl_6.02-1_all.deb ...
+#7 30.90 Unpacking liblwp-mediatypes-perl (6.02-1) ...
+#7 31.07 Selecting previously unselected package libhttp-message-perl.
+#7 31.07 Preparing to unpack .../41-libhttp-message-perl_6.14-1_all.deb ...
+#7 31.09 Unpacking libhttp-message-perl (6.14-1) ...
+#7 31.28 Selecting previously unselected package libhttp-cookies-perl.
+#7 31.28 Preparing to unpack .../42-libhttp-cookies-perl_6.04-1_all.deb ...
+#7 31.30 Unpacking libhttp-cookies-perl (6.04-1) ...
+#7 31.46 Selecting previously unselected package libhttp-negotiate-perl.
+#7 31.46 Preparing to unpack .../43-libhttp-negotiate-perl_6.00-2_all.deb ...
+#7 31.49 Unpacking libhttp-negotiate-perl (6.00-2) ...
+#7 31.65 Selecting previously unselected package perl-openssl-defaults:amd64.
+#7 31.65 Preparing to unpack .../44-perl-openssl-defaults_3build1_amd64.deb ...
+#7 31.68 Unpacking perl-openssl-defaults:amd64 (3build1) ...
+#7 31.85 Selecting previously unselected package libnet-ssleay-perl.
+#7 31.85 Preparing to unpack .../45-libnet-ssleay-perl_1.84-1ubuntu0.2_amd64.deb ...
+#7 31.88 Unpacking libnet-ssleay-perl (1.84-1ubuntu0.2) ...
+#7 32.11 Selecting previously unselected package libio-socket-ssl-perl.
+#7 32.11 Preparing to unpack .../46-libio-socket-ssl-perl_2.060-3~ubuntu18.04.1_all.deb ...
+#7 32.13 Unpacking libio-socket-ssl-perl (2.060-3~ubuntu18.04.1) ...
+#7 32.34 Selecting previously unselected package libnet-http-perl.
+#7 32.34 Preparing to unpack .../47-libnet-http-perl_6.17-1_all.deb ...
+#7 32.37 Unpacking libnet-http-perl (6.17-1) ...
+#7 32.56 Selecting previously unselected package liblwp-protocol-https-perl.
+#7 32.56 Preparing to unpack .../48-liblwp-protocol-https-perl_6.07-2_all.deb ...
+#7 32.58 Unpacking liblwp-protocol-https-perl (6.07-2) ...
+#7 32.74 Selecting previously unselected package libtry-tiny-perl.
+#7 32.74 Preparing to unpack .../49-libtry-tiny-perl_0.30-1_all.deb ...
+#7 32.77 Unpacking libtry-tiny-perl (0.30-1) ...
+#7 32.94 Selecting previously unselected package libwww-robotrules-perl.
+#7 32.94 Preparing to unpack .../50-libwww-robotrules-perl_6.01-1_all.deb ...
+#7 32.96 Unpacking libwww-robotrules-perl (6.01-1) ...
+#7 33.13 Selecting previously unselected package libwww-perl.
+#7 33.13 Preparing to unpack .../51-libwww-perl_6.31-1ubuntu0.1_all.deb ...
+#7 33.15 Unpacking libwww-perl (6.31-1ubuntu0.1) ...
+#7 33.42 Selecting previously unselected package libxml-parser-perl.
+#7 33.42 Preparing to unpack .../52-libxml-parser-perl_2.44-2build3_amd64.deb ...
+#7 33.62 Unpacking libxml-parser-perl (2.44-2build3) ...
+#7 34.11 Selecting previously unselected package intltool.
+#7 34.11 Preparing to unpack .../53-intltool_0.51.0-5ubuntu1_all.deb ...
+#7 34.14 Unpacking intltool (0.51.0-5ubuntu1) ...
+#7 34.32 Selecting previously unselected package libexpat1-dev:amd64.
+#7 34.32 Preparing to unpack .../54-libexpat1-dev_2.2.5-3ubuntu0.9_amd64.deb ...
+#7 34.34 Unpacking libexpat1-dev:amd64 (2.2.5-3ubuntu0.9) ...
+#7 34.57 Selecting previously unselected package libpython3.7-stdlib:amd64.
+#7 34.57 Preparing to unpack .../55-libpython3.7-stdlib_3.7.5-2ubuntu1~18.04.2_amd64.deb ...
+#7 34.60 Unpacking libpython3.7-stdlib:amd64 (3.7.5-2ubuntu1~18.04.2) ...
+#7 36.07 Selecting previously unselected package libpython3.7:amd64.
+#7 36.07 Preparing to unpack .../56-libpython3.7_3.7.5-2ubuntu1~18.04.2_amd64.deb ...
+#7 36.10 Unpacking libpython3.7:amd64 (3.7.5-2ubuntu1~18.04.2) ...
+#7 36.51 Selecting previously unselected package libpython3.7-dev:amd64.
+#7 36.51 Preparing to unpack .../57-libpython3.7-dev_3.7.5-2ubuntu1~18.04.2_amd64.deb ...
+#7 36.54 Unpacking libpython3.7-dev:amd64 (3.7.5-2ubuntu1~18.04.2) ...
+#7 41.10 Selecting previously unselected package python3-lib2to3.
+#7 41.10 Preparing to unpack .../58-python3-lib2to3_3.6.9-1~18.04_all.deb ...
+#7 41.12 Unpacking python3-lib2to3 (3.6.9-1~18.04) ...
+#7 41.51 Selecting previously unselected package python3-distutils.
+#7 41.51 Preparing to unpack .../59-python3-distutils_3.6.9-1~18.04_all.deb ...
+#7 41.53 Unpacking python3-distutils (3.6.9-1~18.04) ...
+#7 41.79 Selecting previously unselected package python3-distutils-extra.
+#7 41.79 Preparing to unpack .../60-python3-distutils-extra_2.41ubuntu1_all.deb ...
+#7 41.82 Unpacking python3-distutils-extra (2.41ubuntu1) ...
+#7 42.07 Selecting previously unselected package python3.7.
+#7 42.07 Preparing to unpack .../61-python3.7_3.7.5-2ubuntu1~18.04.2_amd64.deb ...
+#7 42.10 Unpacking python3.7 (3.7.5-2ubuntu1~18.04.2) ...
+#7 42.27 Selecting previously unselected package zlib1g-dev:amd64.
+#7 42.27 Preparing to unpack .../62-zlib1g-dev_1%3a1.2.11.dfsg-0ubuntu2.2_amd64.deb ...
+#7 42.30 Unpacking zlib1g-dev:amd64 (1:1.2.11.dfsg-0ubuntu2.2) ...
+#7 42.51 Selecting previously unselected package python3.7-dev.
+#7 42.51 Preparing to unpack .../63-python3.7-dev_3.7.5-2ubuntu1~18.04.2_amd64.deb ...
+#7 42.53 Unpacking python3.7-dev (3.7.5-2ubuntu1~18.04.2) ...
+#7 42.71 Setting up libhtml-tagset-perl (3.20-3) ...
+#7 42.79 Setting up git-man (1:2.17.1-1ubuntu0.18) ...
+#7 42.87 Setting up libtry-tiny-perl (0.30-1) ...
+#7 42.95 Setting up libicu60:amd64 (60.2-3ubuntu3.2) ...
+#7 43.02 Setting up libnghttp2-14:amd64 (1.30.0-1ubuntu1) ...
+#7 43.10 Setting up mime-support (3.60ubuntu1) ...
+#7 43.24 Setting up libencode-locale-perl (1.05-1) ...
+#7 43.32 Setting up liberror-perl (0.17025-1) ...
+#7 43.39 Setting up libtimedate-perl (2.3000-2) ...
+#7 43.47 Setting up libsigsegv2:amd64 (2.12-1) ...
+#7 43.54 Setting up perl-openssl-defaults:amd64 (3build1) ...
+#7 43.62 Setting up libpsl5:amd64 (0.19.1-5build1) ...
+#7 43.69 Setting up libglib2.0-0:amd64 (2.56.4-0ubuntu0.18.04.9) ...
+#7 43.75 No schema files found: doing nothing.
+#7 43.78 Setting up libio-html-perl (1.001-1) ...
+#7 43.85 Setting up gettext-base (0.19.8.1-6ubuntu0.3) ...
+#7 43.93 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1) ...
+#7 44.00 Setting up m4 (1.4.18-1) ...
+#7 44.08 Setting up libpython3.7-minimal:amd64 (3.7.5-2ubuntu1~18.04.2) ...
+#7 44.18 Setting up python3.7-minimal (3.7.5-2ubuntu1~18.04.2) ...
+#7 46.07 Setting up libkrb5support0:amd64 (1.16-2ubuntu0.4) ...
+#7 46.23 Setting up libxml2:amd64 (2.9.4+dfsg1-6.1ubuntu1.9) ...
+#7 46.31 Setting up libmagic-mgc (1:5.32-2ubuntu0.4) ...
+#7 46.39 Setting up libmagic1:amd64 (1:5.32-2ubuntu0.4) ...
+#7 46.52 Setting up libcroco3:amd64 (0.6.12-2) ...
+#7 46.60 Setting up liblwp-mediatypes-perl (6.02-1) ...
+#7 46.67 Setting up autotools-dev (20180224.1) ...
+#7 46.75 Setting up liburi-perl (1.73-1) ...
+#7 46.82 Setting up libhtml-parser-perl (3.72-3build1) ...
+#7 46.91 Setting up wget (1.19.4-1ubuntu2.2) ...
+#7 47.02 Setting up libexpat1-dev:amd64 (2.2.5-3ubuntu0.9) ...
+#7 47.09 Setting up libnet-http-perl (6.17-1) ...
+#7 47.17 Setting up libkeyutils1:amd64 (1.5.9-9.2ubuntu2.1) ...
+#7 47.25 Setting up libwww-robotrules-perl (6.01-1) ...
+#7 47.32 Setting up libmpdec2:amd64 (2.4.2-1ubuntu1) ...
+#7 47.40 Setting up netbase (5.4) ...
+#7 47.55 Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-0ubuntu2.2) ...
+#7 47.63 Setting up libpython3.6-stdlib:amd64 (3.6.9-1~18.04ubuntu1.12) ...
+#7 47.70 Setting up libk5crypto3:amd64 (1.16-2ubuntu0.4) ...
+#7 47.78 Setting up libpython3.7-stdlib:amd64 (3.7.5-2ubuntu1~18.04.2) ...
+#7 47.85 Setting up libhttp-date-perl (6.02-1) ...
+#7 47.93 Setting up python3.6 (3.6.9-1~18.04ubuntu1.12) ...
+#7 48.79 Setting up gettext (0.19.8.1-6ubuntu0.3) ...
+#7 48.87 Setting up libnet-ssleay-perl (1.84-1ubuntu0.2) ...
+#7 48.95 Setting up python3.7 (3.7.5-2ubuntu1~18.04.2) ...
+#7 49.81 Setting up autoconf (2.69-11) ...
+#7 49.91 Setting up file (1:5.32-2ubuntu0.4) ...
+#7 49.99 Setting up libio-socket-ssl-perl (2.060-3~ubuntu18.04.1) ...
+#7 50.31 Setting up libhtml-tree-perl (5.07-1) ...
+#7 50.39 Setting up libpython3.7:amd64 (3.7.5-2ubuntu1~18.04.2) ...
+#7 50.46 Setting up automake (1:1.15.1-3ubuntu2) ...
+#7 50.53 update-alternatives: using /usr/bin/automake-1.15 to provide /usr/bin/automake (automake) in auto mode
+#7 50.53 update-alternatives: warning: skip creation of /usr/share/man/man1/automake.1.gz because associated file /usr/share/man/man1/automake-1.15.1.gz (of link group automake) doesn't exist
+#7 50.53 update-alternatives: warning: skip creation of /usr/share/man/man1/aclocal.1.gz because associated file /usr/share/man/man1/aclocal-1.15.1.gz (of link group automake) doesn't exist
+#7 50.57 Setting up libpython3.7-dev:amd64 (3.7.5-2ubuntu1~18.04.2) ...
+#7 50.65 Setting up libfile-listing-perl (6.04-1) ...
+#7 50.72 Setting up libhttp-message-perl (6.14-1) ...
+#7 50.80 Setting up libkrb5-3:amd64 (1.16-2ubuntu0.4) ...
+#7 50.88 Setting up libhttp-negotiate-perl (6.00-2) ...
+#7 50.95 Setting up libpython3-stdlib:amd64 (3.6.7-1~18.04) ...
+#7 51.03 Setting up python3 (3.6.7-1~18.04) ...
+#7 51.23 Setting up libhttp-cookies-perl (6.04-1) ...
+#7 51.30 Setting up python3.7-dev (3.7.5-2ubuntu1~18.04.2) ...
+#7 51.38 Setting up libgssapi-krb5-2:amd64 (1.16-2ubuntu0.4) ...
+#7 51.46 Setting up python3-lib2to3 (3.6.9-1~18.04) ...
+#7 51.75 Setting up python3-distutils (3.6.9-1~18.04) ...
+#7 52.14 Setting up libcurl3-gnutls:amd64 (7.58.0-2ubuntu3.24) ...
+#7 52.21 Setting up git (1:2.17.1-1ubuntu0.18) ...
+#7 52.34 Setting up liblwp-protocol-https-perl (6.07-2) ...
+#7 52.42 Setting up libwww-perl (6.31-1ubuntu0.1) ...
+#7 52.49 Setting up libxml-parser-perl (2.44-2build3) ...
+#7 52.57 Setting up intltool (0.51.0-5ubuntu1) ...
+#7 52.65 Setting up python3-distutils-extra (2.41ubuntu1) ...
+#7 52.90 Processing triggers for libc-bin (2.27-3ubuntu1.6) ...
+#7 DONE 53.8s
+
+#8 [ 4/13] RUN ln -s /usr/bin/python3.7 /usr/local/bin/python3 &&     ln -s /usr/bin/python3.7 /usr/local/bin/python
+#8 DONE 0.8s
+
+#9 [ 5/13] RUN wget https://bootstrap.pypa.io/get-pip.py
+#9 0.764 --2024-07-30 23:43:09--  https://bootstrap.pypa.io/get-pip.py
+#9 0.766 Resolving bootstrap.pypa.io (bootstrap.pypa.io)... 151.101.128.175, 151.101.64.175, 151.101.0.175, ...
+#9 0.781 Connecting to bootstrap.pypa.io (bootstrap.pypa.io)|151.101.128.175|:443... connected.
+#9 0.788 HTTP request sent, awaiting response... 200 OK
+#9 0.790 Length: 2266755 (2.2M) [text/x-python]
+#9 0.791 Saving to: 'get-pip.py'
+#9 0.791 
+#9 0.791      0K .......... .......... .......... .......... ..........  2% 43.0M 0s
+#9 0.792     50K .......... .......... .......... .......... ..........  4% 78.0M 0s
+#9 0.792    100K .......... .......... .......... .......... ..........  6% 73.8M 0s
+#9 0.793    150K .......... .......... .......... .......... ..........  9% 68.9M 0s
+#9 0.794    200K .......... .......... .......... .......... .......... 11% 69.5M 0s
+#9 0.794    250K .......... .......... .......... .......... .......... 13% 99.3M 0s
+#9 0.795    300K .......... .......... .......... .......... .......... 15% 96.4M 0s
+#9 0.796    350K .......... .......... .......... .......... .......... 18% 99.3M 0s
+#9 0.796    400K .......... .......... .......... .......... .......... 20% 56.2M 0s
+#9 0.797    450K .......... .......... .......... .......... .......... 22% 79.0M 0s
+#9 0.797    500K .......... .......... .......... .......... .......... 24% 75.1M 0s
+#9 0.798    550K .......... .......... .......... .......... .......... 27% 70.7M 0s
+#9 0.799    600K .......... .......... .......... .......... .......... 29% 85.7M 0s
+#9 0.799    650K .......... .......... .......... .......... .......... 31% 75.4M 0s
+#9 0.800    700K .......... .......... .......... .......... .......... 33% 75.3M 0s
+#9 0.801    750K .......... .......... .......... .......... .......... 36% 81.7M 0s
+#9 0.801    800K .......... .......... .......... .......... .......... 38% 71.0M 0s
+#9 0.802    850K .......... .......... .......... .......... .......... 40% 55.5M 0s
+#9 0.803    900K .......... .......... .......... .......... .......... 42% 91.0M 0s
+#9 0.803    950K .......... .......... .......... .......... .......... 45% 72.9M 0s
+#9 0.804   1000K .......... .......... .......... .......... .......... 47% 74.8M 0s
+#9 0.805   1050K .......... .......... .......... .......... .......... 49%  106M 0s
+#9 0.805   1100K .......... .......... .......... .......... .......... 51%  111M 0s
+#9 0.806   1150K .......... .......... .......... .......... .......... 54%  118M 0s
+#9 0.806   1200K .......... .......... .......... .......... .......... 56%  120M 0s
+#9 0.806   1250K .......... .......... .......... .......... .......... 58%  104M 0s
+#9 0.807   1300K .......... .......... .......... .......... .......... 60%  114M 0s
+#9 0.807   1350K .......... .......... .......... .......... .......... 63%  120M 0s
+#9 0.808   1400K .......... .......... .......... .......... .......... 65%  129M 0s
+#9 0.808   1450K .......... .......... .......... .......... .......... 67%  107M 0s
+#9 0.809   1500K .......... .......... .......... .......... .......... 70%  122M 0s
+#9 0.809   1550K .......... .......... .......... .......... .......... 72%  112M 0s
+#9 0.809   1600K .......... .......... .......... .......... .......... 74%  129M 0s
+#9 0.810   1650K .......... .......... .......... .......... .......... 76%  101M 0s
+#9 0.810   1700K .......... .......... .......... .......... .......... 79%  114M 0s
+#9 0.811   1750K .......... .......... .......... .......... .......... 81%  125M 0s
+#9 0.811   1800K .......... .......... .......... .......... .......... 83%  129M 0s
+#9 0.811   1850K .......... .......... .......... .......... .......... 85%  121M 0s
+#9 0.812   1900K .......... .......... .......... .......... .......... 88%  117M 0s
+#9 0.812   1950K .......... .......... .......... .......... .......... 90%  101M 0s
+#9 0.813   2000K .......... .......... .......... .......... .......... 92%  107M 0s
+#9 0.813   2050K .......... .......... .......... .......... .......... 94% 89.1M 0s
+#9 0.814   2100K .......... .......... .......... .......... .......... 97%  111M 0s
+#9 0.814   2150K .......... .......... .......... .......... .......... 99%  105M 0s
+#9 0.815   2200K .......... ...                                        100% 96.8M=0.02s
+#9 0.815 
+#9 0.815 2024-07-30 23:43:09 (89.5 MB/s) - 'get-pip.py' saved [2266755/2266755]
+#9 0.815 
+#9 DONE 1.0s
+
+#10 [ 6/13] RUN python get-pip.py
+#10 0.714 ERROR: This script does not work on Python 3.7. The minimum supported Python version is 3.8. Please use https://bootstrap.pypa.io/pip/3.7/get-pip.py instead.
+#10 ERROR: process "/bin/sh -c python get-pip.py" did not complete successfully: exit code: 1
+------
+ > [ 6/13] RUN python get-pip.py:
+0.714 ERROR: This script does not work on Python 3.7. The minimum supported Python version is 3.8. Please use https://bootstrap.pypa.io/pip/3.7/get-pip.py instead.
+------
+v1_Dockerfile:26
+--------------------
+  24 |     # Setuptools
+  25 |     RUN wget https://bootstrap.pypa.io/get-pip.py
+  26 | >>> RUN python get-pip.py
+  27 |     RUN rm get-pip.py
+  28 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c python get-pip.py" did not complete successfully: exit code: 1
+Duration: 5:26.23

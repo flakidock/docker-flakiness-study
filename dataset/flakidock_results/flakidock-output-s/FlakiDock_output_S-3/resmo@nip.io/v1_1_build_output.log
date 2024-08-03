@@ -1,0 +1,80 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 523B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/bitnami/minideb:latest
+#2 ...
+
+#3 [auth] bitnami/minideb:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/bitnami/minideb:latest
+#2 DONE 1.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 7.71kB done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/bitnami/minideb:latest@sha256:b13cb4b41be91e22858e9b050a51137b636a34694a92ff17c27cb010e5f93f04
+#6 resolve docker.io/bitnami/minideb:latest@sha256:b13cb4b41be91e22858e9b050a51137b636a34694a92ff17c27cb010e5f93f04 0.0s done
+#6 sha256:b13cb4b41be91e22858e9b050a51137b636a34694a92ff17c27cb010e5f93f04 741B / 741B done
+#6 sha256:6cd6fa34024551d39afb0001de9f96089f3f377875d9807a91034bf3475f8a23 528B / 528B done
+#6 sha256:b3d2a5b188df36afead3e7e202907c84b5f3809d2aa8c708b9b981bc2c0b4e12 910B / 910B done
+#6 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 0B / 40.20MB 0.1s
+#6 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 2.10MB / 40.20MB 0.2s
+#6 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 10.49MB / 40.20MB 0.3s
+#6 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 26.21MB / 40.20MB 0.5s
+#6 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 36.70MB / 40.20MB 0.6s
+#6 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 40.20MB / 40.20MB 0.8s done
+#6 extracting sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 0.1s
+#6 extracting sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 2.5s done
+#6 DONE 3.5s
+
+#7 [2/5] RUN apt-get update && apt-get install -y python pdns-server pdns-backend-pipe && apt-get clean && rm -rf /var/lib/apt/lists/*
+#7 0.210 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#7 0.245 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#7 0.254 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#7 0.369 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [12.1 MB]
+#7 0.501 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#7 0.585 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#7 1.124 Fetched 12.5 MB in 1s (13.5 MB/s)
+#7 1.124 Reading package lists...
+#7 1.665 Reading package lists...
+#7 2.225 Building dependency tree...
+#7 2.361 Package python is not available, but is referred to by another package.
+#7 2.361 This may mean that the package is missing, has been obsoleted, or
+#7 2.361 is only available from another source
+#7 2.361 However the following packages replace it:
+#7 2.361   python-is-python3 2to3
+#7 2.361 
+#7 2.364 E: Package 'python' has no installation candidate
+#7 ERROR: process "/bin/sh -c apt-get update && apt-get install -y python pdns-server pdns-backend-pipe && apt-get clean && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [2/5] RUN apt-get update && apt-get install -y python pdns-server pdns-backend-pipe && apt-get clean && rm -rf /var/lib/apt/lists/*:
+
+
+2.225 Building dependency tree...
+2.361 Package python is not available, but is referred to by another package.
+2.361 This may mean that the package is missing, has been obsoleted, or
+2.361 is only available from another source
+2.361 However the following packages replace it:
+2.361   python-is-python3 2to3
+2.361 
+2.364 E: Package 'python' has no installation candidate
+------
+v1_Dockerfile:4
+--------------------
+   2 |     FROM bitnami/minideb:latest
+   3 |     
+   4 | >>> RUN apt-get update && apt-get install -y python pdns-server pdns-backend-pipe && apt-get clean && rm -rf /var/lib/apt/lists/*
+   5 |     ADD src/backend.conf.example /usr/local/bin/backend.conf
+   6 |     ADD src/nip.py /usr/local/bin/nip
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y python pdns-server pdns-backend-pipe && apt-get clean && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+Duration: 0:7.94

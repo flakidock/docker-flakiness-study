@@ -1,0 +1,75 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.6s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.13kB done
+#2 DONE 0.8s
+
+#3 [internal] load metadata for docker.io/library/debian:bullseye
+#3 DONE 1.2s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/debian:bullseye@sha256:7aef2e7d061743fdb57973dac3ddbceb0b0912746ca7e0ee7535016c38286561
+#5 resolve docker.io/library/debian:bullseye@sha256:7aef2e7d061743fdb57973dac3ddbceb0b0912746ca7e0ee7535016c38286561
+#5 resolve docker.io/library/debian:bullseye@sha256:7aef2e7d061743fdb57973dac3ddbceb0b0912746ca7e0ee7535016c38286561 0.4s done
+#5 sha256:7aef2e7d061743fdb57973dac3ddbceb0b0912746ca7e0ee7535016c38286561 1.85kB / 1.85kB done
+#5 sha256:907e428c7d1dd4e3a2458d22da8193e69878d3a23761d12ef9cd1a1238214798 529B / 529B done
+#5 sha256:91a3af22c9b3512c42a130ebbe374c10082d45a3ce562164be41dcce0642cac8 1.46kB / 1.46kB done
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 0B / 55.08MB 0.2s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 47B done
+#4 DONE 0.5s
+
+#5 [1/7] FROM docker.io/library/debian:bullseye@sha256:7aef2e7d061743fdb57973dac3ddbceb0b0912746ca7e0ee7535016c38286561
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 8.39MB / 55.08MB 0.4s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 28.31MB / 55.08MB 0.6s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 36.70MB / 55.08MB 0.7s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 54.78MB / 55.08MB 0.8s
+#5 sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 55.08MB / 55.08MB 1.7s done
+#5 extracting sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 0.1s
+#5 extracting sha256:73226dab8db5240a2ddbdbe2fb1f0949a911563a62a3d5de3c8669ae708e88de 3.0s done
+#5 DONE 6.0s
+
+#6 [2/7] RUN apt-get update
+#6 0.578 Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#6 0.608 Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [48.4 kB]
+#6 0.620 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
+#6 0.732 Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8067 kB]
+#6 0.847 Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [280 kB]
+#6 0.955 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]
+#6 2.101 Fetched 8574 kB in 2s (5548 kB/s)
+#6 2.101 Reading package lists...
+#6 DONE 8.3s
+
+#7 [3/7] RUN apt-get install sqlite3 libcrypto++6 libcurl4 libfuse2 wget btrfs-progs -y
+#7 0.758 Reading package lists...
+#7 1.379 Building dependency tree...
+#7 1.489 Reading state information...
+#7 1.597 E: Unable to locate package libcrypto++6
+#7 1.597 E: Couldn't find any package by regex 'libcrypto++6'
+#7 ERROR: process "/bin/sh -c apt-get install sqlite3 libcrypto++6 libcurl4 libfuse2 wget btrfs-progs -y" did not complete successfully: exit code: 100
+------
+ > [3/7] RUN apt-get install sqlite3 libcrypto++6 libcurl4 libfuse2 wget btrfs-progs -y:
+
+
+1.597 E: Unable to locate package libcrypto++6
+1.597 E: Couldn't find any package by regex 'libcrypto++6'
+------
+v1_Dockerfile:6
+--------------------
+   4 |     
+   5 |     RUN apt-get update
+   6 | >>> RUN apt-get install sqlite3 libcrypto++6 libcurl4 libfuse2 wget btrfs-progs -y
+   7 |     
+   8 |     RUN if [ "${VERSION}" = "latest" ] ; then \
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get install sqlite3 libcrypto++6 libcurl4 libfuse2 wget btrfs-progs -y" did not complete successfully: exit code: 100
+Duration: 0:18.61

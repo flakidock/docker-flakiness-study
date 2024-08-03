@@ -1,0 +1,30 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.3s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 198B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/vault:latest
+#3 ...
+
+#4 [auth] library/vault:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/vault:latest
+#3 ERROR: docker.io/library/vault:latest: not found
+------
+ > [internal] load metadata for docker.io/library/vault:latest:
+------
+Dockerfile:1
+--------------------
+   1 | >>> FROM vault
+   2 |     
+   3 |     WORKDIR /usr/src
+--------------------
+ERROR: failed to solve: vault: docker.io/library/vault:latest: not found
+Duration: 0:1.44

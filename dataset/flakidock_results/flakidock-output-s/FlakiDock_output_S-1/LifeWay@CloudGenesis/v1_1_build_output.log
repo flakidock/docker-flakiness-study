@@ -1,0 +1,101 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 855B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/amazonlinux:latest
+#2 ...
+
+#3 [auth] library/amazonlinux:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/amazonlinux:latest
+#2 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/amazonlinux:latest@sha256:7edb8e2f8b0a114acabae813a54144187343bf59e41bbd3e79a2cf187ca02c3d
+#5 resolve docker.io/library/amazonlinux:latest@sha256:7edb8e2f8b0a114acabae813a54144187343bf59e41bbd3e79a2cf187ca02c3d 0.0s done
+#5 sha256:7edb8e2f8b0a114acabae813a54144187343bf59e41bbd3e79a2cf187ca02c3d 2.38kB / 2.38kB done
+#5 sha256:ed1d48d43d169ee6318a16ca5d2a21d8dda0e57b78d307722f35221ab779295c 1.02kB / 1.02kB done
+#5 sha256:25a16e38b2bd188c3b64e05abbd3c4f9649843ef3f3f801ab664e6e5f93fc51d 575B / 575B done
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 0B / 52.31MB 0.1s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 9.44MB / 52.31MB 0.3s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 15.73MB / 52.31MB 0.4s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 25.17MB / 52.31MB 0.5s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 44.04MB / 52.31MB 0.7s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 52.31MB / 52.31MB 0.9s
+#5 sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 52.31MB / 52.31MB 0.9s done
+#5 extracting sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 0.1s
+#5 extracting sha256:d6f07a4c10a78dc230bb1bc2582e93fdd808a2b79539a9b9e8a29b5a94b2e75a 3.1s done
+#5 DONE 4.2s
+
+#6 [2/6] RUN yum -y update && yum -y install zip
+#6 0.967 Amazon Linux 2023 repository                     40 MB/s |  26 MB     00:00    
+#6 6.421 Last metadata expiration check: 0:00:06 ago on Thu Aug  1 00:04:53 2024.
+#6 6.997 Dependencies resolved.
+#6 7.009 Nothing to do.
+#6 7.009 Complete!
+#6 7.262 Last metadata expiration check: 0:00:06 ago on Thu Aug  1 00:04:53 2024.
+#6 7.308 Dependencies resolved.
+#6 7.316 ================================================================================
+#6 7.316  Package      Architecture  Version                    Repository          Size
+#6 7.316 ================================================================================
+#6 7.316 Installing:
+#6 7.316  zip          x86_64        3.0-28.amzn2023.0.2        amazonlinux        257 k
+#6 7.316 Installing dependencies:
+#6 7.316  unzip        x86_64        6.0-57.amzn2023.0.2        amazonlinux        182 k
+#6 7.316 
+#6 7.316 Transaction Summary
+#6 7.316 ================================================================================
+#6 7.316 Install  2 Packages
+#6 7.316 
+#6 7.319 Total download size: 439 k
+#6 7.319 Installed size: 1.1 M
+#6 7.319 Downloading Packages:
+#6 7.509 (1/2): unzip-6.0-57.amzn2023.0.2.x86_64.rpm     2.2 MB/s | 182 kB     00:00    
+#6 7.523 (2/2): zip-3.0-28.amzn2023.0.2.x86_64.rpm       2.7 MB/s | 257 kB     00:00    
+#6 7.523 --------------------------------------------------------------------------------
+#6 7.523 Total                                           2.1 MB/s | 439 kB     00:00     
+#6 7.547 Running transaction check
+#6 7.553 Transaction check succeeded.
+#6 7.553 Running transaction test
+#6 7.567 Transaction test succeeded.
+#6 7.567 Running transaction
+#6 7.645   Preparing        :                                                        1/1 
+#6 7.661   Installing       : unzip-6.0-57.amzn2023.0.2.x86_64                       1/2 
+#6 7.676   Installing       : zip-3.0-28.amzn2023.0.2.x86_64                         2/2 
+#6 7.689   Running scriptlet: zip-3.0-28.amzn2023.0.2.x86_64                         2/2 
+#6 8.306   Verifying        : unzip-6.0-57.amzn2023.0.2.x86_64                       1/2 
+#6 8.306   Verifying        : zip-3.0-28.amzn2023.0.2.x86_64                         2/2 
+#6 8.336 
+#6 8.336 Installed:
+#6 8.336   unzip-6.0-57.amzn2023.0.2.x86_64        zip-3.0-28.amzn2023.0.2.x86_64       
+#6 8.336 
+#6 8.336 Complete!
+#6 DONE 8.4s
+
+#7 [3/6] RUN yum -y install java-1.8.0-openjdk &&     curl -L https://www.scala-sbt.org/sbt-rpm.repo -o /etc/yum.repos.d/sbt-rpm.repo &&     yum -y install sbt
+#7 0.457 Last metadata expiration check: 0:00:08 ago on Thu Aug  1 00:04:53 2024.
+#7 0.480 No match for argument: java-1.8.0-openjdk
+#7 0.491 Error: Unable to find a match: java-1.8.0-openjdk
+#7 ERROR: process "/bin/sh -c yum -y install java-1.8.0-openjdk &&     curl -L https://www.scala-sbt.org/sbt-rpm.repo -o /etc/yum.repos.d/sbt-rpm.repo &&     yum -y install sbt" did not complete successfully: exit code: 1
+------
+ > [3/6] RUN yum -y install java-1.8.0-openjdk &&     curl -L https://www.scala-sbt.org/sbt-rpm.repo -o /etc/yum.repos.d/sbt-rpm.repo &&     yum -y install sbt:
+0.457 Last metadata expiration check: 0:00:08 ago on Thu Aug  1 00:04:53 2024.
+0.480 No match for argument: java-1.8.0-openjdk
+0.491 Error: Unable to find a match: java-1.8.0-openjdk
+------
+v1_Dockerfile:9
+--------------------
+   8 |     # JAVA & SBT
+   9 | >>> RUN yum -y install java-1.8.0-openjdk && \
+  10 | >>>     curl -L https://www.scala-sbt.org/sbt-rpm.repo -o /etc/yum.repos.d/sbt-rpm.repo && \
+  11 | >>>     yum -y install sbt
+  12 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c yum -y install java-1.8.0-openjdk &&     curl -L https://www.scala-sbt.org/sbt-rpm.repo -o /etc/yum.repos.d/sbt-rpm.repo &&     yum -y install sbt" did not complete successfully: exit code: 1
+Duration: 0:14.42

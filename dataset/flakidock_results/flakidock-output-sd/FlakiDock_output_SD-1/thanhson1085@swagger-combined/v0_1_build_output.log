@@ -1,0 +1,116 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 30B
+#1 transferring dockerfile: 1.02kB done
+#1 DONE 0.5s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#3 [auth] library/alpine:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/alpine:3.2
+#4 DONE 1.4s
+
+#5 [1/6] FROM docker.io/library/alpine:3.2@sha256:e9a2035f9d0d7cee1cdd445f5bfa0c5c646455ee26f14565dce23cf2d2de7570
+#5 resolve docker.io/library/alpine:3.2@sha256:e9a2035f9d0d7cee1cdd445f5bfa0c5c646455ee26f14565dce23cf2d2de7570
+#5 resolve docker.io/library/alpine:3.2@sha256:e9a2035f9d0d7cee1cdd445f5bfa0c5c646455ee26f14565dce23cf2d2de7570 0.2s done
+#5 sha256:e9a2035f9d0d7cee1cdd445f5bfa0c5c646455ee26f14565dce23cf2d2de7570 433B / 433B done
+#5 sha256:ddac200f3ebc9902fb8cfcd599f41feb2151f1118929da21bcef57dc276975f9 528B / 528B done
+#5 sha256:98f5f2d17bd1c8ba230ea9a8abc21b8d7fc8727c34a4de62d000f29393cf3089 1.51kB / 1.51kB done
+#5 sha256:95f5ecd24e438e09033c8e69ec136079f8774ab8284f1431f5433a829054b5e7 0B / 2.57MB 0.2s
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 6.77MB 0.1s done
+#6 DONE 0.4s
+
+#5 [1/6] FROM docker.io/library/alpine:3.2@sha256:e9a2035f9d0d7cee1cdd445f5bfa0c5c646455ee26f14565dce23cf2d2de7570
+#5 sha256:95f5ecd24e438e09033c8e69ec136079f8774ab8284f1431f5433a829054b5e7 1.05MB / 2.57MB 0.3s
+#5 sha256:95f5ecd24e438e09033c8e69ec136079f8774ab8284f1431f5433a829054b5e7 2.57MB / 2.57MB 0.4s done
+#5 extracting sha256:95f5ecd24e438e09033c8e69ec136079f8774ab8284f1431f5433a829054b5e7 0.1s
+#5 extracting sha256:95f5ecd24e438e09033c8e69ec136079f8774ab8284f1431f5433a829054b5e7 0.2s done
+#5 DONE 1.2s
+
+#7 [2/6] RUN apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold &&     curl -sSL https://nodejs.org/dist/v4.2.2/node-v4.2.2.tar.gz | tar -xz &&     cd /node-v4.2.2 &&     ./configure --prefix=/usr --without-snapshot --fully-static &&     make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) &&     make install &&     cd / &&     npm install -g npm@2.14.2 &&     apk del gcc g++ linux-headers libgcc libstdc++ binutils-gold &&     rm -rf /etc/ssl /node-v4.2.2 /usr/include     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
+#7 0.475 fetch http://dl-cdn.alpinelinux.org/alpine/v3.2/main/x86_64/APKINDEX.tar.gz
+#7 1.630 (1/39) Installing binutils-gold (2.25-r3)
+#7 1.886 (2/39) Installing run-parts (4.4-r0)
+#7 2.115 (3/39) Installing openssl (1.0.2k-r0)
+#7 2.406 (4/39) Installing lua5.2-libs (5.2.4-r0)
+#7 2.636 (5/39) Installing lua5.2 (5.2.4-r0)
+#7 2.852 (6/39) Installing ncurses-terminfo-base (5.9-r3)
+#7 3.060 (7/39) Installing ncurses-widec-libs (5.9-r3)
+#7 3.292 (8/39) Installing lua5.2-posix (33.3.1-r2)
+#7 3.565 (9/39) Installing ca-certificates (20161130-r0)
+#7 3.824 (10/39) Installing libssh2 (1.5.0-r1)
+#7 4.085 (11/39) Installing curl (7.52.1-r1)
+#7 4.381 (12/39) Installing libgcc (4.9.2-r6)
+#7 4.595 (13/39) Installing libstdc++ (4.9.2-r6)
+#7 4.916 (14/39) Installing binutils-libs (2.25-r3)
+#7 5.171 (15/39) Installing binutils (2.25-r3)
+#7 6.187 (16/39) Installing libgomp (4.9.2-r6)
+#7 6.404 (17/39) Installing pkgconf (0.9.11-r0)
+#7 6.839 (18/39) Installing pkgconfig (0.25-r1)
+#7 7.035 (19/39) Installing gmp (6.0.0a-r0)
+#7 7.478 (20/39) Installing mpfr3 (3.1.2-r0)
+#7 7.715 (21/39) Installing mpc1 (1.0.1-r0)
+#7 7.971 (22/39) Installing gcc (4.9.2-r6)
+#7 8.658 (23/39) Installing musl-dbg (1.1.11-r5)
+#7 8.883 (24/39) Installing libc6-compat (1.1.11-r5)
+#7 9.099 (25/39) Installing musl-dev (1.1.11-r5)
+#7 9.368 (26/39) Installing libc-dev (0.7-r0)
+#7 9.627 (27/39) Installing g++ (4.9.2-r6)
+#7 10.89 (28/39) Installing expat (2.2.0-r0)
+#7 11.11 (29/39) Installing pcre (8.38-r0)
+#7 11.33 (30/39) Installing git (2.4.11-r0)
+#7 11.75 (31/39) Installing linux-headers (3.18.5-r0)
+#7 12.04 (32/39) Installing make (4.1-r0)
+#7 12.31 (33/39) Installing libbz2 (1.0.6-r3)
+#7 12.58 (34/39) Installing libffi (3.2.1-r2)
+#7 12.80 (35/39) Installing gdbm (1.11-r0)
+#7 13.03 (36/39) Installing ncurses-libs (5.9-r3)
+#7 13.25 (37/39) Installing readline (6.3.008-r0)
+#7 13.53 (38/39) Installing sqlite-libs (3.8.10.2-r0)
+#7 13.78 (39/39) Installing python (2.7.12-r0)
+#7 14.48 Executing busybox-1.23.2-r3.trigger
+#7 14.48 Executing ca-certificates-20161130-r0.trigger
+#7 14.55 OK: 195 MiB in 54 packages
+#7 100.6 curl: (18) transfer closed with 18417540 bytes remaining to read
+#7 100.6 tar: short read
+#7 ERROR: process "/bin/sh -c apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold &&     curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz &&     cd /node-${NODE_VERSION} &&     ./configure --prefix=/usr --without-snapshot --fully-static &&     make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) &&     make install &&     cd / &&     npm install -g npm@${NPM_VERSION} &&     apk del gcc g++ linux-headers libgcc libstdc++ binutils-gold &&     rm -rf /etc/ssl /node-${NODE_VERSION} /usr/include     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html" did not complete successfully: exit code: 1
+------
+ > [2/6] RUN apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold &&     curl -sSL https://nodejs.org/dist/v4.2.2/node-v4.2.2.tar.gz | tar -xz &&     cd /node-v4.2.2 &&     ./configure --prefix=/usr --without-snapshot --fully-static &&     make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) &&     make install &&     cd / &&     npm install -g npm@2.14.2 &&     apk del gcc g++ linux-headers libgcc libstdc++ binutils-gold &&     rm -rf /etc/ssl /node-v4.2.2 /usr/include     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html:
+12.80 (35/39) Installing gdbm (1.11-r0)
+13.03 (36/39) Installing ncurses-libs (5.9-r3)
+13.25 (37/39) Installing readline (6.3.008-r0)
+13.53 (38/39) Installing sqlite-libs (3.8.10.2-r0)
+13.78 (39/39) Installing python (2.7.12-r0)
+14.48 Executing busybox-1.23.2-r3.trigger
+14.48 Executing ca-certificates-20161130-r0.trigger
+14.55 OK: 195 MiB in 54 packages
+100.6 curl: (18) transfer closed with 18417540 bytes remaining to read
+100.6 tar: short read
+------
+Dockerfile:6
+--------------------
+   5 |     
+   6 | >>> RUN apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold && \
+   7 | >>>     curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz && \
+   8 | >>>     cd /node-${NODE_VERSION} && \
+   9 | >>>     ./configure --prefix=/usr --without-snapshot --fully-static && \
+  10 | >>>     make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
+  11 | >>>     make install && \
+  12 | >>>     cd / && \
+  13 | >>>     npm install -g npm@${NPM_VERSION} && \
+  14 | >>>     apk del gcc g++ linux-headers libgcc libstdc++ binutils-gold && \
+  15 | >>>     rm -rf /etc/ssl /node-${NODE_VERSION} /usr/include \
+  16 | >>>     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
+  17 | >>>     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
+  18 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold &&     curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz &&     cd /node-${NODE_VERSION} &&     ./configure --prefix=/usr --without-snapshot --fully-static &&     make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) &&     make install &&     cd / &&     npm install -g npm@${NPM_VERSION} &&     apk del gcc g++ linux-headers libgcc libstdc++ binutils-gold &&     rm -rf /etc/ssl /node-${NODE_VERSION} /usr/include     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html" did not complete successfully: exit code: 1
+Duration: 1:44.39

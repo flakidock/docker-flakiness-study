@@ -1,0 +1,30 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 520B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 574B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/phusion/baseimage:latest
+#3 ...
+
+#4 [auth] phusion/baseimage:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/phusion/baseimage:latest
+#3 ERROR: docker.io/phusion/baseimage:latest: not found
+------
+ > [internal] load metadata for docker.io/phusion/baseimage:latest:
+------
+v1_Dockerfile:1
+--------------------
+   1 | >>> FROM phusion/baseimage
+   2 |     
+   3 |     MAINTAINER Roberto Lobo <rhlobo@gmail.com>
+--------------------
+ERROR: failed to solve: phusion/baseimage: docker.io/phusion/baseimage:latest: not found
+Duration: 0:1.51

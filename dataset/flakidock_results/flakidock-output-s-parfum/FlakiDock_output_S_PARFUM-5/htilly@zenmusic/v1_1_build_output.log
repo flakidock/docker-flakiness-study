@@ -1,0 +1,134 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 451B done
+#1 DONE 0.0s
+
+#2 [auth] library/node:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:17-alpine
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 121B done
+#4 DONE 0.0s
+
+#5 [intermediate 1/2] FROM docker.io/library/node:17-alpine@sha256:76e638eb0d73ac5f0b76d70df3ce1ddad941ac63595d44092b625e2cd557ddbf
+#5 resolve docker.io/library/node:17-alpine@sha256:76e638eb0d73ac5f0b76d70df3ce1ddad941ac63595d44092b625e2cd557ddbf 0.0s done
+#5 sha256:c7bde48048debf58dba50f8d2ba674854bdf7dfc8c43bd468f19a5212facfdbe 1.16kB / 1.16kB done
+#5 sha256:57488723f0872b65eb586f4fde54d5c25c16cde94da3bde8b338cf2af2aceb1c 6.67kB / 6.67kB done
+#5 sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 0B / 2.81MB 0.1s
+#5 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 0B / 45.89MB 0.1s
+#5 sha256:6463b5f3dbb1d524374fd51f430ea4837e794edd1c508bad449f93a86be57ccb 0B / 2.34MB 0.1s
+#5 sha256:76e638eb0d73ac5f0b76d70df3ce1ddad941ac63595d44092b625e2cd557ddbf 1.43kB / 1.43kB done
+#5 sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 2.10MB / 2.81MB 0.4s
+#5 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 9.44MB / 45.89MB 0.4s
+#5 sha256:6463b5f3dbb1d524374fd51f430ea4837e794edd1c508bad449f93a86be57ccb 2.34MB / 2.34MB 0.4s
+#5 sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 2.81MB / 2.81MB 0.4s done
+#5 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 18.87MB / 45.89MB 0.5s
+#5 sha256:6463b5f3dbb1d524374fd51f430ea4837e794edd1c508bad449f93a86be57ccb 2.34MB / 2.34MB 0.4s done
+#5 extracting sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 0.1s done
+#5 sha256:885e68a88c76f90ebf7b390469107ac661410a590df8939c237fa720ca91efb3 0B / 451B 0.5s
+#5 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 37.75MB / 45.89MB 0.7s
+#5 sha256:885e68a88c76f90ebf7b390469107ac661410a590df8939c237fa720ca91efb3 451B / 451B 0.5s done
+#5 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 45.89MB / 45.89MB 0.9s
+#5 sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 45.89MB / 45.89MB 0.9s done
+#5 extracting sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 0.1s
+#5 extracting sha256:1bedfac31d6a1e001d4e5d45ea1aba8f53e5f54b5555ce2c415a65a7041b074f 2.3s done
+#5 extracting sha256:6463b5f3dbb1d524374fd51f430ea4837e794edd1c508bad449f93a86be57ccb
+#5 extracting sha256:6463b5f3dbb1d524374fd51f430ea4837e794edd1c508bad449f93a86be57ccb 0.1s done
+#5 extracting sha256:885e68a88c76f90ebf7b390469107ac661410a590df8939c237fa720ca91efb3
+#5 extracting sha256:885e68a88c76f90ebf7b390469107ac661410a590df8939c237fa720ca91efb3 done
+#5 DONE 3.7s
+
+#6 [stage-1 2/5] RUN mkdir app
+#6 DONE 0.8s
+
+#7 [intermediate 2/2] RUN apk update &&     apk upgrade &&     apk add --no-cache git &&     git clone https://github.com/htilly/zenmusic.git
+#7 0.262 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz
+#7 0.402 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/APKINDEX.tar.gz
+#7 0.615 v3.15.11-7-g438bf8e758d [https://dl-cdn.alpinelinux.org/alpine/v3.15/main]
+#7 0.615 v3.15.10-165-g73b5f3b6fbe [https://dl-cdn.alpinelinux.org/alpine/v3.15/community]
+#7 0.615 OK: 15865 distinct packages available
+#7 0.853 (1/8) Upgrading musl (1.2.2-r7 -> 1.2.2-r9)
+#7 0.957 (2/8) Upgrading busybox (1.34.1-r5 -> 1.34.1-r7)
+#7 0.984 Executing busybox-1.34.1-r7.post-upgrade
+#7 0.995 (3/8) Upgrading ca-certificates-bundle (20211220-r0 -> 20230506-r0)
+#7 1.010 (4/8) Upgrading libcrypto1.1 (1.1.1n-r0 -> 1.1.1w-r1)
+#7 1.045 (5/8) Upgrading libssl1.1 (1.1.1n-r0 -> 1.1.1w-r1)
+#7 1.062 (6/8) Upgrading ssl_client (1.34.1-r5 -> 1.34.1-r7)
+#7 1.073 (7/8) Upgrading zlib (1.2.12-r0 -> 1.2.12-r3)
+#7 1.085 (8/8) Upgrading musl-utils (1.2.2-r7 -> 1.2.2-r9)
+#7 1.098 Executing busybox-1.34.1-r7.trigger
+#7 1.100 OK: 7 MiB in 16 packages
+#7 1.140 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz
+#7 1.258 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/APKINDEX.tar.gz
+#7 1.446 (1/7) Installing ca-certificates (20230506-r0)
+#7 1.470 (2/7) Installing brotli-libs (1.0.9-r5)
+#7 1.487 (3/7) Installing nghttp2-libs (1.46.0-r2)
+#7 1.499 (4/7) Installing libcurl (8.5.0-r0)
+#7 1.515 (5/7) Installing expat (2.5.0-r0)
+#7 1.527 (6/7) Installing pcre2 (10.42-r0)
+#7 1.543 (7/7) Installing git (2.34.8-r0)
+#7 1.686 Executing busybox-1.34.1-r7.trigger
+#7 1.688 Executing ca-certificates-20230506-r0.trigger
+#7 1.713 OK: 21 MiB in 23 packages
+#7 1.747 Cloning into 'zenmusic'...
+#7 DONE 2.5s
+
+#8 [stage-1 3/5] COPY --from=intermediate /zenmusic/* /app/
+#8 DONE 0.1s
+
+#9 [stage-1 4/5] WORKDIR /app
+#9 DONE 0.1s
+
+#10 [stage-1 5/5] RUN npm install && npm cache clean --force;
+#10 4.480 npm WARN deprecated istanbul@0.4.5: This module is no longer maintained, try this instead:
+#10 4.480 npm WARN deprecated   npm i nyc
+#10 4.480 npm WARN deprecated Visit https://istanbul.js.org/integrations for other alternatives.
+#10 5.703 
+#10 5.703 > zenmusic@1.0.0 prepublish
+#10 5.703 > npm run snyk-protect
+#10 5.703 
+#10 6.093 
+#10 6.093 > zenmusic@1.0.0 snyk-protect
+#10 6.093 > snyk protect
+#10 6.093 
+#10 7.610 Authentication failed. Please check the API token on https://snyk.io
+#10 8.442 npm notice 
+#10 8.442 npm notice New major version of npm available! 8.11.0 -> 10.8.2
+#10 8.442 npm notice Changelog: <https://github.com/npm/cli/releases/tag/v10.8.2>
+#10 8.442 npm notice Run `npm install -g npm@10.8.2` to update!
+#10 8.442 npm notice 
+#10 8.444 npm ERR! code 2
+#10 8.444 npm ERR! path /app
+#10 8.446 npm ERR! command failed
+#10 8.446 npm ERR! command sh -c npm run snyk-protect
+#10 8.448 
+#10 8.448 npm ERR! A complete log of this run can be found in:
+#10 8.448 npm ERR!     /root/.npm/_logs/2024-08-01T07_50_23_049Z-debug-0.log
+#10 ERROR: process "/bin/sh -c npm install && npm cache clean --force;" did not complete successfully: exit code: 2
+------
+ > [stage-1 5/5] RUN npm install && npm cache clean --force;:
+8.442 npm notice Changelog: <https://github.com/npm/cli/releases/tag/v10.8.2>
+8.442 npm notice Run `npm install -g npm@10.8.2` to update!
+8.442 npm notice 
+8.444 npm ERR! code 2
+8.444 npm ERR! path /app
+8.446 npm ERR! command failed
+8.446 npm ERR! command sh -c npm run snyk-protect
+8.448 
+8.448 npm ERR! A complete log of this run can be found in:
+8.448 npm ERR!     /root/.npm/_logs/2024-08-01T07_50_23_049Z-debug-0.log
+------
+v1_Dockerfile:13
+--------------------
+  11 |     COPY --from=intermediate /zenmusic/* /app/
+  12 |     WORKDIR /app
+  13 | >>> RUN npm install && npm cache clean --force;
+  14 |     
+  15 |     CMD [ "node", "index.js" ]
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm install && npm cache clean --force;" did not complete successfully: exit code: 2
+Duration: 0:16.69

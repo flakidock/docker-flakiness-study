@@ -1,0 +1,125 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 487B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:15-slim
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM docker.io/library/node:15-slim@sha256:ecfa754d007a069a2ffc293115927f86416beea07b779c48c0597e26d2321bbb
+#4 resolve docker.io/library/node:15-slim@sha256:ecfa754d007a069a2ffc293115927f86416beea07b779c48c0597e26d2321bbb 0.0s done
+#4 sha256:2e799f213a71f7d1750d25e0b690811017c446924be2be942615e804c5c28fd5 0B / 4.17kB 0.1s
+#4 sha256:7889b64c76eeb9fcd2bc0508bfe2ee5d2aba14c5f361b3bb5243a9b0cefa19cc 0B / 34.29MB 0.1s
+#4 sha256:ecfa754d007a069a2ffc293115927f86416beea07b779c48c0597e26d2321bbb 776B / 776B done
+#4 sha256:67ab1960a6c04e71628bad6cd124c52adf748fc786af331f83a3432b181af86e 1.37kB / 1.37kB done
+#4 sha256:dd6ccbd57bbdade90b83b78754ae8bdfdae6464be6f70139a2a1c091235cb81b 7.09kB / 7.09kB done
+#4 sha256:fa1690ae92289fb310aa27b793a164bf8bbedc7ddd00ca079a31bb8bb315b616 0B / 22.53MB 0.1s
+#4 sha256:2e799f213a71f7d1750d25e0b690811017c446924be2be942615e804c5c28fd5 4.17kB / 4.17kB 0.2s done
+#4 sha256:fa1690ae92289fb310aa27b793a164bf8bbedc7ddd00ca079a31bb8bb315b616 15.73MB / 22.53MB 0.3s
+#4 sha256:f014a43d13b9ba632b1ffa2768d3cb69046aa1792dd9151e3468437969bf9995 0B / 2.83MB 0.3s
+#4 sha256:7889b64c76eeb9fcd2bc0508bfe2ee5d2aba14c5f361b3bb5243a9b0cefa19cc 5.24MB / 34.29MB 0.4s
+#4 sha256:fa1690ae92289fb310aa27b793a164bf8bbedc7ddd00ca079a31bb8bb315b616 20.97MB / 22.53MB 0.4s
+#4 sha256:7889b64c76eeb9fcd2bc0508bfe2ee5d2aba14c5f361b3bb5243a9b0cefa19cc 15.73MB / 34.29MB 0.6s
+#4 sha256:fa1690ae92289fb310aa27b793a164bf8bbedc7ddd00ca079a31bb8bb315b616 22.53MB / 22.53MB 0.5s done
+#4 sha256:f014a43d13b9ba632b1ffa2768d3cb69046aa1792dd9151e3468437969bf9995 2.83MB / 2.83MB 0.6s
+#4 extracting sha256:fa1690ae92289fb310aa27b793a164bf8bbedc7ddd00ca079a31bb8bb315b616
+#4 sha256:a362afa18dd0b75f4a6cd44f7071b67e1f0bc3f6ccd9bf2268d90aa64e49931e 292B / 292B 0.6s done
+#4 sha256:7889b64c76eeb9fcd2bc0508bfe2ee5d2aba14c5f361b3bb5243a9b0cefa19cc 22.02MB / 34.29MB 0.7s
+#4 sha256:f014a43d13b9ba632b1ffa2768d3cb69046aa1792dd9151e3468437969bf9995 2.83MB / 2.83MB 0.6s done
+#4 sha256:7889b64c76eeb9fcd2bc0508bfe2ee5d2aba14c5f361b3bb5243a9b0cefa19cc 30.41MB / 34.29MB 0.8s
+#4 sha256:7889b64c76eeb9fcd2bc0508bfe2ee5d2aba14c5f361b3bb5243a9b0cefa19cc 34.29MB / 34.29MB 0.9s
+#4 sha256:7889b64c76eeb9fcd2bc0508bfe2ee5d2aba14c5f361b3bb5243a9b0cefa19cc 34.29MB / 34.29MB 0.9s done
+#4 extracting sha256:fa1690ae92289fb310aa27b793a164bf8bbedc7ddd00ca079a31bb8bb315b616 1.7s done
+#4 extracting sha256:2e799f213a71f7d1750d25e0b690811017c446924be2be942615e804c5c28fd5
+#4 extracting sha256:2e799f213a71f7d1750d25e0b690811017c446924be2be942615e804c5c28fd5 done
+#4 extracting sha256:7889b64c76eeb9fcd2bc0508bfe2ee5d2aba14c5f361b3bb5243a9b0cefa19cc 0.1s
+#4 extracting sha256:7889b64c76eeb9fcd2bc0508bfe2ee5d2aba14c5f361b3bb5243a9b0cefa19cc 2.0s done
+#4 extracting sha256:f014a43d13b9ba632b1ffa2768d3cb69046aa1792dd9151e3468437969bf9995
+#4 extracting sha256:f014a43d13b9ba632b1ffa2768d3cb69046aa1792dd9151e3468437969bf9995 0.1s done
+#4 extracting sha256:a362afa18dd0b75f4a6cd44f7071b67e1f0bc3f6ccd9bf2268d90aa64e49931e done
+#4 DONE 4.7s
+
+#5 [2/2] RUN apt-get update   && export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-recommends git sudo ca-certificates   && adduser node sudo   && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && rm -rf /var/lib/apt/lists/*;
+#5 0.219 Ign:1 http://deb.debian.org/debian stretch InRelease
+#5 0.229 Ign:2 http://deb.debian.org/debian stretch-updates InRelease
+#5 0.240 Ign:3 http://deb.debian.org/debian stretch Release
+#5 0.241 Ign:4 http://security.debian.org/debian-security stretch/updates InRelease
+#5 0.252 Ign:5 http://deb.debian.org/debian stretch-updates Release
+#5 0.252 Ign:6 http://security.debian.org/debian-security stretch/updates Release
+#5 0.263 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.263 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.274 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.274 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.284 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.284 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.295 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.295 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.306 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.306 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.315 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.315 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.325 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.326 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.336 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.336 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.345 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.348 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.354 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.361 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.369 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.371 Err:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.371   404  Not Found [IP: 151.101.130.132 80]
+#5 0.383 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.383 Ign:10 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.394 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.403 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.413 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.424 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.434 Ign:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.445 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.457 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.466 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.476 Err:7 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.476   404  Not Found
+#5 0.496 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#5 0.507 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.520 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.520   404  Not Found
+#5 0.522 Reading package lists...
+#5 0.529 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#5 0.529 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#5 0.529 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#5 0.529 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#5 0.529 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#5 0.529 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+#5 0.529 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#5 ERROR: process "/bin/sh -c apt-get update   && export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-recommends git sudo ca-certificates   && adduser node sudo   && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+------
+ > [2/2] RUN apt-get update   && export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-recommends git sudo ca-certificates   && adduser node sudo   && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && rm -rf /var/lib/apt/lists/*;:
+0.520 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+0.520   404  Not Found
+0.522 Reading package lists...
+0.529 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.529 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.529 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.529 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.529 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.529 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+0.529 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:6
+--------------------
+   5 |     # [Optional] Uncomment this section to install additional OS packages.
+   6 | >>> RUN apt-get update \
+   7 | >>>   && export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-recommends git sudo ca-certificates \
+   8 | >>>   && adduser node sudo \
+   9 | >>>   && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && rm -rf /var/lib/apt/lists/*;
+  10 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update   && export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-recommends git sudo ca-certificates   && adduser node sudo   && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+Duration: 0:6.85

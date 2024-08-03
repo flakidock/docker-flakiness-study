@@ -1,0 +1,156 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 538B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 2.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#5 DONE 0.2s
+
+#5 [1/8] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.2s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 2.03MB 0.1s done
+#4 DONE 0.4s
+
+#5 [1/8] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.7s done
+#5 DONE 1.9s
+
+#6 [2/8] RUN 	apk add --update 		git 		py3-lxml 		py3-pip 		py3-requests 		py3-sqlalchemy 		py3-tornado
+#6 1.390 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 1.750 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 2.740 (1/61) Installing ca-certificates (20240705-r0)
+#6 2.826 (2/61) Installing brotli-libs (1.1.0-r2)
+#6 2.876 (3/61) Installing c-ares (1.28.1-r0)
+#6 2.901 (4/61) Installing libunistring (1.2-r0)
+#6 2.967 (5/61) Installing libidn2 (2.3.7-r0)
+#6 2.995 (6/61) Installing nghttp2-libs (1.62.1-r0)
+#6 3.009 (7/61) Installing libpsl (0.21.5-r1)
+#6 3.017 (8/61) Installing zstd-libs (1.5.6-r0)
+#6 3.038 (9/61) Installing libcurl (8.9.0-r0)
+#6 3.073 (10/61) Installing libexpat (2.6.2-r0)
+#6 3.085 (11/61) Installing pcre2 (10.43-r0)
+#6 3.101 (12/61) Installing git (2.45.2-r0)
+#6 3.324 (13/61) Installing git-init-template (2.45.2-r0)
+#6 3.337 (14/61) Installing libbz2 (1.0.8-r6)
+#6 3.351 (15/61) Installing libffi (3.4.6-r0)
+#6 3.378 (16/61) Installing gdbm (1.23-r1)
+#6 3.386 (17/61) Installing xz-libs (5.6.1-r3)
+#6 3.402 (18/61) Installing libgcc (13.2.1_git20240309-r0)
+#6 3.413 (19/61) Installing libstdc++ (13.2.1_git20240309-r0)
+#6 3.498 (20/61) Installing mpdecimal (4.0.0-r0)
+#6 3.528 (21/61) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#6 3.566 (22/61) Installing libncursesw (6.4_p20240420-r0)
+#6 3.589 (23/61) Installing libpanelw (6.4_p20240420-r0)
+#6 3.601 (24/61) Installing readline (8.2.10-r0)
+#6 3.611 (25/61) Installing sqlite-libs (3.45.3-r1)
+#6 3.676 (26/61) Installing python3 (3.12.3-r1)
+#6 4.344 (27/61) Installing python3-pycache-pyc0 (3.12.3-r1)
+#6 4.996 (28/61) Installing pyc (3.12.3-r1)
+#6 4.998 (29/61) Installing py3-lxml-pyc (5.1.0-r0)
+#6 5.025 (30/61) Installing python3-pyc (3.12.3-r1)
+#6 5.036 (31/61) Installing libgpg-error (1.49-r0)
+#6 5.051 (32/61) Installing libgcrypt (1.10.3-r0)
+#6 5.081 (33/61) Installing libxml2 (2.12.7-r0)
+#6 5.138 (34/61) Installing libxslt (1.1.39-r1)
+#6 5.160 (35/61) Installing py3-lxml (5.1.0-r0)
+#6 5.359 (36/61) Installing py3-parsing (3.1.2-r1)
+#6 5.378 (37/61) Installing py3-parsing-pyc (3.1.2-r1)
+#6 5.424 (38/61) Installing py3-packaging (24.0-r1)
+#6 5.467 (39/61) Installing py3-packaging-pyc (24.0-r1)
+#6 5.482 (40/61) Installing py3-setuptools (69.5.1-r0)
+#6 5.672 (41/61) Installing py3-setuptools-pyc (69.5.1-r0)
+#6 5.945 (42/61) Installing py3-pip (24.0-r2)
+#6 6.374 (43/61) Installing py3-pip-pyc (24.0-r2)
+#6 6.791 (44/61) Installing py3-certifi (2024.2.2-r1)
+#6 6.803 (45/61) Installing py3-certifi-pyc (2024.2.2-r1)
+#6 6.813 (46/61) Installing py3-charset-normalizer (3.3.2-r1)
+#6 6.908 (47/61) Installing py3-charset-normalizer-pyc (3.3.2-r1)
+#6 6.933 (48/61) Installing py3-idna (3.7-r0)
+#6 6.959 (49/61) Installing py3-idna-pyc (3.7-r0)
+#6 6.984 (50/61) Installing py3-urllib3 (1.26.18-r1)
+#6 7.010 (51/61) Installing py3-urllib3-pyc (1.26.18-r1)
+#6 7.061 (52/61) Installing py3-requests (2.32.3-r0)
+#6 7.078 (53/61) Installing py3-requests-pyc (2.32.3-r0)
+#6 7.096 (54/61) Installing py3-greenlet (3.0.3-r1)
+#6 7.140 (55/61) Installing py3-greenlet-pyc (3.0.3-r1)
+#6 7.152 (56/61) Installing py3-typing-extensions (4.11.0-r1)
+#6 7.164 (57/61) Installing py3-typing-extensions-pyc (4.11.0-r1)
+#6 7.178 (58/61) Installing py3-sqlalchemy (2.0.29-r1)
+#6 7.455 (59/61) Installing py3-sqlalchemy-pyc (2.0.29-r1)
+#6 7.806 (60/61) Installing py3-tornado (6.4-r2)
+#6 7.852 (61/61) Installing py3-tornado-pyc (6.4-r2)
+#6 7.918 Executing busybox-1.36.1-r29.trigger
+#6 7.959 Executing ca-certificates-20240705-r0.trigger
+#6 8.211 OK: 118 MiB in 75 packages
+#6 DONE 13.1s
+
+#7 [3/8] RUN python3 -m venv /venv
+#7 DONE 18.3s
+
+#8 [4/8] RUN pip install apscheduler 	&& rm -rf /var/cache/apk/*
+#8 3.358 Collecting apscheduler
+#8 3.463   Downloading APScheduler-3.10.4-py3-none-any.whl.metadata (5.7 kB)
+#8 3.744 Collecting six>=1.4.0 (from apscheduler)
+#8 3.758   Downloading six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+#8 4.107 Collecting pytz (from apscheduler)
+#8 4.122   Downloading pytz-2024.1-py2.py3-none-any.whl.metadata (22 kB)
+#8 4.337 Collecting tzlocal!=3.*,>=2.0 (from apscheduler)
+#8 4.359   Downloading tzlocal-5.2-py3-none-any.whl.metadata (7.8 kB)
+#8 4.502 Downloading APScheduler-3.10.4-py3-none-any.whl (59 kB)
+#8 4.607    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.3/59.3 kB 576.0 kB/s eta 0:00:00
+#8 4.622 Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#8 4.697 Downloading tzlocal-5.2-py3-none-any.whl (17 kB)
+#8 4.763 Downloading pytz-2024.1-py2.py3-none-any.whl (505 kB)
+#8 4.996    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 505.5/505.5 kB 2.3 MB/s eta 0:00:00
+#8 5.189 Installing collected packages: pytz, tzlocal, six, apscheduler
+#8 6.047 Successfully installed apscheduler-3.10.4 pytz-2024.1 six-1.16.0 tzlocal-5.2
+#8 6.606 
+#8 6.606 [notice] A new release of pip is available: 24.0 -> 24.2
+#8 6.606 [notice] To update, run: pip install --upgrade pip
+#8 DONE 7.4s
+
+#9 [5/8] COPY diffido.py /diffido/
+#9 DONE 0.6s
+
+#10 [6/8] COPY dist /diffido/dist/
+#10 DONE 0.5s
+
+#11 [7/8] COPY ssl /diffido/ssl/
+#11 DONE 0.3s
+
+#12 [8/8] WORKDIR /diffido/
+#12 DONE 0.3s
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 3.3s done
+#13 writing image sha256:5434df9635a5930bf4d5216830b34fa891bdcedf75243f91a239e39409d79a86 0.0s done
+#13 naming to docker.io/library/image_name_v1_1 0.0s done
+#13 DONE 3.4s
+Duration: 0:49.84

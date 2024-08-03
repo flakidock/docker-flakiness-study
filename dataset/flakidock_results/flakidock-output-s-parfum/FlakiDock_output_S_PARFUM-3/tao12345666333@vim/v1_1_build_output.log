@@ -1,0 +1,112 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.73kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:stretch-slim
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 107B done
+#3 DONE 0.0s
+
+#4 [builder 1/3] FROM docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#4 resolve docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 0.0s done
+#4 sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 1.21kB / 1.21kB done
+#4 sha256:c5cd3ffceeb25b683bf5111ea89bf8049a177e00fb237235d48076a19cc80097 529B / 529B done
+#4 sha256:0e23ec2ce5e621c0e8fa57a53c7781d59d57de8c139a8a351b7236530cd85ec2 1.46kB / 1.46kB done
+#4 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 0B / 22.57MB 0.1s
+#4 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 4.19MB / 22.57MB 0.2s
+#4 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 22.02MB / 22.57MB 0.4s
+#4 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 22.57MB / 22.57MB 0.5s done
+#4 extracting sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 0.1s
+#4 extracting sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 1.6s done
+#4 DONE 2.2s
+
+#5 [builder 2/3] RUN apt-get update && apt-get install -y --no-install-recommends         ca-certificates         exuberant-ctags         gcc         git         libncurses5-dev         make         python         python-dev         wget     && rm -rf /var/lib/apt/lists/*
+#5 0.216 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+#5 0.220 Ign:2 http://deb.debian.org/debian stretch InRelease
+#5 0.228 Ign:3 http://security.debian.org/debian-security stretch/updates Release
+#5 0.230 Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+#5 0.240 Ign:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.243 Ign:6 http://deb.debian.org/debian stretch Release
+#5 0.252 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.254 Ign:8 http://deb.debian.org/debian stretch-updates Release
+#5 0.263 Ign:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.264 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.274 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.275 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#5 0.285 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.286 Ign:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.297 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.299 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.307 Ign:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.309 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.317 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.322 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#5 0.327 Ign:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.335 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.337 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.345 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.348 Err:5 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#5 0.348   404  Not Found [IP: 151.101.66.132 80]
+#5 0.356 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.360 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#5 0.367 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#5 0.380 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.392 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.402 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.413 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#5 0.423 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.434 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.444 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.457 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#5 0.469 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.479 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.490 Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#5 0.490   404  Not Found
+#5 0.508 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#5 0.519 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#5 0.519   404  Not Found
+#5 0.530 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#5 0.534 Reading package lists...
+#5 0.541 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#5 0.541 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#5 0.541 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#5 0.541 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+#5 0.541 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#5 0.541 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#5 0.541 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#5 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends         ca-certificates         exuberant-ctags         gcc         git         libncurses5-dev         make         python         python-dev         wget     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [builder 2/3] RUN apt-get update && apt-get install -y --no-install-recommends         ca-certificates         exuberant-ctags         gcc         git         libncurses5-dev         make         python         python-dev         wget     && rm -rf /var/lib/apt/lists/*:
+0.519   404  Not Found
+0.530 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+0.534 Reading package lists...
+0.541 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.541 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.541 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.541 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+0.541 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.541 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.541 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:5
+--------------------
+   4 |     
+   5 | >>> RUN apt-get update && apt-get install -y --no-install-recommends \
+   6 | >>>         ca-certificates \
+   7 | >>>         exuberant-ctags \
+   8 | >>>         gcc \
+   9 | >>>         git \
+  10 | >>>         libncurses5-dev \
+  11 | >>>         make \
+  12 | >>>         python \
+  13 | >>>         python-dev \
+  14 | >>>         wget \
+  15 | >>>     && rm -rf /var/lib/apt/lists/*
+  16 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends         ca-certificates         exuberant-ctags         gcc         git         libncurses5-dev         make         python         python-dev         wget     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+Duration: 0:4.06

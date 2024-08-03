@@ -1,0 +1,126 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 600B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/debian:stretch
+#3 ...
+
+#4 [auth] library/debian:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/debian:stretch
+#3 DONE 1.5s
+
+#5 [1/5] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 0.3s done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 4.98kB done
+#6 DONE 0.4s
+
+#5 [1/5] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 1.21kB / 1.21kB done
+#5 sha256:16ee3e11da473f6565ef94a715f1a38b3079e0664913be78869c336a71cb6085 529B / 529B done
+#5 sha256:662c05203bab4c59568d24689fa5c3955439360a35c483178598d226b9a5ad10 1.46kB / 1.46kB done
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 0B / 45.43MB 0.1s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 5.24MB / 45.43MB 0.3s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 15.73MB / 45.43MB 0.4s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 28.31MB / 45.43MB 0.6s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 0.8s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 1.6s done
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 0.1s
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 3.5s done
+#5 DONE 6.1s
+
+#7 [2/5] RUN apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y         slapd=2.4.44* &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 0.538 Ign:1 http://deb.debian.org/debian stretch InRelease
+#7 0.548 Ign:2 http://deb.debian.org/debian stretch-updates InRelease
+#7 0.560 Ign:3 http://deb.debian.org/debian stretch Release
+#7 0.571 Ign:4 http://deb.debian.org/debian stretch-updates Release
+#7 0.582 Ign:5 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.593 Ign:6 http://deb.debian.org/debian stretch/main all Packages
+#7 0.604 Ign:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.614 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.625 Ign:5 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.637 Ign:6 http://deb.debian.org/debian stretch/main all Packages
+#7 0.648 Ign:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.659 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.670 Ign:5 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.681 Ign:6 http://deb.debian.org/debian stretch/main all Packages
+#7 0.692 Ign:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.692 Ign:9 http://security.debian.org/debian-security stretch/updates InRelease
+#7 0.703 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.713 Ign:5 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.724 Ign:6 http://deb.debian.org/debian stretch/main all Packages
+#7 0.734 Ign:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.745 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.756 Ign:5 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.767 Ign:6 http://deb.debian.org/debian stretch/main all Packages
+#7 0.777 Ign:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.788 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.798 Err:5 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.798   404  Not Found
+#7 0.818 Ign:6 http://deb.debian.org/debian stretch/main all Packages
+#7 0.829 Err:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.829   404  Not Found
+#7 0.839 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.841 Ign:10 http://security.debian.org/debian-security stretch/updates Release
+#7 0.989 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 1.295 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 1.444 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 1.746 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 1.896 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 2.194 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 2.343 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 2.645 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 2.794 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 3.105 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 3.253 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 3.562 Err:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 3.562   404  Not Found [IP: 151.101.2.132 80]
+#7 3.566 Reading package lists...
+#7 3.575 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#7 3.575 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#7 3.575 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#7 3.575 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#7 3.575 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#7 3.575 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.2.132 80]
+#7 3.575 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#7 ERROR: process "/bin/sh -c apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y         slapd=${OPENLDAP_VERSION}* &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [2/5] RUN apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y         slapd=2.4.44* &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*:
+3.562 Err:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+3.562   404  Not Found [IP: 151.101.2.132 80]
+3.566 Reading package lists...
+3.575 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+3.575 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+3.575 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+3.575 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+3.575 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+3.575 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.2.132 80]
+3.575 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+Dockerfile:7
+--------------------
+   6 |     
+   7 | >>> RUN apt-get update && \
+   8 | >>>     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
+   9 | >>>         slapd=${OPENLDAP_VERSION}* && \
+  10 | >>>     apt-get clean && \
+  11 | >>>     rm -rf /var/lib/apt/lists/*
+  12 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y         slapd=${OPENLDAP_VERSION}* &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+Duration: 0:17.84

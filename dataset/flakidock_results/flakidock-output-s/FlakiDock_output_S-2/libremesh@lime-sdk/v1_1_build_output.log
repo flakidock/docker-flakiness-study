@@ -1,0 +1,90 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 448B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:latest
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#4 resolve docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 362.38kB 0.0s done
+#5 DONE 0.1s
+
+#4 [1/4] FROM docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 5.24MB / 49.55MB 0.2s
+#4 sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 1.85kB / 1.85kB done
+#4 sha256:b1ae8b5bfaa9afa86b50c2a151a442d832c4449cf3731bddf8a728e5628ebb59 529B / 529B done
+#4 sha256:2e5b8d3ef33ebde2b2a943fadb241a63de1535a007a7bd185e7037abfff99f63 1.46kB / 1.46kB done
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 12.58MB / 49.55MB 0.3s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 23.07MB / 49.55MB 0.4s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 41.94MB / 49.55MB 0.6s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 49.55MB / 49.55MB 0.7s
+#4 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 49.55MB / 49.55MB 0.8s done
+#4 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 2.9s done
+#4 DONE 4.0s
+
+#6 [2/4] RUN apt-get update && apt-get install -y     subversion     build-essential     libncurses5-dev     zlib1g-dev     gawk     git     ccache     gettext     libssl-dev     xsltproc     wget     unzip     python     time
+#6 0.230 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#6 0.257 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#6 0.267 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#6 0.334 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#6 0.459 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#6 0.459 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#6 1.593 Fetched 9225 kB in 1s (6673 kB/s)
+#6 1.593 Reading package lists...
+#6 2.203 Reading package lists...
+#6 2.790 Building dependency tree...
+#6 2.936 Reading state information...
+#6 2.941 Package python is not available, but is referred to by another package.
+#6 2.941 This may mean that the package is missing, has been obsoleted, or
+#6 2.941 is only available from another source
+#6 2.941 However the following packages replace it:
+#6 2.941   python-is-python3 2to3
+#6 2.941 
+#6 2.943 E: Package 'python' has no installation candidate
+#6 ERROR: process "/bin/sh -c apt-get update && apt-get install -y     subversion     build-essential     libncurses5-dev     zlib1g-dev     gawk     git     ccache     gettext     libssl-dev     xsltproc     wget     unzip     python     time" did not complete successfully: exit code: 100
+------
+ > [2/4] RUN apt-get update && apt-get install -y     subversion     build-essential     libncurses5-dev     zlib1g-dev     gawk     git     ccache     gettext     libssl-dev     xsltproc     wget     unzip     python     time:
+
+2.790 Building dependency tree...
+2.936 Reading state information...
+2.941 Package python is not available, but is referred to by another package.
+2.941 This may mean that the package is missing, has been obsoleted, or
+2.941 is only available from another source
+2.941 However the following packages replace it:
+2.941   python-is-python3 2to3
+2.941 
+2.943 E: Package 'python' has no installation candidate
+------
+v1_Dockerfile:4
+--------------------
+   3 |     
+   4 | >>> RUN apt-get update && apt-get install -y \
+   5 | >>>     subversion \
+   6 | >>>     build-essential \
+   7 | >>>     libncurses5-dev \
+   8 | >>>     zlib1g-dev \
+   9 | >>>     gawk \
+  10 | >>>     git \
+  11 | >>>     ccache \
+  12 | >>>     gettext \
+  13 | >>>     libssl-dev \
+  14 | >>>     xsltproc \
+  15 | >>>     wget \
+  16 | >>>     unzip \
+  17 | >>>     python \
+  18 | >>>     time
+  19 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y     subversion     build-essential     libncurses5-dev     zlib1g-dev     gawk     git     ccache     gettext     libssl-dev     xsltproc     wget     unzip     python     time" did not complete successfully: exit code: 100
+Duration: 0:8.47

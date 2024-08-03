@@ -1,0 +1,164 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 2.98kB done
+#1 WARN: Empty continuation line found in: Run curl -f -L -sS https://getcomposer.org/installer | php     && mv composer.phar /usr/local/bin/composer     && composer self-update --clean-backups     && wget https://github.com/kjdev/php-ext-snappy/archive/${SNAPPY_VERSION}.zip -O snappy.tar.gz     && mkdir -p snappy     && unzip snappy.tar.gz -d snappy     && rm snappy.tar.gz     && (cd snappy/php-ext-snappy-${SNAPPY_VERSION}         && phpize         && ./configure --build="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"         && make -j$(nproc)         && make install)     && rm -r snappy     && docker-php-ext-enable snappy     && wget https://pecl.php.net/get/redis-${PHPREDIS_VERSION}.tgz -O /tmp/redis.tar.tgz     && pecl install /tmp/redis.tar.tgz     && rm -rf /tmp/redis.tar.tgz     && docker-php-ext-enable redis     && wget https://github.com/swoole/swoole-src/archive/v${SWOOLE_VERSION}.tar.gz -O swoole.tar.gz     && mkdir -p swoole     && tar -xf swoole.tar.gz -C swoole --strip-components=1     && rm swoole.tar.gz     && (cd swoole         && phpize         && ./configure --build="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" --enable-mysqlnd --enable-sockets --enable-openssl --enable-http2         && make -j$(nproc)         && make install)     && rm -r swoole     && docker-php-ext-enable swoole     && apt-get clean     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false     && cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime     && echo "${TIMEZONE}" > /etc/timezone     && echo "[Date]\ndate.timezone=${TIMEZONE}" > /usr/local/etc/php/conf.d/timezone.ini
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/php:7.1.22
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/library/php:7.1.22@sha256:65c211bf6160596b612469e0cb983c24b8b198333bdc92d50dc70ee7c138fb91
+#4 resolve docker.io/library/php:7.1.22@sha256:65c211bf6160596b612469e0cb983c24b8b198333bdc92d50dc70ee7c138fb91 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 401.57kB 0.0s done
+#5 DONE 0.1s
+
+#4 [1/6] FROM docker.io/library/php:7.1.22@sha256:65c211bf6160596b612469e0cb983c24b8b198333bdc92d50dc70ee7c138fb91
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 0B / 67.43MB 0.2s
+#4 sha256:65c211bf6160596b612469e0cb983c24b8b198333bdc92d50dc70ee7c138fb91 2.37kB / 2.37kB done
+#4 sha256:1efa965f8b64c31b3f978d4eef92eff8d657d764f426ef51aa64deca01cb0b52 1.99kB / 1.99kB done
+#4 sha256:2a0163830230d419e54314bab158ce870383cbea8a73cdee49a8664eef867a7e 9.24kB / 9.24kB done
+#4 sha256:802b00ed6f79f48e6a5f44ecbcaf43563d6077aaecb565eee1dfc615c0b18c00 8.04MB / 22.49MB 0.2s
+#4 sha256:59f5a5a895f85ce514e7f66d3715d42e54b6735957b02a2406d3625dd75a2185 226B / 226B 0.2s
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 6.29MB / 67.43MB 0.4s
+#4 sha256:802b00ed6f79f48e6a5f44ecbcaf43563d6077aaecb565eee1dfc615c0b18c00 22.49MB / 22.49MB 0.4s
+#4 sha256:59f5a5a895f85ce514e7f66d3715d42e54b6735957b02a2406d3625dd75a2185 226B / 226B 0.2s done
+#4 sha256:8e0903aaa47ebca2076b2f4d52c1118efa2fd755741247b509ced1085f5c1a72 183B / 183B 0.3s done
+#4 sha256:ee3cf719252202ffa610d61d1470499362da637a5e97d6a3fbc79bb67122d480 0B / 12.56MB 0.4s
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 16.78MB / 67.43MB 0.6s
+#4 sha256:802b00ed6f79f48e6a5f44ecbcaf43563d6077aaecb565eee1dfc615c0b18c00 22.49MB / 22.49MB 0.4s done
+#4 sha256:ee3cf719252202ffa610d61d1470499362da637a5e97d6a3fbc79bb67122d480 9.44MB / 12.56MB 0.6s
+#4 extracting sha256:802b00ed6f79f48e6a5f44ecbcaf43563d6077aaecb565eee1dfc615c0b18c00
+#4 sha256:2f0bdaf1f436d1e46728005832f3602b850eaf5e71d27affce2f999b9e9c949b 501B / 501B 0.6s done
+#4 sha256:51dce272488e3593d15b7f6f4c21f81b0cd759850051fea860298bea60dda288 0B / 27.96MB 0.6s
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 24.12MB / 67.43MB 0.7s
+#4 sha256:ee3cf719252202ffa610d61d1470499362da637a5e97d6a3fbc79bb67122d480 12.56MB / 12.56MB 0.7s done
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 29.36MB / 67.43MB 0.8s
+#4 sha256:51dce272488e3593d15b7f6f4c21f81b0cd759850051fea860298bea60dda288 6.29MB / 27.96MB 0.8s
+#4 sha256:b9c7353ef0ac27723ec495f07d33dd6b5c8885f71e453a82b31a69538a6cd1fc 2.18kB / 2.18kB 0.8s
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 34.60MB / 67.43MB 0.9s
+#4 sha256:51dce272488e3593d15b7f6f4c21f81b0cd759850051fea860298bea60dda288 13.63MB / 27.96MB 0.9s
+#4 sha256:b9c7353ef0ac27723ec495f07d33dd6b5c8885f71e453a82b31a69538a6cd1fc 2.18kB / 2.18kB 0.8s done
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 40.89MB / 67.43MB 1.0s
+#4 sha256:51dce272488e3593d15b7f6f4c21f81b0cd759850051fea860298bea60dda288 18.87MB / 27.96MB 1.0s
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 46.14MB / 67.43MB 1.1s
+#4 sha256:51dce272488e3593d15b7f6f4c21f81b0cd759850051fea860298bea60dda288 24.12MB / 27.96MB 1.1s
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 54.53MB / 67.43MB 1.2s
+#4 sha256:51dce272488e3593d15b7f6f4c21f81b0cd759850051fea860298bea60dda288 27.96MB / 27.96MB 1.2s
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 67.43MB / 67.43MB 1.4s
+#4 sha256:51dce272488e3593d15b7f6f4c21f81b0cd759850051fea860298bea60dda288 27.96MB / 27.96MB 1.2s done
+#4 sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 67.43MB / 67.43MB 1.6s done
+#4 extracting sha256:802b00ed6f79f48e6a5f44ecbcaf43563d6077aaecb565eee1dfc615c0b18c00 1.6s done
+#4 extracting sha256:59f5a5a895f85ce514e7f66d3715d42e54b6735957b02a2406d3625dd75a2185
+#4 extracting sha256:59f5a5a895f85ce514e7f66d3715d42e54b6735957b02a2406d3625dd75a2185 done
+#4 extracting sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b
+#4 extracting sha256:6898b2dbcfeb5f9532f39c5906364d294c90c4fa0c942068e0ba27bdcd73029b 3.3s done
+#4 extracting sha256:8e0903aaa47ebca2076b2f4d52c1118efa2fd755741247b509ced1085f5c1a72
+#4 extracting sha256:8e0903aaa47ebca2076b2f4d52c1118efa2fd755741247b509ced1085f5c1a72 done
+#4 extracting sha256:ee3cf719252202ffa610d61d1470499362da637a5e97d6a3fbc79bb67122d480 0.1s
+#4 extracting sha256:ee3cf719252202ffa610d61d1470499362da637a5e97d6a3fbc79bb67122d480 0.1s done
+#4 extracting sha256:2f0bdaf1f436d1e46728005832f3602b850eaf5e71d27affce2f999b9e9c949b done
+#4 extracting sha256:51dce272488e3593d15b7f6f4c21f81b0cd759850051fea860298bea60dda288
+#4 extracting sha256:51dce272488e3593d15b7f6f4c21f81b0cd759850051fea860298bea60dda288 0.9s done
+#4 extracting sha256:b9c7353ef0ac27723ec495f07d33dd6b5c8885f71e453a82b31a69538a6cd1fc done
+#4 DONE 7.1s
+
+#6 [2/6] RUN apt-get update     && apt-get install --no-install-recommends -y         curl wget git zip unzip less vim procps lsof tcpdump htop openssl         libz-dev         libssl-dev         libnghttp2-dev         libpcre3-dev         libjpeg-dev         libpng-dev         libfreetype6-dev         strace     && docker-php-ext-install        bcmath gd pdo_mysql mbstring sockets zip sysvmsg sysvsem sysvshm && rm -rf /var/lib/apt/lists/*;
+#6 0.208 Ign:1 http://deb.debian.org/debian stretch InRelease
+#6 0.220 Ign:2 http://deb.debian.org/debian stretch-updates InRelease
+#6 0.231 Ign:3 http://deb.debian.org/debian stretch Release
+#6 0.242 Ign:4 http://deb.debian.org/debian stretch-updates Release
+#6 0.252 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#6 0.264 Ign:6 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.274 Ign:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.285 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.295 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#6 0.307 Ign:6 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.317 Ign:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.332 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.344 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#6 0.350 Ign:9 http://security.debian.org/debian-security stretch/updates InRelease
+#6 0.356 Ign:6 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.366 Ign:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.376 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.388 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#6 0.513 Ign:10 http://security.debian.org/debian-security stretch/updates Release
+#6 0.523 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.535 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.541 Ign:6 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.546 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.554 Ign:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.556 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.565 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.565 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.575 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.575 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#6 0.585 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.587 Ign:6 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.596 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.597 Ign:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.606 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.607 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.617 Ign:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.618 Ign:5 http://deb.debian.org/debian stretch/main all Packages
+#6 0.627 Ign:11 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.637 Err:6 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.637   404  Not Found
+#6 0.637 Err:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.637   404  Not Found [IP: 151.101.66.132 80]
+#6 0.648 Err:7 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.648   404  Not Found
+#6 0.660 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.662 Reading package lists...
+#6 0.671 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 0.671 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 0.671 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 0.671 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 0.671 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 0.671 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+#6 0.671 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c apt-get update     && apt-get install --no-install-recommends -y         curl wget git zip unzip less vim procps lsof tcpdump htop openssl         libz-dev         libssl-dev         libnghttp2-dev         libpcre3-dev         libjpeg-dev         libpng-dev         libfreetype6-dev         strace     && docker-php-ext-install        bcmath gd pdo_mysql mbstring sockets zip sysvmsg sysvsem sysvshm && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+------
+ > [2/6] RUN apt-get update     && apt-get install --no-install-recommends -y         curl wget git zip unzip less vim procps lsof tcpdump htop openssl         libz-dev         libssl-dev         libnghttp2-dev         libpcre3-dev         libjpeg-dev         libpng-dev         libfreetype6-dev         strace     && docker-php-ext-install        bcmath gd pdo_mysql mbstring sockets zip sysvmsg sysvsem sysvshm && rm -rf /var/lib/apt/lists/*;:
+0.648   404  Not Found
+0.660 Ign:8 http://deb.debian.org/debian stretch-updates/main all Packages
+0.662 Reading package lists...
+0.671 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.671 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.671 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.671 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.671 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.671 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+0.671 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - Empty continuation line found in: Run curl -f -L -sS https://getcomposer.org/installer | php     && mv composer.phar /usr/local/bin/composer     && composer self-update --clean-backups     && wget https://github.com/kjdev/php-ext-snappy/archive/${SNAPPY_VERSION}.zip -O snappy.tar.gz     && mkdir -p snappy     && unzip snappy.tar.gz -d snappy     && rm snappy.tar.gz     && (cd snappy/php-ext-snappy-${SNAPPY_VERSION}         && phpize         && ./configure --build="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"         && make -j$(nproc)         && make install)     && rm -r snappy     && docker-php-ext-enable snappy     && wget https://pecl.php.net/get/redis-${PHPREDIS_VERSION}.tgz -O /tmp/redis.tar.tgz     && pecl install /tmp/redis.tar.tgz     && rm -rf /tmp/redis.tar.tgz     && docker-php-ext-enable redis     && wget https://github.com/swoole/swoole-src/archive/v${SWOOLE_VERSION}.tar.gz -O swoole.tar.gz     && mkdir -p swoole     && tar -xf swoole.tar.gz -C swoole --strip-components=1     && rm swoole.tar.gz     && (cd swoole         && phpize         && ./configure --build="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" --enable-mysqlnd --enable-sockets --enable-openssl --enable-http2         && make -j$(nproc)         && make install)     && rm -r swoole     && docker-php-ext-enable swoole     && apt-get clean     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false     && cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime     && echo "${TIMEZONE}" > /etc/timezone     && echo "[Date]\ndate.timezone=${TIMEZONE}" > /usr/local/etc/php/conf.d/timezone.ini
+v1_Dockerfile:17
+--------------------
+  16 |     # Libs -y --no-install-recommends
+  17 | >>> RUN apt-get update \
+  18 | >>>     && apt-get install --no-install-recommends -y \
+  19 | >>>         curl wget git zip unzip less vim procps lsof tcpdump htop openssl \
+  20 | >>>         libz-dev \
+  21 | >>>         libssl-dev \
+  22 | >>>         libnghttp2-dev \
+  23 | >>>         libpcre3-dev \
+  24 | >>>         libjpeg-dev \
+  25 | >>>         libpng-dev \
+  26 | >>>         libfreetype6-dev \
+  27 | >>>         strace \
+  28 | >>> # Install PHP extensions
+  29 | >>>     && docker-php-ext-install \
+  30 | >>>        bcmath gd pdo_mysql mbstring sockets zip sysvmsg sysvsem sysvshm && rm -rf /var/lib/apt/lists/*;
+  31 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update     && apt-get install --no-install-recommends -y         curl wget git zip unzip less vim procps lsof tcpdump htop openssl         libz-dev         libssl-dev         libnghttp2-dev         libpcre3-dev         libjpeg-dev         libpng-dev         libfreetype6-dev         strace     && docker-php-ext-install        bcmath gd pdo_mysql mbstring sockets zip sysvmsg sysvsem sysvshm && rm -rf /var/lib/apt/lists/*;" did not complete successfully: exit code: 100
+Duration: 0:10.67

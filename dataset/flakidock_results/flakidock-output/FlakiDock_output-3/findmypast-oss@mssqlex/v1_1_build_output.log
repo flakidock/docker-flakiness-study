@@ -1,0 +1,596 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.3s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.20kB done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/elixir:1.6.5-slim
+#3 DONE 1.2s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [ 1/10] FROM docker.io/library/elixir:1.6.5-slim@sha256:3a828c98069649c2c5679a6b43648b1fb4e18acb3738089f73312618c8c7b7b4
+#5 resolve docker.io/library/elixir:1.6.5-slim@sha256:3a828c98069649c2c5679a6b43648b1fb4e18acb3738089f73312618c8c7b7b4
+#5 resolve docker.io/library/elixir:1.6.5-slim@sha256:3a828c98069649c2c5679a6b43648b1fb4e18acb3738089f73312618c8c7b7b4 0.2s done
+#5 sha256:3a828c98069649c2c5679a6b43648b1fb4e18acb3738089f73312618c8c7b7b4 2.03kB / 2.03kB done
+#5 sha256:21b13c7437632dd9eef2a9358e907f3c302785fb67b44d9218a8a2341c402720 952B / 952B done
+#5 sha256:fee43147268dd889c8825538f641af730ad0652874d4eec3f1ccb4f459f5857e 4.68kB / 4.68kB done
+#5 sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 0B / 45.32MB 0.1s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 283.35kB 0.0s done
+#4 DONE 0.3s
+
+#5 [ 1/10] FROM docker.io/library/elixir:1.6.5-slim@sha256:3a828c98069649c2c5679a6b43648b1fb4e18acb3738089f73312618c8c7b7b4
+#5 sha256:032daaa630b10760aa00782cfa1ef6e5ec62816c218bef8a2d20819db5ff084b 0B / 5.32MB 0.2s
+#5 sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 10.49MB / 45.32MB 0.4s
+#5 sha256:032daaa630b10760aa00782cfa1ef6e5ec62816c218bef8a2d20819db5ff084b 1.05MB / 5.32MB 0.4s
+#5 sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030 1.05MB / 66.90MB 0.4s
+#5 sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 14.68MB / 45.32MB 0.5s
+#5 sha256:032daaa630b10760aa00782cfa1ef6e5ec62816c218bef8a2d20819db5ff084b 3.15MB / 5.32MB 0.5s
+#5 sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030 7.34MB / 66.90MB 0.5s
+#5 sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 18.87MB / 45.32MB 0.6s
+#5 sha256:032daaa630b10760aa00782cfa1ef6e5ec62816c218bef8a2d20819db5ff084b 5.32MB / 5.32MB 0.6s
+#5 sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030 13.63MB / 66.90MB 0.6s
+#5 sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 23.07MB / 45.32MB 0.7s
+#5 sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030 20.97MB / 66.90MB 0.7s
+#5 sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 28.31MB / 45.32MB 0.8s
+#5 sha256:032daaa630b10760aa00782cfa1ef6e5ec62816c218bef8a2d20819db5ff084b 5.32MB / 5.32MB 0.8s done
+#5 sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030 27.26MB / 66.90MB 0.8s
+#5 sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 33.55MB / 45.32MB 1.0s
+#5 sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030 33.55MB / 66.90MB 1.0s
+#5 sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 40.89MB / 45.32MB 1.2s
+#5 sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030 47.19MB / 66.90MB 1.2s
+#5 sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 45.32MB / 45.32MB 1.4s
+#5 sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030 63.96MB / 66.90MB 1.4s
+#5 sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 45.32MB / 45.32MB 1.9s done
+#5 extracting sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707
+#5 sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030 66.90MB / 66.90MB 3.1s done
+#5 extracting sha256:cc1a78bfd46becbfc3abb8a74d9a70a0e0dc7a5809bbd12e814f9382db003707 2.6s done
+#5 extracting sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030
+#5 extracting sha256:4cffabc835ba8b3c12ce8542901fef827e00692c456ddfbf0a338961eccc4030 3.7s done
+#5 extracting sha256:032daaa630b10760aa00782cfa1ef6e5ec62816c218bef8a2d20819db5ff084b
+#5 extracting sha256:032daaa630b10760aa00782cfa1ef6e5ec62816c218bef8a2d20819db5ff084b 0.3s done
+#5 DONE 10.4s
+
+#6 [ 2/10] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+#6 DONE 5.7s
+
+#7 [ 3/10] RUN apt-get update && apt-get install -y locales
+#7 0.622 Ign:1 http://archive.debian.org/debian stretch InRelease
+#7 0.624 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#7 0.634 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#7 0.642 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#7 1.035 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [996 kB]
+#7 1.267 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [9610 kB]
+#7 2.303 Fetched 10.8 MB in 1s (6414 kB/s)
+#7 2.303 Reading package lists...
+#7 3.019 Reading package lists...
+#7 3.719 Building dependency tree...
+#7 3.820 Reading state information...
+#7 3.899 The following additional packages will be installed:
+#7 3.899   libc-l10n
+#7 3.925 The following NEW packages will be installed:
+#7 3.925   libc-l10n locales
+#7 3.940 0 upgraded, 2 newly installed, 0 to remove and 32 not upgraded.
+#7 3.940 Need to get 4108 kB of archives.
+#7 3.940 After this operation, 13.8 MB of additional disk space will be used.
+#7 3.940 Get:1 http://archive.debian.org/debian stretch/main amd64 libc-l10n all 2.24-11+deb9u4 [820 kB]
+#7 3.955 Get:2 http://archive.debian.org/debian stretch/main amd64 locales all 2.24-11+deb9u4 [3289 kB]
+#7 4.179 debconf: delaying package configuration, since apt-utils is not installed
+#7 4.235 Fetched 4108 kB in 0s (59.5 MB/s)
+#7 4.308 Selecting previously unselected package libc-l10n.
+#7 4.308 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7917 files and directories currently installed.)
+#7 4.309 Preparing to unpack .../libc-l10n_2.24-11+deb9u4_all.deb ...
+#7 4.337 Unpacking libc-l10n (2.24-11+deb9u4) ...
+#7 4.723 Selecting previously unselected package locales.
+#7 4.723 Preparing to unpack .../locales_2.24-11+deb9u4_all.deb ...
+#7 4.755 Unpacking locales (2.24-11+deb9u4) ...
+#7 5.384 Setting up libc-l10n (2.24-11+deb9u4) ...
+#7 5.460 Setting up locales (2.24-11+deb9u4) ...
+#7 6.204 Generating locales (this might take a while)...
+#7 6.211 Generation complete.
+#7 DONE 6.9s
+
+#8 [ 4/10] RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen &&     locale-gen en_US.UTF-8 &&     dpkg-reconfigure locales &&     /usr/sbin/update-locale LANG=en_US.UTF-8
+#8 0.642 Generating locales (this might take a while)...
+#8 0.645   en_US.UTF-8... done
+#8 1.407 Generation complete.
+#8 2.194 Generating locales (this might take a while)...
+#8 2.196   en_US.UTF-8... done
+#8 3.052 Generation complete.
+#8 DONE 3.4s
+
+#9 [ 5/10] RUN apt-get update &&     apt-get -y install curl apt-transport-https gnupg2 &&     curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - &&     curl https://packages.microsoft.com/config/debian/9/prod.list > /etc/apt/sources.list.d/mssql-release.list &&     apt-get update &&     ACCEPT_EULA=Y apt-get install -y msodbcsql17
+#9 0.820 Ign:1 http://archive.debian.org/debian stretch InRelease
+#9 0.856 Hit:2 http://archive.debian.org/debian-security stretch/updates InRelease
+#9 0.859 Hit:3 http://archive.debian.org/debian stretch Release
+#9 1.072 Reading package lists...
+#9 1.786 Reading package lists...
+#9 2.484 Building dependency tree...
+#9 2.597 Reading state information...
+#9 2.685 The following additional packages will be installed:
+#9 2.686   ca-certificates dirmngr gnupg gnupg-agent gnupg-l10n krb5-locales libassuan0
+#9 2.686   libcurl3 libcurl3-gnutls libffi6 libgmp10 libgnutls30 libgssapi-krb5-2
+#9 2.686   libhogweed4 libidn2-0 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0
+#9 2.686   libksba8 libldap-2.4-2 libldap-common libnettle6 libnghttp2-14 libnpth0
+#9 2.686   libp11-kit0 libpsl5 libreadline7 librtmp1 libsasl2-2 libsasl2-modules
+#9 2.686   libsasl2-modules-db libsqlite3-0 libssh2-1 libssl1.0.2 libtasn1-6
+#9 2.686   libunistring0 openssl pinentry-curses publicsuffix readline-common
+#9 2.687 Suggested packages:
+#9 2.687   dbus-user-session libpam-systemd pinentry-gnome3 tor parcimonie xloadimage
+#9 2.687   scdaemon gnutls-bin krb5-doc krb5-user libsasl2-modules-gssapi-mit
+#9 2.687   | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp
+#9 2.687   libsasl2-modules-sql pinentry-doc readline-doc
+#9 2.882 The following NEW packages will be installed:
+#9 2.882   apt-transport-https ca-certificates curl dirmngr gnupg gnupg-agent
+#9 2.883   gnupg-l10n gnupg2 krb5-locales libassuan0 libcurl3 libcurl3-gnutls libffi6
+#9 2.883   libgmp10 libgnutls30 libgssapi-krb5-2 libhogweed4 libidn2-0 libk5crypto3
+#9 2.883   libkeyutils1 libkrb5-3 libkrb5support0 libksba8 libldap-2.4-2 libldap-common
+#9 2.883   libnghttp2-14 libnpth0 libp11-kit0 libpsl5 libreadline7 librtmp1 libsasl2-2
+#9 2.883   libsasl2-modules libsasl2-modules-db libsqlite3-0 libssh2-1 libssl1.0.2
+#9 2.883   libtasn1-6 libunistring0 openssl pinentry-curses publicsuffix
+#9 2.883   readline-common
+#9 2.883 The following packages will be upgraded:
+#9 2.884   libnettle6
+#9 2.901 1 upgraded, 43 newly installed, 0 to remove and 31 not upgraded.
+#9 2.901 Need to get 11.5 MB of archives.
+#9 2.901 After this operation, 28.6 MB of additional disk space will be used.
+#9 2.901 Get:1 http://archive.debian.org/debian stretch/main amd64 libassuan0 amd64 2.4.3-2 [42.5 kB]
+#9 2.905 Get:2 http://archive.debian.org/debian stretch/main amd64 pinentry-curses amd64 1.0.0-2 [50.5 kB]
+#9 2.906 Get:3 http://archive.debian.org/debian stretch/main amd64 libnpth0 amd64 1.3-1 [14.6 kB]
+#9 2.907 Get:4 http://archive.debian.org/debian stretch/main amd64 readline-common all 7.0-3 [70.4 kB]
+#9 2.908 Get:5 http://archive.debian.org/debian stretch/main amd64 libreadline7 amd64 7.0-3 [151 kB]
+#9 2.917 Get:6 http://archive.debian.org/debian stretch/main amd64 gnupg-agent amd64 2.1.18-8~deb9u4 [554 kB]
+#9 2.926 Get:7 http://archive.debian.org/debian stretch/main amd64 libksba8 amd64 1.3.5-2 [99.7 kB]
+#9 2.927 Get:8 http://archive.debian.org/debian-security stretch/updates/main amd64 libsqlite3-0 amd64 3.16.2-5+deb9u3 [574 kB]
+#9 2.937 Get:9 http://archive.debian.org/debian stretch/main amd64 gnupg amd64 2.1.18-8~deb9u4 [1,128 kB]
+#9 2.952 Get:10 http://archive.debian.org/debian-security stretch/updates/main amd64 libssl1.0.2 amd64 1.0.2u-1~deb9u7 [1,305 kB]
+#9 2.976 Get:11 http://archive.debian.org/debian-security stretch/updates/main amd64 krb5-locales all 1.15-1+deb9u3 [94.1 kB]
+#9 2.978 Get:12 http://archive.debian.org/debian-security stretch/updates/main amd64 libgmp10 amd64 2:6.1.2+dfsg-1+deb9u1 [253 kB]
+#9 2.982 Get:13 http://archive.debian.org/debian-security stretch/updates/main amd64 libnettle6 amd64 3.3-1+deb9u1 [192 kB]
+#9 2.986 Get:14 http://archive.debian.org/debian-security stretch/updates/main amd64 libhogweed4 amd64 3.3-1+deb9u1 [136 kB]
+#9 2.988 Get:15 http://archive.debian.org/debian stretch/main amd64 libffi6 amd64 3.2.1-6 [20.4 kB]
+#9 2.989 Get:16 http://archive.debian.org/debian-security stretch/updates/main amd64 libp11-kit0 amd64 0.23.3-2+deb9u1 [112 kB]
+#9 2.991 Get:17 http://archive.debian.org/debian stretch/main amd64 libtasn1-6 amd64 4.10-1.1+deb9u1 [50.6 kB]
+#9 2.992 Get:18 http://archive.debian.org/debian-security stretch/updates/main amd64 libgnutls30 amd64 3.5.8-5+deb9u6 [897 kB]
+#9 3.007 Get:19 http://archive.debian.org/debian stretch/main amd64 libkeyutils1 amd64 1.5.9-9 [12.4 kB]
+#9 3.007 Get:20 http://archive.debian.org/debian-security stretch/updates/main amd64 libkrb5support0 amd64 1.15-1+deb9u3 [62.3 kB]
+#9 3.008 Get:21 http://archive.debian.org/debian-security stretch/updates/main amd64 libk5crypto3 amd64 1.15-1+deb9u3 [120 kB]
+#9 3.011 Get:22 http://archive.debian.org/debian-security stretch/updates/main amd64 libkrb5-3 amd64 1.15-1+deb9u3 [312 kB]
+#9 3.016 Get:23 http://archive.debian.org/debian-security stretch/updates/main amd64 libgssapi-krb5-2 amd64 1.15-1+deb9u3 [155 kB]
+#9 3.019 Get:24 http://archive.debian.org/debian-security stretch/updates/main amd64 libsasl2-modules-db amd64 2.1.27~101-g0780600+dfsg-3+deb9u2 [68.5 kB]
+#9 3.021 Get:25 http://archive.debian.org/debian-security stretch/updates/main amd64 libsasl2-2 amd64 2.1.27~101-g0780600+dfsg-3+deb9u2 [105 kB]
+#9 3.022 Get:26 http://archive.debian.org/debian-security stretch/updates/main amd64 libldap-common all 2.4.44+dfsg-5+deb9u9 [86.3 kB]
+#9 3.024 Get:27 http://archive.debian.org/debian-security stretch/updates/main amd64 libldap-2.4-2 amd64 2.4.44+dfsg-5+deb9u9 [220 kB]
+#9 3.028 Get:28 http://archive.debian.org/debian stretch/main amd64 libunistring0 amd64 0.9.6+really0.9.3-0.1 [279 kB]
+#9 3.032 Get:29 http://archive.debian.org/debian stretch/main amd64 libidn2-0 amd64 0.16-1+deb9u1 [60.7 kB]
+#9 3.033 Get:30 http://archive.debian.org/debian-security stretch/updates/main amd64 libnghttp2-14 amd64 1.18.1-1+deb9u2 [79.4 kB]
+#9 3.035 Get:31 http://archive.debian.org/debian stretch/main amd64 libpsl5 amd64 0.17.0-3 [41.8 kB]
+#9 3.036 Get:32 http://archive.debian.org/debian stretch/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-1+b1 [60.4 kB]
+#9 3.037 Get:33 http://archive.debian.org/debian-security stretch/updates/main amd64 libssh2-1 amd64 1.7.0-1+deb9u2 [139 kB]
+#9 3.040 Get:34 http://archive.debian.org/debian-security stretch/updates/main amd64 libcurl3-gnutls amd64 7.52.1-5+deb9u16 [296 kB]
+#9 3.045 Get:35 http://archive.debian.org/debian-security stretch/updates/main amd64 apt-transport-https amd64 1.4.11 [171 kB]
+#9 3.048 Get:36 http://archive.debian.org/debian-security stretch/updates/main amd64 openssl amd64 1.1.0l-1~deb9u6 [749 kB]
+#9 3.062 Get:37 http://archive.debian.org/debian-security stretch/updates/main amd64 ca-certificates all 20200601~deb9u2 [168 kB]
+#9 3.065 Get:38 http://archive.debian.org/debian-security stretch/updates/main amd64 libcurl3 amd64 7.52.1-5+deb9u16 [298 kB]
+#9 3.070 Get:39 http://archive.debian.org/debian-security stretch/updates/main amd64 curl amd64 7.52.1-5+deb9u16 [229 kB]
+#9 3.074 Get:40 http://archive.debian.org/debian stretch/main amd64 dirmngr amd64 2.1.18-8~deb9u4 [597 kB]
+#9 3.082 Get:41 http://archive.debian.org/debian stretch/main amd64 gnupg2 all 2.1.18-8~deb9u4 [299 kB]
+#9 3.086 Get:42 http://archive.debian.org/debian-security stretch/updates/main amd64 libsasl2-modules amd64 2.1.27~101-g0780600+dfsg-3+deb9u2 [102 kB]
+#9 3.088 Get:43 http://archive.debian.org/debian stretch/main amd64 gnupg-l10n all 2.1.18-8~deb9u4 [893 kB]
+#9 3.099 Get:44 http://archive.debian.org/debian stretch/main amd64 publicsuffix all 20190415.1030-0+deb9u1 [108 kB]
+#9 3.368 debconf: delaying package configuration, since apt-utils is not installed
+#9 3.418 Fetched 11.5 MB in 0s (55.5 MB/s)
+#9 3.555 Selecting previously unselected package libassuan0:amd64.
+#9 3.555 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 8551 files and directories currently installed.)
+#9 3.557 Preparing to unpack .../00-libassuan0_2.4.3-2_amd64.deb ...
+#9 3.626 Unpacking libassuan0:amd64 (2.4.3-2) ...
+#9 3.853 Selecting previously unselected package pinentry-curses.
+#9 3.853 Preparing to unpack .../01-pinentry-curses_1.0.0-2_amd64.deb ...
+#9 3.877 Unpacking pinentry-curses (1.0.0-2) ...
+#9 4.096 Selecting previously unselected package libnpth0:amd64.
+#9 4.096 Preparing to unpack .../02-libnpth0_1.3-1_amd64.deb ...
+#9 4.120 Unpacking libnpth0:amd64 (1.3-1) ...
+#9 4.864 Selecting previously unselected package readline-common.
+#9 4.864 Preparing to unpack .../03-readline-common_7.0-3_all.deb ...
+#9 4.921 Unpacking readline-common (7.0-3) ...
+#9 5.197 Selecting previously unselected package libreadline7:amd64.
+#9 5.197 Preparing to unpack .../04-libreadline7_7.0-3_amd64.deb ...
+#9 5.221 Unpacking libreadline7:amd64 (7.0-3) ...
+#9 5.440 Selecting previously unselected package gnupg-agent.
+#9 5.440 Preparing to unpack .../05-gnupg-agent_2.1.18-8~deb9u4_amd64.deb ...
+#9 5.464 Unpacking gnupg-agent (2.1.18-8~deb9u4) ...
+#9 5.774 Selecting previously unselected package libksba8:amd64.
+#9 5.774 Preparing to unpack .../06-libksba8_1.3.5-2_amd64.deb ...
+#9 5.806 Unpacking libksba8:amd64 (1.3.5-2) ...
+#9 6.042 Selecting previously unselected package libsqlite3-0:amd64.
+#9 6.042 Preparing to unpack .../07-libsqlite3-0_3.16.2-5+deb9u3_amd64.deb ...
+#9 6.074 Unpacking libsqlite3-0:amd64 (3.16.2-5+deb9u3) ...
+#9 6.302 Selecting previously unselected package gnupg.
+#9 6.302 Preparing to unpack .../08-gnupg_2.1.18-8~deb9u4_amd64.deb ...
+#9 6.334 Unpacking gnupg (2.1.18-8~deb9u4) ...
+#9 6.771 Selecting previously unselected package libssl1.0.2:amd64.
+#9 6.771 Preparing to unpack .../09-libssl1.0.2_1.0.2u-1~deb9u7_amd64.deb ...
+#9 6.803 Unpacking libssl1.0.2:amd64 (1.0.2u-1~deb9u7) ...
+#9 7.130 Selecting previously unselected package krb5-locales.
+#9 7.130 Preparing to unpack .../10-krb5-locales_1.15-1+deb9u3_all.deb ...
+#9 7.163 Unpacking krb5-locales (1.15-1+deb9u3) ...
+#9 7.390 Selecting previously unselected package libgmp10:amd64.
+#9 7.390 Preparing to unpack .../11-libgmp10_2%3a6.1.2+dfsg-1+deb9u1_amd64.deb ...
+#9 7.422 Unpacking libgmp10:amd64 (2:6.1.2+dfsg-1+deb9u1) ...
+#9 7.657 Preparing to unpack .../12-libnettle6_3.3-1+deb9u1_amd64.deb ...
+#9 7.757 Unpacking libnettle6:amd64 (3.3-1+deb9u1) over (3.3-1+b2) ...
+#9 8.143 Selecting previously unselected package libhogweed4:amd64.
+#9 8.143 Preparing to unpack .../13-libhogweed4_3.3-1+deb9u1_amd64.deb ...
+#9 8.167 Unpacking libhogweed4:amd64 (3.3-1+deb9u1) ...
+#9 8.479 Selecting previously unselected package libffi6:amd64.
+#9 8.479 Preparing to unpack .../14-libffi6_3.2.1-6_amd64.deb ...
+#9 8.503 Unpacking libffi6:amd64 (3.2.1-6) ...
+#9 8.713 Selecting previously unselected package libp11-kit0:amd64.
+#9 8.713 Preparing to unpack .../15-libp11-kit0_0.23.3-2+deb9u1_amd64.deb ...
+#9 8.746 Unpacking libp11-kit0:amd64 (0.23.3-2+deb9u1) ...
+#9 8.973 Selecting previously unselected package libtasn1-6:amd64.
+#9 8.973 Preparing to unpack .../16-libtasn1-6_4.10-1.1+deb9u1_amd64.deb ...
+#9 9.005 Unpacking libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+#9 9.274 Selecting previously unselected package libgnutls30:amd64.
+#9 9.274 Preparing to unpack .../17-libgnutls30_3.5.8-5+deb9u6_amd64.deb ...
+#9 9.306 Unpacking libgnutls30:amd64 (3.5.8-5+deb9u6) ...
+#9 9.584 Selecting previously unselected package libkeyutils1:amd64.
+#9 9.584 Preparing to unpack .../18-libkeyutils1_1.5.9-9_amd64.deb ...
+#9 9.608 Unpacking libkeyutils1:amd64 (1.5.9-9) ...
+#9 9.816 Selecting previously unselected package libkrb5support0:amd64.
+#9 9.816 Preparing to unpack .../19-libkrb5support0_1.15-1+deb9u3_amd64.deb ...
+#9 9.840 Unpacking libkrb5support0:amd64 (1.15-1+deb9u3) ...
+#9 10.03 Selecting previously unselected package libk5crypto3:amd64.
+#9 10.03 Preparing to unpack .../20-libk5crypto3_1.15-1+deb9u3_amd64.deb ...
+#9 10.06 Unpacking libk5crypto3:amd64 (1.15-1+deb9u3) ...
+#9 10.28 Selecting previously unselected package libkrb5-3:amd64.
+#9 10.28 Preparing to unpack .../21-libkrb5-3_1.15-1+deb9u3_amd64.deb ...
+#9 10.30 Unpacking libkrb5-3:amd64 (1.15-1+deb9u3) ...
+#9 10.65 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#9 10.65 Preparing to unpack .../22-libgssapi-krb5-2_1.15-1+deb9u3_amd64.deb ...
+#9 10.67 Unpacking libgssapi-krb5-2:amd64 (1.15-1+deb9u3) ...
+#9 10.83 Selecting previously unselected package libsasl2-modules-db:amd64.
+#9 10.83 Preparing to unpack .../23-libsasl2-modules-db_2.1.27~101-g0780600+dfsg-3+deb9u2_amd64.deb ...
+#9 10.85 Unpacking libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+#9 11.04 Selecting previously unselected package libsasl2-2:amd64.
+#9 11.04 Preparing to unpack .../24-libsasl2-2_2.1.27~101-g0780600+dfsg-3+deb9u2_amd64.deb ...
+#9 11.06 Unpacking libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+#9 11.25 Selecting previously unselected package libldap-common.
+#9 11.25 Preparing to unpack .../25-libldap-common_2.4.44+dfsg-5+deb9u9_all.deb ...
+#9 11.27 Unpacking libldap-common (2.4.44+dfsg-5+deb9u9) ...
+#9 11.48 Selecting previously unselected package libldap-2.4-2:amd64.
+#9 11.48 Preparing to unpack .../26-libldap-2.4-2_2.4.44+dfsg-5+deb9u9_amd64.deb ...
+#9 11.50 Unpacking libldap-2.4-2:amd64 (2.4.44+dfsg-5+deb9u9) ...
+#9 11.71 Selecting previously unselected package libunistring0:amd64.
+#9 11.71 Preparing to unpack .../27-libunistring0_0.9.6+really0.9.3-0.1_amd64.deb ...
+#9 11.73 Unpacking libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+#9 11.99 Selecting previously unselected package libidn2-0:amd64.
+#9 11.99 Preparing to unpack .../28-libidn2-0_0.16-1+deb9u1_amd64.deb ...
+#9 12.01 Unpacking libidn2-0:amd64 (0.16-1+deb9u1) ...
+#9 12.21 Selecting previously unselected package libnghttp2-14:amd64.
+#9 12.21 Preparing to unpack .../29-libnghttp2-14_1.18.1-1+deb9u2_amd64.deb ...
+#9 12.24 Unpacking libnghttp2-14:amd64 (1.18.1-1+deb9u2) ...
+#9 12.48 Selecting previously unselected package libpsl5:amd64.
+#9 12.48 Preparing to unpack .../30-libpsl5_0.17.0-3_amd64.deb ...
+#9 12.51 Unpacking libpsl5:amd64 (0.17.0-3) ...
+#9 12.74 Selecting previously unselected package librtmp1:amd64.
+#9 12.74 Preparing to unpack .../31-librtmp1_2.4+20151223.gitfa8646d.1-1+b1_amd64.deb ...
+#9 12.77 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1+b1) ...
+#9 13.04 Selecting previously unselected package libssh2-1:amd64.
+#9 13.04 Preparing to unpack .../32-libssh2-1_1.7.0-1+deb9u2_amd64.deb ...
+#9 13.08 Unpacking libssh2-1:amd64 (1.7.0-1+deb9u2) ...
+#9 13.42 Selecting previously unselected package libcurl3-gnutls:amd64.
+#9 13.42 Preparing to unpack .../33-libcurl3-gnutls_7.52.1-5+deb9u16_amd64.deb ...
+#9 13.45 Unpacking libcurl3-gnutls:amd64 (7.52.1-5+deb9u16) ...
+#9 13.66 Selecting previously unselected package apt-transport-https.
+#9 13.66 Preparing to unpack .../34-apt-transport-https_1.4.11_amd64.deb ...
+#9 13.69 Unpacking apt-transport-https (1.4.11) ...
+#9 13.87 Selecting previously unselected package openssl.
+#9 13.87 Preparing to unpack .../35-openssl_1.1.0l-1~deb9u6_amd64.deb ...
+#9 13.90 Unpacking openssl (1.1.0l-1~deb9u6) ...
+#9 14.28 Selecting previously unselected package ca-certificates.
+#9 14.28 Preparing to unpack .../36-ca-certificates_20200601~deb9u2_all.deb ...
+#9 14.31 Unpacking ca-certificates (20200601~deb9u2) ...
+#9 14.60 Selecting previously unselected package libcurl3:amd64.
+#9 14.60 Preparing to unpack .../37-libcurl3_7.52.1-5+deb9u16_amd64.deb ...
+#9 14.63 Unpacking libcurl3:amd64 (7.52.1-5+deb9u16) ...
+#9 14.82 Selecting previously unselected package curl.
+#9 14.82 Preparing to unpack .../38-curl_7.52.1-5+deb9u16_amd64.deb ...
+#9 14.85 Unpacking curl (7.52.1-5+deb9u16) ...
+#9 15.10 Selecting previously unselected package dirmngr.
+#9 15.10 Preparing to unpack .../39-dirmngr_2.1.18-8~deb9u4_amd64.deb ...
+#9 15.13 Unpacking dirmngr (2.1.18-8~deb9u4) ...
+#9 15.35 Selecting previously unselected package gnupg2.
+#9 15.35 Preparing to unpack .../40-gnupg2_2.1.18-8~deb9u4_all.deb ...
+#9 15.37 Unpacking gnupg2 (2.1.18-8~deb9u4) ...
+#9 15.59 Selecting previously unselected package libsasl2-modules:amd64.
+#9 15.59 Preparing to unpack .../41-libsasl2-modules_2.1.27~101-g0780600+dfsg-3+deb9u2_amd64.deb ...
+#9 15.61 Unpacking libsasl2-modules:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+#9 15.80 Selecting previously unselected package gnupg-l10n.
+#9 15.80 Preparing to unpack .../42-gnupg-l10n_2.1.18-8~deb9u4_all.deb ...
+#9 15.82 Unpacking gnupg-l10n (2.1.18-8~deb9u4) ...
+#9 16.12 Selecting previously unselected package publicsuffix.
+#9 16.12 Preparing to unpack .../43-publicsuffix_20190415.1030-0+deb9u1_all.deb ...
+#9 16.15 Unpacking publicsuffix (20190415.1030-0+deb9u1) ...
+#9 16.36 Setting up libnpth0:amd64 (1.3-1) ...
+#9 16.45 Setting up readline-common (7.0-3) ...
+#9 16.55 Setting up libnettle6:amd64 (3.3-1+deb9u1) ...
+#9 16.64 Setting up libnghttp2-14:amd64 (1.18.1-1+deb9u2) ...
+#9 16.72 Setting up libldap-common (2.4.44+dfsg-5+deb9u9) ...
+#9 16.83 Setting up libreadline7:amd64 (7.0-3) ...
+#9 16.91 Setting up libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+#9 16.99 Setting up libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+#9 17.06 Setting up libksba8:amd64 (1.3.5-2) ...
+#9 17.14 Setting up libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+#9 17.23 Setting up gnupg-l10n (2.1.18-8~deb9u4) ...
+#9 17.33 Setting up libssl1.0.2:amd64 (1.0.2u-1~deb9u7) ...
+#9 17.56 Setting up libgmp10:amd64 (2:6.1.2+dfsg-1+deb9u1) ...
+#9 17.63 Setting up libssh2-1:amd64 (1.7.0-1+deb9u2) ...
+#9 17.71 Setting up krb5-locales (1.15-1+deb9u3) ...
+#9 17.78 Processing triggers for libc-bin (2.24-11+deb9u3) ...
+#9 17.87 Setting up publicsuffix (20190415.1030-0+deb9u1) ...
+#9 17.94 Setting up libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+#9 18.04 Setting up openssl (1.1.0l-1~deb9u6) ...
+#9 18.14 Setting up libsqlite3-0:amd64 (3.16.2-5+deb9u3) ...
+#9 18.22 Setting up libffi6:amd64 (3.2.1-6) ...
+#9 18.40 Setting up libkeyutils1:amd64 (1.5.9-9) ...
+#9 18.47 Setting up libsasl2-modules:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u2) ...
+#9 18.60 Setting up ca-certificates (20200601~deb9u2) ...
+#9 19.21 Updating certificates in /etc/ssl/certs...
+#9 20.72 137 added, 0 removed; done.
+#9 20.93 Setting up libassuan0:amd64 (2.4.3-2) ...
+#9 21.01 Setting up libidn2-0:amd64 (0.16-1+deb9u1) ...
+#9 21.09 Setting up libpsl5:amd64 (0.17.0-3) ...
+#9 21.16 Setting up libkrb5support0:amd64 (1.15-1+deb9u3) ...
+#9 21.24 Setting up libhogweed4:amd64 (3.3-1+deb9u1) ...
+#9 21.42 Setting up libp11-kit0:amd64 (0.23.3-2+deb9u1) ...
+#9 21.52 Setting up pinentry-curses (1.0.0-2) ...
+#9 21.66 Setting up gnupg-agent (2.1.18-8~deb9u4) ...
+#9 21.77 Setting up libk5crypto3:amd64 (1.15-1+deb9u3) ...
+#9 21.85 Setting up gnupg (2.1.18-8~deb9u4) ...
+#9 21.93 Setting up libgnutls30:amd64 (3.5.8-5+deb9u6) ...
+#9 22.00 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1+b1) ...
+#9 22.08 Setting up gnupg2 (2.1.18-8~deb9u4) ...
+#9 22.15 Setting up libldap-2.4-2:amd64 (2.4.44+dfsg-5+deb9u9) ...
+#9 22.26 Setting up libkrb5-3:amd64 (1.15-1+deb9u3) ...
+#9 22.36 Setting up dirmngr (2.1.18-8~deb9u4) ...
+#9 22.47 Setting up libgssapi-krb5-2:amd64 (1.15-1+deb9u3) ...
+#9 22.57 Setting up libcurl3:amd64 (7.52.1-5+deb9u16) ...
+#9 22.65 Setting up libcurl3-gnutls:amd64 (7.52.1-5+deb9u16) ...
+#9 22.73 Setting up apt-transport-https (1.4.11) ...
+#9 22.80 Setting up curl (7.52.1-5+deb9u16) ...
+#9 22.88 Processing triggers for libc-bin (2.24-11+deb9u3) ...
+#9 22.94 Processing triggers for ca-certificates (20200601~deb9u2) ...
+#9 22.97 Updating certificates in /etc/ssl/certs...
+#9 23.49 0 added, 0 removed; done.
+#9 23.49 Running hooks in /etc/ca-certificates/update.d...
+#9 23.49 done.
+#9 23.61   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#9 23.61                                  Dload  Upload   Total   Spent    Left  Speed
+#9 23.61   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   983  100   983    0     0  34593      0 --:--:-- --:--:-- --:--:-- 35107
+#9 23.67 Warning: apt-key output should not be parsed (stdout is not a terminal)
+#9 25.01 OK
+#9 25.03   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#9 25.03                                  Dload  Upload   Total   Spent    Left  Speed
+#9 25.03   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    87  100    87    0     0   2837      0 --:--:-- --:--:-- --:--:--  2900
+#9 25.10 Ign:1 http://archive.debian.org/debian stretch InRelease
+#9 25.10 Hit:2 http://archive.debian.org/debian-security stretch/updates InRelease
+#9 25.11 Hit:3 http://archive.debian.org/debian stretch Release
+#9 25.19 Get:4 https://packages.microsoft.com/debian/9/prod stretch InRelease [3,644 B]
+#9 25.41 Get:6 https://packages.microsoft.com/debian/9/prod stretch/main all Packages [2,336 B]
+#9 25.45 Get:7 https://packages.microsoft.com/debian/9/prod stretch/main arm64 Packages [1,482 B]
+#9 25.50 Get:8 https://packages.microsoft.com/debian/9/prod stretch/main amd64 Packages [151 kB]
+#9 25.52 Get:9 https://packages.microsoft.com/debian/9/prod stretch/main armhf Packages [1,159 B]
+#9 25.54 Fetched 160 kB in 0s (364 kB/s)
+#9 25.54 Reading package lists...
+#9 26.28 Reading package lists...
+#9 27.00 Building dependency tree...
+#9 27.10 Reading state information...
+#9 27.18 The following additional packages will be installed:
+#9 27.18   libodbc1 odbcinst odbcinst1debian2 unixodbc
+#9 27.18 Suggested packages:
+#9 27.18   unixodbc-bin
+#9 27.20 The following NEW packages will be installed:
+#9 27.20   msodbcsql17 odbcinst odbcinst1debian2 unixodbc
+#9 27.20 The following packages will be upgraded:
+#9 27.20   libodbc1
+#9 27.34 1 upgraded, 4 newly installed, 0 to remove and 31 not upgraded.
+#9 27.34 Need to get 1,423 kB of archives.
+#9 27.34 After this operation, 426 kB of additional disk space will be used.
+#9 27.34 Get:1 https://packages.microsoft.com/debian/9/prod stretch/main amd64 libodbc1 amd64 2.3.7 [511 kB]
+#9 27.39 Get:2 https://packages.microsoft.com/debian/9/prod stretch/main amd64 odbcinst amd64 2.3.7 [12.0 kB]
+#9 27.47 Get:3 https://packages.microsoft.com/debian/9/prod stretch/main amd64 odbcinst1debian2 amd64 2.3.7 [135 kB]
+#9 27.50 Get:4 https://packages.microsoft.com/debian/9/prod stretch/main amd64 unixodbc amd64 2.3.7 [19.6 kB]
+#9 27.81 Get:5 https://packages.microsoft.com/debian/9/prod stretch/main amd64 msodbcsql17 amd64 17.10.6.1-1 [746 kB]
+#9 27.96 debconf: delaying package configuration, since apt-utils is not installed
+#9 27.97 Fetched 1,423 kB in 0s (2,292 kB/s)
+#9 28.13 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9375 files and directories currently installed.)
+#9 28.13 Preparing to unpack .../libodbc1_2.3.7_amd64.deb ...
+#9 28.23 Unpacking libodbc1:amd64 (2.3.7) over (2.3.4-1) ...
+#9 28.65 Selecting previously unselected package odbcinst.
+#9 28.65 Preparing to unpack .../odbcinst_2.3.7_amd64.deb ...
+#9 28.69 Unpacking odbcinst (2.3.7) ...
+#9 28.93 Selecting previously unselected package odbcinst1debian2:amd64.
+#9 28.93 Preparing to unpack .../odbcinst1debian2_2.3.7_amd64.deb ...
+#9 28.96 Unpacking odbcinst1debian2:amd64 (2.3.7) ...
+#9 29.12 Selecting previously unselected package unixodbc.
+#9 29.12 Preparing to unpack .../unixodbc_2.3.7_amd64.deb ...
+#9 29.15 Unpacking unixodbc (2.3.7) ...
+#9 29.47 Selecting previously unselected package msodbcsql17.
+#9 29.47 Preparing to unpack .../msodbcsql17_17.10.6.1-1_amd64.deb ...
+#9 29.64 Unpacking msodbcsql17 (17.10.6.1-1) ...
+#9 29.92 Setting up libodbc1:amd64 (2.3.7) ...
+#9 30.02 Processing triggers for libc-bin (2.24-11+deb9u3) ...
+#9 30.09 Setting up odbcinst1debian2:amd64 (2.3.7) ...
+#9 30.18 Setting up odbcinst (2.3.7) ...
+#9 30.29 Setting up unixodbc (2.3.7) ...
+#9 30.36 Setting up msodbcsql17 (17.10.6.1-1) ...
+#9 30.42 odbcinst: Driver installed. Usage count increased to 1. 
+#9 30.42     Target directory is /etc
+#9 DONE 30.7s
+
+#10 [ 6/10] RUN mix local.hex --force &&     mix local.rebar --force
+#10 2.265 * creating root/.mix/archives/hex-2.1.1
+#10 3.674 * creating root/.mix/rebar
+#10 3.747 * creating root/.mix/rebar3
+#10 DONE 4.2s
+
+#11 [ 7/10] COPY . /usr/src/app
+#11 DONE 0.5s
+
+#12 [ 8/10] WORKDIR /usr/src/app
+#12 DONE 0.3s
+
+#13 [ 9/10] RUN mix do deps.get, deps.compile
+#13 2.125 Failed to check for new Hex version
+#13 2.164 {:failed_connect, [{:to_address, {"builds.hex.pm", 443}}, {:inet, [:inet], {:options, {:socket_options, [:inet, {:packet_size, 0}, {:packet, 0}, {:header, 0}, {:active, false}, {:mode, :binary}]}}}]}
+#13 2.522 Resolving Hex dependencies...
+#13 2.719 Resolution completed in 0.194s
+#13 2.730 Unchanged:
+#13 2.730   certifi 1.0.0
+#13 2.730   connection 1.0.4
+#13 2.730   db_connection 1.1.1
+#13 2.730   decimal 1.3.1
+#13 2.730   earmark 1.1.1
+#13 2.731   ex_doc 0.15.0
+#13 2.731   excoveralls 0.6.2
+#13 2.731   exfmt 0.4.0
+#13 2.731   exjsx 3.2.1
+#13 2.731   hackney 1.7.1
+#13 2.731   idna 4.0.0
+#13 2.731   inch_ex 0.5.6
+#13 2.731   jsx 2.8.2
+#13 2.731   metrics 1.0.1
+#13 2.731   mimerl 1.0.2
+#13 2.731   poison 3.1.0
+#13 2.731   ssl_verify_fun 1.1.1
+#13 2.756 * Getting db_connection (Hex package)
+#13 3.284 * Getting decimal (Hex package)
+#13 3.290 * Getting ex_doc (Hex package)
+#13 3.405 * Getting excoveralls (Hex package)
+#13 3.491 * Getting inch_ex (Hex package)
+#13 3.508 * Getting exfmt (Hex package)
+#13 3.523 * Getting poison (Hex package)
+#13 3.671 * Getting exjsx (Hex package)
+#13 3.677 * Getting hackney (Hex package)
+#13 3.709 * Getting certifi (Hex package)
+#13 3.748 * Getting idna (Hex package)
+#13 3.765 * Getting metrics (Hex package)
+#13 3.774 * Getting mimerl (Hex package)
+#13 3.783 * Getting ssl_verify_fun (Hex package)
+#13 3.792 * Getting jsx (Hex package)
+#13 3.805 * Getting earmark (Hex package)
+#13 3.833 * Getting connection (Hex package)
+#13 3.920 ==> exfmt
+#13 3.920 Compiling 13 files (.ex)
+#13 4.427 Generated exfmt app
+#13 4.460 ==> connection
+#13 4.460 Compiling 1 file (.ex)
+#13 4.625 Generated connection app
+#13 4.659 ==> decimal
+#13 4.659 Compiling 1 file (.ex)
+#13 4.951 warning: Integer.to_char_list/1 is deprecated, use Integer.to_charlist/1
+#13 4.951   lib/decimal.ex:919
+#13 4.951 
+#13 4.953 warning: Integer.to_char_list/1 is deprecated, use Integer.to_charlist/1
+#13 4.953   lib/decimal.ex:938
+#13 4.953 
+#13 4.954 warning: Integer.to_char_list/1 is deprecated, use Integer.to_charlist/1
+#13 4.954   lib/decimal.ex:961
+#13 4.954 
+#13 5.204 Generated decimal app
+#13 5.335 ==> earmark
+#13 5.335 Compiling 3 files (.erl)
+#13 5.560 Compiling 23 files (.ex)
+#13 5.724 warning: String.to_char_list/1 is deprecated, use String.to_charlist/1
+#13 5.724   lib/earmark/helpers/leex_helpers.ex:8
+#13 5.724 
+#13 5.727 warning: Kernel.to_char_list/1 is deprecated, use Kernel.to_charlist/1
+#13 5.727   lib/earmark/helpers/leex_helpers.ex:17
+#13 5.727 
+#13 5.806 warning: String.rstrip/2 is deprecated, use String.trim_trailing/2 with a binary as second argument
+#13 5.806   lib/earmark/helpers.ex:19
+#13 5.806 
+#13 5.817 warning: String.rstrip/2 is deprecated, use String.trim_trailing/2 with a binary as second argument
+#13 5.817   lib/earmark/helpers.ex:19
+#13 5.817 
+#13 5.839 warning: Enum.partition/2 is deprecated, use Enum.split_with/2
+#13 5.839   lib/earmark/parser.ex:24
+#13 5.839 
+#13 5.892 warning: String.strip/1 is deprecated, use String.trim/1
+#13 5.892   lib/earmark.ex:242
+#13 5.892 
+#13 5.922 warning: String.strip/1 is deprecated, use String.trim/1
+#13 5.922   lib/earmark/inline.ex:197
+#13 5.922 
+#13 6.528 warning: String.strip/1 is deprecated, use String.trim/1
+#13 6.528   lib/earmark/line.ex:129
+#13 6.528 
+#13 6.532 warning: String.strip/2 is deprecated, use String.trim/2 with a binary second argument
+#13 6.532   lib/earmark/line.ex:195
+#13 6.532 
+#13 6.533 warning: String.strip/1 is deprecated, use String.trim/1
+#13 6.533   lib/earmark/line.ex:194
+#13 6.533 
+#13 6.533 warning: String.strip/1 is deprecated, use String.trim/1
+#13 6.533   lib/earmark/line.ex:210
+#13 6.533 
+#13 6.537 warning: String.strip/1 is deprecated, use String.trim/1
+#13 6.537   lib/earmark/line.ex:233
+#13 6.537 
+#13 7.132 Generated earmark app
+#13 7.175 ==> ex_doc
+#13 7.175 Compiling 15 files (.ex)
+#13 7.246 warning: redefining module Mix.Tasks.Docs (current version defined in memory)
+#13 7.246   lib/mix/tasks/docs.ex:1
+#13 7.246 
+#13 7.844 Generated ex_doc app
+#13 7.891 ==> db_connection
+#13 7.891 Compiling 23 files (.ex)
+#13 7.924 warning: outdented heredoc line. The contents inside the heredoc should be indented at the same level as the closing """. The following is forbidden:
+#13 7.924 
+#13 7.924     def text do
+#13 7.924       """
+#13 7.924     contents
+#13 7.924       """
+#13 7.924     end
+#13 7.924 
+#13 7.924 Instead make sure the contents are indented as much as the heredoc closing:
+#13 7.924 
+#13 7.924     def text do
+#13 7.924       """
+#13 7.924       contents
+#13 7.924       """
+#13 7.924     end
+#13 7.924 
+#13 7.924 The current heredoc line is indented too little
+#13 7.924   lib/db_connection.ex:572
+#13 7.924 
+#13 8.218 warning: function slice/1 required by protocol Enumerable is not implemented (in module Enumerable.DBConnection.Stream)
+#13 8.218   lib/db_connection.ex:9
+#13 8.218 
+#13 8.309 warning: function slice/1 required by protocol Enumerable is not implemented (in module Enumerable.DBConnection.PrepareStream)
+#13 8.309   lib/db_connection.ex:25
+#13 8.309 
+#13 8.721 Generated db_connection app
+#13 DONE 9.0s
+
+#14 [10/10] RUN chmod +x /usr/src/app/wait-for-it.sh
+#14 DONE 0.8s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 1.5s done
+#15 writing image sha256:8a560174179833e9f1257bf49769e5f56d3e520aa41e60137d7a6bae6a083911 0.0s done
+#15 naming to docker.io/library/image_name_v1_1 0.0s done
+#15 DONE 1.6s
+Duration: 1:15.91

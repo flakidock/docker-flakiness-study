@@ -1,0 +1,169 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 953B 0.1s done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 124B 0.0s done
+#2 DONE 0.5s
+
+#3 [auth] library/alpine:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/alpine:3.16.0
+#4 DONE 1.5s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [ 1/10] FROM docker.io/library/alpine:3.16.0@sha256:686d8c9dfa6f3ccfc8230bc3178d23f84eeaf7e457f36f271ab1acc53015037c
+#6 resolve docker.io/library/alpine:3.16.0@sha256:686d8c9dfa6f3ccfc8230bc3178d23f84eeaf7e457f36f271ab1acc53015037c
+#6 resolve docker.io/library/alpine:3.16.0@sha256:686d8c9dfa6f3ccfc8230bc3178d23f84eeaf7e457f36f271ab1acc53015037c 0.2s done
+#6 sha256:686d8c9dfa6f3ccfc8230bc3178d23f84eeaf7e457f36f271ab1acc53015037c 1.64kB / 1.64kB done
+#6 sha256:4ff3ca91275773af45cb4b0834e12b7eb47d1c18f770a0b151381cd227f4c253 528B / 528B done
+#6 sha256:e66264b98777e12192600bf9b4d663655c98a090072e1bab49e233d7531d1294 1.47kB / 1.47kB done
+#6 sha256:2408cc74d12b6cd092bb8b516ba7d5e290f485d3eb9672efc00f0583730179e8 2.80MB / 2.80MB 0.4s
+#6 sha256:2408cc74d12b6cd092bb8b516ba7d5e290f485d3eb9672efc00f0583730179e8 2.80MB / 2.80MB 0.7s done
+#6 extracting sha256:2408cc74d12b6cd092bb8b516ba7d5e290f485d3eb9672efc00f0583730179e8
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 368.25kB 1.0s done
+#5 DONE 1.3s
+
+#6 [ 1/10] FROM docker.io/library/alpine:3.16.0@sha256:686d8c9dfa6f3ccfc8230bc3178d23f84eeaf7e457f36f271ab1acc53015037c
+#6 extracting sha256:2408cc74d12b6cd092bb8b516ba7d5e290f485d3eb9672efc00f0583730179e8 0.2s done
+#6 DONE 1.8s
+
+#7 [ 2/10] WORKDIR /usr/src/app
+#7 DONE 0.4s
+
+#8 [ 3/10] COPY Gemfile /usr/src/app/
+#8 DONE 0.3s
+
+#9 [ 4/10] COPY Gemfile.lock /usr/src/app/
+#9 DONE 0.3s
+
+#10 [ 5/10] COPY VERSION /usr/src/app/
+#10 DONE 0.3s
+
+#11 [ 6/10] COPY codeclimate.gemspec /usr/src/app/
+#11 DONE 0.3s
+
+#12 [ 7/10] RUN apk --no-cache upgrade &&       apk --no-cache --update add       build-base       ca-certificates       git       openssh-client       openssl       ruby       ruby-bigdecimal       ruby-bundler       ruby-dev       wget &&       bundle install -j 4 &&       apk del build-base &&       rm -fr /usr/share/ri
+#12 0.620 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/main/x86_64/APKINDEX.tar.gz
+#12 1.254 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/community/x86_64/APKINDEX.tar.gz
+#12 1.879 (1/10) Upgrading alpine-baselayout-data (3.2.0-r20 -> 3.2.0-r23)
+#12 2.031 (2/10) Upgrading musl (1.2.3-r0 -> 1.2.3-r3)
+#12 2.043 (3/10) Upgrading busybox (1.35.0-r13 -> 1.35.0-r18)
+#12 3.004 Executing busybox-1.35.0-r18.post-upgrade
+#12 3.017 (4/10) Upgrading alpine-baselayout (3.2.0-r20 -> 3.2.0-r23)
+#12 3.175 Executing alpine-baselayout-3.2.0-r23.pre-upgrade
+#12 3.181 Executing alpine-baselayout-3.2.0-r23.post-upgrade
+#12 3.213 (5/10) Upgrading ca-certificates-bundle (20211220-r0 -> 20240226-r0)
+#12 3.556 (6/10) Upgrading libcrypto1.1 (1.1.1o-r0 -> 1.1.1w-r1)
+#12 5.837 (7/10) Upgrading libssl1.1 (1.1.1o-r0 -> 1.1.1w-r1)
+#12 6.527 (8/10) Upgrading ssl_client (1.35.0-r13 -> 1.35.0-r18)
+#12 7.137 (9/10) Upgrading zlib (1.2.12-r1 -> 1.2.12-r3)
+#12 7.359 (10/10) Upgrading musl-utils (1.2.3-r0 -> 1.2.3-r3)
+#12 7.823 Executing busybox-1.35.0-r18.trigger
+#12 7.827 OK: 6 MiB in 14 packages
+#12 7.872 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/main/x86_64/APKINDEX.tar.gz
+#12 7.951 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/community/x86_64/APKINDEX.tar.gz
+#12 8.188 (1/49) Installing libgcc (11.2.1_git20220219-r2)
+#12 8.192 (2/49) Installing libstdc++ (11.2.1_git20220219-r2)
+#12 8.216 (3/49) Installing binutils (2.38-r3)
+#12 8.349 (4/49) Installing libmagic (5.41-r0)
+#12 8.379 (5/49) Installing file (5.41-r0)
+#12 8.384 (6/49) Installing libgomp (11.2.1_git20220219-r2)
+#12 8.390 (7/49) Installing libatomic (11.2.1_git20220219-r2)
+#12 8.393 (8/49) Installing gmp (6.2.1-r2)
+#12 8.407 (9/49) Installing isl22 (0.22-r0)
+#12 8.427 (10/49) Installing mpfr4 (4.1.0-r0)
+#12 8.461 (11/49) Installing mpc1 (1.2.1-r0)
+#12 8.466 (12/49) Installing gcc (11.2.1_git20220219-r2)
+#12 9.379 (13/49) Installing musl-dev (1.2.3-r3)
+#12 9.493 (14/49) Installing libc-dev (0.7.2-r3)
+#12 9.496 (15/49) Installing g++ (11.2.1_git20220219-r2)
+#12 10.14 (16/49) Installing make (4.3-r0)
+#12 10.15 (17/49) Installing fortify-headers (1.1-r1)
+#12 10.17 (18/49) Installing patch (2.7.6-r7)
+#12 10.17 (19/49) Installing build-base (0.5-r3)
+#12 10.18 (20/49) Installing ca-certificates (20240226-r0)
+#12 10.21 (21/49) Installing brotli-libs (1.0.9-r6)
+#12 10.22 (22/49) Installing nghttp2-libs (1.47.0-r2)
+#12 10.23 (23/49) Installing libcurl (8.5.0-r0)
+#12 11.52 (24/49) Installing expat (2.6.2-r0)
+#12 11.92 (25/49) Installing pcre2 (10.42-r0)
+#12 12.08 (26/49) Installing git (2.36.6-r0)
+#12 12.24 (27/49) Installing openssh-keygen (9.0_p1-r5)
+#12 12.42 (28/49) Installing ncurses-terminfo-base (6.3_p20220521-r1)
+#12 12.45 (29/49) Installing ncurses-libs (6.3_p20220521-r1)
+#12 12.46 (30/49) Installing libedit (20210910.3.1-r0)
+#12 12.68 (31/49) Installing openssh-client-common (9.0_p1-r5)
+#12 14.72 (32/49) Installing openssh-client-default (9.0_p1-r5)
+#12 15.78 (33/49) Installing openssl (1.1.1w-r1)
+#12 17.36 (34/49) Installing libffi (3.4.2-r1)
+#12 17.36 (35/49) Installing readline (8.1.2-r0)
+#12 17.37 (36/49) Installing libucontext (1.2-r0)
+#12 17.86 (37/49) Installing yaml (0.2.5-r0)
+#12 17.87 (38/49) Installing ruby-libs (3.1.5-r0)
+#12 18.82 (39/49) Installing ruby (3.1.5-r0)
+#12 19.28 (40/49) Installing ruby-bundler (2.3.14-r1)
+#12 19.57 (41/49) Installing ruby-rdoc (3.1.5-r0)
+#12 22.97 (42/49) Installing libgmpxx (6.2.1-r2)
+#12 23.55 (43/49) Installing pkgconf (1.8.1-r0)
+#12 23.55 (44/49) Installing gmp-dev (6.2.1-r2)
+#12 25.00 (45/49) Installing libucontext-dev (1.2-r0)
+#12 25.17 (46/49) Installing ruby-dev (3.1.5-r0)
+#12 27.26 (47/49) Installing libunistring (1.0-r0)
+#12 27.30 (48/49) Installing libidn2 (2.3.2-r2)
+#12 27.80 (49/49) Installing wget (1.21.3-r0)
+#12 28.18 Executing busybox-1.35.0-r18.trigger
+#12 28.19 Executing ca-certificates-20240226-r0.trigger
+#12 28.23 OK: 233 MiB in 63 packages
+#12 28.51 Bundler 2.3.14 is running, but your lockfile was generated with 2.3.16. Installing Bundler 2.3.16 and restarting using that version.
+#12 29.71 Fetching gem metadata from https://rubygems.org/.
+#12 29.75 Fetching bundler 2.3.16
+#12 29.82 Installing bundler 2.3.16
+#12 31.24 Fetching gem metadata from https://rubygems.org/.......
+#12 31.83 codeclimate-0.92.0 requires ruby version >= 2.6, <= 3.1.3, which is incompatible
+#12 31.83 with the current version, ruby 3.1.5p252
+#12 ERROR: process "/bin/sh -c apk --no-cache upgrade &&       apk --no-cache --update add       build-base       ca-certificates       git       openssh-client       openssl       ruby       ruby-bigdecimal       ruby-bundler       ruby-dev       wget &&       bundle install -j 4 &&       apk del build-base &&       rm -fr /usr/share/ri" did not complete successfully: exit code: 5
+------
+ > [ 7/10] RUN apk --no-cache upgrade &&       apk --no-cache --update add       build-base       ca-certificates       git       openssh-client       openssl       ruby       ruby-bigdecimal       ruby-bundler       ruby-dev       wget &&       bundle install -j 4 &&       apk del build-base &&       rm -fr /usr/share/ri:
+28.18 Executing busybox-1.35.0-r18.trigger
+28.19 Executing ca-certificates-20240226-r0.trigger
+28.23 OK: 233 MiB in 63 packages
+28.51 Bundler 2.3.14 is running, but your lockfile was generated with 2.3.16. Installing Bundler 2.3.16 and restarting using that version.
+.
+29.75 Fetching bundler 2.3.16
+29.82 Installing bundler 2.3.16
+
+31.83 codeclimate-0.92.0 requires ruby version >= 2.6, <= 3.1.3, which is incompatible
+31.83 with the current version, ruby 3.1.5p252
+------
+Dockerfile:10
+--------------------
+   9 |     
+  10 | >>> RUN apk --no-cache upgrade && \
+  11 | >>>       apk --no-cache --update add \
+  12 | >>>       build-base \
+  13 | >>>       ca-certificates \
+  14 | >>>       git \
+  15 | >>>       openssh-client \
+  16 | >>>       openssl \
+  17 | >>>       ruby \
+  18 | >>>       ruby-bigdecimal \
+  19 | >>>       ruby-bundler \
+  20 | >>>       ruby-dev \
+  21 | >>>       wget && \
+  22 | >>>       bundle install -j 4 && \
+  23 | >>>       apk del build-base && \
+  24 | >>>       rm -fr /usr/share/ri
+  25 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk --no-cache upgrade &&       apk --no-cache --update add       build-base       ca-certificates       git       openssh-client       openssl       ruby       ruby-bigdecimal       ruby-bundler       ruby-dev       wget &&       bundle install -j 4 &&       apk del build-base &&       rm -fr /usr/share/ri" did not complete successfully: exit code: 5
+Duration: 0:39.14

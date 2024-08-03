@@ -1,0 +1,120 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 628B done
+#1 DONE 0.0s
+
+#2 [auth] library/debian:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/debian:stretch-slim
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#5 resolve docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 0.0s done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 478.26kB 0.0s done
+#6 DONE 0.1s
+
+#5 [1/5] FROM docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#5 sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 1.21kB / 1.21kB done
+#5 sha256:c5cd3ffceeb25b683bf5111ea89bf8049a177e00fb237235d48076a19cc80097 529B / 529B done
+#5 sha256:0e23ec2ce5e621c0e8fa57a53c7781d59d57de8c139a8a351b7236530cd85ec2 1.46kB / 1.46kB done
+#5 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 1.05MB / 22.57MB 0.2s
+#5 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 9.44MB / 22.57MB 0.3s
+#5 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 22.57MB / 22.57MB 0.5s
+#5 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 22.57MB / 22.57MB 0.5s done
+#5 extracting sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 0.1s
+#5 extracting sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 1.8s done
+#5 DONE 2.5s
+
+#7 [2/5] RUN useradd -d /lynis-report-converter -U lynis
+#7 DONE 0.5s
+
+#8 [3/5] RUN apt-get update     && apt-get upgrade -y     && apt-get install -y --no-install-recommends        htmldoc libxml-writer-perl libarchive-zip-perl libjson-perl     && apt-get clean     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 0.234 Ign:1 http://deb.debian.org/debian stretch InRelease
+#8 0.237 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#8 0.247 Ign:3 http://deb.debian.org/debian stretch-updates InRelease
+#8 0.249 Ign:4 http://security.debian.org/debian-security stretch/updates Release
+#8 0.260 Ign:5 http://deb.debian.org/debian stretch Release
+#8 0.262 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.271 Ign:7 http://deb.debian.org/debian stretch-updates Release
+#8 0.276 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.282 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.290 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.293 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.303 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.307 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.317 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.317 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.329 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.330 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.342 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.342 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.355 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.355 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.366 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.366 Ign:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.377 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.380 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.387 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.393 Err:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#8 0.393   404  Not Found [IP: 151.101.194.132 80]
+#8 0.399 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.406 Ign:8 http://security.debian.org/debian-security stretch/updates/main all Packages
+#8 0.411 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.421 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.432 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.444 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.456 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.468 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.477 Ign:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.489 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.501 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.513 Ign:9 http://deb.debian.org/debian stretch/main all Packages
+#8 0.534 Err:10 http://deb.debian.org/debian stretch/main amd64 Packages
+#8 0.534   404  Not Found
+#8 0.544 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#8 0.544   404  Not Found
+#8 0.556 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#8 0.560 Reading package lists...
+#8 0.568 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#8 0.568 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#8 0.568 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#8 0.568 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+#8 0.568 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#8 0.568 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#8 0.568 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#8 ERROR: process "/bin/sh -c apt-get update     && apt-get upgrade -y     && apt-get install -y --no-install-recommends        htmldoc libxml-writer-perl libarchive-zip-perl libjson-perl     && apt-get clean     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*" did not complete successfully: exit code: 100
+------
+ > [3/5] RUN apt-get update     && apt-get upgrade -y     && apt-get install -y --no-install-recommends        htmldoc libxml-writer-perl libarchive-zip-perl libjson-perl     && apt-get clean     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*:
+0.544   404  Not Found
+0.556 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+0.560 Reading package lists...
+0.568 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.568 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.568 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.568 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.194.132 80]
+0.568 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.568 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.568 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:8
+--------------------
+   7 |     
+   8 | >>> RUN apt-get update \
+   9 | >>>     && apt-get upgrade -y \
+  10 | >>>     && apt-get install -y --no-install-recommends \
+  11 | >>>        htmldoc libxml-writer-perl libarchive-zip-perl libjson-perl \
+  12 | >>>     && apt-get clean \
+  13 | >>>     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  14 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update     && apt-get upgrade -y     && apt-get install -y --no-install-recommends        htmldoc libxml-writer-perl libarchive-zip-perl libjson-perl     && apt-get clean     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*" did not complete successfully: exit code: 100
+Duration: 0:4.89

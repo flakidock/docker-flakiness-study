@@ -1,0 +1,115 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 56B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 498B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.0s
+
+#4 [1/2] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#4 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#4 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#4 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#4 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s done
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.2s done
+#4 DONE 1.2s
+
+#5 [2/2] RUN set -ex     && if [ $(wget -qO- ipinfo.io/country) == CN ]; then echo "http://mirrors.aliyun.com/alpine/latest-stable/main/" > /etc/apk/repositories ;fi     && apk add --no-cache libsodium py3-pip     && python3 -m venv /venv     && . /venv/bin/activate     && pip install --no-cache-dir https://github.com/shadowsocks/shadowsocks/archive/master.zip
+#5 0.449 + wget -qO- ipinfo.io/country
+#5 0.512 + '[' CA '==' CN ]
+#5 0.512 + apk add --no-cache libsodium py3-pip
+#5 0.518 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#5 0.766 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#5 1.251 (1/26) Installing libsodium (1.0.19-r0)
+#5 1.260 (2/26) Installing libbz2 (1.0.8-r6)
+#5 1.264 (3/26) Installing libexpat (2.6.2-r0)
+#5 1.270 (4/26) Installing libffi (3.4.6-r0)
+#5 1.273 (5/26) Installing gdbm (1.23-r1)
+#5 1.285 (6/26) Installing xz-libs (5.6.1-r3)
+#5 1.292 (7/26) Installing libgcc (13.2.1_git20240309-r0)
+#5 1.297 (8/26) Installing libstdc++ (13.2.1_git20240309-r0)
+#5 1.324 (9/26) Installing mpdecimal (4.0.0-r0)
+#5 1.330 (10/26) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#5 1.353 (11/26) Installing libncursesw (6.4_p20240420-r0)
+#5 1.362 (12/26) Installing libpanelw (6.4_p20240420-r0)
+#5 1.365 (13/26) Installing readline (8.2.10-r0)
+#5 1.372 (14/26) Installing sqlite-libs (3.45.3-r1)
+#5 1.393 (15/26) Installing python3 (3.12.3-r1)
+#5 1.695 (16/26) Installing python3-pycache-pyc0 (3.12.3-r1)
+#5 1.938 (17/26) Installing pyc (3.12.3-r1)
+#5 1.941 (18/26) Installing py3-setuptools-pyc (69.5.1-r0)
+#5 2.058 (19/26) Installing py3-pip-pyc (24.0-r2)
+#5 2.293 (20/26) Installing py3-parsing (3.1.2-r1)
+#5 2.302 (21/26) Installing py3-parsing-pyc (3.1.2-r1)
+#5 2.321 (22/26) Installing py3-packaging-pyc (24.0-r1)
+#5 2.328 (23/26) Installing python3-pyc (3.12.3-r1)
+#5 2.330 (24/26) Installing py3-packaging (24.0-r1)
+#5 2.354 (25/26) Installing py3-setuptools (69.5.1-r0)
+#5 2.532 (26/26) Installing py3-pip (24.0-r2)
+#5 2.751 Executing busybox-1.36.1-r29.trigger
+#5 2.759 OK: 76 MiB in 40 packages
+#5 2.828 + python3 -m venv /venv
+#5 7.962 + . /venv/bin/activate
+#5 7.962 + deactivate nondestructive
+#5 7.962 + '[' -n  ]
+#5 7.962 + '[' -n  ]
+#5 7.962 + hash -r
+#5 7.962 + '[' -n  ]
+#5 7.962 + unset VIRTUAL_ENV
+#5 7.962 + unset VIRTUAL_ENV_PROMPT
+#5 7.962 + '[' '!' nondestructive '=' nondestructive ]
+#5 7.962 + '['  '=' cygwin ]
+#5 7.962 + '['  '=' msys ]
+#5 7.962 + export 'VIRTUAL_ENV=/venv'
+#5 7.963 + _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+#5 7.963 + PATH=/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+#5 7.963 + export PATH
+#5 7.963 + '[' -n  ]
+#5 7.963 + '[' -z  ]
+#5 7.963 + _OLD_VIRTUAL_PS1='\w \$ '
+#5 7.963 + PS1='(venv) \w \$ '
+#5 7.963 + export PS1
+#5 7.963 + VIRTUAL_ENV_PROMPT='(venv) '
+#5 7.963 + export VIRTUAL_ENV_PROMPT
+#5 7.963 + hash -r
+#5 7.963 + pip install --no-cache-dir https://github.com/shadowsocks/shadowsocks/archive/master.zip
+#5 8.466 Collecting https://github.com/shadowsocks/shadowsocks/archive/master.zip
+#5 9.027   Downloading https://github.com/shadowsocks/shadowsocks/archive/master.zip (115 kB)
+#5 9.228      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 115.0/115.0 kB 552.6 kB/s eta 0:00:00
+#5 9.261   Installing build dependencies: started
+#5 12.46   Installing build dependencies: finished with status 'done'
+#5 12.46   Getting requirements to build wheel: started
+#5 12.77   Getting requirements to build wheel: finished with status 'done'
+#5 12.77   Preparing metadata (pyproject.toml): started
+#5 13.07   Preparing metadata (pyproject.toml): finished with status 'done'
+#5 13.08 Building wheels for collected packages: shadowsocks
+#5 13.08   Building wheel for shadowsocks (pyproject.toml): started
+#5 13.46   Building wheel for shadowsocks (pyproject.toml): finished with status 'done'
+#5 13.46   Created wheel for shadowsocks: filename=shadowsocks-3.0.0-py3-none-any.whl size=67267 sha256=b9fc3e27bba88a14b00b411dd46978cfe6fa88517da00722223ba48ce6fc86f0
+#5 13.46   Stored in directory: /tmp/pip-ephem-wheel-cache-tbsy6j98/wheels/6d/18/4d/2827160b0c6cbf85ea7f367a25c42183c729557a62d3bd64a1
+#5 13.46 Successfully built shadowsocks
+#5 13.47 Installing collected packages: shadowsocks
+#5 13.62 Successfully installed shadowsocks-3.0.0
+#5 13.74 
+#5 13.74 [notice] A new release of pip is available: 24.0 -> 24.2
+#5 13.74 [notice] To update, run: pip install --upgrade pip
+#5 DONE 16.4s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 1.3s done
+#6 writing image sha256:0011a352e70c218430cf9192c9557ff189fffbe55096c4d60382aa8d93d3ec87 0.0s done
+#6 naming to docker.io/library/image_name_v1_1 0.0s done
+#6 DONE 1.4s
+Duration: 0:20.86

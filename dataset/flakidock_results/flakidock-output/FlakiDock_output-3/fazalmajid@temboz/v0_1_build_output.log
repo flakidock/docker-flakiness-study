@@ -1,0 +1,148 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 614B done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B 0.0s done
+#2 DONE 0.3s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 ...
+
+#4 [auth] library/alpine:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.8s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [ 1/15] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#6 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#6 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#6 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#6 DONE 1.3s
+
+#5 [internal] load build context
+#5 transferring context: 5.74MB 1.9s done
+#5 DONE 2.2s
+
+#7 [ 2/15] RUN apk add --update python3-dev py3-cffi gcc linux-headers musl-dev sqlite
+#7 1.138 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#7 1.399 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#7 1.925 (1/36) Installing libgcc (13.2.1_git20240309-r0)
+#7 1.930 (2/36) Installing jansson (2.14-r4)
+#7 1.933 (3/36) Installing libstdc++ (13.2.1_git20240309-r0)
+#7 1.961 (4/36) Installing zstd-libs (1.5.6-r0)
+#7 1.974 (5/36) Installing binutils (2.42-r0)
+#7 2.089 (6/36) Installing libgomp (13.2.1_git20240309-r0)
+#7 2.097 (7/36) Installing libatomic (13.2.1_git20240309-r0)
+#7 2.100 (8/36) Installing gmp (6.3.0-r1)
+#7 2.116 (9/36) Installing isl26 (0.26-r1)
+#7 2.141 (10/36) Installing mpfr4 (4.2.1-r0)
+#7 2.152 (11/36) Installing mpc1 (1.3.1-r1)
+#7 2.156 (12/36) Installing gcc (13.2.1_git20240309-r0)
+#7 3.358 (13/36) Installing linux-headers (6.6-r0)
+#7 3.534 (14/36) Installing musl-dev (1.2.5-r0)
+#7 3.746 (15/36) Installing libbz2 (1.0.8-r6)
+#7 3.749 (16/36) Installing libexpat (2.6.2-r0)
+#7 3.754 (17/36) Installing libffi (3.4.6-r0)
+#7 3.759 (18/36) Installing gdbm (1.23-r1)
+#7 3.763 (19/36) Installing xz-libs (5.6.1-r3)
+#7 3.768 (20/36) Installing mpdecimal (4.0.0-r0)
+#7 3.773 (21/36) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#7 3.809 (22/36) Installing libncursesw (6.4_p20240420-r0)
+#7 3.817 (23/36) Installing libpanelw (6.4_p20240420-r0)
+#7 3.820 (24/36) Installing readline (8.2.10-r0)
+#7 3.826 (25/36) Installing sqlite-libs (3.45.3-r1)
+#7 3.850 (26/36) Installing python3 (3.12.3-r1)
+#7 4.174 (27/36) Installing python3-pycache-pyc0 (3.12.3-r1)
+#7 4.415 (28/36) Installing pyc (3.12.3-r1)
+#7 4.417 (29/36) Installing py3-cparser-pyc (2.22-r1)
+#7 4.632 (30/36) Installing py3-cffi-pyc (1.16.0-r1)
+#7 5.414 (31/36) Installing python3-pyc (3.12.3-r1)
+#7 5.417 (32/36) Installing py3-cparser (2.22-r1)
+#7 5.735 (33/36) Installing py3-cffi (1.16.0-r1)
+#7 5.941 (34/36) Installing pkgconf (2.2.0-r0)
+#7 5.946 (35/36) Installing python3-dev (3.12.3-r1)
+#7 6.770 (36/36) Installing sqlite (3.45.3-r1)
+#7 6.944 Executing busybox-1.36.1-r29.trigger
+#7 6.952 OK: 301 MiB in 50 packages
+#7 DONE 12.8s
+
+#8 [ 3/15] RUN python3 -m ensurepip
+#8 3.331 error: externally-managed-environment
+#8 3.331 
+#8 3.331 × This environment is externally managed
+#8 3.331 ╰─> 
+#8 3.331     The system-wide python installation should be maintained using the system
+#8 3.331     package manager (apk) only.
+#8 3.331     
+#8 3.331     If the package in question is not packaged already (and hence installable via
+#8 3.331     "apk add py3-somepackage"), please consider installing it inside a virtual
+#8 3.331     environment, e.g.:
+#8 3.331     
+#8 3.331     python3 -m venv /path/to/venv
+#8 3.331     . /path/to/venv/bin/activate
+#8 3.331     pip install mypackage
+#8 3.331     
+#8 3.331     To exit the virtual environment, run:
+#8 3.331     
+#8 3.331     deactivate
+#8 3.331     
+#8 3.331     The virtual environment is not deleted, and can be re-entered by re-sourcing
+#8 3.331     the activate file.
+#8 3.331     
+#8 3.331     To automatically manage virtual environments, consider using pipx (from the
+#8 3.331     pipx package).
+#8 3.331 
+#8 3.331 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+#8 3.331 hint: See PEP 668 for the detailed specification.
+#8 3.395 Traceback (most recent call last):
+#8 3.395   File "<frozen runpy>", line 198, in _run_module_as_main
+#8 3.395   File "<frozen runpy>", line 88, in _run_code
+#8 3.395   File "/usr/lib/python3.12/ensurepip/__main__.py", line 5, in <module>
+#8 3.395     sys.exit(ensurepip._main())
+#8 3.396              ^^^^^^^^^^^^^^^^^
+#8 3.396   File "/usr/lib/python3.12/ensurepip/__init__.py", line 284, in _main
+#8 3.396     return _bootstrap(
+#8 3.396            ^^^^^^^^^^^
+#8 3.396   File "/usr/lib/python3.12/ensurepip/__init__.py", line 200, in _bootstrap
+#8 3.396     return _run_pip([*args, *_PACKAGE_NAMES], additional_paths)
+#8 3.396            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#8 3.396   File "/usr/lib/python3.12/ensurepip/__init__.py", line 101, in _run_pip
+#8 3.396     return subprocess.run(cmd, check=True).returncode
+#8 3.396            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#8 3.396   File "/usr/lib/python3.12/subprocess.py", line 571, in run
+#8 3.397     raise CalledProcessError(retcode, process.args,
+#8 3.397 subprocess.CalledProcessError: Command '['/usr/bin/python3', '-W', 'ignore::DeprecationWarning', '-c', '\nimport runpy\nimport sys\nsys.path = [\'/tmp/tmphsi5rdo9/pip-24.0-py3-none-any.whl\'] + sys.path\nsys.argv[1:] = [\'install\', \'--no-cache-dir\', \'--no-index\', \'--find-links\', \'/tmp/tmphsi5rdo9\', \'pip\']\nrunpy.run_module("pip", run_name="__main__", alter_sys=True)\n']' returned non-zero exit status 1.
+#8 ERROR: process "/bin/sh -c python3 -m ensurepip" did not complete successfully: exit code: 1
+------
+ > [ 3/15] RUN python3 -m ensurepip:
+3.396            ^^^^^^^^^^^
+3.396   File "/usr/lib/python3.12/ensurepip/__init__.py", line 200, in _bootstrap
+3.396     return _run_pip([*args, *_PACKAGE_NAMES], additional_paths)
+3.396            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.396   File "/usr/lib/python3.12/ensurepip/__init__.py", line 101, in _run_pip
+3.396     return subprocess.run(cmd, check=True).returncode
+3.396            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.396   File "/usr/lib/python3.12/subprocess.py", line 571, in run
+3.397     raise CalledProcessError(retcode, process.args,
+3.397 subprocess.CalledProcessError: Command '['/usr/bin/python3', '-W', 'ignore::DeprecationWarning', '-c', '\nimport runpy\nimport sys\nsys.path = [\'/tmp/tmphsi5rdo9/pip-24.0-py3-none-any.whl\'] + sys.path\nsys.argv[1:] = [\'install\', \'--no-cache-dir\', \'--no-index\', \'--find-links\', \'/tmp/tmphsi5rdo9\', \'pip\']\nrunpy.run_module("pip", run_name="__main__", alter_sys=True)\n']' returned non-zero exit status 1.
+------
+Dockerfile:3
+--------------------
+   1 |     FROM alpine
+   2 |     RUN apk add --update python3-dev py3-cffi gcc linux-headers musl-dev sqlite
+   3 | >>> RUN python3 -m ensurepip
+   4 |     RUN pip3 install --upgrade pip
+   5 |     RUN pip3 install flask
+--------------------
+ERROR: failed to solve: process "/bin/sh -c python3 -m ensurepip" did not complete successfully: exit code: 1
+Duration: 0:20.53

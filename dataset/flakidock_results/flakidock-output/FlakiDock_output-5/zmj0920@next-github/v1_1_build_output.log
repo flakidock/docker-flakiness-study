@@ -1,0 +1,145 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 337B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/mhart/alpine-node:9
+#3 DONE 0.8s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/mhart/alpine-node:9@sha256:3c3f7e30beb78b26a602f12da483d4fa0132e6d2b625c3c1b752c8a8f0fbd359
+#5 resolve docker.io/mhart/alpine-node:9@sha256:3c3f7e30beb78b26a602f12da483d4fa0132e6d2b625c3c1b752c8a8f0fbd359 0.1s done
+#5 DONE 0.1s
+
+#4 [internal] load build context
+#4 transferring context: 1.81MB 0.1s done
+#4 DONE 0.5s
+
+#5 [1/4] FROM docker.io/mhart/alpine-node:9@sha256:3c3f7e30beb78b26a602f12da483d4fa0132e6d2b625c3c1b752c8a8f0fbd359
+#5 sha256:3c3f7e30beb78b26a602f12da483d4fa0132e6d2b625c3c1b752c8a8f0fbd359 740B / 740B done
+#5 sha256:bd69a82c390b85bfa0c4e646b1a932d4a92c75a7f9fae147fdc92a63962130ff 6.87kB / 6.87kB done
+#5 sha256:ff3a5c916c92643ff77519ffa742d3ec61b7f591b6b7504599d95a4a41134e28 2.07MB / 2.07MB 0.3s
+#5 sha256:c77918da3c7293b6396cb86435332998e984ccc110626edbf1f2578fcd3e777a 0B / 20.86MB 0.3s
+#5 sha256:ff3a5c916c92643ff77519ffa742d3ec61b7f591b6b7504599d95a4a41134e28 2.07MB / 2.07MB 0.4s done
+#5 sha256:c77918da3c7293b6396cb86435332998e984ccc110626edbf1f2578fcd3e777a 11.53MB / 20.86MB 0.5s
+#5 extracting sha256:ff3a5c916c92643ff77519ffa742d3ec61b7f591b6b7504599d95a4a41134e28
+#5 sha256:c77918da3c7293b6396cb86435332998e984ccc110626edbf1f2578fcd3e777a 16.78MB / 20.86MB 0.6s
+#5 sha256:c77918da3c7293b6396cb86435332998e984ccc110626edbf1f2578fcd3e777a 20.86MB / 20.86MB 0.8s
+#5 sha256:c77918da3c7293b6396cb86435332998e984ccc110626edbf1f2578fcd3e777a 20.86MB / 20.86MB 1.0s done
+#5 extracting sha256:ff3a5c916c92643ff77519ffa742d3ec61b7f591b6b7504599d95a4a41134e28 0.6s done
+#5 extracting sha256:c77918da3c7293b6396cb86435332998e984ccc110626edbf1f2578fcd3e777a
+#5 extracting sha256:c77918da3c7293b6396cb86435332998e984ccc110626edbf1f2578fcd3e777a 4.7s done
+#5 DONE 7.1s
+
+#6 [2/4] WORKDIR /app
+#6 DONE 2.6s
+
+#7 [3/4] COPY . /app
+#7 DONE 0.5s
+
+#8 [4/4] RUN rm -f package-lock.json     ; rm -rf .idea     ; rm -rf node_modules     ; npm config set strict-ssl false     ; npm config set registry "https://registry.npm.taobao.org/"     && npm install
+#8 11.08 npm WARN deprecated @zeit/next-bundle-analyzer@0.1.2: The bundle analyzer has been moved to https://www.npmjs.com/package/@next/bundle-analyzer
+#8 11.17 npm WARN deprecated @zeit/next-css@1.0.1: Next.js now has built-in support for CSS: https://nextjs.org/docs/basic-features/built-in-css-support. The built-in support solves many bugs and painpoints that the next-css plugin had.
+#8 11.49 npm WARN deprecated axios@0.19.2: Critical security vulnerability fixed in v0.21.1. For more information, see https://github.com/axios/axios/pull/3410
+#8 13.43 npm WARN deprecated koa-router@7.4.0: **IMPORTANT 10x+ PERFORMANCE UPGRADE**: Please upgrade to v12.0.1+ as we have fixed an issue with debuglog causing 10x slower router benchmark performance, see https://github.com/koajs/router/pull/173
+#8 14.51 npm WARN deprecated redux-devtools-extension@2.13.9: Package moved to @redux-devtools/extension.
+#8 21.86 npm WARN deprecated formidable@1.2.6: Please upgrade to latest, formidable@v2 or formidable@v3! Check these notes: https://bit.ly/2ZEqIau
+#8 22.22 npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+#8 30.19 npm WARN deprecated bfj-node4@5.3.1: Switch to the `bfj` package for fixes and new features!
+#8 30.86 npm WARN deprecated @babel/plugin-proposal-class-properties@7.10.4: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+#8 31.06 npm WARN deprecated @babel/plugin-proposal-export-namespace-from@7.10.4: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-export-namespace-from instead.
+#8 31.34 npm WARN deprecated @babel/plugin-proposal-numeric-separator@7.10.4: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+#8 31.41 npm WARN deprecated @babel/plugin-proposal-object-rest-spread@7.11.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
+#8 32.88 npm WARN deprecated chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+#8 33.08 npm WARN deprecated mkdirp@0.5.3: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+#8 38.69 npm WARN deprecated core-js@2.6.12: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+#8 40.04 npm WARN deprecated core-js@1.2.7: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+#8 45.73 npm WARN deprecated @babel/plugin-proposal-unicode-property-regex@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-unicode-property-regex instead.
+#8 46.66 npm WARN deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+#8 46.72 npm WARN deprecated @babel/plugin-proposal-export-namespace-from@7.18.9: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-export-namespace-from instead.
+#8 46.92 npm WARN deprecated @babel/plugin-proposal-numeric-separator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+#8 46.97 npm WARN deprecated @babel/plugin-proposal-object-rest-spread@7.20.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
+#8 47.04 npm WARN deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+#8 47.14 npm WARN deprecated @babel/plugin-proposal-dynamic-import@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-dynamic-import instead.
+#8 47.14 npm WARN deprecated @babel/plugin-proposal-async-generator-functions@7.20.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.
+#8 47.19 npm WARN deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+#8 47.35 npm WARN deprecated @babel/plugin-proposal-json-strings@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-json-strings instead.
+#8 47.40 npm WARN deprecated @babel/plugin-proposal-logical-assignment-operators@7.20.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-logical-assignment-operators instead.
+#8 47.82 npm WARN deprecated @babel/plugin-proposal-private-methods@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
+#8 47.82 npm WARN deprecated @babel/plugin-proposal-optional-catch-binding@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-catch-binding instead.
+#8 50.05 npm WARN deprecated fsevents@1.2.13: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+#8 50.36 npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#8 50.45 npm WARN deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+#8 50.73 npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+#8 51.24 npm WARN deprecated querystring@0.2.1: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+#8 52.20 npm WARN deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+#8 54.50 npm WARN deprecated source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+#8 54.89 npm WARN deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+#8 55.44 npm WARN deprecated figgy-pudding@3.5.2: This module is no longer supported.
+#8 55.51 npm WARN deprecated move-concurrently@1.0.1: This package is no longer supported.
+#8 57.77 npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#8 59.07 npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+#8 59.09 npm WARN deprecated source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+#8 59.10 npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+#8 59.79 npm WARN deprecated copy-concurrently@1.0.5: This package is no longer supported.
+#8 59.79 npm WARN deprecated fs-write-stream-atomic@1.0.10: This package is no longer supported.
+#8 218.8 
+#8 218.8 > core-js@2.6.12 postinstall /app/node_modules/core-js
+#8 218.8 > node -e "try{require('./postinstall')}catch(e){}"
+#8 218.8 
+#8 219.5 [96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+#8 219.5 
+#8 219.5 [96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+#8 219.5 [96m>[94m https://opencollective.com/core-js [0m
+#8 219.5 [96m>[94m https://www.patreon.com/zloirock [0m
+#8 219.5 
+#8 219.5 [96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+#8 219.5 
+#8 219.6 
+#8 219.6 > ejs@2.7.4 postinstall /app/node_modules/ejs
+#8 219.6 > node ./postinstall.js
+#8 219.6 
+#8 220.2 Thank you for installing [35mEJS[0m: built with the [32mJake[0m JavaScript build tool ([32mhttps://jakejs.com/[0m)
+#8 220.2 
+#8 220.7 
+#8 220.7 > es5-ext@0.10.64 postinstall /app/node_modules/es5-ext
+#8 220.7 >  node -e "try{require('./_postinstall')}catch(e){}" || exit 0
+#8 220.7 
+#8 221.2 
+#8 221.2 > @ampproject/toolbox-optimizer@2.6.0 postinstall /app/node_modules/@ampproject/toolbox-optimizer
+#8 221.2 > node lib/warmup.js
+#8 221.2 
+#8 224.0 Browserslist: caniuse-lite is outdated. Please run:
+#8 224.0 npx browserslist@latest --update-db
+#8 224.5 [7mAMP OPTIMIZER[0m Failed downloading latest AMP runtime data. Proxies need to be configured manually, see https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer#fetch.
+#8 233.5 npm notice created a lockfile as package-lock.json. You should commit this file.
+#8 233.5 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/chokidar/node_modules/fsevents):
+#8 233.5 npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+#8 233.5 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.2 (node_modules/next/node_modules/webpack/node_modules/chokidar/node_modules/fsevents):
+#8 233.5 npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+#8 233.5 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.2 (node_modules/webpack/node_modules/chokidar/node_modules/fsevents):
+#8 233.5 npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+#8 233.5 npm WARN sass-loader@10.0.2 requires a peer of node-sass@^4.0.0 but none is installed. You must install peer dependencies yourself.
+#8 233.5 npm WARN sass-loader@10.0.2 requires a peer of sass@^1.3.0 but none is installed. You must install peer dependencies yourself.
+#8 233.5 npm WARN sass-loader@10.0.2 requires a peer of fibers@>= 3.1.0 but none is installed. You must install peer dependencies yourself.
+#8 233.5 npm WARN update-browserslist-db@1.1.0 requires a peer of browserslist@>= 4.21.0 but none is installed. You must install peer dependencies yourself.
+#8 233.5 npm WARN acorn-jsx@5.3.2 requires a peer of acorn@^6.0.0 || ^7.0.0 || ^8.0.0 but none is installed. You must install peer dependencies yourself.
+#8 233.5 
+#8 233.6 added 1264 packages from 790 contributors in 225.654s
+#8 DONE 236.3s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 13.1s done
+#9 writing image sha256:f2f2624836acaf5a0323ad79e3c4057e60f4d004050331daca91c8dc8e62969e 0.0s done
+#9 naming to docker.io/library/image_name_v1_1 0.0s done
+#9 DONE 13.1s
+Duration: 4:22.38

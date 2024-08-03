@@ -1,0 +1,28 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 947B done
+#2 DONE 0.6s
+
+#1 [internal] load .dockerignore
+#1 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/phusion/baseimage:latest
+#3 ERROR: docker.io/phusion/baseimage:latest: not found
+------
+ > [internal] load metadata for docker.io/phusion/baseimage:latest:
+------
+v1_Dockerfile:2
+--------------------
+   1 |     # Builds a docker image for TP-Link´s EAP Controller
+   2 | >>> FROM phusion/baseimage:latest
+   3 |     MAINTAINER Mace Capri <macecapri@gmail.com>
+   4 |     
+--------------------
+ERROR: failed to solve: phusion/baseimage:latest: docker.io/phusion/baseimage:latest: not found
+Duration: 0:1.36

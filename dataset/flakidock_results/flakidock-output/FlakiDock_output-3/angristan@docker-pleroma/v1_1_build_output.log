@@ -1,0 +1,1389 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 71B done
+#2 DONE 0.3s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.14kB done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/elixir:1.13.4-alpine
+#3 DONE 3.0s
+
+#4 [1/8] FROM docker.io/library/elixir:1.13.4-alpine@sha256:1f04fa894f3e3589f1a9410f0c1b3936f5f426130c44114e78bb0644fe37fdde
+#4 resolve docker.io/library/elixir:1.13.4-alpine@sha256:1f04fa894f3e3589f1a9410f0c1b3936f5f426130c44114e78bb0644fe37fdde
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 2.56kB done
+#5 DONE 0.2s
+
+#4 [1/8] FROM docker.io/library/elixir:1.13.4-alpine@sha256:1f04fa894f3e3589f1a9410f0c1b3936f5f426130c44114e78bb0644fe37fdde
+#4 resolve docker.io/library/elixir:1.13.4-alpine@sha256:1f04fa894f3e3589f1a9410f0c1b3936f5f426130c44114e78bb0644fe37fdde 0.3s done
+#4 sha256:1f04fa894f3e3589f1a9410f0c1b3936f5f426130c44114e78bb0644fe37fdde 7.70kB / 7.70kB done
+#4 sha256:a889e5c737026b3623b8a8348c660e947ef81cf6ddfe14c6b7bb81dbff20d8ce 1.54kB / 1.54kB done
+#4 sha256:891f54f3767786bf2bd8d8295ca1149c37a1e49c40f28344e6bdc57137f209fb 5.57kB / 5.57kB done
+#4 sha256:b99da37831f37d3f77de0ac7a864f9b69f1dbb4461e5ddfe5a3c2b7e2a3586c5 2.10MB / 3.39MB 0.2s
+#4 sha256:d0cf49291a7736f749641aa51dd4e64e373a3328deeceeffd929367a4cf91422 0B / 5.96MB 0.2s
+#4 sha256:b12ede21323c48aa6e047549aa5b31c606b4bf1c1c5d91d9f4373ff5f3d9535d 0B / 45.67MB 0.2s
+#4 sha256:d0cf49291a7736f749641aa51dd4e64e373a3328deeceeffd929367a4cf91422 1.05MB / 5.96MB 0.4s
+#4 sha256:b99da37831f37d3f77de0ac7a864f9b69f1dbb4461e5ddfe5a3c2b7e2a3586c5 3.39MB / 3.39MB 0.4s done
+#4 sha256:d0cf49291a7736f749641aa51dd4e64e373a3328deeceeffd929367a4cf91422 3.15MB / 5.96MB 0.4s
+#4 extracting sha256:b99da37831f37d3f77de0ac7a864f9b69f1dbb4461e5ddfe5a3c2b7e2a3586c5 0.1s
+#4 sha256:d0cf49291a7736f749641aa51dd4e64e373a3328deeceeffd929367a4cf91422 5.96MB / 5.96MB 0.5s
+#4 sha256:b12ede21323c48aa6e047549aa5b31c606b4bf1c1c5d91d9f4373ff5f3d9535d 9.44MB / 45.67MB 0.5s
+#4 sha256:d0cf49291a7736f749641aa51dd4e64e373a3328deeceeffd929367a4cf91422 5.96MB / 5.96MB 0.7s done
+#4 sha256:b12ede21323c48aa6e047549aa5b31c606b4bf1c1c5d91d9f4373ff5f3d9535d 18.87MB / 45.67MB 0.7s
+#4 extracting sha256:b99da37831f37d3f77de0ac7a864f9b69f1dbb4461e5ddfe5a3c2b7e2a3586c5 0.2s done
+#4 sha256:b12ede21323c48aa6e047549aa5b31c606b4bf1c1c5d91d9f4373ff5f3d9535d 31.46MB / 45.67MB 1.0s
+#4 sha256:b12ede21323c48aa6e047549aa5b31c606b4bf1c1c5d91d9f4373ff5f3d9535d 44.04MB / 45.67MB 1.1s
+#4 sha256:b12ede21323c48aa6e047549aa5b31c606b4bf1c1c5d91d9f4373ff5f3d9535d 45.67MB / 45.67MB 1.8s done
+#4 extracting sha256:b12ede21323c48aa6e047549aa5b31c606b4bf1c1c5d91d9f4373ff5f3d9535d
+#4 extracting sha256:b12ede21323c48aa6e047549aa5b31c606b4bf1c1c5d91d9f4373ff5f3d9535d 1.6s done
+#4 extracting sha256:d0cf49291a7736f749641aa51dd4e64e373a3328deeceeffd929367a4cf91422
+#4 extracting sha256:d0cf49291a7736f749641aa51dd4e64e373a3328deeceeffd929367a4cf91422 0.3s done
+#4 DONE 5.2s
+
+#6 [2/8] RUN echo "http://nl.alpinelinux.org/alpine/latest-stable/main" >> /etc/apk/repositories     && apk update     && apk add git gcc g++ musl-dev make cmake file-dev     exiftool imagemagick libmagic ncurses postgresql-client ffmpeg
+#6 0.473 fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/main/x86_64/APKINDEX.tar.gz
+#6 0.780 fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/community/x86_64/APKINDEX.tar.gz
+#6 1.103 fetch http://nl.alpinelinux.org/alpine/latest-stable/main/x86_64/APKINDEX.tar.gz
+#6 2.114 v3.17.9-10-g237185b0671 [https://dl-cdn.alpinelinux.org/alpine/v3.17/main]
+#6 2.114 v3.17.9-10-g237185b0671 [https://dl-cdn.alpinelinux.org/alpine/v3.17/community]
+#6 2.114 v3.20.2-45-g194e307d75d [http://nl.alpinelinux.org/alpine/latest-stable/main]
+#6 2.114 OK: 23342 distinct packages available
+#6 2.473 (1/139) Upgrading musl (1.2.3-r5 -> 1.2.5-r0)
+#6 3.254 (2/139) Upgrading libstdc++ (12.2.1_git20220924-r4 -> 13.2.1_git20240309-r0)
+#6 4.096 (3/139) Installing libacl (2.3.2-r0)
+#6 4.650 (4/139) Installing libbz2 (1.0.8-r6)
+#6 5.202 (5/139) Installing libexpat (2.6.2-r0)
+#6 5.285 (6/139) Installing lz4-libs (1.9.4-r5)
+#6 5.951 (7/139) Installing xz-libs (5.6.1-r3)
+#6 6.744 (8/139) Installing zstd-libs (1.5.6-r0)
+#6 7.594 (9/139) Installing libarchive (3.7.4-r0)
+#6 7.756 (10/139) Installing rhash-libs (1.4.4-r0)
+#6 8.496 (11/139) Installing libuv (1.48.0-r0)
+#6 9.173 (12/139) Installing cmake (3.29.3-r0)
+#6 11.05 (13/139) Installing perl (5.38.2-r0)
+#6 12.44 (14/139) Installing perl-image-exiftool (12.50-r0)
+#6 13.66 (15/139) Installing exiftool (12.50-r0)
+#6 14.40 (16/139) Installing sdl2 (2.26.5-r0)
+#6 14.42 (17/139) Installing svt-av1-libs (1.3.0-r0)
+#6 15.22 (18/139) Installing libxau (1.0.11-r4)
+#6 15.75 (19/139) Installing libmd (1.1.0-r0)
+#6 16.30 (20/139) Installing libbsd (0.12.2-r0)
+#6 16.86 (21/139) Installing libxdmcp (1.1.5-r1)
+#6 17.37 (22/139) Installing libxcb (1.16.1-r0)
+#6 18.16 (23/139) Installing libx11 (1.8.9-r1)
+#6 19.13 (24/139) Installing aom-libs (3.9.0-r0)
+#6 20.16 (25/139) Installing alsa-lib (1.2.11-r0)
+#6 20.98 (26/139) Installing brotli-libs (1.1.0-r2)
+#6 26.20 (27/139) Installing libpng (1.6.43-r0)
+#6 28.77 (28/139) Installing freetype (2.13.2-r0)
+#6 29.59 (29/139) Installing fontconfig (2.15.0-r1)
+#6 30.26 (30/139) Installing fribidi (1.0.15-r0)
+#6 30.91 (31/139) Installing libffi (3.4.6-r0)
+#6 31.49 (32/139) Installing libintl (0.22.5-r0)
+#6 32.05 (33/139) Installing libeconf (0.6.3-r0)
+#6 32.62 (34/139) Installing libblkid (2.40.1-r1)
+#6 33.31 (35/139) Installing libmount (2.40.1-r1)
+#6 34.06 (36/139) Installing pcre2 (10.43-r0)
+#6 34.83 (37/139) Installing glib (2.80.2-r0)
+#6 35.84 (38/139) Installing graphite2 (1.3.14-r6)
+#6 36.50 (39/139) Installing harfbuzz (8.5.0-r0)
+#6 37.36 (40/139) Installing libass (0.16.0-r1)
+#6 37.37 (41/139) Installing libdav1d (1.0.0-r2)
+#6 37.39 (42/139) Installing hwdata-pci (0.382-r0)
+#6 38.12 (43/139) Installing libpciaccess (0.18.1-r0)
+#6 38.72 (44/139) Installing libdrm (2.4.120-r0)
+#6 39.45 (45/139) Installing gmp (6.3.0-r1)
+#6 40.22 (46/139) Installing nettle (3.9.1-r0)
+#6 41.04 (47/139) Installing libunistring (1.2-r0)
+#6 41.89 (48/139) Installing libidn2 (2.3.7-r0)
+#6 42.62 (49/139) Installing libtasn1 (4.19.0-r2)
+#6 43.18 (50/139) Installing p11-kit (0.25.3-r0)
+#6 43.95 (51/139) Installing gnutls (3.8.5-r0)
+#6 44.82 (52/139) Installing lame (3.100-r2)
+#6 44.84 (53/139) Installing opus (1.5.2-r0)
+#6 45.66 (54/139) Installing libasyncns (0.8-r1)
+#6 45.66 (55/139) Installing dbus-libs (1.14.10-r1)
+#6 46.48 (56/139) Installing libltdl (2.4.7-r3)
+#6 47.05 (57/139) Installing orc (0.4.37-r0)
+#6 47.81 (58/139) Installing libogg (1.3.5-r5)
+#6 48.36 (59/139) Installing libflac (1.4.3-r1)
+#6 49.12 (60/139) Installing libvorbis (1.3.7-r2)
+#6 49.84 (61/139) Installing libsndfile (1.2.2-r0)
+#6 50.59 (62/139) Installing libgomp (13.2.1_git20240309-r0)
+#6 51.28 (63/139) Installing soxr (0.1.3-r3)
+#6 51.28 (64/139) Installing speexdsp (1.2.1-r2)
+#6 51.90 (65/139) Installing tdb-libs (1.4.9-r1)
+#6 52.55 (66/139) Installing libpulse (16.1-r6)
+#6 52.58 (67/139) Installing cjson (1.7.18-r0)
+#6 53.15 (68/139) Installing mbedtls (2.28.8-r0)
+#6 53.16 (69/139) Installing librist (0.2.7-r0)
+#6 53.19 (70/139) Installing libsrt (1.5.1-r0)
+#6 53.20 (71/139) Installing libssh (0.10.5-r0)
+#6 53.21 (72/139) Installing libtheora (1.1.1-r18)
+#6 54.07 (73/139) Installing libjpeg-turbo (3.0.3-r0)
+#6 54.83 (74/139) Installing v4l-utils-libs (1.22.1-r2)
+#6 54.84 (75/139) Installing libxext (1.3.6-r2)
+#6 55.39 (76/139) Installing libxfixes (6.0.1-r4)
+#6 55.90 (77/139) Installing wayland-libs-client (1.22.0-r4)
+#6 56.48 (78/139) Installing libva (2.21.0-r0)
+#6 57.12 (79/139) Installing libvdpau (1.5-r3)
+#6 57.71 (80/139) Installing vidstab (1.1.0-r2)
+#6 57.71 (81/139) Installing libvpx (1.12.0-r2)
+#6 58.36 (82/139) Installing libsharpyuv (1.3.2-r0)
+#6 58.88 (83/139) Installing libwebp (1.3.2-r0)
+#6 59.64 (84/139) Installing libwebpmux (1.3.2-r0)
+#6 60.19 (85/139) Installing x264-libs (0.164_git20220602-r0)
+#6 60.23 (86/139) Installing numactl (2.0.18-r0)
+#6 60.79 (87/139) Installing x265-libs (3.5-r3)
+#6 60.90 (88/139) Installing xvidcore (1.3.7-r1)
+#6 60.90 (89/139) Installing libsodium (1.0.19-r0)
+#6 61.56 (90/139) Installing libzmq (4.3.5-r2)
+#6 62.40 (91/139) Installing ffmpeg-libs (5.1.4-r0)
+#6 63.52 (92/139) Installing ffmpeg (5.1.4-r0)
+#6 63.72 (93/139) Installing libmagic (5.45-r1)
+#6 64.56 (94/139) Installing pkgconf (2.2.0-r0)
+#6 65.29 (95/139) Installing file-dev (5.45-r1)
+#6 65.80 (96/139) Installing libstdc++-dev (13.2.1_git20240309-r0)
+#6 66.94 (97/139) Installing jansson (2.14-r4)
+#6 67.52 (98/139) Installing binutils (2.42-r0)
+#6 70.48 (99/139) Installing libatomic (13.2.1_git20240309-r0)
+#6 70.96 (100/139) Installing isl26 (0.26-r1)
+#6 71.90 (101/139) Installing mpfr4 (4.2.1-r0)
+#6 72.72 (102/139) Installing mpc1 (1.3.1-r1)
+#6 73.32 (103/139) Installing gcc (13.2.1_git20240309-r0)
+#6 75.62 (104/139) Installing musl-dev (1.2.5-r0)
+#6 76.72 (105/139) Installing g++ (13.2.1_git20240309-r0)
+#6 77.95 (106/139) Installing nghttp2-libs (1.62.1-r0)
+#6 78.86 (107/139) Installing libcurl (8.9.0-r0)
+#6 78.87 (108/139) Installing git (2.45.2-r0)
+#6 79.86 (109/139) Installing git-init-template (2.45.2-r0)
+#6 80.37 (110/139) Installing perl-error (0.17029-r2)
+#6 80.94 (111/139) Installing perl-git (2.45.2-r0)
+#6 81.51 (112/139) Installing git-perl (2.45.2-r0)
+#6 82.04 (113/139) Installing lcms2 (2.16-r0)
+#6 82.72 (114/139) Installing libxml2 (2.12.7-r0)
+#6 83.61 (115/139) Installing imagemagick-libs (7.1.0.62-r0)
+#6 83.65 (116/139) Installing libxrender (0.9.11-r5)
+#6 84.24 (117/139) Installing pixman (0.43.2-r0)
+#6 85.03 (118/139) Installing cairo (1.18.0-r0)
+#6 85.82 (119/139) Installing avahi-libs (0.8-r17)
+#6 86.49 (120/139) Installing cups-libs (2.4.9-r0)
+#6 86.50 (121/139) Installing jbig2dec (0.20-r0)
+#6 87.18 (122/139) Installing tiff (4.4.0-r4)
+#6 87.19 (123/139) Installing ghostscript (10.01.2-r0)
+#6 87.77 (124/139) Installing libde265 (1.0.15-r0)
+#6 87.78 (125/139) Installing libheif (1.13.0-r0)
+#6 87.79 (126/139) Installing libjxl (0.7.0-r0)
+#6 87.83 (127/139) Installing cairo-gobject (1.18.0-r0)
+#6 88.34 (128/139) Installing shared-mime-info (2.4-r0)
+#6 89.14 (129/139) Installing gdk-pixbuf (2.42.10-r0)
+#6 89.17 (130/139) Installing libxft (2.3.8-r3)
+#6 89.73 (131/139) Installing pango (1.52.2-r0)
+#6 90.48 (132/139) Installing librsvg (2.55.1-r0)
+#6 90.56 (133/139) Installing libwebpdemux (1.3.2-r0)
+#6 91.05 (134/139) Installing imagemagick (7.1.0.62-r0)
+#6 91.12 (135/139) Installing make (4.4.1-r2)
+#6 91.85 (136/139) Installing ncurses (6.4_p20240420-r0)
+#6 92.50 (137/139) Installing postgresql-common (1.2-r1)
+#6 92.99 Executing postgresql-common-1.2-r1.pre-install
+#6 93.11 (138/139) Installing libpq (16.3-r0)
+#6 93.79 (139/139) Installing postgresql16-client (16.3-r0)
+#6 94.69 Executing busybox-1.35.0-r31.trigger
+#6 94.69 Executing fontconfig-2.15.0-r1.trigger
+#6 94.71 Executing glib-2.80.2-r0.trigger
+#6 94.71 Executing shared-mime-info-2.4-r0.trigger
+#6 95.34 Executing gdk-pixbuf-2.42.10-r0.trigger
+#6 95.35 Executing postgresql-common-1.2-r1.trigger
+#6 95.35 * Setting postgresql16 as the default version
+#6 95.79 OK: 549 MiB in 162 packages
+#6 DONE 98.3s
+
+#7 [3/8] RUN addgroup -g 911 pleroma     && adduser -h /pleroma -s /bin/false -D -G pleroma -u 911 pleroma
+#7 DONE 1.0s
+
+#8 [4/8] RUN mkdir -p /etc/pleroma     && chown -R pleroma /etc/pleroma     && mkdir -p /var/lib/pleroma/uploads     && mkdir -p /var/lib/pleroma/static     && chown -R pleroma /var/lib/pleroma
+#8 DONE 0.8s
+
+#9 [5/8] WORKDIR /pleroma
+#9 DONE 0.4s
+
+#10 [6/8] RUN git clone -b develop https://git.pleroma.social/pleroma/pleroma.git /pleroma     && git checkout develop
+#10 0.528 Cloning into '/pleroma'...
+#10 29.25 Already on 'develop'
+#10 29.25 Your branch is up to date with 'origin/develop'.
+#10 DONE 31.4s
+
+#11 [7/8] RUN echo "import Mix.Config" > config/prod.secret.exs     && mix local.hex --force     && mix local.rebar --force     && mix deps.get --only prod     && mkdir release     && mix release --path /pleroma
+#11 1.944 * creating .mix/archives/hex-2.1.1
+#11 3.328 * creating .mix/rebar
+#11 3.504 * creating .mix/rebar3
+#11 4.589 * Getting remote_ip (https://git.pleroma.social/pleroma/remote_ip.git - b647d0deecaa3acb140854fe4bda5b7e1dc6d1c8)
+#11 5.228 remote: Enumerating objects: 141, done.        
+#11 5.331 remote: Total 141 (delta 0), reused 0 (delta 0), pack-reused 141 (from 1)        
+#11 5.466 * Getting captcha (https://git.pleroma.social/pleroma/elixir-libraries/elixir-captcha.git - 6630c42aaaab124e697b4e513190c89d8b64e410)
+#11 6.060 remote: Enumerating objects: 129, done.        
+#11 6.060 remote: Counting objects:   1% (1/56)        remote: Counting objects:   3% (2/56)        remote: Counting objects:   5% (3/56)        remote: Counting objects:   7% (4/56)        remote: Counting objects:   8% (5/56)        remote: Counting objects:  10% (6/56)        remote: Counting objects:  12% (7/56)        remote: Counting objects:  14% (8/56)        remote: Counting objects:  16% (9/56)        remote: Counting objects:  17% (10/56)        remote: Counting objects:  19% (11/56)        remote: Counting objects:  21% (12/56)        remote: Counting objects:  23% (13/56)        remote: Counting objects:  25% (14/56)        remote: Counting objects:  26% (15/56)        remote: Counting objects:  28% (16/56)        remote: Counting objects:  30% (17/56)        remote: Counting objects:  32% (18/56)        remote: Counting objects:  33% (19/56)        remote: Counting objects:  35% (20/56)        remote: Counting objects:  37% (21/56)        remote: Counting objects:  39% (22/56)        remote: Counting objects:  41% (23/56)        remote: Counting objects:  42% (24/56)        remote: Counting objects:  44% (25/56)        remote: Counting objects:  46% (26/56)        remote: Counting objects:  48% (27/56)        remote: Counting objects:  50% (28/56)        remote: Counting objects:  51% (29/56)        remote: Counting objects:  53% (30/56)        remote: Counting objects:  55% (31/56)        remote: Counting objects:  57% (32/56)        remote: Counting objects:  58% (33/56)        remote: Counting objects:  60% (34/56)        remote: Counting objects:  62% (35/56)        remote: Counting objects:  64% (36/56)        remote: Counting objects:  66% (37/56)        remote: Counting objects:  67% (38/56)        remote: Counting objects:  69% (39/56)        remote: Counting objects:  71% (40/56)        remote: Counting objects:  73% (41/56)        remote: Counting objects:  75% (42/56)        remote: Counting objects:  76% (43/56)        remote: Counting objects:  78% (44/56)        remote: Counting objects:  80% (45/56)        remote: Counting objects:  82% (46/56)        remote: Counting objects:  83% (47/56)        remote: Counting objects:  85% (48/56)        remote: Counting objects:  87% (49/56)        remote: Counting objects:  89% (50/56)        remote: Counting objects:  91% (51/56)        remote: Counting objects:  92% (52/56)        remote: Counting objects:  94% (53/56)        remote: Counting objects:  96% (54/56)        remote: Counting objects:  98% (55/56)        remote: Counting objects: 100% (56/56)        remote: Counting objects: 100% (56/56), done.        
+#11 6.060 remote: Compressing objects:   3% (1/33)        remote: Compressing objects:   6% (2/33)        remote: Compressing objects:   9% (3/33)        remote: Compressing objects:  12% (4/33)        remote: Compressing objects:  15% (5/33)        remote: Compressing objects:  18% (6/33)        remote: Compressing objects:  21% (7/33)        remote: Compressing objects:  24% (8/33)        remote: Compressing objects:  27% (9/33)        remote: Compressing objects:  30% (10/33)        remote: Compressing objects:  33% (11/33)        remote: Compressing objects:  36% (12/33)        remote: Compressing objects:  39% (13/33)        remote: Compressing objects:  42% (14/33)        remote: Compressing objects:  45% (15/33)        remote: Compressing objects:  48% (16/33)        remote: Compressing objects:  51% (17/33)        remote: Compressing objects:  54% (18/33)        remote: Compressing objects:  57% (19/33)        remote: Compressing objects:  60% (20/33)        remote: Compressing objects:  63% (21/33)        remote: Compressing objects:  66% (22/33)        remote: Compressing objects:  69% (23/33)        remote: Compressing objects:  72% (24/33)        remote: Compressing objects:  75% (25/33)        remote: Compressing objects:  78% (26/33)        remote: Compressing objects:  81% (27/33)        remote: Compressing objects:  84% (28/33)        remote: Compressing objects:  87% (29/33)        remote: Compressing objects:  90% (30/33)        remote: Compressing objects:  93% (31/33)        remote: Compressing objects:  96% (32/33)        remote: Compressing objects: 100% (33/33)        remote: Compressing objects: 100% (33/33), done.        
+#11 6.112 remote: Total 129 (delta 33), reused 30 (delta 22), pack-reused 73 (from 1)        
+#11 6.868 Resolving Hex dependencies...
+#11 8.769 Resolution completed in 1.889s
+#11 9.218 Unchanged:
+#11 9.218   bandit 1.5.5
+#11 9.218   base62 1.2.2
+#11 9.218   bbcode_pleroma 0.2.0
+#11 9.218   bcrypt_elixir 2.3.1
+#11 9.218   cachex 3.6.0
+#11 9.218   calendar 1.0.0
+#11 9.219   castore 0.1.22
+#11 9.219   cc_precompiler 0.1.9
+#11 9.219   certifi 2.12.0
+#11 9.219   combine 0.10.0
+#11 9.219   comeonin 5.4.0
+#11 9.219   concurrent_limiter 0.1.1
+#11 9.219   cors_plug 2.0.3
+#11 9.219   cowboy 2.12.0
+#11 9.219   cowboy_telemetry 0.4.0
+#11 9.219   cowlib 2.13.0
+#11 9.219   custom_base 0.2.1
+#11 9.219   db_connection 2.7.0
+#11 9.219   decimal 2.1.1
+#11 9.219   earmark 1.4.46
+#11 9.219   ecto 3.11.2
+#11 9.219   ecto_enum 1.4.0
+#11 9.219   ecto_psql_extras 0.7.15
+#11 9.219   ecto_sql 3.11.3
+#11 9.220   elixir_make 0.7.8
+#11 9.220   eternal 1.2.2
+#11 9.220   ex_aws 2.1.9
+#11 9.220   ex_aws_s3 2.5.3
+#11 9.220   ex_const 0.2.4
+#11 9.220   ex_syslogger 1.5.2
+#11 9.220   exile 0.10.0
+#11 9.220   expo 0.5.1
+#11 9.220   fast_html 2.2.0
+#11 9.220   fast_sanitize 0.2.3
+#11 9.220   finch 0.18.0
+#11 9.220   flake_id 0.1.0
+#11 9.220   floki 0.35.2
+#11 9.221   gen_smtp 0.15.0
+#11 9.221   gettext 0.24.0
+#11 9.221   gun 2.0.1
+#11 9.221   hackney 1.18.2
+#11 9.221   hpax 0.2.0
+#11 9.221   html_entities 0.5.2
+#11 9.221   http_signatures 0.1.2
+#11 9.221   httpoison 1.8.2
+#11 9.221   idna 6.1.1
+#11 9.221   inet_cidr 1.0.8
+#11 9.221   jason 1.4.3
+#11 9.221   joken 2.6.0
+#11 9.221   jose 1.11.6
+#11 9.221   jumper 1.0.2
+#11 9.221   linkify 0.5.3
+#11 9.221   majic 1.0.0
+#11 9.221   metrics 1.0.1
+#11 9.221   mime 1.6.0
+#11 9.222   mimerl 1.3.0
+#11 9.222   mint 1.6.1
+#11 9.222   mogrify 0.8.0
+#11 9.222   nimble_options 1.1.1
+#11 9.222   nimble_parsec 0.6.0
+#11 9.222   nimble_pool 0.2.6
+#11 9.222   oban 2.17.12
+#11 9.222   oban_live_dashboard 0.1.1
+#11 9.222   octo_fetch 0.4.0
+#11 9.222   open_api_spex 3.18.2
+#11 9.222   parse_trans 3.4.1
+#11 9.222   phoenix 1.7.14
+#11 9.222   phoenix_ecto 4.4.3
+#11 9.222   phoenix_html 3.3.4
+#11 9.222   phoenix_live_dashboard 0.8.3
+#11 9.223   phoenix_live_view 0.19.5
+#11 9.223   phoenix_pubsub 2.1.3
+#11 9.223   phoenix_swoosh 1.2.1
+#11 9.223   phoenix_template 1.0.4
+#11 9.223   phoenix_view 2.0.4
+#11 9.223   plug 1.16.1
+#11 9.223   plug_cowboy 2.7.1
+#11 9.223   plug_crypto 2.1.0
+#11 9.223   plug_static_index_html 1.0.0
+#11 9.223   poolboy 1.5.2
+#11 9.223   postgrex 0.17.5
+#11 9.223   pot 1.0.2
+#11 9.223   prom_ex 1.9.0
+#11 9.223   ranch 1.8.0
+#11 9.223   recon 2.5.4
+#11 9.223   rinpatch_blurhash 0.1.0
+#11 9.223   sleeplocks 1.1.2
+#11 9.223   ssl_verify_fun 1.1.7
+#11 9.223   sweet_xml 0.7.4
+#11 9.223   swoosh 1.16.9
+#11 9.224   syslog 1.1.0
+#11 9.224   table_rex 4.0.0
+#11 9.224   telemetry 1.0.0
+#11 9.224   telemetry_metrics 0.6.2
+#11 9.224   telemetry_metrics_prometheus_core 1.2.0
+#11 9.224   telemetry_poller 1.0.0
+#11 9.224   tesla 1.11.0
+#11 9.224   thousand_island 1.3.5
+#11 9.224   timex 3.7.7
+#11 9.224   trailing_format_plug 0.0.7
+#11 9.224   tzdata 1.0.5
+#11 9.224   ueberauth 0.10.7
+#11 9.224   unicode_util_compat 0.7.0
+#11 9.224   unsafe 1.0.2
+#11 9.224   vix 0.26.0
+#11 9.224   web_push_encryption 0.3.1
+#11 9.224   websock 0.5.3
+#11 9.224   websock_adapter 0.5.6
+#11 9.280 * Getting phoenix (Hex package)
+#11 9.589 * Getting phoenix_ecto (Hex package)
+#11 9.598 * Getting ecto_sql (Hex package)
+#11 9.626 * Getting ecto_enum (Hex package)
+#11 9.632 * Getting postgrex (Hex package)
+#11 9.663 * Getting phoenix_html (Hex package)
+#11 9.672 * Getting phoenix_live_view (Hex package)
+#11 9.721 * Getting phoenix_live_dashboard (Hex package)
+#11 9.751 * Getting telemetry_metrics (Hex package)
+#11 9.758 * Getting telemetry_poller (Hex package)
+#11 9.767 * Getting tzdata (Hex package)
+#11 9.812 * Getting plug_cowboy (Hex package)
+#11 9.819 * Getting oban (Hex package)
+#11 9.848 * Getting gettext (Hex package)
+#11 9.859 * Getting bcrypt_elixir (Hex package)
+#11 9.866 * Getting trailing_format_plug (Hex package)
+#11 9.870 * Getting fast_sanitize (Hex package)
+#11 9.879 * Getting html_entities (Hex package)
+#11 9.883 * Getting calendar (Hex package)
+#11 9.895 * Getting cachex (Hex package)
+#11 9.920 * Getting tesla (Hex package)
+#11 9.941 * Getting castore (Hex package)
+#11 9.947 * Getting cowlib (Hex package)
+#11 9.967 * Getting gun (Hex package)
+#11 9.987 * Getting finch (Hex package)
+#11 9.998 * Getting jason (Hex package)
+#11 10.01 * Getting mogrify (Hex package)
+#11 10.01 * Getting ex_aws (Hex package)
+#11 10.03 * Getting ex_aws_s3 (Hex package)
+#11 10.03 * Getting sweet_xml (Hex package)
+#11 10.04 * Getting earmark (Hex package)
+#11 10.07 * Getting bbcode_pleroma (Hex package)
+#11 10.07 * Getting cors_plug (Hex package)
+#11 10.08 * Getting web_push_encryption (Hex package)
+#11 10.08 * Getting swoosh (Hex package)
+#11 10.11 * Getting phoenix_swoosh (Hex package)
+#11 10.12 * Getting gen_smtp (Hex package)
+#11 10.13 * Getting ex_syslogger (Hex package)
+#11 10.13 * Getting floki (Hex package)
+#11 10.15 * Getting timex (Hex package)
+#11 10.30 * Getting ueberauth (Hex package)
+#11 10.30 * Getting linkify (Hex package)
+#11 10.31 * Getting http_signatures (Hex package)
+#11 10.31 * Getting telemetry (Hex package)
+#11 10.32 * Getting poolboy (Hex package)
+#11 10.32 * Getting prom_ex (Hex package)
+#11 10.35 * Getting recon (Hex package)
+#11 10.36 * Getting joken (Hex package)
+#11 10.37 * Getting pot (Hex package)
+#11 10.37 * Getting ex_const (Hex package)
+#11 10.38 * Getting plug_static_index_html (Hex package)
+#11 10.38 * Getting flake_id (Hex package)
+#11 10.39 * Getting concurrent_limiter (Hex package)
+#11 10.39 * Getting majic (Hex package)
+#11 10.40 * Getting open_api_spex (Hex package)
+#11 10.44 * Getting ecto_psql_extras (Hex package)
+#11 10.46 * Getting vix (Hex package)
+#11 10.48 * Getting elixir_make (Hex package)
+#11 10.49 * Getting blurhash (Hex package)
+#11 10.49 * Getting exile (Hex package)
+#11 10.51 * Getting bandit (Hex package)
+#11 10.53 * Getting websock_adapter (Hex package)
+#11 10.54 * Getting oban_live_dashboard (Hex package)
+#11 10.54 * Getting hackney (Hex package)
+#11 10.56 * Getting certifi (Hex package)
+#11 10.57 * Getting idna (Hex package)
+#11 10.59 * Getting metrics (Hex package)
+#11 10.60 * Getting mimerl (Hex package)
+#11 10.60 * Getting parse_trans (Hex package)
+#11 10.61 * Getting ssl_verify_fun (Hex package)
+#11 10.62 * Getting unicode_util_compat (Hex package)
+#11 10.63 * Getting plug (Hex package)
+#11 10.65 * Getting websock (Hex package)
+#11 10.66 * Getting mime (Hex package)
+#11 10.66 * Getting plug_crypto (Hex package)
+#11 10.67 * Getting hpax (Hex package)
+#11 10.67 * Getting thousand_island (Hex package)
+#11 10.68 * Getting cc_precompiler (Hex package)
+#11 10.69 * Getting table_rex (Hex package)
+#11 10.70 * Getting nimble_pool (Hex package)
+#11 10.70 * Getting combine (Hex package)
+#11 10.71 * Getting inet_cidr (Hex package)
+#11 10.71 * Getting base62 (Hex package)
+#11 10.71 * Getting custom_base (Hex package)
+#11 10.72 * Getting jose (Hex package)
+#11 10.78 * Getting octo_fetch (Hex package)
+#11 10.78 * Getting telemetry_metrics_prometheus_core (Hex package)
+#11 10.79 * Getting syslog (Hex package)
+#11 10.80 * Getting phoenix_view (Hex package)
+#11 10.80 * Getting phoenix_template (Hex package)
+#11 10.81 * Getting httpoison (Hex package)
+#11 10.81 * Getting nimble_parsec (Hex package)
+#11 10.82 * Getting mint (Hex package)
+#11 10.83 * Getting nimble_options (Hex package)
+#11 10.84 * Getting eternal (Hex package)
+#11 10.84 * Getting jumper (Hex package)
+#11 10.85 * Getting sleeplocks (Hex package)
+#11 10.85 * Getting unsafe (Hex package)
+#11 10.85 * Getting fast_html (Hex package)
+#11 11.41 * Getting comeonin (Hex package)
+#11 11.42 * Getting expo (Hex package)
+#11 11.43 * Getting cowboy (Hex package)
+#11 11.45 * Getting cowboy_telemetry (Hex package)
+#11 11.46 * Getting ranch (Hex package)
+#11 11.47 * Getting db_connection (Hex package)
+#11 11.48 * Getting decimal (Hex package)
+#11 11.49 * Getting ecto (Hex package)
+#11 11.53 * Getting phoenix_pubsub (Hex package)
+#11 11.54 You have added/upgraded packages you could sponsor, run `mix hex.sponsor` to learn more
+#11 13.00 ==> captcha
+#11 13.00 rm -f priv/captcha src/captcha.o 
+#11 13.00 cc -g   -c -o src/captcha.o src/captcha.c
+#11 13.00 mkdir -p priv
+#11 13.00 cc -g -I src -o priv/captcha  src/captcha.o 
+#11 13.00 
+#11 13.02 Compiling 1 file (.ex)
+#11 13.12 Generated captcha app
+#11 13.12 ==> restarter
+#11 13.12 Compiling 2 files (.ex)
+#11 13.22 Generated restarter app
+#11 13.24 ==> jumper
+#11 13.24 Compiling 1 file (.ex)
+#11 13.29 Generated jumper app
+#11 13.32 ==> nimble_options
+#11 13.32 Compiling 3 files (.ex)
+#11 13.78 Generated nimble_options app
+#11 14.45 ===> Analyzing applications...
+#11 14.50 ===> Compiling parse_trans
+#11 15.53 ==> unsafe
+#11 15.53 Compiling 3 files (.ex)
+#11 15.63 Generated unsafe app
+#11 15.67 ==> hpax
+#11 15.67 Compiling 4 files (.ex)
+#11 16.49 Generated hpax app
+#11 17.18 ===> Analyzing applications...
+#11 17.51 ===> Compiling mimerl
+#11 18.76 ==> nimble_pool
+#11 18.76 Compiling 2 files (.ex)
+#11 19.09 Generated nimble_pool app
+#11 19.11 ==> nimble_parsec
+#11 19.11 Compiling 4 files (.ex)
+#11 19.56 Generated nimble_parsec app
+#11 19.59 ==> bbcode_pleroma
+#11 19.59 Compiling 3 files (.ex)
+#11 20.31 Generated bbcode_pleroma app
+#11 21.09 ===> Analyzing applications...
+#11 21.13 ===> Compiling sleeplocks
+#11 22.34 ===> Analyzing applications...
+#11 22.37 ===> Compiling metrics
+#11 23.53 ===> Analyzing applications...
+#11 23.73 ===> Compiling unicode_util_compat
+#11 25.10 ===> Analyzing applications...
+#11 25.70 ===> Compiling idna
+#11 30.43 ==> jose
+#11 30.43 Compiling 112 files (.erl)
+#11 32.75 Compiling 8 files (.ex)
+#11 33.46 Generated jose app
+#11 34.96 ===> Fetching pc v1.15.0
+#11 35.06 ===> Analyzing applications...
+#11 35.09 ===> Compiling pc
+#11 35.66 ===> Analyzing applications...
+#11 35.66 ===> Compiling syslog
+#11 35.77 ===> Compiling c_src/syslog_drv.c
+#11 35.77 ===> Linking /pleroma/_build/prod/lib/syslog/priv/syslog_drv.so
+#11 35.86 ==> ex_syslogger
+#11 35.86 Compiling 2 files (.ex)
+#11 35.92 warning: redefining @doc attribute previously set at line 199.
+#11 35.92 
+#11 35.92 Please remove the duplicate docs. If instead you want to override a previously defined @doc, attach the @doc attribute to a function head (the function signature not followed by any do-block). For example:
+#11 35.92 
+#11 35.92     @doc """
+#11 35.92     new docs
+#11 35.92     """
+#11 35.92     def handle_event(...)
+#11 35.92 
+#11 35.92   lib/ex_syslogger.ex:206: ExSyslogger.handle_event/2
+#11 35.92 
+#11 35.97 Generated ex_syslogger app
+#11 36.70 ===> Analyzing applications...
+#11 36.75 ===> Compiling ranch
+#11 37.50 ==> floki
+#11 37.50 Compiling 1 file (.xrl)
+#11 37.57 Compiling 2 files (.erl)
+#11 38.02 Compiling 29 files (.ex)
+#11 41.56 Generated floki app
+#11 42.34 ===> Analyzing applications...
+#11 42.38 ===> Compiling poolboy
+#11 43.61 ===> Analyzing applications...
+#11 43.65 ===> Compiling telemetry
+#11 44.20 ==> telemetry_metrics
+#11 44.20 Compiling 7 files (.ex)
+#11 44.41 Generated telemetry_metrics app
+#11 45.13 ===> Analyzing applications...
+#11 45.18 ===> Compiling telemetry_poller
+#11 45.73 ==> eternal
+#11 45.73 Compiling 5 files (.ex)
+#11 45.87 Generated eternal app
+#11 45.92 ==> cachex
+#11 45.92 Compiling 56 files (.ex)
+#11 47.37 Generated cachex app
+#11 47.39 ==> decimal
+#11 47.39 Compiling 4 files (.ex)
+#11 48.28 Generated decimal app
+#11 48.33 ==> jason
+#11 48.33 Compiling 10 files (.ex)
+#11 50.34 Generated jason app
+#11 50.37 ==> recon
+#11 50.37 Compiling 6 files (.erl)
+#11 50.54 Generated recon app
+#11 50.57 ==> comeonin
+#11 50.57 Compiling 3 files (.ex)
+#11 50.72 Generated comeonin app
+#11 50.77 ==> ssl_verify_fun
+#11 50.77 Compiling 7 files (.erl)
+#11 50.82 Generated ssl_verify_fun app
+#11 51.58 ===> Analyzing applications...
+#11 51.70 ===> Compiling gen_smtp
+#11 52.49 src/gen_smtp_application.erl:12:10: Warning: variable '_App' is bound multiple times in this pattern. If you mean to ignore this value, use '_' or a different underscore-prefixed name
+#11 52.49 src/gen_smtp_application.erl:12:42: Warning: variable '_App' is bound multiple times in this pattern. If you mean to ignore this value, use '_' or a different underscore-prefixed name
+#11 52.49 
+#11 52.54 src/smtp_util.erl:73:8: Warning: crypto:hmac/3 is removed; use crypto:mac/4 instead
+#11 52.54 
+#11 52.96 ==> concurrent_limiter
+#11 52.96 Compiling 1 file (.ex)
+#11 53.07 Generated concurrent_limiter app
+#11 53.09 ==> html_entities
+#11 53.09 Compiling 2 files (.ex)
+#11 53.35 Generated html_entities app
+#11 54.17 ===> Analyzing applications...
+#11 54.21 ===> Compiling pot
+#11 54.81 ==> ex_const
+#11 54.81 Compiling 1 file (.ex)
+#11 54.97 Generated ex_const app
+#11 55.00 ==> combine
+#11 55.00 Compiling 6 files (.ex)
+#11 55.66 Generated combine app
+#11 55.68 ==> custom_base
+#11 55.68 Compiling 1 file (.ex)
+#11 55.77 Generated custom_base app
+#11 55.80 ==> base62
+#11 55.80 Compiling 1 file (.ex)
+#11 55.89 Generated base62 app
+#11 55.93 ==> telemetry_metrics_prometheus_core
+#11 55.93 Compiling 9 files (.ex)
+#11 56.16 Generated telemetry_metrics_prometheus_core app
+#11 56.19 ==> castore
+#11 56.19 Compiling 1 file (.ex)
+#11 56.23 Generated castore app
+#11 56.29 ==> mint
+#11 56.29 Compiling 1 file (.erl)
+#11 56.37 Compiling 20 files (.ex)
+#11 57.65 Generated mint app
+#11 57.70 ==> octo_fetch
+#11 57.70 Compiling 3 files (.ex)
+#11 57.98 Generated octo_fetch app
+#11 58.00 ==> mogrify
+#11 58.00 Compiling 9 files (.ex)
+#11 58.32 Generated mogrify app
+#11 58.34 ==> blurhash
+#11 58.34 Compiling 5 files (.ex)
+#11 58.42 warning: variable "acc" is unused (if the variable is not meant to be used, prefix it with an underscore)
+#11 58.42   lib/blurhash/encoder.ex:31: Blurhash.Encoder.calculate_component/6
+#11 58.42 
+#11 58.48 Generated blurhash app
+#11 58.52 ==> linkify
+#11 58.52 Compiling 3 files (.ex)
+#11 58.79 Generated linkify app
+#11 59.62 ===> Analyzing applications...
+#11 59.66 ===> Compiling certifi
+#11 60.40 ==> elixir_make
+#11 60.40 Compiling 6 files (.ex)
+#11 60.65 Generated elixir_make app
+#11 60.68 ==> bcrypt_elixir
+#11 60.69 mkdir -p /pleroma/_build/prod/lib/bcrypt_elixir/priv
+#11 60.69 cc -g -O3 -Wall -Wno-format-truncation -I"/usr/local/lib/erlang/erts-12.3.2.17/include" -Ic_src -fPIC -shared  c_src/bcrypt_nif.c c_src/blowfish.c -o /pleroma/_build/prod/lib/bcrypt_elixir/priv/bcrypt_nif.so
+#11 61.41 Compiling 3 files (.ex)
+#11 61.57 Generated bcrypt_elixir app
+#11 61.62 ==> exile
+#11 61.62 mkdir -p priv
+#11 61.63 cc -std=c99 -I/usr/local/lib/erlang/usr/include -shared -Wall -Werror -Wextra -Wno-unused-parameter -pedantic -O2 -fPIC -D_POSIX_C_SOURCE=200809L c_src/exile.c -o priv/exile.so
+#11 61.84 mkdir -p priv
+#11 61.84 cc -std=c99 -Wall -Werror -Wextra -Wno-unused-parameter -pedantic -O2 -fPIC -D_POSIX_C_SOURCE=200809L c_src/spawner.c -o priv/spawner
+#11 61.95 Compiling 9 files (.ex)
+#11 62.40 Generated exile app
+#11 62.43 ==> cc_precompiler
+#11 62.43 Compiling 3 files (.ex)
+#11 62.66 Generated cc_precompiler app
+#11 62.73 ==> vix
+#11 62.73 Downloading precompiled NIF to /pleroma/.cache/vix-nif-2.16-x86_64-linux-musl-0.26.0.tar.gz
+#11 64.17 Compiling 27 files (.ex)
+#11 67.67 Generated vix app
+#11 68.53 ===> Analyzing applications...
+#11 68.61 ===> Compiling hackney
+#11 69.69 ==> tzdata
+#11 69.69 Compiling 17 files (.ex)
+#11 70.05 warning: unknown compiler variable "______" (expected one of __MODULE__, __ENV__, __DIR__, __CALLER__, __STACKTRACE__)
+#11 70.05   lib/tzdata/parser.ex:27: Tzdata.Parser.process_tz_list/1
+#11 70.05 
+#11 70.12 warning: Supervisor.Spec.worker/2 is deprecated. Use the new child specifications outlined in the Supervisor module instead
+#11 70.12 Invalid call found at 2 locations:
+#11 70.12   lib/tzdata/tzdata_app.ex:10: Tzdata.App.start/2
+#11 70.12   lib/tzdata/tzdata_app.ex:13: Tzdata.App.start/2
+#11 70.12 
+#11 70.13 warning: :random.uniform/1 is deprecated. Use the 'rand' module instead
+#11 70.13   lib/tzdata/data_loader.ex:17: Tzdata.DataLoader.download_new/1
+#11 70.13 
+#11 70.14 Generated tzdata app
+#11 70.16 ==> calendar
+#11 70.16 Compiling 18 files (.ex)
+#11 71.11 Generated calendar app
+#11 71.19 ==> earmark
+#11 71.19 Compiling 2 files (.xrl)
+#11 71.21 Compiling 1 file (.yrl)
+#11 71.27 Compiling 3 files (.erl)
+#11 71.44 Compiling 61 files (.ex)
+#11 73.35 Generated earmark app
+#11 73.39 ==> websock
+#11 73.39 Compiling 1 file (.ex)
+#11 73.45 Generated websock app
+#11 73.48 ==> sweet_xml
+#11 73.48 Compiling 2 files (.ex)
+#11 73.96 Generated sweet_xml app
+#11 74.02 ==> ex_aws
+#11 74.02 Compiling 26 files (.ex)
+#11 74.05 warning: found ?\ followed by code point 0x20 (space), please use ?\s instead
+#11 74.05   lib/ex_aws/request/url.ex:111:25
+#11 74.05 
+#11 74.69 Generated ex_aws app
+#11 74.74 ==> ex_aws_s3
+#11 74.74 Compiling 7 files (.ex)
+#11 75.29 Generated ex_aws_s3 app
+#11 75.35 ==> db_connection
+#11 75.35 Compiling 17 files (.ex)
+#11 76.48 Generated db_connection app
+#11 76.53 ==> httpoison
+#11 76.53 Compiling 3 files (.ex)
+#11 77.70 Generated httpoison app
+#11 77.74 ==> web_push_encryption
+#11 77.74 Compiling 6 files (.ex)
+#11 77.89 Generated web_push_encryption app
+#11 77.97 ==> expo
+#11 77.97 Compiling 2 files (.erl)
+#11 78.47 Compiling 22 files (.ex)
+#11 79.12 Generated expo app
+#11 79.16 ==> gettext
+#11 79.16 Compiling 17 files (.ex)
+#11 79.65 Generated gettext app
+#11 79.71 warning: the :gettext compiler is no longer required in your mix.exs.
+#11 79.71 
+#11 79.71 Please find the following line in your mix.exs and remove the :gettext entry:
+#11 79.71 
+#11 79.71     compilers: [..., :gettext, ...] ++ Mix.compilers(),
+#11 79.71 
+#11 79.71   (gettext 0.24.0) lib/mix/tasks/compile.gettext.ex:5: Mix.Tasks.Compile.Gettext.run/1
+#11 79.71   (mix 1.13.4) lib/mix/task.ex:397: anonymous fn/3 in Mix.Task.run_task/3
+#11 79.71   (mix 1.13.4) lib/mix/tasks/compile.all.ex:92: Mix.Tasks.Compile.All.run_compiler/2
+#11 79.71   (mix 1.13.4) lib/mix/tasks/compile.all.ex:72: Mix.Tasks.Compile.All.compile/4
+#11 79.71   (mix 1.13.4) lib/mix/tasks/compile.all.ex:59: Mix.Tasks.Compile.All.with_logger_app/2
+#11 79.71   (mix 1.13.4) lib/mix/tasks/compile.all.ex:36: Mix.Tasks.Compile.All.run/1
+#11 79.71 
+#11 79.71 ==> timex
+#11 79.71 Compiling 62 files (.ex)
+#11 80.16 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.16 For the "bg" locale, you can use the following header:
+#11 80.16 
+#11 80.16 nplurals=2; plural=(n != 1);
+#11 80.16 
+#11 80.16   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16 
+#11 80.16 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.16 For the "bg" locale, you can use the following header:
+#11 80.16 
+#11 80.16 nplurals=2; plural=(n != 1);
+#11 80.16 
+#11 80.16   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16 
+#11 80.16 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.16 For the "bg" locale, you can use the following header:
+#11 80.16 
+#11 80.16 nplurals=2; plural=(n != 1);
+#11 80.16 
+#11 80.16   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16 
+#11 80.16 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.16 For the "bg" locale, you can use the following header:
+#11 80.16 
+#11 80.16 nplurals=2; plural=(n != 1);
+#11 80.16 
+#11 80.16   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16 
+#11 80.16 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.16 For the "bg" locale, you can use the following header:
+#11 80.16 
+#11 80.16 nplurals=2; plural=(n != 1);
+#11 80.16 
+#11 80.16   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16 
+#11 80.16 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.16 For the "bg" locale, you can use the following header:
+#11 80.16 
+#11 80.16 nplurals=2; plural=(n != 1);
+#11 80.16 
+#11 80.16   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.16   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.16 
+#11 80.17 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.17 For the "bg" locale, you can use the following header:
+#11 80.17 
+#11 80.17 nplurals=2; plural=(n != 1);
+#11 80.17 
+#11 80.17   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17 
+#11 80.17 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.17 For the "bg" locale, you can use the following header:
+#11 80.17 
+#11 80.17 nplurals=2; plural=(n != 1);
+#11 80.17 
+#11 80.17   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17 
+#11 80.17 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.17 For the "bg" locale, you can use the following header:
+#11 80.17 
+#11 80.17 nplurals=2; plural=(n != 1);
+#11 80.17 
+#11 80.17   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17 
+#11 80.17 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.17 For the "bg" locale, you can use the following header:
+#11 80.17 
+#11 80.17 nplurals=2; plural=(n != 1);
+#11 80.17 
+#11 80.17   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17 
+#11 80.17 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.17 For the "bg" locale, you can use the following header:
+#11 80.17 
+#11 80.17 nplurals=2; plural=(n != 1);
+#11 80.17 
+#11 80.17   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17 
+#11 80.17 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.17 For the "bg" locale, you can use the following header:
+#11 80.17 
+#11 80.17 nplurals=2; plural=(n != 1);
+#11 80.17 
+#11 80.17   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.17   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.17 
+#11 80.18 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.18 For the "bg" locale, you can use the following header:
+#11 80.18 
+#11 80.18 nplurals=2; plural=(n != 1);
+#11 80.18 
+#11 80.18   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.18   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.18   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.18 
+#11 80.18 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.18 For the "bg" locale, you can use the following header:
+#11 80.18 
+#11 80.18 nplurals=2; plural=(n != 1);
+#11 80.18 
+#11 80.18   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.18   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.18   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.18 
+#11 80.18 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.18 For the "bg" locale, you can use the following header:
+#11 80.18 
+#11 80.18 nplurals=2; plural=(n != 1);
+#11 80.18 
+#11 80.18   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.18   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.18   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.18 
+#11 80.18 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.18 For the "bg" locale, you can use the following header:
+#11 80.18 
+#11 80.18 nplurals=2; plural=(n != 1);
+#11 80.18 
+#11 80.18   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.18   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.18   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.18   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.18 
+#11 80.22 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.22 For the "cs" locale, you can use the following header:
+#11 80.22 
+#11 80.22 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.22 
+#11 80.22   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22 
+#11 80.22 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.22 For the "cs" locale, you can use the following header:
+#11 80.22 
+#11 80.22 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.22 
+#11 80.22   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22 
+#11 80.22 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.22 For the "cs" locale, you can use the following header:
+#11 80.22 
+#11 80.22 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.22 
+#11 80.22   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22 
+#11 80.22 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.22 For the "cs" locale, you can use the following header:
+#11 80.22 
+#11 80.22 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.22 
+#11 80.22   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22 
+#11 80.22 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.22 For the "cs" locale, you can use the following header:
+#11 80.22 
+#11 80.22 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.22 
+#11 80.22   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22 
+#11 80.22 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.22 For the "cs" locale, you can use the following header:
+#11 80.22 
+#11 80.22 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.22 
+#11 80.22   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22 
+#11 80.22 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.22 For the "cs" locale, you can use the following header:
+#11 80.22 
+#11 80.22 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.22 
+#11 80.22   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22 
+#11 80.22 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.22 For the "cs" locale, you can use the following header:
+#11 80.22 
+#11 80.22 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.22 
+#11 80.22   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.22   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.22 
+#11 80.23 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.23 For the "cs" locale, you can use the following header:
+#11 80.23 
+#11 80.23 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.23 
+#11 80.23   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.23   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.23   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.23 
+#11 80.23 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.23 For the "cs" locale, you can use the following header:
+#11 80.23 
+#11 80.23 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.23 
+#11 80.23   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.23   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.23   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.23 
+#11 80.23 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.23 For the "cs" locale, you can use the following header:
+#11 80.23 
+#11 80.23 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.23 
+#11 80.23   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.23   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.23   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.23 
+#11 80.23 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.23 For the "cs" locale, you can use the following header:
+#11 80.23 
+#11 80.23 nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
+#11 80.23 
+#11 80.23   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.23   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.23   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.23   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.23 
+#11 80.30 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.30 For the "he" locale, you can use the following header:
+#11 80.30 
+#11 80.30 nplurals=2; plural=(n != 1);
+#11 80.30 
+#11 80.30   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30 
+#11 80.30 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.30 For the "he" locale, you can use the following header:
+#11 80.30 
+#11 80.30 nplurals=2; plural=(n != 1);
+#11 80.30 
+#11 80.30   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30 
+#11 80.30 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.30 For the "he" locale, you can use the following header:
+#11 80.30 
+#11 80.30 nplurals=2; plural=(n != 1);
+#11 80.30 
+#11 80.30   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30 
+#11 80.30 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.30 For the "he" locale, you can use the following header:
+#11 80.30 
+#11 80.30 nplurals=2; plural=(n != 1);
+#11 80.30 
+#11 80.30   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30 
+#11 80.30 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.30 For the "he" locale, you can use the following header:
+#11 80.30 
+#11 80.30 nplurals=2; plural=(n != 1);
+#11 80.30 
+#11 80.30   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30 
+#11 80.30 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.30 For the "he" locale, you can use the following header:
+#11 80.30 
+#11 80.30 nplurals=2; plural=(n != 1);
+#11 80.30 
+#11 80.30   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30 
+#11 80.30 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.30 For the "he" locale, you can use the following header:
+#11 80.30 
+#11 80.30 nplurals=2; plural=(n != 1);
+#11 80.30 
+#11 80.30   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30 
+#11 80.30 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.30 For the "he" locale, you can use the following header:
+#11 80.30 
+#11 80.30 nplurals=2; plural=(n != 1);
+#11 80.30 
+#11 80.30   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.30   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.30 
+#11 80.31 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.31 For the "he" locale, you can use the following header:
+#11 80.31 
+#11 80.31 nplurals=2; plural=(n != 1);
+#11 80.31 
+#11 80.31   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31 
+#11 80.31 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.31 For the "he" locale, you can use the following header:
+#11 80.31 
+#11 80.31 nplurals=2; plural=(n != 1);
+#11 80.31 
+#11 80.31   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31 
+#11 80.31 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.31 For the "he" locale, you can use the following header:
+#11 80.31 
+#11 80.31 nplurals=2; plural=(n != 1);
+#11 80.31 
+#11 80.31   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31 
+#11 80.31 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.31 For the "he" locale, you can use the following header:
+#11 80.31 
+#11 80.31 nplurals=2; plural=(n != 1);
+#11 80.31 
+#11 80.31   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31 
+#11 80.31 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.31 For the "he" locale, you can use the following header:
+#11 80.31 
+#11 80.31 nplurals=2; plural=(n != 1);
+#11 80.31 
+#11 80.31   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31 
+#11 80.31 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.31 For the "he" locale, you can use the following header:
+#11 80.31 
+#11 80.31 nplurals=2; plural=(n != 1);
+#11 80.31 
+#11 80.31   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.31   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.31 
+#11 80.32 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.32 For the "he" locale, you can use the following header:
+#11 80.32 
+#11 80.32 nplurals=2; plural=(n != 1);
+#11 80.32 
+#11 80.32   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.32   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.32   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.32   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.32   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.32   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.32 
+#11 80.32 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.32 For the "he" locale, you can use the following header:
+#11 80.32 
+#11 80.32 nplurals=2; plural=(n != 1);
+#11 80.32 
+#11 80.32   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.32   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.32   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.32   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.32   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.32   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.32 
+#11 80.42 
+#11 80.42 22:07:49.564 [error] priv/translations/id/LC_MESSAGES/units.po:24: message is missing plural form 1 which is required by the locale "id"
+#11 80.42 
+#11 80.42 22:07:49.645 [error] priv/translations/id/LC_MESSAGES/units.po:29: message is missing plural form 1 which is required by the locale "id"
+#11 80.42 
+#11 80.42 22:07:49.645 [error] priv/translations/id/LC_MESSAGES/units.po:34: message is missing plural form 1 which is required by the locale "id"
+#11 80.42 
+#11 80.42 22:07:49.645 [error] priv/translations/id/LC_MESSAGES/units.po:39: message is missing plural form 1 which is required by the locale "id"
+#11 80.42 
+#11 80.42 22:07:49.645 [error] priv/translations/id/LC_MESSAGES/units.po:44: message is missing plural form 1 which is required by the locale "id"
+#11 80.42 
+#11 80.42 22:07:49.645 [error] priv/translations/id/LC_MESSAGES/units.po:49: message is missing plural form 1 which is required by the locale "id"
+#11 80.42 
+#11 80.42 22:07:49.645 [error] priv/translations/id/LC_MESSAGES/units.po:54: message is missing plural form 1 which is required by the locale "id"
+#11 80.42 
+#11 80.42 22:07:49.645 [error] priv/translations/id/LC_MESSAGES/units.po:59: message is missing plural form 1 which is required by the locale "id"
+#11 80.42 
+#11 80.42 22:07:49.645 [error] priv/translations/id/LC_MESSAGES/units.po:64: message is missing plural form 1 which is required by the locale "id"
+#11 80.42 
+#11 80.42 22:07:49.645 [error] priv/translations/id/LC_MESSAGES/units.po:69: message is missing plural form 1 which is required by the locale "id"
+#11 80.52 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.52 For the "ro" locale, you can use the following header:
+#11 80.52 
+#11 80.52 nplurals=3; plural=(n==1 ? 0 : (n==0||(n%100>0 && n%100<20)) ? 1 : 2);
+#11 80.52 
+#11 80.52   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.52   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.52   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.52   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.52   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.52   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.52 
+#11 80.52 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.52 For the "ro" locale, you can use the following header:
+#11 80.52 
+#11 80.52 nplurals=3; plural=(n==1 ? 0 : (n==0||(n%100>0 && n%100<20)) ? 1 : 2);
+#11 80.52 
+#11 80.52   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.52   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.52   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.52   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.52   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.52   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.52 
+#11 80.53 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.53 For the "ro" locale, you can use the following header:
+#11 80.53 
+#11 80.53 nplurals=3; plural=(n==1 ? 0 : (n==0||(n%100>0 && n%100<20)) ? 1 : 2);
+#11 80.53 
+#11 80.53   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.53   (gettext 0.24.0) lib/gettext/compiler.ex:571: Gettext.Compiler.compile_plural_forms/4
+#11 80.53   (gettext 0.24.0) lib/gettext/compiler.ex:509: Gettext.Compiler.compile_po_file/5
+#11 80.53   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.53   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.53   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.53 
+#11 80.53 warning: Plural-Forms headers in the form "nplurals=<int>" (without the "plural=<rule>" part following) are invalid and support for them will be removed in future Gettext versions. Make sure to use a complete Plural-Forms header, which also specifies the pluralization rules, or remove the Plural-Forms header completely. If you do the latter, Gettext will use its built-in pluralization rules for the languages it knows about (see Gettext.Plural).
+#11 80.53 For the "ro" locale, you can use the following header:
+#11 80.53 
+#11 80.53 nplurals=3; plural=(n==1 ? 0 : (n==0||(n%100>0 && n%100<20)) ? 1 : 2);
+#11 80.53 
+#11 80.53   (gettext 0.24.0) lib/gettext/plural.ex:280: Gettext.Plural.init/1
+#11 80.53   (gettext 0.24.0) lib/gettext/compiler.ex:564: Gettext.Compiler.nplurals/3
+#11 80.53   (gettext 0.24.0) lib/gettext/compiler.ex:510: Gettext.Compiler.compile_po_file/5
+#11 80.53   (gettext 0.24.0) lib/gettext/compiler.ex:450: Gettext.Compiler.compile_unified_po_file/4
+#11 80.53   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.53   (elixir 1.13.4) lib/enum.ex:1593: Enum."-map/2-lists^map/1-0-"/2
+#11 80.53 
+#11 98.38 Compiling lib/l10n/gettext.ex (it's taking more than 10s)
+#11 98.73 Generated timex app
+#11 98.78 ==> ecto
+#11 98.78 Compiling 56 files (.ex)
+#11 103.8 Generated ecto app
+#11 103.8 ==> flake_id
+#11 103.8 Compiling 5 files (.ex)
+#11 104.0 Generated flake_id app
+#11 104.0 ==> phoenix_pubsub
+#11 104.0 Compiling 11 files (.ex)
+#11 104.6 Generated phoenix_pubsub app
+#11 105.6 ===> Analyzing applications...
+#11 105.8 ===> Compiling cowlib
+#11 121.8 ===> Analyzing applications...
+#11 121.8 ===> Compiling cowboy
+#11 124.2 ===> Analyzing applications...
+#11 124.2 ===> Compiling cowboy_telemetry
+#11 125.1 ==> inet_cidr
+#11 125.1 Compiling 1 file (.ex)
+#11 125.2 Generated inet_cidr app
+#11 125.3 ==> http_signatures
+#11 125.3 Compiling 2 files (.ex)
+#11 125.4 Generated http_signatures app
+#11 125.4 ==> thousand_island
+#11 125.4 Compiling 16 files (.ex)
+#11 125.9 Generated thousand_island app
+#11 126.0 ==> mime
+#11 126.0 Compiling 2 files (.ex)
+#11 127.5 Generated mime app
+#11 127.6 ==> finch
+#11 127.6 Compiling 14 files (.ex)
+#11 128.2 Generated finch app
+#11 128.3 ==> postgrex
+#11 128.3 Compiling 68 files (.ex)
+#11 135.0 Generated postgrex app
+#11 135.1 ==> ecto_sql
+#11 135.1 Compiling 25 files (.ex)
+#11 136.8 Generated ecto_sql app
+#11 137.3 ==> ecto_enum
+#11 137.3 Compiling 5 files (.ex)
+#11 137.6 Generated ecto_enum app
+#11 137.6 ==> table_rex
+#11 137.6 Compiling 7 files (.ex)
+#11 138.0 Generated table_rex app
+#11 138.1 ==> ecto_psql_extras
+#11 138.1 Compiling 33 files (.ex)
+#11 138.7 Generated ecto_psql_extras app
+#11 138.7 ==> fast_html
+#11 138.8 # Sadly, build components separately seems to sporadically fail
+#11 138.8 cd c_src/lexbor; \
+#11 138.8 	CFLAGS=' ' \
+#11 138.8 	cmake -DLEXBOR_BUILD_SEPARATELY=OFF -DLEXBOR_BUILD_SHARED=OFF
+#11 138.8 Error relocating /usr/bin/cmake: SSL_get0_group_name: symbol not found
+#11 138.8 make: *** [Makefile:49: c_src/lexbor/liblexbor_static.a] Error 127
+#11 138.8 could not compile dependency :fast_html, "mix compile" failed. Errors may have been logged above. You can recompile this dependency with "mix deps.compile fast_html", update it with "mix deps.update fast_html" or clean it with "mix deps.clean fast_html"
+#11 138.8 ==> pleroma
+#11 138.8 ** (Mix) Could not compile with "make" (exit status: 2).
+#11 138.8 Please check you have: a C compiler, GNUMake, CMake and Erlang development headers installed before reporting an issue.
+#11 ERROR: process "/bin/sh -c echo \"import Mix.Config\" > config/prod.secret.exs     && mix local.hex --force     && mix local.rebar --force     && mix deps.get --only prod     && mkdir release     && mix release --path /pleroma" did not complete successfully: exit code: 1
+------
+ > [7/8] RUN echo "import Mix.Config" > config/prod.secret.exs     && mix local.hex --force     && mix local.rebar --force     && mix deps.get --only prod     && mkdir release     && mix release --path /pleroma:
+138.8 # Sadly, build components separately seems to sporadically fail
+138.8 cd c_src/lexbor; \
+138.8 	CFLAGS=' ' \
+138.8 	cmake -DLEXBOR_BUILD_SEPARATELY=OFF -DLEXBOR_BUILD_SHARED=OFF
+138.8 Error relocating /usr/bin/cmake: SSL_get0_group_name: symbol not found
+138.8 make: *** [Makefile:49: c_src/lexbor/liblexbor_static.a] Error 127
+138.8 could not compile dependency :fast_html, "mix compile" failed. Errors may have been logged above. You can recompile this dependency with "mix deps.compile fast_html", update it with "mix deps.update fast_html" or clean it with "mix deps.clean fast_html"
+138.8 ==> pleroma
+138.8 ** (Mix) Could not compile with "make" (exit status: 2).
+138.8 Please check you have: a C compiler, GNUMake, CMake and Erlang development headers installed before reporting an issue.
+------
+v1_Dockerfile:29
+--------------------
+  28 |     
+  29 | >>> RUN echo "import Mix.Config" > config/prod.secret.exs \
+  30 | >>>     && mix local.hex --force \
+  31 | >>>     && mix local.rebar --force \
+  32 | >>>     && mix deps.get --only prod \
+  33 | >>>     && mkdir release \
+  34 | >>>     && mix release --path /pleroma
+  35 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c echo \"import Mix.Config\" > config/prod.secret.exs     && mix local.hex --force     && mix local.rebar --force     && mix deps.get --only prod     && mkdir release     && mix release --path /pleroma" did not complete successfully: exit code: 1
+Duration: 4:40.34

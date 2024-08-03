@@ -1,0 +1,516 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 399B done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/python:3.7-slim
+#3 DONE 1.2s
+
+#4 [1/5] FROM docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b
+#4 resolve docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b 0.1s done
+#4 sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b 1.86kB / 1.86kB done
+#4 sha256:ffd28e36ef37b3a4a24f6a771a48d7c5499ea42d6309ac911a3f699e122060be 1.37kB / 1.37kB done
+#4 sha256:a255ffcb469f2ec40f2958a76beb0c2bbebfe92ce9af67a9b48d84b4cb695ac8 7.54kB / 7.54kB done
+#4 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 5.24MB / 29.12MB 0.3s
+#4 sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 0B / 3.50MB 0.3s
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 799B done
+#5 DONE 0.5s
+
+#4 [1/5] FROM docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b
+#4 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 22.02MB / 29.12MB 0.5s
+#4 sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 3.50MB / 3.50MB 0.5s
+#4 sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 0B / 11.38MB 0.5s
+#4 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 29.12MB / 29.12MB 0.7s
+#4 sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 3.50MB / 3.50MB 0.5s done
+#4 sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 11.38MB / 11.38MB 0.7s
+#4 sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095 0B / 244B 0.7s
+#4 sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095 244B / 244B 0.9s
+#4 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 29.12MB / 29.12MB 1.0s done
+#4 extracting sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886
+#4 sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 11.38MB / 11.38MB 1.2s done
+#4 sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095 244B / 244B 1.3s done
+#4 sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 0B / 3.13MB 1.4s
+#4 sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 3.13MB / 3.13MB 1.6s
+#4 sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 3.13MB / 3.13MB 1.6s done
+#4 extracting sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 1.8s done
+#4 extracting sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba
+#4 extracting sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 0.2s done
+#4 extracting sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b
+#4 extracting sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 0.7s done
+#4 extracting sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095
+#4 extracting sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095 done
+#4 extracting sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc
+#4 extracting sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 0.3s done
+#4 DONE 6.4s
+
+#6 [2/5] RUN useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat-openbsd
+#6 0.903 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#6 0.933 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#6 0.944 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#6 1.019 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#6 1.134 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#6 1.147 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#6 2.485 Fetched 9225 kB in 2s (5726 kB/s)
+#6 2.485 Reading package lists...
+#6 3.187 Reading package lists...
+#6 3.868 Building dependency tree...
+#6 3.996 Reading state information...
+#6 4.145 The following additional packages will be installed:
+#6 4.145   git-man less libbrotli1 libbsd0 libcbor0.8 libcurl3-gnutls libedit2
+#6 4.145   liberror-perl libfido2-1 libgdbm-compat4 libldap-2.5-0 libldap-common
+#6 4.145   libnghttp2-14 libperl5.36 libpsl5 librtmp1 libsasl2-2 libsasl2-modules
+#6 4.145   libsasl2-modules-db libssh2-1 libssl3 libx11-6 libx11-data libxau6 libxcb1
+#6 4.145   libxdmcp6 libxext6 libxmuu1 openssh-client openssl patch perl perl-base
+#6 4.146   perl-modules-5.36 publicsuffix xauth
+#6 4.147 Suggested packages:
+#6 4.147   gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui
+#6 4.147   gitk gitweb git-cvs git-mediawiki git-svn sensible-utils
+#6 4.147   libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal
+#6 4.147   libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql keychain
+#6 4.147   libpam-ssh monkeysphere ssh-askpass ed diffutils-doc perl-doc
+#6 4.147   libterm-readline-gnu-perl | libterm-readline-perl-perl make
+#6 4.147   libtap-harness-archive-perl
+#6 4.433 The following NEW packages will be installed:
+#6 4.433   git git-man less libbrotli1 libbsd0 libcbor0.8 libcurl3-gnutls libedit2
+#6 4.433   liberror-perl libfido2-1 libgdbm-compat4 libldap-2.5-0 libldap-common
+#6 4.433   libnghttp2-14 libperl5.36 libpsl5 librtmp1 libsasl2-2 libsasl2-modules
+#6 4.433   libsasl2-modules-db libssh2-1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6
+#6 4.433   libxext6 libxmuu1 netcat-openbsd openssh-client patch perl perl-modules-5.36
+#6 4.434   publicsuffix xauth
+#6 4.434 The following packages will be upgraded:
+#6 4.435   libssl3 openssl perl-base
+#6 4.475 3 upgraded, 35 newly installed, 0 to remove and 29 not upgraded.
+#6 4.475 Need to get 26.1 MB of archives.
+#6 4.475 After this operation, 112 MB of additional disk space will be used.
+#6 4.475 Get:1 http://deb.debian.org/debian bookworm/main amd64 perl-base amd64 5.36.0-7+deb12u1 [1608 kB]
+#6 4.538 Get:2 http://deb.debian.org/debian bookworm/main amd64 perl-modules-5.36 all 5.36.0-7+deb12u1 [2815 kB]
+#6 4.563 Get:3 http://deb.debian.org/debian bookworm/main amd64 libgdbm-compat4 amd64 1.23-3 [48.2 kB]
+#6 4.564 Get:4 http://deb.debian.org/debian bookworm/main amd64 libperl5.36 amd64 5.36.0-7+deb12u1 [4218 kB]
+#6 4.601 Get:5 http://deb.debian.org/debian bookworm/main amd64 perl amd64 5.36.0-7+deb12u1 [239 kB]
+#6 4.603 Get:6 http://deb.debian.org/debian bookworm/main amd64 less amd64 590-2.1~deb12u2 [132 kB]
+#6 4.611 Get:7 http://deb.debian.org/debian bookworm/main amd64 libbsd0 amd64 0.11.7-2 [117 kB]
+#6 4.611 Get:8 http://deb.debian.org/debian bookworm/main amd64 libedit2 amd64 3.1-20221030-2 [93.0 kB]
+#6 4.613 Get:9 http://deb.debian.org/debian bookworm/main amd64 libcbor0.8 amd64 0.8.0-2+b1 [27.4 kB]
+#6 4.613 Get:10 http://deb.debian.org/debian bookworm/main amd64 libssl3 amd64 3.0.13-1~deb12u1 [2022 kB]
+#6 4.630 Get:11 http://deb.debian.org/debian bookworm/main amd64 libfido2-1 amd64 1.12.0-2+b1 [77.2 kB]
+#6 4.631 Get:12 http://deb.debian.org/debian-security bookworm-security/main amd64 openssh-client amd64 1:9.2p1-2+deb12u3 [991 kB]
+#6 4.637 Get:13 http://deb.debian.org/debian bookworm/main amd64 libbrotli1 amd64 1.0.9-2+b6 [275 kB]
+#6 4.639 Get:14 http://deb.debian.org/debian bookworm/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg-10 [20.3 kB]
+#6 4.640 Get:15 http://deb.debian.org/debian bookworm/main amd64 libsasl2-2 amd64 2.1.28+dfsg-10 [59.7 kB]
+#6 4.641 Get:16 http://deb.debian.org/debian bookworm/main amd64 libldap-2.5-0 amd64 2.5.13+dfsg-5 [183 kB]
+#6 4.642 Get:17 http://deb.debian.org/debian bookworm/main amd64 libnghttp2-14 amd64 1.52.0-1+deb12u1 [72.4 kB]
+#6 4.643 Get:18 http://deb.debian.org/debian bookworm/main amd64 libpsl5 amd64 0.21.2-1 [58.7 kB]
+#6 4.644 Get:19 http://deb.debian.org/debian bookworm/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]
+#6 4.646 Get:20 http://deb.debian.org/debian bookworm/main amd64 libssh2-1 amd64 1.10.0-3+b1 [179 kB]
+#6 4.648 Get:21 http://deb.debian.org/debian bookworm/main amd64 libcurl3-gnutls amd64 7.88.1-10+deb12u6 [385 kB]
+#6 4.652 Get:22 http://deb.debian.org/debian bookworm/main amd64 liberror-perl all 0.17029-2 [29.0 kB]
+#6 4.653 Get:23 http://deb.debian.org/debian bookworm/main amd64 git-man all 1:2.39.2-1.1 [2049 kB]
+#6 4.673 Get:24 http://deb.debian.org/debian bookworm/main amd64 git amd64 1:2.39.2-1.1 [7171 kB]
+#6 4.736 Get:25 http://deb.debian.org/debian bookworm/main amd64 libldap-common all 2.5.13+dfsg-5 [29.3 kB]
+#6 4.736 Get:26 http://deb.debian.org/debian bookworm/main amd64 libsasl2-modules amd64 2.1.28+dfsg-10 [66.6 kB]
+#6 4.737 Get:27 http://deb.debian.org/debian bookworm/main amd64 libxau6 amd64 1:1.0.9-1 [19.7 kB]
+#6 4.738 Get:28 http://deb.debian.org/debian bookworm/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+#6 4.738 Get:29 http://deb.debian.org/debian bookworm/main amd64 libxcb1 amd64 1.15-1 [144 kB]
+#6 4.740 Get:30 http://deb.debian.org/debian bookworm/main amd64 libx11-data all 2:1.8.4-2+deb12u2 [292 kB]
+#6 4.743 Get:31 http://deb.debian.org/debian bookworm/main amd64 libx11-6 amd64 2:1.8.4-2+deb12u2 [760 kB]
+#6 4.750 Get:32 http://deb.debian.org/debian bookworm/main amd64 libxext6 amd64 2:1.3.4-1+b1 [52.9 kB]
+#6 4.751 Get:33 http://deb.debian.org/debian bookworm/main amd64 libxmuu1 amd64 2:1.1.3-3 [23.9 kB]
+#6 4.751 Get:34 http://deb.debian.org/debian bookworm/main amd64 netcat-openbsd amd64 1.219-1 [41.5 kB]
+#6 4.756 Get:35 http://deb.debian.org/debian bookworm/main amd64 openssl amd64 3.0.13-1~deb12u1 [1418 kB]
+#6 4.769 Get:36 http://deb.debian.org/debian bookworm/main amd64 patch amd64 2.7.6-7 [128 kB]
+#6 4.771 Get:37 http://deb.debian.org/debian bookworm/main amd64 publicsuffix all 20230209.2326-1 [126 kB]
+#6 4.772 Get:38 http://deb.debian.org/debian bookworm/main amd64 xauth amd64 1:1.1.2-1 [36.0 kB]
+#6 4.990 debconf: delaying package configuration, since apt-utils is not installed
+#6 5.058 Fetched 26.1 MB in 0s (78.9 MB/s)
+#6 5.213 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6705 files and directories currently installed.)
+#6 5.215 Preparing to unpack .../perl-base_5.36.0-7+deb12u1_amd64.deb ...
+#6 5.306 Unpacking perl-base (5.36.0-7+deb12u1) over (5.36.0-7) ...
+#6 23.78 Setting up perl-base (5.36.0-7+deb12u1) ...
+#6 23.98 Selecting previously unselected package perl-modules-5.36.
+#6 23.98 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6706 files and directories currently installed.)
+#6 23.98 Preparing to unpack .../00-perl-modules-5.36_5.36.0-7+deb12u1_all.deb ...
+#6 24.01 Unpacking perl-modules-5.36 (5.36.0-7+deb12u1) ...
+#6 25.33 Selecting previously unselected package libgdbm-compat4:amd64.
+#6 25.33 Preparing to unpack .../01-libgdbm-compat4_1.23-3_amd64.deb ...
+#6 25.38 Unpacking libgdbm-compat4:amd64 (1.23-3) ...
+#6 25.59 Selecting previously unselected package libperl5.36:amd64.
+#6 25.59 Preparing to unpack .../02-libperl5.36_5.36.0-7+deb12u1_amd64.deb ...
+#6 25.61 Unpacking libperl5.36:amd64 (5.36.0-7+deb12u1) ...
+#6 35.12 Selecting previously unselected package perl.
+#6 35.12 Preparing to unpack .../03-perl_5.36.0-7+deb12u1_amd64.deb ...
+#6 35.15 Unpacking perl (5.36.0-7+deb12u1) ...
+#6 35.37 Selecting previously unselected package less.
+#6 35.37 Preparing to unpack .../04-less_590-2.1~deb12u2_amd64.deb ...
+#6 35.40 Unpacking less (590-2.1~deb12u2) ...
+#6 35.63 Selecting previously unselected package libbsd0:amd64.
+#6 35.63 Preparing to unpack .../05-libbsd0_0.11.7-2_amd64.deb ...
+#6 35.66 Unpacking libbsd0:amd64 (0.11.7-2) ...
+#6 35.86 Selecting previously unselected package libedit2:amd64.
+#6 35.86 Preparing to unpack .../06-libedit2_3.1-20221030-2_amd64.deb ...
+#6 35.88 Unpacking libedit2:amd64 (3.1-20221030-2) ...
+#6 36.21 Selecting previously unselected package libcbor0.8:amd64.
+#6 36.21 Preparing to unpack .../07-libcbor0.8_0.8.0-2+b1_amd64.deb ...
+#6 36.23 Unpacking libcbor0.8:amd64 (0.8.0-2+b1) ...
+#6 36.48 Preparing to unpack .../08-libssl3_3.0.13-1~deb12u1_amd64.deb ...
+#6 36.55 Unpacking libssl3:amd64 (3.0.13-1~deb12u1) over (3.0.9-1) ...
+#6 37.18 Selecting previously unselected package libfido2-1:amd64.
+#6 37.18 Preparing to unpack .../09-libfido2-1_1.12.0-2+b1_amd64.deb ...
+#6 37.20 Unpacking libfido2-1:amd64 (1.12.0-2+b1) ...
+#6 37.45 Selecting previously unselected package openssh-client.
+#6 37.45 Preparing to unpack .../10-openssh-client_1%3a9.2p1-2+deb12u3_amd64.deb ...
+#6 37.48 Unpacking openssh-client (1:9.2p1-2+deb12u3) ...
+#6 37.85 Selecting previously unselected package libbrotli1:amd64.
+#6 37.85 Preparing to unpack .../11-libbrotli1_1.0.9-2+b6_amd64.deb ...
+#6 37.87 Unpacking libbrotli1:amd64 (1.0.9-2+b6) ...
+#6 38.07 Selecting previously unselected package libsasl2-modules-db:amd64.
+#6 38.07 Preparing to unpack .../12-libsasl2-modules-db_2.1.28+dfsg-10_amd64.deb ...
+#6 38.09 Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#6 38.30 Selecting previously unselected package libsasl2-2:amd64.
+#6 38.30 Preparing to unpack .../13-libsasl2-2_2.1.28+dfsg-10_amd64.deb ...
+#6 38.33 Unpacking libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#6 38.54 Selecting previously unselected package libldap-2.5-0:amd64.
+#6 38.54 Preparing to unpack .../14-libldap-2.5-0_2.5.13+dfsg-5_amd64.deb ...
+#6 38.56 Unpacking libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#6 38.80 Selecting previously unselected package libnghttp2-14:amd64.
+#6 38.80 Preparing to unpack .../15-libnghttp2-14_1.52.0-1+deb12u1_amd64.deb ...
+#6 38.82 Unpacking libnghttp2-14:amd64 (1.52.0-1+deb12u1) ...
+#6 39.07 Selecting previously unselected package libpsl5:amd64.
+#6 39.07 Preparing to unpack .../16-libpsl5_0.21.2-1_amd64.deb ...
+#6 39.09 Unpacking libpsl5:amd64 (0.21.2-1) ...
+#6 39.80 Selecting previously unselected package librtmp1:amd64.
+#6 39.80 Preparing to unpack .../17-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
+#6 39.83 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#6 40.09 Selecting previously unselected package libssh2-1:amd64.
+#6 40.09 Preparing to unpack .../18-libssh2-1_1.10.0-3+b1_amd64.deb ...
+#6 40.12 Unpacking libssh2-1:amd64 (1.10.0-3+b1) ...
+#6 40.34 Selecting previously unselected package libcurl3-gnutls:amd64.
+#6 40.34 Preparing to unpack .../19-libcurl3-gnutls_7.88.1-10+deb12u6_amd64.deb ...
+#6 40.37 Unpacking libcurl3-gnutls:amd64 (7.88.1-10+deb12u6) ...
+#6 40.57 Selecting previously unselected package liberror-perl.
+#6 40.57 Preparing to unpack .../20-liberror-perl_0.17029-2_all.deb ...
+#6 40.60 Unpacking liberror-perl (0.17029-2) ...
+#6 40.78 Selecting previously unselected package git-man.
+#6 40.78 Preparing to unpack .../21-git-man_1%3a2.39.2-1.1_all.deb ...
+#6 40.81 Unpacking git-man (1:2.39.2-1.1) ...
+#6 41.25 Selecting previously unselected package git.
+#6 41.25 Preparing to unpack .../22-git_1%3a2.39.2-1.1_amd64.deb ...
+#6 41.28 Unpacking git (1:2.39.2-1.1) ...
+#6 42.17 Selecting previously unselected package libldap-common.
+#6 42.17 Preparing to unpack .../23-libldap-common_2.5.13+dfsg-5_all.deb ...
+#6 42.19 Unpacking libldap-common (2.5.13+dfsg-5) ...
+#6 42.47 Selecting previously unselected package libsasl2-modules:amd64.
+#6 42.47 Preparing to unpack .../24-libsasl2-modules_2.1.28+dfsg-10_amd64.deb ...
+#6 42.50 Unpacking libsasl2-modules:amd64 (2.1.28+dfsg-10) ...
+#6 42.70 Selecting previously unselected package libxau6:amd64.
+#6 42.70 Preparing to unpack .../25-libxau6_1%3a1.0.9-1_amd64.deb ...
+#6 42.72 Unpacking libxau6:amd64 (1:1.0.9-1) ...
+#6 42.92 Selecting previously unselected package libxdmcp6:amd64.
+#6 42.92 Preparing to unpack .../26-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+#6 42.95 Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+#6 43.15 Selecting previously unselected package libxcb1:amd64.
+#6 43.15 Preparing to unpack .../27-libxcb1_1.15-1_amd64.deb ...
+#6 43.18 Unpacking libxcb1:amd64 (1.15-1) ...
+#6 43.34 Selecting previously unselected package libx11-data.
+#6 43.34 Preparing to unpack .../28-libx11-data_2%3a1.8.4-2+deb12u2_all.deb ...
+#6 43.36 Unpacking libx11-data (2:1.8.4-2+deb12u2) ...
+#6 43.72 Selecting previously unselected package libx11-6:amd64.
+#6 43.72 Preparing to unpack .../29-libx11-6_2%3a1.8.4-2+deb12u2_amd64.deb ...
+#6 43.74 Unpacking libx11-6:amd64 (2:1.8.4-2+deb12u2) ...
+#6 44.02 Selecting previously unselected package libxext6:amd64.
+#6 44.02 Preparing to unpack .../30-libxext6_2%3a1.3.4-1+b1_amd64.deb ...
+#6 44.05 Unpacking libxext6:amd64 (2:1.3.4-1+b1) ...
+#6 44.24 Selecting previously unselected package libxmuu1:amd64.
+#6 44.24 Preparing to unpack .../31-libxmuu1_2%3a1.1.3-3_amd64.deb ...
+#6 44.26 Unpacking libxmuu1:amd64 (2:1.1.3-3) ...
+#6 44.50 Selecting previously unselected package netcat-openbsd.
+#6 44.50 Preparing to unpack .../32-netcat-openbsd_1.219-1_amd64.deb ...
+#6 44.53 Unpacking netcat-openbsd (1.219-1) ...
+#6 44.72 Preparing to unpack .../33-openssl_3.0.13-1~deb12u1_amd64.deb ...
+#6 44.80 Unpacking openssl (3.0.13-1~deb12u1) over (3.0.9-1) ...
+#6 45.18 Selecting previously unselected package patch.
+#6 45.18 Preparing to unpack .../34-patch_2.7.6-7_amd64.deb ...
+#6 45.20 Unpacking patch (2.7.6-7) ...
+#6 45.37 Selecting previously unselected package publicsuffix.
+#6 45.37 Preparing to unpack .../35-publicsuffix_20230209.2326-1_all.deb ...
+#6 45.39 Unpacking publicsuffix (20230209.2326-1) ...
+#6 45.56 Selecting previously unselected package xauth.
+#6 45.56 Preparing to unpack .../36-xauth_1%3a1.1.2-1_amd64.deb ...
+#6 45.58 Unpacking xauth (1:1.1.2-1) ...
+#6 45.75 Setting up libxau6:amd64 (1:1.0.9-1) ...
+#6 45.83 Setting up libpsl5:amd64 (0.21.2-1) ...
+#6 45.98 Setting up libcbor0.8:amd64 (0.8.0-2+b1) ...
+#6 46.06 Setting up libbrotli1:amd64 (1.0.9-2+b6) ...
+#6 46.14 Setting up libssl3:amd64 (3.0.13-1~deb12u1) ...
+#6 46.21 Setting up libnghttp2-14:amd64 (1.52.0-1+deb12u1) ...
+#6 46.29 Setting up less (590-2.1~deb12u2) ...
+#6 46.40 Setting up libldap-common (2.5.13+dfsg-5) ...
+#6 46.96 Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#6 47.86 Setting up perl-modules-5.36 (5.36.0-7+deb12u1) ...
+#6 47.93 Setting up libx11-data (2:1.8.4-2+deb12u2) ...
+#6 48.01 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#6 48.08 Setting up patch (2.7.6-7) ...
+#6 48.14 Setting up libgdbm-compat4:amd64 (1.23-3) ...
+#6 48.22 Setting up libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#6 48.30 Setting up git-man (1:2.39.2-1.1) ...
+#6 48.37 Setting up libssh2-1:amd64 (1.10.0-3+b1) ...
+#6 48.45 Setting up libfido2-1:amd64 (1.12.0-2+b1) ...
+#6 48.51 Setting up openssl (3.0.13-1~deb12u1) ...
+#6 48.61 Setting up libbsd0:amd64 (0.11.7-2) ...
+#6 48.68 Setting up publicsuffix (20230209.2326-1) ...
+#6 48.76 Setting up libperl5.36:amd64 (5.36.0-7+deb12u1) ...
+#6 48.83 Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+#6 48.91 Setting up libxcb1:amd64 (1.15-1) ...
+#6 48.99 Setting up libedit2:amd64 (3.1-20221030-2) ...
+#6 49.06 Setting up libsasl2-modules:amd64 (2.1.28+dfsg-10) ...
+#6 49.15 Setting up netcat-openbsd (1.219-1) ...
+#6 49.19 update-alternatives: using /bin/nc.openbsd to provide /bin/nc (nc) in auto mode
+#6 49.19 update-alternatives: warning: skip creation of /usr/share/man/man1/nc.1.gz because associated file /usr/share/man/man1/nc_openbsd.1.gz (of link group nc) doesn't exist
+#6 49.19 update-alternatives: warning: skip creation of /usr/share/man/man1/netcat.1.gz because associated file /usr/share/man/man1/nc_openbsd.1.gz (of link group nc) doesn't exist
+#6 49.23 Setting up libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#6 49.31 Setting up perl (5.36.0-7+deb12u1) ...
+#6 49.41 Setting up libx11-6:amd64 (2:1.8.4-2+deb12u2) ...
+#6 49.48 Setting up libxmuu1:amd64 (2:1.1.3-3) ...
+#6 49.56 Setting up openssh-client (1:9.2p1-2+deb12u3) ...
+#6 49.83 Setting up libxext6:amd64 (2:1.3.4-1+b1) ...
+#6 49.91 Setting up libcurl3-gnutls:amd64 (7.88.1-10+deb12u6) ...
+#6 49.98 Setting up liberror-perl (0.17029-2) ...
+#6 50.06 Setting up git (1:2.39.2-1.1) ...
+#6 50.17 Setting up xauth (1:1.1.2-1) ...
+#6 50.24 Processing triggers for libc-bin (2.36-9+deb12u1) ...
+#6 DONE 50.6s
+
+#7 [3/5] COPY requirements.txt /requirements.txt
+#7 DONE 0.5s
+
+#8 [4/5] RUN python3 -m pip install -U pip setuptools     && python3 -m pip install -U -r /requirements.txt
+#8 2.497 Requirement already satisfied: pip in /usr/local/lib/python3.7/site-packages (23.0.1)
+#8 2.727 Collecting pip
+#8 2.796   Downloading pip-24.0-py3-none-any.whl (2.1 MB)
+#8 3.050      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 8.5 MB/s eta 0:00:00
+#8 3.073 Requirement already satisfied: setuptools in /usr/local/lib/python3.7/site-packages (57.5.0)
+#8 3.636 Collecting setuptools
+#8 3.646   Downloading setuptools-68.0.0-py3-none-any.whl (804 kB)
+#8 3.717      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 804.0/804.0 kB 11.9 MB/s eta 0:00:00
+#8 3.963 Installing collected packages: setuptools, pip
+#8 3.964   Attempting uninstall: setuptools
+#8 3.965     Found existing installation: setuptools 57.5.0
+#8 4.046     Uninstalling setuptools-57.5.0:
+#8 4.160       Successfully uninstalled setuptools-57.5.0
+#8 4.915   Attempting uninstall: pip
+#8 4.916     Found existing installation: pip 23.0.1
+#8 5.216     Uninstalling pip-23.0.1:
+#8 5.675       Successfully uninstalled pip-23.0.1
+#8 7.259 Successfully installed pip-24.0 setuptools-68.0.0
+#8 7.259 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#8 8.428 Collecting alembic==1.0.9 (from -r /requirements.txt (line 1))
+#8 8.495   Downloading alembic-1.0.9.tar.gz (1.0 MB)
+#8 8.647      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 6.9 MB/s eta 0:00:00
+#8 8.780   Preparing metadata (setup.py): started
+#8 9.198   Preparing metadata (setup.py): finished with status 'done'
+#8 9.297 Collecting attrs==19.1.0 (from -r /requirements.txt (line 2))
+#8 9.308   Downloading attrs-19.1.0-py2.py3-none-any.whl.metadata (10 kB)
+#8 9.496 Collecting beautifulsoup4==4.7.1 (from -r /requirements.txt (line 3))
+#8 9.506   Downloading beautifulsoup4-4.7.1-py3-none-any.whl.metadata (3.0 kB)
+#8 9.645 Collecting certifi==2019.3.9 (from -r /requirements.txt (line 4))
+#8 9.655   Downloading certifi-2019.3.9-py2.py3-none-any.whl.metadata (2.5 kB)
+#8 9.817 Collecting chardet==3.0.4 (from -r /requirements.txt (line 5))
+#8 9.826   Downloading chardet-3.0.4-py2.py3-none-any.whl.metadata (3.2 kB)
+#8 9.959 Collecting Click==7.0 (from -r /requirements.txt (line 6))
+#8 9.976   Downloading Click-7.0-py2.py3-none-any.whl.metadata (3.5 kB)
+#8 10.15 Collecting decorator==4.4.0 (from -r /requirements.txt (line 7))
+#8 10.16   Downloading decorator-4.4.0-py2.py3-none-any.whl.metadata (3.7 kB)
+#8 10.29 Collecting Flask==1.0.2 (from -r /requirements.txt (line 8))
+#8 10.30   Downloading Flask-1.0.2-py2.py3-none-any.whl.metadata (4.2 kB)
+#8 10.46 Collecting Flask-Compress==1.4.0 (from -r /requirements.txt (line 9))
+#8 10.47   Downloading Flask-Compress-1.4.0.tar.gz (6.0 kB)
+#8 10.51   Preparing metadata (setup.py): started
+#8 10.74   Preparing metadata (setup.py): finished with status 'done'
+#8 10.89 Collecting flask_jsontools==0.1.1.post0 (from -r /requirements.txt (line 10))
+#8 10.90   Downloading flask_jsontools-0.1.1-0.tar.gz (11 kB)
+#8 10.94   Preparing metadata (setup.py): started
+#8 11.17   Preparing metadata (setup.py): finished with status 'done'
+#8 11.57 Collecting gevent==1.4.0 (from -r /requirements.txt (line 11))
+#8 11.58   Downloading gevent-1.4.0-cp37-cp37m-manylinux1_x86_64.whl.metadata (14 kB)
+#8 12.01 Collecting greenlet==0.4.15 (from -r /requirements.txt (line 12))
+#8 12.03   Downloading greenlet-0.4.15-cp37-cp37m-manylinux1_x86_64.whl.metadata (3.3 kB)
+#8 12.18 Collecting gunicorn==19.9.0 (from -r /requirements.txt (line 13))
+#8 12.19   Downloading gunicorn-19.9.0-py2.py3-none-any.whl.metadata (3.4 kB)
+#8 12.29 Collecting idna==2.8 (from -r /requirements.txt (line 14))
+#8 12.30   Downloading idna-2.8-py2.py3-none-any.whl.metadata (8.9 kB)
+#8 12.45 Collecting ipython-genutils==0.2.0 (from -r /requirements.txt (line 15))
+#8 12.46   Downloading ipython_genutils-0.2.0-py2.py3-none-any.whl.metadata (755 bytes)
+#8 12.56 Collecting itsdangerous==1.1.0 (from -r /requirements.txt (line 16))
+#8 12.57   Downloading itsdangerous-1.1.0-py2.py3-none-any.whl.metadata (3.1 kB)
+#8 12.69 Collecting Jinja2==2.10.1 (from -r /requirements.txt (line 17))
+#8 12.70   Downloading Jinja2-2.10.1-py2.py3-none-any.whl.metadata (2.2 kB)
+#8 12.85 Collecting jsonschema==3.0.1 (from -r /requirements.txt (line 18))
+#8 12.86   Downloading jsonschema-3.0.1-py2.py3-none-any.whl.metadata (6.2 kB)
+#8 13.46 Collecting lxml==4.3.3 (from -r /requirements.txt (line 19))
+#8 13.48   Downloading lxml-4.3.3-cp37-cp37m-manylinux1_x86_64.whl.metadata (3.0 kB)
+#8 13.59 Collecting Mako==1.0.9 (from -r /requirements.txt (line 20))
+#8 13.60   Downloading Mako-1.0.9.tar.gz (459 kB)
+#8 13.67      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 459.6/459.6 kB 6.7 MB/s eta 0:00:00
+#8 13.76   Preparing metadata (setup.py): started
+#8 14.08   Preparing metadata (setup.py): finished with status 'done'
+#8 14.25 Collecting MarkupSafe==1.1.1 (from -r /requirements.txt (line 21))
+#8 14.26   Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux2010_x86_64.whl.metadata (3.2 kB)
+#8 14.67 Collecting mypy==0.701 (from -r /requirements.txt (line 22))
+#8 14.68   Downloading mypy-0.701-cp37-cp37m-manylinux1_x86_64.whl.metadata (1.3 kB)
+#8 14.80 Collecting mypy-extensions==0.4.1 (from -r /requirements.txt (line 23))
+#8 14.81   Downloading mypy_extensions-0.4.1-py2.py3-none-any.whl.metadata (1.0 kB)
+#8 15.06 Collecting psycopg2-binary==2.8.2 (from -r /requirements.txt (line 24))
+#8 15.07   Downloading psycopg2_binary-2.8.2-cp37-cp37m-manylinux1_x86_64.whl.metadata (4.3 kB)
+#8 15.71 Collecting PyMySQL==0.9.3 (from -r /requirements.txt (line 25))
+#8 15.72   Downloading PyMySQL-0.9.3-py2.py3-none-any.whl.metadata (5.2 kB)
+#8 15.93 Collecting pyrsistent==0.14.11 (from -r /requirements.txt (line 26))
+#8 15.94   Downloading pyrsistent-0.14.11.tar.gz (104 kB)
+#8 15.99      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 104.5/104.5 kB 2.1 MB/s eta 0:00:00
+#8 16.01   Preparing metadata (setup.py): started
+#8 16.25   Preparing metadata (setup.py): finished with status 'done'
+#8 16.33 Collecting python-dateutil==2.8.0 (from -r /requirements.txt (line 27))
+#8 16.35   Downloading python_dateutil-2.8.0-py2.py3-none-any.whl.metadata (7.6 kB)
+#8 16.51 Collecting python-editor==1.0.4 (from -r /requirements.txt (line 28))
+#8 16.52   Downloading python_editor-1.0.4-py3-none-any.whl.metadata (2.2 kB)
+#8 16.72 Collecting pytz==2019.1 (from -r /requirements.txt (line 29))
+#8 16.73   Downloading pytz-2019.1-py2.py3-none-any.whl.metadata (20 kB)
+#8 16.91 Collecting requests==2.21.0 (from -r /requirements.txt (line 30))
+#8 16.92   Downloading requests-2.21.0-py2.py3-none-any.whl.metadata (5.5 kB)
+#8 17.11 Collecting retrying==1.3.3 (from -r /requirements.txt (line 31))
+#8 17.12   Downloading retrying-1.3.3.tar.gz (10 kB)
+#8 17.16   Preparing metadata (setup.py): started
+#8 17.39   Preparing metadata (setup.py): finished with status 'done'
+#8 17.53 Collecting schedule==0.6.0 (from -r /requirements.txt (line 32))
+#8 17.54   Downloading schedule-0.6.0-py2.py3-none-any.whl.metadata (2.8 kB)
+#8 17.65 Collecting six==1.12.0 (from -r /requirements.txt (line 33))
+#8 17.66   Downloading six-1.12.0-py2.py3-none-any.whl.metadata (1.9 kB)
+#8 17.84 Collecting soupsieve==1.9.1 (from -r /requirements.txt (line 34))
+#8 17.86   Downloading soupsieve-1.9.1-py2.py3-none-any.whl.metadata (5.2 kB)
+#8 18.83 Collecting SQLAlchemy==1.3.3 (from -r /requirements.txt (line 35))
+#8 18.84   Downloading SQLAlchemy-1.3.3.tar.gz (5.9 MB)
+#8 19.13      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.9/5.9 MB 20.4 MB/s eta 0:00:00
+#8 19.88   Preparing metadata (setup.py): started
+#8 20.43   Preparing metadata (setup.py): finished with status 'done'
+#8 20.61 Collecting sqlalchemy-stubs==0.1 (from -r /requirements.txt (line 36))
+#8 20.62   Downloading sqlalchemy_stubs-0.1-py3-none-any.whl.metadata (1.1 kB)
+#8 20.81 Collecting traitlets==4.3.2 (from -r /requirements.txt (line 37))
+#8 20.82   Downloading traitlets-4.3.2-py2.py3-none-any.whl.metadata (1.2 kB)
+#8 21.07 Collecting typed-ast==1.3.4 (from -r /requirements.txt (line 38))
+#8 21.08   Downloading typed_ast-1.3.4-cp37-cp37m-manylinux1_x86_64.whl.metadata (1.2 kB)
+#8 21.22 Collecting typing-extensions==3.7.2 (from -r /requirements.txt (line 39))
+#8 21.23   Downloading typing_extensions-3.7.2-py3-none-any.whl.metadata (1.8 kB)
+#8 21.40 Collecting urllib3==1.24.2 (from -r /requirements.txt (line 40))
+#8 21.41   Downloading urllib3-1.24.2-py2.py3-none-any.whl.metadata (35 kB)
+#8 21.57 Collecting Werkzeug==0.15.3 (from -r /requirements.txt (line 41))
+#8 21.58   Downloading Werkzeug-0.15.3-py2.py3-none-any.whl.metadata (4.9 kB)
+#8 22.06 Requirement already satisfied: setuptools in /usr/local/lib/python3.7/site-packages (from jsonschema==3.0.1->-r /requirements.txt (line 18)) (68.0.0)
+#8 22.69 Downloading attrs-19.1.0-py2.py3-none-any.whl (35 kB)
+#8 22.74 Downloading beautifulsoup4-4.7.1-py3-none-any.whl (94 kB)
+#8 22.78    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.3/94.3 kB 2.2 MB/s eta 0:00:00
+#8 22.80 Downloading certifi-2019.3.9-py2.py3-none-any.whl (158 kB)
+#8 22.85    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 158.6/158.6 kB 3.0 MB/s eta 0:00:00
+#8 22.86 Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+#8 22.90    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.4/133.4 kB 3.4 MB/s eta 0:00:00
+#8 22.91 Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+#8 22.95    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.3/81.3 kB 2.0 MB/s eta 0:00:00
+#8 22.96 Downloading decorator-4.4.0-py2.py3-none-any.whl (8.3 kB)
+#8 23.01 Downloading Flask-1.0.2-py2.py3-none-any.whl (91 kB)
+#8 23.05    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.4/91.4 kB 2.0 MB/s eta 0:00:00
+#8 23.06 Downloading gevent-1.4.0-cp37-cp37m-manylinux1_x86_64.whl (5.4 MB)
+#8 23.26    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 27.6 MB/s eta 0:00:00
+#8 23.27 Downloading greenlet-0.4.15-cp37-cp37m-manylinux1_x86_64.whl (42 kB)
+#8 23.32    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.4/42.4 kB 777.8 kB/s eta 0:00:00
+#8 23.33 Downloading gunicorn-19.9.0-py2.py3-none-any.whl (112 kB)
+#8 23.38    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 112.9/112.9 kB 2.3 MB/s eta 0:00:00
+#8 23.39 Downloading idna-2.8-py2.py3-none-any.whl (58 kB)
+#8 23.44    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.6/58.6 kB 1.1 MB/s eta 0:00:00
+#8 23.45 Downloading ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)
+#8 23.49 Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+#8 23.55 Downloading Jinja2-2.10.1-py2.py3-none-any.whl (124 kB)
+#8 23.59    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 124.9/124.9 kB 2.9 MB/s eta 0:00:00
+#8 23.60 Downloading jsonschema-3.0.1-py2.py3-none-any.whl (54 kB)
+#8 23.64    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.4/54.4 kB 1.2 MB/s eta 0:00:00
+#8 23.65 Downloading lxml-4.3.3-cp37-cp37m-manylinux1_x86_64.whl (5.7 MB)
+#8 23.86    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 27.7 MB/s eta 0:00:00
+#8 23.87 Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux2010_x86_64.whl (33 kB)
+#8 23.91 Downloading mypy-0.701-cp37-cp37m-manylinux1_x86_64.whl (19.8 MB)
+#8 24.55    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.8/19.8 MB 21.2 MB/s eta 0:00:00
+#8 24.57 Downloading mypy_extensions-0.4.1-py2.py3-none-any.whl (3.6 kB)
+#8 24.61 Downloading psycopg2_binary-2.8.2-cp37-cp37m-manylinux1_x86_64.whl (2.9 MB)
+#8 24.82    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 14.4 MB/s eta 0:00:00
+#8 24.83 Downloading PyMySQL-0.9.3-py2.py3-none-any.whl (47 kB)
+#8 24.87    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.7/47.7 kB 1.1 MB/s eta 0:00:00
+#8 24.88 Downloading python_dateutil-2.8.0-py2.py3-none-any.whl (226 kB)
+#8 24.93    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.8/226.8 kB 4.3 MB/s eta 0:00:00
+#8 24.94 Downloading python_editor-1.0.4-py3-none-any.whl (4.9 kB)
+#8 24.99 Downloading pytz-2019.1-py2.py3-none-any.whl (510 kB)
+#8 25.05    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 510.9/510.9 kB 9.2 MB/s eta 0:00:00
+#8 25.06 Downloading requests-2.21.0-py2.py3-none-any.whl (57 kB)
+#8 25.10    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.0/58.0 kB 1.3 MB/s eta 0:00:00
+#8 25.11 Downloading schedule-0.6.0-py2.py3-none-any.whl (8.7 kB)
+#8 25.16 Downloading six-1.12.0-py2.py3-none-any.whl (10 kB)
+#8 25.21 Downloading soupsieve-1.9.1-py2.py3-none-any.whl (33 kB)
+#8 25.26 Downloading sqlalchemy_stubs-0.1-py3-none-any.whl (107 kB)
+#8 25.31    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.7/107.7 kB 2.1 MB/s eta 0:00:00
+#8 25.32 Downloading traitlets-4.3.2-py2.py3-none-any.whl (74 kB)
+#8 26.10    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.7/74.7 kB 1.3 MB/s eta 0:00:00
+#8 26.12 Downloading typed_ast-1.3.4-cp37-cp37m-manylinux1_x86_64.whl (736 kB)
+#8 26.18    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 736.2/736.2 kB 12.1 MB/s eta 0:00:00
+#8 26.19 Downloading typing_extensions-3.7.2-py3-none-any.whl (16 kB)
+#8 26.24 Downloading urllib3-1.24.2-py2.py3-none-any.whl (131 kB)
+#8 26.29    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.7/131.7 kB 2.6 MB/s eta 0:00:00
+#8 26.30 Downloading Werkzeug-0.15.3-py2.py3-none-any.whl (327 kB)
+#8 26.36    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 327.6/327.6 kB 6.1 MB/s eta 0:00:00
+#8 26.61 Building wheels for collected packages: alembic, Flask-Compress, flask_jsontools, Mako, pyrsistent, retrying, SQLAlchemy
+#8 26.61   Building wheel for alembic (setup.py): started
+#8 27.20   Building wheel for alembic (setup.py): finished with status 'done'
+#8 27.21   Created wheel for alembic: filename=alembic-1.0.9-py2.py3-none-any.whl size=159786 sha256=efc6a00ce2ed66f6b29b015abda400348fb1b12c8ad535a0b5f3928da7a0247a
+#8 27.21   Stored in directory: /root/.cache/pip/wheels/11/d8/fc/0f42cda66e6095045a2e325ffdaea9c9b991afba521aea42ca
+#8 27.21   Building wheel for Flask-Compress (setup.py): started
+#8 27.51   Building wheel for Flask-Compress (setup.py): finished with status 'done'
+#8 27.51   Created wheel for Flask-Compress: filename=Flask_Compress-1.4.0-py3-none-any.whl size=3721 sha256=af509e8c0888a896a1fddcae60c2ff743e45a8e58f80ddc52e9978a15175af5e
+#8 27.51   Stored in directory: /root/.cache/pip/wheels/1f/42/7e/72241359a71f5f9d4e97f55e6d4ac99939efaec4e1fa7b23b8
+#8 27.51   Building wheel for flask_jsontools (setup.py): started
+#8 27.82   Building wheel for flask_jsontools (setup.py): finished with status 'done'
+#8 27.82   Created wheel for flask_jsontools: filename=flask_jsontools-0.1.1.post0-py3-none-any.whl size=11425 sha256=47a555a818301c0d49c09a697511e43d6c30a1be5e491312efdb968bad86ce36
+#8 27.82   Stored in directory: /root/.cache/pip/wheels/54/00/11/48b6a2df5e3504f63894688ce7253303fa15251062cecd5dc6
+#8 27.82   Building wheel for Mako (setup.py): started
+#8 28.26   Building wheel for Mako (setup.py): finished with status 'done'
+#8 28.26   Created wheel for Mako: filename=Mako-1.0.9-py3-none-any.whl size=76635 sha256=e0209f2554668f081d98f829264c0a7dee6d36d4049a0c5f35e7645489da63a5
+#8 28.26   Stored in directory: /root/.cache/pip/wheels/60/6a/db/84d30496ff9ece597742610a627aa30da6a8cdd660a92014c2
+#8 28.27   Building wheel for pyrsistent (setup.py): started
+#8 28.62   Building wheel for pyrsistent (setup.py): finished with status 'done'
+#8 28.62   Created wheel for pyrsistent: filename=pyrsistent-0.14.11-cp37-cp37m-linux_x86_64.whl size=54736 sha256=8a8209a8c99f472392e33db1d60780b6c886198582cd7fc298b271ce85298421
+#8 28.62   Stored in directory: /root/.cache/pip/wheels/20/78/0a/4d5c19e3868f7dd8df2fa8c2933f01ba28948a3f0b10faccf4
+#8 28.63   Building wheel for retrying (setup.py): started
+#8 28.93   Building wheel for retrying (setup.py): finished with status 'done'
+#8 28.93   Created wheel for retrying: filename=retrying-1.3.3-py3-none-any.whl size=11428 sha256=c417298974958f2f150cced7688584389fa3b41ba99001eb29f1bce2f2895261
+#8 28.93   Stored in directory: /root/.cache/pip/wheels/f9/8d/8d/f6af3f7f9eea3553bc2fe6d53e4b287dad18b06a861ac56ddf
+#8 28.93   Building wheel for SQLAlchemy (setup.py): started
+#8 30.10   Building wheel for SQLAlchemy (setup.py): finished with status 'done'
+#8 30.10   Created wheel for SQLAlchemy: filename=SQLAlchemy-1.3.3-cp37-cp37m-linux_x86_64.whl size=1123208 sha256=98ffc2371c35b5d7ab98f81c5f42385daaab386b66ad5a12646a3b64e7fc63bb
+#8 30.10   Stored in directory: /root/.cache/pip/wheels/33/68/a5/e7099cc3a176110335d157276d8eb738613a6e86cabbd1d3a5
+#8 30.11 Successfully built alembic Flask-Compress flask_jsontools Mako pyrsistent retrying SQLAlchemy
+#8 30.42 Installing collected packages: typing-extensions, typed-ast, soupsieve, schedule, pytz, python-editor, PyMySQL, mypy-extensions, lxml, ipython-genutils, greenlet, chardet, certifi, Werkzeug, urllib3, SQLAlchemy, six, psycopg2-binary, mypy, MarkupSafe, itsdangerous, idna, gunicorn, gevent, decorator, Click, beautifulsoup4, attrs, traitlets, sqlalchemy-stubs, retrying, requests, python-dateutil, pyrsistent, Mako, Jinja2, jsonschema, Flask, alembic, flask_jsontools, Flask-Compress
+#8 37.34 Successfully installed Click-7.0 Flask-1.0.2 Flask-Compress-1.4.0 Jinja2-2.10.1 Mako-1.0.9 MarkupSafe-1.1.1 PyMySQL-0.9.3 SQLAlchemy-1.3.3 Werkzeug-0.15.3 alembic-1.0.9 attrs-19.1.0 beautifulsoup4-4.7.1 certifi-2019.3.9 chardet-3.0.4 decorator-4.4.0 flask_jsontools-0.1.1.post0 gevent-1.4.0 greenlet-0.4.15 gunicorn-19.9.0 idna-2.8 ipython-genutils-0.2.0 itsdangerous-1.1.0 jsonschema-3.0.1 lxml-4.3.3 mypy-0.701 mypy-extensions-0.4.1 psycopg2-binary-2.8.2 pyrsistent-0.14.11 python-dateutil-2.8.0 python-editor-1.0.4 pytz-2019.1 requests-2.21.0 retrying-1.3.3 schedule-0.6.0 six-1.12.0 soupsieve-1.9.1 sqlalchemy-stubs-0.1 traitlets-4.3.2 typed-ast-1.3.4 typing-extensions-3.7.2 urllib3-1.24.2
+#8 37.34 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#8 DONE 41.3s
+
+#9 [5/5] WORKDIR /home/worker
+#9 DONE 0.5s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 3.0s done
+#10 writing image sha256:b228b2d01452dd29d8d24d41496265ff841a27a37ab5bfd6559e175f88706522 0.0s done
+#10 naming to docker.io/library/image_name_v1_1 0.0s done
+#10 DONE 3.1s
+Duration: 1:44.81

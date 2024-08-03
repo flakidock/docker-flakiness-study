@@ -1,0 +1,138 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 2.56kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:stretch
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 7.61kB done
+#4 DONE 0.0s
+
+#5 [ 1/12] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 0.0s done
+#5 sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 1.21kB / 1.21kB done
+#5 sha256:16ee3e11da473f6565ef94a715f1a38b3079e0664913be78869c336a71cb6085 529B / 529B done
+#5 sha256:662c05203bab4c59568d24689fa5c3955439360a35c483178598d226b9a5ad10 1.46kB / 1.46kB done
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 0B / 45.43MB 0.1s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 12.58MB / 45.43MB 0.3s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 32.51MB / 45.43MB 0.5s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 0.7s
+#5 sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 45.43MB / 45.43MB 0.7s done
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 0.1s
+#5 extracting sha256:8372a04f222be82bf67eb0010a59644b1e52f1246b3da9034edaa98f3d591cae 3.0s done
+#5 DONE 4.0s
+
+#6 [ 2/12] WORKDIR /home/minecraft/
+#6 DONE 0.5s
+
+#7 [ 3/12] RUN apt-get update &&     apt-cache madison         build-essential         ca-certificates         curl         git         jq         optipng         python3-dev         python3-numpy         python3-pil         python3         wget &&     apt-get install -y --no-install-recommends         build-essential=12.3         ca-certificates=20200601~deb9u2         curl=7.52.1-5+deb9u16         git=1:2.11.0-3+deb9u7         jq=1.5+dfsg-1.3         optipng=0.7.6-1+deb9u1         python3-dev=3.5.3-1         python3-numpy=1:1.12.1-3         python3-pil=4.0.0-4+deb9u4         python3=3.5.3-1         wget=1.18-5+deb9u3 &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     groupadd minecraft -g 1000 &&     useradd -m --no-log-init minecraft -u 1000 -g 1000 &&     mkdir -p /home/minecraft/render /home/minecraft/server
+#7 0.223 Ign:1 http://deb.debian.org/debian stretch InRelease
+#7 0.226 Ign:2 http://security.debian.org/debian-security stretch/updates InRelease
+#7 0.232 Ign:3 http://deb.debian.org/debian stretch-updates InRelease
+#7 0.239 Ign:4 http://security.debian.org/debian-security stretch/updates Release
+#7 0.243 Ign:5 http://deb.debian.org/debian stretch Release
+#7 0.250 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.254 Ign:7 http://deb.debian.org/debian stretch-updates Release
+#7 0.265 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.265 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.273 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 0.276 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.283 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.288 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.292 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.300 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.303 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.312 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.315 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 0.326 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.326 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.337 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.339 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.347 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.351 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.358 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 0.363 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.369 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.376 Ign:6 http://security.debian.org/debian-security stretch/updates/main all Packages
+#7 0.379 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.387 Err:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#7 0.387   404  Not Found [IP: 151.101.130.132 80]
+#7 0.388 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.399 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 0.410 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.421 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.432 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.444 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 0.456 Ign:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.466 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.478 Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#7 0.478   404  Not Found
+#7 0.498 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#7 0.508 Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#7 0.508   404  Not Found
+#7 0.519 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+#7 0.522 Reading package lists...
+#7 0.530 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#7 0.530 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#7 0.530 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#7 0.530 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+#7 0.530 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#7 0.530 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#7 0.530 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#7 ERROR: process "/bin/sh -c apt-get update &&     apt-cache madison         build-essential         ca-certificates         curl         git         jq         optipng         python3-dev         python3-numpy         python3-pil         python3         wget &&     apt-get install -y --no-install-recommends         build-essential=12.3         ca-certificates=20200601~deb9u2         curl=7.52.1-5+deb9u16         git=1:2.11.0-3+deb9u7         jq=1.5+dfsg-1.3         optipng=0.7.6-1+deb9u1         python3-dev=3.5.3-1         python3-numpy=1:1.12.1-3         python3-pil=4.0.0-4+deb9u4         python3=3.5.3-1         wget=1.18-5+deb9u3 &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     groupadd minecraft -g 1000 &&     useradd -m --no-log-init minecraft -u 1000 -g 1000 &&     mkdir -p /home/minecraft/render /home/minecraft/server" did not complete successfully: exit code: 100
+------
+ > [ 3/12] RUN apt-get update &&     apt-cache madison         build-essential         ca-certificates         curl         git         jq         optipng         python3-dev         python3-numpy         python3-pil         python3         wget &&     apt-get install -y --no-install-recommends         build-essential=12.3         ca-certificates=20200601~deb9u2         curl=7.52.1-5+deb9u16         git=1:2.11.0-3+deb9u7         jq=1.5+dfsg-1.3         optipng=0.7.6-1+deb9u1         python3-dev=3.5.3-1         python3-numpy=1:1.12.1-3         python3-pil=4.0.0-4+deb9u4         python3=3.5.3-1         wget=1.18-5+deb9u3 &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     groupadd minecraft -g 1000 &&     useradd -m --no-log-init minecraft -u 1000 -g 1000 &&     mkdir -p /home/minecraft/render /home/minecraft/server:
+0.508   404  Not Found
+0.519 Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+0.522 Reading package lists...
+0.530 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.530 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.530 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.530 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.130.132 80]
+0.530 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.530 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.530 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+v1_Dockerfile:39
+--------------------
+  38 |     
+  39 | >>> RUN apt-get update && \
+  40 | >>>     apt-cache madison \
+  41 | >>>         build-essential \
+  42 | >>>         ca-certificates \
+  43 | >>>         curl \
+  44 | >>>         git \
+  45 | >>>         jq \
+  46 | >>>         optipng \
+  47 | >>>         python3-dev \
+  48 | >>>         python3-numpy \
+  49 | >>>         python3-pil \
+  50 | >>>         python3 \
+  51 | >>>         wget && \
+  52 | >>>     apt-get install -y --no-install-recommends \
+  53 | >>>         build-essential=12.3 \
+  54 | >>>         ca-certificates=20200601~deb9u2 \
+  55 | >>>         curl=7.52.1-5+deb9u16 \
+  56 | >>>         git=1:2.11.0-3+deb9u7 \
+  57 | >>>         jq=1.5+dfsg-1.3 \
+  58 | >>>         optipng=0.7.6-1+deb9u1 \
+  59 | >>>         python3-dev=3.5.3-1 \
+  60 | >>>         python3-numpy=1:1.12.1-3 \
+  61 | >>>         python3-pil=4.0.0-4+deb9u4 \
+  62 | >>>         python3=3.5.3-1 \
+  63 | >>>         wget=1.18-5+deb9u3 && \
+  64 | >>>     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+  65 | >>>     groupadd minecraft -g 1000 && \
+  66 | >>>     useradd -m --no-log-init minecraft -u 1000 -g 1000 && \
+  67 | >>>     mkdir -p /home/minecraft/render /home/minecraft/server
+  68 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update &&     apt-cache madison         build-essential         ca-certificates         curl         git         jq         optipng         python3-dev         python3-numpy         python3-pil         python3         wget &&     apt-get install -y --no-install-recommends         build-essential=12.3         ca-certificates=20200601~deb9u2         curl=7.52.1-5+deb9u16         git=1:2.11.0-3+deb9u7         jq=1.5+dfsg-1.3         optipng=0.7.6-1+deb9u1         python3-dev=3.5.3-1         python3-numpy=1:1.12.1-3         python3-pil=4.0.0-4+deb9u4         python3=3.5.3-1         wget=1.18-5+deb9u3 &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     groupadd minecraft -g 1000 &&     useradd -m --no-log-init minecraft -u 1000 -g 1000 &&     mkdir -p /home/minecraft/render /home/minecraft/server" did not complete successfully: exit code: 100
+Duration: 0:6.12

@@ -1,0 +1,351 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 508B done
+#1 DONE 0.5s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/ruby:2.6.5-alpine
+#3 DONE 1.1s
+
+#4 [1/7] FROM docker.io/library/ruby:2.6.5-alpine@sha256:a5b974e2ebb2b72642f4de4e5562597ec0883c3bfd93e9553cee6bd395dfbf00
+#4 resolve docker.io/library/ruby:2.6.5-alpine@sha256:a5b974e2ebb2b72642f4de4e5562597ec0883c3bfd93e9553cee6bd395dfbf00
+#4 resolve docker.io/library/ruby:2.6.5-alpine@sha256:a5b974e2ebb2b72642f4de4e5562597ec0883c3bfd93e9553cee6bd395dfbf00 0.3s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 1.37MB 0.0s done
+#5 DONE 0.4s
+
+#4 [1/7] FROM docker.io/library/ruby:2.6.5-alpine@sha256:a5b974e2ebb2b72642f4de4e5562597ec0883c3bfd93e9553cee6bd395dfbf00
+#4 sha256:1060a5ad860d58fbcaf2f917bbb8f882f002e2bbd670985f4d4cc88fad9c70b2 1.36kB / 1.36kB done
+#4 sha256:59d4ec426ed6932cd5c3e1248ae1da0910aa1cc5b9209414ae77304cc0395537 5.93kB / 5.93kB done
+#4 sha256:a5b974e2ebb2b72642f4de4e5562597ec0883c3bfd93e9553cee6bd395dfbf00 1.65kB / 1.65kB done
+#4 sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f39a5e327023056819 0B / 2.80MB 0.2s
+#4 sha256:cca28d9d22b9db22fe924a8dea99a0f2b6dd9bd713535ee3469f5d5d97f67871 0B / 1.13MB 0.2s
+#4 sha256:cca28d9d22b9db22fe924a8dea99a0f2b6dd9bd713535ee3469f5d5d97f67871 1.13MB / 1.13MB 0.3s
+#4 sha256:e46ee7bc75f66e10d9b504cc4dcdc6546a700b1c62a007d608e3774ad2edd402 0B / 196B 0.3s
+#4 sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f39a5e327023056819 2.80MB / 2.80MB 0.3s done
+#4 sha256:cca28d9d22b9db22fe924a8dea99a0f2b6dd9bd713535ee3469f5d5d97f67871 1.13MB / 1.13MB 0.4s done
+#4 sha256:e46ee7bc75f66e10d9b504cc4dcdc6546a700b1c62a007d608e3774ad2edd402 196B / 196B 0.4s
+#4 extracting sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f39a5e327023056819 0.1s
+#4 extracting sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f39a5e327023056819 0.2s done
+#4 sha256:12139539199ebeeebb8b34836027ce7cd38501305ef546c89d77381273bb1876 0B / 22.04MB 0.5s
+#4 sha256:c262dbdf41d75f6e2ffeb341e0d64b36709c007a4a2e3a133b9d1c4b60a54743 0B / 141B 0.5s
+#4 sha256:e46ee7bc75f66e10d9b504cc4dcdc6546a700b1c62a007d608e3774ad2edd402 196B / 196B 0.5s done
+#4 extracting sha256:cca28d9d22b9db22fe924a8dea99a0f2b6dd9bd713535ee3469f5d5d97f67871
+#4 sha256:12139539199ebeeebb8b34836027ce7cd38501305ef546c89d77381273bb1876 7.34MB / 22.04MB 0.7s
+#4 sha256:c262dbdf41d75f6e2ffeb341e0d64b36709c007a4a2e3a133b9d1c4b60a54743 141B / 141B 0.6s done
+#4 sha256:12139539199ebeeebb8b34836027ce7cd38501305ef546c89d77381273bb1876 17.83MB / 22.04MB 0.9s
+#4 extracting sha256:cca28d9d22b9db22fe924a8dea99a0f2b6dd9bd713535ee3469f5d5d97f67871 0.1s done
+#4 sha256:12139539199ebeeebb8b34836027ce7cd38501305ef546c89d77381273bb1876 22.04MB / 22.04MB 1.1s
+#4 sha256:12139539199ebeeebb8b34836027ce7cd38501305ef546c89d77381273bb1876 22.04MB / 22.04MB 1.3s done
+#4 extracting sha256:e46ee7bc75f66e10d9b504cc4dcdc6546a700b1c62a007d608e3774ad2edd402 done
+#4 extracting sha256:12139539199ebeeebb8b34836027ce7cd38501305ef546c89d77381273bb1876
+#4 extracting sha256:12139539199ebeeebb8b34836027ce7cd38501305ef546c89d77381273bb1876 1.0s done
+#4 extracting sha256:c262dbdf41d75f6e2ffeb341e0d64b36709c007a4a2e3a133b9d1c4b60a54743
+#4 extracting sha256:c262dbdf41d75f6e2ffeb341e0d64b36709c007a4a2e3a133b9d1c4b60a54743 done
+#4 DONE 4.5s
+
+#6 [2/7] RUN apk add --update --no-cache     alpine-sdk     mariadb-dev     tzdata
+#6 0.468 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#6 0.665 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#6 0.924 (1/48) Upgrading musl (1.1.24-r2 -> 1.1.24-r3)
+#6 0.937 (2/48) Upgrading libcrypto1.1 (1.1.1d-r3 -> 1.1.1l-r0)
+#6 0.996 (3/48) Upgrading libssl1.1 (1.1.1d-r3 -> 1.1.1l-r0)
+#6 1.005 (4/48) Installing fakeroot (1.24-r0)
+#6 1.009 (5/48) Installing sudo (1.9.5p2-r1)
+#6 1.060 (6/48) Installing libcap (2.27-r0)
+#6 1.066 (7/48) Installing pax-utils (1.2.4-r0)
+#6 1.086 (8/48) Installing openssl (1.1.1l-r0)
+#6 1.107 (9/48) Installing libattr (2.4.48-r0)
+#6 1.127 (10/48) Installing attr (2.4.48-r0)
+#6 1.161 (11/48) Installing libacl (2.2.53-r0)
+#6 1.194 (12/48) Installing tar (1.32-r2)
+#6 1.211 (13/48) Installing patch (2.7.6-r7)
+#6 1.221 (14/48) Upgrading libstdc++ (9.2.0-r4 -> 9.3.0-r0)
+#6 1.245 (15/48) Installing lzip (1.21-r0)
+#6 1.250 (16/48) Installing nghttp2-libs (1.40.0-r1)
+#6 1.264 (17/48) Installing libcurl (7.79.1-r0)
+#6 1.275 (18/48) Installing curl (7.79.1-r0)
+#6 1.284 (19/48) Installing abuild (3.5.0-r1)
+#6 1.290 Executing abuild-3.5.0-r1.pre-install
+#6 1.301 (20/48) Installing binutils (2.33.1-r1)
+#6 1.402 (21/48) Installing libmagic (5.37-r1)
+#6 1.428 (22/48) Installing file (5.37-r1)
+#6 1.432 (23/48) Installing isl (0.18-r0)
+#6 1.451 (24/48) Installing libgomp (9.3.0-r0)
+#6 1.457 (25/48) Installing libatomic (9.3.0-r0)
+#6 1.461 (26/48) Installing mpfr4 (4.0.2-r1)
+#6 1.469 (27/48) Installing mpc1 (1.1.0-r1)
+#6 1.473 (28/48) Installing gcc (9.3.0-r0)
+#6 2.386 (29/48) Installing musl-dev (1.1.24-r3)
+#6 2.490 (30/48) Installing libc-dev (0.7.2-r0)
+#6 2.493 (31/48) Installing g++ (9.3.0-r0)
+#6 3.115 (32/48) Installing make (4.2.1-r2)
+#6 3.121 (33/48) Installing fortify-headers (1.1-r0)
+#6 3.138 (34/48) Installing build-base (0.5-r1)
+#6 3.141 (35/48) Installing expat (2.2.9-r1)
+#6 3.155 (36/48) Installing pcre2 (10.34-r1)
+#6 3.166 (37/48) Installing git (2.24.4-r0)
+#6 3.364 (38/48) Installing alpine-sdk (1.0-r0)
+#6 3.367 (39/48) Installing openssl-dev (1.1.1l-r0)
+#6 3.393 (40/48) Installing mariadb-connector-c (3.1.6-r1)
+#6 3.401 (41/48) Installing mariadb-connector-c-dev (3.1.6-r1)
+#6 3.408 (42/48) Installing mariadb-common (10.4.22-r0)
+#6 3.448 (43/48) Installing libaio (0.3.112-r1)
+#6 3.451 (44/48) Installing xz-libs (5.2.4-r0)
+#6 3.458 (45/48) Installing pcre (8.43-r1)
+#6 3.466 (46/48) Installing mariadb-embedded (10.4.22-r0)
+#6 3.615 (47/48) Installing mariadb-dev (10.4.22-r0)
+#6 3.729 (48/48) Installing tzdata (2021e-r0)
+#6 3.908 Executing busybox-1.31.1-r9.trigger
+#6 3.914 Executing ca-certificates-20191127-r1.trigger
+#6 3.957 OK: 240 MiB in 80 packages
+#6 DONE 10.4s
+
+#7 [3/7] WORKDIR /syncing-server
+#7 DONE 0.5s
+
+#8 [4/7] COPY Gemfile Gemfile.lock /syncing-server/
+#8 DONE 0.4s
+
+#9 [5/7] RUN if [ "$optimize_for_raspberry_pi" = true ] ; then sed -i 's/bcrypt (3.1.16)/bcrypt (3.1.12)/g' Gemfile.lock; fi
+#9 DONE 0.8s
+
+#10 [6/7] RUN gem install bundler -v 2.4.22 && bundle _2.4.22_ install
+#10 42.78 Successfully installed bundler-2.4.22
+#10 42.78 1 gem installed
+#10 43.01 Your RubyGems version (3.0.3) has a bug that prevents `required_ruby_version` from working for Bundler. Any scripts that use `gem install bundler` will break as soon as Bundler drops support for your Ruby version. Please upgrade RubyGems to avoid future breakage and silence this warning by running `gem update --system 3.2.3`
+#10 44.20 Fetching gem metadata from https://rubygems.org/.........
+#10 49.33 Fetching rake 13.0.3
+#10 49.42 Installing rake 13.0.3
+#10 49.49 Fetching concurrent-ruby 1.1.8
+#10 49.50 Fetching thread_safe 0.3.6
+#10 49.50 Fetching builder 3.2.4
+#10 49.51 Fetching erubi 1.10.0
+#10 49.51 Fetching racc 1.5.2
+#10 49.51 Fetching crass 1.0.6
+#10 49.51 Fetching rack 2.2.3
+#10 49.51 Fetching nio4r 2.5.7
+#10 49.51 Fetching websocket-extensions 0.1.5
+#10 49.51 Fetching mini_mime 1.0.3
+#10 49.51 Fetching arel 9.0.0
+#10 49.51 Fetching ast 2.4.2
+#10 49.51 Fetching aws-eventstream 1.1.1
+#10 49.53 Fetching aws-partitions 1.437.0
+#10 49.53 Fetching bcrypt 3.1.16
+#10 49.53 Fetching msgpack 1.4.2
+#10 49.53 Fetching byebug 11.1.3
+#10 49.53 Fetching chronic 0.10.2
+#10 49.53 Fetching device_detector 1.0.5
+#10 49.53 Fetching docile 1.3.5
+#10 49.53 Fetching minitest 5.14.4
+#10 49.53 Fetching marcel 1.0.0
+#10 49.53 Fetching jmespath 1.4.0
+#10 49.56 Fetching diff-lcs 1.4.4
+#10 49.96 Installing jmespath 1.4.0
+#10 50.01 Installing websocket-extensions 0.1.5
+#10 50.03 Installing ast 2.4.2
+#10 50.05 Installing crass 1.0.6
+#10 50.06 Installing aws-eventstream 1.1.1
+#10 50.07 Installing builder 3.2.4
+#10 50.07 Installing docile 1.3.5
+#10 50.07 Installing mini_mime 1.0.3
+#10 50.10 Installing arel 9.0.0
+#10 50.11 Installing erubi 1.10.0
+#10 50.12 Installing chronic 0.10.2
+#10 50.12 Installing aws-partitions 1.437.0
+#10 50.16 Installing bcrypt 3.1.16 with native extensions
+#10 50.18 Installing marcel 1.0.0
+#10 50.18 Installing diff-lcs 1.4.4
+#10 50.18 Installing byebug 11.1.3 with native extensions
+#10 50.19 Installing msgpack 1.4.2 with native extensions
+#10 50.20 Installing thread_safe 0.3.6
+#10 50.22 Installing minitest 5.14.4
+#10 50.22 Installing nio4r 2.5.7 with native extensions
+#10 50.24 Installing rack 2.2.3
+#10 50.70 Fetching dotenv 2.7.6
+#10 50.75 Fetching method_source 1.0.0
+#10 50.78 Installing dotenv 2.7.6
+#10 50.78 Installing concurrent-ruby 1.1.8
+#10 50.81 Installing method_source 1.0.0
+#10 50.82 Fetching thor 1.1.0
+#10 50.87 Installing racc 1.5.2 with native extensions
+#10 50.90 Installing thor 1.1.0
+#10 50.92 Fetching erubis 2.7.0
+#10 50.93 Fetching ffi 1.15.0
+#10 50.96 Fetching temple 0.8.2
+#10 51.01 Installing device_detector 1.0.5
+#10 51.05 Installing temple 0.8.2
+#10 51.08 Fetching tilt 2.0.10
+#10 51.14 Installing erubis 2.7.0
+#10 51.14 Fetching sexp_processor 4.15.2
+#10 51.16 Installing tilt 2.0.10
+#10 51.21 Fetching jaro_winkler 1.5.4
+#10 51.25 Installing sexp_processor 4.15.2
+#10 51.27 Installing jaro_winkler 1.5.4 with native extensions
+#10 51.74 Fetching jwt 2.2.2
+#10 51.74 Fetching rb-fsevent 0.10.4
+#10 51.82 Installing jwt 2.2.2
+#10 51.84 Installing rb-fsevent 0.10.4
+#10 51.96 Installing ffi 1.15.0 with native extensions
+#10 51.97 Fetching mysql2 0.4.10
+#10 51.99 Fetching newrelic_rpm 6.15.0
+#10 52.11 Fetching parallel 1.20.1
+#10 52.14 Fetching rack-timeout 0.6.0
+#10 52.23 Installing mysql2 0.4.10 with native extensions
+#10 52.24 Installing parallel 1.20.1
+#10 52.25 Installing rack-timeout 0.6.0
+#10 52.37 Fetching rainbow 3.0.0
+#10 52.37 Installing newrelic_rpm 6.15.0
+#10 52.44 Installing rainbow 3.0.0
+#10 52.59 Fetching redis 4.2.5
+#10 52.64 Fetching rotp 6.2.0
+#10 52.67 Fetching rspec-support 3.10.2
+#10 52.72 Installing redis 4.2.5
+#10 52.74 Installing rspec-support 3.10.2
+#10 52.75 Installing rotp 6.2.0
+#10 52.93 Fetching ruby-progressbar 1.11.0
+#10 52.96 Fetching unicode-display_width 1.6.1
+#10 53.01 Installing unicode-display_width 1.6.1
+#10 53.01 Installing ruby-progressbar 1.11.0
+#10 53.06 Fetching secure_headers 6.3.2
+#10 53.08 Fetching simplecov-html 0.12.3
+#10 53.14 Installing secure_headers 6.3.2
+#10 53.18 Fetching simplecov_json_formatter 0.1.2
+#10 53.23 Installing simplecov_json_formatter 0.1.2
+#10 53.28 Fetching websocket-driver 0.7.3
+#10 53.31 Installing simplecov-html 0.12.3
+#10 53.34 Installing websocket-driver 0.7.3 with native extensions
+#10 53.39 Fetching aws-sigv4 1.2.3
+#10 53.40 Fetching parser 3.0.0.0
+#10 53.47 Installing aws-sigv4 1.2.3
+#10 53.60 Fetching mail 2.7.1
+#10 53.69 Fetching ruby_parser 3.15.1
+#10 53.82 Fetching tzinfo 1.2.9
+#10 53.94 Fetching whenever 1.0.0
+#10 53.99 Installing parser 3.0.0.0
+#10 54.03 Installing whenever 1.0.0
+#10 54.10 Installing tzinfo 1.2.9
+#10 54.12 Installing mail 2.7.1
+#10 54.14 Fetching aws-sdk-core 3.113.1
+#10 54.20 Fetching rack-test 1.1.0
+#10 54.27 Installing rack-test 1.1.0
+#10 54.30 Fetching request_store 1.5.0
+#10 54.32 Fetching rack-cors 1.1.1
+#10 54.35 Fetching rspec-core 3.10.1
+#10 54.39 Installing ruby_parser 3.15.1
+#10 54.39 Installing request_store 1.5.0
+#10 54.44 Installing rack-cors 1.1.1
+#10 54.47 Installing aws-sdk-core 3.113.1
+#10 54.50 Installing rspec-core 3.10.1
+#10 54.69 Fetching rspec-expectations 3.10.1
+#10 54.78 Installing rspec-expectations 3.10.1
+#10 54.78 Fetching rspec-mocks 3.10.2
+#10 54.87 Installing rspec-mocks 3.10.2
+#10 55.03 Fetching haml 5.2.1
+#10 55.13 Installing haml 5.2.1
+#10 55.42 Fetching simplecov 0.21.2
+#10 55.49 Installing simplecov 0.21.2
+#10 56.12 Fetching rubocop 0.79.0
+#10 56.28 Installing rubocop 0.79.0
+#10 56.40 Fetching i18n 1.8.9
+#10 56.40 Fetching sprockets 4.0.2
+#10 56.48 Installing i18n 1.8.9
+#10 56.49 Installing sprockets 4.0.2
+#10 56.97 Fetching activesupport 5.2.5
+#10 57.15 Installing activesupport 5.2.5
+#10 57.55 Fetching aws-sdk-kms 1.43.0
+#10 57.55 Fetching aws-sdk-sqs 1.38.0
+#10 57.55 Fetching aws-sdk-sns 1.39.0
+#10 57.62 Fetching shoryuken 5.2.0
+#10 57.71 Installing aws-sdk-sns 1.39.0
+#10 57.71 Installing aws-sdk-sqs 1.38.0
+#10 57.72 Installing shoryuken 5.2.0
+#10 57.72 Installing aws-sdk-kms 1.43.0
+#10 57.85 Fetching aws-sdk-s3 1.93.0
+#10 57.94 Installing aws-sdk-s3 1.93.0
+#10 58.87 Fetching activemodel 5.2.5
+#10 58.87 Fetching factory_bot 6.1.0
+#10 58.88 Fetching globalid 0.4.2
+#10 58.95 Installing globalid 0.4.2
+#10 58.96 Installing factory_bot 6.1.0
+#10 58.96 Installing activemodel 5.2.5
+#10 59.07 Fetching activejob 5.2.5
+#10 59.11 Fetching puma 5.2.2
+#10 59.15 Installing activejob 5.2.5
+#10 59.19 Installing puma 5.2.2 with native extensions
+#10 59.55 Fetching activerecord 5.2.5
+#10 59.65 Installing activerecord 5.2.5
+#10 60.31 Fetching ar-octopus 0.10.2
+#10 60.31 Fetching rubocop-shopify 1.0.0
+#10 60.83 Installing rubocop-shopify 1.0.0
+#10 60.84 Installing ar-octopus 0.10.2
+#10 71.73 Fetching bootsnap 1.7.3
+#10 71.80 Installing bootsnap 1.7.3 with native extensions
+#10 72.73 Fetching nokogiri 1.11.2 (x86_64-linux)
+#10 73.05 Installing nokogiri 1.11.2 (x86_64-linux)
+#10 73.28 Fetching rails-dom-testing 2.0.3
+#10 73.28 Fetching html2haml 2.2.0
+#10 73.30 Fetching loofah 2.9.0
+#10 73.35 Installing rails-dom-testing 2.0.3
+#10 73.36 Installing loofah 2.9.0
+#10 73.37 Installing html2haml 2.2.0
+#10 73.44 Fetching rails-html-sanitizer 1.3.0
+#10 73.48 Installing rails-html-sanitizer 1.3.0
+#10 73.50 Fetching actionview 5.2.5
+#10 73.54 Installing actionview 5.2.5
+#10 73.63 Fetching actionpack 5.2.5
+#10 73.72 Installing actionpack 5.2.5
+#10 73.84 Fetching actionmailer 5.2.5
+#10 73.84 Fetching actioncable 5.2.5
+#10 73.84 Fetching railties 5.2.5
+#10 73.84 Fetching sprockets-rails 3.2.2
+#10 73.84 Fetching activestorage 5.2.5
+#10 73.95 Installing sprockets-rails 3.2.2
+#10 73.96 Installing actionmailer 5.2.5
+#10 73.97 Installing activestorage 5.2.5
+#10 73.97 Installing actioncable 5.2.5
+#10 74.00 Installing railties 5.2.5
+#10 74.41 Fetching dotenv-rails 2.7.6
+#10 74.41 Fetching haml-rails 2.0.1
+#10 74.41 Fetching lograge 0.11.2
+#10 74.42 Fetching rails 5.2.5
+#10 74.42 Fetching rspec-rails 5.0.1
+#10 74.42 Fetching factory_bot_rails 6.1.0
+#10 74.44 Fetching responders 2.4.1
+#10 74.59 Installing dotenv-rails 2.7.6
+#10 74.62 Installing rails 5.2.5
+#10 74.62 Installing lograge 0.11.2
+#10 74.63 Installing factory_bot_rails 6.1.0
+#10 74.63 Installing responders 2.4.1
+#10 74.63 Installing haml-rails 2.0.1
+#10 74.67 Installing rspec-rails 5.0.1
+#10 87.82 Fetching rb-inotify 0.10.1
+#10 87.86 Installing rb-inotify 0.10.1
+#10 87.88 Fetching listen 3.5.0
+#10 87.95 Installing listen 3.5.0
+#10 88.46 Bundle complete! 30 Gemfile dependencies, 105 gems now installed.
+#10 88.46 Use `bundle info [gemname]` to see where a bundled gem is installed.
+#10 88.46 Post-install message from ar-octopus:
+#10 88.46 Important: If you are upgrading from < Octopus 0.5.0 you need to run:
+#10 88.46 $ rake octopus:copy_schema_versions
+#10 88.46 
+#10 88.46 Octopus now stores schema version information in each shard and migrations will not work properly unless this task is invoked.
+#10 DONE 89.7s
+
+#11 [7/7] COPY . /syncing-server
+#11 DONE 0.7s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 3.2s done
+#12 writing image sha256:3718e81e96052e042da91304f0768c700aafd5db05d35ec92cdd12027e384306 0.0s done
+#12 naming to docker.io/library/image_name_v1_1 0.0s done
+#12 DONE 3.3s
+Duration: 1:52.68

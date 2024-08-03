@@ -1,0 +1,151 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 2.22kB done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.5s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [ 1/10] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 8.49kB done
+#4 DONE 0.3s
+
+#5 [ 1/10] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 2.10MB / 3.62MB 0.5s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.5s
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.6s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.7s done
+#5 DONE 2.2s
+
+#6 [ 2/10] RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories     && apk update     && apk add --no-cache     bash     less     vim     nginx     ca-certificates     php8-fpm     php8-json     php8-zlib     php8-xml     php8-pdo     php8-phar     php8-openssl     php8-pdo_mysql     php8-mysqli     php8-session     php8-gd     php8-iconv     php8-curl     php8-opcache     php8-ctype     php8-intl     php8-bcmath     php8-mbstring     php8-dom     php8-xmlreader     php8-simplexml     mysql-client     openssh-client     git     curl     rsync     musl     && apk --update --no-cache add tar
+#6 1.593 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 2.052 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 2.708 fetch http://dl-4.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#6 2.841 WARNING: Permanently redirected to https://dl-4.alpinelinux.org:443/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#6 4.247 v3.20.2-45-g194e307d75d [https://dl-cdn.alpinelinux.org/alpine/v3.20/main]
+#6 4.247 v3.20.2-43-g4fdd3a681b2 [https://dl-cdn.alpinelinux.org/alpine/v3.20/community]
+#6 4.247 v20240606-3756-g85c517b3bcf [http://dl-4.alpinelinux.org/alpine/edge/testing]
+#6 4.247 OK: 31685 distinct packages available
+#6 4.382 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#6 4.758 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#6 5.357 fetch http://dl-4.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#6 5.536 WARNING: Permanently redirected to https://dl-4.alpinelinux.org:443/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#6 7.415 ERROR: unable to select packages:
+#6 7.415   php8-bcmath (no such package):
+#6 7.415     required by: world[php8-bcmath]
+#6 7.415   php8-ctype (no such package):
+#6 7.415     required by: world[php8-ctype]
+#6 7.415   php8-curl (no such package):
+#6 7.415     required by: world[php8-curl]
+#6 7.415   php8-dom (no such package):
+#6 7.415     required by: world[php8-dom]
+#6 7.415   php8-fpm (no such package):
+#6 7.415     required by: world[php8-fpm]
+#6 7.415   php8-gd (no such package):
+#6 7.415     required by: world[php8-gd]
+#6 7.415   php8-iconv (no such package):
+#6 7.415     required by: world[php8-iconv]
+#6 7.415   php8-intl (no such package):
+#6 7.415     required by: world[php8-intl]
+#6 7.415   php8-json (no such package):
+#6 7.415     required by: world[php8-json]
+#6 7.415   php8-mbstring (no such package):
+#6 7.415     required by: world[php8-mbstring]
+#6 7.415   php8-mysqli (no such package):
+#6 7.415     required by: world[php8-mysqli]
+#6 7.415   php8-opcache (no such package):
+#6 7.415     required by: world[php8-opcache]
+#6 7.415   php8-openssl (no such package):
+#6 7.415     required by: world[php8-openssl]
+#6 7.415   php8-pdo (no such package):
+#6 7.415     required by: world[php8-pdo]
+#6 7.415   php8-pdo_mysql (no such package):
+#6 7.415     required by: world[php8-pdo_mysql]
+#6 7.415   php8-phar (no such package):
+#6 7.415     required by: world[php8-phar]
+#6 7.415   php8-session (no such package):
+#6 7.415     required by: world[php8-session]
+#6 7.415   php8-simplexml (no such package):
+#6 7.415     required by: world[php8-simplexml]
+#6 7.415   php8-xml (no such package):
+#6 7.415     required by: world[php8-xml]
+#6 7.415   php8-xmlreader (no such package):
+#6 7.415     required by: world[php8-xmlreader]
+#6 7.415   php8-zlib (no such package):
+#6 7.415     required by: world[php8-zlib]
+#6 ERROR: process "/bin/sh -c echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories     && apk update     && apk add --no-cache     bash     less     vim     nginx     ca-certificates     php8-fpm     php8-json     php8-zlib     php8-xml     php8-pdo     php8-phar     php8-openssl     php8-pdo_mysql     php8-mysqli     php8-session     php8-gd     php8-iconv     php8-curl     php8-opcache     php8-ctype     php8-intl     php8-bcmath     php8-mbstring     php8-dom     php8-xmlreader     php8-simplexml     mysql-client     openssh-client     git     curl     rsync     musl     && apk --update --no-cache add tar" did not complete successfully: exit code: 21
+------
+ > [ 2/10] RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories     && apk update     && apk add --no-cache     bash     less     vim     nginx     ca-certificates     php8-fpm     php8-json     php8-zlib     php8-xml     php8-pdo     php8-phar     php8-openssl     php8-pdo_mysql     php8-mysqli     php8-session     php8-gd     php8-iconv     php8-curl     php8-opcache     php8-ctype     php8-intl     php8-bcmath     php8-mbstring     php8-dom     php8-xmlreader     php8-simplexml     mysql-client     openssh-client     git     curl     rsync     musl     && apk --update --no-cache add tar:
+7.415   php8-session (no such package):
+7.415     required by: world[php8-session]
+7.415   php8-simplexml (no such package):
+7.415     required by: world[php8-simplexml]
+7.415   php8-xml (no such package):
+7.415     required by: world[php8-xml]
+7.415   php8-xmlreader (no such package):
+7.415     required by: world[php8-xmlreader]
+7.415   php8-zlib (no such package):
+7.415     required by: world[php8-zlib]
+------
+v1_Dockerfile:14
+--------------------
+  13 |     
+  14 | >>> RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
+  15 | >>>     && apk update \
+  16 | >>>     && apk add --no-cache \
+  17 | >>>     bash \
+  18 | >>>     less \
+  19 | >>>     vim \
+  20 | >>>     nginx \
+  21 | >>>     ca-certificates \
+  22 | >>>     php8-fpm \
+  23 | >>>     php8-json \
+  24 | >>>     php8-zlib \
+  25 | >>>     php8-xml \
+  26 | >>>     php8-pdo \
+  27 | >>>     php8-phar \
+  28 | >>>     php8-openssl \
+  29 | >>>     php8-pdo_mysql \
+  30 | >>>     php8-mysqli \
+  31 | >>>     php8-session \
+  32 | >>>     php8-gd \
+  33 | >>>     php8-iconv \
+  34 | >>>     php8-curl \
+  35 | >>>     php8-opcache \
+  36 | >>>     php8-ctype \
+  37 | >>>     php8-intl \
+  38 | >>>     php8-bcmath \
+  39 | >>>     php8-mbstring \
+  40 | >>>     php8-dom \
+  41 | >>>     php8-xmlreader \
+  42 | >>>     php8-simplexml \
+  43 | >>>     mysql-client \
+  44 | >>>     openssh-client \
+  45 | >>>     git \
+  46 | >>>     curl \
+  47 | >>>     rsync \
+  48 | >>>     musl \
+  49 | >>>     && apk --update --no-cache add tar
+  50 |     RUN rm -rf /var/cache/apk/*
+--------------------
+ERROR: failed to solve: process "/bin/sh -c echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories     && apk update     && apk add --no-cache     bash     less     vim     nginx     ca-certificates     php8-fpm     php8-json     php8-zlib     php8-xml     php8-pdo     php8-phar     php8-openssl     php8-pdo_mysql     php8-mysqli     php8-session     php8-gd     php8-iconv     php8-curl     php8-opcache     php8-ctype     php8-intl     php8-bcmath     php8-mbstring     php8-dom     php8-xmlreader     php8-simplexml     mysql-client     openssh-client     git     curl     rsync     musl     && apk --update --no-cache add tar" did not complete successfully: exit code: 21
+Duration: 0:12.71

@@ -1,0 +1,142 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.50kB done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/phusion/baseimage:0.9.18
+#3 DONE 0.4s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825
+#5 resolve docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825 0.1s done
+#5 DONE 0.1s
+
+#5 [1/9] FROM docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825
+#5 resolve docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825 done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 5.63kB done
+#4 DONE 0.4s
+
+#5 [1/9] FROM docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825
+#5 sha256:1ddde157dd3180fc84958005bb9fc2671f19fb498d1b4fac08cd01e7834da286 41.61MB / 41.61MB done
+#5 sha256:6ffe5d2d6a9775ef70b5a636aac1175f73f556ee82c6457600959bdeded94cb1 65.77MB / 65.77MB done
+#5 sha256:f4e00f994fd4f90d9eafda2f7b3f9ea984599c50d14e608f0a5ec9bb9e365b10 71.47kB / 71.47kB done
+#5 sha256:e99f3d1fc87b485492190612bf949108bd8b25f5299d3ffd16846c6e52760fd7 680B / 680B done
+#5 sha256:ededd75b6753f2169f5c9e895ff69105a336153928df844f15649a7011c40435 12.90kB / 12.90kB done
+#5 extracting sha256:6ffe5d2d6a9775ef70b5a636aac1175f73f556ee82c6457600959bdeded94cb1 0.1s
+#5 extracting sha256:6ffe5d2d6a9775ef70b5a636aac1175f73f556ee82c6457600959bdeded94cb1 4.6s done
+#5 extracting sha256:f4e00f994fd4f90d9eafda2f7b3f9ea984599c50d14e608f0a5ec9bb9e365b10
+#5 extracting sha256:f4e00f994fd4f90d9eafda2f7b3f9ea984599c50d14e608f0a5ec9bb9e365b10 0.1s done
+#5 extracting sha256:e99f3d1fc87b485492190612bf949108bd8b25f5299d3ffd16846c6e52760fd7
+#5 extracting sha256:e99f3d1fc87b485492190612bf949108bd8b25f5299d3ffd16846c6e52760fd7 done
+#5 extracting sha256:ededd75b6753f2169f5c9e895ff69105a336153928df844f15649a7011c40435
+#5 extracting sha256:ededd75b6753f2169f5c9e895ff69105a336153928df844f15649a7011c40435 done
+#5 extracting sha256:1ddde157dd3180fc84958005bb9fc2671f19fb498d1b4fac08cd01e7834da286
+#5 extracting sha256:1ddde157dd3180fc84958005bb9fc2671f19fb498d1b4fac08cd01e7834da286 3.0s done
+#5 DONE 15.8s
+
+#6 [2/9] RUN apt-get update && apt-get install -y curl gnupg &&     curl https://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key -o ossec-key.gpg.key &&     apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key &&     echo "deb http://ossec.wazuh.com/repos/apt/ubuntu trusty main" >> /etc/apt/sources.list &&     apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect ossec-hids     ossec-hids=2.8.3-4trusty
+#6 13.86 Ign http://archive.ubuntu.com trusty InRelease
+#6 13.93 Get:1 http://archive.ubuntu.com trusty-updates InRelease [56.5 kB]
+#6 22.88 Get:2 http://archive.ubuntu.com trusty-security InRelease [56.4 kB]
+#6 23.14 Get:3 http://archive.ubuntu.com trusty Release.gpg [933 B]
+#6 23.27 Get:4 http://archive.ubuntu.com trusty Release [58.5 kB]
+#6 27.41 Get:5 http://archive.ubuntu.com trusty-updates/main Sources [809 kB]
+#6 37.48 Get:6 http://archive.ubuntu.com trusty-updates/restricted Sources [9993 B]
+#6 38.00 Get:7 http://archive.ubuntu.com trusty-updates/universe Sources [435 kB]
+#6 39.07 Get:8 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1460 kB]
+#6 39.87 Get:9 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [28.8 kB]
+#6 40.39 Get:10 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [883 kB]
+#6 40.95 Get:11 http://archive.ubuntu.com trusty-security/main Sources [314 kB]
+#6 41.49 Get:12 http://archive.ubuntu.com trusty-security/restricted Sources [7832 B]
+#6 42.01 Get:13 http://archive.ubuntu.com trusty-security/universe Sources [188 kB]
+#6 42.54 Get:14 http://archive.ubuntu.com trusty-security/multiverse Sources [4253 B]
+#6 43.06 Get:15 http://archive.ubuntu.com trusty-security/main amd64 Packages [877 kB]
+#6 43.23 Get:16 http://archive.ubuntu.com trusty-security/restricted amd64 Packages [24.6 kB]
+#6 43.35 Get:17 http://archive.ubuntu.com trusty-security/universe amd64 Packages [490 kB]
+#6 43.50 Get:18 http://archive.ubuntu.com trusty-security/multiverse amd64 Packages [6133 B]
+#6 43.63 Get:19 http://archive.ubuntu.com trusty/main Sources [1335 kB]
+#6 44.01 Get:20 http://archive.ubuntu.com trusty/restricted Sources [5335 B]
+#6 44.53 Get:21 http://archive.ubuntu.com trusty/universe Sources [7926 kB]
+#6 45.41 Get:22 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+#6 45.75 Get:23 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+#6 46.27 Get:24 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+#6 52.04 Fetched 24.3 MB in 33s (719 kB/s)
+#6 52.04 Reading package lists...
+#6 66.41 Reading package lists...
+#6 76.41 Building dependency tree...
+#6 76.52 Reading state information...
+#6 76.59 The following extra packages will be installed:
+#6 76.59   libcurl3
+#6 76.59 Suggested packages:
+#6 76.59   gnupg-curl gnupg-doc xloadimage imagemagick eog libpcsclite1
+#6 76.59 The following packages will be upgraded:
+#6 76.59   curl gnupg libcurl3
+#6 85.54 3 upgraded, 0 newly installed, 0 to remove and 120 not upgraded.
+#6 85.54 Need to get 908 kB of archives.
+#6 85.54 After this operation, 4096 B of additional disk space will be used.
+#6 85.54 Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main curl amd64 7.35.0-1ubuntu2.20 [123 kB]
+#6 85.86 Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libcurl3 amd64 7.35.0-1ubuntu2.20 [173 kB]
+#6 86.02 Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main gnupg amd64 1.4.16-1ubuntu2.6 [611 kB]
+#6 90.84 debconf: unable to initialize frontend: Dialog
+#6 90.84 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 90.84 debconf: falling back to frontend: Readline
+#6 90.85 debconf: unable to initialize frontend: Readline
+#6 90.85 debconf: (This frontend requires a controlling tty.)
+#6 90.85 debconf: falling back to frontend: Teletype
+#6 90.86 dpkg-preconfigure: unable to re-open stdin: 
+#6 90.91 Fetched 908 kB in 0s (1197 kB/s)
+#6 95.49 (Reading database ... 13649 files and directories currently installed.)
+#6 95.49 Preparing to unpack .../curl_7.35.0-1ubuntu2.20_amd64.deb ...
+#6 95.56 Unpacking curl (7.35.0-1ubuntu2.20) over (7.35.0-1ubuntu2.5) ...
+#6 95.99 Preparing to unpack .../libcurl3_7.35.0-1ubuntu2.20_amd64.deb ...
+#6 96.07 Unpacking libcurl3:amd64 (7.35.0-1ubuntu2.20) over (7.35.0-1ubuntu2.5) ...
+#6 96.41 Preparing to unpack .../gnupg_1.4.16-1ubuntu2.6_amd64.deb ...
+#6 96.49 Unpacking gnupg (1.4.16-1ubuntu2.6) over (1.4.16-1ubuntu2.3) ...
+#6 102.0 Setting up gnupg (1.4.16-1ubuntu2.6) ...
+#6 102.1 Setting up libcurl3:amd64 (7.35.0-1ubuntu2.20) ...
+#6 102.2 Setting up curl (7.35.0-1ubuntu2.20) ...
+#6 102.2 Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+#6 106.8   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#6 106.8                                  Dload  Upload   Total   Spent    Left  Speed
+#6 106.8   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: ossec.wazuh.com
+#6 ERROR: process "/bin/sh -c apt-get update && apt-get install -y curl gnupg &&     curl https://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key -o ossec-key.gpg.key &&     apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key &&     echo \"deb http://ossec.wazuh.com/repos/apt/ubuntu trusty main\" >> /etc/apt/sources.list &&     apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect ossec-hids     ossec-hids=2.8.3-4trusty" did not complete successfully: exit code: 6
+------
+ > [2/9] RUN apt-get update && apt-get install -y curl gnupg &&     curl https://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key -o ossec-key.gpg.key &&     apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key &&     echo "deb http://ossec.wazuh.com/repos/apt/ubuntu trusty main" >> /etc/apt/sources.list &&     apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect ossec-hids     ossec-hids=2.8.3-4trusty:
+95.99 Preparing to unpack .../libcurl3_7.35.0-1ubuntu2.20_amd64.deb ...
+96.07 Unpacking libcurl3:amd64 (7.35.0-1ubuntu2.20) over (7.35.0-1ubuntu2.5) ...
+96.41 Preparing to unpack .../gnupg_1.4.16-1ubuntu2.6_amd64.deb ...
+96.49 Unpacking gnupg (1.4.16-1ubuntu2.6) over (1.4.16-1ubuntu2.3) ...
+102.0 Setting up gnupg (1.4.16-1ubuntu2.6) ...
+102.1 Setting up libcurl3:amd64 (7.35.0-1ubuntu2.20) ...
+102.2 Setting up curl (7.35.0-1ubuntu2.20) ...
+102.2 Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+                     Dload  Upload   Total   Spent    Left  Speed
+106.8   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: ossec.wazuh.com
+------
+v1_Dockerfile:8
+--------------------
+   7 |     #
+   8 | >>> RUN apt-get update && apt-get install -y curl gnupg && \
+   9 | >>>     curl https://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key -o ossec-key.gpg.key && \
+  10 | >>>     apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key && \
+  11 | >>>     echo "deb http://ossec.wazuh.com/repos/apt/ubuntu trusty main" >> /etc/apt/sources.list && \
+  12 | >>>     apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect ossec-hids \
+  13 | >>>     ossec-hids=2.8.3-4trusty
+  14 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y curl gnupg &&     curl https://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key -o ossec-key.gpg.key &&     apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key &&     echo \"deb http://ossec.wazuh.com/repos/apt/ubuntu trusty main\" >> /etc/apt/sources.list &&     apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect ossec-hids     ossec-hids=2.8.3-4trusty" did not complete successfully: exit code: 6
+Duration: 2:4.20

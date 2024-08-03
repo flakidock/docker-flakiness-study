@@ -1,0 +1,881 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 48B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 663B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/rust:1.34
+#3 DONE 0.5s
+
+#4 [internal] load metadata for docker.io/library/debian:bullseye-slim
+#4 DONE 1.2s
+
+#5 [stage-1 1/5] FROM docker.io/library/debian:bullseye-slim@sha256:b257e5e831aa9949737638f6d323cd563347b2a5571d98b9b15eef0c7cd80b68
+#5 resolve docker.io/library/debian:bullseye-slim@sha256:b257e5e831aa9949737638f6d323cd563347b2a5571d98b9b15eef0c7cd80b68
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 186.96kB 0.0s done
+#6 DONE 0.4s
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 resolve docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab 0.5s done
+#7 sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab 988B / 988B done
+#7 sha256:a5c7a581a24624f9a24e473466347c472ff8757755987d60ac7a42df2545367b 1.59kB / 1.59kB done
+#7 sha256:977128090ee1213a2d89f5ee64f1e5be501385d54b85703fb0f4524f405b3441 6.38kB / 6.38kB done
+#7 sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 0B / 45.34MB 0.1s
+#7 sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 8.39MB / 45.34MB 0.3s
+#7 sha256:221d80d00ae9675aad24913aacbadfac1ce8b7084f9765a6c0813486082c5c69 0B / 10.78MB 0.3s
+#7 sha256:4250b3117dca5e14edc32ebf1366cd54e4cda91f17610b76c504a86917ff8b95 0B / 4.34MB 0.3s
+#7 sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 13.63MB / 45.34MB 0.4s
+#7 sha256:221d80d00ae9675aad24913aacbadfac1ce8b7084f9765a6c0813486082c5c69 3.15MB / 10.78MB 0.4s
+#7 sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 24.12MB / 45.34MB 0.6s
+#7 sha256:221d80d00ae9675aad24913aacbadfac1ce8b7084f9765a6c0813486082c5c69 10.78MB / 10.78MB 0.6s
+#7 sha256:4250b3117dca5e14edc32ebf1366cd54e4cda91f17610b76c504a86917ff8b95 4.34MB / 4.34MB 0.6s
+#7 sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 29.36MB / 45.34MB 0.7s
+#7 sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 40.89MB / 45.34MB 0.9s
+#7 sha256:221d80d00ae9675aad24913aacbadfac1ce8b7084f9765a6c0813486082c5c69 10.78MB / 10.78MB 0.8s done
+#7 sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 0B / 50.07MB 0.9s
+#7 sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 45.34MB / 45.34MB 1.0s
+#7 sha256:4250b3117dca5e14edc32ebf1366cd54e4cda91f17610b76c504a86917ff8b95 4.34MB / 4.34MB 0.9s done
+#7 sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 4.19MB / 50.07MB 1.0s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 0B / 215.08MB 1.0s
+#7 sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 17.83MB / 50.07MB 1.3s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 10.90MB / 215.08MB 1.3s
+#7 sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 24.12MB / 50.07MB 1.4s
+#7 sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 30.41MB / 50.07MB 1.5s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 23.07MB / 215.08MB 1.5s
+#7 sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 45.34MB / 45.34MB 1.7s done
+#7 sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 40.89MB / 50.07MB 1.7s
+#7 sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 47.19MB / 50.07MB 1.8s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 37.75MB / 215.08MB 1.8s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 0B / 243.95MB 1.8s
+#7 sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 50.07MB / 50.07MB 1.9s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 54.53MB / 215.08MB 2.1s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 16.78MB / 243.95MB 2.2s
+#7 extracting sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 66.06MB / 215.08MB 2.3s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 32.51MB / 243.95MB 2.5s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 82.84MB / 215.08MB 2.6s
+#7 sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 50.07MB / 50.07MB 2.7s done
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 97.52MB / 215.08MB 2.9s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 55.52MB / 243.95MB 2.9s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 109.05MB / 215.08MB 3.1s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 75.50MB / 243.95MB 3.3s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 120.59MB / 215.08MB 3.4s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 133.17MB / 215.08MB 3.7s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 93.32MB / 243.95MB 3.7s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 152.04MB / 215.08MB 4.1s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 112.20MB / 243.95MB 4.1s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 165.68MB / 215.08MB 4.4s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 126.88MB / 243.95MB 4.4s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 177.21MB / 215.08MB 4.6s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 139.46MB / 243.95MB 4.6s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 189.79MB / 215.08MB 4.9s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 156.24MB / 243.95MB 4.9s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 205.52MB / 215.08MB 5.2s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 173.02MB / 243.95MB 5.2s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 190.84MB / 243.95MB 5.5s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 205.52MB / 243.95MB 5.8s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 219.15MB / 243.95MB 6.1s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 234.88MB / 243.95MB 6.5s
+#7 extracting sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 5.0s
+#7 sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 215.08MB / 215.08MB 8.6s done
+#7 ...
+
+#5 [stage-1 1/5] FROM docker.io/library/debian:bullseye-slim@sha256:b257e5e831aa9949737638f6d323cd563347b2a5571d98b9b15eef0c7cd80b68
+#5 resolve docker.io/library/debian:bullseye-slim@sha256:b257e5e831aa9949737638f6d323cd563347b2a5571d98b9b15eef0c7cd80b68 0.6s done
+#5 sha256:482aabdceb859cc9ddc2e36867ac1ff6d3477bffcd05cac015bfc442c334aff4 529B / 529B done
+#5 sha256:1dcedcb363a3e8070f3a0438cab8174b07fd23da25f04928c5111ccf7d856465 1.46kB / 1.46kB done
+#5 sha256:b257e5e831aa9949737638f6d323cd563347b2a5571d98b9b15eef0c7cd80b68 1.85kB / 1.85kB done
+#5 sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 31.43MB / 31.43MB 4.3s done
+#5 extracting sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 4.8s
+#5 ...
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 extracting sha256:c5e155d5a1d130a7f8a3e24cee0d9e1349bff13f90ec6a941478e558fde53c14 9.0s done
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 243.95MB / 243.95MB 11.5s
+#7 sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 243.95MB / 243.95MB 12.4s done
+#7 ...
+
+#5 [stage-1 1/5] FROM docker.io/library/debian:bullseye-slim@sha256:b257e5e831aa9949737638f6d323cd563347b2a5571d98b9b15eef0c7cd80b68
+#5 extracting sha256:5de87e84afeec60e41fb003112c283b04a73e50c8d579c88bd21d668fd688485 7.0s done
+#5 DONE 13.7s
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 extracting sha256:221d80d00ae9675aad24913aacbadfac1ce8b7084f9765a6c0813486082c5c69
+#7 extracting sha256:221d80d00ae9675aad24913aacbadfac1ce8b7084f9765a6c0813486082c5c69 1.3s done
+#7 extracting sha256:4250b3117dca5e14edc32ebf1366cd54e4cda91f17610b76c504a86917ff8b95
+#7 extracting sha256:4250b3117dca5e14edc32ebf1366cd54e4cda91f17610b76c504a86917ff8b95 0.8s done
+#7 extracting sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5
+#7 extracting sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 5.1s
+#7 ...
+
+#8 [stage-1 2/5] RUN apt-get update
+#8 2.112 Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#8 2.191 Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [48.4 kB]
+#8 2.196 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
+#8 3.435 Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8067 kB]
+#8 4.640 Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [280 kB]
+#8 5.619 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]
+#8 7.973 Fetched 8574 kB in 6s (1453 kB/s)
+#8 7.973 Reading package lists...
+#8 ...
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 extracting sha256:3b7ca19181b24b87e24423c01b490633bc1e47d2fcdc1987bf2e37949d6789b5 7.7s done
+#7 ...
+
+#8 [stage-1 2/5] RUN apt-get update
+#8 DONE 25.6s
+
+#9 [stage-1 3/5] RUN apt-get install -y     xvfb     libxcursor1     libxrandr2     libxi6
+#9 1.739 Reading package lists...
+#9 3.983 Building dependency tree...
+#9 4.531 Reading state information...
+#9 5.164 The following additional packages will be installed:
+#9 5.164   libbrotli1 libbsd0 libdrm-amdgpu1 libdrm-common libdrm-intel1
+#9 5.164   libdrm-nouveau2 libdrm-radeon1 libdrm2 libedit2 libelf1 libexpat1
+#9 5.164   libfontenc1 libfreetype6 libgl1 libgl1-mesa-dri libglapi-mesa libglvnd0
+#9 5.164   libglx-mesa0 libglx0 libice6 libllvm11 libmd0 libpciaccess0 libpixman-1-0
+#9 5.164   libpng16-16 libsensors-config libsensors5 libsm6 libunwind8 libvulkan1
+#9 5.164   libwayland-client0 libx11-6 libx11-data libx11-xcb1 libxau6 libxaw7
+#9 5.164   libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0 libxcb-present0 libxcb-randr0
+#9 5.164   libxcb-shm0 libxcb-sync1 libxcb-xfixes0 libxcb1 libxdamage1 libxdmcp6
+#9 5.164   libxext6 libxfixes3 libxfont2 libxkbfile1 libxmu6 libxmuu1 libxpm4
+#9 5.168   libxrender1 libxshmfence1 libxt6 libxxf86vm1 libz3-4 mesa-vulkan-drivers
+#9 5.168   x11-common x11-xkb-utils xauth xfonts-base xfonts-encodings xfonts-utils
+#9 5.168   xkb-data xserver-common
+#9 5.168 Suggested packages:
+#9 5.168   pciutils lm-sensors
+#9 6.035 The following NEW packages will be installed:
+#9 6.035   libbrotli1 libbsd0 libdrm-amdgpu1 libdrm-common libdrm-intel1
+#9 6.035   libdrm-nouveau2 libdrm-radeon1 libdrm2 libedit2 libelf1 libexpat1
+#9 6.035   libfontenc1 libfreetype6 libgl1 libgl1-mesa-dri libglapi-mesa libglvnd0
+#9 6.041   libglx-mesa0 libglx0 libice6 libllvm11 libmd0 libpciaccess0 libpixman-1-0
+#9 6.041   libpng16-16 libsensors-config libsensors5 libsm6 libunwind8 libvulkan1
+#9 6.041   libwayland-client0 libx11-6 libx11-data libx11-xcb1 libxau6 libxaw7
+#9 6.041   libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0 libxcb-present0 libxcb-randr0
+#9 6.041   libxcb-shm0 libxcb-sync1 libxcb-xfixes0 libxcb1 libxcursor1 libxdamage1
+#9 6.041   libxdmcp6 libxext6 libxfixes3 libxfont2 libxi6 libxkbfile1 libxmu6 libxmuu1
+#9 6.041   libxpm4 libxrandr2 libxrender1 libxshmfence1 libxt6 libxxf86vm1 libz3-4
+#9 6.041   mesa-vulkan-drivers x11-common x11-xkb-utils xauth xfonts-base
+#9 6.041   xfonts-encodings xfonts-utils xkb-data xserver-common xvfb
+#9 6.156 0 upgraded, 72 newly installed, 0 to remove and 0 not upgraded.
+#9 6.156 Need to get 58.1 MB of archives.
+#9 6.156 After this operation, 202 MB of additional disk space will be used.
+#9 6.156 Get:1 http://deb.debian.org/debian bullseye/main amd64 libbrotli1 amd64 1.0.9-2+b2 [279 kB]
+#9 6.206 Get:2 http://deb.debian.org/debian bullseye/main amd64 libmd0 amd64 1.0.3-3 [28.0 kB]
+#9 6.206 Get:3 http://deb.debian.org/debian bullseye/main amd64 libbsd0 amd64 0.11.3-1+deb11u1 [108 kB]
+#9 6.206 Get:4 http://deb.debian.org/debian bullseye/main amd64 libdrm-common all 2.4.104-1 [14.9 kB]
+#9 6.206 Get:5 http://deb.debian.org/debian bullseye/main amd64 libdrm2 amd64 2.4.104-1 [41.5 kB]
+#9 6.209 Get:6 http://deb.debian.org/debian bullseye/main amd64 libdrm-amdgpu1 amd64 2.4.104-1 [28.5 kB]
+#9 6.209 Get:7 http://deb.debian.org/debian bullseye/main amd64 libpciaccess0 amd64 0.16-1 [53.6 kB]
+#9 6.209 Get:8 http://deb.debian.org/debian bullseye/main amd64 libdrm-intel1 amd64 2.4.104-1 [71.8 kB]
+#9 6.215 Get:9 http://deb.debian.org/debian bullseye/main amd64 libdrm-nouveau2 amd64 2.4.104-1 [26.8 kB]
+#9 6.215 Get:10 http://deb.debian.org/debian bullseye/main amd64 libdrm-radeon1 amd64 2.4.104-1 [30.2 kB]
+#9 6.215 Get:11 http://deb.debian.org/debian bullseye/main amd64 libedit2 amd64 3.1-20191231-2+b1 [96.7 kB]
+#9 6.376 Get:12 http://deb.debian.org/debian bullseye/main amd64 libelf1 amd64 0.183-1 [165 kB]
+#9 6.376 Get:13 http://deb.debian.org/debian bullseye/main amd64 libexpat1 amd64 2.2.10-2+deb11u5 [98.2 kB]
+#9 6.376 Get:14 http://deb.debian.org/debian bullseye/main amd64 libfontenc1 amd64 1:1.1.4-1 [24.3 kB]
+#9 6.376 Get:15 http://deb.debian.org/debian bullseye/main amd64 libpng16-16 amd64 1.6.37-3 [294 kB]
+#9 6.396 Get:16 http://deb.debian.org/debian bullseye/main amd64 libfreetype6 amd64 2.10.4+dfsg-1+deb11u1 [418 kB]
+#9 6.396 Get:17 http://deb.debian.org/debian bullseye/main amd64 libglapi-mesa amd64 20.3.5-1 [71.7 kB]
+#9 6.402 Get:18 http://deb.debian.org/debian bullseye/main amd64 libz3-4 amd64 4.8.10-1 [6949 kB]
+#9 6.522 Get:19 http://deb.debian.org/debian bullseye/main amd64 libllvm11 amd64 1:11.0.1-2 [17.9 MB]
+#9 6.822 Get:20 http://deb.debian.org/debian bullseye/main amd64 libsensors-config all 1:3.6.0-7 [32.3 kB]
+#9 6.822 Get:21 http://deb.debian.org/debian bullseye/main amd64 libsensors5 amd64 1:3.6.0-7 [52.3 kB]
+#9 6.822 Get:22 http://deb.debian.org/debian bullseye/main amd64 libvulkan1 amd64 1.2.162.0-1 [103 kB]
+#9 6.822 Get:23 http://deb.debian.org/debian bullseye/main amd64 libgl1-mesa-dri amd64 20.3.5-1 [9633 kB]
+#9 6.941 Get:24 http://deb.debian.org/debian bullseye/main amd64 libglvnd0 amd64 1.3.2-1 [53.6 kB]
+#9 6.941 Get:25 http://deb.debian.org/debian bullseye/main amd64 libxau6 amd64 1:1.0.9-1 [19.7 kB]
+#9 6.941 Get:26 http://deb.debian.org/debian bullseye/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+#9 6.944 Get:27 http://deb.debian.org/debian bullseye/main amd64 libxcb1 amd64 1.14-3 [140 kB]
+#9 6.949 Get:28 http://deb.debian.org/debian bullseye/main amd64 libx11-data all 2:1.7.2-1+deb11u2 [311 kB]
+#9 6.950 Get:29 http://deb.debian.org/debian bullseye/main amd64 libx11-6 amd64 2:1.7.2-1+deb11u2 [772 kB]
+#9 6.962 Get:30 http://deb.debian.org/debian bullseye/main amd64 libx11-xcb1 amd64 2:1.7.2-1+deb11u2 [204 kB]
+#9 6.966 Get:31 http://deb.debian.org/debian bullseye/main amd64 libxcb-dri2-0 amd64 1.14-3 [103 kB]
+#9 6.975 Get:32 http://deb.debian.org/debian bullseye/main amd64 libxcb-dri3-0 amd64 1.14-3 [102 kB]
+#9 6.980 Get:33 http://deb.debian.org/debian bullseye/main amd64 libxcb-glx0 amd64 1.14-3 [118 kB]
+#9 6.980 Get:34 http://deb.debian.org/debian bullseye/main amd64 libxcb-present0 amd64 1.14-3 [101 kB]
+#9 6.985 Get:35 http://deb.debian.org/debian bullseye/main amd64 libxcb-shm0 amd64 1.14-3 [101 kB]
+#9 6.985 Get:36 http://deb.debian.org/debian bullseye/main amd64 libxcb-sync1 amd64 1.14-3 [105 kB]
+#9 6.991 Get:37 http://deb.debian.org/debian bullseye/main amd64 libxcb-xfixes0 amd64 1.14-3 [105 kB]
+#9 6.993 Get:38 http://deb.debian.org/debian bullseye/main amd64 libxdamage1 amd64 1:1.1.5-2 [15.7 kB]
+#9 6.998 Get:39 http://deb.debian.org/debian bullseye/main amd64 libxext6 amd64 2:1.3.3-1.1 [52.7 kB]
+#9 6.998 Get:40 http://deb.debian.org/debian bullseye/main amd64 libxfixes3 amd64 1:5.0.3-2 [22.1 kB]
+#9 7.006 Get:41 http://deb.debian.org/debian bullseye/main amd64 libxshmfence1 amd64 1.3-1 [8820 B]
+#9 7.012 Get:42 http://deb.debian.org/debian bullseye/main amd64 libxxf86vm1 amd64 1:1.1.4-1+b2 [20.8 kB]
+#9 7.012 Get:43 http://deb.debian.org/debian bullseye/main amd64 libglx-mesa0 amd64 20.3.5-1 [186 kB]
+#9 7.023 Get:44 http://deb.debian.org/debian bullseye/main amd64 x11-common all 1:7.7+22 [252 kB]
+#9 7.023 Get:45 http://deb.debian.org/debian bullseye/main amd64 libice6 amd64 2:1.0.10-1 [58.5 kB]
+#9 7.023 Get:46 http://deb.debian.org/debian bullseye/main amd64 libpixman-1-0 amd64 0.40.0-1.1~deb11u1 [543 kB]
+#9 7.066 Get:47 http://deb.debian.org/debian bullseye/main amd64 libsm6 amd64 2:1.2.3-1 [35.1 kB]
+#9 7.066 Get:48 http://deb.debian.org/debian bullseye/main amd64 libunwind8 amd64 1.3.2-2 [54.5 kB]
+#9 7.078 Get:49 http://deb.debian.org/debian bullseye/main amd64 libwayland-client0 amd64 1.18.0-2~exp1.1 [26.9 kB]
+#9 7.087 Get:50 http://deb.debian.org/debian bullseye/main amd64 libxt6 amd64 1:1.2.0-1 [189 kB]
+#9 7.097 Get:51 http://deb.debian.org/debian bullseye/main amd64 libxmu6 amd64 2:1.1.2-2+b3 [60.8 kB]
+#9 7.105 Get:52 http://deb.debian.org/debian bullseye/main amd64 libxpm4 amd64 1:3.5.12-1.1+deb11u1 [50.0 kB]
+#9 7.110 Get:53 http://deb.debian.org/debian bullseye/main amd64 libxaw7 amd64 2:1.0.13-1.1 [202 kB]
+#9 7.118 Get:54 http://deb.debian.org/debian bullseye/main amd64 libxcb-randr0 amd64 1.14-3 [113 kB]
+#9 7.129 Get:55 http://deb.debian.org/debian bullseye/main amd64 libxrender1 amd64 1:0.9.10-1 [33.0 kB]
+#9 7.136 Get:56 http://deb.debian.org/debian bullseye/main amd64 libxcursor1 amd64 1:1.2.0-2 [37.3 kB]
+#9 7.139 Get:57 http://deb.debian.org/debian bullseye/main amd64 libxfont2 amd64 1:2.0.4-1 [136 kB]
+#9 7.254 Get:58 http://deb.debian.org/debian bullseye/main amd64 libxi6 amd64 2:1.7.10-1 [83.4 kB]
+#9 7.254 Get:59 http://deb.debian.org/debian bullseye/main amd64 libxkbfile1 amd64 1:1.1.0-1 [75.2 kB]
+#9 7.254 Get:60 http://deb.debian.org/debian bullseye/main amd64 libxmuu1 amd64 2:1.1.2-2+b3 [23.9 kB]
+#9 7.254 Get:61 http://deb.debian.org/debian bullseye/main amd64 libxrandr2 amd64 2:1.5.1-1 [37.5 kB]
+#9 7.254 Get:62 http://deb.debian.org/debian bullseye/main amd64 mesa-vulkan-drivers amd64 20.3.5-1 [4086 kB]
+#9 7.378 Get:63 http://deb.debian.org/debian bullseye/main amd64 x11-xkb-utils amd64 7.7+5 [163 kB]
+#9 7.379 Get:64 http://deb.debian.org/debian bullseye/main amd64 xauth amd64 1:1.1-1 [40.5 kB]
+#9 7.414 Get:65 http://deb.debian.org/debian bullseye/main amd64 xfonts-encodings all 1:1.0.4-2.1 [573 kB]
+#9 7.433 Get:66 http://deb.debian.org/debian bullseye/main amd64 xfonts-utils amd64 1:7.7+6 [93.0 kB]
+#9 7.433 Get:67 http://deb.debian.org/debian bullseye/main amd64 xfonts-base all 1:1.0.5 [5897 kB]
+#9 7.543 Get:68 http://deb.debian.org/debian bullseye/main amd64 xkb-data all 2.29-2 [655 kB]
+#9 7.577 Get:69 http://deb.debian.org/debian bullseye/main amd64 xserver-common all 2:1.20.11-1+deb11u13 [2285 kB]
+#9 7.628 Get:70 http://deb.debian.org/debian bullseye/main amd64 libglx0 amd64 1.3.2-1 [35.7 kB]
+#9 7.650 Get:71 http://deb.debian.org/debian bullseye/main amd64 libgl1 amd64 1.3.2-1 [89.5 kB]
+#9 7.650 Get:72 http://deb.debian.org/debian bullseye/main amd64 xvfb amd64 2:1.20.11-1+deb11u13 [3044 kB]
+#9 8.210 debconf: delaying package configuration, since apt-utils is not installed
+#9 8.285 Fetched 58.1 MB in 2s (35.3 MB/s)
+#9 8.457 Selecting previously unselected package libbrotli1:amd64.
+#9 8.457 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6670 files and directories currently installed.)
+#9 8.461 Preparing to unpack .../00-libbrotli1_1.0.9-2+b2_amd64.deb ...
+#9 8.521 Unpacking libbrotli1:amd64 (1.0.9-2+b2) ...
+#9 8.994 Selecting previously unselected package libmd0:amd64.
+#9 9.000 Preparing to unpack .../01-libmd0_1.0.3-3_amd64.deb ...
+#9 9.027 Unpacking libmd0:amd64 (1.0.3-3) ...
+#9 9.367 Selecting previously unselected package libbsd0:amd64.
+#9 9.380 Preparing to unpack .../02-libbsd0_0.11.3-1+deb11u1_amd64.deb ...
+#9 9.410 Unpacking libbsd0:amd64 (0.11.3-1+deb11u1) ...
+#9 9.670 Selecting previously unselected package libdrm-common.
+#9 9.670 Preparing to unpack .../03-libdrm-common_2.4.104-1_all.deb ...
+#9 9.696 Unpacking libdrm-common (2.4.104-1) ...
+#9 10.02 Selecting previously unselected package libdrm2:amd64.
+#9 10.03 Preparing to unpack .../04-libdrm2_2.4.104-1_amd64.deb ...
+#9 10.04 Unpacking libdrm2:amd64 (2.4.104-1) ...
+#9 10.44 Selecting previously unselected package libdrm-amdgpu1:amd64.
+#9 10.44 Preparing to unpack .../05-libdrm-amdgpu1_2.4.104-1_amd64.deb ...
+#9 10.48 Unpacking libdrm-amdgpu1:amd64 (2.4.104-1) ...
+#9 ...
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 extracting sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 10.1s
+#7 ...
+
+#9 [stage-1 3/5] RUN apt-get install -y     xvfb     libxcursor1     libxrandr2     libxi6
+#9 10.76 Selecting previously unselected package libpciaccess0:amd64.
+#9 10.78 Preparing to unpack .../06-libpciaccess0_0.16-1_amd64.deb ...
+#9 10.80 Unpacking libpciaccess0:amd64 (0.16-1) ...
+#9 11.13 Selecting previously unselected package libdrm-intel1:amd64.
+#9 11.13 Preparing to unpack .../07-libdrm-intel1_2.4.104-1_amd64.deb ...
+#9 11.16 Unpacking libdrm-intel1:amd64 (2.4.104-1) ...
+#9 11.55 Selecting previously unselected package libdrm-nouveau2:amd64.
+#9 11.56 Preparing to unpack .../08-libdrm-nouveau2_2.4.104-1_amd64.deb ...
+#9 11.58 Unpacking libdrm-nouveau2:amd64 (2.4.104-1) ...
+#9 11.94 Selecting previously unselected package libdrm-radeon1:amd64.
+#9 11.94 Preparing to unpack .../09-libdrm-radeon1_2.4.104-1_amd64.deb ...
+#9 11.96 Unpacking libdrm-radeon1:amd64 (2.4.104-1) ...
+#9 12.35 Selecting previously unselected package libedit2:amd64.
+#9 12.35 Preparing to unpack .../10-libedit2_3.1-20191231-2+b1_amd64.deb ...
+#9 12.37 Unpacking libedit2:amd64 (3.1-20191231-2+b1) ...
+#9 12.68 Selecting previously unselected package libelf1:amd64.
+#9 12.69 Preparing to unpack .../11-libelf1_0.183-1_amd64.deb ...
+#9 12.70 Unpacking libelf1:amd64 (0.183-1) ...
+#9 13.08 Selecting previously unselected package libexpat1:amd64.
+#9 13.08 Preparing to unpack .../12-libexpat1_2.2.10-2+deb11u5_amd64.deb ...
+#9 13.11 Unpacking libexpat1:amd64 (2.2.10-2+deb11u5) ...
+#9 13.43 Selecting previously unselected package libfontenc1:amd64.
+#9 13.43 Preparing to unpack .../13-libfontenc1_1%3a1.1.4-1_amd64.deb ...
+#9 13.45 Unpacking libfontenc1:amd64 (1:1.1.4-1) ...
+#9 13.73 Selecting previously unselected package libpng16-16:amd64.
+#9 13.73 Preparing to unpack .../14-libpng16-16_1.6.37-3_amd64.deb ...
+#9 13.75 Unpacking libpng16-16:amd64 (1.6.37-3) ...
+#9 14.09 Selecting previously unselected package libfreetype6:amd64.
+#9 14.10 Preparing to unpack .../15-libfreetype6_2.10.4+dfsg-1+deb11u1_amd64.deb ...
+#9 14.13 Unpacking libfreetype6:amd64 (2.10.4+dfsg-1+deb11u1) ...
+#9 14.59 Selecting previously unselected package libglapi-mesa:amd64.
+#9 14.59 Preparing to unpack .../16-libglapi-mesa_20.3.5-1_amd64.deb ...
+#9 14.62 Unpacking libglapi-mesa:amd64 (20.3.5-1) ...
+#9 14.93 Selecting previously unselected package libz3-4:amd64.
+#9 14.94 Preparing to unpack .../17-libz3-4_4.8.10-1_amd64.deb ...
+#9 14.96 Unpacking libz3-4:amd64 (4.8.10-1) ...
+#9 16.87 Selecting previously unselected package libllvm11:amd64.
+#9 16.87 Preparing to unpack .../18-libllvm11_1%3a11.0.1-2_amd64.deb ...
+#9 16.90 Unpacking libllvm11:amd64 (1:11.0.1-2) ...
+#9 ...
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 extracting sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 18.1s
+#7 extracting sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 23.1s
+#7 ...
+
+#9 [stage-1 3/5] RUN apt-get install -y     xvfb     libxcursor1     libxrandr2     libxi6
+#9 23.55 Selecting previously unselected package libsensors-config.
+#9 23.55 Preparing to unpack .../19-libsensors-config_1%3a3.6.0-7_all.deb ...
+#9 23.61 Unpacking libsensors-config (1:3.6.0-7) ...
+#9 24.00 Selecting previously unselected package libsensors5:amd64.
+#9 24.00 Preparing to unpack .../20-libsensors5_1%3a3.6.0-7_amd64.deb ...
+#9 24.07 Unpacking libsensors5:amd64 (1:3.6.0-7) ...
+#9 24.38 Selecting previously unselected package libvulkan1:amd64.
+#9 24.38 Preparing to unpack .../21-libvulkan1_1.2.162.0-1_amd64.deb ...
+#9 24.42 Unpacking libvulkan1:amd64 (1.2.162.0-1) ...
+#9 24.95 Selecting previously unselected package libgl1-mesa-dri:amd64.
+#9 24.96 Preparing to unpack .../22-libgl1-mesa-dri_20.3.5-1_amd64.deb ...
+#9 25.03 Unpacking libgl1-mesa-dri:amd64 (20.3.5-1) ...
+#9 ...
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 extracting sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 28.3s
+#7 extracting sha256:425d7b2a5bcc7e8df5041d66655cd6173c16799afefb1645ca0e0b3fa8a1043d 31.4s done
+#7 ...
+
+#9 [stage-1 3/5] RUN apt-get install -y     xvfb     libxcursor1     libxrandr2     libxi6
+#9 31.97 Selecting previously unselected package libglvnd0:amd64.
+#9 31.98 Preparing to unpack .../23-libglvnd0_1.3.2-1_amd64.deb ...
+#9 32.00 Unpacking libglvnd0:amd64 (1.3.2-1) ...
+#9 32.41 Selecting previously unselected package libxau6:amd64.
+#9 32.42 Preparing to unpack .../24-libxau6_1%3a1.0.9-1_amd64.deb ...
+#9 32.44 Unpacking libxau6:amd64 (1:1.0.9-1) ...
+#9 32.70 Selecting previously unselected package libxdmcp6:amd64.
+#9 32.70 Preparing to unpack .../25-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+#9 32.73 Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+#9 33.02 Selecting previously unselected package libxcb1:amd64.
+#9 33.03 Preparing to unpack .../26-libxcb1_1.14-3_amd64.deb ...
+#9 33.05 Unpacking libxcb1:amd64 (1.14-3) ...
+#9 ...
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 extracting sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 5.6s
+#7 extracting sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 10.8s
+#7 ...
+
+#9 [stage-1 3/5] RUN apt-get install -y     xvfb     libxcursor1     libxrandr2     libxi6
+#9 47.14 Selecting previously unselected package libx11-data.
+#9 47.14 Preparing to unpack .../27-libx11-data_2%3a1.7.2-1+deb11u2_all.deb ...
+#9 47.17 Unpacking libx11-data (2:1.7.2-1+deb11u2) ...
+#9 47.74 Selecting previously unselected package libx11-6:amd64.
+#9 47.74 Preparing to unpack .../28-libx11-6_2%3a1.7.2-1+deb11u2_amd64.deb ...
+#9 47.76 Unpacking libx11-6:amd64 (2:1.7.2-1+deb11u2) ...
+#9 48.29 Selecting previously unselected package libx11-xcb1:amd64.
+#9 48.30 Preparing to unpack .../29-libx11-xcb1_2%3a1.7.2-1+deb11u2_amd64.deb ...
+#9 48.32 Unpacking libx11-xcb1:amd64 (2:1.7.2-1+deb11u2) ...
+#9 48.68 Selecting previously unselected package libxcb-dri2-0:amd64.
+#9 48.68 Preparing to unpack .../30-libxcb-dri2-0_1.14-3_amd64.deb ...
+#9 48.71 Unpacking libxcb-dri2-0:amd64 (1.14-3) ...
+#9 48.99 Selecting previously unselected package libxcb-dri3-0:amd64.
+#9 48.99 Preparing to unpack .../31-libxcb-dri3-0_1.14-3_amd64.deb ...
+#9 49.02 Unpacking libxcb-dri3-0:amd64 (1.14-3) ...
+#9 49.32 Selecting previously unselected package libxcb-glx0:amd64.
+#9 49.32 Preparing to unpack .../32-libxcb-glx0_1.14-3_amd64.deb ...
+#9 49.35 Unpacking libxcb-glx0:amd64 (1.14-3) ...
+#9 49.70 Selecting previously unselected package libxcb-present0:amd64.
+#9 49.70 Preparing to unpack .../33-libxcb-present0_1.14-3_amd64.deb ...
+#9 49.73 Unpacking libxcb-present0:amd64 (1.14-3) ...
+#9 50.04 Selecting previously unselected package libxcb-shm0:amd64.
+#9 50.04 Preparing to unpack .../34-libxcb-shm0_1.14-3_amd64.deb ...
+#9 50.06 Unpacking libxcb-shm0:amd64 (1.14-3) ...
+#9 50.38 Selecting previously unselected package libxcb-sync1:amd64.
+#9 50.39 Preparing to unpack .../35-libxcb-sync1_1.14-3_amd64.deb ...
+#9 50.42 Unpacking libxcb-sync1:amd64 (1.14-3) ...
+#9 50.73 Selecting previously unselected package libxcb-xfixes0:amd64.
+#9 50.73 Preparing to unpack .../36-libxcb-xfixes0_1.14-3_amd64.deb ...
+#9 50.76 Unpacking libxcb-xfixes0:amd64 (1.14-3) ...
+#9 51.08 Selecting previously unselected package libxdamage1:amd64.
+#9 51.08 Preparing to unpack .../37-libxdamage1_1%3a1.1.5-2_amd64.deb ...
+#9 51.11 Unpacking libxdamage1:amd64 (1:1.1.5-2) ...
+#9 51.52 Selecting previously unselected package libxext6:amd64.
+#9 51.52 Preparing to unpack .../38-libxext6_2%3a1.3.3-1.1_amd64.deb ...
+#9 51.58 Unpacking libxext6:amd64 (2:1.3.3-1.1) ...
+#9 51.87 Selecting previously unselected package libxfixes3:amd64.
+#9 51.88 Preparing to unpack .../39-libxfixes3_1%3a5.0.3-2_amd64.deb ...
+#9 51.90 Unpacking libxfixes3:amd64 (1:5.0.3-2) ...
+#9 52.23 Selecting previously unselected package libxshmfence1:amd64.
+#9 52.23 Preparing to unpack .../40-libxshmfence1_1.3-1_amd64.deb ...
+#9 52.25 Unpacking libxshmfence1:amd64 (1.3-1) ...
+#9 52.58 Selecting previously unselected package libxxf86vm1:amd64.
+#9 52.58 Preparing to unpack .../41-libxxf86vm1_1%3a1.1.4-1+b2_amd64.deb ...
+#9 52.62 Unpacking libxxf86vm1:amd64 (1:1.1.4-1+b2) ...
+#9 52.93 Selecting previously unselected package libglx-mesa0:amd64.
+#9 52.93 Preparing to unpack .../42-libglx-mesa0_20.3.5-1_amd64.deb ...
+#9 52.97 Unpacking libglx-mesa0:amd64 (20.3.5-1) ...
+#9 53.44 Selecting previously unselected package x11-common.
+#9 53.44 Preparing to unpack .../43-x11-common_1%3a7.7+22_all.deb ...
+#9 53.46 Unpacking x11-common (1:7.7+22) ...
+#9 53.82 Selecting previously unselected package libice6:amd64.
+#9 53.82 Preparing to unpack .../44-libice6_2%3a1.0.10-1_amd64.deb ...
+#9 53.84 Unpacking libice6:amd64 (2:1.0.10-1) ...
+#9 54.19 Selecting previously unselected package libpixman-1-0:amd64.
+#9 54.19 Preparing to unpack .../45-libpixman-1-0_0.40.0-1.1~deb11u1_amd64.deb ...
+#9 54.22 Unpacking libpixman-1-0:amd64 (0.40.0-1.1~deb11u1) ...
+#9 54.52 Selecting previously unselected package libsm6:amd64.
+#9 54.52 Preparing to unpack .../46-libsm6_2%3a1.2.3-1_amd64.deb ...
+#9 54.55 Unpacking libsm6:amd64 (2:1.2.3-1) ...
+#9 54.84 Selecting previously unselected package libunwind8:amd64.
+#9 54.86 Preparing to unpack .../47-libunwind8_1.3.2-2_amd64.deb ...
+#9 54.88 Unpacking libunwind8:amd64 (1.3.2-2) ...
+#9 55.21 Selecting previously unselected package libwayland-client0:amd64.
+#9 55.22 Preparing to unpack .../48-libwayland-client0_1.18.0-2~exp1.1_amd64.deb ...
+#9 55.25 Unpacking libwayland-client0:amd64 (1.18.0-2~exp1.1) ...
+#9 55.51 Selecting previously unselected package libxt6:amd64.
+#9 55.52 Preparing to unpack .../49-libxt6_1%3a1.2.0-1_amd64.deb ...
+#9 55.54 Unpacking libxt6:amd64 (1:1.2.0-1) ...
+#9 55.88 Selecting previously unselected package libxmu6:amd64.
+#9 55.89 Preparing to unpack .../50-libxmu6_2%3a1.1.2-2+b3_amd64.deb ...
+#9 55.92 Unpacking libxmu6:amd64 (2:1.1.2-2+b3) ...
+#9 56.24 Selecting previously unselected package libxpm4:amd64.
+#9 56.24 Preparing to unpack .../51-libxpm4_1%3a3.5.12-1.1+deb11u1_amd64.deb ...
+#9 56.36 Unpacking libxpm4:amd64 (1:3.5.12-1.1+deb11u1) ...
+#9 56.67 Selecting previously unselected package libxaw7:amd64.
+#9 56.67 Preparing to unpack .../52-libxaw7_2%3a1.0.13-1.1_amd64.deb ...
+#9 56.70 Unpacking libxaw7:amd64 (2:1.0.13-1.1) ...
+#9 ...
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 extracting sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 24.2s
+#7 ...
+
+#9 [stage-1 3/5] RUN apt-get install -y     xvfb     libxcursor1     libxrandr2     libxi6
+#9 59.14 Selecting previously unselected package libxcb-randr0:amd64.
+#9 59.14 Preparing to unpack .../53-libxcb-randr0_1.14-3_amd64.deb ...
+#9 59.18 Unpacking libxcb-randr0:amd64 (1.14-3) ...
+#9 59.58 Selecting previously unselected package libxrender1:amd64.
+#9 59.59 Preparing to unpack .../54-libxrender1_1%3a0.9.10-1_amd64.deb ...
+#9 59.61 Unpacking libxrender1:amd64 (1:0.9.10-1) ...
+#9 59.87 Selecting previously unselected package libxcursor1:amd64.
+#9 59.87 Preparing to unpack .../55-libxcursor1_1%3a1.2.0-2_amd64.deb ...
+#9 59.91 Unpacking libxcursor1:amd64 (1:1.2.0-2) ...
+#9 60.20 Selecting previously unselected package libxfont2:amd64.
+#9 60.20 Preparing to unpack .../56-libxfont2_1%3a2.0.4-1_amd64.deb ...
+#9 60.23 Unpacking libxfont2:amd64 (1:2.0.4-1) ...
+#9 ...
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 extracting sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 33.8s
+#7 extracting sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 39.0s
+#7 ...
+
+#9 [stage-1 3/5] RUN apt-get install -y     xvfb     libxcursor1     libxrandr2     libxi6
+#9 72.64 Selecting previously unselected package libxi6:amd64.
+#9 72.64 Preparing to unpack .../57-libxi6_2%3a1.7.10-1_amd64.deb ...
+#9 72.66 Unpacking libxi6:amd64 (2:1.7.10-1) ...
+#9 73.01 Selecting previously unselected package libxkbfile1:amd64.
+#9 73.01 Preparing to unpack .../58-libxkbfile1_1%3a1.1.0-1_amd64.deb ...
+#9 73.03 Unpacking libxkbfile1:amd64 (1:1.1.0-1) ...
+#9 73.34 Selecting previously unselected package libxmuu1:amd64.
+#9 73.34 Preparing to unpack .../59-libxmuu1_2%3a1.1.2-2+b3_amd64.deb ...
+#9 73.36 Unpacking libxmuu1:amd64 (2:1.1.2-2+b3) ...
+#9 73.62 Selecting previously unselected package libxrandr2:amd64.
+#9 73.62 Preparing to unpack .../60-libxrandr2_2%3a1.5.1-1_amd64.deb ...
+#9 73.65 Unpacking libxrandr2:amd64 (2:1.5.1-1) ...
+#9 73.92 Selecting previously unselected package mesa-vulkan-drivers:amd64.
+#9 73.92 Preparing to unpack .../61-mesa-vulkan-drivers_20.3.5-1_amd64.deb ...
+#9 73.93 Unpacking mesa-vulkan-drivers:amd64 (20.3.5-1) ...
+#9 ...
+
+#7 [build 1/6] FROM docker.io/library/rust:1.34@sha256:2591838f4f4889d5ff1962c96a39bd3098708d88459c5c085a25ec6184b8a0ab
+#7 extracting sha256:27d2629205758476f22382e04106ce0ec2ba03c26c75a895bba781e4ede45d81 41.1s done
+#7 DONE 114.6s
+
+#10 [build 2/6] WORKDIR /usr/src/gltf-viewer
+#10 ...
+
+#9 [stage-1 3/5] RUN apt-get install -y     xvfb     libxcursor1     libxrandr2     libxi6
+#9 83.97 Selecting previously unselected package x11-xkb-utils.
+#9 83.98 Preparing to unpack .../62-x11-xkb-utils_7.7+5_amd64.deb ...
+#9 84.32 Unpacking x11-xkb-utils (7.7+5) ...
+#9 ...
+
+#10 [build 2/6] WORKDIR /usr/src/gltf-viewer
+#10 DONE 9.3s
+
+#11 [build 3/6] COPY src src
+#11 DONE 0.8s
+
+#12 [build 4/6] COPY Cargo.toml Cargo.toml
+#12 DONE 0.7s
+
+#9 [stage-1 3/5] RUN apt-get install -y     xvfb     libxcursor1     libxrandr2     libxi6
+#9 84.87 Selecting previously unselected package xauth.
+#9 84.87 Preparing to unpack .../63-xauth_1%3a1.1-1_amd64.deb ...
+#9 84.92 Unpacking xauth (1:1.1-1) ...
+#9 85.47 Selecting previously unselected package xfonts-encodings.
+#9 85.47 Preparing to unpack .../64-xfonts-encodings_1%3a1.0.4-2.1_all.deb ...
+#9 85.53 Unpacking xfonts-encodings (1:1.0.4-2.1) ...
+#9 86.04 Selecting previously unselected package xfonts-utils.
+#9 86.04 Preparing to unpack .../65-xfonts-utils_1%3a7.7+6_amd64.deb ...
+#9 86.09 Unpacking xfonts-utils (1:7.7+6) ...
+#9 86.86 Selecting previously unselected package xfonts-base.
+#9 86.86 Preparing to unpack .../66-xfonts-base_1%3a1.0.5_all.deb ...
+#9 86.93 Unpacking xfonts-base (1:1.0.5) ...
+#9 ...
+
+#13 [build 5/6] COPY Cargo.lock Cargo.lock
+#13 DONE 0.9s
+
+#14 [build 6/6] RUN cargo build --release
+#14 3.395     Updating crates.io index
+#14 ...
+
+#9 [stage-1 3/5] RUN apt-get install -y     xvfb     libxcursor1     libxrandr2     libxi6
+#9 89.54 Selecting previously unselected package xkb-data.
+#9 89.54 Preparing to unpack .../67-xkb-data_2.29-2_all.deb ...
+#9 89.57 Unpacking xkb-data (2.29-2) ...
+#9 90.34 Selecting previously unselected package xserver-common.
+#9 90.35 Preparing to unpack .../68-xserver-common_2%3a1.20.11-1+deb11u13_all.deb ...
+#9 90.37 Unpacking xserver-common (2:1.20.11-1+deb11u13) ...
+#9 90.72 Selecting previously unselected package libglx0:amd64.
+#9 90.72 Preparing to unpack .../69-libglx0_1.3.2-1_amd64.deb ...
+#9 90.75 Unpacking libglx0:amd64 (1.3.2-1) ...
+#9 91.05 Selecting previously unselected package libgl1:amd64.
+#9 91.05 Preparing to unpack .../70-libgl1_1.3.2-1_amd64.deb ...
+#9 91.08 Unpacking libgl1:amd64 (1.3.2-1) ...
+#9 91.45 Selecting previously unselected package xvfb.
+#9 91.45 Preparing to unpack .../71-xvfb_2%3a1.20.11-1+deb11u13_amd64.deb ...
+#9 91.47 Unpacking xvfb (2:1.20.11-1+deb11u13) ...
+#9 92.16 Setting up libexpat1:amd64 (2.2.10-2+deb11u5) ...
+#9 92.25 Setting up libpixman-1-0:amd64 (0.40.0-1.1~deb11u1) ...
+#9 92.33 Setting up libpciaccess0:amd64 (0.16-1) ...
+#9 92.41 Setting up libxau6:amd64 (1:1.0.9-1) ...
+#9 92.49 Setting up libglvnd0:amd64 (1.3.2-1) ...
+#9 92.56 Setting up libbrotli1:amd64 (1.0.9-2+b2) ...
+#9 92.64 Setting up x11-common (1:7.7+22) ...
+#9 93.31 debconf: unable to initialize frontend: Dialog
+#9 93.31 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#9 93.31 debconf: falling back to frontend: Readline
+#9 93.31 debconf: unable to initialize frontend: Readline
+#9 93.31 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.32.1 /usr/local/share/perl/5.32.1 /usr/lib/x86_64-linux-gnu/perl5/5.32 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.32 /usr/share/perl/5.32 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#9 93.31 debconf: falling back to frontend: Teletype
+#9 93.49 invoke-rc.d: could not determine current runlevel
+#9 93.56 invoke-rc.d: policy-rc.d denied execution of start.
+#9 93.60 Setting up libsensors-config (1:3.6.0-7) ...
+#9 93.73 Setting up xkb-data (2.29-2) ...
+#9 93.81 Setting up libunwind8:amd64 (1.3.2-2) ...
+#9 93.89 Setting up libfontenc1:amd64 (1:1.1.4-1) ...
+#9 93.96 Setting up libz3-4:amd64 (4.8.10-1) ...
+#9 94.04 Setting up libx11-data (2:1.7.2-1+deb11u2) ...
+#9 94.12 Setting up xfonts-encodings (1:1.0.4-2.1) ...
+#9 94.20 Setting up libpng16-16:amd64 (1.6.37-3) ...
+#9 94.28 Setting up libsensors5:amd64 (1:3.6.0-7) ...
+#9 94.35 Setting up libglapi-mesa:amd64 (20.3.5-1) ...
+#9 94.43 Setting up libvulkan1:amd64 (1.2.162.0-1) ...
+#9 94.50 Setting up libmd0:amd64 (1.0.3-3) ...
+#9 94.58 Setting up libxshmfence1:amd64 (1.3-1) ...
+#9 94.66 Setting up libbsd0:amd64 (0.11.3-1+deb11u1) ...
+#9 94.73 Setting up libdrm-common (2.4.104-1) ...
+#9 94.81 Setting up libelf1:amd64 (0.183-1) ...
+#9 94.88 Setting up libwayland-client0:amd64 (1.18.0-2~exp1.1) ...
+#9 94.96 Setting up libice6:amd64 (2:1.0.10-1) ...
+#9 95.04 Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+#9 95.11 Setting up libxcb1:amd64 (1.14-3) ...
+#9 95.19 Setting up libxcb-xfixes0:amd64 (1.14-3) ...
+#9 95.27 Setting up libxcb-glx0:amd64 (1.14-3) ...
+#9 95.34 Setting up libedit2:amd64 (3.1-20191231-2+b1) ...
+#9 95.42 Setting up libxcb-shm0:amd64 (1.14-3) ...
+#9 95.50 Setting up libxcb-present0:amd64 (1.14-3) ...
+#9 95.59 Setting up libllvm11:amd64 (1:11.0.1-2) ...
+#9 95.66 Setting up libfreetype6:amd64 (2.10.4+dfsg-1+deb11u1) ...
+#9 95.74 Setting up libxcb-sync1:amd64 (1.14-3) ...
+#9 95.81 Setting up libxcb-dri2-0:amd64 (1.14-3) ...
+#9 95.89 Setting up libdrm2:amd64 (2.4.104-1) ...
+#9 95.97 Setting up libxcb-randr0:amd64 (1.14-3) ...
+#9 96.04 Setting up libx11-6:amd64 (2:1.7.2-1+deb11u2) ...
+#9 96.13 Setting up libxkbfile1:amd64 (1:1.1.0-1) ...
+#9 96.23 Setting up libsm6:amd64 (2:1.2.3-1) ...
+#9 96.40 Setting up libxfont2:amd64 (1:2.0.4-1) ...
+#9 96.47 Setting up libxmuu1:amd64 (2:1.1.2-2+b3) ...
+#9 96.55 Setting up libdrm-amdgpu1:amd64 (2.4.104-1) ...
+#9 96.62 Setting up libxcb-dri3-0:amd64 (1.14-3) ...
+#9 96.70 Setting up libx11-xcb1:amd64 (2:1.7.2-1+deb11u2) ...
+#9 96.78 Setting up libdrm-nouveau2:amd64 (2.4.104-1) ...
+#9 96.85 Setting up libxdamage1:amd64 (1:1.1.5-2) ...
+#9 96.95 Setting up libxpm4:amd64 (1:3.5.12-1.1+deb11u1) ...
+#9 97.03 Setting up libxrender1:amd64 (1:0.9.10-1) ...
+#9 97.11 Setting up libdrm-radeon1:amd64 (2.4.104-1) ...
+#9 97.18 Setting up libdrm-intel1:amd64 (2.4.104-1) ...
+#9 97.26 Setting up libgl1-mesa-dri:amd64 (20.3.5-1) ...
+#9 97.42 Setting up libxext6:amd64 (2:1.3.3-1.1) ...
+#9 97.52 Setting up xfonts-utils (1:7.7+6) ...
+#9 97.66 Setting up libxxf86vm1:amd64 (1:1.1.4-1+b2) ...
+#9 97.74 Setting up xfonts-base (1:1.0.5) ...
+#9 98.34 Setting up libxfixes3:amd64 (1:5.0.3-2) ...
+#9 98.42 Setting up libxrandr2:amd64 (2:1.5.1-1) ...
+#9 98.49 Setting up libxt6:amd64 (1:1.2.0-1) ...
+#9 98.57 Setting up xauth (1:1.1-1) ...
+#9 98.65 Setting up mesa-vulkan-drivers:amd64 (20.3.5-1) ...
+#9 98.72 Setting up libxmu6:amd64 (2:1.1.2-2+b3) ...
+#9 98.82 Setting up libglx-mesa0:amd64 (20.3.5-1) ...
+#9 98.89 Setting up libxi6:amd64 (2:1.7.10-1) ...
+#9 98.97 Setting up libglx0:amd64 (1.3.2-1) ...
+#9 99.05 Setting up libxcursor1:amd64 (1:1.2.0-2) ...
+#9 99.12 Setting up libxaw7:amd64 (2:1.0.13-1.1) ...
+#9 99.20 Setting up libgl1:amd64 (1.3.2-1) ...
+#9 99.27 Setting up x11-xkb-utils (7.7+5) ...
+#9 99.35 Setting up xserver-common (2:1.20.11-1+deb11u13) ...
+#9 99.43 Setting up xvfb (2:1.20.11-1+deb11u13) ...
+#9 99.51 Processing triggers for libc-bin (2.31-13+deb11u10) ...
+#9 DONE 101.6s
+
+#14 [build 6/6] RUN cargo build --release
+#14 361.2  Downloading crates ...
+#14 361.4   Downloaded simplelog v0.7.4
+#14 361.4   Downloaded collision v0.20.1
+#14 361.4   Downloaded num-traits v0.2.11
+#14 361.5   Downloaded glutin v0.18.0
+#14 361.5   Downloaded bitflags v1.2.1
+#14 361.5   Downloaded log v0.4.8
+#14 361.5   Downloaded gl v0.14.0
+#14 361.5   Downloaded cgmath v0.17.0
+#14 361.6   Downloaded image v0.21.0
+#14 361.6   Downloaded clap v2.33.0
+#14 361.7   Downloaded rand v0.6.5
+#14 361.7   Downloaded base64 v0.11.0
+#14 361.7   Downloaded gltf v0.15.0
+#14 361.7   Downloaded osmesa-sys v0.1.2
+#14 361.8   Downloaded bit-set v0.5.0
+#14 361.8   Downloaded autocfg v1.0.0
+#14 361.8   Downloaded approx v0.3.2
+#14 361.8   Downloaded smallvec v0.6.8
+#14 361.8   Downloaded gl_generator v0.9.0
+#14 361.8   Downloaded shared_library v0.1.9
+#14 361.8   Downloaded lazy_static v1.2.0
+#14 361.8   Downloaded gl_generator v0.14.0
+#14 361.8   Downloaded chrono v0.4.6
+#14 361.9   Downloaded term v0.5.1
+#14 361.9   Downloaded wayland-client v0.20.12
+#14 361.9   Downloaded x11-dl v2.18.3
+#14 361.9   Downloaded serde v1.0.85
+#14 362.0   Downloaded winit v0.17.2
+#14 362.0   Downloaded byteorder v1.2.7
+#14 362.0   Downloaded rand_os v0.1.3
+#14 362.1   Downloaded rand_hc v0.1.0
+#14 362.1   Downloaded gltf-json v0.15.0
+#14 362.1   Downloaded num-rational v0.2.1
+#14 362.1   Downloaded rand_chacha v0.1.1
+#14 362.1   Downloaded num-iter v0.1.37
+#14 362.1   Downloaded lzw v0.10.0
+#14 362.1   Downloaded png v0.14.0
+#14 362.1   Downloaded rand_jitter v0.1.4
+#14 362.1   Downloaded gif v0.10.1
+#14 362.1   Downloaded base64 v0.10.1
+#14 362.1   Downloaded safe-transmute v0.10.1
+#14 362.1   Downloaded libc v0.2.48
+#14 362.2   Downloaded cfg-if v0.1.6
+#14 362.2   Downloaded atty v0.2.11
+#14 362.2   Downloaded wayland-sys v0.20.12
+#14 362.2   Downloaded wayland-commons v0.20.12
+#14 362.2   Downloaded rand_isaac v0.1.1
+#14 362.2   Downloaded pkg-config v0.3.14
+#14 362.2   Downloaded unicode-width v0.1.5
+#14 362.2   Downloaded vec_map v0.8.1
+#14 362.2   Downloaded rand_core v0.4.0
+#14 362.2   Downloaded num-integer v0.1.39
+#14 362.2   Downloaded bit-vec v0.5.0
+#14 362.2   Downloaded wayland-scanner v0.20.12
+#14 362.2   Downloaded ansi_term v0.11.0
+#14 362.2   Downloaded time v0.1.42
+#14 362.2   Downloaded autocfg v0.1.7
+#14 362.2   Downloaded xml-rs v0.8.0
+#14 362.3   Downloaded rand_pcg v0.1.2
+#14 362.3   Downloaded rand_xorshift v0.1.1
+#14 362.3   Downloaded scoped_threadpool v0.1.9
+#14 362.3   Downloaded textwrap v0.11.0
+#14 362.3   Downloaded khronos_api v2.2.0
+#14 362.3   Downloaded strsim v0.8.0
+#14 362.3   Downloaded jpeg-decoder v0.1.15
+#14 362.3   Downloaded unreachable v1.0.0
+#14 362.3   Downloaded tiff v0.2.2
+#14 362.4   Downloaded xml-rs v0.7.0
+#14 362.4   Downloaded khronos_api v3.1.0
+#14 362.4   Downloaded rayon v1.0.3
+#14 362.5   Downloaded rand_core v0.3.1
+#14 362.5   Downloaded serde_derive v1.0.85
+#14 362.5   Downloaded smithay-client-toolkit v0.3.0
+#14 362.5   Downloaded percent-encoding v1.0.1
+#14 362.5   Downloaded color_quant v1.0.1
+#14 362.5   Downloaded parking_lot v0.6.4
+#14 362.5   Downloaded dlib v0.4.1
+#14 362.5   Downloaded downcast-rs v1.0.3
+#14 362.5   Downloaded inflate v0.4.4
+#14 362.5   Downloaded num-bigint v0.2.2
+#14 362.5   Downloaded proc-macro2 v0.4.26
+#14 362.5   Downloaded void v1.0.2
+#14 362.5   Downloaded num-derive v0.2.4
+#14 362.5   Downloaded serde_json v1.0.37
+#14 362.5   Downloaded adler32 v1.0.3
+#14 362.5   Downloaded quote v0.6.11
+#14 362.5   Downloaded either v1.5.0
+#14 362.5   Downloaded deflate v0.7.19
+#14 362.6   Downloaded crossbeam-deque v0.2.0
+#14 362.6   Downloaded gltf-derive v0.15.0
+#14 362.6   Downloaded memmap v0.6.2
+#14 362.6   Downloaded lock_api v0.1.5
+#14 362.6   Downloaded rayon-core v1.4.1
+#14 362.6   Downloaded wayland-protocols v0.20.12
+#14 362.6   Downloaded syn v0.15.26
+#14 362.6   Downloaded rand v0.5.6
+#14 362.6   Downloaded nix v0.11.0
+#14 362.7   Downloaded unicode-xid v0.1.0
+#14 362.7   Downloaded owning_ref v0.4.0
+#14 362.7   Downloaded ryu v0.2.7
+#14 362.7   Downloaded inflections v1.1.1
+#14 362.7   Downloaded proc-macro2 v1.0.8
+#14 362.7   Downloaded crossbeam-epoch v0.3.1
+#14 362.7   Downloaded parking_lot_core v0.3.1
+#14 362.7   Downloaded num_cpus v1.9.0
+#14 362.7   Downloaded quote v1.0.2
+#14 362.7   Downloaded itoa v0.4.3
+#14 362.7   Downloaded scopeguard v0.3.3
+#14 362.7   Downloaded libloading v0.5.0
+#14 362.7   Downloaded stable_deref_trait v1.1.1
+#14 362.7   Downloaded arrayvec v0.4.10
+#14 362.7   Downloaded memoffset v0.2.1
+#14 362.7   Downloaded nodrop v0.1.13
+#14 362.8   Downloaded syn v1.0.14
+#14 362.8   Downloaded cc v1.0.28
+#14 362.8   Downloaded unicode-xid v0.2.0
+#14 362.8   Downloaded rustc_version v0.2.3
+#14 362.8   Downloaded crossbeam-utils v0.2.2
+#14 362.8   Downloaded semver v0.9.0
+#14 362.8   Downloaded semver-parser v0.7.0
+#14 363.1    Compiling cc v1.0.28
+#14 363.1    Compiling bitflags v1.2.1
+#14 363.1    Compiling proc-macro2 v0.4.26
+#14 363.1    Compiling arrayvec v0.4.10
+#14 363.1    Compiling unicode-xid v0.1.0
+#14 363.1    Compiling cfg-if v0.1.6
+#14 363.1    Compiling semver-parser v0.7.0
+#14 363.1    Compiling autocfg v1.0.0
+#14 363.1    Compiling nodrop v0.1.13
+#14 363.1    Compiling libc v0.2.48
+#14 363.1    Compiling proc-macro2 v1.0.8
+#14 363.1    Compiling memoffset v0.2.1
+#14 363.1    Compiling scopeguard v0.3.3
+#14 363.1    Compiling lazy_static v1.2.0
+#14 363.1    Compiling khronos_api v2.2.0
+#14 363.1    Compiling khronos_api v3.1.0
+#14 363.1    Compiling rayon-core v1.4.1
+#14 363.1    Compiling downcast-rs v1.0.3
+#14 363.2    Compiling void v1.0.2
+#14 363.2    Compiling num-integer v0.1.39
+#14 363.2    Compiling log v0.4.8
+#14 363.2    Compiling autocfg v0.1.7
+#14 363.2    Compiling unicode-xid v0.2.0
+#14 363.2    Compiling rand_core v0.4.0
+#14 366.3    Compiling serde v1.0.85
+#14 367.1    Compiling pkg-config v0.3.14
+#14 367.2    Compiling stable_deref_trait v1.1.1
+#14 369.2    Compiling nix v0.11.0
+#14 369.7    Compiling syn v1.0.14
+#14 375.0    Compiling num-bigint v0.2.2
+#14 403.9    Compiling rayon v1.0.3
+#14 404.2    Compiling num-derive v0.2.4
+#14 404.2    Compiling num-iter v0.1.37
+#14 407.3    Compiling ryu v0.2.7
+#14 407.9    Compiling adler32 v1.0.3
+#14 407.9    Compiling xml-rs v0.8.0
+#14 408.3    Compiling either v1.5.0
+#14 408.8    Compiling byteorder v1.2.7
+#14 409.1    Compiling num-rational v0.2.1
+#14 409.2    Compiling itoa v0.4.3
+#14 409.3    Compiling color_quant v1.0.1
+#14 409.9    Compiling cgmath v0.17.0
+#14 410.1    Compiling lzw v0.10.0
+#14 410.8    Compiling inflections v1.1.1
+#14 411.0    Compiling bit-vec v0.5.0
+#14 441.1    Compiling scoped_threadpool v0.1.9
+#14 441.2    Compiling safe-transmute v0.10.1
+#14 451.2    Compiling percent-encoding v1.0.1
+#14 453.7    Compiling unicode-width v0.1.5
+#14 454.3    Compiling vec_map v0.8.1
+#14 454.4    Compiling ansi_term v0.11.0
+#14 454.6    Compiling strsim v0.8.0
+#14 454.6    Compiling base64 v0.11.0
+#14 454.9    Compiling crossbeam-utils v0.2.2
+#14 455.4    Compiling unreachable v1.0.0
+#14 455.5    Compiling owning_ref v0.4.0
+#14 459.9    Compiling rand_core v0.3.1
+#14 460.1    Compiling rand_jitter v0.1.4
+#14 472.4    Compiling semver v0.9.0
+#14 474.5    Compiling inflate v0.4.4
+#14 474.8    Compiling bit-set v0.5.0
+#14 474.8    Compiling rand_chacha v0.1.1
+#14 475.0    Compiling rand_pcg v0.1.2
+#14 475.1    Compiling rand v0.6.5
+#14 475.9    Compiling num-traits v0.2.11
+#14 487.9    Compiling deflate v0.7.19
+#14 487.9    Compiling base64 v0.10.1
+#14 488.0    Compiling term v0.5.1
+#14 488.2    Compiling gif v0.10.1
+#14 488.6    Compiling smallvec v0.6.8
+#14 488.7    Compiling textwrap v0.11.0
+#14 500.1    Compiling rand_hc v0.1.0
+#14 502.1    Compiling rand_xorshift v0.1.1
+#14 502.2    Compiling rand_isaac v0.1.1
+#14 502.4    Compiling lock_api v0.1.5
+#14 562.3    Compiling x11-dl v2.18.3
+#14 579.6    Compiling xml-rs v0.7.0
+#14 579.7    Compiling crossbeam-epoch v0.3.1
+#14 580.0    Compiling rustc_version v0.2.3
+#14 600.9    Compiling num_cpus v1.9.0
+#14 603.3    Compiling rand v0.5.6
+#14 603.7    Compiling rand_os v0.1.3
+#14 606.3    Compiling memmap v0.6.2
+#14 636.7    Compiling shared_library v0.1.9
+#14 642.8    Compiling time v0.1.42
+#14 642.9    Compiling atty v0.2.11
+#14 642.9    Compiling parking_lot_core v0.3.1
+#14 652.6    Compiling clap v2.33.0
+#14 654.6    Compiling osmesa-sys v0.1.2
+#14 657.7    Compiling crossbeam-deque v0.2.0
+#14 687.4    Compiling gl_generator v0.14.0
+#14 696.9    Compiling quote v1.0.2
+#14 717.0    Compiling libloading v0.5.0
+#14 754.9    Compiling quote v0.6.11
+#14 759.2    Compiling approx v0.3.2
+#14 770.2    Compiling wayland-scanner v0.20.12
+#14 770.5    Compiling gl_generator v0.9.0
+#14 778.2    Compiling dlib v0.4.1
+#14 783.1    Compiling wayland-sys v0.20.12
+#14 791.1    Compiling syn v0.15.26
+#14 797.0    Compiling gl v0.14.0
+#14 814.2    Compiling chrono v0.4.6
+#14 824.4    Compiling png v0.14.0
+#14 836.2    Compiling parking_lot v0.6.4
+#14 872.2    Compiling wayland-client v0.20.12
+#14 872.2    Compiling wayland-protocols v0.20.12
+#14 976.6    Compiling glutin v0.18.0
+#14 983.4    Compiling jpeg-decoder v0.1.15
+#14 996.0    Compiling simplelog v0.7.4
+#14 1190.5    Compiling serde_derive v1.0.85
+#14 1273.9    Compiling wayland-commons v0.20.12
+#14 1297.7    Compiling gltf-derive v0.15.0
+#14 1363.5    Compiling tiff v0.2.2
+#14 1457.9    Compiling smithay-client-toolkit v0.3.0
+#14 1546.3    Compiling winit v0.17.2
+#14 1636.8    Compiling serde_json v1.0.37
+#14 1704.4    Compiling gltf-json v0.15.0
+#14 1737.4    Compiling image v0.21.0
+#14 1752.0    Compiling collision v0.20.1
+#14 2076.8    Compiling gltf v0.15.0
+#14 2288.4    Compiling gltf-viewer v0.4.2-alpha.0 (/usr/src/gltf-viewer)
+#14 2386.0     Finished release [optimized] target(s) in 39m 42s
+#14 DONE 2404.3s
+
+#15 [stage-1 4/5] COPY --from=build /usr/src/gltf-viewer/target/release/gltf-viewer /bin/gltf-viewer
+#15 DONE 1.5s
+
+#16 [stage-1 5/5] COPY run_xvfb.sh run_xvfb.sh
+#16 DONE 1.0s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 4.7s done
+#17 writing image sha256:fe50910324225b495f3c966da410e74642a8ed695480c9f8b7c4513908fd945f 0.0s done
+#17 naming to docker.io/library/image_name_v1_1 0.0s done
+#17 DONE 4.7s

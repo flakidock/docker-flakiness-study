@@ -1,0 +1,1189 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v3_Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 70B done
+#2 DONE 0.4s
+
+#1 [internal] load build definition from v3_Dockerfile
+#1 transferring dockerfile: 712B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/ruby:2.7.5
+#3 DONE 1.2s
+
+#4 [ 1/10] FROM docker.io/library/ruby:2.7.5@sha256:365df8a52b0cb34939e59c69136f7488aa8d7a8f4c2711af0a1bc25b8e8e6471
+#4 resolve docker.io/library/ruby:2.7.5@sha256:365df8a52b0cb34939e59c69136f7488aa8d7a8f4c2711af0a1bc25b8e8e6471
+#4 resolve docker.io/library/ruby:2.7.5@sha256:365df8a52b0cb34939e59c69136f7488aa8d7a8f4c2711af0a1bc25b8e8e6471 0.3s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 1.19MB 0.1s done
+#5 DONE 0.4s
+
+#4 [ 1/10] FROM docker.io/library/ruby:2.7.5@sha256:365df8a52b0cb34939e59c69136f7488aa8d7a8f4c2711af0a1bc25b8e8e6471
+#4 sha256:365df8a52b0cb34939e59c69136f7488aa8d7a8f4c2711af0a1bc25b8e8e6471 1.86kB / 1.86kB done
+#4 sha256:be21dca200ab4fe84635075c00c983d2f6908eda7765bb20fb6c9d1d6f43f6d4 2.00kB / 2.00kB done
+#4 sha256:e7c13114124cf17427e1f909e20aea6abc62b0037c3b382908b16cadb568a956 7.29kB / 7.29kB done
+#4 DONE 2.1s
+
+#6 [ 2/10] RUN apt-get update     && apt-get install -y --no-install-recommends postgresql-client     && rm -rf /var/lib/apt/lists/*
+#6 0.498 Get:1 http://security.debian.org/debian-security bullseye-security InRelease [48.4 kB]
+#6 0.500 Get:2 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#6 0.530 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
+#6 0.640 Get:4 http://security.debian.org/debian-security bullseye-security/main amd64 Packages [280 kB]
+#6 0.756 Get:5 http://deb.debian.org/debian bullseye/main amd64 Packages [8067 kB]
+#6 0.861 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]
+#6 2.079 Fetched 8574 kB in 2s (5340 kB/s)
+#6 2.079 Reading package lists...
+#6 2.715 Reading package lists...
+#6 3.327 Building dependency tree...
+#6 3.446 Reading state information...
+#6 3.572 The following additional packages will be installed:
+#6 3.572   libpq-dev libpq5 postgresql-client-13 postgresql-client-common
+#6 3.573 Suggested packages:
+#6 3.573   postgresql-doc-13 postgresql-13
+#6 3.627 The following NEW packages will be installed:
+#6 3.627   postgresql-client postgresql-client-13 postgresql-client-common
+#6 3.627 The following packages will be upgraded:
+#6 3.628   libpq-dev libpq5
+#6 3.663 2 upgraded, 3 newly installed, 0 to remove and 157 not upgraded.
+#6 3.663 Need to get 1991 kB of archives.
+#6 3.663 After this operation, 6907 kB of additional disk space will be used.
+#6 3.663 Get:1 http://deb.debian.org/debian bullseye/main amd64 libpq-dev amd64 13.15-0+deb11u1 [142 kB]
+#6 3.694 Get:2 http://deb.debian.org/debian bullseye/main amd64 libpq5 amd64 13.15-0+deb11u1 [182 kB]
+#6 3.698 Get:3 http://deb.debian.org/debian bullseye/main amd64 postgresql-client-common all 225+deb11u1 [89.4 kB]
+#6 3.704 Get:4 http://deb.debian.org/debian bullseye/main amd64 postgresql-client-13 amd64 13.15-0+deb11u1 [1513 kB]
+#6 3.727 Get:5 http://deb.debian.org/debian bullseye/main amd64 postgresql-client all 13+225+deb11u1 [64.9 kB]
+#6 3.953 debconf: delaying package configuration, since apt-utils is not installed
+#6 4.019 Fetched 1991 kB in 0s (18.3 MB/s)
+#6 4.089 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22741 files and directories currently installed.)
+#6 4.102 Preparing to unpack .../libpq-dev_13.15-0+deb11u1_amd64.deb ...
+#6 4.176 Unpacking libpq-dev (13.15-0+deb11u1) over (13.5-0+deb11u1) ...
+#6 4.751 Preparing to unpack .../libpq5_13.15-0+deb11u1_amd64.deb ...
+#6 4.850 Unpacking libpq5:amd64 (13.15-0+deb11u1) over (13.5-0+deb11u1) ...
+#6 5.324 Selecting previously unselected package postgresql-client-common.
+#6 5.324 Preparing to unpack .../postgresql-client-common_225+deb11u1_all.deb ...
+#6 5.354 Unpacking postgresql-client-common (225+deb11u1) ...
+#6 5.541 Selecting previously unselected package postgresql-client-13.
+#6 5.541 Preparing to unpack .../postgresql-client-13_13.15-0+deb11u1_amd64.deb ...
+#6 5.564 Unpacking postgresql-client-13 (13.15-0+deb11u1) ...
+#6 5.989 Selecting previously unselected package postgresql-client.
+#6 5.989 Preparing to unpack .../postgresql-client_13+225+deb11u1_all.deb ...
+#6 6.045 Unpacking postgresql-client (13+225+deb11u1) ...
+#6 6.201 Setting up postgresql-client-common (225+deb11u1) ...
+#6 6.298 Setting up libpq5:amd64 (13.15-0+deb11u1) ...
+#6 6.373 Setting up libpq-dev (13.15-0+deb11u1) ...
+#6 6.448 Setting up postgresql-client-13 (13.15-0+deb11u1) ...
+#6 7.212 update-alternatives: using /usr/share/postgresql/13/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+#6 7.304 Setting up postgresql-client (13+225+deb11u1) ...
+#6 7.380 Processing triggers for libc-bin (2.31-13+deb11u3) ...
+#6 DONE 8.0s
+
+#7 [ 3/10] RUN mkdir /usr/local/node     && curl -L https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x64.tar.xz | tar Jx -C /usr/local/node --strip-components=1
+#7 0.639   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#7 0.639                                  Dload  Upload   Total   Spent    Left  Speed
+#7 0.639   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 66 8119k   66 5438k    0     0   9.9M      0 --:--:-- --:--:-- --:--:--  9.9M100 8119k  100 8119k    0     0  9052k      0 --:--:-- --:--:-- --:--:-- 9042k
+#7 DONE 2.5s
+
+#8 [ 4/10] RUN ln -s ../node/bin/node /usr/local/bin/
+#8 DONE 0.8s
+
+#9 [ 5/10] WORKDIR /ohana-api
+#9 DONE 0.4s
+
+#10 [ 6/10] COPY Gemfile /ohana-api
+#10 DONE 0.3s
+
+#11 [ 7/10] COPY Gemfile.lock /ohana-api
+#11 DONE 0.3s
+
+#12 [ 8/10] RUN gem install bundler -v 2.4.22
+#12 26.51 Successfully installed bundler-2.4.22
+#12 26.51 1 gem installed
+#12 DONE 26.8s
+
+#13 [ 9/10] RUN bundle install --jobs 20 --retry 5 --without production
+#13 0.807 [DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set --local without 'production'`, and stop using this flag
+#13 0.988 Fetching https://github.com/thoughtbot/shoulda-matchers.git
+#13 1.867 Fetching gem metadata from https://rubygems.org/.........
+#13 4.266 Fetching https://github.com/thoughtbot/shoulda-matchers.git
+#13 7.013 Fetching rake 13.0.6
+#13 7.130 Installing rake 13.0.6
+#13 7.187 Fetching minitest 5.15.0
+#13 7.188 Fetching builder 3.2.4
+#13 7.189 Fetching racc 1.6.0
+#13 7.198 Fetching crass 1.0.6
+#13 7.198 Fetching nio4r 2.5.8
+#13 7.198 Fetching websocket-extensions 0.1.5
+#13 7.198 Fetching arel 9.0.0
+#13 7.198 Fetching marcel 1.0.2
+#13 7.198 Fetching public_suffix 4.0.7
+#13 7.198 Fetching execjs 2.7.0
+#13 7.198 Fetching bcrypt 3.1.16
+#13 7.198 Fetching benchmark-ips 2.7.2
+#13 7.198 Fetching mini_portile2 2.8.0
+#13 7.198 Fetching rack 2.2.3.1
+#13 7.198 Fetching mini_mime 1.1.2
+#13 7.198 Fetching ast 2.4.2
+#13 7.198 Fetching concurrent-ruby 1.1.10
+#13 7.204 Fetching thread_safe 0.3.6
+#13 7.204 Fetching erubi 1.10.0
+#13 7.204 Fetching coderay 1.1.3
+#13 7.393 Installing ast 2.4.2
+#13 7.399 Installing execjs 2.7.0
+#13 7.405 Installing erubi 1.10.0
+#13 7.407 Installing mini_portile2 2.8.0
+#13 7.429 Installing websocket-extensions 0.1.5
+#13 7.460 Installing builder 3.2.4
+#13 7.463 Installing crass 1.0.6
+#13 7.464 Installing benchmark-ips 2.7.2
+#13 7.464 Installing mini_mime 1.1.2
+#13 7.466 Installing arel 9.0.0
+#13 7.478 Installing bcrypt 3.1.16 with native extensions
+#13 7.492 Installing racc 1.6.0 with native extensions
+#13 7.498 Installing marcel 1.0.2
+#13 7.503 Installing minitest 5.15.0
+#13 7.521 Installing public_suffix 4.0.7
+#13 7.527 Installing coderay 1.1.3
+#13 7.535 Installing thread_safe 0.3.6
+#13 7.539 Installing rack 2.2.3.1
+#13 7.544 Installing nio4r 2.5.8 with native extensions
+#13 7.864 Fetching uniform_notifier 1.14.2
+#13 7.873 Fetching bindex 0.8.1
+#13 7.880 Fetching ffi 1.14.2
+#13 7.880 Fetching regexp_parser 2.4.0
+#13 7.897 Fetching rainbow 3.1.1
+#13 7.897 Fetching thor 1.2.1
+#13 7.897 Fetching matrix 0.4.2
+#13 7.897 Fetching childprocess 4.1.0
+#13 7.906 Fetching method_source 1.0.0
+#13 7.906 Fetching coffee-script-source 1.12.2
+#13 7.910 Fetching rexml 3.2.5
+#13 8.027 Installing uniform_notifier 1.14.2
+#13 8.029 Installing bindex 0.8.1 with native extensions
+#13 8.032 Installing concurrent-ruby 1.1.10
+#13 8.039 Installing matrix 0.4.2
+#13 8.040 Installing rainbow 3.1.1
+#13 8.046 Installing method_source 1.0.0
+#13 8.054 Installing childprocess 4.1.0
+#13 8.074 Installing thor 1.2.1
+#13 8.075 Installing regexp_parser 2.4.0
+#13 8.082 Installing coffee-script-source 1.12.2
+#13 8.327 Fetching dalli 2.7.11
+#13 8.335 Installing rexml 3.2.5
+#13 8.384 Installing dalli 2.7.11
+#13 8.395 Fetching database_cleaner-core 2.0.1
+#13 8.412 Fetching heapy 0.1.4
+#13 8.454 Installing database_cleaner-core 2.0.1
+#13 8.465 Installing heapy 0.1.4
+#13 8.517 Fetching memory_profiler 0.9.14
+#13 8.518 Fetching ruby-statistics 2.1.2
+#13 8.564 Fetching orm_adapter 0.5.0
+#13 8.565 Installing memory_profiler 0.9.14
+#13 8.568 Installing ruby-statistics 2.1.2
+#13 8.609 Installing orm_adapter 0.5.0
+#13 8.708 Fetching diff-lcs 1.3
+#13 8.726 Fetching docile 1.3.2
+#13 8.766 Installing docile 1.3.2
+#13 8.787 Installing diff-lcs 1.3
+#13 8.801 Fetching erubis 2.7.0
+#13 8.821 Fetching flamegraph 0.9.5
+#13 8.932 Fetching temple 0.8.2
+#13 8.934 Fetching geocoder 1.8.0
+#13 8.942 Fetching tilt 2.0.10
+#13 8.947 Installing flamegraph 0.9.5
+#13 8.971 Fetching sexp_processor 4.12.1
+#13 8.980 Fetching parallel 1.22.1
+#13 8.994 Installing erubis 2.7.0
+#13 8.997 Fetching ruby-progressbar 1.11.0
+#13 9.007 Installing ffi 1.14.2 with native extensions
+#13 9.039 Installing parallel 1.22.1
+#13 9.043 Installing tilt 2.0.10
+#13 9.045 Installing temple 0.8.2
+#13 9.056 Fetching unicode-display_width 2.1.0
+#13 9.071 Installing ruby-progressbar 1.11.0
+#13 9.092 Fetching sysexits 1.2.0
+#13 9.113 Fetching hashdiff 1.0.1
+#13 9.116 Installing sexp_processor 4.12.1
+#13 9.126 Installing geocoder 1.8.0
+#13 9.134 Installing unicode-display_width 2.1.0
+#13 9.147 Fetching kaminari-core 1.2.2
+#13 9.175 Installing sysexits 1.2.0
+#13 9.193 Installing hashdiff 1.0.1
+#13 9.195 Installing kaminari-core 1.2.2
+#13 9.223 Fetching kgio 2.11.4
+#13 9.292 Fetching kwalify 0.7.2
+#13 9.308 Installing kgio 2.11.4 with native extensions
+#13 9.384 Fetching rb-fsevent 0.10.3
+#13 9.395 Fetching ruby_dep 1.5.0
+#13 9.448 Installing ruby_dep 1.5.0
+#13 9.461 Installing rb-fsevent 0.10.3
+#13 9.476 Installing kwalify 0.7.2
+#13 9.485 Fetching memcachier 0.0.2
+#13 9.513 Fetching pg 1.3.5
+#13 9.556 Installing memcachier 0.0.2
+#13 9.597 Installing pg 1.3.5 with native extensions
+#13 9.602 Fetching rspec-support 3.9.2
+#13 9.610 Fetching select2-rails 3.5.11
+#13 9.612 Fetching simplecov-html 0.10.2
+#13 9.612 Fetching rubyzip 2.3.2
+#13 9.612 Fetching smarter_csv 1.6.1
+#13 9.621 
+#13 9.622 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rspec-support-3.9.2.gem`. There was insufficient space remaining on the device.
+#13 9.630 
+#13 9.632 
+#13 9.632 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rspec-support-3.9.2.gem`. There was insufficient space remaining on the device.
+#13 9.633 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/select2-rails-3.5.11.gem`. There was insufficient space remaining on the device.
+#13 9.634 
+#13 9.634 
+#13 9.634 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/smarter_csv-1.6.1.gem`. There was insufficient space remaining on the device.
+#13 9.634 
+#13 9.634 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/simplecov-html-0.10.2.gem`. There was insufficient space remaining on the device.
+#13 9.635 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rubyzip-2.3.2.gem`. There was insufficient space remaining on the device.
+#13 9.636 
+#13 9.636 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rspec-support-3.9.2.gem`. There was insufficient space remaining on the device.
+#13 9.639 
+#13 9.641 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/select2-rails-3.5.11.gem`. There was insufficient space remaining on the device.
+#13 9.641 
+#13 9.641 
+#13 9.642 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rspec-support-3.9.2.gem`. There was insufficient space remaining on the device.
+#13 9.642 
+#13 9.642 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rubyzip-2.3.2.gem`. There was insufficient space remaining on the device.
+#13 9.642 
+#13 9.643 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/simplecov-html-0.10.2.gem`. There was insufficient space remaining on the device.
+#13 9.643 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/smarter_csv-1.6.1.gem`. There was insufficient space remaining on the device.
+#13 9.646 
+#13 9.648 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/select2-rails-3.5.11.gem`. There was insufficient space remaining on the device.
+#13 9.648 
+#13 9.648 
+#13 9.648 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rubyzip-2.3.2.gem`. There was insufficient space remaining on the device.
+#13 9.648 
+#13 9.648 
+#13 9.649 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/smarter_csv-1.6.1.gem`. There was insufficient space remaining on the device.
+#13 9.649 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rspec-support-3.9.2.gem`. There was insufficient space remaining on the device.
+#13 9.650 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/simplecov-html-0.10.2.gem`. There was insufficient space remaining on the device.
+#13 9.652 
+#13 9.653 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/select2-rails-3.5.11.gem`. There was insufficient space remaining on the device.
+#13 9.655 
+#13 9.655 
+#13 9.655 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/smarter_csv-1.6.1.gem`. There was insufficient space remaining on the device.
+#13 9.655 
+#13 9.655 
+#13 9.656 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rubyzip-2.3.2.gem`. There was insufficient space remaining on the device.
+#13 9.657 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/simplecov-html-0.10.2.gem`. There was insufficient space remaining on the device.
+#13 9.659 
+#13 9.659 
+#13 9.659 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/select2-rails-3.5.11.gem`. There was insufficient space remaining on the device.
+#13 9.659 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/smarter_csv-1.6.1.gem`. There was insufficient space remaining on the device.
+#13 9.662 
+#13 9.663 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rubyzip-2.3.2.gem`. There was insufficient space remaining on the device.
+#13 9.664 
+#13 9.664 
+#13 9.664 
+#13 9.665 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/simplecov-html-0.10.2.gem`. There was insufficient space remaining on the device.
+#13 9.667 
+#13 9.668 
+#13 9.901 Fetching spring 2.1.1
+#13 9.903 Fetching websocket-driver 0.7.5
+#13 9.907 Fetching stackprof 0.2.19
+#13 9.907 Fetching parser 3.1.2.0
+#13 9.908 Fetching autoprefixer-rails 9.6.1
+#13 9.909 Fetching uglifier 4.2.0
+#13 9.913 Fetching addressable 2.8.0
+#13 9.918 Fetching tzinfo 1.2.9
+#13 9.918 Fetching rack-test 1.1.0
+#13 9.918 Fetching warden 1.2.9
+#13 9.919 Fetching mail 2.7.1
+#13 9.921 Fetching coffee-script 2.4.1
+#13 9.921 Fetching rack-cache 1.13.0
+#13 9.923 Fetching rack-mini-profiler 3.0.0
+#13 9.925 Fetching rack-cors 1.1.1
+#13 9.934 Fetching bummr 0.6.0
+#13 9.934 Fetching figaro 1.2.0
+#13 9.939 Fetching better_errors 2.9.1
+#13 9.943 Fetching crack 0.4.5
+#13 9.943 Fetching ruby_parser 3.13.1
+#13 9.943 
+#13 9.943 
+#13 9.947 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/websocket-driver-0.7.5.gem`. There was insufficient space remaining on the device.
+#13 9.967 
+#13 9.973 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/autoprefixer-rails-9.6.1.gem`. There was insufficient space remaining on the device.
+#13 9.974 
+#13 9.974 
+#13 9.979 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/uglifier-4.2.0.gem`. There was insufficient space remaining on the device.
+#13 9.979 
+#13 9.979 
+#13 9.979 
+#13 9.982 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/warden-1.2.9.gem`. There was insufficient space remaining on the device.
+#13 9.986 
+#13 9.986 
+#13 9.986 
+#13 9.989 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-mini-profiler-3.0.0.gem`. There was insufficient space remaining on the device.
+#13 9.990 
+#13 9.992 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/spring-2.1.1.gem`. There was insufficient space remaining on the device.
+#13 9.996 
+#13 9.996 
+#13 9.996 
+#13 10.00 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/warden-1.2.9.gem`. There was insufficient space remaining on the device.
+#13 10.00 
+#13 10.00 
+#13 10.00 
+#13 10.00 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/stackprof-0.2.19.gem`. There was insufficient space remaining on the device.
+#13 10.00 
+#13 10.00 
+#13 10.01 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/crack-0.4.5.gem`. There was insufficient space remaining on the device.
+#13 10.01 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/coffee-script-2.4.1.gem`. There was insufficient space remaining on the device.
+#13 10.01 
+#13 10.01 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-mini-profiler-3.0.0.gem`. There was insufficient space remaining on the device.
+#13 10.01 
+#13 10.01 
+#13 10.01 
+#13 10.01 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/warden-1.2.9.gem`. There was insufficient space remaining on the device.
+#13 10.01 
+#13 10.01 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-cache-1.13.0.gem`. There was insufficient space remaining on the device.
+#13 10.01 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/crack-0.4.5.gem`. There was insufficient space remaining on the device.
+#13 10.01 
+#13 10.01 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/stackprof-0.2.19.gem`. There was insufficient space remaining on the device.
+#13 10.02 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/websocket-driver-0.7.5.gem`. There was insufficient space remaining on the device.
+#13 10.02 
+#13 10.02 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/coffee-script-2.4.1.gem`. There was insufficient space remaining on the device.
+#13 10.02 
+#13 10.02 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/better_errors-2.9.1.gem`. There was insufficient space remaining on the device.
+#13 10.02 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/warden-1.2.9.gem`. There was insufficient space remaining on the device.
+#13 10.02 
+#13 10.03 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/crack-0.4.5.gem`. There was insufficient space remaining on the device.
+#13 10.03 
+#13 10.03 
+#13 10.03 
+#13 10.03 
+#13 10.03 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/stackprof-0.2.19.gem`. There was insufficient space remaining on the device.
+#13 10.03 
+#13 10.03 
+#13 10.03 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/coffee-script-2.4.1.gem`. There was insufficient space remaining on the device.
+#13 10.04 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/spring-2.1.1.gem`. There was insufficient space remaining on the device.
+#13 10.04 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/addressable-2.8.0.gem`. There was insufficient space remaining on the device.
+#13 10.04 
+#13 10.05 
+#13 10.05 
+#13 10.05 
+#13 10.05 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-test-1.1.0.gem`. There was insufficient space remaining on the device.
+#13 10.05 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/parser-3.1.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.05 
+#13 10.05 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/figaro-1.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.05 
+#13 10.05 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/autoprefixer-rails-9.6.1.gem`. There was insufficient space remaining on the device.
+#13 10.05 
+#13 10.05 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/coffee-script-2.4.1.gem`. There was insufficient space remaining on the device.
+#13 10.05 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/ruby_parser-3.13.1.gem`. There was insufficient space remaining on the device.
+#13 10.05 
+#13 10.05 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-test-1.1.0.gem`. There was insufficient space remaining on the device.
+#13 10.05 
+#13 10.05 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-mini-profiler-3.0.0.gem`. There was insufficient space remaining on the device.
+#13 10.05 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-cache-1.13.0.gem`. There was insufficient space remaining on the device.
+#13 10.06 
+#13 10.06 
+#13 10.06 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/coffee-script-2.4.1.gem`. There was insufficient space remaining on the device.
+#13 10.06 
+#13 10.06 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/websocket-driver-0.7.5.gem`. There was insufficient space remaining on the device.
+#13 10.06 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/autoprefixer-rails-9.6.1.gem`. There was insufficient space remaining on the device.
+#13 10.06 
+#13 10.06 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-test-1.1.0.gem`. There was insufficient space remaining on the device.
+#13 10.06 
+#13 10.06 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/warden-1.2.9.gem`. There was insufficient space remaining on the device.
+#13 10.07 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/better_errors-2.9.1.gem`. There was insufficient space remaining on the device.
+#13 10.07 
+#13 10.07 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/ruby_parser-3.13.1.gem`. There was insufficient space remaining on the device.
+#13 10.07 
+#13 10.07 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/stackprof-0.2.19.gem`. There was insufficient space remaining on the device.
+#13 10.07 
+#13 10.07 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/spring-2.1.1.gem`. There was insufficient space remaining on the device.
+#13 10.07 
+#13 10.07 
+#13 10.07 
+#13 10.07 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-test-1.1.0.gem`. There was insufficient space remaining on the device.
+#13 10.07 
+#13 10.07 
+#13 10.07 
+#13 10.08 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/better_errors-2.9.1.gem`. There was insufficient space remaining on the device.
+#13 10.08 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/mail-2.7.1.gem`. There was insufficient space remaining on the device.
+#13 10.08 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/figaro-1.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.08 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/tzinfo-1.2.9.gem`. There was insufficient space remaining on the device.
+#13 10.08 
+#13 10.08 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/stackprof-0.2.19.gem`. There was insufficient space remaining on the device.
+#13 10.08 
+#13 10.08 
+#13 10.08 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-test-1.1.0.gem`. There was insufficient space remaining on the device.
+#13 10.08 
+#13 10.08 
+#13 10.08 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/better_errors-2.9.1.gem`. There was insufficient space remaining on the device.
+#13 10.08 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/crack-0.4.5.gem`. There was insufficient space remaining on the device.
+#13 10.09 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-mini-profiler-3.0.0.gem`. There was insufficient space remaining on the device.
+#13 10.09 
+#13 10.09 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/figaro-1.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.09 
+#13 10.09 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/autoprefixer-rails-9.6.1.gem`. There was insufficient space remaining on the device.
+#13 10.09 
+#13 10.09 
+#13 10.09 
+#13 10.09 
+#13 10.09 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/crack-0.4.5.gem`. There was insufficient space remaining on the device.
+#13 10.10 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/addressable-2.8.0.gem`. There was insufficient space remaining on the device.
+#13 10.10 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-cache-1.13.0.gem`. There was insufficient space remaining on the device.
+#13 10.10 
+#13 10.10 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/figaro-1.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.10 
+#13 10.10 
+#13 10.10 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/bummr-0.6.0.gem`. There was insufficient space remaining on the device.
+#13 10.10 
+#13 10.10 Retrying download gem from https://rubygems.org/ due to error (2/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-cors-1.1.1.gem`. There was insufficient space remaining on the device.
+#13 10.11 
+#13 10.11 
+#13 10.11 
+#13 10.11 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-cache-1.13.0.gem`. There was insufficient space remaining on the device.
+#13 10.11 
+#13 10.11 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/bummr-0.6.0.gem`. There was insufficient space remaining on the device.
+#13 10.11 
+#13 10.11 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/parser-3.1.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.11 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/uglifier-4.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.11 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/spring-2.1.1.gem`. There was insufficient space remaining on the device.
+#13 10.11 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/autoprefixer-rails-9.6.1.gem`. There was insufficient space remaining on the device.
+#13 10.11 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/ruby_parser-3.13.1.gem`. There was insufficient space remaining on the device.
+#13 10.11 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-mini-profiler-3.0.0.gem`. There was insufficient space remaining on the device.
+#13 10.11 
+#13 10.12 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-cache-1.13.0.gem`. There was insufficient space remaining on the device.
+#13 10.12 
+#13 10.12 
+#13 10.12 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/bummr-0.6.0.gem`. There was insufficient space remaining on the device.
+#13 10.12 
+#13 10.12 
+#13 10.12 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/uglifier-4.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.12 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/better_errors-2.9.1.gem`. There was insufficient space remaining on the device.
+#13 10.12 
+#13 10.13 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/spring-2.1.1.gem`. There was insufficient space remaining on the device.
+#13 10.13 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/tzinfo-1.2.9.gem`. There was insufficient space remaining on the device.
+#13 10.13 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-cors-1.1.1.gem`. There was insufficient space remaining on the device.
+#13 10.13 
+#13 10.13 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/addressable-2.8.0.gem`. There was insufficient space remaining on the device.
+#13 10.13 
+#13 10.14 
+#13 10.14 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/bummr-0.6.0.gem`. There was insufficient space remaining on the device.
+#13 10.14 
+#13 10.14 
+#13 10.14 
+#13 10.14 
+#13 10.14 
+#13 10.14 
+#13 10.14 
+#13 10.14 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-cors-1.1.1.gem`. There was insufficient space remaining on the device.
+#13 10.14 
+#13 10.14 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/figaro-1.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.14 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/uglifier-4.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.15 
+#13 10.15 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/addressable-2.8.0.gem`. There was insufficient space remaining on the device.
+#13 10.15 
+#13 10.15 
+#13 10.15 Retrying download gem from https://rubygems.org/ due to error (3/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/mail-2.7.1.gem`. There was insufficient space remaining on the device.
+#13 10.15 
+#13 10.15 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/uglifier-4.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.15 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/websocket-driver-0.7.5.gem`. There was insufficient space remaining on the device.
+#13 10.15 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/parser-3.1.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.15 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/ruby_parser-3.13.1.gem`. There was insufficient space remaining on the device.
+#13 10.15 
+#13 10.15 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-cors-1.1.1.gem`. There was insufficient space remaining on the device.
+#13 10.16 
+#13 10.16 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/addressable-2.8.0.gem`. There was insufficient space remaining on the device.
+#13 10.16 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/bummr-0.6.0.gem`. There was insufficient space remaining on the device.
+#13 10.16 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/tzinfo-1.2.9.gem`. There was insufficient space remaining on the device.
+#13 10.16 
+#13 10.16 Retrying download gem from https://rubygems.org/ due to error (4/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/mail-2.7.1.gem`. There was insufficient space remaining on the device.
+#13 10.17 
+#13 10.17 
+#13 10.17 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/websocket-driver-0.7.5.gem`. There was insufficient space remaining on the device.
+#13 10.17 
+#13 10.17 
+#13 10.17 
+#13 10.17 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/ruby_parser-3.13.1.gem`. There was insufficient space remaining on the device.
+#13 10.17 
+#13 10.17 
+#13 10.17 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/tzinfo-1.2.9.gem`. There was insufficient space remaining on the device.
+#13 10.17 
+#13 10.18 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/parser-3.1.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.18 
+#13 10.18 
+#13 10.18 Retrying download gem from https://rubygems.org/ due to error (5/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/mail-2.7.1.gem`. There was insufficient space remaining on the device.
+#13 10.18 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/rack-cors-1.1.1.gem`. There was insufficient space remaining on the device.
+#13 10.18 
+#13 10.18 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/tzinfo-1.2.9.gem`. There was insufficient space remaining on the device.
+#13 10.19 
+#13 10.38 
+#13 10.38 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/mail-2.7.1.gem`. There was insufficient space remaining on the device.
+#13 10.38 
+#13 10.38 
+#13 10.38 Retrying download gem from https://rubygems.org/ due to error (6/6): Bundler::NoSpaceOnDeviceError There was an error while trying to write to `/usr/local/bundle/cache/parser-3.1.2.0.gem`. There was insufficient space remaining on the device.
+#13 10.39 
+#13 10.39 
+#13 10.40 
+#13 10.42 --- ERROR REPORT TEMPLATE -------------------------------------------------------
+#13 10.42 
+#13 10.42 ```
+#13 10.42 Gem::Package::PathError: installing into parent path lib/memcachier.rb of /usr/local/bundle/gems/memcachier-0.0.2 is not allowed
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:522:in `block in mkdir_p_safe'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:516:in `each'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:516:in `reduce'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:516:in `mkdir_p_safe'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:438:in `block (2 levels) in extract_tar_gz'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package/tar_reader.rb:67:in `each'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:421:in `block in extract_tar_gz'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:550:in `block in open_tar_gz'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:547:in `wrap'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:547:in `open_tar_gz'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:420:in `extract_tar_gz'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:400:in `block (2 levels) in extract_files'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package/tar_reader.rb:67:in `each'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:397:in `block in extract_files'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package/file_source.rb:30:in `open'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package/file_source.rb:30:in `with_read_io'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/package.rb:394:in `extract_files'
+#13 10.42   /usr/local/lib/ruby/2.7.0/rubygems/installer.rb:865:in `extract_files'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/rubygems_gem_installer.rb:26:in `install'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/source/rubygems.rb:203:in `install'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/installer/gem_installer.rb:54:in `install'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/installer/gem_installer.rb:16:in `install_from_spec'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/installer/parallel_installer.rb:130:in `do_install'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/installer/parallel_installer.rb:121:in `block in worker_pool'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/worker.rb:62:in `apply_func'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/worker.rb:57:in `block in process_queue'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/worker.rb:54:in `loop'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/worker.rb:54:in `process_queue'
+#13 10.42   /usr/local/bundle/gems/bundler-2.4.22/lib/bundler/worker.rb:90:in `block (2 levels) in create_threads'
+#13 10.42 
+#13 10.42 ```
+#13 10.42 
+#13 10.42 ## Environment
+#13 10.42 
+#13 10.42 ```
+#13 10.42 Bundler       2.4.22
+#13 10.42   Platforms   ruby, x86_64-linux
+#13 10.42 Ruby          2.7.5p203 (2021-11-24 revision f69aeb83146be640995753667fdd6c6f157527f5) [x86_64-linux]
+#13 10.42   Full Path   /usr/local/bin/ruby
+#13 10.42   Config Dir  /usr/local/etc
+#13 10.42 RubyGems      3.1.6
+#13 10.42   Gem Home    /usr/local/bundle
+#13 10.42   Gem Path    /root/.gem/ruby/2.7.0:/usr/local/lib/ruby/gems/2.7.0:/usr/local/bundle
+#13 10.42   User Home   /root
+#13 10.42   User Path   /root/.gem/ruby/2.7.0
+#13 10.42   Bin Dir     /usr/local/bundle/bin
+#13 10.42 OpenSSL       
+#13 10.42   Compiled    OpenSSL 1.1.1n  15 Mar 2022
+#13 10.42   Loaded      OpenSSL 1.1.1n  15 Mar 2022
+#13 10.42   Cert File   /usr/lib/ssl/cert.pem
+#13 10.42   Cert Dir    /usr/lib/ssl/certs
+#13 10.42 Tools         
+#13 10.42   Git         2.30.2
+#13 10.42   RVM         not installed
+#13 10.42   rbenv       not installed
+#13 10.42   chruby      not installed
+#13 10.42 ```
+#13 10.42 
+#13 10.42 ## Bundler Build Metadata
+#13 10.42 
+#13 10.42 ```
+#13 10.42 Built At          2023-11-09
+#13 10.42 Git SHA           ec2089640
+#13 10.42 Released Version  true
+#13 10.42 ```
+#13 10.42 
+#13 10.42 ## Bundler settings
+#13 10.42 
+#13 10.42 ```
+#13 10.42 app_config
+#13 10.42   Set via BUNDLE_APP_CONFIG: "/usr/local/bundle"
+#13 10.42 jobs
+#13 10.42   Set for your local app (/usr/local/bundle/config): 20
+#13 10.42 retry
+#13 10.42   Set for your local app (/usr/local/bundle/config): 5
+#13 10.42 silence_root_warning
+#13 10.42   Set via BUNDLE_SILENCE_ROOT_WARNING: true
+#13 10.42 without
+#13 10.42   Set for your local app (/usr/local/bundle/config): [:production]
+#13 10.42 ```
+#13 10.42 
+#13 10.42 ## Gemfile
+#13 10.42 
+#13 10.42 ### Gemfile
+#13 10.42 
+#13 10.42 ```ruby
+#13 10.42 source 'https://rubygems.org'
+#13 10.42 
+#13 10.42 ruby '2.7.5'
+#13 10.42 gem 'active_model_serializers', '~> 0.8.0'
+#13 10.42 gem 'ancestry'
+#13 10.42 gem 'auto_strip_attributes', '~> 2.0'
+#13 10.42 gem 'bootstrap-sass', '~> 3.4.0'
+#13 10.42 gem 'coffee-rails', '~> 4.1'
+#13 10.42 gem 'csv_shaper'
+#13 10.42 gem 'dalli', '~> 2.7'
+#13 10.42 gem 'devise', '~> 4.1'
+#13 10.42 gem 'enumerize'
+#13 10.42 gem 'figaro', '~> 1.0'
+#13 10.42 gem 'friendly_id', '~> 5.0'
+#13 10.42 gem 'geocoder'
+#13 10.42 gem 'haml-rails'
+#13 10.42 gem 'jquery-rails', '~> 4.0'
+#13 10.42 gem 'kaminari', '~> 1.1'
+#13 10.42 gem 'kgio'
+#13 10.42 gem 'memcachier'
+#13 10.42 gem 'pg'
+#13 10.42 gem 'puma'
+#13 10.42 gem 'pundit'
+#13 10.42 gem 'rack-cache'
+#13 10.42 gem 'rack-cors', require: 'rack/cors'
+#13 10.42 gem 'rails', '~> 5.2'
+#13 10.42 gem 'sassc-rails', '~> 2.1'
+#13 10.42 gem 'select2-rails', '~> 3.5'
+#13 10.42 gem 'uglifier', '>= 1.3.0'
+#13 10.42 
+#13 10.42 group :test, :development do
+#13 10.42   gem 'bullet'
+#13 10.42   gem 'factory_bot_rails'
+#13 10.42   gem 'rspec-its'
+#13 10.42   gem 'rspec-rails', '~> 3.1'
+#13 10.42   gem 'rubocop', require: false
+#13 10.42   gem 'rubocop-performance', require: false
+#13 10.42   gem 'rubocop-rails', require: false
+#13 10.42   gem 'rubocop-rspec', require: false
+#13 10.42   gem 'smarter_csv'
+#13 10.42 end
+#13 10.42 
+#13 10.42 group :test do
+#13 10.42   gem 'capybara'
+#13 10.42   gem 'database_cleaner', '>= 1.0.0.RC1'
+#13 10.42   gem 'haml_lint'
+#13 10.42   gem 'rails-controller-testing'
+#13 10.42   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git'
+#13 10.42   # Pin simplecov to 0.17.1 until this bug with Code Climate is fixed:
+#13 10.42   # https://github.com/codeclimate/test-reporter/issues/413
+#13 10.42   gem 'simplecov', '= 0.17.1', require: false
+#13 10.42   gem 'webdrivers'
+#13 10.42   gem 'webmock'
+#13 10.42 end
+#13 10.42 
+#13 10.42 group :development do
+#13 10.42   gem 'better_errors', '>= 0.7.2'
+#13 10.42   gem 'bummr'
+#13 10.42   gem 'derailed'
+#13 10.42   gem 'flamegraph'
+#13 10.42   gem 'letter_opener'
+#13 10.42   gem 'rack-mini-profiler'
+#13 10.42   gem 'reek'
+#13 10.42   gem 'spring'
+#13 10.42   gem 'spring-commands-rspec'
+#13 10.42   gem 'spring-watcher-listen'
+#13 10.42   gem 'stackprof'
+#13 10.42   # Access an interactive console on exception pages or by calling 'console'
+#13 10.42   # anywhere in the code.
+#13 10.42   gem 'web-console'
+#13 10.42 end
+#13 10.42 ```
+#13 10.42 
+#13 10.42 ### Gemfile.lock
+#13 10.42 
+#13 10.42 ```
+#13 10.42 GIT
+#13 10.42   remote: https://github.com/thoughtbot/shoulda-matchers.git
+#13 10.42   revision: cd96089a56b97cd11f7502826636895253eca27d
+#13 10.42   specs:
+#13 10.42     shoulda-matchers (3.1.2)
+#13 10.42       activesupport (>= 4.2.0)
+#13 10.42 
+#13 10.42 GEM
+#13 10.42   remote: https://rubygems.org/
+#13 10.42   specs:
+#13 10.42     actioncable (5.2.8)
+#13 10.42       actionpack (= 5.2.8)
+#13 10.42       nio4r (~> 2.0)
+#13 10.42       websocket-driver (>= 0.6.1)
+#13 10.42     actionmailer (5.2.8)
+#13 10.42       actionpack (= 5.2.8)
+#13 10.42       actionview (= 5.2.8)
+#13 10.42       activejob (= 5.2.8)
+#13 10.42       mail (~> 2.5, >= 2.5.4)
+#13 10.42       rails-dom-testing (~> 2.0)
+#13 10.42     actionpack (5.2.8)
+#13 10.42       actionview (= 5.2.8)
+#13 10.42       activesupport (= 5.2.8)
+#13 10.42       rack (~> 2.0, >= 2.0.8)
+#13 10.42       rack-test (>= 0.6.3)
+#13 10.42       rails-dom-testing (~> 2.0)
+#13 10.42       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+#13 10.42     actionview (5.2.8)
+#13 10.42       activesupport (= 5.2.8)
+#13 10.42       builder (~> 3.1)
+#13 10.42       erubi (~> 1.4)
+#13 10.42       rails-dom-testing (~> 2.0)
+#13 10.42       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+#13 10.42     active_model_serializers (0.8.4)
+#13 10.42       activemodel (>= 3.0)
+#13 10.42     activejob (5.2.8)
+#13 10.42       activesupport (= 5.2.8)
+#13 10.42       globalid (>= 0.3.6)
+#13 10.42     activemodel (5.2.8)
+#13 10.42       activesupport (= 5.2.8)
+#13 10.42     activerecord (5.2.8)
+#13 10.42       activemodel (= 5.2.8)
+#13 10.42       activesupport (= 5.2.8)
+#13 10.42       arel (>= 9.0)
+#13 10.42     activestorage (5.2.8)
+#13 10.42       actionpack (= 5.2.8)
+#13 10.42       activerecord (= 5.2.8)
+#13 10.42       marcel (~> 1.0.0)
+#13 10.42     activesupport (5.2.8)
+#13 10.42       concurrent-ruby (~> 1.0, >= 1.0.2)
+#13 10.42       i18n (>= 0.7, < 2)
+#13 10.42       minitest (~> 5.1)
+#13 10.42       tzinfo (~> 1.1)
+#13 10.42     addressable (2.8.0)
+#13 10.42       public_suffix (>= 2.0.2, < 5.0)
+#13 10.42     ancestry (4.1.0)
+#13 10.42       activerecord (>= 5.2.6)
+#13 10.42     arel (9.0.0)
+#13 10.42     ast (2.4.2)
+#13 10.42     auto_strip_attributes (2.6.0)
+#13 10.42       activerecord (>= 4.0)
+#13 10.42     autoprefixer-rails (9.6.1)
+#13 10.42       execjs
+#13 10.42     bcrypt (3.1.16)
+#13 10.42     benchmark-ips (2.7.2)
+#13 10.42     better_errors (2.9.1)
+#13 10.42       coderay (>= 1.0.0)
+#13 10.42       erubi (>= 1.0.0)
+#13 10.42       rack (>= 0.9.0)
+#13 10.42     bindex (0.8.1)
+#13 10.42     bootstrap-sass (3.4.1)
+#13 10.42       autoprefixer-rails (>= 5.2.1)
+#13 10.42       sassc (>= 2.0.0)
+#13 10.42     builder (3.2.4)
+#13 10.42     bullet (7.0.1)
+#13 10.42       activesupport (>= 3.0.0)
+#13 10.42       uniform_notifier (~> 1.11)
+#13 10.42     bummr (0.6.0)
+#13 10.42       rainbow
+#13 10.42       thor
+#13 10.42     capybara (3.37.1)
+#13 10.42       addressable
+#13 10.42       matrix
+#13 10.42       mini_mime (>= 0.1.3)
+#13 10.42       nokogiri (~> 1.8)
+#13 10.42       rack (>= 1.6.0)
+#13 10.42       rack-test (>= 0.6.3)
+#13 10.42       regexp_parser (>= 1.5, < 3.0)
+#13 10.42       xpath (~> 3.2)
+#13 10.42     childprocess (4.1.0)
+#13 10.42     coderay (1.1.3)
+#13 10.42     coffee-rails (4.2.2)
+#13 10.42       coffee-script (>= 2.2.0)
+#13 10.42       railties (>= 4.0.0)
+#13 10.42     coffee-script (2.4.1)
+#13 10.42       coffee-script-source
+#13 10.42       execjs
+#13 10.42     coffee-script-source (1.12.2)
+#13 10.42     concurrent-ruby (1.1.10)
+#13 10.42     crack (0.4.5)
+#13 10.42       rexml
+#13 10.42     crass (1.0.6)
+#13 10.42     csv_shaper (1.3.2)
+#13 10.42       activesupport (>= 3.0.0)
+#13 10.42     dalli (2.7.11)
+#13 10.42     database_cleaner (2.0.1)
+#13 10.42       database_cleaner-active_record (~> 2.0.0)
+#13 10.42     database_cleaner-active_record (2.0.1)
+#13 10.42       activerecord (>= 5.a)
+#13 10.42       database_cleaner-core (~> 2.0.0)
+#13 10.42     database_cleaner-core (2.0.1)
+#13 10.42     derailed (0.1.0)
+#13 10.42       derailed_benchmarks
+#13 10.42     derailed_benchmarks (1.6.0)
+#13 10.42       benchmark-ips (~> 2)
+#13 10.42       get_process_mem (~> 0)
+#13 10.42       heapy (~> 0)
+#13 10.42       memory_profiler (~> 0)
+#13 10.42       rack (>= 1)
+#13 10.42       rake (> 10, < 14)
+#13 10.42       ruby-statistics (>= 2.1)
+#13 10.42       thor (>= 0.19, < 2)
+#13 10.42     devise (4.8.1)
+#13 10.42       bcrypt (~> 3.0)
+#13 10.42       orm_adapter (~> 0.1)
+#13 10.42       railties (>= 4.1.0)
+#13 10.42       responders
+#13 10.42       warden (~> 1.2.3)
+#13 10.42     diff-lcs (1.3)
+#13 10.42     docile (1.3.2)
+#13 10.42     enumerize (2.5.0)
+#13 10.42       activesupport (>= 3.2)
+#13 10.42     erubi (1.10.0)
+#13 10.42     erubis (2.7.0)
+#13 10.42     execjs (2.7.0)
+#13 10.42     factory_bot (6.2.0)
+#13 10.42       activesupport (>= 5.0.0)
+#13 10.42     factory_bot_rails (6.2.0)
+#13 10.42       factory_bot (~> 6.2.0)
+#13 10.42       railties (>= 5.0.0)
+#13 10.42     ffi (1.14.2)
+#13 10.42     figaro (1.2.0)
+#13 10.42       thor (>= 0.14.0, < 2)
+#13 10.42     flamegraph (0.9.5)
+#13 10.42     friendly_id (5.4.2)
+#13 10.42       activerecord (>= 4.0.0)
+#13 10.42     geocoder (1.8.0)
+#13 10.42     get_process_mem (0.2.5)
+#13 10.42       ffi (~> 1.0)
+#13 10.42     globalid (1.0.0)
+#13 10.42       activesupport (>= 5.0)
+#13 10.42     haml (5.2.2)
+#13 10.42       temple (>= 0.8.0)
+#13 10.42       tilt
+#13 10.42     haml-rails (2.0.1)
+#13 10.42       actionpack (>= 5.1)
+#13 10.42       activesupport (>= 5.1)
+#13 10.42       haml (>= 4.0.6, < 6.0)
+#13 10.42       html2haml (>= 1.0.1)
+#13 10.42       railties (>= 5.1)
+#13 10.42     haml_lint (0.40.0)
+#13 10.42       haml (>= 4.0, < 5.3)
+#13 10.42       parallel (~> 1.10)
+#13 10.42       rainbow
+#13 10.42       rubocop (>= 0.50.0)
+#13 10.42       sysexits (~> 1.1)
+#13 10.42     hashdiff (1.0.1)
+#13 10.42     heapy (0.1.4)
+#13 10.42     html2haml (2.2.0)
+#13 10.42       erubis (~> 2.7.0)
+#13 10.42       haml (>= 4.0, < 6)
+#13 10.42       nokogiri (>= 1.6.0)
+#13 10.42       ruby_parser (~> 3.5)
+#13 10.42     i18n (1.10.0)
+#13 10.42       concurrent-ruby (~> 1.0)
+#13 10.42     jquery-rails (4.4.0)
+#13 10.42       rails-dom-testing (>= 1, < 3)
+#13 10.42       railties (>= 4.2.0)
+#13 10.42       thor (>= 0.14, < 2.0)
+#13 10.42     json (2.3.0)
+#13 10.42     kaminari (1.2.2)
+#13 10.42       activesupport (>= 4.1.0)
+#13 10.42       kaminari-actionview (= 1.2.2)
+#13 10.42       kaminari-activerecord (= 1.2.2)
+#13 10.42       kaminari-core (= 1.2.2)
+#13 10.42     kaminari-actionview (1.2.2)
+#13 10.42       actionview
+#13 10.42       kaminari-core (= 1.2.2)
+#13 10.42     kaminari-activerecord (1.2.2)
+#13 10.42       activerecord
+#13 10.42       kaminari-core (= 1.2.2)
+#13 10.42     kaminari-core (1.2.2)
+#13 10.42     kgio (2.11.4)
+#13 10.42     kwalify (0.7.2)
+#13 10.42     launchy (2.5.0)
+#13 10.42       addressable (~> 2.7)
+#13 10.42     letter_opener (1.8.1)
+#13 10.42       launchy (>= 2.2, < 3)
+#13 10.42     listen (3.1.5)
+#13 10.42       rb-fsevent (~> 0.9, >= 0.9.4)
+#13 10.42       rb-inotify (~> 0.9, >= 0.9.7)
+#13 10.42       ruby_dep (~> 1.2)
+#13 10.42     loofah (2.18.0)
+#13 10.42       crass (~> 1.0.2)
+#13 10.42       nokogiri (>= 1.5.9)
+#13 10.42     mail (2.7.1)
+#13 10.42       mini_mime (>= 0.1.1)
+#13 10.42     marcel (1.0.2)
+#13 10.42     matrix (0.4.2)
+#13 10.42     memcachier (0.0.2)
+#13 10.42     memory_profiler (0.9.14)
+#13 10.42     method_source (1.0.0)
+#13 10.42     mini_mime (1.1.2)
+#13 10.42     mini_portile2 (2.8.0)
+#13 10.42     minitest (5.15.0)
+#13 10.42     nio4r (2.5.8)
+#13 10.42     nokogiri (1.13.6)
+#13 10.42       mini_portile2 (~> 2.8.0)
+#13 10.42       racc (~> 1.4)
+#13 10.42     nokogiri (1.13.6-x86_64-darwin)
+#13 10.42       racc (~> 1.4)
+#13 10.42     orm_adapter (0.5.0)
+#13 10.42     parallel (1.22.1)
+#13 10.42     parser (3.1.2.0)
+#13 10.42       ast (~> 2.4.1)
+#13 10.42     pg (1.3.5)
+#13 10.42     public_suffix (4.0.7)
+#13 10.42     puma (5.6.4)
+#13 10.42       nio4r (~> 2.0)
+#13 10.42     pundit (2.2.0)
+#13 10.42       activesupport (>= 3.0.0)
+#13 10.42     racc (1.6.0)
+#13 10.42     rack (2.2.3.1)
+#13 10.42     rack-cache (1.13.0)
+#13 10.42       rack (>= 0.4)
+#13 10.42     rack-cors (1.1.1)
+#13 10.42       rack (>= 2.0.0)
+#13 10.42     rack-mini-profiler (3.0.0)
+#13 10.42       rack (>= 1.2.0)
+#13 10.42     rack-test (1.1.0)
+#13 10.42       rack (>= 1.0, < 3)
+#13 10.42     rails (5.2.8)
+#13 10.42       actioncable (= 5.2.8)
+#13 10.42       actionmailer (= 5.2.8)
+#13 10.42       actionpack (= 5.2.8)
+#13 10.42       actionview (= 5.2.8)
+#13 10.42       activejob (= 5.2.8)
+#13 10.42       activemodel (= 5.2.8)
+#13 10.42       activerecord (= 5.2.8)
+#13 10.42       activestorage (= 5.2.8)
+#13 10.42       activesupport (= 5.2.8)
+#13 10.42       bundler (>= 1.3.0)
+#13 10.42       railties (= 5.2.8)
+#13 10.42       sprockets-rails (>= 2.0.0)
+#13 10.42     rails-controller-testing (1.0.5)
+#13 10.42       actionpack (>= 5.0.1.rc1)
+#13 10.42       actionview (>= 5.0.1.rc1)
+#13 10.42       activesupport (>= 5.0.1.rc1)
+#13 10.42     rails-dom-testing (2.0.3)
+#13 10.42       activesupport (>= 4.2.0)
+#13 10.42       nokogiri (>= 1.6)
+#13 10.42     rails-html-sanitizer (1.4.2)
+#13 10.42       loofah (~> 2.3)
+#13 10.42     railties (5.2.8)
+#13 10.42       actionpack (= 5.2.8)
+#13 10.42       activesupport (= 5.2.8)
+#13 10.42       method_source
+#13 10.42       rake (>= 0.8.7)
+#13 10.42       thor (>= 0.19.0, < 2.0)
+#13 10.42     rainbow (3.1.1)
+#13 10.42     rake (13.0.6)
+#13 10.42     rb-fsevent (0.10.3)
+#13 10.42     rb-inotify (0.10.0)
+#13 10.42       ffi (~> 1.0)
+#13 10.42     reek (6.1.1)
+#13 10.42       kwalify (~> 0.7.0)
+#13 10.42       parser (~> 3.1.0)
+#13 10.42       rainbow (>= 2.0, < 4.0)
+#13 10.42     regexp_parser (2.4.0)
+#13 10.42     responders (3.0.1)
+#13 10.42       actionpack (>= 5.0)
+#13 10.42       railties (>= 5.0)
+#13 10.42     rexml (3.2.5)
+#13 10.42     rspec-core (3.9.1)
+#13 10.42       rspec-support (~> 3.9.1)
+#13 10.42     rspec-expectations (3.9.1)
+#13 10.42       diff-lcs (>= 1.2.0, < 2.0)
+#13 10.42       rspec-support (~> 3.9.0)
+#13 10.42     rspec-its (1.3.0)
+#13 10.42       rspec-core (>= 3.0.0)
+#13 10.42       rspec-expectations (>= 3.0.0)
+#13 10.42     rspec-mocks (3.9.1)
+#13 10.42       diff-lcs (>= 1.2.0, < 2.0)
+#13 10.42       rspec-support (~> 3.9.0)
+#13 10.42     rspec-rails (3.9.1)
+#13 10.42       actionpack (>= 3.0)
+#13 10.42       activesupport (>= 3.0)
+#13 10.42       railties (>= 3.0)
+#13 10.42       rspec-core (~> 3.9.0)
+#13 10.42       rspec-expectations (~> 3.9.0)
+#13 10.42       rspec-mocks (~> 3.9.0)
+#13 10.42       rspec-support (~> 3.9.0)
+#13 10.42     rspec-support (3.9.2)
+#13 10.42     rubocop (1.29.1)
+#13 10.42       parallel (~> 1.10)
+#13 10.42       parser (>= 3.1.0.0)
+#13 10.42       rainbow (>= 2.2.2, < 4.0)
+#13 10.42       regexp_parser (>= 1.8, < 3.0)
+#13 10.42       rexml (>= 3.2.5, < 4.0)
+#13 10.42       rubocop-ast (>= 1.17.0, < 2.0)
+#13 10.42       ruby-progressbar (~> 1.7)
+#13 10.42       unicode-display_width (>= 1.4.0, < 3.0)
+#13 10.42     rubocop-ast (1.18.0)
+#13 10.42       parser (>= 3.1.1.0)
+#13 10.42     rubocop-performance (1.13.3)
+#13 10.42       rubocop (>= 1.7.0, < 2.0)
+#13 10.42       rubocop-ast (>= 0.4.0)
+#13 10.42     rubocop-rails (2.14.2)
+#13 10.42       activesupport (>= 4.2.0)
+#13 10.42       rack (>= 1.1)
+#13 10.42       rubocop (>= 1.7.0, < 2.0)
+#13 10.42     rubocop-rspec (2.11.1)
+#13 10.42       rubocop (~> 1.19)
+#13 10.42     ruby-progressbar (1.11.0)
+#13 10.42     ruby-statistics (2.1.2)
+#13 10.42     ruby_dep (1.5.0)
+#13 10.42     ruby_parser (3.13.1)
+#13 10.42       sexp_processor (~> 4.9)
+#13 10.42     rubyzip (2.3.2)
+#13 10.42     sassc (2.4.0)
+#13 10.42       ffi (~> 1.9)
+#13 10.42     sassc-rails (2.1.2)
+#13 10.42       railties (>= 4.0.0)
+#13 10.42       sassc (>= 2.0)
+#13 10.42       sprockets (> 3.0)
+#13 10.42       sprockets-rails
+#13 10.42       tilt
+#13 10.42     select2-rails (3.5.11)
+#13 10.42     selenium-webdriver (4.0.3)
+#13 10.42       childprocess (>= 0.5, < 5.0)
+#13 10.42       rexml (~> 3.2, >= 3.2.5)
+#13 10.42       rubyzip (>= 1.2.2)
+#13 10.42     sexp_processor (4.12.1)
+#13 10.42     simplecov (0.17.1)
+#13 10.42       docile (~> 1.1)
+#13 10.42       json (>= 1.8, < 3)
+#13 10.42       simplecov-html (~> 0.10.0)
+#13 10.42     simplecov-html (0.10.2)
+#13 10.42     smarter_csv (1.6.1)
+#13 10.42     spring (2.1.1)
+#13 10.42     spring-commands-rspec (1.0.4)
+#13 10.42       spring (>= 0.9.1)
+#13 10.42     spring-watcher-listen (2.0.1)
+#13 10.42       listen (>= 2.7, < 4.0)
+#13 10.42       spring (>= 1.2, < 3.0)
+#13 10.42     sprockets (4.0.3)
+#13 10.42       concurrent-ruby (~> 1.0)
+#13 10.42       rack (> 1, < 3)
+#13 10.42     sprockets-rails (3.4.2)
+#13 10.42       actionpack (>= 5.2)
+#13 10.42       activesupport (>= 5.2)
+#13 10.42       sprockets (>= 3.0.0)
+#13 10.42     stackprof (0.2.19)
+#13 10.42     sysexits (1.2.0)
+#13 10.42     temple (0.8.2)
+#13 10.42     thor (1.2.1)
+#13 10.42     thread_safe (0.3.6)
+#13 10.42     tilt (2.0.10)
+#13 10.42     tzinfo (1.2.9)
+#13 10.42       thread_safe (~> 0.1)
+#13 10.42     uglifier (4.2.0)
+#13 10.42       execjs (>= 0.3.0, < 3)
+#13 10.42     unicode-display_width (2.1.0)
+#13 10.42     uniform_notifier (1.14.2)
+#13 10.42     warden (1.2.9)
+#13 10.42       rack (>= 2.0.9)
+#13 10.42     web-console (3.7.0)
+#13 10.42       actionview (>= 5.0)
+#13 10.42       activemodel (>= 5.0)
+#13 10.42       bindex (>= 0.4.0)
+#13 10.42       railties (>= 5.0)
+#13 10.42     webdrivers (5.0.0)
+#13 10.42       nokogiri (~> 1.6)
+#13 10.42       rubyzip (>= 1.3.0)
+#13 10.42       selenium-webdriver (~> 4.0)
+#13 10.42     webmock (3.14.0)
+#13 10.42       addressable (>= 2.8.0)
+#13 10.42       crack (>= 0.3.2)
+#13 10.42       hashdiff (>= 0.4.0, < 2.0.0)
+#13 10.42     websocket-driver (0.7.5)
+#13 10.42       websocket-extensions (>= 0.1.0)
+#13 10.42     websocket-extensions (0.1.5)
+#13 10.42     xpath (3.2.0)
+#13 10.42       nokogiri (~> 1.8)
+#13 10.42 
+#13 10.42 PLATFORMS
+#13 10.42   ruby
+#13 10.42   x86_64-darwin-19
+#13 10.42 
+#13 10.42 DEPENDENCIES
+#13 10.42   active_model_serializers (~> 0.8.0)
+#13 10.42   ancestry
+#13 10.42   auto_strip_attributes (~> 2.0)
+#13 10.42   better_errors (>= 0.7.2)
+#13 10.42   bootstrap-sass (~> 3.4.0)
+#13 10.42   bullet
+#13 10.42   bummr
+#13 10.42   capybara
+#13 10.42   coffee-rails (~> 4.1)
+#13 10.42   csv_shaper
+#13 10.42   dalli (~> 2.7)
+#13 10.42   database_cleaner (>= 1.0.0.RC1)
+#13 10.42   derailed
+#13 10.42   devise (~> 4.1)
+#13 10.42   enumerize
+#13 10.42   factory_bot_rails
+#13 10.42   figaro (~> 1.0)
+#13 10.42   flamegraph
+#13 10.42   friendly_id (~> 5.0)
+#13 10.42   geocoder
+#13 10.42   haml-rails
+#13 10.42   haml_lint
+#13 10.42   jquery-rails (~> 4.0)
+#13 10.42   kaminari (~> 1.1)
+#13 10.42   kgio
+#13 10.42   letter_opener
+#13 10.42   memcachier
+#13 10.42   pg
+#13 10.42   puma
+#13 10.42   pundit
+#13 10.42   rack-cache
+#13 10.42   rack-cors
+#13 10.42   rack-mini-profiler
+#13 10.42   rails (~> 5.2)
+#13 10.42   rails-controller-testing
+#13 10.42   reek
+#13 10.42   rspec-its
+#13 10.42   rspec-rails (~> 3.1)
+#13 10.42   rubocop
+#13 10.42   rubocop-performance
+#13 10.42   rubocop-rails
+#13 10.42   rubocop-rspec
+#13 10.42   sassc-rails (~> 2.1)
+#13 10.42   select2-rails (~> 3.5)
+#13 10.42   shoulda-matchers!
+#13 10.42   simplecov (= 0.17.1)
+#13 10.42   smarter_csv
+#13 10.42   spring
+#13 10.42   spring-commands-rspec
+#13 10.42   spring-watcher-listen
+#13 10.42   stackprof
+#13 10.42   uglifier (>= 1.3.0)
+#13 10.42   web-console
+#13 10.42   webdrivers
+#13 10.42   webmock
+#13 10.42 
+#13 10.42 RUBY VERSION
+#13 10.42    ruby 2.7.5p203
+#13 10.42 
+#13 10.42 BUNDLED WITH
+#13 10.42    2.2.17
+#13 10.42 ```
+#13 10.42 
+#13 10.42 --- TEMPLATE END ----------------------------------------------------------------
+#13 10.42 
+#13 10.42 Unfortunately, an unexpected error occurred, and Bundler cannot continue.
+#13 10.42 
+#13 10.42 First, try this link to see if there are any existing issue reports for this error:
+#13 10.42 https://github.com/rubygems/rubygems/search?q=installing+into+parent+path+lib%2Fmemcachier.rb+of+%2Fusr%2Flocal%2Fbundle%2Fgems%2Fmemcachier-0.0.2+is+not+allowed&type=Issues
+#13 10.42 
+#13 10.42 If there aren't any reports for this error yet, please fill in the new issue form located at https://github.com/rubygems/rubygems/issues/new?labels=Bundler&template=bundler-related-issue.md, and copy and paste the report template above in there.
+#13 ERROR: process "/bin/sh -c bundle install --jobs 20 --retry 5 --without production" did not complete successfully: exit code: 1
+------
+ > [ 9/10] RUN bundle install --jobs 20 --retry 5 --without production:
+10.42 ```
+10.42 
+10.42 --- TEMPLATE END ----------------------------------------------------------------
+10.42 
+10.42 Unfortunately, an unexpected error occurred, and Bundler cannot continue.
+10.42 
+10.42 First, try this link to see if there are any existing issue reports for this error:
+10.42 https://github.com/rubygems/rubygems/search?q=installing+into+parent+path+lib%2Fmemcachier.rb+of+%2Fusr%2Flocal%2Fbundle%2Fgems%2Fmemcachier-0.0.2+is+not+allowed&type=Issues
+10.42 
+10.42 If there aren't any reports for this error yet, please fill in the new issue form located at https://github.com/rubygems/rubygems/issues/new?labels=Bundler&template=bundler-related-issue.md, and copy and paste the report template above in there.
+------
+v3_Dockerfile:18
+--------------------
+  16 |     
+  17 |     RUN gem install bundler -v 2.4.22
+  18 | >>> RUN bundle install --jobs 20 --retry 5 --without production
+  19 |     
+  20 |     COPY . /ohana-api
+--------------------
+ERROR: failed to solve: process "/bin/sh -c bundle install --jobs 20 --retry 5 --without production" did not complete successfully: exit code: 1
+Duration: 0:54.42

@@ -1,0 +1,174 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 456B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 ...
+
+#4 [auth] library/alpine:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.6s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/6] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.2s done
+#6 DONE 0.2s
+
+#6 [1/6] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#6 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#6 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 2.03MB 0.1s done
+#5 DONE 0.4s
+
+#6 [1/6] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.2s
+#6 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s
+#6 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s done
+#6 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#6 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.9s done
+#6 DONE 2.0s
+
+#7 [2/6] RUN 	apk add --update 		git 		py3-lxml 		py3-pip 		py3-requests 		py3-sqlalchemy 		py3-tornado 	&& pip3 install apscheduler 	&& rm -rf /var/cache/apk/*
+#7 1.402 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#7 1.960 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#7 2.929 (1/61) Installing ca-certificates (20240705-r0)
+#7 3.046 (2/61) Installing brotli-libs (1.1.0-r2)
+#7 3.112 (3/61) Installing c-ares (1.28.1-r0)
+#7 3.143 (4/61) Installing libunistring (1.2-r0)
+#7 3.205 (5/61) Installing libidn2 (2.3.7-r0)
+#7 3.225 (6/61) Installing nghttp2-libs (1.62.1-r0)
+#7 3.231 (7/61) Installing libpsl (0.21.5-r1)
+#7 3.237 (8/61) Installing zstd-libs (1.5.6-r0)
+#7 3.255 (9/61) Installing libcurl (8.9.0-r0)
+#7 3.289 (10/61) Installing libexpat (2.6.2-r0)
+#7 3.295 (11/61) Installing pcre2 (10.43-r0)
+#7 3.331 (12/61) Installing git (2.45.2-r0)
+#7 3.545 (13/61) Installing git-init-template (2.45.2-r0)
+#7 3.560 (14/61) Installing libbz2 (1.0.8-r6)
+#7 3.565 (15/61) Installing libffi (3.4.6-r0)
+#7 3.568 (16/61) Installing gdbm (1.23-r1)
+#7 3.575 (17/61) Installing xz-libs (5.6.1-r3)
+#7 3.582 (18/61) Installing libgcc (13.2.1_git20240309-r0)
+#7 3.589 (19/61) Installing libstdc++ (13.2.1_git20240309-r0)
+#7 3.655 (20/61) Installing mpdecimal (4.0.0-r0)
+#7 3.669 (21/61) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#7 3.722 (22/61) Installing libncursesw (6.4_p20240420-r0)
+#7 3.732 (23/61) Installing libpanelw (6.4_p20240420-r0)
+#7 3.736 (24/61) Installing readline (8.2.10-r0)
+#7 3.744 (25/61) Installing sqlite-libs (3.45.3-r1)
+#7 3.788 (26/61) Installing python3 (3.12.3-r1)
+#7 4.717 (27/61) Installing python3-pycache-pyc0 (3.12.3-r1)
+#7 5.227 (28/61) Installing pyc (3.12.3-r1)
+#7 5.230 (29/61) Installing py3-lxml-pyc (5.1.0-r0)
+#7 6.010 (30/61) Installing python3-pyc (3.12.3-r1)
+#7 6.013 (31/61) Installing libgpg-error (1.49-r0)
+#7 6.022 (32/61) Installing libgcrypt (1.10.3-r0)
+#7 6.054 (33/61) Installing libxml2 (2.12.7-r0)
+#7 6.099 (34/61) Installing libxslt (1.1.39-r1)
+#7 6.132 (35/61) Installing py3-lxml (5.1.0-r0)
+#7 6.387 (36/61) Installing py3-parsing (3.1.2-r1)
+#7 6.399 (37/61) Installing py3-parsing-pyc (3.1.2-r1)
+#7 6.418 (38/61) Installing py3-packaging (24.0-r1)
+#7 6.459 (39/61) Installing py3-packaging-pyc (24.0-r1)
+#7 6.468 (40/61) Installing py3-setuptools (69.5.1-r0)
+#7 6.673 (41/61) Installing py3-setuptools-pyc (69.5.1-r0)
+#7 7.032 (42/61) Installing py3-pip (24.0-r2)
+#7 7.423 (43/61) Installing py3-pip-pyc (24.0-r2)
+#7 7.916 (44/61) Installing py3-certifi (2024.2.2-r1)
+#7 7.930 (45/61) Installing py3-certifi-pyc (2024.2.2-r1)
+#7 8.078 (46/61) Installing py3-charset-normalizer (3.3.2-r1)
+#7 8.284 (47/61) Installing py3-charset-normalizer-pyc (3.3.2-r1)
+#7 8.460 (48/61) Installing py3-idna (3.7-r0)
+#7 8.988 (49/61) Installing py3-idna-pyc (3.7-r0)
+#7 9.161 (50/61) Installing py3-urllib3 (1.26.18-r1)
+#7 9.334 (51/61) Installing py3-urllib3-pyc (1.26.18-r1)
+#7 9.543 (52/61) Installing py3-requests (2.32.3-r0)
+#7 9.713 (53/61) Installing py3-requests-pyc (2.32.3-r0)
+#7 9.936 (54/61) Installing py3-greenlet (3.0.3-r1)
+#7 10.11 (55/61) Installing py3-greenlet-pyc (3.0.3-r1)
+#7 10.26 (56/61) Installing py3-typing-extensions (4.11.0-r1)
+#7 10.73 (57/61) Installing py3-typing-extensions-pyc (4.11.0-r1)
+#7 11.21 (58/61) Installing py3-sqlalchemy (2.0.29-r1)
+#7 11.87 (59/61) Installing py3-sqlalchemy-pyc (2.0.29-r1)
+#7 12.78 (60/61) Installing py3-tornado (6.4-r2)
+#7 12.97 (61/61) Installing py3-tornado-pyc (6.4-r2)
+#7 13.51 Executing busybox-1.36.1-r29.trigger
+#7 13.55 Executing ca-certificates-20240705-r0.trigger
+#7 13.77 OK: 118 MiB in 75 packages
+#7 21.95 error: externally-managed-environment
+#7 21.95 
+#7 21.95 × This environment is externally managed
+#7 21.95 ╰─> 
+#7 21.95     The system-wide python installation should be maintained using the system
+#7 21.95     package manager (apk) only.
+#7 21.95     
+#7 21.95     If the package in question is not packaged already (and hence installable via
+#7 21.95     "apk add py3-somepackage"), please consider installing it inside a virtual
+#7 21.95     environment, e.g.:
+#7 21.95     
+#7 21.95     python3 -m venv /path/to/venv
+#7 21.95     . /path/to/venv/bin/activate
+#7 21.95     pip install mypackage
+#7 21.95     
+#7 21.95     To exit the virtual environment, run:
+#7 21.95     
+#7 21.95     deactivate
+#7 21.95     
+#7 21.95     The virtual environment is not deleted, and can be re-entered by re-sourcing
+#7 21.95     the activate file.
+#7 21.95     
+#7 21.95     To automatically manage virtual environments, consider using pipx (from the
+#7 21.95     pipx package).
+#7 21.95 
+#7 21.95 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+#7 21.95 hint: See PEP 668 for the detailed specification.
+#7 ERROR: process "/bin/sh -c apk add --update \t\tgit \t\tpy3-lxml \t\tpy3-pip \t\tpy3-requests \t\tpy3-sqlalchemy \t\tpy3-tornado \t&& pip3 install apscheduler \t&& rm -rf /var/cache/apk/*" did not complete successfully: exit code: 1
+------
+ > [2/6] RUN 	apk add --update 		git 		py3-lxml 		py3-pip 		py3-requests 		py3-sqlalchemy 		py3-tornado 	&& pip3 install apscheduler 	&& rm -rf /var/cache/apk/*:
+21.95     deactivate
+21.95     
+21.95     The virtual environment is not deleted, and can be re-entered by re-sourcing
+21.95     the activate file.
+21.95     
+21.95     To automatically manage virtual environments, consider using pipx (from the
+21.95     pipx package).
+21.95 
+21.95 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+21.95 hint: See PEP 668 for the detailed specification.
+------
+Dockerfile:7
+--------------------
+   6 |     
+   7 | >>> RUN \
+   8 | >>> 	apk add --update \
+   9 | >>> 		git \
+  10 | >>> 		py3-lxml \
+  11 | >>> 		py3-pip \
+  12 | >>> 		py3-requests \
+  13 | >>> 		py3-sqlalchemy \
+  14 | >>> 		py3-tornado \
+  15 | >>> 	&& pip3 install apscheduler \
+  16 | >>> 	&& rm -rf /var/cache/apk/*
+  17 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk add --update \t\tgit \t\tpy3-lxml \t\tpy3-pip \t\tpy3-requests \t\tpy3-sqlalchemy \t\tpy3-tornado \t&& pip3 install apscheduler \t&& rm -rf /var/cache/apk/*" did not complete successfully: exit code: 1
+Duration: 0:29.97

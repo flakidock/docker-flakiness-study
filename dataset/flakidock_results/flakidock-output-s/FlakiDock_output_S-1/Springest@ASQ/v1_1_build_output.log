@@ -1,0 +1,126 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 970B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ruby:2.6-alpine
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 415B done
+#3 DONE 0.0s
+
+#4 [ 1/12] FROM docker.io/library/ruby:2.6-alpine@sha256:382ce92de42ef027bf1bfe382c3f3c3878042c41c07da8b8aa41855db0894762
+#4 resolve docker.io/library/ruby:2.6-alpine@sha256:382ce92de42ef027bf1bfe382c3f3c3878042c41c07da8b8aa41855db0894762 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 699.51kB 0.0s done
+#5 DONE 0.1s
+
+#4 [ 1/12] FROM docker.io/library/ruby:2.6-alpine@sha256:382ce92de42ef027bf1bfe382c3f3c3878042c41c07da8b8aa41855db0894762
+#4 sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 1.05MB / 2.81MB 0.2s
+#4 sha256:837e9cfc7e430bf6c3aa43a0b8a8e3d11115abb5b84d75783752c38e06145e85 0B / 3.68MB 0.2s
+#4 sha256:c7850f1a8c234d7e3e08596122f1e1bbb5a2b2abedb7d91bb3017697821fe168 225B / 225B 0.1s done
+#4 sha256:382ce92de42ef027bf1bfe382c3f3c3878042c41c07da8b8aa41855db0894762 1.65kB / 1.65kB done
+#4 sha256:9bfe9f8689cf57f5ff4a333a91f01bceb92a73e352912ddb36bf75a2d204a4ed 1.36kB / 1.36kB done
+#4 sha256:2254a013410a3f972c30a5a7daaa62816eaba9300d2cdc7f045c56ca2531b7db 6.29kB / 6.29kB done
+#4 sha256:b303053af85043500e6a7c79724719d71c2d834b81edbd6cf3914d100a2ecba5 0B / 19.46MB 0.2s
+#4 sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 2.81MB / 2.81MB 0.2s done
+#4 sha256:837e9cfc7e430bf6c3aa43a0b8a8e3d11115abb5b84d75783752c38e06145e85 2.10MB / 3.68MB 0.3s
+#4 extracting sha256:df9b9388f04ad6279a7410b85cedfdcb2208c0a003da7ab5613af71079148139 0.1s done
+#4 sha256:f3d5bf52dffae418e9dd73f50a8c60b29a59d77dbec562507e1480221e0d2c75 0B / 172B 0.3s
+#4 sha256:837e9cfc7e430bf6c3aa43a0b8a8e3d11115abb5b84d75783752c38e06145e85 3.68MB / 3.68MB 0.3s done
+#4 sha256:f3d5bf52dffae418e9dd73f50a8c60b29a59d77dbec562507e1480221e0d2c75 172B / 172B 0.3s done
+#4 extracting sha256:837e9cfc7e430bf6c3aa43a0b8a8e3d11115abb5b84d75783752c38e06145e85
+#4 sha256:b303053af85043500e6a7c79724719d71c2d834b81edbd6cf3914d100a2ecba5 1.05MB / 19.46MB 0.7s
+#4 sha256:b303053af85043500e6a7c79724719d71c2d834b81edbd6cf3914d100a2ecba5 5.24MB / 19.46MB 0.8s
+#4 sha256:b303053af85043500e6a7c79724719d71c2d834b81edbd6cf3914d100a2ecba5 12.58MB / 19.46MB 0.9s
+#4 extracting sha256:837e9cfc7e430bf6c3aa43a0b8a8e3d11115abb5b84d75783752c38e06145e85 0.5s done
+#4 extracting sha256:c7850f1a8c234d7e3e08596122f1e1bbb5a2b2abedb7d91bb3017697821fe168
+#4 sha256:b303053af85043500e6a7c79724719d71c2d834b81edbd6cf3914d100a2ecba5 19.46MB / 19.46MB 1.0s done
+#4 extracting sha256:c7850f1a8c234d7e3e08596122f1e1bbb5a2b2abedb7d91bb3017697821fe168 done
+#4 extracting sha256:b303053af85043500e6a7c79724719d71c2d834b81edbd6cf3914d100a2ecba5
+#4 extracting sha256:b303053af85043500e6a7c79724719d71c2d834b81edbd6cf3914d100a2ecba5 0.8s done
+#4 extracting sha256:f3d5bf52dffae418e9dd73f50a8c60b29a59d77dbec562507e1480221e0d2c75
+#4 extracting sha256:f3d5bf52dffae418e9dd73f50a8c60b29a59d77dbec562507e1480221e0d2c75 done
+#4 DONE 2.1s
+
+#6 [ 2/12] RUN apk --update add --no-cache postgresql-client libstdc++   && apk add --no-cache --virtual .build-deps g++ musl-dev make postgresql-dev
+#6 0.179 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz
+#6 0.287 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/APKINDEX.tar.gz
+#6 0.490 (1/3) Installing postgresql-common (1.1-r1)
+#6 0.501 Executing postgresql-common-1.1-r1.pre-install
+#6 0.528 (2/3) Installing libpq (14.10-r0)
+#6 0.544 (3/3) Installing postgresql14-client (14.10-r0)
+#6 0.590 Executing busybox-1.34.1-r5.trigger
+#6 0.594 Executing postgresql-common-1.1-r1.trigger
+#6 0.597 * Setting postgresql14 as the default version
+#6 0.707 WARNING: Ignoring https://dl-cdn.alpinelinux.org/alpine/v3.15/main: No such file or directory
+#6 0.707 WARNING: Ignoring https://dl-cdn.alpinelinux.org/alpine/v3.15/community: No such file or directory
+#6 0.709 sh: out of range
+#6 0.710 OK: 23 MiB in 39 packages
+#6 0.751 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz
+#6 0.855 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/APKINDEX.tar.gz
+#6 1.051 (1/30) Upgrading musl (1.2.2-r7 -> 1.2.2-r9)
+#6 1.069 (2/30) Installing binutils (2.37-r3)
+#6 1.151 (3/30) Installing libgomp (10.3.1_git20211027-r0)
+#6 1.163 (4/30) Installing libatomic (10.3.1_git20211027-r0)
+#6 1.173 (5/30) Installing libgphobos (10.3.1_git20211027-r0)
+#6 1.229 (6/30) Installing isl22 (0.22-r0)
+#6 1.255 (7/30) Installing mpfr4 (4.1.0-r0)
+#6 1.294 (8/30) Installing mpc1 (1.2.1-r0)
+#6 1.304 (9/30) Installing gcc (10.3.1_git20211027-r0)
+#6 2.052 (10/30) Installing musl-dev (1.2.2-r9)
+#6 2.138 (11/30) Installing libc-dev (0.7.2-r3)
+#6 2.147 (12/30) Installing g++ (10.3.1_git20211027-r0)
+#6 2.623 (13/30) Installing make (4.3-r0)
+#6 2.634 (14/30) Upgrading libcrypto1.1 (1.1.1n-r0 -> 1.1.1w-r1)
+#6 2.668 (15/30) Upgrading libssl1.1 (1.1.1n-r0 -> 1.1.1w-r1)
+#6 2.685 (16/30) Installing openssl-dev (1.1.1w-r1)
+#6 2.713 (17/30) Installing libpq-dev (14.10-r0)
+#6 2.734 (18/30) Installing libecpg (14.10-r0)
+#6 2.745 (19/30) Installing libecpg-dev (14.10-r0)
+#6 2.763 (20/30) Installing xz-libs (5.2.5-r1)
+#6 2.776 (21/30) Installing libxml2 (2.9.14-r2)
+#6 2.795 (22/30) Installing llvm12-libs (12.0.1-r0)
+#6 3.590 (23/30) Installing clang-libs (12.0.1-r1)
+#6 4.280 (24/30) Installing clang (12.0.1-r1)
+#6 4.572 (25/30) Installing icu-libs (69.1-r1)
+#6 4.848 (26/30) Installing icu (69.1-r1)
+#6 4.864 (27/30) Installing icu-dev (69.1-r1)
+#6 4.912 (28/30) Installing llvm12 (12.0.1-r0)
+#6 5.317 (29/30) Installing postgresql14-dev (14.10-r0)
+#6 5.435 (30/30) Installing .build-deps (20240801.000521)
+#6 5.436 Executing busybox-1.34.1-r5.trigger
+#6 5.442 OK: 520 MiB in 66 packages
+#6 DONE 8.9s
+
+#7 [ 3/12] RUN gem update --system --no-document
+#7 63.26 ERROR:  Error installing rubygems-update:
+#7 63.26 	There are no versions of rubygems-update (= 3.5.16) compatible with your Ruby & RubyGems
+#7 63.26 	rubygems-update requires Ruby version >= 3.0.0. The current ruby version is 2.6.10.210.
+#7 63.26 ERROR:  While executing gem ... (NoMethodError)
+#7 63.26     undefined method `version' for nil:NilClass
+#7 63.29 Updating rubygems-update
+#7 ERROR: process "/bin/sh -c gem update --system --no-document" did not complete successfully: exit code: 1
+------
+ > [ 3/12] RUN gem update --system --no-document:
+63.26 ERROR:  Error installing rubygems-update:
+63.26 	There are no versions of rubygems-update (= 3.5.16) compatible with your Ruby & RubyGems
+63.26 	rubygems-update requires Ruby version >= 3.0.0. The current ruby version is 2.6.10.210.
+63.26 ERROR:  While executing gem ... (NoMethodError)
+63.26     undefined method `version' for nil:NilClass
+63.29 Updating rubygems-update
+------
+v1_Dockerfile:24
+--------------------
+  22 |     
+  23 |     # Rubygems and bundler
+  24 | >>> RUN gem update --system --no-document
+  25 |     RUN gem install bundler --no-document
+  26 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c gem update --system --no-document" did not complete successfully: exit code: 1
+Duration: 1:15.32

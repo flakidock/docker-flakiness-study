@@ -1,0 +1,902 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 780B done
+#1 DONE 0.5s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 93B done
+#2 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/ruby:2.5.8-slim
+#3 DONE 1.3s
+
+#4 [ 1/12] FROM docker.io/library/ruby:2.5.8-slim@sha256:65e713beb69e7c8ff47bc90ab66b338fd9fb9d5864629c6cdb374548dbeacf74
+#4 resolve docker.io/library/ruby:2.5.8-slim@sha256:65e713beb69e7c8ff47bc90ab66b338fd9fb9d5864629c6cdb374548dbeacf74
+#4 resolve docker.io/library/ruby:2.5.8-slim@sha256:65e713beb69e7c8ff47bc90ab66b338fd9fb9d5864629c6cdb374548dbeacf74 0.4s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 1.40MB 0.0s done
+#5 DONE 0.4s
+
+#4 [ 1/12] FROM docker.io/library/ruby:2.5.8-slim@sha256:65e713beb69e7c8ff47bc90ab66b338fd9fb9d5864629c6cdb374548dbeacf74
+#4 sha256:65e713beb69e7c8ff47bc90ab66b338fd9fb9d5864629c6cdb374548dbeacf74 1.86kB / 1.86kB done
+#4 sha256:fa810e7ead7a461ce1b3972b98f2196f9dea4dc1342a304249b2644b90914970 1.37kB / 1.37kB done
+#4 sha256:ef94b501cb4338839db85974eb276d4aaa2837b6d4bd28b40208bc36714e903e 6.10kB / 6.10kB done
+#4 sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341 0B / 27.14MB 0.1s
+#4 sha256:e16df641547448e59edffbaa61470a9198c2a707bdb87082a5e5a06eba7f889e 0B / 12.56MB 0.2s
+#4 sha256:1fc9849ece33d85b0a419e8eb0562951873d2dc0b12b30d06f1e7831b9d804ee 0B / 199B 0.2s
+#4 sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341 11.53MB / 27.14MB 0.4s
+#4 sha256:1fc9849ece33d85b0a419e8eb0562951873d2dc0b12b30d06f1e7831b9d804ee 199B / 199B 0.4s done
+#4 sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341 20.97MB / 27.14MB 0.6s
+#4 sha256:e16df641547448e59edffbaa61470a9198c2a707bdb87082a5e5a06eba7f889e 7.34MB / 12.56MB 0.6s
+#4 sha256:c27ce94dda208631f24ec1299bc6778eadc678a14d5f2f91400a135bf7b7d896 1.05MB / 22.49MB 0.6s
+#4 sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341 26.21MB / 27.14MB 0.7s
+#4 sha256:e16df641547448e59edffbaa61470a9198c2a707bdb87082a5e5a06eba7f889e 11.53MB / 12.56MB 0.7s
+#4 sha256:c27ce94dda208631f24ec1299bc6778eadc678a14d5f2f91400a135bf7b7d896 3.15MB / 22.49MB 0.7s
+#4 sha256:e16df641547448e59edffbaa61470a9198c2a707bdb87082a5e5a06eba7f889e 12.56MB / 12.56MB 0.8s
+#4 sha256:c27ce94dda208631f24ec1299bc6778eadc678a14d5f2f91400a135bf7b7d896 7.34MB / 22.49MB 0.8s
+#4 sha256:c27ce94dda208631f24ec1299bc6778eadc678a14d5f2f91400a135bf7b7d896 19.92MB / 22.49MB 1.0s
+#4 sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341 27.14MB / 27.14MB 1.2s done
+#4 sha256:c27ce94dda208631f24ec1299bc6778eadc678a14d5f2f91400a135bf7b7d896 22.49MB / 22.49MB 1.2s
+#4 extracting sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341 0.1s
+#4 sha256:e16df641547448e59edffbaa61470a9198c2a707bdb87082a5e5a06eba7f889e 12.56MB / 12.56MB 1.4s done
+#4 sha256:c27ce94dda208631f24ec1299bc6778eadc678a14d5f2f91400a135bf7b7d896 22.49MB / 22.49MB 1.8s done
+#4 sha256:388d9d704b8e1f9bc3b2ff1f2dc0190faae5efcc0042571060d4b83e038679fd 174B / 174B 2.0s done
+#4 extracting sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341 1.7s done
+#4 extracting sha256:e16df641547448e59edffbaa61470a9198c2a707bdb87082a5e5a06eba7f889e
+#4 extracting sha256:e16df641547448e59edffbaa61470a9198c2a707bdb87082a5e5a06eba7f889e 2.0s done
+#4 extracting sha256:1fc9849ece33d85b0a419e8eb0562951873d2dc0b12b30d06f1e7831b9d804ee
+#4 extracting sha256:1fc9849ece33d85b0a419e8eb0562951873d2dc0b12b30d06f1e7831b9d804ee done
+#4 extracting sha256:c27ce94dda208631f24ec1299bc6778eadc678a14d5f2f91400a135bf7b7d896
+#4 extracting sha256:c27ce94dda208631f24ec1299bc6778eadc678a14d5f2f91400a135bf7b7d896 0.9s done
+#4 extracting sha256:388d9d704b8e1f9bc3b2ff1f2dc0190faae5efcc0042571060d4b83e038679fd
+#4 extracting sha256:388d9d704b8e1f9bc3b2ff1f2dc0190faae5efcc0042571060d4b83e038679fd done
+#4 DONE 8.4s
+
+#6 [ 2/12] RUN (    apt-get update ;    apt-get install -y --no-install-recommends git make gcc    && rm -rf /var/lib/apt/lists/* )
+#6 0.518 Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+#6 0.546 Get:2 http://deb.debian.org/debian buster-updates InRelease [56.6 kB]
+#6 0.652 Get:3 http://security.debian.org/debian-security buster/updates InRelease [34.8 kB]
+#6 0.685 Get:4 http://deb.debian.org/debian buster/main amd64 Packages [7909 kB]
+#6 0.820 Get:5 http://deb.debian.org/debian buster-updates/main amd64 Packages [8788 B]
+#6 0.912 Get:6 http://security.debian.org/debian-security buster/updates/main amd64 Packages [610 kB]
+#6 2.306 Fetched 8741 kB in 2s (4852 kB/s)
+#6 2.306 Reading package lists...
+#6 3.068 Reading package lists...
+#6 3.810 Building dependency tree...
+#6 3.929 Reading state information...
+#6 4.037 The following additional packages will be installed:
+#6 4.037   binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-8 gcc-8 git-man
+#6 4.037   libasan5 libatomic1 libbinutils libcc1-0 libcurl3-gnutls liberror-perl
+#6 4.037   libexpat1 libgcc-8-dev libgomp1 libgssapi-krb5-2 libisl19 libitm1
+#6 4.037   libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2
+#6 4.037   libldap-common liblsan0 libmpc3 libmpfr6 libmpx2 libnghttp2-14 libpcre2-8-0
+#6 4.037   libperl5.28 libpsl5 libquadmath0 librtmp1 libsasl2-2 libsasl2-modules-db
+#6 4.037   libssh2-1 libtsan0 libubsan1 perl perl-modules-5.28
+#6 4.038 Suggested packages:
+#6 4.038   binutils-doc cpp-doc gcc-8-locales gcc-multilib manpages-dev autoconf
+#6 4.038   automake libtool flex bison gdb gcc-doc gcc-8-multilib gcc-8-doc libgcc1-dbg
+#6 4.038   libgomp1-dbg libitm1-dbg libatomic1-dbg libasan5-dbg liblsan0-dbg
+#6 4.038   libtsan0-dbg libubsan1-dbg libmpx2-dbg libquadmath0-dbg gettext-base
+#6 4.038   git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+#6 4.038   gitweb git-cvs git-mediawiki git-svn krb5-doc krb5-user sensible-utils
+#6 4.038   make-doc perl-doc libterm-readline-gnu-perl | libterm-readline-perl-perl
+#6 4.038   libb-debug-perl liblocale-codes-perl
+#6 4.038 Recommended packages:
+#6 4.038   patch less ssh-client krb5-locales publicsuffix libsasl2-modules netbase
+#6 4.260 The following NEW packages will be installed:
+#6 4.260   binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-8 gcc gcc-8 git
+#6 4.260   git-man libasan5 libatomic1 libbinutils libcc1-0 libcurl3-gnutls
+#6 4.260   liberror-perl libexpat1 libgcc-8-dev libgomp1 libgssapi-krb5-2 libisl19
+#6 4.260   libitm1 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2
+#6 4.260   libldap-common liblsan0 libmpc3 libmpfr6 libmpx2 libnghttp2-14 libpcre2-8-0
+#6 4.260   libperl5.28 libpsl5 libquadmath0 librtmp1 libsasl2-2 libsasl2-modules-db
+#6 4.261   libssh2-1 libtsan0 libubsan1 make perl perl-modules-5.28
+#6 4.291 0 upgraded, 45 newly installed, 0 to remove and 48 not upgraded.
+#6 4.291 Need to get 44.6 MB of archives.
+#6 4.291 After this operation, 197 MB of additional disk space will be used.
+#6 4.291 Get:1 http://security.debian.org/debian-security buster/updates/main amd64 libkrb5support0 amd64 1.17-3+deb10u6 [66.1 kB]
+#6 4.296 Get:2 http://security.debian.org/debian-security buster/updates/main amd64 libk5crypto3 amd64 1.17-3+deb10u6 [122 kB]
+#6 4.298 Get:3 http://security.debian.org/debian-security buster/updates/main amd64 libkrb5-3 amd64 1.17-3+deb10u6 [369 kB]
+#6 4.303 Get:4 http://security.debian.org/debian-security buster/updates/main amd64 libgssapi-krb5-2 amd64 1.17-3+deb10u6 [159 kB]
+#6 4.306 Get:5 http://security.debian.org/debian-security buster/updates/main amd64 libnghttp2-14 amd64 1.36.0-2+deb10u3 [86.1 kB]
+#6 4.306 Get:6 http://deb.debian.org/debian buster/main amd64 perl-modules-5.28 all 5.28.1-6+deb10u1 [2873 kB]
+#6 4.308 Get:7 http://security.debian.org/debian-security buster/updates/main amd64 libssh2-1 amd64 1.8.0-2.1+deb10u1 [141 kB]
+#6 4.310 Get:8 http://security.debian.org/debian-security buster/updates/main amd64 libcurl3-gnutls amd64 7.64.0-4+deb10u9 [333 kB]
+#6 4.315 Get:9 http://security.debian.org/debian-security buster/updates/main amd64 libexpat1 amd64 2.2.6-2+deb10u7 [108 kB]
+#6 4.317 Get:10 http://security.debian.org/debian-security buster/updates/main amd64 libpcre2-8-0 amd64 10.32-5+deb10u1 [213 kB]
+#6 4.320 Get:11 http://security.debian.org/debian-security buster/updates/main amd64 git-man all 1:2.20.1-2+deb10u9 [1624 kB]
+#6 4.343 Get:12 http://security.debian.org/debian-security buster/updates/main amd64 git amd64 1:2.20.1-2+deb10u9 [5667 kB]
+#6 4.390 Get:13 http://deb.debian.org/debian buster/main amd64 libperl5.28 amd64 5.28.1-6+deb10u1 [3894 kB]
+#6 4.446 Get:14 http://deb.debian.org/debian buster/main amd64 perl amd64 5.28.1-6+deb10u1 [204 kB]
+#6 4.449 Get:15 http://deb.debian.org/debian buster/main amd64 libkeyutils1 amd64 1.6-6 [15.0 kB]
+#6 4.450 Get:16 http://deb.debian.org/debian buster/main amd64 binutils-common amd64 2.31.1-16 [2073 kB]
+#6 4.479 Get:17 http://deb.debian.org/debian buster/main amd64 libbinutils amd64 2.31.1-16 [478 kB]
+#6 4.486 Get:18 http://deb.debian.org/debian buster/main amd64 binutils-x86-64-linux-gnu amd64 2.31.1-16 [1823 kB]
+#6 4.510 Get:19 http://deb.debian.org/debian buster/main amd64 binutils amd64 2.31.1-16 [56.8 kB]
+#6 4.511 Get:20 http://deb.debian.org/debian buster/main amd64 libisl19 amd64 0.20-2 [587 kB]
+#6 4.519 Get:21 http://deb.debian.org/debian buster/main amd64 libmpfr6 amd64 4.0.2-1 [775 kB]
+#6 4.529 Get:22 http://deb.debian.org/debian buster/main amd64 libmpc3 amd64 1.1.0-1 [41.3 kB]
+#6 4.530 Get:23 http://deb.debian.org/debian buster/main amd64 cpp-8 amd64 8.3.0-6 [8914 kB]
+#6 4.644 Get:24 http://deb.debian.org/debian buster/main amd64 cpp amd64 4:8.3.0-1 [19.4 kB]
+#6 4.644 Get:25 http://deb.debian.org/debian buster/main amd64 libcc1-0 amd64 8.3.0-6 [46.6 kB]
+#6 4.645 Get:26 http://deb.debian.org/debian buster/main amd64 libgomp1 amd64 8.3.0-6 [75.8 kB]
+#6 4.646 Get:27 http://deb.debian.org/debian buster/main amd64 libitm1 amd64 8.3.0-6 [27.7 kB]
+#6 4.647 Get:28 http://deb.debian.org/debian buster/main amd64 libatomic1 amd64 8.3.0-6 [9032 B]
+#6 4.647 Get:29 http://deb.debian.org/debian buster/main amd64 libasan5 amd64 8.3.0-6 [362 kB]
+#6 4.652 Get:30 http://deb.debian.org/debian buster/main amd64 liblsan0 amd64 8.3.0-6 [131 kB]
+#6 4.654 Get:31 http://deb.debian.org/debian buster/main amd64 libtsan0 amd64 8.3.0-6 [283 kB]
+#6 4.657 Get:32 http://deb.debian.org/debian buster/main amd64 libubsan1 amd64 8.3.0-6 [120 kB]
+#6 4.659 Get:33 http://deb.debian.org/debian buster/main amd64 libmpx2 amd64 8.3.0-6 [11.4 kB]
+#6 4.662 Get:34 http://deb.debian.org/debian buster/main amd64 libquadmath0 amd64 8.3.0-6 [133 kB]
+#6 4.665 Get:35 http://deb.debian.org/debian buster/main amd64 libgcc-8-dev amd64 8.3.0-6 [2298 kB]
+#6 4.696 Get:36 http://deb.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9452 kB]
+#6 4.818 Get:37 http://deb.debian.org/debian buster/main amd64 gcc amd64 4:8.3.0-1 [5196 B]
+#6 4.818 Get:38 http://deb.debian.org/debian buster/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-1+deb10u2 [69.2 kB]
+#6 4.819 Get:39 http://deb.debian.org/debian buster/main amd64 libsasl2-2 amd64 2.1.27+dfsg-1+deb10u2 [106 kB]
+#6 4.820 Get:40 http://deb.debian.org/debian buster/main amd64 libldap-common all 2.4.47+dfsg-3+deb10u7 [90.1 kB]
+#6 4.822 Get:41 http://deb.debian.org/debian buster/main amd64 libldap-2.4-2 amd64 2.4.47+dfsg-3+deb10u7 [224 kB]
+#6 4.825 Get:42 http://deb.debian.org/debian buster/main amd64 libpsl5 amd64 0.20.2-2 [53.7 kB]
+#6 4.826 Get:43 http://deb.debian.org/debian buster/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2 [60.5 kB]
+#6 4.827 Get:44 http://deb.debian.org/debian buster/main amd64 liberror-perl all 0.17027-2 [30.9 kB]
+#6 4.827 Get:45 http://deb.debian.org/debian buster/main amd64 make amd64 4.2.1-1.2 [341 kB]
+#6 5.052 debconf: delaying package configuration, since apt-utils is not installed
+#6 5.103 Fetched 44.6 MB in 1s (81.4 MB/s)
+#6 5.191 Selecting previously unselected package perl-modules-5.28.
+#6 5.191 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 8611 files and directories currently installed.)
+#6 5.193 Preparing to unpack .../00-perl-modules-5.28_5.28.1-6+deb10u1_all.deb ...
+#6 5.219 Unpacking perl-modules-5.28 (5.28.1-6+deb10u1) ...
+#6 6.666 Selecting previously unselected package libperl5.28:amd64.
+#6 6.666 Preparing to unpack .../01-libperl5.28_5.28.1-6+deb10u1_amd64.deb ...
+#6 6.722 Unpacking libperl5.28:amd64 (5.28.1-6+deb10u1) ...
+#6 7.805 Selecting previously unselected package perl.
+#6 7.805 Preparing to unpack .../02-perl_5.28.1-6+deb10u1_amd64.deb ...
+#6 7.834 Unpacking perl (5.28.1-6+deb10u1) ...
+#6 8.057 Selecting previously unselected package libkeyutils1:amd64.
+#6 8.057 Preparing to unpack .../03-libkeyutils1_1.6-6_amd64.deb ...
+#6 8.079 Unpacking libkeyutils1:amd64 (1.6-6) ...
+#6 8.283 Selecting previously unselected package libkrb5support0:amd64.
+#6 8.283 Preparing to unpack .../04-libkrb5support0_1.17-3+deb10u6_amd64.deb ...
+#6 8.314 Unpacking libkrb5support0:amd64 (1.17-3+deb10u6) ...
+#6 8.526 Selecting previously unselected package libk5crypto3:amd64.
+#6 8.526 Preparing to unpack .../05-libk5crypto3_1.17-3+deb10u6_amd64.deb ...
+#6 8.557 Unpacking libk5crypto3:amd64 (1.17-3+deb10u6) ...
+#6 8.779 Selecting previously unselected package libkrb5-3:amd64.
+#6 8.779 Preparing to unpack .../06-libkrb5-3_1.17-3+deb10u6_amd64.deb ...
+#6 8.810 Unpacking libkrb5-3:amd64 (1.17-3+deb10u6) ...
+#6 9.141 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#6 9.141 Preparing to unpack .../07-libgssapi-krb5-2_1.17-3+deb10u6_amd64.deb ...
+#6 9.163 Unpacking libgssapi-krb5-2:amd64 (1.17-3+deb10u6) ...
+#6 9.341 Selecting previously unselected package binutils-common:amd64.
+#6 9.341 Preparing to unpack .../08-binutils-common_2.31.1-16_amd64.deb ...
+#6 9.364 Unpacking binutils-common:amd64 (2.31.1-16) ...
+#6 9.752 Selecting previously unselected package libbinutils:amd64.
+#6 9.752 Preparing to unpack .../09-libbinutils_2.31.1-16_amd64.deb ...
+#6 9.783 Unpacking libbinutils:amd64 (2.31.1-16) ...
+#6 10.01 Selecting previously unselected package binutils-x86-64-linux-gnu.
+#6 10.01 Preparing to unpack .../10-binutils-x86-64-linux-gnu_2.31.1-16_amd64.deb ...
+#6 10.04 Unpacking binutils-x86-64-linux-gnu (2.31.1-16) ...
+#6 10.57 Selecting previously unselected package binutils.
+#6 10.57 Preparing to unpack .../11-binutils_2.31.1-16_amd64.deb ...
+#6 10.61 Unpacking binutils (2.31.1-16) ...
+#6 10.84 Selecting previously unselected package libisl19:amd64.
+#6 10.84 Preparing to unpack .../12-libisl19_0.20-2_amd64.deb ...
+#6 10.87 Unpacking libisl19:amd64 (0.20-2) ...
+#6 11.17 Selecting previously unselected package libmpfr6:amd64.
+#6 11.17 Preparing to unpack .../13-libmpfr6_4.0.2-1_amd64.deb ...
+#6 11.19 Unpacking libmpfr6:amd64 (4.0.2-1) ...
+#6 11.42 Selecting previously unselected package libmpc3:amd64.
+#6 11.42 Preparing to unpack .../14-libmpc3_1.1.0-1_amd64.deb ...
+#6 11.54 Unpacking libmpc3:amd64 (1.1.0-1) ...
+#6 11.73 Selecting previously unselected package cpp-8.
+#6 11.73 Preparing to unpack .../15-cpp-8_8.3.0-6_amd64.deb ...
+#6 11.76 Unpacking cpp-8 (8.3.0-6) ...
+#6 13.13 Selecting previously unselected package cpp.
+#6 13.13 Preparing to unpack .../16-cpp_4%3a8.3.0-1_amd64.deb ...
+#6 13.15 Unpacking cpp (4:8.3.0-1) ...
+#6 13.37 Selecting previously unselected package libcc1-0:amd64.
+#6 13.37 Preparing to unpack .../17-libcc1-0_8.3.0-6_amd64.deb ...
+#6 13.39 Unpacking libcc1-0:amd64 (8.3.0-6) ...
+#6 13.60 Selecting previously unselected package libgomp1:amd64.
+#6 13.60 Preparing to unpack .../18-libgomp1_8.3.0-6_amd64.deb ...
+#6 13.63 Unpacking libgomp1:amd64 (8.3.0-6) ...
+#6 13.87 Selecting previously unselected package libitm1:amd64.
+#6 13.87 Preparing to unpack .../19-libitm1_8.3.0-6_amd64.deb ...
+#6 13.90 Unpacking libitm1:amd64 (8.3.0-6) ...
+#6 14.10 Selecting previously unselected package libatomic1:amd64.
+#6 14.10 Preparing to unpack .../20-libatomic1_8.3.0-6_amd64.deb ...
+#6 14.12 Unpacking libatomic1:amd64 (8.3.0-6) ...
+#6 14.32 Selecting previously unselected package libasan5:amd64.
+#6 14.32 Preparing to unpack .../21-libasan5_8.3.0-6_amd64.deb ...
+#6 14.34 Unpacking libasan5:amd64 (8.3.0-6) ...
+#6 14.60 Selecting previously unselected package liblsan0:amd64.
+#6 14.60 Preparing to unpack .../22-liblsan0_8.3.0-6_amd64.deb ...
+#6 14.63 Unpacking liblsan0:amd64 (8.3.0-6) ...
+#6 14.86 Selecting previously unselected package libtsan0:amd64.
+#6 14.86 Preparing to unpack .../23-libtsan0_8.3.0-6_amd64.deb ...
+#6 14.89 Unpacking libtsan0:amd64 (8.3.0-6) ...
+#6 15.14 Selecting previously unselected package libubsan1:amd64.
+#6 15.14 Preparing to unpack .../24-libubsan1_8.3.0-6_amd64.deb ...
+#6 15.16 Unpacking libubsan1:amd64 (8.3.0-6) ...
+#6 15.38 Selecting previously unselected package libmpx2:amd64.
+#6 15.38 Preparing to unpack .../25-libmpx2_8.3.0-6_amd64.deb ...
+#6 15.40 Unpacking libmpx2:amd64 (8.3.0-6) ...
+#6 15.60 Selecting previously unselected package libquadmath0:amd64.
+#6 15.60 Preparing to unpack .../26-libquadmath0_8.3.0-6_amd64.deb ...
+#6 15.63 Unpacking libquadmath0:amd64 (8.3.0-6) ...
+#6 15.80 Selecting previously unselected package libgcc-8-dev:amd64.
+#6 15.80 Preparing to unpack .../27-libgcc-8-dev_8.3.0-6_amd64.deb ...
+#6 15.83 Unpacking libgcc-8-dev:amd64 (8.3.0-6) ...
+#6 16.30 Selecting previously unselected package gcc-8.
+#6 16.30 Preparing to unpack .../28-gcc-8_8.3.0-6_amd64.deb ...
+#6 16.33 Unpacking gcc-8 (8.3.0-6) ...
+#6 17.70 Selecting previously unselected package gcc.
+#6 17.70 Preparing to unpack .../29-gcc_4%3a8.3.0-1_amd64.deb ...
+#6 17.72 Unpacking gcc (4:8.3.0-1) ...
+#6 17.87 Selecting previously unselected package libsasl2-modules-db:amd64.
+#6 17.87 Preparing to unpack .../30-libsasl2-modules-db_2.1.27+dfsg-1+deb10u2_amd64.deb ...
+#6 17.90 Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#6 18.11 Selecting previously unselected package libsasl2-2:amd64.
+#6 18.11 Preparing to unpack .../31-libsasl2-2_2.1.27+dfsg-1+deb10u2_amd64.deb ...
+#6 18.14 Unpacking libsasl2-2:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#6 18.33 Selecting previously unselected package libldap-common.
+#6 18.33 Preparing to unpack .../32-libldap-common_2.4.47+dfsg-3+deb10u7_all.deb ...
+#6 18.36 Unpacking libldap-common (2.4.47+dfsg-3+deb10u7) ...
+#6 18.57 Selecting previously unselected package libldap-2.4-2:amd64.
+#6 18.57 Preparing to unpack .../33-libldap-2.4-2_2.4.47+dfsg-3+deb10u7_amd64.deb ...
+#6 18.59 Unpacking libldap-2.4-2:amd64 (2.4.47+dfsg-3+deb10u7) ...
+#6 18.83 Selecting previously unselected package libnghttp2-14:amd64.
+#6 18.83 Preparing to unpack .../34-libnghttp2-14_1.36.0-2+deb10u3_amd64.deb ...
+#6 18.86 Unpacking libnghttp2-14:amd64 (1.36.0-2+deb10u3) ...
+#6 19.10 Selecting previously unselected package libpsl5:amd64.
+#6 19.10 Preparing to unpack .../35-libpsl5_0.20.2-2_amd64.deb ...
+#6 19.13 Unpacking libpsl5:amd64 (0.20.2-2) ...
+#6 19.35 Selecting previously unselected package librtmp1:amd64.
+#6 19.35 Preparing to unpack .../36-librtmp1_2.4+20151223.gitfa8646d.1-2_amd64.deb ...
+#6 19.37 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2) ...
+#6 19.60 Selecting previously unselected package libssh2-1:amd64.
+#6 19.61 Preparing to unpack .../37-libssh2-1_1.8.0-2.1+deb10u1_amd64.deb ...
+#6 19.64 Unpacking libssh2-1:amd64 (1.8.0-2.1+deb10u1) ...
+#6 19.90 Selecting previously unselected package libcurl3-gnutls:amd64.
+#6 19.90 Preparing to unpack .../38-libcurl3-gnutls_7.64.0-4+deb10u9_amd64.deb ...
+#6 19.93 Unpacking libcurl3-gnutls:amd64 (7.64.0-4+deb10u9) ...
+#6 20.19 Selecting previously unselected package libexpat1:amd64.
+#6 20.19 Preparing to unpack .../39-libexpat1_2.2.6-2+deb10u7_amd64.deb ...
+#6 20.22 Unpacking libexpat1:amd64 (2.2.6-2+deb10u7) ...
+#6 20.43 Selecting previously unselected package libpcre2-8-0:amd64.
+#6 20.43 Preparing to unpack .../40-libpcre2-8-0_10.32-5+deb10u1_amd64.deb ...
+#6 20.45 Unpacking libpcre2-8-0:amd64 (10.32-5+deb10u1) ...
+#6 20.64 Selecting previously unselected package liberror-perl.
+#6 20.64 Preparing to unpack .../41-liberror-perl_0.17027-2_all.deb ...
+#6 20.67 Unpacking liberror-perl (0.17027-2) ...
+#6 20.84 Selecting previously unselected package git-man.
+#6 20.84 Preparing to unpack .../42-git-man_1%3a2.20.1-2+deb10u9_all.deb ...
+#6 20.86 Unpacking git-man (1:2.20.1-2+deb10u9) ...
+#6 21.19 Selecting previously unselected package git.
+#6 21.19 Preparing to unpack .../43-git_1%3a2.20.1-2+deb10u9_amd64.deb ...
+#6 21.24 Unpacking git (1:2.20.1-2+deb10u9) ...
+#6 22.28 Selecting previously unselected package make.
+#6 22.28 Preparing to unpack .../44-make_4.2.1-1.2_amd64.deb ...
+#6 22.31 Unpacking make (4.2.1-1.2) ...
+#6 22.55 Setting up perl-modules-5.28 (5.28.1-6+deb10u1) ...
+#6 22.63 Setting up libexpat1:amd64 (2.2.6-2+deb10u7) ...
+#6 22.70 Setting up libkeyutils1:amd64 (1.6-6) ...
+#6 22.78 Setting up libpsl5:amd64 (0.20.2-2) ...
+#6 22.86 Setting up binutils-common:amd64 (2.31.1-16) ...
+#6 22.93 Setting up libnghttp2-14:amd64 (1.36.0-2+deb10u3) ...
+#6 23.01 Setting up libgomp1:amd64 (8.3.0-6) ...
+#6 23.08 Setting up libldap-common (2.4.47+dfsg-3+deb10u7) ...
+#6 23.26 Setting up libkrb5support0:amd64 (1.17-3+deb10u6) ...
+#6 23.33 Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#6 23.41 Setting up libasan5:amd64 (8.3.0-6) ...
+#6 23.49 Setting up make (4.2.1-1.2) ...
+#6 23.56 Setting up libmpfr6:amd64 (4.0.2-1) ...
+#6 23.64 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2) ...
+#6 23.73 Setting up libquadmath0:amd64 (8.3.0-6) ...
+#6 23.83 Setting up libmpc3:amd64 (1.1.0-1) ...
+#6 23.93 Setting up libatomic1:amd64 (8.3.0-6) ...
+#6 24.03 Setting up libpcre2-8-0:amd64 (10.32-5+deb10u1) ...
+#6 24.13 Setting up libk5crypto3:amd64 (1.17-3+deb10u6) ...
+#6 24.21 Setting up libsasl2-2:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#6 24.29 Setting up libperl5.28:amd64 (5.28.1-6+deb10u1) ...
+#6 24.36 Setting up libmpx2:amd64 (8.3.0-6) ...
+#6 24.44 Setting up libubsan1:amd64 (8.3.0-6) ...
+#6 24.51 Setting up libisl19:amd64 (0.20-2) ...
+#6 24.59 Setting up git-man (1:2.20.1-2+deb10u9) ...
+#6 24.66 Setting up libssh2-1:amd64 (1.8.0-2.1+deb10u1) ...
+#6 24.75 Setting up libkrb5-3:amd64 (1.17-3+deb10u6) ...
+#6 24.82 Setting up libbinutils:amd64 (2.31.1-16) ...
+#6 24.90 Setting up cpp-8 (8.3.0-6) ...
+#6 24.99 Setting up libcc1-0:amd64 (8.3.0-6) ...
+#6 25.09 Setting up liblsan0:amd64 (8.3.0-6) ...
+#6 25.19 Setting up libitm1:amd64 (8.3.0-6) ...
+#6 25.29 Setting up binutils-x86-64-linux-gnu (2.31.1-16) ...
+#6 25.36 Setting up libtsan0:amd64 (8.3.0-6) ...
+#6 26.41 Setting up libldap-2.4-2:amd64 (2.4.47+dfsg-3+deb10u7) ...
+#6 26.58 Setting up binutils (2.31.1-16) ...
+#6 26.66 Setting up perl (5.28.1-6+deb10u1) ...
+#6 26.77 Setting up libgssapi-krb5-2:amd64 (1.17-3+deb10u6) ...
+#6 26.85 Setting up libgcc-8-dev:amd64 (8.3.0-6) ...
+#6 26.95 Setting up cpp (4:8.3.0-1) ...
+#6 32.06 Setting up gcc-8 (8.3.0-6) ...
+#6 32.17 Setting up libcurl3-gnutls:amd64 (7.64.0-4+deb10u9) ...
+#6 32.25 Setting up gcc (4:8.3.0-1) ...
+#6 32.41 Setting up liberror-perl (0.17027-2) ...
+#6 32.49 Setting up git (1:2.20.1-2+deb10u9) ...
+#6 32.61 Processing triggers for libc-bin (2.28-10) ...
+#6 DONE 33.1s
+
+#7 [ 3/12] RUN mkdir -p /app
+#7 DONE 0.9s
+
+#8 [ 4/12] WORKDIR /app
+#8 DONE 0.4s
+
+#9 [ 5/12] COPY Gemfile      /app
+#9 DONE 0.4s
+
+#10 [ 6/12] COPY Gemfile.lock /app
+#10 DONE 0.4s
+
+#11 [ 7/12] RUN gem install bundler -v '1.17.3'
+#11 23.98 Successfully installed bundler-1.17.3
+#11 23.98 1 gem installed
+#11 DONE 24.4s
+
+#12 [ 8/12] RUN bundle config --global frozen 1
+#12 DONE 1.1s
+
+#13 [ 9/12] RUN bundle config set --local path 'vendor/bundle'
+#13 DONE 1.1s
+
+#14 [10/12] RUN bundle install --verbose --retry=3 --deployment --without development test
+#14 0.894 Running `bundle install --deployment --retry 3 --verbose --without "development" "test"` with bundler 1.17.3
+#14 1.110 Frozen, using resolution from the lockfile
+#14 1.117 Bundler::PathError: The path `/app/vendor/bundle/ruby/2.5.0/bundler/gems/jemalloc-rb-8c9dbef98f6b` does not exist.
+#14 1.117 /usr/local/lib/ruby/site_ruby/2.5.0/bundler/source/path.rb:198:in `load_spec_files'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/source/git.rb:200:in `load_spec_files'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/source/path.rb:100:in `local_specs'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/source/git.rb:167:in `specs'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/lazy_specification.rb:76:in `__materialize__'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/spec_set.rb:88:in `block in materialize'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/spec_set.rb:85:in `map!'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/spec_set.rb:85:in `materialize'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/definition.rb:203:in `missing_specs'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/definition.rb:208:in `missing_specs?'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/installer.rb:307:in `resolve_if_needed'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/installer.rb:84:in `block in run'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/process_lock.rb:12:in `block in lock'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/process_lock.rb:9:in `open'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/process_lock.rb:9:in `lock'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/installer.rb:73:in `run'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/installer.rb:25:in `install'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli/install.rb:65:in `run'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:235:in `block in install'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/settings.rb:143:in `temporary'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:234:in `install'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:18:in `start'
+#14 1.117   /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.3/exe/bundle:30:in `block in <top (required)>'
+#14 1.117   /usr/local/lib/ruby/site_ruby/2.5.0/bundler/friendly_errors.rb:124:in `with_friendly_errors'
+#14 1.117   /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.3/exe/bundle:22:in `<top (required)>'
+#14 1.117   /usr/local/bundle/bin/bundle:23:in `load'
+#14 1.117   /usr/local/bundle/bin/bundle:23:in `<main>'
+#14 1.117 The definition is missing dependencies, failed to resolve & materialize locally (https://github.com/joshk/jemalloc-rb (at master@8c9dbef) is not yet checked out. Run `bundle install` first.)
+#14 1.123 Frozen, using resolution from the lockfile
+#14 1.165 HTTP GET https://index.rubygems.org/versions
+#14 1.489 HTTP 200 OK https://index.rubygems.org/versions
+#14 1.956 Fetching gem metadata from https://rubygems.org/
+#14 1.962 Looking up gems ["rake", "concurrent-ruby", "i18n", "json", "minitest", "thread_safe", "tzinfo", "activesupport", "atomic", "avl_tree", "connection_pool", "multipart-post", "faraday", "hashr", "hitimes", "jemalloc", "metriks", "metriks-librato_metrics", "mustermann", "nio4r", "puma", "rack", "rack-protection", "redis", "redis-namespace", "sentry-raven", "sidekiq", "tilt", "sinatra", "travis-config", "travis-support", "yajl-ruby"]
+#14 2.013 HTTP GET https://index.rubygems.org/info/json
+#14 2.016 HTTP GET https://index.rubygems.org/info/concurrent-ruby
+#14 2.016 HTTP GET https://index.rubygems.org/info/i18n
+#14 2.016 HTTP GET https://index.rubygems.org/info/nio4r
+#14 2.018 HTTP GET https://index.rubygems.org/info/connection_pool
+#14 2.018 HTTP GET https://index.rubygems.org/info/rake
+#14 2.018 HTTP GET https://index.rubygems.org/info/hashr
+#14 2.018 HTTP GET https://index.rubygems.org/info/jemalloc
+#14 2.018 HTTP GET https://index.rubygems.org/info/metriks
+#14 2.018 HTTP GET https://index.rubygems.org/info/thread_safe
+#14 2.018 HTTP GET https://index.rubygems.org/info/mustermann
+#14 2.018 HTTP GET https://index.rubygems.org/info/avl_tree
+#14 2.019 HTTP GET https://index.rubygems.org/info/faraday
+#14 2.020 HTTP GET https://index.rubygems.org/info/minitest
+#14 2.020 HTTP GET https://index.rubygems.org/info/atomic
+#14 2.020 HTTP GET https://index.rubygems.org/info/rack
+#14 2.020 HTTP GET https://index.rubygems.org/info/hitimes
+#14 2.020 HTTP GET https://index.rubygems.org/info/metriks-librato_metrics
+#14 2.021 HTTP GET https://index.rubygems.org/info/tzinfo
+#14 2.021 HTTP GET https://index.rubygems.org/info/activesupport
+#14 2.021 HTTP GET https://index.rubygems.org/info/multipart-post
+#14 2.021 HTTP GET https://index.rubygems.org/info/puma
+#14 2.021 HTTP GET https://index.rubygems.org/info/redis
+#14 2.023 HTTP GET https://index.rubygems.org/info/rack-protection
+#14 2.023 HTTP GET https://index.rubygems.org/info/redis-namespace
+#14 2.037 HTTP 200 OK https://index.rubygems.org/info/nio4r
+#14 2.042 HTTP 200 OK https://index.rubygems.org/info/json
+#14 2.042 HTTP 200 OK https://index.rubygems.org/info/metriks-librato_metrics
+#14 2.042 HTTP 200 OK https://index.rubygems.org/info/faraday
+#14 2.042 HTTP 200 OK https://index.rubygems.org/info/avl_tree
+#14 2.051 HTTP 200 OK https://index.rubygems.org/info/hashr
+#14 2.051 HTTP 200 OK https://index.rubygems.org/info/redis
+#14 2.060 HTTP 200 OK https://index.rubygems.org/info/jemalloc
+#14 2.060 HTTP 200 OK https://index.rubygems.org/info/thread_safe
+#14 2.060 HTTP 200 OK https://index.rubygems.org/info/minitest
+#14 2.060 HTTP 200 OK https://index.rubygems.org/info/metriks
+#14 2.063 HTTP 200 OK https://index.rubygems.org/info/rack
+#14 2.063 HTTP 200 OK https://index.rubygems.org/info/concurrent-ruby
+#14 2.063 HTTP 200 OK https://index.rubygems.org/info/redis-namespace
+#14 2.065 HTTP 200 OK https://index.rubygems.org/info/mustermann
+#14 2.068 HTTP 200 OK https://index.rubygems.org/info/atomic
+#14 2.068 HTTP GET https://index.rubygems.org/info/sentry-raven
+#14 2.075 HTTP 200 OK https://index.rubygems.org/info/connection_pool
+#14 2.079 HTTP 200 OK https://index.rubygems.org/info/rake
+#14 2.081 HTTP 200 OK https://index.rubygems.org/info/sentry-raven
+#14 2.081 HTTP GET https://index.rubygems.org/info/sidekiq
+#14 2.081 HTTP 200 OK https://index.rubygems.org/info/i18n
+#14 2.087 HTTP GET https://index.rubygems.org/info/sinatra
+#14 2.087 HTTP GET https://index.rubygems.org/info/tilt
+#14 2.088 HTTP GET https://index.rubygems.org/info/travis-config
+#14 2.090 HTTP 200 OK https://index.rubygems.org/info/hitimes
+#14 2.096 HTTP GET https://index.rubygems.org/info/yajl-ruby
+#14 2.098 HTTP 200 OK https://index.rubygems.org/info/travis-config
+#14 2.100 HTTP 200 OK https://index.rubygems.org/info/multipart-post
+#14 2.109 HTTP 200 OK https://index.rubygems.org/info/yajl-ruby
+#14 2.109 HTTP 200 OK https://index.rubygems.org/info/tzinfo
+#14 2.109 HTTP 200 OK https://index.rubygems.org/info/activesupport
+#14 2.111 HTTP 200 OK https://index.rubygems.org/info/sidekiq
+#14 2.111 HTTP 200 OK https://index.rubygems.org/info/sinatra
+#14 2.118 HTTP 200 OK https://index.rubygems.org/info/tilt
+#14 2.180 HTTP 200 OK https://index.rubygems.org/info/puma
+#14 2.181 HTTP 200 OK https://index.rubygems.org/info/rack-protection
+#14 2.200 Looking up gems ["addressable", "ruby2_keywords", "faraday-net_http", "faraday-excon", "faraday-net_http_persistent", "faraday-em_http", "faraday-em_synchrony", "faraday-httpclient", "faraday-patron", "faraday-rack", "faraday-multipart", "faraday-retry", "base64", "logger", "rbtree", "faraday_middleware", "tool", "racc", "functional-ruby", "ref", "configuration", "mkrf", "hoe", "builder", "memcache-client", "multi_json", "method_source", "zeitwerk", "bigdecimal", "drb", "mutex_m", "rspec", "redis-client", "mongrel", "backports", "rack-session", "hashie", "uuidtools", "certifi", "celluloid", "compass", "sass", "sprockets-sass", "slim", "escape_utils"]
+#14 2.204 HTTP GET https://index.rubygems.org/info/faraday-excon
+#14 2.206 HTTP GET https://index.rubygems.org/info/faraday-net_http
+#14 2.206 HTTP GET https://index.rubygems.org/info/faraday-em_http
+#14 2.209 HTTP GET https://index.rubygems.org/info/faraday-rack
+#14 2.209 HTTP GET https://index.rubygems.org/info/faraday-multipart
+#14 2.210 HTTP 200 OK https://index.rubygems.org/info/faraday-excon
+#14 2.212 HTTP 200 OK https://index.rubygems.org/info/faraday-em_http
+#14 2.212 HTTP 200 OK https://index.rubygems.org/info/faraday-rack
+#14 2.213 HTTP 200 OK https://index.rubygems.org/info/faraday-net_http
+#14 2.214 HTTP 200 OK https://index.rubygems.org/info/faraday-multipart
+#14 2.219 HTTP GET https://index.rubygems.org/info/faraday-httpclient
+#14 2.220 HTTP GET https://index.rubygems.org/info/faraday-retry
+#14 2.221 HTTP GET https://index.rubygems.org/info/faraday_middleware
+#14 2.221 HTTP GET https://index.rubygems.org/info/ref
+#14 2.221 HTTP GET https://index.rubygems.org/info/base64
+#14 2.221 HTTP GET https://index.rubygems.org/info/logger
+#14 2.221 HTTP GET https://index.rubygems.org/info/addressable
+#14 2.224 HTTP GET https://index.rubygems.org/info/faraday-patron
+#14 2.224 HTTP GET https://index.rubygems.org/info/memcache-client
+#14 2.224 HTTP 200 OK https://index.rubygems.org/info/faraday-httpclient
+#14 2.224 HTTP GET https://index.rubygems.org/info/faraday-net_http_persistent
+#14 2.224 HTTP GET https://index.rubygems.org/info/racc
+#14 2.225 HTTP GET https://index.rubygems.org/info/functional-ruby
+#14 2.225 HTTP GET https://index.rubygems.org/info/mkrf
+#14 2.225 HTTP GET https://index.rubygems.org/info/faraday-em_synchrony
+#14 2.225 HTTP GET https://index.rubygems.org/info/hoe
+#14 2.225 HTTP GET https://index.rubygems.org/info/builder
+#14 2.225 HTTP GET https://index.rubygems.org/info/ruby2_keywords
+#14 2.225 HTTP GET https://index.rubygems.org/info/tool
+#14 2.225 HTTP GET https://index.rubygems.org/info/configuration
+#14 2.225 HTTP GET https://index.rubygems.org/info/rbtree
+#14 2.226 HTTP 200 OK https://index.rubygems.org/info/faraday-retry
+#14 2.229 HTTP 200 OK https://index.rubygems.org/info/racc
+#14 2.229 HTTP 200 OK https://index.rubygems.org/info/addressable
+#14 2.230 HTTP GET https://index.rubygems.org/info/multi_json
+#14 2.230 HTTP GET https://index.rubygems.org/info/method_source
+#14 2.231 HTTP GET https://index.rubygems.org/info/zeitwerk
+#14 2.231 HTTP GET https://index.rubygems.org/info/bigdecimal
+#14 2.234 HTTP GET https://index.rubygems.org/info/drb
+#14 2.237 HTTP 200 OK https://index.rubygems.org/info/rbtree
+#14 2.237 HTTP 200 OK https://index.rubygems.org/info/bigdecimal
+#14 2.237 HTTP 200 OK https://index.rubygems.org/info/faraday-net_http_persistent
+#14 2.240 HTTP 200 OK https://index.rubygems.org/info/faraday_middleware
+#14 2.240 HTTP 200 OK https://index.rubygems.org/info/faraday-em_synchrony
+#14 2.240 HTTP 200 OK https://index.rubygems.org/info/faraday-patron
+#14 2.240 HTTP 200 OK https://index.rubygems.org/info/method_source
+#14 2.242 HTTP 200 OK https://index.rubygems.org/info/functional-ruby
+#14 2.244 HTTP 200 OK https://index.rubygems.org/info/mkrf
+#14 2.244 HTTP 200 OK https://index.rubygems.org/info/hoe
+#14 2.245 HTTP GET https://index.rubygems.org/info/mutex_m
+#14 2.246 HTTP 200 OK https://index.rubygems.org/info/configuration
+#14 2.246 HTTP 200 OK https://index.rubygems.org/info/drb
+#14 2.249 HTTP 200 OK https://index.rubygems.org/info/logger
+#14 2.250 HTTP 200 OK https://index.rubygems.org/info/mutex_m
+#14 2.251 HTTP 200 OK https://index.rubygems.org/info/multi_json
+#14 2.258 HTTP 200 OK https://index.rubygems.org/info/memcache-client
+#14 2.262 HTTP GET https://index.rubygems.org/info/rspec
+#14 2.263 HTTP GET https://index.rubygems.org/info/redis-client
+#14 2.264 HTTP GET https://index.rubygems.org/info/mongrel
+#14 2.266 HTTP GET https://index.rubygems.org/info/rack-session
+#14 2.268 HTTP GET https://index.rubygems.org/info/backports
+#14 2.271 HTTP 200 OK https://index.rubygems.org/info/ruby2_keywords
+#14 2.271 HTTP 200 OK https://index.rubygems.org/info/mongrel
+#14 2.274 HTTP 200 OK https://index.rubygems.org/info/ref
+#14 2.274 HTTP 200 OK https://index.rubygems.org/info/rspec
+#14 2.276 HTTP GET https://index.rubygems.org/info/hashie
+#14 2.279 HTTP 200 OK https://index.rubygems.org/info/rack-session
+#14 2.279 HTTP GET https://index.rubygems.org/info/uuidtools
+#14 2.280 HTTP GET https://index.rubygems.org/info/celluloid
+#14 2.281 HTTP GET https://index.rubygems.org/info/compass
+#14 2.283 HTTP 200 OK https://index.rubygems.org/info/builder
+#14 2.283 HTTP GET https://index.rubygems.org/info/sass
+#14 2.283 HTTP GET https://index.rubygems.org/info/certifi
+#14 2.283 HTTP GET https://index.rubygems.org/info/sprockets-sass
+#14 2.283 HTTP GET https://index.rubygems.org/info/slim
+#14 2.283 HTTP GET https://index.rubygems.org/info/escape_utils
+#14 2.287 HTTP 200 OK https://index.rubygems.org/info/sprockets-sass
+#14 2.292 HTTP 200 OK https://index.rubygems.org/info/celluloid
+#14 2.292 HTTP 200 OK https://index.rubygems.org/info/tool
+#14 2.292 HTTP 200 OK https://index.rubygems.org/info/compass
+#14 2.295 HTTP 200 OK https://index.rubygems.org/info/uuidtools
+#14 2.295 HTTP 200 OK https://index.rubygems.org/info/escape_utils
+#14 2.295 HTTP 200 OK https://index.rubygems.org/info/zeitwerk
+#14 2.296 HTTP 200 OK https://index.rubygems.org/info/certifi
+#14 2.296 HTTP 200 OK https://index.rubygems.org/info/hashie
+#14 2.299 HTTP 200 OK https://index.rubygems.org/info/redis-client
+#14 2.301 HTTP 200 OK https://index.rubygems.org/info/sass
+#14 2.302 HTTP 200 OK https://index.rubygems.org/info/base64
+#14 2.306 HTTP 200 OK https://index.rubygems.org/info/slim
+#14 2.316 HTTP 200 OK https://index.rubygems.org/info/backports
+#14 2.325 Looking up gems ["excon", "net-http", "em-http-request", "net-http-persistent", "rubyforge", "RubyInline", "gemcutter", "patron", "oauth2", "multi_xml", "roauth", "ruby_parser", "ZenTest", "public_suffix", "cgi_multipart_eof_fix", "daemons", "fastthread", "gem_plugin", "rspec-core", "rspec-expectations", "rspec-mocks", "sprockets", "sprockets-helpers", "httpclient", "haml", "chunky_png", "fssm", "listen", "compass-core", "compass-import-once", "rb-fsevent", "rb-inotify", "sass-listen", "temple", "timers", "facter", "bundler", "celluloid-essentials", "celluloid-extras", "celluloid-fsm", "celluloid-pool", "celluloid-supervision", "dotenv", "nenv", "rspec-logsplit"]
+#14 2.330 HTTP GET https://index.rubygems.org/info/patron
+#14 2.332 HTTP GET https://index.rubygems.org/info/public_suffix
+#14 2.332 HTTP GET https://index.rubygems.org/info/excon
+#14 2.332 HTTP GET https://index.rubygems.org/info/rspec-mocks
+#14 2.332 HTTP GET https://index.rubygems.org/info/sprockets-helpers
+#14 2.335 HTTP 200 OK https://index.rubygems.org/info/patron
+#14 2.336 HTTP 200 OK https://index.rubygems.org/info/rspec-mocks
+#14 2.336 HTTP 200 OK https://index.rubygems.org/info/public_suffix
+#14 2.337 HTTP GET https://index.rubygems.org/info/em-http-request
+#14 2.339 HTTP GET https://index.rubygems.org/info/net-http
+#14 2.339 HTTP GET https://index.rubygems.org/info/ruby_parser
+#14 2.339 HTTP GET https://index.rubygems.org/info/net-http-persistent
+#14 2.339 HTTP GET https://index.rubygems.org/info/multi_xml
+#14 2.339 HTTP GET https://index.rubygems.org/info/RubyInline
+#14 2.339 HTTP GET https://index.rubygems.org/info/gemcutter
+#14 2.339 HTTP GET https://index.rubygems.org/info/rubyforge
+#14 2.339 HTTP GET https://index.rubygems.org/info/roauth
+#14 2.340 HTTP GET https://index.rubygems.org/info/daemons
+#14 2.340 HTTP GET https://index.rubygems.org/info/fastthread
+#14 2.340 HTTP GET https://index.rubygems.org/info/gem_plugin
+#14 2.340 HTTP GET https://index.rubygems.org/info/rspec-expectations
+#14 2.340 HTTP GET https://index.rubygems.org/info/haml
+#14 2.340 HTTP GET https://index.rubygems.org/info/ZenTest
+#14 2.340 HTTP GET https://index.rubygems.org/info/cgi_multipart_eof_fix
+#14 2.340 HTTP GET https://index.rubygems.org/info/rspec-core
+#14 2.341 HTTP GET https://index.rubygems.org/info/sprockets
+#14 2.341 HTTP GET https://index.rubygems.org/info/httpclient
+#14 2.341 HTTP GET https://index.rubygems.org/info/oauth2
+#14 2.341 HTTP 200 OK https://index.rubygems.org/info/sprockets-helpers
+#14 2.342 HTTP 200 OK https://index.rubygems.org/info/excon
+#14 2.342 HTTP 200 OK https://index.rubygems.org/info/em-http-request
+#14 2.343 HTTP 200 OK https://index.rubygems.org/info/roauth
+#14 2.347 HTTP GET https://index.rubygems.org/info/chunky_png
+#14 2.351 HTTP 200 OK https://index.rubygems.org/info/rspec-core
+#14 2.352 HTTP 200 OK https://index.rubygems.org/info/net-http
+#14 2.352 HTTP GET https://index.rubygems.org/info/fssm
+#14 2.353 HTTP 200 OK https://index.rubygems.org/info/RubyInline
+#14 2.355 HTTP 200 OK https://index.rubygems.org/info/daemons
+#14 2.355 HTTP GET https://index.rubygems.org/info/listen
+#14 2.355 HTTP 200 OK https://index.rubygems.org/info/fastthread
+#14 2.357 HTTP 200 OK https://index.rubygems.org/info/rubyforge
+#14 2.357 HTTP 200 OK https://index.rubygems.org/info/rspec-expectations
+#14 2.360 HTTP 200 OK https://index.rubygems.org/info/gem_plugin
+#14 2.360 HTTP 200 OK https://index.rubygems.org/info/gemcutter
+#14 2.360 HTTP 200 OK https://index.rubygems.org/info/chunky_png
+#14 2.360 HTTP 200 OK https://index.rubygems.org/info/ruby_parser
+#14 2.360 HTTP 200 OK https://index.rubygems.org/info/ZenTest
+#14 2.362 HTTP 200 OK https://index.rubygems.org/info/cgi_multipart_eof_fix
+#14 2.362 HTTP 200 OK https://index.rubygems.org/info/sprockets
+#14 2.362 HTTP 200 OK https://index.rubygems.org/info/fssm
+#14 2.363 HTTP GET https://index.rubygems.org/info/compass-core
+#14 2.363 HTTP GET https://index.rubygems.org/info/compass-import-once
+#14 2.363 HTTP 200 OK https://index.rubygems.org/info/oauth2
+#14 2.369 HTTP 200 OK https://index.rubygems.org/info/httpclient
+#14 2.374 HTTP GET https://index.rubygems.org/info/rb-fsevent
+#14 2.377 HTTP 200 OK https://index.rubygems.org/info/listen
+#14 2.377 HTTP 200 OK https://index.rubygems.org/info/net-http-persistent
+#14 2.377 HTTP GET https://index.rubygems.org/info/rb-inotify
+#14 2.380 HTTP GET https://index.rubygems.org/info/sass-listen
+#14 2.382 HTTP GET https://index.rubygems.org/info/temple
+#14 2.387 HTTP GET https://index.rubygems.org/info/timers
+#14 2.389 HTTP 200 OK https://index.rubygems.org/info/rb-inotify
+#14 2.391 HTTP GET https://index.rubygems.org/info/facter
+#14 2.391 HTTP 200 OK https://index.rubygems.org/info/rb-fsevent
+#14 2.393 HTTP GET https://index.rubygems.org/info/celluloid-essentials
+#14 2.393 HTTP 200 OK https://index.rubygems.org/info/sass-listen
+#14 2.393 HTTP GET https://index.rubygems.org/info/bundler
+#14 2.393 HTTP GET https://index.rubygems.org/info/celluloid-extras
+#14 2.394 HTTP GET https://index.rubygems.org/info/celluloid-fsm
+#14 2.396 HTTP 200 OK https://index.rubygems.org/info/temple
+#14 2.397 HTTP GET https://index.rubygems.org/info/celluloid-pool
+#14 2.397 HTTP 200 OK https://index.rubygems.org/info/timers
+#14 2.398 HTTP GET https://index.rubygems.org/info/celluloid-supervision
+#14 2.400 HTTP GET https://index.rubygems.org/info/dotenv
+#14 2.401 HTTP 200 OK https://index.rubygems.org/info/haml
+#14 2.403 HTTP 200 OK https://index.rubygems.org/info/celluloid-extras
+#14 2.405 HTTP 200 OK https://index.rubygems.org/info/multi_xml
+#14 2.405 HTTP 200 OK https://index.rubygems.org/info/celluloid-fsm
+#14 2.407 HTTP GET https://index.rubygems.org/info/rspec-logsplit
+#14 2.407 HTTP GET https://index.rubygems.org/info/nenv
+#14 2.409 HTTP 200 OK https://index.rubygems.org/info/dotenv
+#14 2.412 HTTP 200 OK https://index.rubygems.org/info/celluloid-essentials
+#14 2.416 HTTP 200 OK https://index.rubygems.org/info/compass-import-once
+#14 2.423 HTTP 200 OK https://index.rubygems.org/info/bundler
+#14 2.424 HTTP 200 OK https://index.rubygems.org/info/compass-core
+#14 2.430 HTTP 200 OK https://index.rubygems.org/info/rspec-logsplit
+#14 2.431 HTTP 200 OK https://index.rubygems.org/info/nenv
+#14 2.433 HTTP 200 OK https://index.rubygems.org/info/facter
+#14 2.433 HTTP 200 OK https://index.rubygems.org/info/celluloid-supervision
+#14 2.433 HTTP 200 OK https://index.rubygems.org/info/celluloid-pool
+#14 2.449 Looking up gems ["rspec-support", "diff-lcs", "eventmachine", "em-socksify", "http_parser.rb", "cookiejar", "net-protocol", "uri", "json_pure", "ffi", "ParseTree", "sexp_processor", "hike", "thor", "coveralls", "rubocop", "faraday-middleware", "httpauth", "jwt", "rash_alt", "version_gem", "snaky_hash", "rb-fchange", "rb-kqueue", "celluloid-io", "ruby_dep", "dotenv-deployment", "celluloid-gems", "net-scp", "CFPropertyList", "sys-admin", "win32-api", "win32console", "win32-dir", "windows-api", "windows-pr", "win32-security", "hocon", "sys-filesystem"]
+#14 2.455 HTTP GET https://index.rubygems.org/info/ParseTree
+#14 2.456 HTTP GET https://index.rubygems.org/info/eventmachine
+#14 2.456 HTTP GET https://index.rubygems.org/info/http_parser.rb
+#14 2.456 HTTP GET https://index.rubygems.org/info/hike
+#14 2.456 HTTP GET https://index.rubygems.org/info/httpauth
+#14 2.461 HTTP 200 OK https://index.rubygems.org/info/http_parser.rb
+#14 2.463 HTTP GET https://index.rubygems.org/info/rspec-support
+#14 2.463 HTTP GET https://index.rubygems.org/info/diff-lcs
+#14 2.464 HTTP GET https://index.rubygems.org/info/net-protocol
+#14 2.465 HTTP GET https://index.rubygems.org/info/uri
+#14 2.465 HTTP GET https://index.rubygems.org/info/rubocop
+#14 2.465 HTTP GET https://index.rubygems.org/info/json_pure
+#14 2.465 HTTP GET https://index.rubygems.org/info/ffi
+#14 2.469 HTTP GET https://index.rubygems.org/info/sexp_processor
+#14 2.469 HTTP 200 OK https://index.rubygems.org/info/httpauth
+#14 2.469 HTTP 200 OK https://index.rubygems.org/info/hike
+#14 2.469 HTTP 200 OK https://index.rubygems.org/info/ParseTree
+#14 2.469 HTTP GET https://index.rubygems.org/info/coveralls
+#14 2.469 HTTP GET https://index.rubygems.org/info/celluloid-io
+#14 2.469 HTTP GET https://index.rubygems.org/info/ruby_dep
+#14 2.469 HTTP 200 OK https://index.rubygems.org/info/eventmachine
+#14 2.471 HTTP 200 OK https://index.rubygems.org/info/rspec-support
+#14 2.471 HTTP GET https://index.rubygems.org/info/snaky_hash
+#14 2.471 HTTP GET https://index.rubygems.org/info/rb-fchange
+#14 2.471 HTTP GET https://index.rubygems.org/info/rb-kqueue
+#14 2.471 HTTP GET https://index.rubygems.org/info/em-socksify
+#14 2.471 HTTP GET https://index.rubygems.org/info/cookiejar
+#14 2.471 HTTP GET https://index.rubygems.org/info/thor
+#14 2.471 HTTP GET https://index.rubygems.org/info/jwt
+#14 2.471 HTTP GET https://index.rubygems.org/info/rash_alt
+#14 2.471 HTTP GET https://index.rubygems.org/info/version_gem
+#14 2.472 HTTP 200 OK https://index.rubygems.org/info/net-protocol
+#14 2.476 HTTP 200 OK https://index.rubygems.org/info/ffi
+#14 2.476 HTTP 200 OK https://index.rubygems.org/info/version_gem
+#14 2.479 HTTP GET https://index.rubygems.org/info/dotenv-deployment
+#14 2.479 HTTP 200 OK https://index.rubygems.org/info/sexp_processor
+#14 2.483 HTTP 200 OK https://index.rubygems.org/info/uri
+#14 2.487 HTTP 200 OK https://index.rubygems.org/info/diff-lcs
+#14 2.488 HTTP GET https://index.rubygems.org/info/net-scp
+#14 2.488 HTTP 200 OK https://index.rubygems.org/info/rb-kqueue
+#14 2.490 HTTP GET https://index.rubygems.org/info/CFPropertyList
+#14 2.513 HTTP 200 OK https://index.rubygems.org/info/em-socksify
+#14 2.513 HTTP GET https://index.rubygems.org/info/win32console
+#14 2.516 HTTP 200 OK https://index.rubygems.org/info/coveralls
+#14 2.516 HTTP 200 OK https://index.rubygems.org/info/ruby_dep
+#14 2.516 HTTP GET https://index.rubygems.org/info/sys-admin
+#14 2.516 HTTP GET https://index.rubygems.org/info/win32-api
+#14 2.519 HTTP GET https://index.rubygems.org/info/win32-dir
+#14 2.520 HTTP GET https://index.rubygems.org/info/windows-api
+#14 2.524 HTTP 200 OK https://index.rubygems.org/info/CFPropertyList
+#14 2.525 HTTP 200 OK https://index.rubygems.org/info/win32console
+#14 2.525 HTTP 200 OK https://index.rubygems.org/info/cookiejar
+#14 2.527 HTTP 200 OK https://index.rubygems.org/info/win32-api
+#14 2.528 HTTP 200 OK https://index.rubygems.org/info/net-scp
+#14 2.528 HTTP 200 OK https://index.rubygems.org/info/json_pure
+#14 2.528 HTTP GET https://index.rubygems.org/info/win32-security
+#14 2.529 HTTP 200 OK https://index.rubygems.org/info/thor
+#14 2.529 HTTP GET https://index.rubygems.org/info/windows-pr
+#14 2.532 HTTP 200 OK https://index.rubygems.org/info/win32-dir
+#14 2.532 HTTP 200 OK https://index.rubygems.org/info/celluloid-io
+#14 2.532 HTTP 200 OK https://index.rubygems.org/info/dotenv-deployment
+#14 2.532 HTTP 200 OK https://index.rubygems.org/info/windows-api
+#14 2.532 HTTP 200 OK https://index.rubygems.org/info/snaky_hash
+#14 2.533 HTTP GET https://index.rubygems.org/info/hocon
+#14 2.533 HTTP 200 OK https://index.rubygems.org/info/rb-fchange
+#14 2.535 HTTP GET https://index.rubygems.org/info/sys-filesystem
+#14 2.537 HTTP 200 OK https://index.rubygems.org/info/jwt
+#14 2.541 HTTP 200 OK https://index.rubygems.org/info/windows-pr
+#14 2.542 HTTP 200 OK https://index.rubygems.org/info/win32-security
+#14 2.544 HTTP 200 OK https://index.rubygems.org/info/rash_alt
+#14 2.544 HTTP 200 OK https://index.rubygems.org/info/sys-filesystem
+#14 2.557 HTTP 200 OK https://index.rubygems.org/info/hocon
+#14 2.560 HTTP 200 OK https://index.rubygems.org/info/rubocop
+#14 2.575 HTTP 200 OK https://index.rubygems.org/info/sys-admin
+#14 2.581 Looking up gems ["SexpProcessor", "io-wait", "timeout", "libxml-ruby", "rexml", "nkf", "test-unit", "colorize", "rest-client", "simplecov", "term-ansicolor", "tins", "spruz", "net-ssh", "ffi-win32-extensions", "rainbow", "parser", "powerpack", "ruby-progressbar", "astrolabe", "unicode-display_width", "parallel", "jaro_winkler", "psych", "rubocop-ast", "regexp_parser", "language_server-protocol"]
+#14 2.585 HTTP GET https://index.rubygems.org/info/nkf
+#14 2.587 HTTP GET https://index.rubygems.org/info/simplecov
+#14 2.588 HTTP GET https://index.rubygems.org/info/libxml-ruby
+#14 2.588 HTTP GET https://index.rubygems.org/info/rest-client
+#14 2.588 HTTP GET https://index.rubygems.org/info/spruz
+#14 2.589 HTTP GET https://index.rubygems.org/info/jaro_winkler
+#14 2.590 HTTP GET https://index.rubygems.org/info/SexpProcessor
+#14 2.590 HTTP GET https://index.rubygems.org/info/io-wait
+#14 2.590 HTTP GET https://index.rubygems.org/info/parser
+#14 2.590 HTTP GET https://index.rubygems.org/info/timeout
+#14 2.592 HTTP 200 OK https://index.rubygems.org/info/simplecov
+#14 2.592 HTTP GET https://index.rubygems.org/info/colorize
+#14 2.592 HTTP GET https://index.rubygems.org/info/term-ansicolor
+#14 2.592 HTTP GET https://index.rubygems.org/info/ffi-win32-extensions
+#14 2.592 HTTP GET https://index.rubygems.org/info/powerpack
+#14 2.592 HTTP GET https://index.rubygems.org/info/rexml
+#14 2.593 HTTP GET https://index.rubygems.org/info/astrolabe
+#14 2.593 HTTP GET https://index.rubygems.org/info/tins
+#14 2.593 HTTP GET https://index.rubygems.org/info/parallel
+#14 2.593 HTTP GET https://index.rubygems.org/info/rubocop-ast
+#14 2.593 HTTP GET https://index.rubygems.org/info/net-ssh
+#14 2.593 HTTP GET https://index.rubygems.org/info/rainbow
+#14 2.593 HTTP GET https://index.rubygems.org/info/ruby-progressbar
+#14 2.593 HTTP GET https://index.rubygems.org/info/psych
+#14 2.593 HTTP GET https://index.rubygems.org/info/test-unit
+#14 2.593 HTTP GET https://index.rubygems.org/info/unicode-display_width
+#14 2.595 HTTP 200 OK https://index.rubygems.org/info/rexml
+#14 2.597 HTTP 200 OK https://index.rubygems.org/info/timeout
+#14 2.597 HTTP 200 OK https://index.rubygems.org/info/colorize
+#14 2.597 HTTP 200 OK https://index.rubygems.org/info/rest-client
+#14 2.601 HTTP 200 OK https://index.rubygems.org/info/spruz
+#14 2.601 HTTP 200 OK https://index.rubygems.org/info/psych
+#14 2.601 HTTP 200 OK https://index.rubygems.org/info/nkf
+#14 2.601 HTTP 200 OK https://index.rubygems.org/info/ffi-win32-extensions
+#14 2.601 HTTP 200 OK https://index.rubygems.org/info/libxml-ruby
+#14 2.601 HTTP 200 OK https://index.rubygems.org/info/jaro_winkler
+#14 2.604 HTTP 200 OK https://index.rubygems.org/info/term-ansicolor
+#14 2.605 HTTP 200 OK https://index.rubygems.org/info/powerpack
+#14 2.606 HTTP 200 OK https://index.rubygems.org/info/net-ssh
+#14 2.608 HTTP 200 OK https://index.rubygems.org/info/io-wait
+#14 2.608 HTTP 200 OK https://index.rubygems.org/info/SexpProcessor
+#14 2.610 HTTP 200 OK https://index.rubygems.org/info/unicode-display_width
+#14 2.611 HTTP 200 OK https://index.rubygems.org/info/rubocop-ast
+#14 2.612 HTTP 200 OK https://index.rubygems.org/info/rainbow
+#14 2.614 HTTP 200 OK https://index.rubygems.org/info/ruby-progressbar
+#14 2.614 HTTP GET https://index.rubygems.org/info/regexp_parser
+#14 2.618 HTTP 200 OK https://index.rubygems.org/info/parser
+#14 2.620 HTTP 200 OK https://index.rubygems.org/info/astrolabe
+#14 2.620 HTTP GET https://index.rubygems.org/info/language_server-protocol
+#14 2.627 HTTP 200 OK https://index.rubygems.org/info/tins
+#14 2.632 HTTP 200 OK https://index.rubygems.org/info/test-unit
+#14 2.633 HTTP 200 OK https://index.rubygems.org/info/parallel
+#14 2.640 HTTP 200 OK https://index.rubygems.org/info/regexp_parser
+#14 2.651 HTTP 200 OK https://index.rubygems.org/info/language_server-protocol
+#14 2.662 Looking up gems ["simplecov-html", "docile", "lockfile", "simplecov_json_formatter", "mime-types", "rdoc", "netrc", "http-cookie", "http-accept", "strscan", "mize", "jar-dependencies", "stringio", "ast", "slop", "needle", "jruby-pageant", "bcrypt_pbkdf", "rbnacl", "rbnacl-libsodium", "prism", "sync", "power_assert"]
+#14 2.674 HTTP GET https://index.rubygems.org/info/simplecov_json_formatter
+#14 2.675 HTTP GET https://index.rubygems.org/info/docile
+#14 2.675 HTTP GET https://index.rubygems.org/info/netrc
+#14 2.676 HTTP GET https://index.rubygems.org/info/stringio
+#14 2.676 HTTP GET https://index.rubygems.org/info/needle
+#14 2.679 HTTP 200 OK https://index.rubygems.org/info/netrc
+#14 2.679 HTTP 200 OK https://index.rubygems.org/info/docile
+#14 2.681 HTTP GET https://index.rubygems.org/info/sync
+#14 2.681 HTTP GET https://index.rubygems.org/info/simplecov-html
+#14 2.682 HTTP GET https://index.rubygems.org/info/mize
+#14 2.683 HTTP GET https://index.rubygems.org/info/bcrypt_pbkdf
+#14 2.683 HTTP GET https://index.rubygems.org/info/jar-dependencies
+#14 2.683 HTTP GET https://index.rubygems.org/info/rbnacl
+#14 2.683 HTTP GET https://index.rubygems.org/info/http-cookie
+#14 2.683 HTTP GET https://index.rubygems.org/info/rdoc
+#14 2.683 HTTP GET https://index.rubygems.org/info/ast
+#14 2.683 HTTP GET https://index.rubygems.org/info/slop
+#14 2.683 HTTP GET https://index.rubygems.org/info/rbnacl-libsodium
+#14 2.683 HTTP GET https://index.rubygems.org/info/prism
+#14 2.683 HTTP GET https://index.rubygems.org/info/http-accept
+#14 2.684 HTTP GET https://index.rubygems.org/info/lockfile
+#14 2.684 HTTP GET https://index.rubygems.org/info/mime-types
+#14 2.684 HTTP GET https://index.rubygems.org/info/strscan
+#14 2.684 HTTP GET https://index.rubygems.org/info/power_assert
+#14 2.684 HTTP GET https://index.rubygems.org/info/jruby-pageant
+#14 2.686 HTTP 200 OK https://index.rubygems.org/info/stringio
+#14 2.686 HTTP 200 OK https://index.rubygems.org/info/simplecov_json_formatter
+#14 2.686 HTTP 200 OK https://index.rubygems.org/info/needle
+#14 2.687 HTTP 200 OK https://index.rubygems.org/info/mize
+#14 2.690 HTTP 200 OK https://index.rubygems.org/info/sync
+#14 2.691 HTTP 200 OK https://index.rubygems.org/info/rdoc
+#14 2.691 HTTP 200 OK https://index.rubygems.org/info/simplecov-html
+#14 2.693 HTTP 200 OK https://index.rubygems.org/info/mime-types
+#14 2.694 HTTP 200 OK https://index.rubygems.org/info/http-accept
+#14 2.695 HTTP 200 OK https://index.rubygems.org/info/bcrypt_pbkdf
+#14 2.695 HTTP 200 OK https://index.rubygems.org/info/jruby-pageant
+#14 2.695 HTTP 200 OK https://index.rubygems.org/info/http-cookie
+#14 2.696 HTTP 200 OK https://index.rubygems.org/info/rbnacl-libsodium
+#14 2.698 HTTP 200 OK https://index.rubygems.org/info/slop
+#14 2.698 HTTP 200 OK https://index.rubygems.org/info/prism
+#14 2.698 HTTP 200 OK https://index.rubygems.org/info/lockfile
+#14 2.702 HTTP 200 OK https://index.rubygems.org/info/strscan
+#14 2.704 HTTP 200 OK https://index.rubygems.org/info/jar-dependencies
+#14 2.708 HTTP 200 OK https://index.rubygems.org/info/ast
+#14 2.715 HTTP 200 OK https://index.rubygems.org/info/power_assert
+#14 2.717 HTTP 200 OK https://index.rubygems.org/info/rbnacl
+#14 2.720 Looking up gems ["protocol", "domain_name", "sqlite3", "mime-types-data", "ruby-maven", "pattern-match"]
+#14 2.721 HTTP GET https://index.rubygems.org/info/protocol
+#14 2.722 HTTP GET https://index.rubygems.org/info/domain_name
+#14 2.722 HTTP GET https://index.rubygems.org/info/sqlite3
+#14 2.722 HTTP GET https://index.rubygems.org/info/mime-types-data
+#14 2.722 HTTP GET https://index.rubygems.org/info/ruby-maven
+#14 2.725 HTTP 200 OK https://index.rubygems.org/info/mime-types-data
+#14 2.726 HTTP 200 OK https://index.rubygems.org/info/sqlite3
+#14 2.726 HTTP 200 OK https://index.rubygems.org/info/domain_name
+#14 2.727 HTTP 200 OK https://index.rubygems.org/info/ruby-maven
+#14 2.730 HTTP 200 OK https://index.rubygems.org/info/protocol
+#14 2.731 HTTP GET https://index.rubygems.org/info/pattern-match
+#14 2.740 HTTP 200 OK https://index.rubygems.org/info/pattern-match
+#14 2.741 Looking up gems ["maven-tools", "ruby-maven-libs", "mini_portile2", "unf"]
+#14 2.742 HTTP GET https://index.rubygems.org/info/maven-tools
+#14 2.743 HTTP GET https://index.rubygems.org/info/ruby-maven-libs
+#14 2.743 HTTP GET https://index.rubygems.org/info/mini_portile2
+#14 2.743 HTTP GET https://index.rubygems.org/info/unf
+#14 2.751 HTTP 200 OK https://index.rubygems.org/info/ruby-maven-libs
+#14 2.752 HTTP 200 OK https://index.rubygems.org/info/unf
+#14 2.752 HTTP 200 OK https://index.rubygems.org/info/mini_portile2
+#14 2.753 HTTP 200 OK https://index.rubygems.org/info/maven-tools
+#14 2.756 Looking up gems ["net-ftp", "unf_ext", "virtus"]
+#14 2.757 HTTP GET https://index.rubygems.org/info/net-ftp
+#14 2.757 HTTP GET https://index.rubygems.org/info/unf_ext
+#14 2.758 HTTP GET https://index.rubygems.org/info/virtus
+#14 2.760 HTTP 200 OK https://index.rubygems.org/info/net-ftp
+#14 2.766 HTTP 200 OK https://index.rubygems.org/info/virtus
+#14 2.766 HTTP 200 OK https://index.rubygems.org/info/unf_ext
+#14 2.769 Looking up gems ["time", "descendants_tracker", "axiom-types", "coercible", "equalizer"]
+#14 2.770 HTTP GET https://index.rubygems.org/info/equalizer
+#14 2.770 HTTP GET https://index.rubygems.org/info/descendants_tracker
+#14 2.770 HTTP GET https://index.rubygems.org/info/axiom-types
+#14 2.771 HTTP GET https://index.rubygems.org/info/coercible
+#14 2.771 HTTP GET https://index.rubygems.org/info/time
+#14 2.778 HTTP 200 OK https://index.rubygems.org/info/equalizer
+#14 2.779 HTTP 200 OK https://index.rubygems.org/info/axiom-types
+#14 2.780 HTTP 200 OK https://index.rubygems.org/info/time
+#14 2.780 HTTP 200 OK https://index.rubygems.org/info/descendants_tracker
+#14 2.826 HTTP 200 OK https://index.rubygems.org/info/coercible
+#14 2.826 Looking up gems ["adamantium", "date", "ice_nine"]
+#14 2.827 HTTP GET https://index.rubygems.org/info/date
+#14 2.828 HTTP GET https://index.rubygems.org/info/ice_nine
+#14 2.828 HTTP GET https://index.rubygems.org/info/adamantium
+#14 2.837 HTTP 200 OK https://index.rubygems.org/info/adamantium
+#14 2.837 HTTP 200 OK https://index.rubygems.org/info/ice_nine
+#14 2.841 HTTP 200 OK https://index.rubygems.org/info/date
+#14 2.843 Looking up gems ["memoizable"]
+#14 2.843 HTTP GET https://index.rubygems.org/info/memoizable
+#14 2.851 HTTP 200 OK https://index.rubygems.org/info/memoizable
+#14 3.231 Fetching https://github.com/joshk/jemalloc-rb
+#14 3.618 fatal: could not read Username for 'https://github.com': No such device or address
+#14 3.618 Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (2/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.
+#14 3.999 fatal: could not read Username for 'https://github.com': No such device or address
+#14 4.000 Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (3/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.
+#14 4.403 fatal: could not read Username for 'https://github.com': No such device or address
+#14 4.403 Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (4/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.
+#14 4.793 fatal: could not read Username for 'https://github.com': No such device or address
+#14 4.808 Git error: command `git clone 'https://github.com/joshk/jemalloc-rb'
+#14 4.808 "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4"
+#14 4.808 --bare --no-hardlinks --quiet` in directory /app has failed.
+#14 ERROR: process "/bin/sh -c bundle install --verbose --retry=3 --deployment --without development test" did not complete successfully: exit code: 11
+------
+ > [10/12] RUN bundle install --verbose --retry=3 --deployment --without development test:
+3.618 fatal: could not read Username for 'https://github.com': No such device or address
+3.618 Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (2/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.
+3.999 fatal: could not read Username for 'https://github.com': No such device or address
+4.000 Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (3/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.
+4.403 fatal: could not read Username for 'https://github.com': No such device or address
+4.403 Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (4/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.
+4.793 fatal: could not read Username for 'https://github.com': No such device or address
+4.808 Git error: command `git clone 'https://github.com/joshk/jemalloc-rb'
+4.808 "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4"
+4.808 --bare --no-hardlinks --quiet` in directory /app has failed.
+------
+v1_Dockerfile:22
+--------------------
+  20 |     RUN bundle config --global frozen 1
+  21 |     RUN bundle config set --local path 'vendor/bundle'
+  22 | >>> RUN bundle install --verbose --retry=3 --deployment --without development test
+  23 |     RUN gem install --user-install executable-hooks
+  24 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c bundle install --verbose --retry=3 --deployment --without development test" did not complete successfully: exit code: 11
+Duration: 1:18.24

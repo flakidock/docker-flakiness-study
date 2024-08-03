@@ -1,0 +1,641 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.41kB done
+#2 DONE 0.3s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.16.3
+#3 ...
+
+#4 [auth] library/alpine:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.16.3
+#3 DONE 1.6s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [build  1/27] FROM docker.io/library/alpine:3.16.3@sha256:b95359c2505145f16c6aa384f9cc74eeff78eb36d308ca4fd902eeeb0a0b161b
+#6 resolve docker.io/library/alpine:3.16.3@sha256:b95359c2505145f16c6aa384f9cc74eeff78eb36d308ca4fd902eeeb0a0b161b
+#6 resolve docker.io/library/alpine:3.16.3@sha256:b95359c2505145f16c6aa384f9cc74eeff78eb36d308ca4fd902eeeb0a0b161b 0.2s done
+#6 sha256:b95359c2505145f16c6aa384f9cc74eeff78eb36d308ca4fd902eeeb0a0b161b 1.64kB / 1.64kB done
+#6 sha256:3d426b0bfc361d6e8303f51459f17782b219dece42a1c7fe463b6014b189c86d 528B / 528B done
+#6 sha256:bfe296a525011f7eb76075d688c681ca4feaad5afe3b142b36e30f1a171dc99a 1.47kB / 1.47kB done
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 2.72kB done
+#5 DONE 0.3s
+
+#6 [build  1/27] FROM docker.io/library/alpine:3.16.3@sha256:b95359c2505145f16c6aa384f9cc74eeff78eb36d308ca4fd902eeeb0a0b161b
+#6 sha256:ca7dd9ec2225f2385955c43b2379305acd51543c28cf1d4e94522b3d94cce3ce 0B / 2.81MB 0.1s
+#6 sha256:ca7dd9ec2225f2385955c43b2379305acd51543c28cf1d4e94522b3d94cce3ce 1.05MB / 2.81MB 0.2s
+#6 sha256:ca7dd9ec2225f2385955c43b2379305acd51543c28cf1d4e94522b3d94cce3ce 2.81MB / 2.81MB 0.3s done
+#6 extracting sha256:ca7dd9ec2225f2385955c43b2379305acd51543c28cf1d4e94522b3d94cce3ce
+#6 extracting sha256:ca7dd9ec2225f2385955c43b2379305acd51543c28cf1d4e94522b3d94cce3ce 0.5s done
+#6 DONE 1.6s
+
+#7 [build  2/27] WORKDIR /root
+#7 DONE 1.3s
+
+#8 [build  3/27] RUN apk update
+#8 1.216 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/main/x86_64/APKINDEX.tar.gz
+#8 2.383 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/community/x86_64/APKINDEX.tar.gz
+#8 3.513 v3.16.9-124-g7ebe731c813 [https://dl-cdn.alpinelinux.org/alpine/v3.16/main]
+#8 3.513 v3.16.9-125-gec300a94000 [https://dl-cdn.alpinelinux.org/alpine/v3.16/community]
+#8 3.513 OK: 17048 distinct packages available
+#8 DONE 4.0s
+
+#9 [build  4/27] RUN apk add gcc musl-dev gfortran g++ zlib-dev bzip2-dev xz-dev pcre-dev     pcre2-dev curl-dev make perl readline-dev
+#9 2.777 (1/52) Upgrading musl (1.2.3-r1 -> 1.2.3-r3)
+#9 2.917 (2/52) Upgrading libcrypto1.1 (1.1.1s-r0 -> 1.1.1w-r1)
+#9 3.153 (3/52) Upgrading libssl1.1 (1.1.1s-r0 -> 1.1.1w-r1)
+#9 3.172 (4/52) Installing libbz2 (1.0.8-r1)
+#9 3.175 (5/52) Installing bzip2-dev (1.0.8-r1)
+#9 3.188 (6/52) Installing pkgconf (1.8.1-r0)
+#9 3.203 (7/52) Installing openssl-dev (1.1.1w-r1)
+#9 3.257 (8/52) Installing nghttp2-libs (1.47.0-r2)
+#9 3.269 (9/52) Installing nghttp2-dev (1.47.0-r2)
+#9 3.287 (10/52) Installing zlib-dev (1.2.12-r3)
+#9 3.304 (11/52) Installing brotli-libs (1.0.9-r6)
+#9 3.322 (12/52) Installing brotli-dev (1.0.9-r6)
+#9 3.343 (13/52) Installing ca-certificates (20240226-r0)
+#9 3.405 (14/52) Installing libcurl (8.5.0-r0)
+#9 3.428 (15/52) Installing curl-dev (8.5.0-r0)
+#9 3.459 (16/52) Installing libgcc (11.2.1_git20220219-r2)
+#9 3.472 (17/52) Installing libstdc++ (11.2.1_git20220219-r2)
+#9 3.520 (18/52) Installing binutils (2.38-r3)
+#9 3.869 (19/52) Installing libgomp (11.2.1_git20220219-r2)
+#9 3.888 (20/52) Installing libatomic (11.2.1_git20220219-r2)
+#9 3.900 (21/52) Installing gmp (6.2.1-r2)
+#9 3.919 (22/52) Installing isl22 (0.22-r0)
+#9 3.967 (23/52) Installing mpfr4 (4.1.0-r0)
+#9 4.052 (24/52) Installing mpc1 (1.2.1-r0)
+#9 4.066 (25/52) Installing gcc (11.2.1_git20220219-r2)
+#9 7.426 (26/52) Installing musl-dev (1.2.3-r3)
+#9 7.661 (27/52) Installing libc-dev (0.7.2-r3)
+#9 7.667 (28/52) Installing g++ (11.2.1_git20220219-r2)
+#9 8.897 (29/52) Installing libquadmath (11.2.1_git20220219-r2)
+#9 8.907 (30/52) Installing libgfortran (11.2.1_git20220219-r2)
+#9 8.993 (31/52) Installing gfortran (11.2.1_git20220219-r2)
+#9 10.72 (32/52) Installing make (4.3-r0)
+#9 10.74 (33/52) Installing libpcre16 (8.45-r2)
+#9 10.75 (34/52) Installing libpcre32 (8.45-r2)
+#9 10.76 (35/52) Installing pcre (8.45-r2)
+#9 10.78 (36/52) Installing libpcrecpp (8.45-r2)
+#9 10.78 (37/52) Installing pcre-dev (8.45-r2)
+#9 10.84 (38/52) Installing ncurses-terminfo-base (6.3_p20220521-r1)
+#9 10.88 (39/52) Installing ncurses-libs (6.3_p20220521-r1)
+#9 10.93 (40/52) Installing ncurses-dev (6.3_p20220521-r1)
+#9 10.96 (41/52) Installing libedit (20210910.3.1-r0)
+#9 10.98 (42/52) Installing libedit-dev (20210910.3.1-r0)
+#9 11.43 (43/52) Installing libpcre2-16 (10.42-r0)
+#9 11.44 (44/52) Installing libpcre2-32 (10.42-r0)
+#9 11.46 (45/52) Installing pcre2 (10.42-r0)
+#9 11.48 (46/52) Installing pcre2-dev (10.42-r0)
+#9 11.58 (47/52) Installing perl (5.34.2-r0)
+#9 12.72 (48/52) Installing libhistory (8.1.2-r0)
+#9 12.73 (49/52) Installing readline (8.1.2-r0)
+#9 12.74 (50/52) Installing readline-dev (8.1.2-r0)
+#9 12.78 (51/52) Installing xz-libs (5.2.5-r1)
+#9 12.79 (52/52) Installing xz-dev (5.2.5-r1)
+#9 12.83 Executing busybox-1.35.0-r17.trigger
+#9 12.87 Executing ca-certificates-20240226-r0.trigger
+#9 13.10 OK: 263 MiB in 63 packages
+#9 DONE 19.7s
+
+#10 [build  5/27] RUN if [[ "$R_VERSION" == "devel" ]]; then                                           wget https://cran.r-project.org/src/base-prerelease/R-devel.tar.gz;      elif [[ "$R_VERSION" == "next" ]]; then                                          wget https://cran.rstudio.com/src/base-prerelease/R-latest.tar.gz -O R-next.tar.gz;     else                                                                             wget https://cran.rstudio.com/src/base/R-${R_VERSION%%.*}/R-${R_VERSION}.tar.gz;     fi
+#10 1.780 Connecting to cran.rstudio.com (18.172.185.21:443)
+#10 2.083 saving to 'R-4.2.2.tar.gz'
+#10 2.407 R-4.2.2.tar.gz        57% |******************              | 18.6M  0:00:00 ETA
+#10 2.578 R-4.2.2.tar.gz       100% |********************************| 32.4M  0:00:00 ETA
+#10 3.066 'R-4.2.2.tar.gz' saved
+#10 DONE 3.3s
+
+#11 [build  6/27] RUN tar xzf R-4.2.2.tar.gz
+#11 DONE 10.9s
+
+#12 [build  7/27] RUN if [[ -e R-patched ]]; then	mv R-patched R-next; fi
+#12 DONE 2.9s
+
+#13 [build  8/27] RUN if [[ -e R-beta ]]; then mv R-beta R-next; fi
+#13 DONE 2.0s
+
+#14 [build  9/27] RUN if [[ -e R-alpha ]]; then mv R-alpha R-next; fi
+#14 DONE 2.2s
+
+#15 [build 10/27] RUN if [[ -e R-rc ]]; then mv R-rc R-next; fi
+#15 DONE 2.0s
+
+#16 [build 11/27] RUN if [[ -e R-prerelease ]]; then mv R-prerelease R-next; fi
+#16 DONE 1.8s
+
+#17 [build 12/27] RUN if [[ -e R-pre ]]; then mv R-pre R-next; fi
+#17 DONE 2.0s
+
+#18 [build 13/27] RUN if echo 4.2.2 | grep -q "^3[.][45][.]"; then                               echo "export CFLAGS='-D__MUSL__ -fcommon'" >> R-4.2.2/FLAGS;            echo "export FFLAGS=-fallow-argument-mismatch" >> R-4.2.2/FLAGS;     else                                                                              echo "export CFLAGS=-D__MUSL__" >> R-4.2.2/FLAGS;                    fi
+#18 DONE 2.1s
+
+#19 [build 14/27] RUN cd R-4.2.2 &&                                                     . FLAGS &&                                                               CXXFLAGS=-D__MUSL__  ./configure                                             --with-recommended-packages=no                                           --with-readline=yes --with-x=no --enable-java=no                         --enable-R-shlib                                                         --disable-openmp --with-internal-tzcode
+#19 2.479 checking build system type... x86_64-pc-linux-musl
+#19 2.892 checking host system type... x86_64-pc-linux-musl
+#19 2.892 loading site script './config.site'
+#19 2.892 loading build-specific script './config.site'
+#19 2.894 checking for pwd... /bin/pwd
+#19 2.896 checking whether builddir is srcdir... yes
+#19 2.921 checking whether ln -s works... yes
+#19 2.921 checking for ar... ar
+#19 2.921 checking for a BSD-compatible install... /usr/bin/install -c
+#19 3.721 checking for sed... /bin/sed
+#19 3.721 checking for which... /usr/bin/which
+#19 3.721 checking for less... /usr/bin/less
+#19 3.721 checking for gtar... no
+#19 3.723 checking for gnutar... no
+#19 3.723 checking for tar... /bin/tar
+#19 3.723 checking for tex... no
+#19 3.723 checking for pdftex... no
+#19 3.724 checking for pdflatex... no
+#19 3.724 configure: WARNING: you cannot build PDF versions of the R manuals
+#19 3.724 configure: WARNING: you cannot build PDF versions of vignettes and help pages
+#19 3.726 configure: WARNING: you cannot build info or HTML versions of the R manuals
+#19 3.726 checking for makeindex... no
+#19 3.726 checking for texi2any... no
+#19 3.727 checking for texi2dvi... no
+#19 3.727 checking for kpsewhich... no
+#19 3.729 checking for latex inconsolata package... checking for unzip... /usr/bin/unzip
+#19 3.730 checking for zip... no
+#19 3.731 checking for gzip... /bin/gzip
+#19 3.731 checking for bzip2... /usr/bin/bzip2
+#19 3.732 checking for firefox... no
+#19 3.732 checking for mozilla... no
+#19 3.732 checking for galeon... no
+#19 3.733 checking for opera... no
+#19 3.733 checking for xdg-open... no
+#19 3.733 checking for kfmclient... no
+#19 3.744 checking for gnome-moz-remote... no
+#19 3.744 checking for open... no
+#19 3.745 checking for acroread... no
+#19 3.745 checking for acroread4... no
+#19 3.745 checking for xdg-open... configure: WARNING: I could not determine a browser
+#19 3.752 no
+#19 3.752 checking for evince... no
+#19 3.752 checking for xpdf... no
+#19 3.752 checking for gv... no
+#19 3.752 checking for gnome-gv... no
+#19 3.752 checking for ggv... no
+#19 3.752 checking for okular... no
+#19 3.752 checking for kpdf... no
+#19 3.753 checking for open... no
+#19 3.753 checking for gpdf... no
+#19 3.753 checking for kghostview... no
+#19 3.759 checking for working aclocal... configure: WARNING: I could not determine a PDF viewer
+#19 3.770 missing
+#19 3.770 checking for working autoconf... missing
+#19 3.773 checking for working autoheader... missing
+#19 3.773 checking for bison... no
+#19 3.773 checking for byacc... no
+#19 3.776 checking for yacc... no
+#19 3.776 checking for notangle... false
+#19 3.776 checking for realpath... /usr/bin/realpath
+#19 3.776 checking for pkg-config... /usr/bin/pkg-config
+#19 3.776 checking for gcc... gcc
+#19 4.161 checking whether the C compiler works... yes
+#19 4.459 checking for C compiler default output file name... a.out
+#19 4.473 checking for suffix of executables... 
+#19 4.736 checking whether we are cross compiling... no
+#19 5.051 checking for suffix of object files... o
+#19 5.283 checking whether the compiler supports GNU C... yes
+#19 5.426 checking whether gcc accepts -g... yes
+#19 5.593 checking for gcc option to enable C11 features... none needed
+#19 5.811 checking how to run the C preprocessor... gcc -E
+#19 6.463 checking for grep that handles long lines and -e... /bin/grep
+#19 7.362 checking for egrep... /bin/grep -E
+#19 7.386 checking whether gcc needs -traditional... no
+#19 7.647 checking for stdio.h... yes
+#19 7.860 checking for stdlib.h... yes
+#19 8.089 checking for string.h... yes
+#19 8.272 checking for inttypes.h... yes
+#19 8.484 checking for stdint.h... yes
+#19 8.721 checking for strings.h... yes
+#19 8.892 checking for sys/stat.h... yes
+#19 9.133 checking for sys/types.h... yes
+#19 9.307 checking for unistd.h... yes
+#19 9.565 checking for wchar.h... yes
+#19 9.765 checking for minix/config.h... no
+#19 9.963 checking for sys/time.h... yes
+#19 10.16 checking for sys/param.h... yes
+#19 10.35 checking whether it is safe to define __EXTENSIONS__... yes
+#19 10.60 checking whether _XOPEN_SOURCE should be defined... no
+#19 10.84 checking how to run the C preprocessor... gcc -E
+#19 11.28 looking for a modern Fortran compiler
+#19 11.28 checking for gfortran... gfortran
+#19 11.61 checking whether the compiler supports GNU Fortran... yes
+#19 11.82 checking whether gfortran accepts -g... yes
+#19 12.05 checking for g++... g++
+#19 12.35 checking whether the compiler supports GNU C++... yes
+#19 12.57 checking whether g++ accepts -g... yes
+#19 12.82 checking for g++ option to enable C++11 features... none needed
+#19 13.48 checking whether g++ -D__MUSL__ can compile C++ code... yes
+#19 14.53 checking how to run the C++ preprocessor... g++ -E
+#19 15.16 checking whether __attribute__((visibility())) is supported... yes
+#19 15.30 checking whether gcc accepts -fvisibility... yes
+#19 15.47 checking whether g++ accepts -fvisibility... yes
+#19 15.66 checking whether gfortran accepts -fvisibility... yes
+#19 15.91 checking for gcc... gcc
+#19 16.19 checking whether the compiler supports GNU Objective C... no
+#19 16.32 checking whether gcc accepts -g... no
+#19 16.88 checking whether g++ can compile ObjC++... no
+#19 16.92 checking whether  can compile ObjC++... no
+#19 16.95 checking for Objective C++ compiler... no working ObjC++ compiler found
+#19 16.96 checking how to print strings... printf
+#19 16.97 checking for a sed that does not truncate output... (cached) /bin/sed
+#19 16.98 checking for fgrep... /bin/grep -F
+#19 16.99 checking for ld used by gcc... /usr/x86_64-alpine-linux-musl/bin/ld
+#19 17.21 checking if the linker (/usr/x86_64-alpine-linux-musl/bin/ld) is GNU ld... yes
+#19 17.22 checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+#19 17.25 checking the name lister (/usr/bin/nm -B) interface... BSD nm
+#19 17.46 checking the maximum length of command line arguments... 98304
+#19 17.52 checking how to convert x86_64-pc-linux-musl file names to x86_64-pc-linux-musl format... func_convert_file_noop
+#19 17.52 checking how to convert x86_64-pc-linux-musl file names to toolchain format... func_convert_file_noop
+#19 17.52 checking for /usr/x86_64-alpine-linux-musl/bin/ld option to reload object files... -r
+#19 17.52 checking for objdump... objdump
+#19 17.52 checking how to recognize dependent libraries... pass_all
+#19 17.52 checking for dlltool... no
+#19 17.52 checking how to associate runtime and link libraries... printf %s\n
+#19 17.52 checking for archiver @FILE support... @
+#19 17.80 checking for strip... strip
+#19 17.80 checking for ranlib... ranlib
+#19 17.80 checking for gawk... no
+#19 17.80 checking for mawk... no
+#19 17.80 checking for nawk... no
+#19 17.80 checking for awk... awk
+#19 17.80 checking command to parse /usr/bin/nm -B output from gcc object... ok
+#19 18.35 checking for sysroot... no
+#19 18.35 checking for a working dd... /bin/dd
+#19 18.42 checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+#19 18.61 ./configure: line 12156: /usr/bin/file: not found
+#19 18.63 checking for mt... no
+#19 18.63 checking if : is a manifest tool... no
+#19 18.66 checking for dlfcn.h... yes
+#19 18.84 checking for objdir... .libs
+#19 19.36 checking if gcc supports -fno-rtti -fno-exceptions... no
+#19 19.57 checking for gcc option to produce PIC... -fPIC -DPIC
+#19 19.57 checking if gcc PIC flag -fPIC -DPIC works... yes
+#19 19.73 checking if gcc static flag -static works... yes
+#19 20.00 checking if gcc supports -c -o file.o... yes
+#19 20.38 checking if gcc supports -c -o file.o... (cached) yes
+#19 20.38 checking whether the gcc linker (/usr/x86_64-alpine-linux-musl/bin/ld) supports shared libraries... yes
+#19 20.49 checking whether -lc should be explicitly linked in... no
+#19 20.66 checking dynamic linker characteristics... GNU/Linux ld.so
+#19 21.02 checking how to hardcode library paths into programs... immediate
+#19 21.02 checking whether stripping libraries is possible... yes
+#19 21.03 checking if libtool supports shared libraries... yes
+#19 21.03 checking whether to build shared libraries... yes
+#19 21.03 checking whether to build static libraries... no
+#19 21.07 checking how to run the C++ preprocessor... g++ -E
+#19 21.94 checking for ld used by g++... /usr/x86_64-alpine-linux-musl/bin/ld
+#19 22.11 checking if the linker (/usr/x86_64-alpine-linux-musl/bin/ld) is GNU ld... yes
+#19 22.17 checking whether the g++ linker (/usr/x86_64-alpine-linux-musl/bin/ld) supports shared libraries... yes
+#19 22.83 checking for g++ option to produce PIC... -fPIC -DPIC
+#19 22.83 checking if g++ PIC flag -fPIC -DPIC works... yes
+#19 23.10 checking if g++ static flag -static works... yes
+#19 23.37 checking if g++ supports -c -o file.o... yes
+#19 23.71 checking if g++ supports -c -o file.o... (cached) yes
+#19 23.71 checking whether the g++ linker (/usr/x86_64-alpine-linux-musl/bin/ld) supports shared libraries... yes
+#19 23.71 checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+#19 23.71 checking how to hardcode library paths into programs... immediate
+#19 24.35 checking if libtool supports shared libraries... yes
+#19 24.35 checking whether to build shared libraries... yes
+#19 24.35 checking whether to build static libraries... no
+#19 25.13 checking for gfortran option to produce PIC... -fPIC
+#19 25.13 checking if gfortran PIC flag -fPIC works... yes
+#19 25.42 checking if gfortran static flag -static works... yes
+#19 25.99 checking if gfortran supports -c -o file.o... yes
+#19 26.41 checking if gfortran supports -c -o file.o... (cached) yes
+#19 26.41 checking whether the gfortran linker (/usr/x86_64-alpine-linux-musl/bin/ld) supports shared libraries... yes
+#19 26.51 checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+#19 26.51 checking how to hardcode library paths into programs... immediate
+#19 26.53 checking for cos in -lm... yes
+#19 26.85 checking for sin in -lm... yes
+#19 27.21 checking for dlopen in -ldl... yes
+#19 27.54 checking for readline/history.h... yes
+#19 27.80 checking for readline/readline.h... yes
+#19 27.98 checking for rl_callback_read_char in -lreadline... yes
+#19 28.27 checking for history_truncate_file... yes
+#19 28.61 checking for tilde_expand_word... yes
+#19 28.95 checking whether rl_completion_matches exists and is declared... yes
+#19 29.42 checking whether rl_resize_terminal exists and is declared... yes
+#19 29.93 checking whether rl_sort_completion_matches exists and is declared... yes
+#19 30.45 checking for dirent.h that defines DIR... yes
+#19 30.72 checking for library containing opendir... none required
+#19 31.02 checking for sys/wait.h that is POSIX.1 compatible... yes
+#19 31.25 checking for dlfcn.h... (cached) yes
+#19 31.25 checking for fcntl.h... yes
+#19 31.48 checking for glob.h... yes
+#19 31.74 checking for grp.h... yes
+#19 31.95 checking for pwd.h... yes
+#19 32.14 checking for sched.h... yes
+#19 32.33 checking for strings.h... (cached) yes
+#19 32.33 checking for sys/resource.h... yes
+#19 32.57 checking for sys/select.h... yes
+#19 32.82 checking for sys/socket.h... yes
+#19 33.06 checking for sys/stat.h... (cached) yes
+#19 33.06 checking for sys/time.h... (cached) yes
+#19 33.06 checking for sys/times.h... yes
+#19 33.28 checking for sys/utsname.h... yes
+#19 33.54 checking for unistd.h... (cached) yes
+#19 33.54 checking for utime.h... yes
+#19 33.77 checking for arpa/inet.h... yes
+#19 34.02 checking for elf.h... yes
+#19 34.28 checking for features.h... yes
+#19 34.52 checking for floatingpoint.h... no
+#19 34.80 checking for langinfo.h... yes
+#19 35.02 checking for netdb.h... yes
+#19 35.26 checking for netinet/in.h... yes
+#19 35.48 checking for sys/param.h... (cached) yes
+#19 35.48 checking for stdalign.h... yes
+#19 35.74 checking for errno.h... yes
+#19 35.94 checking for inttypes.h... (cached) yes
+#19 35.94 checking for limits.h... yes
+#19 36.19 checking for locale.h... yes
+#19 36.42 checking for stdarg.h... yes
+#19 36.63 checking for stdbool.h... yes
+#19 36.88 checking for stdint.h... (cached) yes
+#19 36.88 checking for string.h... (cached) yes
+#19 36.88 checking for gcc options needed to detect all undeclared functions... none needed
+#19 37.28 checking whether setjmp.h is POSIX.1 compatible... yes
+#19 37.56 checking whether sigsetjmp is declared... yes
+#19 37.82 checking whether siglongjmp is declared... yes
+#19 38.10 checking for GNU C library with version >= 2... no
+#19 38.25 checking for uint64_t... yes
+#19 38.50 checking for int64_t... yes
+#19 39.07 checking for int_fast64_t... yes
+#19 39.67 checking for pid_t... yes
+#19 40.26 checking for size_t... yes
+#19 40.77 checking whether SIZE_MAX is declared... yes
+#19 41.11 checking for blkcnt_t... yes
+#19 41.57 checking for type of socket length... socklen_t *
+#19 41.72 checking for stack_t... yes
+#19 42.12 checking for intptr_t... yes
+#19 42.55 checking for uintptr_t... yes
+#19 42.98 checking whether byte ordering is bigendian... no
+#19 43.45 checking for an ANSI C-conforming const... yes
+#19 43.66 checking for inline... inline
+#19 43.72 checking size of int... 4
+#19 44.16 checking size of long... 8
+#19 44.56 checking size of long long... 8
+#19 45.00 checking size of double... 8
+#19 45.23 checking size of size_t... 8
+#19 45.65 checking for C stack direction... down
+#19 46.02 checking size of long double... 16
+#19 46.55 checking whether we can compute C Make dependencies... yes, using $(CC) -MM
+#19 46.67 checking whether gcc supports -c -o FILE.lo... yes
+#19 47.28 checking how to get verbose linking output from gfortran... -v
+#19 47.94 checking for Fortran libraries of gfortran...  -L/usr/local/lib -L/usr/lib/gcc/x86_64-alpine-linux-musl/11.2.1 -L/usr/lib/gcc/x86_64-alpine-linux-musl/11.2.1/../../../../x86_64-alpine-linux-musl/lib/../lib -L/usr/lib/gcc/x86_64-alpine-linux-musl/11.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-alpine-linux-musl/11.2.1/../../../../x86_64-alpine-linux-musl/lib -L/usr/lib/gcc/x86_64-alpine-linux-musl/11.2.1/../../.. -lgfortran -lm -lssp_nonshared -lquadmath
+#19 48.37 checking how to get verbose linking output from gcc... -v
+#19 48.92 checking for C libraries of gcc...  -L/usr/local/lib -L/usr/lib/gcc/x86_64-alpine-linux-musl/11.2.1 -L/usr/lib/gcc/x86_64-alpine-linux-musl/11.2.1/../../../../x86_64-alpine-linux-musl/lib/../lib -L/usr/lib/gcc/x86_64-alpine-linux-musl/11.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-alpine-linux-musl/11.2.1/../../../../x86_64-alpine-linux-musl/lib -L/usr/lib/gcc/x86_64-alpine-linux-musl/11.2.1/../../.. -lssp_nonshared -lgcc_s
+#19 49.91 checking for dummy main to link with Fortran libraries... none
+#19 50.26 checking for Fortran name-mangling scheme... lower case, underscore, no extra underscore
+#19 51.47 checking whether gfortran appends underscores to external names... yes
+#19 51.47 checking whether gfortran appends extra underscores to external names... no
+#19 51.47 checking whether mixed C/Fortran code can be run... yes
+#19 52.17 checking whether gfortran and gcc agree on int and double... yes
+#19 52.67 checking whether gfortran and gcc agree on double complex... yes
+#19 53.16 checking whether g++ accepts -M for generating dependencies... yes
+#19 53.44 checking whether we can compute ObjC Make dependencies... no
+#19 53.58 checking if need -fno-optimize-sibling-calls for gfortran... yes
+#19 53.64 checking for type of 'hidden' Fortran character lengths... size_t
+#19 54.46 checking for xmkmf... no
+#19 54.49 checking whether g++  supports C++11 features with -std=gnu++11... yes
+#19 54.81 checking whether g++  supports C++14 features with -std=gnu++14... yes
+#19 55.23 checking whether g++  supports C++17 features with -std=gnu++17... yes
+#19 55.81 checking whether g++  supports C++20 features with -std=gnu++20... yes
+#19 56.69 checking for option providing pthread_kill... none required
+#19 56.94 checking whether POSIX threads are supported... yes
+#19 56.94 checking for off_t... yes
+#19 57.51 checking for working alloca.h... yes
+#19 57.86 checking for alloca... yes
+#19 57.87 checking whether alloca is declared... yes
+#19 58.19 checking whether expm1 exists and is declared... yes
+#19 58.47 checking whether hypot exists and is declared... yes
+#19 58.92 checking whether log1p exists and is declared... yes
+#19 59.30 checking whether log1pl exists and is declared... yes
+#19 59.67 checking whether log2 exists and is declared... yes
+#19 60.11 checking whether log10 exists and is declared... yes
+#19 60.59 checking whether nearbyint exists and is declared... yes
+#19 61.02 checking whether nearbyintl exists and is declared... yes
+#19 61.44 checking whether powl exists and is declared... yes
+#19 61.70 checking whether rintl exists and is declared... yes
+#19 62.12 checking whether va_copy exists and is declared... yes
+#19 62.48 checking for isblank... yes
+#19 62.83 checking for sunmath.h... no
+#19 63.18 checking for cospi in -lsunmath... no
+#19 63.58 checking for atanpi... no
+#19 63.96 checking for atan2pi... no
+#19 64.39 checking for cospi... no
+#19 64.81 checking for exp10... yes
+#19 65.21 checking for pown... no
+#19 65.58 checking for sinpi... no
+#19 65.96 checking for tanpi... no
+#19 66.34 checking for __cospi... no
+#19 66.77 checking for __sinpi... no
+#19 67.14 checking for __tanpi... no
+#19 67.63 checking for fseeko... yes
+#19 67.93 checking for ftello... yes
+#19 68.30 checking for matherr... no
+#19 68.72 checking whether fcntl exists and is declared... yes
+#19 69.10 checking whether getgrgid exists and is declared... yes
+#19 69.52 checking whether getpwnam exists and is declared... yes
+#19 69.99 checking whether getpwuid exists and is declared... yes
+#19 70.42 checking whether kill exists and is declared... yes
+#19 74.36 checking whether sigaction exists and is declared... yes
+#19 75.43 checking whether sigaltstack exists and is declared... yes
+#19 75.85 checking whether sigemptyset exists and is declared... yes
+#19 76.59 checking whether fdopen exists and is declared... yes
+#19 77.49 checking whether popen exists and is declared... yes
+#19 77.90 checking whether getline exists and is declared... yes
+#19 78.38 checking whether select exists and is declared... yes
+#19 78.84 checking whether setenv exists and is declared... yes
+#19 79.22 checking whether unsetenv exists and is declared... yes
+#19 79.62 checking whether getrlimit exists and is declared... yes
+#19 79.95 checking whether setrlimit exists and is declared... yes
+#19 80.28 checking whether getrusage exists and is declared... yes
+#19 80.41 checking whether getpriority exists and is declared... yes
+#19 80.83 checking whether chmod exists and is declared... yes
+#19 81.18 checking whether mkfifo exists and is declared... yes
+#19 81.54 checking whether stat exists and is declared... yes
+#19 81.80 checking whether umask exists and is declared... yes
+#19 82.19 checking whether gettimeofday exists and is declared... yes
+#19 82.53 checking whether utimes exists and is declared... yes
+#19 82.87 checking whether times exists and is declared... yes
+#19 83.23 checking whether gmtime_r exists and is declared... yes
+#19 83.73 checking whether localtime_r exists and is declared... yes
+#19 84.09 checking whether nl_langinfo exists and is declared... yes
+#19 84.39 checking whether access exists and is declared... yes
+#19 84.98 checking whether chdir exists and is declared... yes
+#19 85.33 checking whether execv exists and is declared... yes
+#19 85.76 checking whether ftruncate exists and is declared... yes
+#19 86.13 checking whether getcwd exists and is declared... yes
+#19 86.44 checking whether geteuid exists and is declared... yes
+#19 86.90 checking whether getuid exists and is declared... yes
+#19 87.35 checking whether link exists and is declared... yes
+#19 87.70 checking whether readlink exists and is declared... yes
+#19 88.16 checking whether symlink exists and is declared... yes
+#19 88.45 checking whether sysconf exists and is declared... yes
+#19 88.75 checking whether sched_setaffinity exists and is declared... yes
+#19 89.14 checking whether sched_getaffinity exists and is declared... yes
+#19 89.46 checking whether utime exists and is declared... yes
+#19 89.84 checking whether utimensat exists and is declared... yes
+#19 90.21 checking for clock_gettime in -lrt... yes
+#19 90.57 checking whether clock_gettime exists and is declared... yes
+#19 91.01 checking whether timespec_get exists and is declared... yes
+#19 91.36 checking for putenv... yes
+#19 91.72 checking whether putenv is declared... yes
+#19 91.95 checking for vasprintf... yes
+#19 92.34 checking whether vasprintf is declared... yes
+#19 92.59 checking for mempcpy... yes
+#19 92.93 checking for realpath... yes
+#19 93.26 checking whether realpath is declared... yes
+#19 93.60 checking whether glob exists and is declared... yes
+#19 94.02 checking for dladdr... yes
+#19 94.31 checking for dlsym... yes
+#19 94.70 checking whether dladdr is declared... yes
+#19 95.00 checking whether dlsym is declared... yes
+#19 95.20 checking whether RTLD_DEFAULT is declared... yes
+#19 95.47 checking whether RTLD_NEXT is declared... yes
+#19 95.75 checking for thread.h... no
+#19 95.99 checking whether thr_stksegment exists and is declared... no
+#19 96.26 checking for isnan... no
+#19 96.65 checking whether isfinite is declared... yes
+#19 96.91 checking whether isnan is declared... yes
+#19 97.09 checking whether you have IEEE 754 floating-point arithmetic... yes
+#19 97.11 checking whether putenv("FOO") can unset an environment variable... yes
+#19 97.44 checking whether putenv("FOO=") can unset an environment variable... no
+#19 97.88 checking for nl_langinfo and CODESET... yes
+#19 98.21 checking for mkdtemp... yes
+#19 98.54 checking for strdup... yes
+#19 99.00 checking for strncasecmp... yes
+#19 99.38 checking whether mkdtemp is declared... yes
+#19 99.63 checking whether strdup is declared... yes
+#19 99.88 checking whether strncasecmp is declared... yes
+#19 100.1 checking for library containing connect... none required
+#19 100.5 checking for library containing gethostbyname... none required
+#19 100.8 checking for library containing xdr_string... no
+#19 101.6 checking for working calloc... yes
+#19 102.0 checking for working isfinite... yes
+#19 102.2 checking for working log1p... yes
+#19 102.5 checking whether ftell works correctly on files opened for append... no
+#19 102.9 checking for working sigaction... yes
+#19 103.2 checking for complex.h... yes
+#19 103.8 checking for double complex... yes
+#19 104.2 checking whether C99 double complex is supported... yes
+#19 104.3 checking whether cabs exists and is declared... yes
+#19 104.7 checking whether carg exists and is declared... yes
+#19 105.1 checking whether cexp exists and is declared... yes
+#19 105.5 checking whether clog exists and is declared... yes
+#19 105.9 checking whether csqrt exists and is declared... yes
+#19 106.3 checking whether cpow exists and is declared... yes
+#19 106.6 checking whether ccos exists and is declared... yes
+#19 107.3 checking whether csin exists and is declared... yes
+#19 107.8 checking whether ctan exists and is declared... yes
+#19 108.2 checking whether cacos exists and is declared... yes
+#19 108.7 checking whether casin exists and is declared... yes
+#19 109.1 checking whether catan exists and is declared... yes
+#19 109.6 checking whether ccosh exists and is declared... yes
+#19 109.9 checking whether csinh exists and is declared... yes
+#19 110.3 checking whether ctanh exists and is declared... yes
+#19 110.7 checking for working ctanh... yes
+#19 111.0 checking whether 'struct tm' includes tm_zone... yes
+#19 111.2 checking whether 'struct tm' includes tm_gmtoff... yes
+#19 111.4 checking for iconv.h... yes
+#19 111.6 checking for iconv... yes
+#19 112.0 checking whether iconv accepts "UTF-8", "latin1", "ASCII" and "UCS-*"... yes
+#19 112.4 checking whether iconv accepts "CP1252"... yes
+#19 112.8 checking for iconvlist... no
+#19 113.2 checking for iconv... yes
+#19 113.5 checking for iconv declaration... 
+#19 113.8          extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+#19 113.8 checking for wchar.h... (cached) yes
+#19 113.8 checking for wctype.h... yes
+#19 114.1 checking whether mbrtowc exists and is declared... yes
+#19 114.6 checking whether wcrtomb exists and is declared... yes
+#19 114.9 checking whether wcscoll exists and is declared... yes
+#19 115.2 checking whether wcsftime exists and is declared... yes
+#19 115.6 checking whether wcstod exists and is declared... yes
+#19 116.1 checking whether mbstowcs exists and is declared... yes
+#19 116.5 checking whether wcstombs exists and is declared... yes
+#19 116.9 checking whether wctrans exists and is declared... yes
+#19 117.2 checking whether wctype exists and is declared... yes
+#19 117.7 checking whether iswctype exists and is declared... yes
+#19 118.1 checking whether wcwidth exists and is declared... yes
+#19 118.5 checking whether wcswidth exists and is declared... yes
+#19 118.9 checking for wctrans_t... yes
+#19 119.3 checking for mbstate_t... yes
+#19 119.7 checking for ICU... no
+#19 119.9 checking for X... disabled
+#19 119.9 using X11 ... no
+#19 119.9 checking whether pkg-config knows about cairo and pango... no
+#19 119.9 checking whether pkg-config knows about cairo... no
+#19 119.9 checking for tclConfig.sh... no
+#19 119.9 checking for tclConfig.sh in library (sub)directories... no
+#19 120.1 checking for tkConfig.sh... no
+#19 120.1 checking for tkConfig.sh in library (sub)directories... no
+#19 120.1 checking for tcl.h... no
+#19 120.2 checking for BSD networking... yes
+#19 120.2 checking for rpc/types.h... no
+#19 120.5 checking for tirpc/rpc/types.h... no
+#19 120.7 checking for XDR support... no
+#19 120.7 checking for inflateInit2_ in -lz... yes
+#19 120.9 checking for zlib.h... yes
+#19 121.1 checking if zlib version >= 1.2.5... yes
+#19 121.4 checking whether zlib support suffices... yes
+#19 121.4 checking for BZ2_bzlibVersion in -lbz2... yes
+#19 121.7 checking for bzlib.h... yes
+#19 122.0 checking if bzip2 version >= 1.0.6... yes
+#19 122.4 checking whether bzip2 support suffices... yes
+#19 122.4 checking for lzma_version_number in -llzma... yes
+#19 122.8 checking for lzma.h... yes
+#19 123.0 checking if lzma version >= 5.0.3... yes
+#19 123.4 checking for pcre2.h... yes
+#19 123.8 checking for pcre2_compile_8 in -lpcre2-8... yes
+#19 124.1 checking if PCRE2 has Unicode support... yes
+#19 124.7 checking whether PCRE support suffices... yes
+#19 124.7 checking for curl-config... /usr/bin/curl-config
+#19 124.8 checking libcurl version ... 8.5.0
+#19 124.8 checking for curl/curl.h... yes
+#19 125.2 checking if libcurl is version 7 and >= 7.28.0... configure: error: libcurl >= 7.28.0 library and headers are required with support for https
+#19 125.6 no
+#19 ERROR: process "/bin/sh -c cd R-${R_VERSION} &&                                                     . FLAGS &&                                                               CXXFLAGS=-D__MUSL__  ./configure                                             --with-recommended-packages=no                                           --with-readline=yes --with-x=no --enable-java=no                         --enable-R-shlib                                                         --disable-openmp --with-internal-tzcode" did not complete successfully: exit code: 1
+------
+ > [build 14/27] RUN cd R-4.2.2 &&                                                     . FLAGS &&                                                               CXXFLAGS=-D__MUSL__  ./configure                                             --with-recommended-packages=no                                           --with-readline=yes --with-x=no --enable-java=no                         --enable-R-shlib                                                         --disable-openmp --with-internal-tzcode:
+yes
+yes
+yes
+yes
+yes
+124.7 checking whether PCRE support suffices... yes
+124.7 checking for curl-config... /usr/bin/curl-config
+124.8 checking libcurl version ... 8.5.0
+configure: error: libcurl >= 7.28.0 library and headers are required with support for https
+125.6 no
+------
+Dockerfile:43
+--------------------
+  42 |     
+  43 | >>> RUN cd R-${R_VERSION} &&                                                 \
+  44 | >>>     . FLAGS &&                                                           \
+  45 | >>>     CXXFLAGS=-D__MUSL__  ./configure                                     \
+  46 | >>>         --with-recommended-packages=no                                   \
+  47 | >>>         --with-readline=yes --with-x=no --enable-java=no                 \
+  48 | >>>         --enable-R-shlib                                                 \
+  49 | >>>         --disable-openmp --with-internal-tzcode
+  50 |     RUN cd R-${R_VERSION} && make -j 4
+--------------------
+ERROR: failed to solve: process "/bin/sh -c cd R-${R_VERSION} &&                                                     . FLAGS &&                                                               CXXFLAGS=-D__MUSL__  ./configure                                             --with-recommended-packages=no                                           --with-readline=yes --with-x=no --enable-java=no                         --enable-R-shlib                                                         --disable-openmp --with-internal-tzcode" did not complete successfully: exit code: 1
+Duration: 3:5.78

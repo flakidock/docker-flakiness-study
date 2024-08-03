@@ -1,0 +1,110 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 2.04kB done
+#1 DONE 0.0s
+
+#2 [auth] library/python:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.7-slim
+#3 DONE 0.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 122B done
+#4 DONE 0.0s
+
+#5 [ 1/11] FROM docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b
+#5 resolve docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b 0.0s done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 793.25kB 0.0s done
+#6 DONE 0.1s
+
+#5 [ 1/11] FROM docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b
+#5 sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 0B / 11.38MB 0.2s
+#5 sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b 1.86kB / 1.86kB done
+#5 sha256:ffd28e36ef37b3a4a24f6a771a48d7c5499ea42d6309ac911a3f699e122060be 1.37kB / 1.37kB done
+#5 sha256:a255ffcb469f2ec40f2958a76beb0c2bbebfe92ce9af67a9b48d84b4cb695ac8 7.54kB / 7.54kB done
+#5 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 6.29MB / 29.12MB 0.2s
+#5 sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 0B / 3.50MB 0.2s
+#5 sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 1.05MB / 11.38MB 0.3s
+#5 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 11.53MB / 29.12MB 0.3s
+#5 sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 3.50MB / 3.50MB 0.3s done
+#5 sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095 0B / 244B 0.3s
+#5 sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 9.44MB / 11.38MB 0.5s
+#5 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 22.02MB / 29.12MB 0.5s
+#5 sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095 244B / 244B 0.4s done
+#5 sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 0B / 3.13MB 0.5s
+#5 sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 11.38MB / 11.38MB 0.5s done
+#5 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 29.12MB / 29.12MB 0.6s
+#5 sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 3.13MB / 3.13MB 0.6s done
+#5 sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 29.12MB / 29.12MB 0.7s done
+#5 extracting sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886
+#5 extracting sha256:a803e7c4b030119420574a882a52b6431e160fceb7620f61b525d49bc2d58886 1.8s done
+#5 extracting sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 0.1s
+#5 extracting sha256:bf3336e84c8e00632cdea35b18fec9a5691711bdc8ac885e3ef54a3d5ff500ba 0.2s done
+#5 extracting sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b
+#5 extracting sha256:8973eb85275f19b8d72c6047560629116ad902397e5c1885b2508788197de28b 0.6s done
+#5 extracting sha256:f9afc3cc0135aad884dad502f28a5b3d8cd32565116131da818ebf2ea6d46095 done
+#5 extracting sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 0.1s
+#5 extracting sha256:39312d8b4ab77de264678427265a2668073675bb8666caf723da18c9e4b7e3fc 0.3s done
+#5 DONE 4.1s
+
+#7 [ 2/11] RUN useradd --uid 1000 --no-create-home --home-dir /app webdev
+#7 DONE 0.8s
+
+#8 [ 3/11] RUN mkdir -p         /usr/share/man/man1         /usr/share/man/man2         /usr/share/man/man3         /usr/share/man/man4         /usr/share/man/man5         /usr/share/man/man6         /usr/share/man/man7         /usr/share/man/man8 &&     apt-get update &&     apt-get install -y --no-install-recommends build-essential libpq-dev       mime-support postgresql-client gettext curl netcat &&       apt-get autoremove -y &&       apt-get clean &&       rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 0.225 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#8 0.262 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#8 0.276 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#8 0.341 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#8 0.469 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#8 0.469 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#8 1.612 Fetched 9225 kB in 1s (6546 kB/s)
+#8 1.612 Reading package lists...
+#8 2.233 Reading package lists...
+#8 2.851 Building dependency tree...
+#8 3.017 Reading state information...
+#8 3.022 Package netcat is a virtual package provided by:
+#8 3.022   netcat-openbsd 1.219-1
+#8 3.022   netcat-traditional 1.10-47
+#8 3.022 
+#8 3.024 E: Package 'netcat' has no installation candidate
+#8 ERROR: process "/bin/sh -c mkdir -p         /usr/share/man/man1         /usr/share/man/man2         /usr/share/man/man3         /usr/share/man/man4         /usr/share/man/man5         /usr/share/man/man6         /usr/share/man/man7         /usr/share/man/man8 &&     apt-get update &&     apt-get install -y --no-install-recommends build-essential libpq-dev       mime-support postgresql-client gettext curl netcat &&       apt-get autoremove -y &&       apt-get clean &&       rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*" did not complete successfully: exit code: 100
+------
+ > [ 3/11] RUN mkdir -p         /usr/share/man/man1         /usr/share/man/man2         /usr/share/man/man3         /usr/share/man/man4         /usr/share/man/man5         /usr/share/man/man6         /usr/share/man/man7         /usr/share/man/man8 &&     apt-get update &&     apt-get install -y --no-install-recommends build-essential libpq-dev       mime-support postgresql-client gettext curl netcat &&       apt-get autoremove -y &&       apt-get clean &&       rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*:
+0.469 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+
+
+
+3.017 Reading state information...
+3.022 Package netcat is a virtual package provided by:
+3.022   netcat-openbsd 1.219-1
+3.022   netcat-traditional 1.10-47
+3.022 
+3.024 E: Package 'netcat' has no installation candidate
+------
+v1_Dockerfile:9
+--------------------
+   8 |     
+   9 | >>> RUN mkdir -p \
+  10 | >>>         /usr/share/man/man1 \
+  11 | >>>         /usr/share/man/man2 \
+  12 | >>>         /usr/share/man/man3 \
+  13 | >>>         /usr/share/man/man4 \
+  14 | >>>         /usr/share/man/man5 \
+  15 | >>>         /usr/share/man/man6 \
+  16 | >>>         /usr/share/man/man7 \
+  17 | >>>         /usr/share/man/man8 && \
+  18 | >>>     apt-get update && \
+  19 | >>>     apt-get install -y --no-install-recommends build-essential libpq-dev \
+  20 | >>>       mime-support postgresql-client gettext curl netcat && \
+  21 | >>>       apt-get autoremove -y && \
+  22 | >>>       apt-get clean && \
+  23 | >>>       rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  24 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c mkdir -p         /usr/share/man/man1         /usr/share/man/man2         /usr/share/man/man3         /usr/share/man/man4         /usr/share/man/man5         /usr/share/man/man6         /usr/share/man/man7         /usr/share/man/man8 &&     apt-get update &&     apt-get install -y --no-install-recommends build-essential libpq-dev       mime-support postgresql-client gettext curl netcat &&       apt-get autoremove -y &&       apt-get clean &&       rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*" did not complete successfully: exit code: 100
+Duration: 0:9.15

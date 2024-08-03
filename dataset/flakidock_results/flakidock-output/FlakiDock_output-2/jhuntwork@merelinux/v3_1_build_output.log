@@ -1,0 +1,54 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 ...
+
+#2 [internal] load build definition from v3_Dockerfile
+#2 transferring dockerfile: 540B done
+#2 DONE 0.6s
+
+#1 [internal] load .dockerignore
+#1 DONE 0.8s
+
+#3 [internal] load metadata for docker.io/mere/base:latest
+#3 DONE 0.4s
+
+#4 [build 1/5] FROM docker.io/mere/base@sha256:cc03facb25a032ae3ce1842b7f031b72274059f50d43ab5c0f1be7a8fca09dc7
+#4 resolve docker.io/mere/base@sha256:cc03facb25a032ae3ce1842b7f031b72274059f50d43ab5c0f1be7a8fca09dc7
+#4 resolve docker.io/mere/base@sha256:cc03facb25a032ae3ce1842b7f031b72274059f50d43ab5c0f1be7a8fca09dc7 0.2s done
+#4 sha256:cc03facb25a032ae3ce1842b7f031b72274059f50d43ab5c0f1be7a8fca09dc7 491B / 491B done
+#4 sha256:ac8e490438788380b69f3d640ce35c28ddf83c7bde32e036ff24ad453cc0fbbb 503B / 503B done
+#4 sha256:df728ecc60cf9978ac7e9f811f65ef8da09ec744dadebaf74118765fd62232c4 655B / 655B done
+#4 sha256:cbad665ad4d2f616827ba6f80595266601c3517956850da3edd5fffc9f4e8ef1 0B / 3.44MB 0.1s
+#4 sha256:cbad665ad4d2f616827ba6f80595266601c3517956850da3edd5fffc9f4e8ef1 3.44MB / 3.44MB 0.3s
+#4 sha256:cbad665ad4d2f616827ba6f80595266601c3517956850da3edd5fffc9f4e8ef1 3.44MB / 3.44MB 0.4s done
+#4 extracting sha256:cbad665ad4d2f616827ba6f80595266601c3517956850da3edd5fffc9f4e8ef1 0.1s
+#4 extracting sha256:cbad665ad4d2f616827ba6f80595266601c3517956850da3edd5fffc9f4e8ef1 0.2s done
+#4 DONE 1.3s
+
+#5 [build 2/5] RUN install -d /tmp/system/var/lib/pacman
+#5 DONE 1.0s
+
+#6 [build 3/5] RUN pacman -r /tmp/system -Sy --noconfirm
+#6 0.779 :: Synchronizing package databases...
+#6 1.211  core downloading...
+#6 DONE 1.5s
+
+#7 [build 4/5] RUN pacman -r /tmp/system -S --noconfirm         base-layout busybox pacman ca-certificates
+#7 0.801 error: target not found: ca-certificates
+#7 ERROR: process "/bin/sh -c pacman -r /tmp/system -S --noconfirm         base-layout busybox pacman ca-certificates" did not complete successfully: exit code: 1
+------
+ > [build 4/5] RUN pacman -r /tmp/system -S --noconfirm         base-layout busybox pacman ca-certificates:
+0.801 error: target not found: ca-certificates
+------
+v3_Dockerfile:10
+--------------------
+   9 |     RUN pacman -r /tmp/system -Sy --noconfirm
+  10 | >>> RUN pacman -r /tmp/system -S --noconfirm \
+  11 | >>>         base-layout busybox pacman ca-certificates
+  12 |     RUN rm /tmp/system/etc/services \
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pacman -r /tmp/system -S --noconfirm         base-layout busybox pacman ca-certificates" did not complete successfully: exit code: 1
+Duration: 0:6.71

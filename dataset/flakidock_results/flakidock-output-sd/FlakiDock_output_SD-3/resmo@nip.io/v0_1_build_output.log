@@ -1,0 +1,96 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.3s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 381B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/bitnami/minideb:latest
+#3 ...
+
+#4 [auth] bitnami/minideb:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/bitnami/minideb:latest
+#3 DONE 1.4s
+
+#5 [1/5] FROM docker.io/bitnami/minideb:latest@sha256:b13cb4b41be91e22858e9b050a51137b636a34694a92ff17c27cb010e5f93f04
+#5 resolve docker.io/bitnami/minideb:latest@sha256:b13cb4b41be91e22858e9b050a51137b636a34694a92ff17c27cb010e5f93f04
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 7.42kB done
+#6 DONE 0.3s
+
+#5 [1/5] FROM docker.io/bitnami/minideb:latest@sha256:b13cb4b41be91e22858e9b050a51137b636a34694a92ff17c27cb010e5f93f04
+#5 resolve docker.io/bitnami/minideb:latest@sha256:b13cb4b41be91e22858e9b050a51137b636a34694a92ff17c27cb010e5f93f04 0.2s done
+#5 sha256:b13cb4b41be91e22858e9b050a51137b636a34694a92ff17c27cb010e5f93f04 741B / 741B done
+#5 sha256:6cd6fa34024551d39afb0001de9f96089f3f377875d9807a91034bf3475f8a23 528B / 528B done
+#5 sha256:b3d2a5b188df36afead3e7e202907c84b5f3809d2aa8c708b9b981bc2c0b4e12 910B / 910B done
+#5 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 0B / 40.20MB 0.1s
+#5 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 7.34MB / 40.20MB 0.2s
+#5 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 29.07MB / 40.20MB 0.4s
+#5 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 40.20MB / 40.20MB 0.6s
+#5 sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 40.20MB / 40.20MB 1.1s done
+#5 extracting sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 0.1s
+#5 extracting sha256:670d1364b19ce80060213c1ef9244a3e03eadedcb932a6a70c07fb540e19a583 2.7s done
+#5 DONE 4.7s
+
+#7 [2/5] RUN install_packages python pdns-server pdns-backend-pipe
+#7 2.243 Reading package lists...
+#7 2.919 Building dependency tree...
+#7 3.052 Package python is not available, but is referred to by another package.
+#7 3.052 This may mean that the package is missing, has been obsoleted, or
+#7 3.052 is only available from another source
+#7 3.052 However the following packages replace it:
+#7 3.052   python-is-python3 2to3
+#7 3.052 
+#7 3.057 E: Package 'python' has no installation candidate
+#7 3.058 apt failed, retrying
+#7 4.156 Reading package lists...
+#7 4.840 Building dependency tree...
+#7 4.973 Package python is not available, but is referred to by another package.
+#7 4.973 This may mean that the package is missing, has been obsoleted, or
+#7 4.973 is only available from another source
+#7 4.973 However the following packages replace it:
+#7 4.973   python-is-python3 2to3
+#7 4.973 
+#7 4.978 E: Package 'python' has no installation candidate
+#7 4.980 apt failed, retrying
+#7 6.083 Reading package lists...
+#7 6.764 Building dependency tree...
+#7 6.895 Package python is not available, but is referred to by another package.
+#7 6.895 This may mean that the package is missing, has been obsoleted, or
+#7 6.895 is only available from another source
+#7 6.895 However the following packages replace it:
+#7 6.895   python-is-python3 2to3
+#7 6.895 
+#7 6.901 E: Package 'python' has no installation candidate
+#7 ERROR: process "/bin/sh -c install_packages python pdns-server pdns-backend-pipe" did not complete successfully: exit code: 100
+------
+ > [2/5] RUN install_packages python pdns-server pdns-backend-pipe:
+4.980 apt failed, retrying
+
+6.764 Building dependency tree...
+6.895 Package python is not available, but is referred to by another package.
+6.895 This may mean that the package is missing, has been obsoleted, or
+6.895 is only available from another source
+6.895 However the following packages replace it:
+6.895   python-is-python3 2to3
+6.895 
+6.901 E: Package 'python' has no installation candidate
+------
+Dockerfile:3
+--------------------
+   1 |     FROM bitnami/minideb:latest
+   2 |     
+   3 | >>> RUN install_packages python pdns-server pdns-backend-pipe
+   4 |     ADD src/backend.conf.example /usr/local/bin/backend.conf
+   5 |     ADD src/nip.py /usr/local/bin/nip
+--------------------
+ERROR: failed to solve: process "/bin/sh -c install_packages python pdns-server pdns-backend-pipe" did not complete successfully: exit code: 100
+Duration: 0:17.19

@@ -1,0 +1,388 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from v2_Dockerfile
+#2 transferring dockerfile: 2.88kB done
+#2 DONE 0.5s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.15
+#3 DONE 0.5s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [ 1/20] FROM docker.io/library/alpine:3.15@sha256:19b4bcc4f60e99dd5ebdca0cbce22c503bbcff197549d7e19dab4f22254dc864
+#5 resolve docker.io/library/alpine:3.15@sha256:19b4bcc4f60e99dd5ebdca0cbce22c503bbcff197549d7e19dab4f22254dc864
+#5 resolve docker.io/library/alpine:3.15@sha256:19b4bcc4f60e99dd5ebdca0cbce22c503bbcff197549d7e19dab4f22254dc864 0.2s done
+#5 sha256:19b4bcc4f60e99dd5ebdca0cbce22c503bbcff197549d7e19dab4f22254dc864 1.64kB / 1.64kB done
+#5 sha256:6a0657acfef760bd9e293361c9b558e98e7d740ed0dffca823d17098a4ffddf5 528B / 528B done
+#5 sha256:32b91e3161c8fc2e3baf2732a594305ca5093c82ff4e0c9f6ebbd2a879468e1d 1.47kB / 1.47kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 16.40kB done
+#4 DONE 0.4s
+
+#5 [ 1/20] FROM docker.io/library/alpine:3.15@sha256:19b4bcc4f60e99dd5ebdca0cbce22c503bbcff197549d7e19dab4f22254dc864
+#5 sha256:d078792c4f9122259f14b539315bd92cbd9490ed73e08255a08689122b143108 0B / 2.83MB 0.3s
+#5 sha256:d078792c4f9122259f14b539315bd92cbd9490ed73e08255a08689122b143108 2.83MB / 2.83MB 0.5s
+#5 sha256:d078792c4f9122259f14b539315bd92cbd9490ed73e08255a08689122b143108 2.83MB / 2.83MB 0.6s done
+#5 extracting sha256:d078792c4f9122259f14b539315bd92cbd9490ed73e08255a08689122b143108 0.1s
+#5 extracting sha256:d078792c4f9122259f14b539315bd92cbd9490ed73e08255a08689122b143108 0.2s done
+#5 DONE 1.6s
+
+#6 [ 2/20] RUN apk --no-cache add bash git nginx supervisor curl &&     apk --no-cache add php7 php7-fpm         php7-opcache php7-mysqli php7-json php7-openssl php7-curl php7-zlib php7-xml php7-xmlwriter         php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session php7-mbstring php7-gd         php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-tokenizer &&     apk add --update libintl &&     apk add --virtual build_deps gettext &&      cp /usr/bin/envsubst /usr/local/bin/envsubst &&     rm -f /etc/nginx/conf.d/default.conf
+#6 0.486 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz
+#6 0.711 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/APKINDEX.tar.gz
+#6 1.082 (1/30) Installing ncurses-terminfo-base (6.3_p20211120-r2)
+#6 1.120 (2/30) Installing ncurses-libs (6.3_p20211120-r2)
+#6 1.195 (3/30) Installing readline (8.1.1-r0)
+#6 1.212 (4/30) Installing bash (5.1.16-r0)
+#6 1.230 Executing bash-5.1.16-r0.post-install
+#6 1.233 (5/30) Installing ca-certificates (20230506-r0)
+#6 1.259 (6/30) Installing brotli-libs (1.0.9-r5)
+#6 1.278 (7/30) Installing nghttp2-libs (1.46.0-r2)
+#6 1.284 (8/30) Installing libcurl (8.5.0-r0)
+#6 1.295 (9/30) Installing curl (8.5.0-r0)
+#6 1.302 (10/30) Installing expat (2.5.0-r0)
+#6 1.308 (11/30) Installing pcre2 (10.42-r0)
+#6 1.318 (12/30) Installing git (2.34.8-r0)
+#6 1.489 (13/30) Installing pcre (8.45-r1)
+#6 1.497 (14/30) Installing nginx (1.20.2-r2)
+#6 1.502 Executing nginx-1.20.2-r2.pre-install
+#6 1.673 Executing nginx-1.20.2-r2.post-install
+#6 1.676 (15/30) Installing libbz2 (1.0.8-r1)
+#6 1.680 (16/30) Installing libffi (3.4.2-r1)
+#6 1.683 (17/30) Installing gdbm (1.22-r0)
+#6 1.688 (18/30) Installing xz-libs (5.2.5-r1)
+#6 1.693 (19/30) Installing libgcc (10.3.1_git20211027-r0)
+#6 1.697 (20/30) Installing libstdc++ (10.3.1_git20211027-r0)
+#6 1.714 (21/30) Installing mpdecimal (2.5.1-r1)
+#6 1.721 (22/30) Installing sqlite-libs (3.36.0-r0)
+#6 1.735 (23/30) Installing python3 (3.9.18-r0)
+#6 3.187 (24/30) Installing py3-ordered-set (4.0.2-r2)
+#6 3.191 (25/30) Installing py3-appdirs (1.4.4-r2)
+#6 3.195 (26/30) Installing py3-parsing (2.4.7-r2)
+#6 3.204 (27/30) Installing py3-six (1.16.0-r0)
+#6 3.209 (28/30) Installing py3-packaging (20.9-r1)
+#6 3.223 (29/30) Installing py3-setuptools (52.0.0-r4)
+#6 3.287 (30/30) Installing supervisor (4.2.2-r2)
+#6 3.366 Executing busybox-1.34.1-r7.trigger
+#6 3.371 Executing ca-certificates-20230506-r0.trigger
+#6 3.410 OK: 81 MiB in 44 packages
+#6 3.461 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz
+#6 3.541 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/APKINDEX.tar.gz
+#6 3.761 (1/44) Installing php7-common (7.4.33-r1)
+#6 3.766 (2/44) Installing argon2-libs (20190702-r1)
+#6 3.769 (3/44) Installing libedit (20210910.3.1-r0)
+#6 3.775 (4/44) Installing libxml2 (2.9.14-r2)
+#6 3.792 (5/44) Installing php7 (7.4.33-r1)
+#6 3.852 (6/44) Installing php7-ctype (7.4.33-r1)
+#6 3.855 (7/44) Installing php7-curl (7.4.33-r1)
+#6 3.860 (8/44) Installing php7-dom (7.4.33-r1)
+#6 3.865 (9/44) Installing php7-fpm (7.4.33-r1)
+#6 3.927 (10/44) Installing libxau (1.0.9-r0)
+#6 3.930 (11/44) Installing libmd (1.0.3-r0)
+#6 3.934 (12/44) Installing libbsd (0.11.3-r1)
+#6 3.938 (13/44) Installing libxdmcp (1.1.3-r0)
+#6 3.942 (14/44) Installing libxcb (1.14-r2)
+#6 3.958 (15/44) Installing libx11 (1.7.3.1-r1)
+#6 4.016 (16/44) Installing libxext (1.3.4-r0)
+#6 4.020 (17/44) Installing libice (1.0.10-r0)
+#6 4.025 (18/44) Installing libuuid (2.37.4-r0)
+#6 4.028 (19/44) Installing libsm (1.2.3-r0)
+#6 4.032 (20/44) Installing libxt (1.2.1-r0)
+#6 4.040 (21/44) Installing libxpm (3.5.15-r0)
+#6 4.045 (22/44) Installing libpng (1.6.37-r1)
+#6 4.051 (23/44) Installing freetype (2.11.1-r2)
+#6 4.063 (24/44) Installing libjpeg-turbo (2.1.2-r0)
+#6 4.077 (25/44) Installing libwebp (1.2.2-r2)
+#6 4.088 (26/44) Installing php7-gd (7.4.33-r1)
+#6 4.096 (27/44) Installing icu-libs (69.1-r1)
+#6 4.395 (28/44) Installing php7-intl (7.4.33-r1)
+#6 4.403 (29/44) Installing php7-json (7.4.33-r1)
+#6 4.406 (30/44) Installing oniguruma (6.9.7.1-r0)
+#6 4.415 (31/44) Installing php7-mbstring (7.4.33-r1)
+#6 4.431 (32/44) Installing php7-openssl (7.4.33-r1)
+#6 4.437 (33/44) Installing php7-mysqlnd (7.4.33-r1)
+#6 4.444 (34/44) Installing php7-mysqli (7.4.33-r1)
+#6 4.449 (35/44) Installing php7-opcache (7.4.33-r1)
+#6 4.458 (36/44) Installing php7-pdo (7.4.33-r1)
+#6 4.462 (37/44) Installing php7-pdo_mysql (7.4.33-r1)
+#6 4.466 (38/44) Installing php7-pdo_sqlite (7.4.33-r1)
+#6 4.469 (39/44) Installing php7-phar (7.4.33-r1)
+#6 4.487 (40/44) Installing php7-session (7.4.33-r1)
+#6 4.501 (41/44) Installing php7-tokenizer (7.4.33-r1)
+#6 4.510 (42/44) Installing php7-xml (7.4.33-r1)
+#6 4.518 (43/44) Installing php7-xmlreader (7.4.33-r1)
+#6 4.527 (44/44) Installing php7-xmlwriter (7.4.33-r1)
+#6 4.536 Executing busybox-1.34.1-r7.trigger
+#6 4.543 OK: 144 MiB in 88 packages
+#6 4.591 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz
+#6 4.679 fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/APKINDEX.tar.gz
+#6 4.924 (1/1) Installing libintl (0.21-r0)
+#6 4.931 OK: 144 MiB in 89 packages
+#6 5.219 (1/5) Installing libgomp (10.3.1_git20211027-r0)
+#6 5.257 (2/5) Installing libunistring (0.9.10-r1)
+#6 5.281 (3/5) Installing gettext-libs (0.21-r0)
+#6 5.296 (4/5) Installing gettext (0.21-r0)
+#6 5.328 (5/5) Installing build_deps (20240731.222727)
+#6 5.328 Executing busybox-1.34.1-r7.trigger
+#6 5.335 OK: 148 MiB in 94 packages
+#6 DONE 9.6s
+
+#7 [ 3/20] COPY config/nginx.conf /etc/nginx/nginx.conf
+#7 DONE 0.5s
+
+#8 [ 4/20] COPY config/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
+#8 DONE 0.4s
+
+#9 [ 5/20] COPY config/php.ini /etc/php7/conf.d/custom.ini
+#9 DONE 0.4s
+
+#10 [ 6/20] COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#10 DONE 0.5s
+
+#11 [ 7/20] RUN ln -sf php7 /usr/bin/php
+#11 DONE 0.9s
+
+#12 [ 8/20] RUN curl -sS https://getcomposer.org/installer     | php -- --install-dir=/usr/local/bin --filename=composer
+#12 1.083 All settings correct for using Composer
+#12 1.085 Downloading...
+#12 2.315 
+#12 2.315 Composer (version 2.7.7) successfully installed to: /usr/local/bin/composer
+#12 2.315 Use it: php /usr/local/bin/composer
+#12 2.315 
+#12 DONE 2.6s
+
+#13 [ 9/20] RUN mkdir -p /var/www/html
+#13 DONE 1.0s
+
+#14 [10/20] RUN git clone https://github.com/cydrobolt/polr.git /var/www/html
+#14 0.758 Cloning into '/var/www/html'...
+#14 DONE 3.9s
+
+#15 [11/20] RUN chown -R nobody.nobody /var/www/html &&     chown -R nobody.nobody /run &&     chown -R nobody.nobody /var/lib/nginx &&     chown -R nobody.nobody /var/log/nginx
+#15 DONE 4.7s
+
+#16 [12/20] WORKDIR /var/www/html
+#16 DONE 0.6s
+
+#17 [13/20] COPY --chown=nobody config/.env_polr .env_polr
+#17 DONE 0.6s
+
+#18 [14/20] COPY --chown=nobody seeders/AdminSeeder.php AdminSeeder_withoutEnv.php
+#18 DONE 0.5s
+
+#19 [15/20] RUN composer install --no-dev -o
+#19 0.793 Installing dependencies from lock file
+#19 0.798 Verifying lock file contents can be installed on current platform.
+#19 0.821 Package operations: 72 installs, 0 updates, 0 removals
+#19 0.822 Cannot create cache directory /.composer/cache/files/, or directory is not writable. Proceeding without cache. See also cache-read-only config if your filesystem is read-only.
+#19 0.822   - Downloading kylekatarnls/update-helper (1.2.1)
+#19 0.824   - Downloading danielstjules/stringy (1.10.0)
+#19 0.824   - Downloading doctrine/lexer (1.2.1)
+#19 0.825   - Downloading doctrine/annotations (1.11.1)
+#19 0.825   - Downloading doctrine/cache (1.10.2)
+#19 0.826   - Downloading doctrine/collections (1.6.7)
+#19 0.826   - Downloading doctrine/inflector (1.4.3)
+#19 0.827   - Downloading doctrine/common (v2.7.3)
+#19 0.827   - Downloading doctrine/dbal (v2.5.11)
+#19 0.828   - Downloading composer/ca-bundle (1.2.9)
+#19 0.828   - Downloading maxmind/web-service-common (v0.8.1)
+#19 0.829   - Downloading maxmind-db/reader (v1.9.0)
+#19 0.829   - Downloading geoip2/geoip2 (v2.11.0)
+#19 0.830   - Downloading google/recaptcha (1.2.4)
+#19 0.830   - Downloading swiftmailer/swiftmailer (v5.4.12)
+#19 0.831   - Downloading psr/log (1.1.3)
+#19 0.831   - Downloading paragonie/random_compat (v1.4.3)
+#19 0.831   - Downloading illuminate/contracts (v5.1.41)
+#19 0.832   - Downloading illuminate/support (v5.1.41)
+#19 0.832   - Downloading illuminate/container (v5.1.41)
+#19 0.832   - Downloading illuminate/mail (v5.1.41)
+#19 0.833   - Downloading symfony/routing (v2.7.51)
+#19 0.833   - Downloading symfony/polyfill-ctype (v1.22.0)
+#19 0.833   - Downloading symfony/polyfill-mbstring (v1.22.0)
+#19 0.834   - Downloading symfony/http-foundation (v2.7.51)
+#19 0.834   - Downloading symfony/event-dispatcher (v2.8.52)
+#19 0.834   - Downloading symfony/debug (v2.7.51)
+#19 0.835   - Downloading symfony/http-kernel (v2.7.52)
+#19 0.835   - Downloading symfony/finder (v2.7.51)
+#19 0.835   - Downloading symfony/translation (v2.7.51)
+#19 0.836   - Downloading nesbot/carbon (1.39.1)
+#19 0.836   - Downloading illuminate/session (v5.1.41)
+#19 0.836   - Downloading illuminate/pipeline (v5.1.41)
+#19 0.836   - Downloading illuminate/http (v5.1.41)
+#19 0.837   - Downloading illuminate/routing (v5.1.41)
+#19 0.837   - Downloading nikic/php-parser (v4.10.4)
+#19 0.838   - Downloading jeremeamia/superclosure (2.4.0)
+#19 0.838   - Downloading symfony/var-dumper (v2.7.51)
+#19 0.838   - Downloading symfony/dom-crawler (v2.7.51)
+#19 0.839   - Downloading nikic/fast-route (v0.4.0)
+#19 0.839   - Downloading mtdowling/cron-expression (v1.2.3)
+#19 0.839   - Downloading monolog/monolog (1.26.0)
+#19 0.840   - Downloading illuminate/filesystem (v5.1.41)
+#19 0.840   - Downloading illuminate/events (v5.1.41)
+#19 0.840   - Downloading illuminate/view (v5.1.41)
+#19 0.841   - Downloading illuminate/validation (v5.1.41)
+#19 0.841   - Downloading illuminate/translation (v5.1.41)
+#19 0.841   - Downloading symfony/process (v2.7.51)
+#19 0.841   - Downloading symfony/console (v2.7.51)
+#19 0.842   - Downloading illuminate/console (v5.1.41)
+#19 0.842   - Downloading illuminate/queue (v5.1.41)
+#19 0.842   - Downloading illuminate/pagination (v5.1.41)
+#19 0.843   - Downloading illuminate/hashing (v5.1.41)
+#19 0.843   - Downloading illuminate/encryption (v5.1.41)
+#19 0.843   - Downloading illuminate/database (v5.1.41)
+#19 0.843   - Downloading illuminate/cookie (v5.1.41)
+#19 0.844   - Downloading illuminate/config (v5.1.41)
+#19 0.844   - Downloading illuminate/cache (v5.1.41)
+#19 0.844   - Downloading illuminate/bus (v5.1.41)
+#19 0.845   - Downloading illuminate/broadcasting (v5.1.41)
+#19 0.845   - Downloading illuminate/auth (v5.1.41)
+#19 0.845   - Downloading laravel/lumen-framework (v5.1.7)
+#19 0.846   - Downloading phpoffice/phpexcel (1.8.2)
+#19 0.846   - Downloading symfony/css-selector (v3.4.47)
+#19 0.846   - Downloading tijsverkoyen/css-to-inline-styles (2.2.3)
+#19 0.847   - Downloading torann/geoip (1.0.9)
+#19 0.847   - Downloading vlucas/phpdotenv (v1.1.1)
+#19 0.848   - Downloading maatwebsite/excel (2.1.30)
+#19 0.848   - Downloading league/fractal (0.19.2)
+#19 0.848   - Downloading laravelcollective/html (v5.1.11)
+#19 0.849   - Downloading yajra/laravel-datatables-oracle (v6.29.3)
+#19 0.856   0/71 [>---------------------------]   0%
+#19 1.630   8/71 [===>------------------------]  11%
+#19 1.937  22/71 [========>-------------------]  30%
+#19 2.253  36/71 [==============>-------------]  50%
+#19 2.557  48/71 [==================>---------]  67%
+#19 2.663  53/71 [====================>-------]  74%
+#19 2.869  58/71 [======================>-----]  81%
+#19 3.109  69/71 [===========================>]  97%
+#19 3.269  71/71 [============================] 100%
+#19 3.269 For additional security you should declare the allow-plugins config with a list of packages names that are allowed to run code. See https://getcomposer.org/allow-plugins
+#19 3.269 This warning will become an exception once you run composer update!
+#19 3.269   - Installing kylekatarnls/update-helper (1.2.1): Extracting archive
+#19 3.290   - Installing danielstjules/stringy (1.10.0): Extracting archive
+#19 3.291   - Installing doctrine/lexer (1.2.1): Extracting archive
+#19 3.293   - Installing doctrine/annotations (1.11.1): Extracting archive
+#19 3.295   - Installing doctrine/cache (1.10.2): Extracting archive
+#19 3.297   - Installing doctrine/collections (1.6.7): Extracting archive
+#19 3.298   - Installing doctrine/inflector (1.4.3): Extracting archive
+#19 3.300   - Installing doctrine/common (v2.7.3): Extracting archive
+#19 3.302   - Installing doctrine/dbal (v2.5.11): Extracting archive
+#19 3.304   - Installing composer/ca-bundle (1.2.9): Extracting archive
+#19 3.307   - Installing maxmind/web-service-common (v0.8.1): Extracting archive
+#19 3.308   - Installing maxmind-db/reader (v1.9.0): Extracting archive
+#19 3.308   - Installing geoip2/geoip2 (v2.11.0): Extracting archive
+#19 3.309   - Installing google/recaptcha (1.2.4): Extracting archive
+#19 3.309   - Installing swiftmailer/swiftmailer (v5.4.12): Extracting archive
+#19 3.310   - Installing psr/log (1.1.3): Extracting archive
+#19 3.310   - Installing paragonie/random_compat (v1.4.3): Extracting archive
+#19 3.311   - Installing illuminate/contracts (v5.1.41): Extracting archive
+#19 3.311   - Installing illuminate/support (v5.1.41): Extracting archive
+#19 3.312   - Installing illuminate/container (v5.1.41): Extracting archive
+#19 3.312   - Installing illuminate/mail (v5.1.41): Extracting archive
+#19 3.313   - Installing symfony/routing (v2.7.51): Extracting archive
+#19 3.313   - Installing symfony/polyfill-ctype (v1.22.0): Extracting archive
+#19 3.314   - Installing symfony/polyfill-mbstring (v1.22.0): Extracting archive
+#19 3.314   - Installing symfony/http-foundation (v2.7.51): Extracting archive
+#19 3.314   - Installing symfony/event-dispatcher (v2.8.52): Extracting archive
+#19 3.315   - Installing symfony/debug (v2.7.51): Extracting archive
+#19 3.315   - Installing symfony/http-kernel (v2.7.52): Extracting archive
+#19 3.316   - Installing symfony/finder (v2.7.51): Extracting archive
+#19 3.316   - Installing symfony/translation (v2.7.51): Extracting archive
+#19 3.316   - Installing nesbot/carbon (1.39.1): Extracting archive
+#19 3.317   - Installing illuminate/session (v5.1.41): Extracting archive
+#19 3.317   - Installing illuminate/pipeline (v5.1.41): Extracting archive
+#19 3.318   - Installing illuminate/http (v5.1.41): Extracting archive
+#19 3.318   - Installing illuminate/routing (v5.1.41): Extracting archive
+#19 3.319   - Installing symfony/polyfill-php56 (v1.20.0)
+#19 3.320   - Installing nikic/php-parser (v4.10.4): Extracting archive
+#19 3.320   - Installing jeremeamia/superclosure (2.4.0): Extracting archive
+#19 3.321   - Installing symfony/var-dumper (v2.7.51): Extracting archive
+#19 3.321   - Installing symfony/dom-crawler (v2.7.51): Extracting archive
+#19 3.321   - Installing nikic/fast-route (v0.4.0): Extracting archive
+#19 3.322   - Installing mtdowling/cron-expression (v1.2.3): Extracting archive
+#19 3.322   - Installing monolog/monolog (1.26.0): Extracting archive
+#19 3.323   - Installing illuminate/filesystem (v5.1.41): Extracting archive
+#19 3.323   - Installing illuminate/events (v5.1.41): Extracting archive
+#19 3.323   - Installing illuminate/view (v5.1.41): Extracting archive
+#19 3.324   - Installing illuminate/validation (v5.1.41): Extracting archive
+#19 3.324   - Installing illuminate/translation (v5.1.41): Extracting archive
+#19 3.325   - Installing symfony/process (v2.7.51): Extracting archive
+#19 3.325   - Installing symfony/console (v2.7.51): Extracting archive
+#19 3.326   - Installing illuminate/console (v5.1.41): Extracting archive
+#19 3.326   - Installing illuminate/queue (v5.1.41): Extracting archive
+#19 3.326   - Installing illuminate/pagination (v5.1.41): Extracting archive
+#19 3.327   - Installing illuminate/hashing (v5.1.41): Extracting archive
+#19 3.327   - Installing illuminate/encryption (v5.1.41): Extracting archive
+#19 3.328   - Installing illuminate/database (v5.1.41): Extracting archive
+#19 3.328   - Installing illuminate/cookie (v5.1.41): Extracting archive
+#19 3.329   - Installing illuminate/config (v5.1.41): Extracting archive
+#19 3.329   - Installing illuminate/cache (v5.1.41): Extracting archive
+#19 3.329   - Installing illuminate/bus (v5.1.41): Extracting archive
+#19 3.330   - Installing illuminate/broadcasting (v5.1.41): Extracting archive
+#19 3.330   - Installing illuminate/auth (v5.1.41): Extracting archive
+#19 3.331   - Installing laravel/lumen-framework (v5.1.7): Extracting archive
+#19 3.331   - Installing phpoffice/phpexcel (1.8.2): Extracting archive
+#19 3.332   - Installing symfony/css-selector (v3.4.47): Extracting archive
+#19 3.332   - Installing tijsverkoyen/css-to-inline-styles (2.2.3): Extracting archive
+#19 3.332   - Installing torann/geoip (1.0.9): Extracting archive
+#19 3.333   - Installing vlucas/phpdotenv (v1.1.1): Extracting archive
+#19 3.333   - Installing maatwebsite/excel (2.1.30): Extracting archive
+#19 3.334   - Installing league/fractal (0.19.2): Extracting archive
+#19 3.334   - Installing laravelcollective/html (v5.1.11): Extracting archive
+#19 3.335   - Installing yajra/laravel-datatables-oracle (v6.29.3): Extracting archive
+#19 3.352   0/70 [>---------------------------]   0%
+#19 3.426   9/70 [===>------------------------]  12%
+#19 3.538  18/70 [=======>--------------------]  25%
+#19 3.664  30/70 [============>---------------]  42%
+#19 3.785  40/70 [================>-----------]  57%
+#19 3.902  45/70 [==================>---------]  64%
+#19 4.062  53/70 [=====================>------]  75%
+#19 4.206  62/70 [========================>---]  88%
+#19 4.325  69/70 [===========================>]  98%
+#19 4.341  70/70 [============================] 100%
+#19 4.665 Package jeremeamia/superclosure is abandoned, you should avoid using it. Use opis/closure instead.
+#19 4.665 Package mtdowling/cron-expression is abandoned, you should avoid using it. Use dragonmantank/cron-expression instead.
+#19 4.665 Package phpoffice/phpexcel is abandoned, you should avoid using it. Use phpoffice/phpspreadsheet instead.
+#19 4.665 Package fzaninotto/faker is abandoned, you should avoid using it. No replacement was suggested.
+#19 4.665 Package phpunit/php-token-stream is abandoned, you should avoid using it. No replacement was suggested.
+#19 4.665 Package phpunit/phpunit-mock-objects is abandoned, you should avoid using it. No replacement was suggested.
+#19 4.665 Generating optimized autoload files
+#19 5.441 Carbon 1 is deprecated, see how to migrate to Carbon 2.
+#19 5.441 https://carbon.nesbot.com/docs/#api-carbon-2
+#19 5.441     You can run './vendor/bin/upgrade-carbon' to get help in updating carbon and other frameworks and libraries that depend on it.
+#19 5.442 10 packages you are using are looking for funding.
+#19 5.442 Use the `composer fund` command to find out more!
+#19 DONE 7.1s
+
+#20 [16/20] RUN mkdir -p storage/logs &&     touch storage/logs/lumen.log &&     chmod -R go+w storage
+#20 DONE 1.1s
+
+#21 [17/20] COPY --chown=nobody start.sh /start.sh
+#21 DONE 0.6s
+
+#22 [18/20] RUN chmod u+x /start.sh
+#22 DONE 0.9s
+
+#23 [19/20] COPY --chown=nobody wait-for-it.sh /wait-for-it.sh
+#23 DONE 0.7s
+
+#24 [20/20] RUN chmod u+x /wait-for-it.sh
+#24 DONE 1.0s
+
+#25 exporting to image
+#25 exporting layers
+#25 exporting layers 4.1s done
+#25 writing image sha256:8946f14171500116443060f97c7c0860668a43faee3997e3291008951d5e2a6c 0.0s done
+#25 naming to docker.io/library/image_name_v2_1 0.0s done
+#25 DONE 4.1s
+Duration: 0:45.90

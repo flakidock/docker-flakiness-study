@@ -1,0 +1,108 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.27kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:10-alpine
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 147B done
+#3 DONE 0.0s
+
+#4 [1/8] FROM docker.io/library/node:10-alpine@sha256:dc98dac24efd4254f75976c40bce46944697a110d06ce7fa47e7268470cf2e28
+#4 resolve docker.io/library/node:10-alpine@sha256:dc98dac24efd4254f75976c40bce46944697a110d06ce7fa47e7268470cf2e28 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 2.79MB 0.1s done
+#5 DONE 0.2s
+
+#4 [1/8] FROM docker.io/library/node:10-alpine@sha256:dc98dac24efd4254f75976c40bce46944697a110d06ce7fa47e7268470cf2e28
+#4 sha256:dc98dac24efd4254f75976c40bce46944697a110d06ce7fa47e7268470cf2e28 1.65kB / 1.65kB done
+#4 sha256:02767d92553e465bf51e0bd661074f2e70bd575c4a69a0d610aa6e78fd20a9bf 1.16kB / 1.16kB done
+#4 sha256:aa67ba258e1877ed6ec455a7f4cc69e25cf0f0b027a7f6f3c63a8eca2c8a440c 6.73kB / 6.73kB done
+#4 sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0 2.82MB / 2.82MB 0.1s done
+#4 sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 0B / 22.21MB 0.2s
+#4 sha256:7150aa69525b95f82b3df6a61a002f82382b2f3ea8ce51b9000b965f7476a5cc 0B / 2.35MB 0.2s
+#4 extracting sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0
+#4 sha256:d7aa47be044e5a988e3e7f204e2e28cb9f070daa32ed081072ad6d5bf6c085d1 0B / 280B 0.2s
+#4 sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 8.39MB / 22.21MB 0.3s
+#4 extracting sha256:ddad3d7c1e96adf9153f8921a7c9790f880a390163df453be1566e9ef0d546e0 0.1s done
+#4 sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 16.78MB / 22.21MB 0.4s
+#4 sha256:7150aa69525b95f82b3df6a61a002f82382b2f3ea8ce51b9000b965f7476a5cc 2.35MB / 2.35MB 0.3s done
+#4 sha256:d7aa47be044e5a988e3e7f204e2e28cb9f070daa32ed081072ad6d5bf6c085d1 280B / 280B 0.3s done
+#4 sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 22.21MB / 22.21MB 0.5s
+#4 extracting sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd
+#4 sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 22.21MB / 22.21MB 0.5s done
+#4 extracting sha256:de915e575d22c7e33c83fddaf7aee0672e5d6a67e598a26fe0b30c7022f53cdd 2.0s done
+#4 extracting sha256:7150aa69525b95f82b3df6a61a002f82382b2f3ea8ce51b9000b965f7476a5cc
+#4 extracting sha256:7150aa69525b95f82b3df6a61a002f82382b2f3ea8ce51b9000b965f7476a5cc 0.1s done
+#4 extracting sha256:d7aa47be044e5a988e3e7f204e2e28cb9f070daa32ed081072ad6d5bf6c085d1
+#4 extracting sha256:d7aa47be044e5a988e3e7f204e2e28cb9f070daa32ed081072ad6d5bf6c085d1 done
+#4 DONE 3.0s
+
+#6 [2/8] RUN mkdir -p /API
+#6 DONE 0.7s
+
+#7 [3/8] WORKDIR /API
+#7 DONE 0.0s
+
+#8 [4/8] RUN apk --no-cache add python make g++ &&     yarn global add pm2
+#8 0.189 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#8 0.271 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#8 0.373 (1/21) Installing binutils (2.33.1-r1)
+#8 0.455 (2/21) Installing gmp (6.1.2-r1)
+#8 0.470 (3/21) Installing isl (0.18-r0)
+#8 0.492 (4/21) Installing libgomp (9.3.0-r0)
+#8 0.505 (5/21) Installing libatomic (9.3.0-r0)
+#8 0.515 (6/21) Installing mpfr4 (4.0.2-r1)
+#8 0.530 (7/21) Installing mpc1 (1.1.0-r1)
+#8 0.542 (8/21) Installing gcc (9.3.0-r0)
+#8 1.263 (9/21) Installing musl-dev (1.1.24-r3)
+#8 1.354 (10/21) Installing libc-dev (0.7.2-r0)
+#8 1.373 (11/21) Installing g++ (9.3.0-r0)
+#8 1.840 (12/21) Installing make (4.2.1-r2)
+#8 1.855 (13/21) Installing libbz2 (1.0.8-r1)
+#8 1.867 (14/21) Installing expat (2.2.9-r1)
+#8 1.878 (15/21) Installing libffi (3.2.1-r6)
+#8 1.890 (16/21) Installing gdbm (1.13-r1)
+#8 1.905 (17/21) Installing ncurses-terminfo-base (6.1_p20200118-r4)
+#8 1.918 (18/21) Installing ncurses-libs (6.1_p20200118-r4)
+#8 1.933 (19/21) Installing readline (8.0.1-r0)
+#8 1.945 (20/21) Installing sqlite-libs (3.30.1-r2)
+#8 1.965 (21/21) Installing python2 (2.7.18-r0)
+#8 2.418 Executing busybox-1.31.1-r10.trigger
+#8 2.424 OK: 212 MiB in 37 packages
+#8 2.640 yarn global v1.22.5
+#8 2.703 [1/4] Resolving packages...
+#8 3.574 [2/4] Fetching packages...
+#8 5.791 info fsevents@2.3.3: The platform "linux" is incompatible with this module.
+#8 5.791 info "fsevents@2.3.3" is an optional dependency and failed compatibility check. Excluding it from installation.
+#8 5.791 error proxy-agent@6.3.1: The engine "node" is incompatible with this module. Expected version ">= 14". Got "10.24.1"
+#8 5.801 info Visit https://yarnpkg.com/en/docs/cli/global for documentation about this command.
+#8 5.801 error Found incompatible module.
+#8 ERROR: process "/bin/sh -c apk --no-cache add python make g++ &&     yarn global add pm2" did not complete successfully: exit code: 1
+------
+ > [4/8] RUN apk --no-cache add python make g++ &&     yarn global add pm2:
+2.418 Executing busybox-1.31.1-r10.trigger
+2.424 OK: 212 MiB in 37 packages
+2.640 yarn global v1.22.5
+2.703 [1/4] Resolving packages...
+3.574 [2/4] Fetching packages...
+5.791 info fsevents@2.3.3: The platform "linux" is incompatible with this module.
+5.791 info "fsevents@2.3.3" is an optional dependency and failed compatibility check. Excluding it from installation.
+5.791 error proxy-agent@6.3.1: The engine "node" is incompatible with this module. Expected version ">= 14". Got "10.24.1"
+5.801 info Visit https://yarnpkg.com/en/docs/cli/global for documentation about this command.
+5.801 error Found incompatible module.
+------
+v1_Dockerfile:18
+--------------------
+  17 |     # --virtual: bundle packages, remove whole bundle at once, when done
+  18 | >>> RUN apk --no-cache add python make g++ && \
+  19 | >>>     yarn global add pm2
+  20 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk --no-cache add python make g++ &&     yarn global add pm2" did not complete successfully: exit code: 1
+Duration: 0:11.36

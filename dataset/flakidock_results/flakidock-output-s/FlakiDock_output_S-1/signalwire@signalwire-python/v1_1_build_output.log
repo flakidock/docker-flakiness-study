@@ -1,0 +1,277 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 422B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.10-alpine
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/python:3.10-alpine@sha256:27b5136cf3c1b877dee1ef2be1f9956b196072fa71b5f8d3eef58b05086ffc75
+#4 resolve docker.io/library/python:3.10-alpine@sha256:27b5136cf3c1b877dee1ef2be1f9956b196072fa71b5f8d3eef58b05086ffc75 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 824.10kB 0.1s done
+#5 DONE 0.1s
+
+#4 [1/4] FROM docker.io/library/python:3.10-alpine@sha256:27b5136cf3c1b877dee1ef2be1f9956b196072fa71b5f8d3eef58b05086ffc75
+#4 sha256:27b5136cf3c1b877dee1ef2be1f9956b196072fa71b5f8d3eef58b05086ffc75 10.30kB / 10.30kB done
+#4 sha256:fe777da3ea4af6625dec5f53a99547c45a7d90bfd5ad1af348244569fb6d2d2b 1.93kB / 1.93kB done
+#4 sha256:89b2167400ba4eedcc3d8839396e2a32b61eb3ccf956f78ff2ff9b4188c6b254 6.30kB / 6.30kB done
+#4 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.2s done
+#4 sha256:1717f0165ffa072906ac73c9e4f5e3a3dbee324bfa2f234870f1530bf97b4a5b 461.80kB / 461.80kB 0.2s done
+#4 sha256:2781bbec29c7c89632af77b943bc6138e91539bc79069532581314b11a960a4a 0B / 12.22MB 0.2s
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#4 sha256:7e125cf812e71195178cdd9570559dcca866561707e7eef31e45c32ee963ef78 0B / 229B 0.2s
+#4 sha256:2781bbec29c7c89632af77b943bc6138e91539bc79069532581314b11a960a4a 4.19MB / 12.22MB 0.3s
+#4 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s done
+#4 sha256:7e125cf812e71195178cdd9570559dcca866561707e7eef31e45c32ee963ef78 229B / 229B 0.3s done
+#4 sha256:e55a234a52774b0ff8d878af7eca2d196dd013cc749ae0fe114d178758269b1f 0B / 3.08MB 0.3s
+#4 sha256:2781bbec29c7c89632af77b943bc6138e91539bc79069532581314b11a960a4a 12.22MB / 12.22MB 0.4s done
+#4 extracting sha256:1717f0165ffa072906ac73c9e4f5e3a3dbee324bfa2f234870f1530bf97b4a5b
+#4 extracting sha256:1717f0165ffa072906ac73c9e4f5e3a3dbee324bfa2f234870f1530bf97b4a5b 0.1s done
+#4 extracting sha256:2781bbec29c7c89632af77b943bc6138e91539bc79069532581314b11a960a4a
+#4 sha256:e55a234a52774b0ff8d878af7eca2d196dd013cc749ae0fe114d178758269b1f 3.08MB / 3.08MB 0.8s done
+#4 extracting sha256:2781bbec29c7c89632af77b943bc6138e91539bc79069532581314b11a960a4a 0.6s done
+#4 extracting sha256:7e125cf812e71195178cdd9570559dcca866561707e7eef31e45c32ee963ef78 done
+#4 extracting sha256:e55a234a52774b0ff8d878af7eca2d196dd013cc749ae0fe114d178758269b1f
+#4 extracting sha256:e55a234a52774b0ff8d878af7eca2d196dd013cc749ae0fe114d178758269b1f 0.3s done
+#4 DONE 1.9s
+
+#6 [2/4] COPY . /app
+#6 DONE 0.3s
+
+#7 [3/4] WORKDIR /app
+#7 DONE 0.0s
+
+#8 [4/4] RUN apk add --no-cache gcc musl-dev libffi-dev &&     pip install --upgrade pip &&     pip install pipenv &&     pipenv install --dev
+#8 0.180 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#8 0.308 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#8 0.613 (1/16) Installing libgcc (13.2.1_git20240309-r0)
+#8 0.632 (2/16) Installing jansson (2.14-r4)
+#8 0.650 (3/16) Installing libstdc++ (13.2.1_git20240309-r0)
+#8 0.702 (4/16) Installing zstd-libs (1.5.6-r0)
+#8 0.722 (5/16) Installing binutils (2.42-r0)
+#8 0.820 (6/16) Installing libgomp (13.2.1_git20240309-r0)
+#8 0.836 (7/16) Installing libatomic (13.2.1_git20240309-r0)
+#8 0.850 (8/16) Installing gmp (6.3.0-r1)
+#8 0.867 (9/16) Installing isl26 (0.26-r1)
+#8 0.898 (10/16) Installing mpfr4 (4.2.1-r0)
+#8 0.919 (11/16) Installing mpc1 (1.3.1-r1)
+#8 0.932 (12/16) Installing gcc (13.2.1_git20240309-r0)
+#8 2.023 (13/16) Installing linux-headers (6.6-r0)
+#8 2.143 (14/16) Installing pkgconf (2.2.0-r0)
+#8 2.158 (15/16) Installing libffi-dev (3.4.6-r0)
+#8 2.173 (16/16) Installing musl-dev (1.2.5-r0)
+#8 2.265 Executing busybox-1.36.1-r29.trigger
+#8 2.275 OK: 173 MiB in 53 packages
+#8 4.137 Requirement already satisfied: pip in /usr/local/lib/python3.10/site-packages (23.0.1)
+#8 4.260 Collecting pip
+#8 4.307   Downloading pip-24.2-py3-none-any.whl (1.8 MB)
+#8 4.395      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 21.3 MB/s eta 0:00:00
+#8 4.452 Installing collected packages: pip
+#8 4.452   Attempting uninstall: pip
+#8 4.453     Found existing installation: pip 23.0.1
+#8 4.568     Uninstalling pip-23.0.1:
+#8 4.717       Successfully uninstalled pip-23.0.1
+#8 5.780 Successfully installed pip-24.2
+#8 5.781 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#8 6.463 Collecting pipenv
+#8 6.513   Downloading pipenv-2024.0.1-py3-none-any.whl.metadata (19 kB)
+#8 6.621 Collecting certifi (from pipenv)
+#8 6.633   Downloading certifi-2024.7.4-py3-none-any.whl.metadata (2.2 kB)
+#8 6.870 Collecting setuptools>=67 (from pipenv)
+#8 6.884   Downloading setuptools-72.1.0-py3-none-any.whl.metadata (6.6 kB)
+#8 7.009 Collecting virtualenv>=20.24.2 (from pipenv)
+#8 7.020   Downloading virtualenv-20.26.3-py3-none-any.whl.metadata (4.5 kB)
+#8 7.054 Collecting distlib<1,>=0.3.7 (from virtualenv>=20.24.2->pipenv)
+#8 7.069   Downloading distlib-0.3.8-py2.py3-none-any.whl.metadata (5.1 kB)
+#8 7.116 Collecting filelock<4,>=3.12.2 (from virtualenv>=20.24.2->pipenv)
+#8 7.128   Downloading filelock-3.15.4-py3-none-any.whl.metadata (2.9 kB)
+#8 7.174 Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.24.2->pipenv)
+#8 7.186   Downloading platformdirs-4.2.2-py3-none-any.whl.metadata (11 kB)
+#8 7.212 Downloading pipenv-2024.0.1-py3-none-any.whl (3.2 MB)
+#8 7.301    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 46.9 MB/s eta 0:00:00
+#8 7.313 Downloading setuptools-72.1.0-py3-none-any.whl (2.3 MB)
+#8 7.355    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 53.1 MB/s eta 0:00:00
+#8 7.368 Downloading virtualenv-20.26.3-py3-none-any.whl (5.7 MB)
+#8 7.451    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 68.2 MB/s eta 0:00:00
+#8 7.464 Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#8 7.481 Downloading distlib-0.3.8-py2.py3-none-any.whl (468 kB)
+#8 7.503 Downloading filelock-3.15.4-py3-none-any.whl (16 kB)
+#8 7.523 Downloading platformdirs-4.2.2-py3-none-any.whl (18 kB)
+#8 7.637 Installing collected packages: distlib, setuptools, platformdirs, filelock, certifi, virtualenv, pipenv
+#8 7.733   Attempting uninstall: setuptools
+#8 7.734     Found existing installation: setuptools 65.5.1
+#8 7.752     Uninstalling setuptools-65.5.1:
+#8 7.797       Successfully uninstalled setuptools-65.5.1
+#8 10.83 Successfully installed certifi-2024.7.4 distlib-0.3.8 filelock-3.15.4 pipenv-2024.0.1 platformdirs-4.2.2 setuptools-72.1.0 virtualenv-20.26.3
+#8 10.83 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#8 11.49 Creating a virtualenv for this project...
+#8 11.49 Pipfile: /app/Pipfile
+#8 11.50 Using default python from /usr/local/bin/python (3.10.14) to create virtualenv...
+#8 12.12 created virtual environment CPython3.10.14.final.0-64 in 388ms
+#8 12.12   creator CPython3Posix(dest=/root/.local/share/virtualenvs/app-4PlAip0Q, clear=False, no_vcs_ignore=False, global=False)
+#8 12.12   seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/root/.local/share/virtualenv)
+#8 12.12     added seed packages: pip==24.1, setuptools==70.1.0, wheel==0.43.0
+#8 12.12   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+#8 12.12 
+#8 12.13 ✔ Successfully created virtual environment!
+#8 12.16 Virtualenv location: /root/.local/share/virtualenvs/app-4PlAip0Q
+#8 12.16 To activate this project's virtualenv, run pipenv shell.
+#8 12.16 Alternatively, run a command inside the virtualenv with pipenv run.
+#8 12.17 To activate this project's virtualenv, run pipenv shell.
+#8 12.17 Alternatively, run a command inside the virtualenv with pipenv run.
+#8 12.17 Installing dependencies from Pipfile.lock (cbeece)...
+#8 18.68 Installing dependencies from Pipfile.lock (cbeece)...
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting astroid==2.8.6 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 1))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading astroid-2.8.6-py3-none-any.whl (248 kB)
+#8 27.38 [pipenv.exceptions.InstallError]:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 248.7/248.7 kB 5.6 MB/s eta 0:00:00
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting iniconfig==1.1.1 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 2))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting isort==5.10.1 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 3))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading isort-5.10.1-py3-none-any.whl (103 kB)
+#8 27.38 [pipenv.exceptions.InstallError]:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.4/103.4 kB 11.0 MB/s eta 0:00:00
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting lazy-object-proxy==1.6.0 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 4))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading lazy-object-proxy-1.6.0.tar.gz (44 kB)
+#8 27.38 [pipenv.exceptions.InstallError]:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.5/44.5 kB 4.1 MB/s eta 0:00:00
+#8 27.38 [pipenv.exceptions.InstallError]:   Installing build dependencies: started
+#8 27.38 [pipenv.exceptions.InstallError]:   Installing build dependencies: finished with status 'done'
+#8 27.38 [pipenv.exceptions.InstallError]:   Getting requirements to build wheel: started
+#8 27.38 [pipenv.exceptions.InstallError]:   Getting requirements to build wheel: finished with status 'done'
+#8 27.38 [pipenv.exceptions.InstallError]:   Preparing metadata (pyproject.toml): started
+#8 27.38 [pipenv.exceptions.InstallError]:   Preparing metadata (pyproject.toml): finished with status 'done'
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting mccabe==0.6.1 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 5))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting packaging==21.3 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 6))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading packaging-21.3-py3-none-any.whl (40 kB)
+#8 27.38 [pipenv.exceptions.InstallError]:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 kB 3.5 MB/s eta 0:00:00
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting platformdirs==2.4.0 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 7))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading platformdirs-2.4.0-py3-none-any.whl (14 kB)
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting pluggy==1.0.0 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 8))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading pluggy-1.0.0-py2.py3-none-any.whl (13 kB)
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting py==1.11.0 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 9))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)
+#8 27.38 [pipenv.exceptions.InstallError]:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.7/98.7 kB 10.6 MB/s eta 0:00:00
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting pylint==2.11.1 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 10))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading pylint-2.11.1-py3-none-any.whl (392 kB)
+#8 27.38 [pipenv.exceptions.InstallError]:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 392.1/392.1 kB 16.3 MB/s eta 0:00:00
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting pyparsing==3.0.6 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 11))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading pyparsing-3.0.6-py3-none-any.whl (97 kB)
+#8 27.38 [pipenv.exceptions.InstallError]:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.6/97.6 kB 7.5 MB/s eta 0:00:00
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting pytest==6.2.5 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 12))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading pytest-6.2.5-py3-none-any.whl (280 kB)
+#8 27.38 [pipenv.exceptions.InstallError]:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 280.7/280.7 kB 25.3 MB/s eta 0:00:00
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting pytest-asyncio==0.16.0 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 13))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading pytest_asyncio-0.16.0-py3-none-any.whl (12 kB)
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting pytest-runner==5.3.1 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 14))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading pytest_runner-5.3.1-py3-none-any.whl (7.1 kB)
+#8 27.38 [pipenv.exceptions.InstallError]: Collecting pyyaml==6.0 (from -r /tmp/pipenv-98pbclbp-requirements/pipenv-js6grbip-hashed-reqs.txt (line 15))
+#8 27.38 [pipenv.exceptions.InstallError]:   Downloading PyYAML-6.0.tar.gz (124 kB)
+#8 27.38 [pipenv.exceptions.InstallError]:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.0/125.0 kB 10.7 MB/s eta 0:00:00
+#8 27.38 [pipenv.exceptions.InstallError]:   Installing build dependencies: started
+#8 27.38 [pipenv.exceptions.InstallError]:   Installing build dependencies: finished with status 'done'
+#8 27.38 [pipenv.exceptions.InstallError]:   Getting requirements to build wheel: started
+#8 27.38 [pipenv.exceptions.InstallError]:   Getting requirements to build wheel: finished with status 'error'
+#8 27.38 [pipenv.exceptions.InstallError]: error: subprocess-exited-with-error
+#8 27.38 [pipenv.exceptions.InstallError]:   
+#8 27.38 [pipenv.exceptions.InstallError]:   × Getting requirements to build wheel did not run successfully.
+#8 27.38 [pipenv.exceptions.InstallError]:   │ exit code: 1
+#8 27.38 [pipenv.exceptions.InstallError]:   ╰─> [48 lines of output]
+#8 27.38 [pipenv.exceptions.InstallError]:       running egg_info
+#8 27.38 [pipenv.exceptions.InstallError]:       writing lib/PyYAML.egg-info/PKG-INFO
+#8 27.38 [pipenv.exceptions.InstallError]:       writing dependency_links to lib/PyYAML.egg-info/dependency_links.txt
+#8 27.38 [pipenv.exceptions.InstallError]:       writing top-level names to lib/PyYAML.egg-info/top_level.txt
+#8 27.38 [pipenv.exceptions.InstallError]:       Traceback (most recent call last):
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/usr/local/lib/python3.10/site-packages/pipenv/patched/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+#8 27.38 [pipenv.exceptions.InstallError]:           main()
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/usr/local/lib/python3.10/site-packages/pipenv/patched/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+#8 27.38 [pipenv.exceptions.InstallError]:           json_out['return_val'] = hook(**hook_input['kwargs'])
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/usr/local/lib/python3.10/site-packages/pipenv/patched/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+#8 27.38 [pipenv.exceptions.InstallError]:           return hook(config_settings)
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 327, in get_requires_for_build_wheel
+#8 27.38 [pipenv.exceptions.InstallError]:           return self._get_build_requires(config_settings, requirements=[])
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 297, in _get_build_requires
+#8 27.38 [pipenv.exceptions.InstallError]:           self.run_setup()
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 313, in run_setup
+#8 27.38 [pipenv.exceptions.InstallError]:           exec(code, locals())
+#8 27.38 [pipenv.exceptions.InstallError]:         File "<string>", line 288, in <module>
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/__init__.py", line 108, in setup
+#8 27.38 [pipenv.exceptions.InstallError]:           return distutils.core.setup(**attrs)
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 184, in setup
+#8 27.38 [pipenv.exceptions.InstallError]:           return run_commands(dist)
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 200, in run_commands
+#8 27.38 [pipenv.exceptions.InstallError]:           dist.run_commands()
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 970, in run_commands
+#8 27.38 [pipenv.exceptions.InstallError]:           self.run_command(cmd)
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/dist.py", line 945, in run_command
+#8 27.38 [pipenv.exceptions.InstallError]:           super().run_command(command)
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 989, in run_command
+#8 27.38 [pipenv.exceptions.InstallError]:           cmd_obj.run()
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 310, in run
+#8 27.38 [pipenv.exceptions.InstallError]:           self.find_sources()
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 318, in find_sources
+#8 27.38 [pipenv.exceptions.InstallError]:           mm.run()
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 539, in run
+#8 27.38 [pipenv.exceptions.InstallError]:           self.add_defaults()
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 577, in add_defaults
+#8 27.38 [pipenv.exceptions.InstallError]:           sdist.add_defaults(self)
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/command/sdist.py", line 102, in add_defaults
+#8 27.38 [pipenv.exceptions.InstallError]:           super().add_defaults()
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/_distutils/command/sdist.py", line 250, in add_defaults
+#8 27.38 [pipenv.exceptions.InstallError]:           self._add_defaults_ext()
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/_distutils/command/sdist.py", line 335, in _add_defaults_ext
+#8 27.38 [pipenv.exceptions.InstallError]:           self.filelist.extend(build_ext.get_source_files())
+#8 27.38 [pipenv.exceptions.InstallError]:         File "<string>", line 204, in get_source_files
+#8 27.38 [pipenv.exceptions.InstallError]:         File "/tmp/pip-build-env-n21iqcur/overlay/lib/python3.10/site-packages/setuptools/_distutils/cmd.py", line 107, in __getattr__
+#8 27.38 [pipenv.exceptions.InstallError]:           raise AttributeError(attr)
+#8 27.38 [pipenv.exceptions.InstallError]:       AttributeError: cython_sources
+#8 27.38 [pipenv.exceptions.InstallError]:       [end of output]
+#8 27.38 [pipenv.exceptions.InstallError]:   
+#8 27.38 [pipenv.exceptions.InstallError]:   note: This error originates from a subprocess, and is likely not a problem with pip.
+#8 27.38 [pipenv.exceptions.InstallError]: error: subprocess-exited-with-error
+#8 27.38 [pipenv.exceptions.InstallError]: 
+#8 27.38 [pipenv.exceptions.InstallError]: × Getting requirements to build wheel did not run successfully.
+#8 27.38 [pipenv.exceptions.InstallError]: │ exit code: 1
+#8 27.38 [pipenv.exceptions.InstallError]: ╰─> See above for output.
+#8 27.38 [pipenv.exceptions.InstallError]: 
+#8 27.38 [pipenv.exceptions.InstallError]: note: This error originates from a subprocess, and is likely not a problem with pip.
+#8 27.38 ERROR: Couldn't install package: {}
+#8 27.38  Package installation failed...
+#8 27.38 /usr/local/lib/python3.10/subprocess.py:1072: ResourceWarning: subprocess 103 is still running
+#8 27.38   _warn("subprocess %s is still running" % self.pid,
+#8 27.38 ResourceWarning: Enable tracemalloc to get the object allocation traceback
+#8 27.38 sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='utf-8'>
+#8 27.38 ResourceWarning: Enable tracemalloc to get the object allocation traceback
+#8 27.38 sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name=7 encoding='utf-8'>
+#8 27.38 ResourceWarning: Enable tracemalloc to get the object allocation traceback
+#8 ERROR: process "/bin/sh -c apk add --no-cache gcc musl-dev libffi-dev &&     pip install --upgrade pip &&     pip install pipenv &&     pipenv install --dev" did not complete successfully: exit code: 1
+------
+ > [4/4] RUN apk add --no-cache gcc musl-dev libffi-dev &&     pip install --upgrade pip &&     pip install pipenv &&     pipenv install --dev:
+27.38 [pipenv.exceptions.InstallError]: note: This error originates from a subprocess, and is likely not a problem with pip.
+27.38 ERROR: Couldn't install package: {}
+27.38  Package installation failed...
+27.38 /usr/local/lib/python3.10/subprocess.py:1072: ResourceWarning: subprocess 103 is still running
+27.38   _warn("subprocess %s is still running" % self.pid,
+27.38 ResourceWarning: Enable tracemalloc to get the object allocation traceback
+27.38 sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='utf-8'>
+27.38 ResourceWarning: Enable tracemalloc to get the object allocation traceback
+27.38 sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name=7 encoding='utf-8'>
+27.38 ResourceWarning: Enable tracemalloc to get the object allocation traceback
+------
+v1_Dockerfile:8
+--------------------
+   7 |     # Install dependencies in a single RUN command to reduce layers and potential issues
+   8 | >>> RUN apk add --no-cache gcc musl-dev libffi-dev && \
+   9 | >>>     pip install --upgrade pip && \
+  10 | >>>     pip install pipenv && \
+  11 | >>>     pipenv install --dev
+  12 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk add --no-cache gcc musl-dev libffi-dev &&     pip install --upgrade pip &&     pip install pipenv &&     pipenv install --dev" did not complete successfully: exit code: 1
+Duration: 0:31.26

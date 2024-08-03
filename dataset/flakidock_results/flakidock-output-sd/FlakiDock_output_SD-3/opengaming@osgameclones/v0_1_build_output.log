@@ -1,0 +1,198 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 513B done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 45B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 ...
+
+#4 [auth] library/nginx:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [auth] library/alpine:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [internal] load metadata for docker.io/library/nginx:1.17-alpine
+#6 ...
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.7s
+
+#6 [internal] load metadata for docker.io/library/nginx:1.17-alpine
+#6 DONE 1.9s
+
+#7 [builder  1/10] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#7 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#7 ...
+
+#8 [internal] load build context
+#8 transferring context: 837.08kB 0.0s done
+#8 DONE 0.3s
+
+#7 [builder  1/10] FROM docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#7 resolve docker.io/library/alpine@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.4s done
+#7 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#7 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#7 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#7 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#7 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 1.05MB / 3.62MB 0.2s
+#7 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s
+#7 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s done
+#7 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#7 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.3s done
+#7 DONE 1.6s
+
+#9 [stage-1 1/4] FROM docker.io/library/nginx:1.17-alpine@sha256:763e7f0188e378fef0c761854552c70bbd817555dc4de029681a2e972e25e30e
+#9 resolve docker.io/library/nginx:1.17-alpine@sha256:763e7f0188e378fef0c761854552c70bbd817555dc4de029681a2e972e25e30e 0.5s done
+#9 sha256:763e7f0188e378fef0c761854552c70bbd817555dc4de029681a2e972e25e30e 1.41kB / 1.41kB done
+#9 sha256:630d39f3970740583f96ec6b26cc7b0f531c35a5c2068c551f02f5236b1e373f 739B / 739B done
+#9 sha256:89ec9da682137d6b18ab8244ca263b6771067f251562f884c7510c8f1e5ac910 7.01kB / 7.01kB done
+#9 sha256:cbdbe7a5bc2a134ca8ec91be58565ec07d037386d1f1d8385412d224deafca08 2.81MB / 2.81MB 0.4s done
+#9 sha256:c554c602ff329d94bcb532a7f3c97c27af3abcbb678bdd809e4e894135bb88c9 5.77MB / 5.77MB 0.5s done
+#9 extracting sha256:cbdbe7a5bc2a134ca8ec91be58565ec07d037386d1f1d8385412d224deafca08 0.2s done
+#9 extracting sha256:c554c602ff329d94bcb532a7f3c97c27af3abcbb678bdd809e4e894135bb88c9 0.2s
+#9 extracting sha256:c554c602ff329d94bcb532a7f3c97c27af3abcbb678bdd809e4e894135bb88c9 0.4s done
+#9 ...
+
+#10 [builder  2/10] RUN mkdir /src /app
+#10 DONE 1.8s
+
+#11 [builder  3/10] WORKDIR /src
+#11 ...
+
+#9 [stage-1 1/4] FROM docker.io/library/nginx:1.17-alpine@sha256:763e7f0188e378fef0c761854552c70bbd817555dc4de029681a2e972e25e30e
+#9 DONE 3.6s
+
+#11 [builder  3/10] WORKDIR /src
+#11 DONE 0.4s
+
+#12 [builder  4/10] COPY . /src/
+#12 DONE 0.4s
+
+#13 [builder  5/10] COPY CHECKS /app/CHECKS
+#13 DONE 0.3s
+
+#14 [builder  6/10] RUN apk add --no-cache curl make gcc musl-dev libffi-dev python3 python3-dev
+#14 0.565 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#14 0.799 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#14 1.290 (1/42) Installing ca-certificates (20240705-r0)
+#14 1.315 (2/42) Installing brotli-libs (1.1.0-r2)
+#14 1.342 (3/42) Installing c-ares (1.28.1-r0)
+#14 1.359 (4/42) Installing libunistring (1.2-r0)
+#14 1.380 (5/42) Installing libidn2 (2.3.7-r0)
+#14 1.394 (6/42) Installing nghttp2-libs (1.62.1-r0)
+#14 1.399 (7/42) Installing libpsl (0.21.5-r1)
+#14 1.403 (8/42) Installing zstd-libs (1.5.6-r0)
+#14 1.415 (9/42) Installing libcurl (8.9.0-r0)
+#14 1.426 (10/42) Installing curl (8.9.0-r0)
+#14 1.432 (11/42) Installing libgcc (13.2.1_git20240309-r0)
+#14 1.445 (12/42) Installing jansson (2.14-r4)
+#14 1.448 (13/42) Installing libstdc++ (13.2.1_git20240309-r0)
+#14 1.473 (14/42) Installing binutils (2.42-r0)
+#14 1.570 (15/42) Installing libgomp (13.2.1_git20240309-r0)
+#14 1.578 (16/42) Installing libatomic (13.2.1_git20240309-r0)
+#14 1.581 (17/42) Installing gmp (6.3.0-r1)
+#14 1.589 (18/42) Installing isl26 (0.26-r1)
+#14 1.615 (19/42) Installing mpfr4 (4.2.1-r0)
+#14 1.626 (20/42) Installing mpc1 (1.3.1-r1)
+#14 1.631 (21/42) Installing gcc (13.2.1_git20240309-r0)
+#14 2.794 (22/42) Installing linux-headers (6.6-r0)
+#14 2.972 (23/42) Installing libffi (3.4.6-r0)
+#14 2.978 (24/42) Installing pkgconf (2.2.0-r0)
+#14 2.982 (25/42) Installing libffi-dev (3.4.6-r0)
+#14 2.998 (26/42) Installing make (4.4.1-r2)
+#14 3.016 (27/42) Installing musl-dev (1.2.5-r0)
+#14 3.159 (28/42) Installing libbz2 (1.0.8-r6)
+#14 3.171 (29/42) Installing libexpat (2.6.2-r0)
+#14 3.186 (30/42) Installing gdbm (1.23-r1)
+#14 3.201 (31/42) Installing xz-libs (5.6.1-r3)
+#14 3.219 (32/42) Installing mpdecimal (4.0.0-r0)
+#14 3.238 (33/42) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#14 3.275 (34/42) Installing libncursesw (6.4_p20240420-r0)
+#14 3.288 (35/42) Installing libpanelw (6.4_p20240420-r0)
+#14 3.309 (36/42) Installing readline (8.2.10-r0)
+#14 3.332 (37/42) Installing sqlite-libs (3.45.3-r1)
+#14 3.363 (38/42) Installing python3 (3.12.3-r1)
+#14 3.719 (39/42) Installing python3-pycache-pyc0 (3.12.3-r1)
+#14 4.028 (40/42) Installing pyc (3.12.3-r1)
+#14 4.048 (41/42) Installing python3-pyc (3.12.3-r1)
+#14 4.064 (42/42) Installing python3-dev (3.12.3-r1)
+#14 4.868 Executing busybox-1.36.1-r29.trigger
+#14 4.873 Executing ca-certificates-20240705-r0.trigger
+#14 4.919 OK: 302 MiB in 56 packages
+#14 DONE 12.0s
+
+#15 [builder  7/10] RUN env
+#15 0.597 SHLVL=1
+#15 0.597 HOME=/root
+#15 0.597 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+#15 0.597 PWD=/src
+#15 DONE 0.8s
+
+#16 [builder  8/10] RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/etc/poetry python3 -
+#16 26.52 Retrieving Poetry metadata
+#16 26.52 
+#16 26.52 # Welcome to Poetry!
+#16 26.52 
+#16 26.52 This will download and install the latest version of Poetry,
+#16 26.52 a dependency and package manager for Python.
+#16 26.52 
+#16 26.52 It will add the `poetry` command to Poetry's bin directory, located at:
+#16 26.52 
+#16 26.52 /etc/poetry/bin
+#16 26.52 
+#16 26.52 You can uninstall at any time by executing this script with the --uninstall option,
+#16 26.52 and these changes will be reverted.
+#16 26.52 
+#16 26.52 Installing Poetry (1.8.3)
+#16 26.52 Installing Poetry (1.8.3): Creating environment
+#16 26.52 Installing Poetry (1.8.3): Installing Poetry
+#16 26.52 Installing Poetry (1.8.3): Creating script
+#16 26.52 Installing Poetry (1.8.3): Done
+#16 26.52 
+#16 26.52 Poetry (1.8.3) is installed now. Great!
+#16 26.52 
+#16 26.52 To get started you need Poetry's bin directory (/etc/poetry/bin) in your `PATH`
+#16 26.52 environment variable.
+#16 26.52 
+#16 26.52 Add `export PATH="/etc/poetry/bin:$PATH"` to your shell configuration file.
+#16 26.52 
+#16 26.52 Alternatively, you can call Poetry explicitly with `/etc/poetry/bin/poetry`.
+#16 26.52 
+#16 26.52 You can test that everything is set up by executing:
+#16 26.52 
+#16 26.52 `poetry --version`
+#16 26.52 
+#16 DONE 28.4s
+
+#17 [builder  9/10] RUN poetry install
+#17 1.246 Creating virtualenv osgameclones-VsnhxLU2-py3.12 in /root/.cache/pypoetry/virtualenvs
+#17 1.835 Installing dependencies from lock file
+#17 1.920 
+#17 1.920 pyproject.toml changed significantly since poetry.lock was last generated. Run `poetry lock [--no-update]` to fix the lock file.
+#17 ERROR: process "/bin/sh -c poetry install" did not complete successfully: exit code: 1
+------
+ > [builder  9/10] RUN poetry install:
+1.246 Creating virtualenv osgameclones-VsnhxLU2-py3.12 in /root/.cache/pypoetry/virtualenvs
+1.835 Installing dependencies from lock file
+1.920 
+1.920 pyproject.toml changed significantly since poetry.lock was last generated. Run `poetry lock [--no-update]` to fix the lock file.
+------
+Dockerfile:14
+--------------------
+  12 |     ENV PATH /etc/poetry/bin/:$PATH
+  13 |     
+  14 | >>> RUN poetry install
+  15 |     RUN make run 
+  16 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c poetry install" did not complete successfully: exit code: 1
+Duration: 0:51.16

@@ -1,0 +1,167 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.25kB done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 ...
+
+#4 [auth] library/alpine:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.6s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [ 1/10] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.3s done
+#6 DONE 0.3s
+
+#6 [ 1/10] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#6 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#6 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#6 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0B / 3.62MB 0.1s
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 8.49kB 0.0s done
+#5 DONE 0.3s
+
+#6 [ 1/10] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#6 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 2.10MB / 3.62MB 0.3s
+#6 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.4s done
+#6 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6
+#6 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.7s done
+#6 DONE 1.9s
+
+#7 [ 2/10] RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories    && apk update     && apk add --no-cache     bash     less     vim     nginx     ca-certificates     php7-fpm     php7-json     php7-zlib     php7-xml     php7-pdo     php7-phar     php7-openssl     php7-pdo_mysql     php7-mysqli     php7-session     php7-gd     php7-iconv     php7-mcrypt     php7-curl     php7-opcache     php7-ctype     php7-apcu     php7-intl     php7-bcmath     php7-mbstring     php7-dom     php7-xmlreader     php7-simplexml     mysql-client     openssh-client     git     curl     rsync     musl     && apk --update --no-cache add tar
+#7 1.713 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#7 2.296 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#7 3.031 fetch http://dl-4.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#7 3.489 WARNING: Permanently redirected to https://dl-4.alpinelinux.org:443/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#7 5.244 v3.20.2-45-g194e307d75d [https://dl-cdn.alpinelinux.org/alpine/v3.20/main]
+#7 5.244 v3.20.2-43-g4fdd3a681b2 [https://dl-cdn.alpinelinux.org/alpine/v3.20/community]
+#7 5.244 v20240606-3756-g85c517b3bcf [http://dl-4.alpinelinux.org/alpine/edge/testing]
+#7 5.244 OK: 31685 distinct packages available
+#7 5.423 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#7 5.755 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#7 6.193 fetch http://dl-4.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#7 6.338 WARNING: Permanently redirected to https://dl-4.alpinelinux.org:443/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+#7 7.733 ERROR: unable to select packages:
+#7 7.733   php7-apcu (no such package):
+#7 7.733     required by: world[php7-apcu]
+#7 7.733   php7-bcmath (no such package):
+#7 7.733     required by: world[php7-bcmath]
+#7 7.733   php7-ctype (no such package):
+#7 7.733     required by: world[php7-ctype]
+#7 7.733   php7-curl (no such package):
+#7 7.733     required by: world[php7-curl]
+#7 7.733   php7-dom (no such package):
+#7 7.733     required by: world[php7-dom]
+#7 7.733   php7-fpm (no such package):
+#7 7.733     required by: world[php7-fpm]
+#7 7.733   php7-gd (no such package):
+#7 7.733     required by: world[php7-gd]
+#7 7.733   php7-iconv (no such package):
+#7 7.733     required by: world[php7-iconv]
+#7 7.733   php7-intl (no such package):
+#7 7.733     required by: world[php7-intl]
+#7 7.733   php7-json (no such package):
+#7 7.733     required by: world[php7-json]
+#7 7.733   php7-mbstring (no such package):
+#7 7.733     required by: world[php7-mbstring]
+#7 7.733   php7-mcrypt (no such package):
+#7 7.733     required by: world[php7-mcrypt]
+#7 7.733   php7-mysqli (no such package):
+#7 7.733     required by: world[php7-mysqli]
+#7 7.733   php7-opcache (no such package):
+#7 7.733     required by: world[php7-opcache]
+#7 7.733   php7-openssl (no such package):
+#7 7.733     required by: world[php7-openssl]
+#7 7.733   php7-pdo (no such package):
+#7 7.733     required by: world[php7-pdo]
+#7 7.733   php7-pdo_mysql (no such package):
+#7 7.733     required by: world[php7-pdo_mysql]
+#7 7.733   php7-phar (no such package):
+#7 7.733     required by: world[php7-phar]
+#7 7.733   php7-session (no such package):
+#7 7.733     required by: world[php7-session]
+#7 7.733   php7-simplexml (no such package):
+#7 7.733     required by: world[php7-simplexml]
+#7 7.733   php7-xml (no such package):
+#7 7.733     required by: world[php7-xml]
+#7 7.733   php7-xmlreader (no such package):
+#7 7.733     required by: world[php7-xmlreader]
+#7 7.733   php7-zlib (no such package):
+#7 7.733     required by: world[php7-zlib]
+#7 ERROR: process "/bin/sh -c echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories    && apk update     && apk add --no-cache     bash     less     vim     nginx     ca-certificates     php7-fpm     php7-json     php7-zlib     php7-xml     php7-pdo     php7-phar     php7-openssl     php7-pdo_mysql     php7-mysqli     php7-session     php7-gd     php7-iconv     php7-mcrypt     php7-curl     php7-opcache     php7-ctype     php7-apcu     php7-intl     php7-bcmath     php7-mbstring     php7-dom     php7-xmlreader     php7-simplexml     mysql-client     openssh-client     git     curl     rsync     musl     && apk --update --no-cache add tar" did not complete successfully: exit code: 23
+------
+ > [ 2/10] RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories    && apk update     && apk add --no-cache     bash     less     vim     nginx     ca-certificates     php7-fpm     php7-json     php7-zlib     php7-xml     php7-pdo     php7-phar     php7-openssl     php7-pdo_mysql     php7-mysqli     php7-session     php7-gd     php7-iconv     php7-mcrypt     php7-curl     php7-opcache     php7-ctype     php7-apcu     php7-intl     php7-bcmath     php7-mbstring     php7-dom     php7-xmlreader     php7-simplexml     mysql-client     openssh-client     git     curl     rsync     musl     && apk --update --no-cache add tar:
+7.733   php7-session (no such package):
+7.733     required by: world[php7-session]
+7.733   php7-simplexml (no such package):
+7.733     required by: world[php7-simplexml]
+7.733   php7-xml (no such package):
+7.733     required by: world[php7-xml]
+7.733   php7-xmlreader (no such package):
+7.733     required by: world[php7-xmlreader]
+7.733   php7-zlib (no such package):
+7.733     required by: world[php7-zlib]
+------
+Dockerfile:16
+--------------------
+  15 |     
+  16 | >>> RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories\
+  17 | >>>     && apk update \
+  18 | >>>     && apk add --no-cache \
+  19 | >>>     bash \
+  20 | >>>     less \
+  21 | >>>     vim \
+  22 | >>>     nginx \
+  23 | >>>     ca-certificates \
+  24 | >>>     php7-fpm \
+  25 | >>>     php7-json \
+  26 | >>>     php7-zlib \
+  27 | >>>     php7-xml \
+  28 | >>>     php7-pdo \
+  29 | >>>     php7-phar \
+  30 | >>>     php7-openssl \
+  31 | >>>     php7-pdo_mysql \
+  32 | >>>     php7-mysqli \
+  33 | >>>     php7-session \
+  34 | >>>     php7-gd \
+  35 | >>>     php7-iconv \
+  36 | >>>     php7-mcrypt \
+  37 | >>>     php7-curl \
+  38 | >>>     php7-opcache \
+  39 | >>>     php7-ctype \
+  40 | >>>     php7-apcu \
+  41 | >>>     php7-intl \
+  42 | >>>     php7-bcmath \
+  43 | >>>     php7-mbstring \
+  44 | >>>     php7-dom \
+  45 | >>>     php7-xmlreader \
+  46 | >>>     php7-simplexml \
+  47 | >>>     mysql-client \
+  48 | >>>     openssh-client \
+  49 | >>>     git \
+  50 | >>>     curl \
+  51 | >>>     rsync \
+  52 | >>>     musl \
+  53 | >>>     && apk --update --no-cache add tar
+  54 |     RUN rm -rf /var/cache/apk/*
+--------------------
+ERROR: failed to solve: process "/bin/sh -c echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories    && apk update     && apk add --no-cache     bash     less     vim     nginx     ca-certificates     php7-fpm     php7-json     php7-zlib     php7-xml     php7-pdo     php7-phar     php7-openssl     php7-pdo_mysql     php7-mysqli     php7-session     php7-gd     php7-iconv     php7-mcrypt     php7-curl     php7-opcache     php7-ctype     php7-apcu     php7-intl     php7-bcmath     php7-mbstring     php7-dom     php7-xmlreader     php7-simplexml     mysql-client     openssh-client     git     curl     rsync     musl     && apk --update --no-cache add tar" did not complete successfully: exit code: 23
+Duration: 0:14.00

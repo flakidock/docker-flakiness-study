@@ -1,0 +1,181 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 411B done
+#2 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/debian:stretch-slim
+#3 DONE 0.3s
+
+#4 [1/4] FROM docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#4 resolve docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
+#4 resolve docker.io/library/debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 0.2s done
+#4 sha256:0e23ec2ce5e621c0e8fa57a53c7781d59d57de8c139a8a351b7236530cd85ec2 1.46kB / 1.46kB done
+#4 sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70 1.21kB / 1.21kB done
+#4 sha256:c5cd3ffceeb25b683bf5111ea89bf8049a177e00fb237235d48076a19cc80097 529B / 529B done
+#4 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 1.05MB / 22.57MB 0.3s
+#4 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 5.24MB / 22.57MB 0.4s
+#4 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 11.53MB / 22.57MB 0.6s
+#4 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 22.57MB / 22.57MB 0.8s
+#4 sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 22.57MB / 22.57MB 1.1s done
+#4 extracting sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 0.1s
+#4 extracting sha256:bff3e048017eab8adaed886bad4b3c5c81f7d952b65b056dca8d6dbc198222dd 1.5s done
+#4 DONE 3.4s
+
+#5 [2/4] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update && apt-get -y upgrade
+#5 0.517 Ign:1 http://archive.debian.org/debian stretch InRelease
+#5 0.519 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#5 0.529 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#5 0.535 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#5 0.637 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
+#5 0.748 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [7080 kB]
+#5 2.041 Fetched 8042 kB in 1s (5277 kB/s)
+#5 2.041 Reading package lists...
+#5 2.748 Reading package lists...
+#5 3.470 Building dependency tree...
+#5 3.582 Reading state information...
+#5 3.594 Calculating upgrade...
+#5 3.692 The following packages will be upgraded:
+#5 3.692   libsystemd0 libudev1
+#5 3.707 2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+#5 3.707 Need to get 408 kB of archives.
+#5 3.707 After this operation, 2048 B of additional disk space will be used.
+#5 3.707 Get:1 http://archive.debian.org/debian-security stretch/updates/main amd64 libsystemd0 amd64 232-25+deb9u14 [282 kB]
+#5 3.715 Get:2 http://archive.debian.org/debian-security stretch/updates/main amd64 libudev1 amd64 232-25+deb9u14 [126 kB]
+#5 3.910 debconf: delaying package configuration, since apt-utils is not installed
+#5 3.926 Fetched 408 kB in 0s (23.1 MB/s)
+#5 4.057 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6320 files and directories currently installed.)
+#5 4.057 Preparing to unpack .../libsystemd0_232-25+deb9u14_amd64.deb ...
+#5 4.161 Unpacking libsystemd0:amd64 (232-25+deb9u14) over (232-25+deb9u13) ...
+#5 4.463 Setting up libsystemd0:amd64 (232-25+deb9u14) ...
+#5 4.696 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6320 files and directories currently installed.)
+#5 4.696 Preparing to unpack .../libudev1_232-25+deb9u14_amd64.deb ...
+#5 4.776 Unpacking libudev1:amd64 (232-25+deb9u14) over (232-25+deb9u13) ...
+#5 4.993 Setting up libudev1:amd64 (232-25+deb9u14) ...
+#5 5.110 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#5 DONE 7.9s
+
+#6 [3/4] RUN apt-get install -y gnu-smalltalk
+#6 0.796 Reading package lists...
+#6 1.951 Building dependency tree...
+#6 2.044 Reading state information...
+#6 2.121 The following additional packages will be installed:
+#6 2.121   gnu-smalltalk-common libffi6 libgmp10 libgnutls30 libgst7 libhogweed4
+#6 2.122   libidn11 libltdl7 libnettle6 libp11-kit0 libreadline7 libsigsegv2 libtasn1-6
+#6 2.122   readline-common unzip zip
+#6 2.122 Suggested packages:
+#6 2.122   gnu-smalltalk-doc gnutls-bin readline-doc
+#6 2.255 The following NEW packages will be installed:
+#6 2.256   gnu-smalltalk gnu-smalltalk-common libffi6 libgmp10 libgnutls30 libgst7
+#6 2.256   libhogweed4 libidn11 libltdl7 libnettle6 libp11-kit0 libreadline7
+#6 2.256   libsigsegv2 libtasn1-6 readline-common unzip zip
+#6 2.272 0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
+#6 2.272 Need to get 4883 kB of archives.
+#6 2.272 After this operation, 19.1 MB of additional disk space will be used.
+#6 2.272 Get:1 http://archive.debian.org/debian stretch/main amd64 readline-common all 7.0-3 [70.4 kB]
+#6 2.277 Get:2 http://archive.debian.org/debian stretch/main amd64 libreadline7 amd64 7.0-3 [151 kB]
+#6 2.280 Get:3 http://archive.debian.org/debian-security stretch/updates/main amd64 libgmp10 amd64 2:6.1.2+dfsg-1+deb9u1 [253 kB]
+#6 2.284 Get:4 http://archive.debian.org/debian-security stretch/updates/main amd64 libnettle6 amd64 3.3-1+deb9u1 [192 kB]
+#6 2.288 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 libhogweed4 amd64 3.3-1+deb9u1 [136 kB]
+#6 2.290 Get:6 http://archive.debian.org/debian stretch/main amd64 libidn11 amd64 1.33-1+deb9u1 [115 kB]
+#6 2.292 Get:7 http://archive.debian.org/debian stretch/main amd64 libffi6 amd64 3.2.1-6 [20.4 kB]
+#6 2.293 Get:8 http://archive.debian.org/debian-security stretch/updates/main amd64 libp11-kit0 amd64 0.23.3-2+deb9u1 [112 kB]
+#6 2.295 Get:9 http://archive.debian.org/debian stretch/main amd64 libtasn1-6 amd64 4.10-1.1+deb9u1 [50.6 kB]
+#6 2.296 Get:10 http://archive.debian.org/debian-security stretch/updates/main amd64 libgnutls30 amd64 3.5.8-5+deb9u6 [897 kB]
+#6 2.310 Get:11 http://archive.debian.org/debian stretch/main amd64 libltdl7 amd64 2.4.6-2 [389 kB]
+#6 2.598 Get:12 http://archive.debian.org/debian stretch/main amd64 libsigsegv2 amd64 2.10-5 [28.9 kB]
+#6 2.614 Get:13 http://archive.debian.org/debian stretch/main amd64 unzip amd64 6.0-21+deb9u2 [172 kB]
+#6 2.622 Get:14 http://archive.debian.org/debian stretch/main amd64 zip amd64 3.0-11+b1 [234 kB]
+#6 3.096 Get:15 http://archive.debian.org/debian stretch/main amd64 libgst7 amd64 3.2.5-1+b3 [319 kB]
+#6 4.401 Get:16 http://archive.debian.org/debian stretch/main amd64 gnu-smalltalk amd64 3.2.5-1+b3 [525 kB]
+#6 5.071 Get:17 http://archive.debian.org/debian stretch/main amd64 gnu-smalltalk-common all 3.2.5-1 [1216 kB]
+#6 5.775 debconf: delaying package configuration, since apt-utils is not installed
+#6 5.822 Fetched 4883 kB in 3s (1462 kB/s)
+#6 5.938 Selecting previously unselected package readline-common.
+#6 5.938 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6320 files and directories currently installed.)
+#6 5.938 Preparing to unpack .../00-readline-common_7.0-3_all.deb ...
+#6 5.966 Unpacking readline-common (7.0-3) ...
+#6 6.178 Selecting previously unselected package libreadline7:amd64.
+#6 6.178 Preparing to unpack .../01-libreadline7_7.0-3_amd64.deb ...
+#6 6.227 Unpacking libreadline7:amd64 (7.0-3) ...
+#6 6.413 Selecting previously unselected package libgmp10:amd64.
+#6 6.413 Preparing to unpack .../02-libgmp10_2%3a6.1.2+dfsg-1+deb9u1_amd64.deb ...
+#6 6.437 Unpacking libgmp10:amd64 (2:6.1.2+dfsg-1+deb9u1) ...
+#6 6.664 Selecting previously unselected package libnettle6:amd64.
+#6 6.664 Preparing to unpack .../03-libnettle6_3.3-1+deb9u1_amd64.deb ...
+#6 6.697 Unpacking libnettle6:amd64 (3.3-1+deb9u1) ...
+#6 6.966 Selecting previously unselected package libhogweed4:amd64.
+#6 6.966 Preparing to unpack .../04-libhogweed4_3.3-1+deb9u1_amd64.deb ...
+#6 6.999 Unpacking libhogweed4:amd64 (3.3-1+deb9u1) ...
+#6 7.251 Selecting previously unselected package libidn11:amd64.
+#6 7.251 Preparing to unpack .../05-libidn11_1.33-1+deb9u1_amd64.deb ...
+#6 7.275 Unpacking libidn11:amd64 (1.33-1+deb9u1) ...
+#6 7.495 Selecting previously unselected package libffi6:amd64.
+#6 7.495 Preparing to unpack .../06-libffi6_3.2.1-6_amd64.deb ...
+#6 7.519 Unpacking libffi6:amd64 (3.2.1-6) ...
+#6 7.722 Selecting previously unselected package libp11-kit0:amd64.
+#6 7.722 Preparing to unpack .../07-libp11-kit0_0.23.3-2+deb9u1_amd64.deb ...
+#6 7.746 Unpacking libp11-kit0:amd64 (0.23.3-2+deb9u1) ...
+#6 7.957 Selecting previously unselected package libtasn1-6:amd64.
+#6 7.957 Preparing to unpack .../08-libtasn1-6_4.10-1.1+deb9u1_amd64.deb ...
+#6 7.981 Unpacking libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+#6 8.175 Selecting previously unselected package libgnutls30:amd64.
+#6 8.175 Preparing to unpack .../09-libgnutls30_3.5.8-5+deb9u6_amd64.deb ...
+#6 8.208 Unpacking libgnutls30:amd64 (3.5.8-5+deb9u6) ...
+#6 8.535 Selecting previously unselected package libltdl7:amd64.
+#6 8.535 Preparing to unpack .../10-libltdl7_2.4.6-2_amd64.deb ...
+#6 8.568 Unpacking libltdl7:amd64 (2.4.6-2) ...
+#6 8.753 Selecting previously unselected package libsigsegv2:amd64.
+#6 8.753 Preparing to unpack .../11-libsigsegv2_2.10-5_amd64.deb ...
+#6 8.779 Unpacking libsigsegv2:amd64 (2.10-5) ...
+#6 8.964 Selecting previously unselected package unzip.
+#6 8.964 Preparing to unpack .../12-unzip_6.0-21+deb9u2_amd64.deb ...
+#6 8.989 Unpacking unzip (6.0-21+deb9u2) ...
+#6 9.191 Selecting previously unselected package zip.
+#6 9.191 Preparing to unpack .../13-zip_3.0-11+b1_amd64.deb ...
+#6 9.216 Unpacking zip (3.0-11+b1) ...
+#6 9.452 Selecting previously unselected package libgst7.
+#6 9.452 Preparing to unpack .../14-libgst7_3.2.5-1+b3_amd64.deb ...
+#6 9.476 Unpacking libgst7 (3.2.5-1+b3) ...
+#6 9.695 Selecting previously unselected package gnu-smalltalk.
+#6 9.695 Preparing to unpack .../15-gnu-smalltalk_3.2.5-1+b3_amd64.deb ...
+#6 9.719 Unpacking gnu-smalltalk (3.2.5-1+b3) ...
+#6 10.01 Selecting previously unselected package gnu-smalltalk-common.
+#6 10.01 Preparing to unpack .../16-gnu-smalltalk-common_3.2.5-1_all.deb ...
+#6 10.04 Unpacking gnu-smalltalk-common (3.2.5-1) ...
+#6 10.67 Setting up readline-common (7.0-3) ...
+#6 10.76 Setting up libnettle6:amd64 (3.3-1+deb9u1) ...
+#6 10.86 Setting up libsigsegv2:amd64 (2.10-5) ...
+#6 10.93 Setting up libreadline7:amd64 (7.0-3) ...
+#6 11.01 Setting up gnu-smalltalk-common (3.2.5-1) ...
+#6 11.08 Setting up unzip (6.0-21+deb9u2) ...
+#6 11.16 Setting up zip (3.0-11+b1) ...
+#6 11.23 Setting up libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+#6 11.31 Setting up libgmp10:amd64 (2:6.1.2+dfsg-1+deb9u1) ...
+#6 11.39 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#6 11.47 Setting up libltdl7:amd64 (2.4.6-2) ...
+#6 11.59 Setting up libffi6:amd64 (3.2.1-6) ...
+#6 11.69 Setting up libidn11:amd64 (1.33-1+deb9u1) ...
+#6 11.79 Setting up libgst7 (3.2.5-1+b3) ...
+#6 11.89 Setting up libhogweed4:amd64 (3.3-1+deb9u1) ...
+#6 11.97 Setting up libp11-kit0:amd64 (0.23.3-2+deb9u1) ...
+#6 12.05 Setting up libgnutls30:amd64 (3.5.8-5+deb9u6) ...
+#6 12.13 Setting up gnu-smalltalk (3.2.5-1+b3) ...
+#6 12.20 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#6 DONE 12.6s
+
+#7 [4/4] WORKDIR /koans
+#7 DONE 0.5s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 0.6s done
+#8 writing image sha256:d64beced316fc751ae63e97d5489560758ece239a77cd08ff8a8e4dd2147b82c 0.0s done
+#8 naming to docker.io/library/image_name_v1_1 0.0s done
+#8 DONE 0.6s
+Duration: 0:26.66

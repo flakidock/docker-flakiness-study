@@ -1,0 +1,18 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.15kB done
+#1 WARN: Empty continuation line found in: RUN mkdir ./bin &&     apt-get update && apt-get install --no-install-recommends -y upx &&     GOOS=$(echo $TARGETPLATFORM | cut -f1 -d/) &&     GOARCH=$(echo $TARGETPLATFORM | cut -f2 -d/) &&     GOARM=$(echo $TARGETPLATFORM | cut -f3 -d/ | sed "s/v//" ) &&     CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH} GOARM=${GOARM} go build ${BUILD_ARGS} -ldflags="-s" -tags netgo -installsuffix netgo -o ./bin/goStatic &&     mkdir ./bin/etc &&     ID=$(shuf -i 100-9999 -n 1) &&     upx -9 ./bin/goStatic &&     echo $ID &&     echo "appuser:x:$ID:$ID::/sbin/nologin:/bin/false" > ./bin/etc/passwd &&     echo "appgroup:x:$ID:appuser" > ./bin/etc/group && rm -rf /var/lib/apt/lists/*;
+#1 DONE 0.0s
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - Empty continuation line found in: RUN mkdir ./bin &&     apt-get update && apt-get install --no-install-recommends -y upx &&     GOOS=$(echo $TARGETPLATFORM | cut -f1 -d/) &&     GOARCH=$(echo $TARGETPLATFORM | cut -f2 -d/) &&     GOARM=$(echo $TARGETPLATFORM | cut -f3 -d/ | sed "s/v//" ) &&     CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH} GOARM=${GOARM} go build ${BUILD_ARGS} -ldflags="-s" -tags netgo -installsuffix netgo -o ./bin/goStatic &&     mkdir ./bin/etc &&     ID=$(shuf -i 100-9999 -n 1) &&     upx -9 ./bin/goStatic &&     echo $ID &&     echo "appuser:x:$ID:$ID::/sbin/nologin:/bin/false" > ./bin/etc/passwd &&     echo "appgroup:x:$ID:appuser" > ./bin/etc/group && rm -rf /var/lib/apt/lists/*;
+v1_Dockerfile:2
+--------------------
+   1 |     # stage 0
+   2 | >>> FROM golang latest builder
+   3 |     
+   4 |     ARG TARGETPLATFORM
+--------------------
+ERROR: failed to solve: dockerfile parse error on line 2: FROM requires either one or three arguments
+Duration: 0:0.33

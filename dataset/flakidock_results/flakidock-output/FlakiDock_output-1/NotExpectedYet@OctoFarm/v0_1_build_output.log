@@ -1,0 +1,116 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.08kB done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 150B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.14
+#3 ...
+
+#4 [auth] library/alpine:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.14
+#3 DONE 1.3s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [base 1/5] FROM docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#6 resolve docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 0.1s done
+#6 sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 1.64kB / 1.64kB done
+#6 sha256:71859b0c62df47efaeae4f93698b56a8dddafbf041778fd668bbd1ab45a864f8 528B / 528B done
+#6 sha256:9e179bacf43c4d3428d57cf459799ba0285b901945f9eccb17b6da056d3532c7 1.47kB / 1.47kB done
+#6 DONE 0.6s
+
+#7 [base 2/5] RUN apk add --no-cache --virtual .base-deps     nodejs     npm     tini
+#7 0.500 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#7 ...
+
+#5 [internal] load build context
+#5 transferring context: 61.19MB 0.7s done
+#5 DONE 1.0s
+
+#7 [base 2/5] RUN apk add --no-cache --virtual .base-deps     nodejs     npm     tini
+#7 0.732 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#7 1.759 (1/10) Installing ca-certificates (20230506-r0)
+#7 1.783 (2/10) Installing nghttp2-libs (1.43.0-r0)
+#7 1.788 (3/10) Installing brotli-libs (1.0.9-r5)
+#7 1.826 (4/10) Installing c-ares (1.17.2-r0)
+#7 1.835 (5/10) Installing libgcc (10.3.1_git20210424-r2)
+#7 1.843 (6/10) Installing libstdc++ (10.3.1_git20210424-r2)
+#7 1.861 (7/10) Installing nodejs (14.21.3-r0)
+#7 2.185 (8/10) Installing npm (7.17.0-r0)
+#7 2.528 (9/10) Installing tini (0.19.0-r0)
+#7 2.532 (10/10) Installing .base-deps (20240731.004206)
+#7 2.535 Executing busybox-1.33.1-r8.trigger
+#7 2.540 Executing ca-certificates-20230506-r0.trigger
+#7 2.579 OK: 58 MiB in 24 packages
+#7 DONE 4.7s
+
+#8 [base 3/5] RUN npm install -g npm@latest
+#8 1.504 npm WARN EBADENGINE Unsupported engine {
+#8 1.504 npm WARN EBADENGINE   package: 'npm@10.8.2',
+#8 1.504 npm WARN EBADENGINE   required: { node: '^18.17.0 || >=20.5.0' },
+#8 1.505 npm WARN EBADENGINE   current: { node: 'v14.21.3', npm: '7.17.0' }
+#8 1.505 npm WARN EBADENGINE }
+#8 4.297 
+#8 4.297 added 1 package, and audited 203 packages in 3s
+#8 4.297 
+#8 4.297 22 packages are looking for funding
+#8 4.297   run `npm fund` for details
+#8 4.300 
+#8 4.300 found 0 vulnerabilities
+#8 DONE 4.9s
+
+#9 [base 4/5] RUN npm install -g pm2
+#9 0.795 ERROR: npm v10.8.2 is known not to run on Node.js v14.21.3.  This version of npm supports the following node versions: `^18.17.0 || >=20.5.0`. You can find the latest version at https://nodejs.org/.
+#9 0.795 
+#9 0.795 ERROR:
+#9 0.798 /usr/local/lib/node_modules/npm/lib/utils/error-message.js:11
+#9 0.798   er.message &&= replaceInfo(er.message)
+#9 0.798              ^^^
+#9 0.798 
+#9 0.798 SyntaxError: Unexpected token '&&='
+#9 0.798     at wrapSafe (internal/modules/cjs/loader.js:1029:16)
+#9 0.798     at Module._compile (internal/modules/cjs/loader.js:1078:27)
+#9 0.798     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+#9 0.798     at Module.load (internal/modules/cjs/loader.js:979:32)
+#9 0.798     at Function.Module._load (internal/modules/cjs/loader.js:819:12)
+#9 0.798     at Module.require (internal/modules/cjs/loader.js:1003:19)
+#9 0.798     at require (internal/modules/cjs/helpers.js:107:18)
+#9 0.798     at Object.<anonymous> (/usr/local/lib/node_modules/npm/lib/cli/exit-handler.js:2:48)
+#9 0.798     at Module._compile (internal/modules/cjs/loader.js:1114:14)
+#9 0.798     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+#9 ERROR: process "/bin/sh -c npm install -g pm2" did not complete successfully: exit code: 1
+------
+ > [base 4/5] RUN npm install -g pm2:
+0.798     at wrapSafe (internal/modules/cjs/loader.js:1029:16)
+0.798     at Module._compile (internal/modules/cjs/loader.js:1078:27)
+0.798     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+0.798     at Module.load (internal/modules/cjs/loader.js:979:32)
+0.798     at Function.Module._load (internal/modules/cjs/loader.js:819:12)
+0.798     at Module.require (internal/modules/cjs/loader.js:1003:19)
+0.798     at require (internal/modules/cjs/helpers.js:107:18)
+0.798     at Object.<anonymous> (/usr/local/lib/node_modules/npm/lib/cli/exit-handler.js:2:48)
+0.798     at Module._compile (internal/modules/cjs/loader.js:1114:14)
+0.798     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+------
+Dockerfile:13
+--------------------
+  11 |     
+  12 |     RUN npm install -g npm@latest
+  13 | >>> RUN npm install -g pm2
+  14 |     
+  15 |     RUN adduser -D octofarm --home /app && \
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm install -g pm2" did not complete successfully: exit code: 1
+Duration: 0:13.50

@@ -1,0 +1,83 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 190B done
+#1 DONE 0.3s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 45B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/debian:latest
+#3 DONE 0.5s
+
+#4 [1/3] FROM docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#4 resolve docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 1.12kB done
+#5 DONE 0.3s
+
+#4 [1/3] FROM docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#4 resolve docker.io/library/debian@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 0.4s done
+#4 sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 1.85kB / 1.85kB done
+#4 sha256:b1ae8b5bfaa9afa86b50c2a151a442d832c4449cf3731bddf8a728e5628ebb59 529B / 529B done
+#4 sha256:2e5b8d3ef33ebde2b2a943fadb241a63de1535a007a7bd185e7037abfff99f63 1.46kB / 1.46kB done
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 0B / 49.55MB 0.1s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 24.12MB / 49.55MB 0.6s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 33.55MB / 49.55MB 0.7s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 39.85MB / 49.55MB 0.8s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 49.55MB / 49.55MB 1.0s
+#4 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 49.55MB / 49.55MB 1.7s done
+#4 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0
+#4 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 5.1s
+#4 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 8.0s done
+#4 DONE 11.0s
+
+#6 [2/3] RUN apt-get update && apt-get install -y netcat-openbsd
+#6 1.416 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#6 1.474 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#6 1.490 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#6 2.035 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#6 2.677 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#6 3.094 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#6 6.403 Fetched 9225 kB in 5s (1842 kB/s)
+#6 6.403 Reading package lists...
+#6 8.725 Reading package lists...
+#6 10.73 Building dependency tree...
+#6 11.06 Reading state information...
+#6 11.43 The following additional packages will be installed:
+#6 11.43   libbsd0
+#6 11.53 The following NEW packages will be installed:
+#6 11.53   libbsd0 netcat-openbsd
+#6 11.66 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+#6 11.66 Need to get 159 kB of archives.
+#6 11.66 After this operation, 317 kB of additional disk space will be used.
+#6 11.66 Get:1 http://deb.debian.org/debian bookworm/main amd64 libbsd0 amd64 0.11.7-2 [117 kB]
+#6 11.69 Get:2 http://deb.debian.org/debian bookworm/main amd64 netcat-openbsd amd64 1.219-1 [41.5 kB]
+#6 12.28 debconf: delaying package configuration, since apt-utils is not installed
+#6 12.40 Fetched 159 kB in 0s (1305 kB/s)
+#6 12.62 Selecting previously unselected package libbsd0:amd64.
+#6 12.62 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6089 files and directories currently installed.)
+#6 12.64 Preparing to unpack .../libbsd0_0.11.7-2_amd64.deb ...
+#6 12.70 Unpacking libbsd0:amd64 (0.11.7-2) ...
+#6 13.77 Selecting previously unselected package netcat-openbsd.
+#6 13.77 Preparing to unpack .../netcat-openbsd_1.219-1_amd64.deb ...
+#6 13.79 Unpacking netcat-openbsd (1.219-1) ...
+#6 14.07 Setting up libbsd0:amd64 (0.11.7-2) ...
+#6 14.17 Setting up netcat-openbsd (1.219-1) ...
+#6 14.24 update-alternatives: using /bin/nc.openbsd to provide /bin/nc (nc) in auto mode
+#6 14.29 Processing triggers for libc-bin (2.36-9+deb12u7) ...
+#6 DONE 20.1s
+
+#7 [3/3] ADD wait /wait
+#7 DONE 0.7s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 0.7s done
+#8 writing image sha256:04398db1753c85b9827d0eeb0bea904220f42b4970e1a832db6b292cb6182aa4 0.0s done
+#8 naming to docker.io/library/image_name_v1_1 0.0s done
+#8 DONE 0.8s
+Duration: 0:34.83

@@ -1,0 +1,72 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 898B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:3.11
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 4.82kB done
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d
+#5 resolve docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d 0.0s done
+#5 sha256:a787cb9865032e5b5a407ecdf34b57a23a4a076aaa043d71742ddb6726ec9229 1.47kB / 1.47kB done
+#5 sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 0B / 2.82MB 0.1s
+#5 sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d 1.64kB / 1.64kB done
+#5 sha256:a0ce0e57c6900f6f13cee6f1c1e0337cedd745ebc1bac226c61eb574667c6d04 528B / 528B done
+#5 sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 2.82MB / 2.82MB 0.1s done
+#5 extracting sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 0.1s done
+#5 DONE 0.4s
+
+#6 [2/7] RUN apk update &&   apk add --update     bash     easy-rsa     git     openssh-client     curl     ca-certificates     jq     python2     py2-yaml     py2-pip     libstdc++     gpgme     git-crypt     &&   rm -rf /var/cache/apk/*
+#6 0.193 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+#6 0.436 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+#6 0.686 v3.11.13-12-g2cfa91a2b4 [http://dl-cdn.alpinelinux.org/alpine/v3.11/main]
+#6 0.686 v3.11.11-124-gf2729ece5a [http://dl-cdn.alpinelinux.org/alpine/v3.11/community]
+#6 0.686 OK: 11276 distinct packages available
+#6 0.822 ERROR: unable to select packages:
+#6 0.822   py2-yaml (no such package):
+#6 0.834     required by: world[py2-yaml]
+#6 ERROR: process "/bin/sh -c apk update &&   apk add --update     bash     easy-rsa     git     openssh-client     curl     ca-certificates     jq     python2     py2-yaml     py2-pip     libstdc++     gpgme     git-crypt     &&   rm -rf /var/cache/apk/*" did not complete successfully: exit code: 1
+------
+ > [2/7] RUN apk update &&   apk add --update     bash     easy-rsa     git     openssh-client     curl     ca-certificates     jq     python2     py2-yaml     py2-pip     libstdc++     gpgme     git-crypt     &&   rm -rf /var/cache/apk/*:
+0.193 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+0.436 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+0.686 v3.11.13-12-g2cfa91a2b4 [http://dl-cdn.alpinelinux.org/alpine/v3.11/main]
+0.686 v3.11.11-124-gf2729ece5a [http://dl-cdn.alpinelinux.org/alpine/v3.11/community]
+0.686 OK: 11276 distinct packages available
+0.822 ERROR: unable to select packages:
+0.822   py2-yaml (no such package):
+0.834     required by: world[py2-yaml]
+------
+v1_Dockerfile:4
+--------------------
+   3 |     
+   4 | >>> RUN apk update && \
+   5 | >>>   apk add --update \
+   6 | >>>     bash \
+   7 | >>>     easy-rsa \
+   8 | >>>     git \
+   9 | >>>     openssh-client \
+  10 | >>>     curl \
+  11 | >>>     ca-certificates \
+  12 | >>>     jq \
+  13 | >>>     python2 \
+  14 | >>>     py2-yaml \
+  15 | >>>     py2-pip \
+  16 | >>>     libstdc++ \
+  17 | >>>     gpgme \
+  18 | >>>     git-crypt \
+  19 | >>>     && \
+  20 | >>>   rm -rf /var/cache/apk/*
+  21 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk update &&   apk add --update     bash     easy-rsa     git     openssh-client     curl     ca-certificates     jq     python2     py2-yaml     py2-pip     libstdc++     gpgme     git-crypt     &&   rm -rf /var/cache/apk/*" did not complete successfully: exit code: 1
+Duration: 0:2.24

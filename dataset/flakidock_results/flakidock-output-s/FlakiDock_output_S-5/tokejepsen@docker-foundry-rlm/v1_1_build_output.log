@@ -1,0 +1,312 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.01kB done
+#1 DONE 0.0s
+
+#2 [auth] library/ubuntu:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:latest
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 413B done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/ubuntu:latest@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
+#6 resolve docker.io/library/ubuntu:latest@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30 0.0s done
+#6 sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30 1.13kB / 1.13kB done
+#6 sha256:c920ba4cfca05503764b785c16b76d43c83a6df8d1ab107e7e6610000d94315c 424B / 424B done
+#6 sha256:35a88802559dd2077e584394471ddaa1a2c5bfd16893b829ea57619301eb3908 2.30kB / 2.30kB done
+#6 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 1.05MB / 29.71MB 0.2s
+#6 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 18.87MB / 29.71MB 0.4s
+#6 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 29.71MB / 29.71MB 0.6s
+#6 sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 29.71MB / 29.71MB 0.6s done
+#6 extracting sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 0.1s
+#6 extracting sha256:9c704ecd0c694c4cbdd85e589ac8d1fc3fd8f890b7f3731769a5b169eb495809 1.2s done
+#6 DONE 2.0s
+
+#7 [2/5] RUN apt-get -qq update &&     apt-get install wget -y &&     wget http://thefoundry.s3.amazonaws.com/tools/FLT/7.1v1/FLT7.1v1-linux-x86-release-64.tgz &&     tar xzf FLT7.1v1-linux-x86-release-64.tgz &&     rm FLT7.1v1-linux-x86-release-64.tgz &&     cd /FLT_7.1v1_linux-x86-release-64RH/ && echo yes | /bin/sh install.sh
+#7 5.149 Reading package lists...
+#7 5.853 Building dependency tree...
+#7 5.977 Reading state information...
+#7 6.141 The following additional packages will be installed:
+#7 6.142   ca-certificates libpsl5t64 libssl3t64 openssl publicsuffix
+#7 6.167 The following NEW packages will be installed:
+#7 6.167   ca-certificates libpsl5t64 openssl publicsuffix wget
+#7 6.168 The following packages will be upgraded:
+#7 6.168   libssl3t64
+#7 6.329 1 upgraded, 5 newly installed, 0 to remove and 2 not upgraded.
+#7 6.329 Need to get 3621 kB of archives.
+#7 6.329 After this operation, 3750 kB of additional disk space will be used.
+#7 6.329 Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssl3t64 amd64 3.0.13-0ubuntu3.2 [1940 kB]
+#7 6.951 Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 openssl amd64 3.0.13-0ubuntu3.2 [1002 kB]
+#7 6.978 Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 ca-certificates all 20240203 [159 kB]
+#7 6.981 Get:4 http://archive.ubuntu.com/ubuntu noble/main amd64 libpsl5t64 amd64 0.21.2-1.1build1 [57.1 kB]
+#7 6.983 Get:5 http://archive.ubuntu.com/ubuntu noble/main amd64 publicsuffix all 20231001.0357-0.1 [129 kB]
+#7 6.987 Get:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 wget amd64 1.21.4-1ubuntu4.1 [334 kB]
+#7 7.128 debconf: delaying package configuration, since apt-utils is not installed
+#7 7.150 Fetched 3621 kB in 1s (4278 kB/s)
+#7 7.178 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4376 files and directories currently installed.)
+#7 7.182 Preparing to unpack .../libssl3t64_3.0.13-0ubuntu3.2_amd64.deb ...
+#7 7.203 Unpacking libssl3t64:amd64 (3.0.13-0ubuntu3.2) over (3.0.13-0ubuntu3.1) ...
+#7 7.331 Setting up libssl3t64:amd64 (3.0.13-0ubuntu3.2) ...
+#7 7.381 Selecting previously unselected package openssl.
+#7 7.381 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4376 files and directories currently installed.)
+#7 7.383 Preparing to unpack .../openssl_3.0.13-0ubuntu3.2_amd64.deb ...
+#7 7.390 Unpacking openssl (3.0.13-0ubuntu3.2) ...
+#7 7.461 Selecting previously unselected package ca-certificates.
+#7 7.462 Preparing to unpack .../ca-certificates_20240203_all.deb ...
+#7 7.468 Unpacking ca-certificates (20240203) ...
+#7 7.539 Selecting previously unselected package libpsl5t64:amd64.
+#7 7.540 Preparing to unpack .../libpsl5t64_0.21.2-1.1build1_amd64.deb ...
+#7 7.545 Unpacking libpsl5t64:amd64 (0.21.2-1.1build1) ...
+#7 7.573 Selecting previously unselected package publicsuffix.
+#7 7.574 Preparing to unpack .../publicsuffix_20231001.0357-0.1_all.deb ...
+#7 7.580 Unpacking publicsuffix (20231001.0357-0.1) ...
+#7 7.615 Selecting previously unselected package wget.
+#7 7.616 Preparing to unpack .../wget_1.21.4-1ubuntu4.1_amd64.deb ...
+#7 7.621 Unpacking wget (1.21.4-1ubuntu4.1) ...
+#7 7.661 Setting up libpsl5t64:amd64 (0.21.2-1.1build1) ...
+#7 7.679 Setting up openssl (3.0.13-0ubuntu3.2) ...
+#7 7.702 Setting up publicsuffix (20231001.0357-0.1) ...
+#7 7.720 Setting up wget (1.21.4-1ubuntu4.1) ...
+#7 7.743 Setting up ca-certificates (20240203) ...
+#7 7.823 debconf: unable to initialize frontend: Dialog
+#7 7.823 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 7.823 debconf: falling back to frontend: Readline
+#7 7.823 debconf: unable to initialize frontend: Readline
+#7 7.823 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.38.2 /usr/local/share/perl/5.38.2 /usr/lib/x86_64-linux-gnu/perl5/5.38 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.38 /usr/share/perl/5.38 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8.)
+#7 7.823 debconf: falling back to frontend: Teletype
+#7 8.375 Updating certificates in /etc/ssl/certs...
+#7 9.116 146 added, 0 removed; done.
+#7 9.151 Processing triggers for libc-bin (2.39-0ubuntu8.2) ...
+#7 9.178 Processing triggers for ca-certificates (20240203) ...
+#7 9.189 Updating certificates in /etc/ssl/certs...
+#7 9.785 0 added, 0 removed; done.
+#7 9.785 Running hooks in /etc/ca-certificates/update.d...
+#7 9.786 done.
+#7 9.815 --2024-08-01 00:54:50--  http://thefoundry.s3.amazonaws.com/tools/FLT/7.1v1/FLT7.1v1-linux-x86-release-64.tgz
+#7 9.815 Resolving thefoundry.s3.amazonaws.com (thefoundry.s3.amazonaws.com)... 16.182.40.57, 54.231.224.9, 54.231.225.201, ...
+#7 9.817 Connecting to thefoundry.s3.amazonaws.com (thefoundry.s3.amazonaws.com)|16.182.40.57|:80... connected.
+#7 9.881 HTTP request sent, awaiting response... 200 OK
+#7 10.03 Length: 7133917 (6.8M) [application/x-compressed]
+#7 10.03 Saving to: 'FLT7.1v1-linux-x86-release-64.tgz'
+#7 10.03 
+#7 10.03      0K .......... .......... .......... .......... ..........  0%  361K 19s
+#7 10.17     50K .......... .......... .......... .......... ..........  1%  779K 14s
+#7 10.24    100K .......... .......... .......... .......... ..........  2%  943K 12s
+#7 10.29    150K .......... .......... .......... .......... ..........  2% 4.50M 9s
+#7 10.30    200K .......... .......... .......... .......... ..........  3% 29.0M 7s
+#7 10.30    250K .......... .......... .......... .......... ..........  4%  969K 7s
+#7 10.35    300K .......... .......... .......... .......... ..........  5% 93.1T 6s
+#7 10.35    350K .......... .......... .......... .......... ..........  5% 4.63M 5s
+#7 10.36    400K .......... .......... .......... .......... ..........  6%  460M 5s
+#7 10.36    450K .......... .......... .......... .......... ..........  7% 63.9M 4s
+#7 10.36    500K .......... .......... .......... .......... ..........  7%  203M 4s
+#7 10.36    550K .......... .......... .......... .......... ..........  8%  952K 4s
+#7 10.42    600K .......... .......... .......... .......... ..........  9% 93.1T 4s
+#7 10.42    650K .......... .......... .......... .......... .......... 10%  225M 3s
+#7 10.42    700K .......... .......... .......... .......... .......... 10% 4.79M 3s
+#7 10.43    750K .......... .......... .......... .......... .......... 11% 93.1T 3s
+#7 10.43    800K .......... .......... .......... .......... .......... 12%  389M 3s
+#7 10.43    850K .......... .......... .......... .......... .......... 12%  619M 3s
+#7 10.43    900K .......... .......... .......... .......... .......... 13%  127M 3s
+#7 10.43    950K .......... .......... .......... .......... .......... 14% 86.1M 2s
+#7 10.43   1000K .......... .......... .......... .......... .......... 15%  190M 2s
+#7 10.43   1050K .......... .......... .......... .......... .......... 15%  118M 2s
+#7 10.43   1100K .......... .......... .......... .......... .......... 16% 93.1T 2s
+#7 10.43   1150K .......... .......... .......... .......... .......... 17%  967K 2s
+#7 10.48   1200K .......... .......... .......... .......... .......... 17% 93.1T 2s
+#7 10.48   1250K .......... .......... .......... .......... .......... 18%  365M 2s
+#7 10.48   1300K .......... .......... .......... .......... .......... 19%  499M 2s
+#7 10.48   1350K .......... .......... .......... .......... .......... 20% 83.9M 2s
+#7 10.48   1400K .......... .......... .......... .......... .......... 20% 26.8M 2s
+#7 10.48   1450K .......... .......... .......... .......... .......... 21% 6.24M 2s
+#7 10.49   1500K .......... .......... .......... .......... .......... 22%  323M 2s
+#7 10.49   1550K .......... .......... .......... .......... .......... 22% 93.1T 2s
+#7 10.49   1600K .......... .......... .......... .......... .......... 23% 87.5M 1s
+#7 10.49   1650K .......... .......... .......... .......... .......... 24% 73.7M 1s
+#7 10.49   1700K .......... .......... .......... .......... .......... 25% 93.1T 1s
+#7 10.49   1750K .......... .......... .......... .......... .......... 25% 51.3M 1s
+#7 10.49   1800K .......... .......... .......... .......... .......... 26% 44.6M 1s
+#7 10.49   1850K .......... .......... .......... .......... .......... 27%  101M 1s
+#7 10.50   1900K .......... .......... .......... .......... .......... 27%  799K 1s
+#7 10.56   1950K .......... .......... .......... .......... .......... 28% 93.1T 1s
+#7 10.56   2000K .......... .......... .......... .......... .......... 29%  117M 1s
+#7 10.56   2050K .......... .......... .......... .......... .......... 30% 93.1T 1s
+#7 10.56   2100K .......... .......... .......... .......... .......... 30%  966K 1s
+#7 10.61   2150K .......... .......... .......... .......... .......... 31%  332M 1s
+#7 10.61   2200K .......... .......... .......... .......... .......... 32% 67.7M 1s
+#7 10.61   2250K .......... .......... .......... .......... .......... 33%  321M 1s
+#7 10.61   2300K .......... .......... .......... .......... .......... 33% 93.1T 1s
+#7 10.61   2350K .......... .......... .......... .......... .......... 34% 80.1M 1s
+#7 10.61   2400K .......... .......... .......... .......... .......... 35%  177M 1s
+#7 10.61   2450K .......... .......... .......... .......... .......... 35%  369M 1s
+#7 10.61   2500K .......... .......... .......... .......... .......... 36% 93.1T 1s
+#7 10.61   2550K .......... .......... .......... .......... .......... 37%  421M 1s
+#7 10.61   2600K .......... .......... .......... .......... .......... 38%  450M 1s
+#7 10.61   2650K .......... .......... .......... .......... .......... 38%  454M 1s
+#7 10.61   2700K .......... .......... .......... .......... .......... 39%  384M 1s
+#7 10.61   2750K .......... .......... .......... .......... .......... 40% 93.1T 1s
+#7 10.61   2800K .......... .......... .......... .......... .......... 40%  431M 1s
+#7 10.61   2850K .......... .......... .......... .......... .......... 41%  270M 1s
+#7 10.61   2900K .......... .......... .......... .......... .......... 42%  280M 1s
+#7 10.61   2950K .......... .......... .......... .......... .......... 43% 89.2M 1s
+#7 10.61   3000K .......... .......... .......... .......... .......... 43% 93.1T 1s
+#7 10.61   3050K .......... .......... .......... .......... .......... 44%  122M 1s
+#7 10.61   3100K .......... .......... .......... .......... .......... 45%  340M 1s
+#7 10.61   3150K .......... .......... .......... .......... .......... 45%  427M 1s
+#7 10.61   3200K .......... .......... .......... .......... .......... 46% 93.1T 1s
+#7 10.61   3250K .......... .......... .......... .......... .......... 47% 95.8M 1s
+#7 10.61   3300K .......... .......... .......... .......... .......... 48%  444M 1s
+#7 10.61   3350K .......... .......... .......... .......... .......... 48%  495M 1s
+#7 10.61   3400K .......... .......... .......... .......... .......... 49%  806K 1s
+#7 10.68   3450K .......... .......... .......... .......... .......... 50%  329M 1s
+#7 10.68   3500K .......... .......... .......... .......... .......... 50%  398M 1s
+#7 10.68   3550K .......... .......... .......... .......... .......... 51% 93.1T 1s
+#7 10.68   3600K .......... .......... .......... .......... .......... 52%  421M 1s
+#7 10.68   3650K .......... .......... .......... .......... .......... 53% 89.6M 1s
+#7 10.68   3700K .......... .......... .......... .......... .......... 53% 93.1T 1s
+#7 10.68   3750K .......... .......... .......... .......... .......... 54%  139M 1s
+#7 10.68   3800K .......... .......... .......... .......... .......... 55% 96.3M 1s
+#7 10.68   3850K .......... .......... .......... .......... .......... 55%  350M 1s
+#7 10.68   3900K .......... .......... .......... .......... .......... 56% 75.9M 0s
+#7 10.68   3950K .......... .......... .......... .......... .......... 57%  770K 1s
+#7 10.74   4000K .......... .......... .......... .......... .......... 58%  208M 1s
+#7 10.74   4050K .......... .......... .......... .......... .......... 58% 8.84M 1s
+#7 10.75   4100K .......... .......... .......... .......... .......... 59%  376M 0s
+#7 10.75   4150K .......... .......... .......... .......... .......... 60%  431M 0s
+#7 10.75   4200K .......... .......... .......... .......... .......... 61%  385M 0s
+#7 10.75   4250K .......... .......... .......... .......... .......... 61% 93.1T 0s
+#7 10.75   4300K .......... .......... .......... .......... .......... 62% 36.6M 0s
+#7 10.75   4350K .......... .......... .......... .......... .......... 63%  304M 0s
+#7 10.75   4400K .......... .......... .......... .......... .......... 63% 93.1T 0s
+#7 10.75   4450K .......... .......... .......... .......... .......... 64%  426M 0s
+#7 10.75   4500K .......... .......... .......... .......... .......... 65%  502M 0s
+#7 10.75   4550K .......... .......... .......... .......... .......... 66%  516M 0s
+#7 10.75   4600K .......... .......... .......... .......... .......... 66% 93.1T 0s
+#7 10.75   4650K .......... .......... .......... .......... .......... 67%  425M 0s
+#7 10.75   4700K .......... .......... .......... .......... .......... 68%  372M 0s
+#7 10.75   4750K .......... .......... .......... .......... .......... 68%  354M 0s
+#7 10.75   4800K .......... .......... .......... .......... .......... 69%  439M 0s
+#7 10.75   4850K .......... .......... .......... .......... .......... 70% 93.1T 0s
+#7 10.75   4900K .......... .......... .......... .......... .......... 71%  495M 0s
+#7 10.75   4950K .......... .......... .......... .......... .......... 71%  504M 0s
+#7 10.75   5000K .......... .......... .......... .......... .......... 72%  389M 0s
+#7 10.75   5050K .......... .......... .......... .......... .......... 73% 93.1T 0s
+#7 10.75   5100K .......... .......... .......... .......... .......... 73%  465M 0s
+#7 10.75   5150K .......... .......... .......... .......... .......... 74%  534M 0s
+#7 10.75   5200K .......... .......... .......... .......... .......... 75%  498M 0s
+#7 10.75   5250K .......... .......... .......... .......... .......... 76%  520M 0s
+#7 10.75   5300K .......... .......... .......... .......... .......... 76% 93.1T 0s
+#7 10.75   5350K .......... .......... .......... .......... .......... 77%  472M 0s
+#7 10.75   5400K .......... .......... .......... .......... .......... 78%  930K 0s
+#7 10.81   5450K .......... .......... .......... .......... .......... 78%  391M 0s
+#7 10.81   5500K .......... .......... .......... .......... .......... 79% 93.1T 0s
+#7 10.81   5550K .......... .......... .......... .......... .......... 80% 5.95M 0s
+#7 10.82   5600K .......... .......... .......... .......... .......... 81%  314M 0s
+#7 10.82   5650K .......... .......... .......... .......... .......... 81% 93.1T 0s
+#7 10.82   5700K .......... .......... .......... .......... .......... 82%  489M 0s
+#7 10.82   5750K .......... .......... .......... .......... .......... 83% 50.3M 0s
+#7 10.82   5800K .......... .......... .......... .......... .......... 83% 64.6M 0s
+#7 10.82   5850K .......... .......... .......... .......... .......... 84% 93.1T 0s
+#7 10.82   5900K .......... .......... .......... .......... .......... 85%  325M 0s
+#7 10.82   5950K .......... .......... .......... .......... .......... 86% 89.8M 0s
+#7 10.82   6000K .......... .......... .......... .......... .......... 86%  436M 0s
+#7 10.82   6050K .......... .......... .......... .......... .......... 87%  778K 0s
+#7 10.88   6100K .......... .......... .......... .......... .......... 88%  109M 0s
+#7 10.88   6150K .......... .......... .......... .......... .......... 88%  932K 0s
+#7 10.94   6200K .......... .......... .......... .......... .......... 89% 93.1T 0s
+#7 10.94   6250K .......... .......... .......... .......... .......... 90%  386M 0s
+#7 10.94   6300K .......... .......... .......... .......... .......... 91%  447M 0s
+#7 10.94   6350K .......... .......... .......... .......... .......... 91% 7.68M 0s
+#7 10.94   6400K .......... .......... .......... .......... .......... 92%  327M 0s
+#7 10.94   6450K .......... .......... .......... .......... .......... 93% 93.1T 0s
+#7 10.94   6500K .......... .......... .......... .......... .......... 94%  448M 0s
+#7 10.94   6550K .......... .......... .......... .......... .......... 94%  436M 0s
+#7 10.94   6600K .......... .......... .......... .......... .......... 95%  472M 0s
+#7 10.94   6650K .......... .......... .......... .......... .......... 96%  475M 0s
+#7 10.94   6700K .......... .......... .......... .......... .......... 96% 93.1T 0s
+#7 10.94   6750K .......... .......... .......... .......... .......... 97%  439M 0s
+#7 10.94   6800K .......... .......... .......... .......... .......... 98%  478M 0s
+#7 10.94   6850K .......... .......... .......... .......... .......... 99%  460M 0s
+#7 10.94   6900K .......... .......... .......... .......... .......... 99% 93.1T 0s
+#7 10.94   6950K .......... ......                                     100%  189M=0.9s
+#7 10.94 
+#7 10.94 2024-08-01 00:54:51 (7.46 MB/s) - 'FLT7.1v1-linux-x86-release-64.tgz' saved [7133917/7133917]
+#7 10.94 
+#7 11.06 
+#7 11.06 -e [33mPlease note : The Foundry Licensing Tools are only for installation on the license server machine.[0m
+#7 11.06 -e [33mIt should not be installed on any of the client-side machines.[0m
+#7 11.06 
+#7 11.06 Do you wish to continue? <yes/no> -e [32mInstalling The Foundry Licensing Tools 7.1[0m
+#7 11.06 /usr/local/foundry/LicensingTools7.1/bin/RLM
+#7 11.06 install.sh: 57: [[: not found
+#7 11.06 /usr/local/foundry/LicensingTools7.1/bin/FLEXlm
+#7 11.19 -e [33mSetting foundry rlm license server to run at startup[0m
+#7 11.20 grep: /usr/local/foundry/RLM/log: Is a directory
+#7 11.21 [33mDefault descriptor limit 1024 insufficient, increasing to 28000[0m
+#7 11.21 [32mSuccessfully increased descriptor limit to 28000 [0m
+#7 11.21 [32mStarting RLM Server[0m
+#7 11.22 -e [33mSetting foundry flexlm license server to run at startup[0m
+#7 11.22 08/01 00:54 (rlm) 
+#7 11.22 08/01 00:54 (rlm) WARNING: No license file for this host (buildkitsandbox)
+#7 11.22 08/01 00:54 (rlm)          The hostname in the license file(s)
+#7 11.22 08/01 00:54 (rlm)          may be incorrect
+#7 11.22 08/01 00:54 (rlm) 
+#7 11.22 08/01 00:54 (rlm) License files:
+#7 11.22 08/01 00:54 (rlm) 
+#7 11.23 grep: /usr/local/foundry/FLEXlm/log: Is a directory
+#7 11.23 [33mDefault descriptor limit 1024 insufficient, increasing to 10240[0m
+#7 11.23 [32mSuccessfully increased descriptor limit to 10240 [0m
+#7 11.23 [32mStarting lmgrd Server[0m
+#7 11.24 license manager: can't initialize: Cannot find license file.
+#7 11.24  The license files (or license server system network addresses) attempted are 
+#7 11.24 listed below.  Use LM_LICENSE_FILE to use a different license file,
+#7 11.24  or contact your software provider for a license file.
+#7 11.24 License path:  /usr/local/flexlm/licenses/license.dat:
+#7 11.24 FLEXnet Licensing error:-1,212.  System Error: 2 "No such file or directory"
+#7 11.24 For further information, refer to the FLEXnet Licensing documentation,
+#7 11.24 available at "www.acresso.com".
+#7 11.24 -e [32mDone.[0m
+#7 DONE 11.6s
+
+#8 [3/5] RUN wget http://www.reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz &&     tar xvf x64_l1.admin.tar.gz &&     rm x64_l1.admin.tar.gz &&     cp /x64_l1.admin/rlm /usr/local/foundry/LicensingTools7.1/bin/RLM/rlm.foundry
+#8 0.178 --2024-08-01 00:54:52--  http://www.reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz
+#8 0.178 Resolving www.reprisesoftware.com (www.reprisesoftware.com)... 198.12.241.167
+#8 0.214 Connecting to www.reprisesoftware.com (www.reprisesoftware.com)|198.12.241.167|:80... connected.
+#8 0.250 HTTP request sent, awaiting response... 301 Moved Permanently
+#8 0.509 Location: https://reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz [following]
+#8 0.509 --2024-08-01 00:54:52--  https://reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz
+#8 0.537 Resolving reprisesoftware.com (reprisesoftware.com)... 198.12.241.167
+#8 0.557 Connecting to reprisesoftware.com (reprisesoftware.com)|198.12.241.167|:443... connected.
+#8 0.674 HTTP request sent, awaiting response... 404 Not Found
+#8 1.391 2024-08-01 00:54:53 ERROR 404: Not Found.
+#8 1.391 
+#8 ERROR: process "/bin/sh -c wget http://www.reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz &&     tar xvf x64_l1.admin.tar.gz &&     rm x64_l1.admin.tar.gz &&     cp /x64_l1.admin/rlm /usr/local/foundry/LicensingTools7.1/bin/RLM/rlm.foundry" did not complete successfully: exit code: 8
+------
+ > [3/5] RUN wget http://www.reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz &&     tar xvf x64_l1.admin.tar.gz &&     rm x64_l1.admin.tar.gz &&     cp /x64_l1.admin/rlm /usr/local/foundry/LicensingTools7.1/bin/RLM/rlm.foundry:
+301 Moved Permanently
+0.509 Location: https://reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz [following]
+0.509 --2024-08-01 00:54:52--  https://reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz
+404 Not Found
+1.391 2024-08-01 00:54:53 ERROR 404: Not Found.
+1.391 
+------
+v1_Dockerfile:13
+--------------------
+  12 |     # Update Reprise to latest version
+  13 | >>> RUN wget http://www.reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz && \
+  14 | >>>     tar xvf x64_l1.admin.tar.gz && \
+  15 | >>>     rm x64_l1.admin.tar.gz && \
+  16 | >>>     cp /x64_l1.admin/rlm /usr/local/foundry/LicensingTools7.1/bin/RLM/rlm.foundry
+  17 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c wget http://www.reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz &&     tar xvf x64_l1.admin.tar.gz &&     rm x64_l1.admin.tar.gz &&     cp /x64_l1.admin/rlm /usr/local/foundry/LicensingTools7.1/bin/RLM/rlm.foundry" did not complete successfully: exit code: 8
+Duration: 0:16.15

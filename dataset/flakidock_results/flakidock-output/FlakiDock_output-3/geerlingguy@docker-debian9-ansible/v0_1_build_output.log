@@ -1,0 +1,115 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 1.01kB done
+#1 DONE 0.3s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/debian:stretch
+#3 DONE 1.2s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 resolve docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 0.3s done
+#5 sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 1.21kB / 1.21kB done
+#5 sha256:16ee3e11da473f6565ef94a715f1a38b3079e0664913be78869c336a71cb6085 529B / 529B done
+#5 sha256:662c05203bab4c59568d24689fa5c3955439360a35c483178598d226b9a5ad10 1.46kB / 1.46kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 467B done
+#4 DONE 0.3s
+
+#5 [1/8] FROM docker.io/library/debian:stretch@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be
+#5 DONE 0.8s
+
+#6 [2/8] RUN apt-get update     && apt-get install -y --no-install-recommends        sudo systemd systemd-sysv        build-essential wget libffi-dev libssl-dev        python-pip python-dev python-setuptools python-wheel     && rm -rf /var/lib/apt/lists/*     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man     && apt-get clean
+#6 0.747 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+#6 0.750 Ign:2 http://security.debian.org/debian-security stretch/updates Release
+#6 0.762 Ign:3 http://deb.debian.org/debian stretch InRelease
+#6 0.771 Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+#6 0.783 Ign:5 http://deb.debian.org/debian stretch Release
+#6 0.793 Ign:6 http://deb.debian.org/debian stretch-updates Release
+#6 0.907 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.910 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.056 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.061 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.063 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.067 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 1.076 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.214 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.217 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.237 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.370 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.373 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.394 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.405 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 1.414 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.524 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.526 Ign:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.575 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 1.686 Ign:7 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 1.688 Err:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 1.688   404  Not Found [IP: 151.101.2.132 80]
+#6 1.732 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 1.741 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 1.751 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 1.909 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.066 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.075 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 2.085 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.242 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.400 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.410 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 2.420 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.578 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.736 Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 2.736   404  Not Found
+#6 2.755 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 2.765 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 2.929 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 2.929   404  Not Found
+#6 2.958 Reading package lists...
+#6 2.967 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 2.967 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 2.967 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 2.967 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.2.132 80]
+#6 2.967 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 2.967 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 2.967 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c apt-get update     && apt-get install -y --no-install-recommends        sudo systemd systemd-sysv        build-essential wget libffi-dev libssl-dev        python-pip python-dev python-setuptools python-wheel     && rm -rf /var/lib/apt/lists/*     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man     && apt-get clean" did not complete successfully: exit code: 100
+------
+ > [2/8] RUN apt-get update     && apt-get install -y --no-install-recommends        sudo systemd systemd-sysv        build-essential wget libffi-dev libssl-dev        python-pip python-dev python-setuptools python-wheel     && rm -rf /var/lib/apt/lists/*     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man     && apt-get clean:
+2.929 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+2.929   404  Not Found
+2.958 Reading package lists...
+2.967 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+2.967 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+2.967 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+2.967 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.2.132 80]
+2.967 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+2.967 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+2.967 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+Dockerfile:9
+--------------------
+   8 |     # Install dependencies.
+   9 | >>> RUN apt-get update \
+  10 | >>>     && apt-get install -y --no-install-recommends \
+  11 | >>>        sudo systemd systemd-sysv \
+  12 | >>>        build-essential wget libffi-dev libssl-dev \
+  13 | >>>        python-pip python-dev python-setuptools python-wheel \
+  14 | >>>     && rm -rf /var/lib/apt/lists/* \
+  15 | >>>     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
+  16 | >>>     && apt-get clean
+  17 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update     && apt-get install -y --no-install-recommends        sudo systemd systemd-sysv        build-essential wget libffi-dev libssl-dev        python-pip python-dev python-setuptools python-wheel     && rm -rf /var/lib/apt/lists/*     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man     && apt-get clean" did not complete successfully: exit code: 100
+Duration: 0:6.21

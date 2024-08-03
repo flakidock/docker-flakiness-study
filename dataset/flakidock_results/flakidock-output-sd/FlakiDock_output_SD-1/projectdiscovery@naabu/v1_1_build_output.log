@@ -1,0 +1,389 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 350B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/golang:1.19.2-alpine
+#3 ...
+
+#4 [internal] load metadata for docker.io/library/alpine:3.16.2
+#4 DONE 1.4s
+
+#3 [internal] load metadata for docker.io/library/golang:1.19.2-alpine
+#3 DONE 1.5s
+
+#5 [stage-1 1/3] FROM docker.io/library/alpine:3.16.2@sha256:65a2763f593ae85fab3b5406dc9e80f744ec5b449f269b699b5efd37a07ad32e
+#5 resolve docker.io/library/alpine:3.16.2@sha256:65a2763f593ae85fab3b5406dc9e80f744ec5b449f269b699b5efd37a07ad32e
+#5 resolve docker.io/library/alpine:3.16.2@sha256:65a2763f593ae85fab3b5406dc9e80f744ec5b449f269b699b5efd37a07ad32e 0.3s done
+#5 sha256:9c6f0724472873bb50a2ae67a9e7adcb57673a183cea8b06eb778dca859181b5 1.47kB / 1.47kB done
+#5 sha256:65a2763f593ae85fab3b5406dc9e80f744ec5b449f269b699b5efd37a07ad32e 1.64kB / 1.64kB done
+#5 sha256:1304f174557314a7ed9eddb4eab12fed12cb0cd9809e4c28f29af86979a3c870 528B / 528B done
+#5 sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 0B / 2.81MB 0.1s
+#5 sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 1.05MB / 2.81MB 0.2s
+#5 sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 2.81MB / 2.81MB 0.3s done
+#5 extracting sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49
+#5 DONE 1.5s
+
+#6 [stage-1 2/3] RUN apk add nmap libpcap-dev bind-tools ca-certificates nmap-scripts
+#6 0.604 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/main/x86_64/APKINDEX.tar.gz
+#6 0.859 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/community/x86_64/APKINDEX.tar.gz
+#6 1.316 (1/25) Installing fstrm (0.6.1-r0)
+#6 1.316 (2/25) Installing krb5-conf (1.0-r2)
+#6 1.319 (3/25) Installing libcom_err (1.46.6-r0)
+#6 1.325 (4/25) Installing keyutils-libs (1.6.3-r1)
+#6 1.329 (5/25) Installing libverto (0.3.2-r0)
+#6 1.332 (6/25) Installing krb5-libs (1.19.4-r0)
+#6 1.359 (7/25) Installing json-c (0.16-r0)
+#6 1.370 (8/25) Installing protobuf-c (1.4.1-r0)
+#6 1.373 (9/25) Installing libuv (1.44.1-r0)
+#6 1.379 (10/25) Installing xz-libs (5.2.5-r1)
+#6 1.432 (11/25) Installing libxml2 (2.9.14-r2)
+#6 1.453 (12/25) Installing bind-libs (9.16.48-r0)
+#6 1.494 (13/25) Installing bind-tools (9.16.48-r0)
+#6 3.427 (14/25) Installing ca-certificates (20240226-r0)
+#6 3.454 (15/25) Installing libpcap (1.10.1-r0)
+#6 3.466 (16/25) Installing pkgconf (1.8.1-r0)
+#6 3.483 (17/25) Installing libpcap-dev (1.10.1-r0)
+#6 3.510 (18/25) Installing libgcc (11.2.1_git20220219-r2)
+#6 3.514 (19/25) Installing lua5.3-libs (5.3.6-r3)
+#6 3.521 (20/25) Installing pcre (8.45-r2)
+#6 3.529 (21/25) Installing libssh2 (1.11.0-r0)
+#6 3.537 (22/25) Installing libstdc++ (11.2.1_git20220219-r2)
+#6 3.557 (23/25) Installing nmap (7.92-r2)
+#6 3.643 (24/25) Installing nmap-nselibs (7.92-r2)
+#6 3.740 (25/25) Installing nmap-scripts (7.92-r2)
+#6 3.847 Executing busybox-1.35.0-r17.trigger
+#6 3.853 Executing ca-certificates-20240226-r0.trigger
+#6 3.895 OK: 41 MiB in 39 packages
+#6 ...
+
+#7 [builder 1/3] FROM docker.io/library/golang:1.19.2-alpine@sha256:e4dcdac3ed37d8c2b3b8bcef2909573b2ad9c2ab53ba53c608909e8b89ccee36
+#7 resolve docker.io/library/golang:1.19.2-alpine@sha256:e4dcdac3ed37d8c2b3b8bcef2909573b2ad9c2ab53ba53c608909e8b89ccee36 0.3s done
+#7 sha256:e4dcdac3ed37d8c2b3b8bcef2909573b2ad9c2ab53ba53c608909e8b89ccee36 1.65kB / 1.65kB done
+#7 sha256:46752c2ee3bd8388608e41362964c84f7a6dffe99d86faeddc82d917740c5968 1.36kB / 1.36kB done
+#7 sha256:f9a40cb7e8ec6730fbc2feaad9b26b429930160c681b6d1e58ad3df1ad72d6f5 5.35kB / 5.35kB done
+#7 sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 2.81MB / 2.81MB 0.3s done
+#7 sha256:4583459ba0371c715f926a9bbd37a9dae909234f4b898220160425131eb53bd4 284.73kB / 284.73kB 0.4s done
+#7 sha256:93c1e223e6f2123b855e0c95898eba50cb6a055881ba9023527c0a361761c1cf 153B / 153B 0.4s done
+#7 extracting sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49 0.2s done
+#7 sha256:14bccb3a1cff3b5f09bf1f21ba9ecb17c96329fb82f96605d922cfa4c9a82032 122.25MB / 122.25MB 4.6s done
+#7 sha256:861cc3991b26fba6073631f27a1dc32bb27761195d912d05ee2f14b86fdf923f 156B / 156B 0.7s done
+#7 extracting sha256:4583459ba0371c715f926a9bbd37a9dae909234f4b898220160425131eb53bd4 0.1s done
+#7 extracting sha256:93c1e223e6f2123b855e0c95898eba50cb6a055881ba9023527c0a361761c1cf done
+#7 extracting sha256:14bccb3a1cff3b5f09bf1f21ba9ecb17c96329fb82f96605d922cfa4c9a82032 3.3s
+#7 ...
+
+#6 [stage-1 2/3] RUN apk add nmap libpcap-dev bind-tools ca-certificates nmap-scripts
+#6 DONE 7.3s
+
+#7 [builder 1/3] FROM docker.io/library/golang:1.19.2-alpine@sha256:e4dcdac3ed37d8c2b3b8bcef2909573b2ad9c2ab53ba53c608909e8b89ccee36
+#7 extracting sha256:14bccb3a1cff3b5f09bf1f21ba9ecb17c96329fb82f96605d922cfa4c9a82032 7.1s done
+#7 extracting sha256:861cc3991b26fba6073631f27a1dc32bb27761195d912d05ee2f14b86fdf923f
+#7 extracting sha256:861cc3991b26fba6073631f27a1dc32bb27761195d912d05ee2f14b86fdf923f done
+#7 DONE 15.1s
+
+#8 [builder 2/3] RUN apk add build-base libpcap-dev
+#8 0.474 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/main/x86_64/APKINDEX.tar.gz
+#8 0.711 fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/community/x86_64/APKINDEX.tar.gz
+#8 1.128 (1/23) Upgrading musl (1.2.3-r0 -> 1.2.3-r3)
+#8 1.140 (2/23) Installing libgcc (11.2.1_git20220219-r2)
+#8 1.145 (3/23) Installing libstdc++ (11.2.1_git20220219-r2)
+#8 1.165 (4/23) Installing binutils (2.38-r3)
+#8 1.280 (5/23) Installing libmagic (5.41-r0)
+#8 1.317 (6/23) Installing file (5.41-r0)
+#8 1.320 (7/23) Installing libgomp (11.2.1_git20220219-r2)
+#8 1.328 (8/23) Installing libatomic (11.2.1_git20220219-r2)
+#8 1.331 (9/23) Installing gmp (6.2.1-r2)
+#8 1.341 (10/23) Installing isl22 (0.22-r0)
+#8 1.362 (11/23) Installing mpfr4 (4.1.0-r0)
+#8 1.396 (12/23) Installing mpc1 (1.2.1-r0)
+#8 1.401 (13/23) Installing gcc (11.2.1_git20220219-r2)
+#8 2.302 (14/23) Installing musl-dev (1.2.3-r3)
+#8 2.425 (15/23) Installing libc-dev (0.7.2-r3)
+#8 2.428 (16/23) Installing g++ (11.2.1_git20220219-r2)
+#8 3.045 (17/23) Installing make (4.3-r0)
+#8 3.052 (18/23) Installing fortify-headers (1.1-r1)
+#8 3.070 (19/23) Installing patch (2.7.6-r7)
+#8 3.075 (20/23) Installing build-base (0.5-r3)
+#8 3.078 (21/23) Installing libpcap (1.10.1-r0)
+#8 3.085 (22/23) Installing pkgconf (1.8.1-r0)
+#8 3.090 (23/23) Installing libpcap-dev (1.10.1-r0)
+#8 3.103 Executing busybox-1.35.0-r17.trigger
+#8 3.110 OK: 188 MiB in 37 packages
+#8 DONE 16.0s
+
+#9 [builder 3/3] RUN go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@v2.1.0
+#9 0.767 go: downloading github.com/projectdiscovery/naabu/v2 v2.1.0
+#9 4.374 go: downloading github.com/projectdiscovery/gologger v1.1.4
+#9 4.374 go: downloading github.com/miekg/dns v1.1.50
+#9 4.374 go: downloading github.com/projectdiscovery/goflags v0.0.9
+#9 4.375 go: downloading github.com/projectdiscovery/mapcidr v1.0.1
+#9 4.376 go: downloading github.com/projectdiscovery/retryablehttp-go v1.0.2
+#9 4.376 go: downloading github.com/projectdiscovery/sliceutil v0.0.0-20220625085859-c3a4ecb669f4
+#9 4.376 go: downloading github.com/projectdiscovery/uncover v0.0.6
+#9 4.376 go: downloading github.com/projectdiscovery/fdmax v0.0.3
+#9 4.377 go: downloading github.com/projectdiscovery/clistats v0.0.8
+#9 4.377 go: downloading github.com/projectdiscovery/blackrock v0.0.0-20210903102120-5a9d2412d21d
+#9 4.377 go: downloading github.com/pkg/errors v0.9.1
+#9 4.377 go: downloading github.com/projectdiscovery/dnsx v1.1.1-0.20220726121728-699bed01313a
+#9 4.378 go: downloading github.com/projectdiscovery/iputil v0.0.0-20220625072148-037479960416
+#9 4.379 go: downloading github.com/projectdiscovery/fileutil v0.0.0-20220705195237-01becc2a8963
+#9 4.393 go: downloading github.com/remeh/sizedwaitgroup v1.0.0
+#9 4.398 go: downloading go.uber.org/ratelimit v0.2.0
+#9 4.469 go: downloading github.com/google/gopacket v1.1.19
+#9 4.483 go: downloading github.com/phayes/freeport v0.0.0-20180830031419-95f893ade6f2
+#9 4.488 go: downloading github.com/projectdiscovery/cdncheck v0.0.4-0.20220322144854-b2d8ce308abb
+#9 4.498 go: downloading github.com/projectdiscovery/ipranger v0.0.3-0.20220715104731-7638578d1725
+#9 4.499 go: downloading github.com/projectdiscovery/networkpolicy v0.0.2-0.20220525172507-b844eafc878d
+#9 4.499 go: downloading github.com/projectdiscovery/stringsutil v0.0.0-20220712170325-48c50c332cb4
+#9 4.499 go: downloading golang.org/x/net v0.0.0-20220708220712-1185a9018129
+#9 4.785 go: downloading golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a
+#9 4.875 go: downloading github.com/andres-erbsen/clock v0.0.0-20160526145045-9e14626cd129
+#9 4.891 go: downloading github.com/yl2chen/cidranger v1.0.2
+#9 4.901 go: downloading github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d
+#9 4.909 go: downloading gopkg.in/yaml.v3 v3.0.1
+#9 4.909 go: downloading go.uber.org/multierr v1.8.0
+#9 4.909 go: downloading github.com/cnf/structhash v0.0.0-20201127153200-e1b16c1ebc08
+#9 4.910 go: downloading go.uber.org/atomic v1.9.0
+#9 4.948 go: downloading github.com/json-iterator/go v1.1.12
+#9 4.948 go: downloading github.com/logrusorgru/aurora v2.0.3+incompatible
+#9 4.982 go: downloading github.com/projectdiscovery/retryabledns v1.0.14
+#9 4.991 go: downloading github.com/microcosm-cc/bluemonday v1.0.19
+#9 4.991 go: downloading github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca
+#9 4.998 go: downloading github.com/projectdiscovery/hmap v0.0.2
+#9 5.031 go: downloading golang.org/x/text v0.3.7
+#9 5.094 go: downloading github.com/modern-go/reflect2 v1.0.2
+#9 5.094 go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+#9 5.210 go: downloading github.com/aymerick/douceur v0.2.0
+#9 5.259 go: downloading go.etcd.io/bbolt v1.3.5
+#9 5.259 go: downloading github.com/dgraph-io/badger v1.6.2
+#9 5.260 go: downloading github.com/akrylysov/pogreb v0.10.1
+#9 5.260 go: downloading github.com/syndtr/goleveldb v1.0.0
+#9 5.260 go: downloading github.com/cockroachdb/pebble v0.0.0-20210728210723-48179f1d4dae
+#9 5.309 go: downloading github.com/gorilla/css v1.0.0
+#9 5.369 go: downloading github.com/golang/snappy v0.0.4
+#9 5.400 go: downloading github.com/dgraph-io/ristretto v0.0.3
+#9 5.400 go: downloading github.com/golang/protobuf v1.5.2
+#9 5.401 go: downloading github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96
+#9 5.401 go: downloading github.com/dustin/go-humanize v1.0.0
+#9 5.507 go: downloading google.golang.org/protobuf v1.26.0
+#9 5.570 go: downloading github.com/cespare/xxhash v1.1.0
+#9 6.113 go: downloading github.com/cockroachdb/errors v1.8.1
+#9 6.115 go: downloading golang.org/x/exp v0.0.0-20200513190911-00229845015e
+#9 6.115 go: downloading github.com/cockroachdb/redact v1.0.8
+#9 6.115 go: downloading github.com/DataDog/zstd v1.4.5
+#9 6.115 go: downloading github.com/cespare/xxhash/v2 v2.1.1
+#9 6.270 go: downloading github.com/cockroachdb/sentry-go v0.6.1-cockroachdb.2
+#9 6.270 go: downloading github.com/gogo/protobuf v1.3.2
+#9 6.271 go: downloading github.com/cockroachdb/logtags v0.0.0-20190617123548-eb05cc24525f
+#9 6.271 go: downloading github.com/kr/pretty v0.2.1
+#9 6.335 go: downloading github.com/kr/text v0.2.0
+#9 7.090 golang.org/x/net/internal/iana
+#9 7.097 github.com/projectdiscovery/gologger/levels
+#9 7.097 golang.org/x/net/html/atom
+#9 7.097 github.com/projectdiscovery/naabu/v2/pkg/israce
+#9 7.098 github.com/cockroachdb/errors/stdstrings
+#9 7.098 github.com/projectdiscovery/naabu/v2/pkg/utils
+#9 7.100 github.com/cockroachdb/pebble/internal/invariants
+#9 7.100 github.com/cockroachdb/pebble/internal/fastrand
+#9 7.100 github.com/dgraph-io/badger/options
+#9 7.100 google.golang.org/protobuf/internal/set
+#9 7.100 google.golang.org/protobuf/internal/flags
+#9 7.100 github.com/cockroachdb/pebble/internal/rawalloc
+#9 7.100 github.com/dgraph-io/badger/trie
+#9 7.100 golang.org/x/sys/internal/unsafeheader
+#9 7.104 github.com/projectdiscovery/blackrock
+#9 7.129 golang.org/x/text/transform
+#9 7.129 github.com/saintfish/chardet
+#9 7.129 github.com/projectdiscovery/sliceutil
+#9 7.130 github.com/gogo/protobuf/sortkeys
+#9 7.130 github.com/kr/text
+#9 7.136 github.com/modern-go/reflect2
+#9 7.142 github.com/modern-go/concurrent
+#9 7.143 github.com/logrusorgru/aurora
+#9 7.156 golang.org/x/net/bpf
+#9 7.163 github.com/pkg/errors
+#9 7.186 github.com/yl2chen/cidranger/net
+#9 7.187 go.uber.org/atomic
+#9 7.195 github.com/projectdiscovery/gologger/writer
+#9 7.201 github.com/aymerick/douceur/css
+#9 7.213 github.com/gorilla/css/scanner
+#9 7.213 github.com/microcosm-cc/bluemonday/css
+#9 7.216 golang.org/x/net/html
+#9 7.222 golang.org/x/text/unicode/bidi
+#9 7.225 golang.org/x/sys/unix
+#9 7.238 golang.org/x/net/http2/hpack
+#9 7.253 github.com/cnf/structhash
+#9 7.254 github.com/asaskevich/govalidator
+#9 7.254 golang.org/x/text/unicode/norm
+#9 7.254 github.com/projectdiscovery/naabu/v2/pkg/result
+#9 7.255 gopkg.in/yaml.v3
+#9 7.256 github.com/google/gopacket
+#9 7.282 github.com/phayes/freeport
+#9 7.291 github.com/projectdiscovery/hmap/store/cache
+#9 7.292 github.com/akrylysov/pogreb/fs
+#9 7.316 github.com/akrylysov/pogreb/internal/errors
+#9 7.323 github.com/akrylysov/pogreb/internal/hash
+#9 7.330 github.com/yl2chen/cidranger
+#9 7.369 github.com/gogo/protobuf/proto
+#9 7.380 github.com/cockroachdb/redact/internal/fmtsort
+#9 7.387 github.com/kr/pretty
+#9 7.389 github.com/aymerick/douceur/parser
+#9 7.392 github.com/cockroachdb/logtags
+#9 7.407 go.uber.org/multierr
+#9 7.407 github.com/projectdiscovery/clistats
+#9 7.417 github.com/cockroachdb/sentry-go
+#9 7.433 golang.org/x/exp/rand
+#9 7.447 github.com/cockroachdb/pebble/internal/bytealloc
+#9 7.486 github.com/cockroachdb/pebble/internal/manual
+#9 7.532 github.com/cockroachdb/pebble/internal/crc
+#9 7.532 github.com/cockroachdb/redact/internal
+#9 7.552 github.com/cespare/xxhash/v2
+#9 7.552 github.com/cockroachdb/pebble/internal/intern
+#9 7.591 github.com/golang/snappy
+#9 7.592 github.com/DataDog/zstd
+#9 7.627 google.golang.org/protobuf/internal/detrand
+#9 7.665 google.golang.org/protobuf/internal/pragma
+#9 7.679 google.golang.org/protobuf/internal/version
+#9 7.693 golang.org/x/text/secure/bidirule
+#9 7.698 golang.org/x/net/internal/timeseries
+#9 7.742 github.com/akrylysov/pogreb
+#9 7.748 github.com/cespare/xxhash
+#9 7.790 github.com/AndreasBriese/bbloom
+#9 7.810 github.com/dustin/go-humanize
+#9 7.817 github.com/syndtr/goleveldb/leveldb/util
+#9 7.829 github.com/syndtr/goleveldb/leveldb/comparer
+#9 7.859 google.golang.org/protobuf/internal/errors
+#9 7.864 github.com/syndtr/goleveldb/leveldb/storage
+#9 7.867 go.etcd.io/bbolt
+#9 7.898 github.com/google/gopacket/layers
+#9 8.056 github.com/cockroachdb/redact
+#9 8.138 github.com/syndtr/goleveldb/leveldb/filter
+#9 8.139 golang.org/x/net/internal/socks
+#9 8.139 github.com/andres-erbsen/clock
+#9 8.139 github.com/remeh/sizedwaitgroup
+#9 8.139 google.golang.org/protobuf/encoding/protowire
+#9 8.140 golang.org/x/net/trace
+#9 8.141 github.com/dgraph-io/ristretto/z
+#9 8.141 github.com/syndtr/goleveldb/leveldb/cache
+#9 8.175 github.com/microcosm-cc/bluemonday
+#9 8.238 golang.org/x/net/idna
+#9 8.265 github.com/json-iterator/go
+#9 8.468 google.golang.org/protobuf/reflect/protoreflect
+#9 8.480 golang.org/x/net/proxy
+#9 8.487 github.com/syndtr/goleveldb/leveldb/errors
+#9 8.487 github.com/syndtr/goleveldb/leveldb/opt
+#9 8.503 go.uber.org/ratelimit
+#9 8.512 github.com/cockroachdb/pebble/internal/humanize
+#9 8.514 github.com/projectdiscovery/stringsutil
+#9 8.589 github.com/syndtr/goleveldb/leveldb/journal
+#9 8.590 github.com/syndtr/goleveldb/leveldb/iterator
+#9 8.630 github.com/projectdiscovery/fdmax
+#9 8.630 github.com/projectdiscovery/naabu/v2/pkg/privileges
+#9 8.631 github.com/dgraph-io/badger/y
+#9 8.631 golang.org/x/net/internal/socket
+#9 8.645 github.com/projectdiscovery/fileutil
+#9 8.646 github.com/projectdiscovery/mapcidr
+#9 8.675 golang.org/x/net/http/httpguts
+#9 8.742 github.com/projectdiscovery/fdmax/autofdmax
+#9 8.778 github.com/syndtr/goleveldb/leveldb/memdb
+#9 8.778 github.com/syndtr/goleveldb/leveldb/table
+#9 8.795 golang.org/x/net/http2
+#9 8.795 google.golang.org/protobuf/internal/encoding/messageset
+#9 8.796 google.golang.org/protobuf/internal/order
+#9 8.796 google.golang.org/protobuf/runtime/protoiface
+#9 8.796 google.golang.org/protobuf/internal/strs
+#9 8.800 google.golang.org/protobuf/internal/genid
+#9 8.800 google.golang.org/protobuf/internal/descfmt
+#9 8.800 google.golang.org/protobuf/internal/descopts
+#9 8.837 github.com/projectdiscovery/retryabledns/hostsfile
+#9 8.837 github.com/projectdiscovery/goflags
+#9 8.888 github.com/dgraph-io/badger/table
+#9 8.888 github.com/dgraph-io/badger/skl
+#9 8.946 google.golang.org/protobuf/internal/encoding/text
+#9 8.950 google.golang.org/protobuf/reflect/protoregistry
+#9 8.958 golang.org/x/net/ipv6
+#9 8.958 golang.org/x/net/ipv4
+#9 9.012 github.com/projectdiscovery/iputil
+#9 9.128 github.com/syndtr/goleveldb/leveldb
+#9 9.153 github.com/projectdiscovery/networkpolicy
+#9 9.154 github.com/projectdiscovery/naabu/v2/pkg/routing
+#9 9.194 google.golang.org/protobuf/proto
+#9 9.210 google.golang.org/protobuf/internal/encoding/defval
+#9 9.461 github.com/gogo/protobuf/types
+#9 9.474 golang.org/x/net/icmp
+#9 9.476 google.golang.org/protobuf/encoding/prototext
+#9 9.477 google.golang.org/protobuf/internal/filedesc
+#9 9.482 github.com/miekg/dns
+#9 9.485 github.com/projectdiscovery/gologger/formatter
+#9 9.485 github.com/projectdiscovery/cdncheck
+#9 9.619 github.com/projectdiscovery/gologger
+#9 10.07 github.com/projectdiscovery/retryablehttp-go
+#9 10.13 google.golang.org/protobuf/internal/encoding/tag
+#9 10.26 google.golang.org/protobuf/internal/impl
+#9 10.29 github.com/projectdiscovery/uncover/uncover
+#9 10.39 github.com/projectdiscovery/uncover/uncover/agent/shodanidb
+#9 10.62 github.com/google/gopacket/pcap
+#9 10.63 github.com/cockroachdb/errors/errorspb
+#9 10.89 github.com/cockroachdb/errors/errbase
+#9 11.11 github.com/cockroachdb/errors/markers
+#9 11.11 github.com/cockroachdb/errors/barriers
+#9 11.11 github.com/cockroachdb/errors/secondary
+#9 11.11 github.com/cockroachdb/errors/contexttags
+#9 11.11 github.com/cockroachdb/errors/withstack
+#9 11.11 github.com/cockroachdb/errors/telemetrykeys
+#9 11.11 github.com/cockroachdb/errors/hintdetail
+#9 11.11 github.com/cockroachdb/errors/safedetails
+#9 11.19 github.com/cockroachdb/errors/domains
+#9 11.23 github.com/cockroachdb/errors/assert
+#9 11.23 github.com/cockroachdb/errors/issuelink
+#9 11.27 github.com/cockroachdb/errors/report
+#9 11.32 github.com/cockroachdb/errors/errutil
+#9 11.39 github.com/projectdiscovery/retryabledns/doh
+#9 11.43 github.com/cockroachdb/errors
+#9 11.49 github.com/projectdiscovery/retryabledns
+#9 11.54 github.com/cockroachdb/errors/oserror
+#9 11.54 github.com/cockroachdb/pebble/internal/rate
+#9 11.58 google.golang.org/protobuf/internal/filetype
+#9 11.61 github.com/cockroachdb/pebble/vfs
+#9 11.67 github.com/projectdiscovery/dnsx/libs/dnsx
+#9 11.71 google.golang.org/protobuf/runtime/protoimpl
+#9 11.78 google.golang.org/protobuf/types/descriptorpb
+#9 11.89 github.com/cockroachdb/pebble/internal/base
+#9 12.04 github.com/cockroachdb/pebble/internal/batchskl
+#9 12.04 github.com/cockroachdb/pebble/internal/arenaskl
+#9 12.04 github.com/cockroachdb/pebble/record
+#9 12.04 github.com/cockroachdb/pebble/internal/rangedel
+#9 12.04 github.com/cockroachdb/pebble/internal/cache
+#9 12.05 github.com/cockroachdb/pebble/internal/manifest
+#9 12.08 google.golang.org/protobuf/reflect/protodesc
+#9 12.39 github.com/golang/protobuf/proto
+#9 12.47 github.com/cockroachdb/pebble/internal/private
+#9 12.69 github.com/dgraph-io/badger/pb
+#9 12.82 github.com/dgraph-io/badger
+#9 72.44 github.com/cockroachdb/pebble/sstable
+#9 72.86 github.com/cockroachdb/pebble
+#9 74.05 github.com/projectdiscovery/hmap/store/disk
+#9 74.25 github.com/projectdiscovery/hmap/store/hybrid
+#9 74.37 github.com/projectdiscovery/ipranger
+#9 74.44 github.com/projectdiscovery/naabu/v2/pkg/scan
+#9 74.64 github.com/projectdiscovery/naabu/v2/pkg/runner
+#9 74.96 github.com/projectdiscovery/naabu/v2/cmd/naabu
+#9 DONE 79.1s
+
+#10 [stage-1 3/3] COPY --from=builder /go/bin/naabu /usr/local/bin/naabu
+#10 DONE 0.9s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 1.1s done
+#11 writing image sha256:c4baf0e7132ddf7ac7e55501eb9297dc15f167c8edca9664690cb750eae66b2a 0.0s done
+#11 naming to docker.io/library/image_name_v1_1 0.0s done
+#11 DONE 1.2s
+Duration: 1:55.26

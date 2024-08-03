@@ -1,0 +1,120 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 1.47kB done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/debian:stable-slim
+#3 ...
+
+#4 [auth] library/debian:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for gcr.io/distroless/base:latest
+#5 DONE 1.3s
+
+#3 [internal] load metadata for docker.io/library/debian:stable-slim
+#3 DONE 1.5s
+
+#6 [builder 1/4] FROM docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755
+#6 resolve docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755
+#6 resolve docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755 0.3s done
+#6 sha256:e5365b94db65754594422a8a101c873728711c6a4df029677f4a7f7200d6e1c3 529B / 529B done
+#6 sha256:ea3dacfdd555d2342b58d6ce6515c3a2c10ac60a826e15df4b213effd45e54ff 1.46kB / 1.46kB done
+#6 sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755 1.85kB / 1.85kB done
+#6 DONE 0.9s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 resolve gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9 0.3s done
+#7 sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9 1.51kB / 1.51kB done
+#7 sha256:a7af3ef5d69f6534ba0492cc7d6b8fbcffddcb02511b45becc2fac752f907584 2.27kB / 2.27kB done
+#7 sha256:7273f3276b21230a7ffb4709dee8b1213262d69d822f0fa0f5c11d48fcc28eb9 1.71kB / 1.71kB done
+#7 ...
+
+#8 https://github.com/validator/validator/releases/download/latest/vnu.linux.zip.sha1
+#8 DONE 1.5s
+
+#8 https://github.com/validator/validator/releases/download/latest/vnu.linux.zip.sha1
+#8 DONE 1.5s
+
+#9 https://github.com/validator/validator/releases/download/latest/vnu.linux.zip
+#9 DONE 2.2s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 ...
+
+#9 https://github.com/validator/validator/releases/download/latest/vnu.linux.zip
+#9 DONE 2.3s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 ...
+
+#10 [builder 2/4] ADD https://github.com/validator/validator/releases/download/latest/vnu.linux.zip .
+#10 DONE 2.5s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 ...
+
+#11 [builder 3/4] ADD https://github.com/validator/validator/releases/download/latest/vnu.linux.zip.sha1 .
+#11 DONE 0.9s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 ...
+
+#12 [builder 4/4] RUN apt-get update && apt-get install --no-install-recommends -y        unzip=6.0-26+deb11u1     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo "$(cat vnu.linux.zip.sha1)  vnu.linux.zip" | sha1sum -c -     && unzip ./vnu.linux.zip     && rm ./vnu.linux.zip*     && apt-get purge -y --auto-remove unzip
+#12 ...
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/base@sha256:1aae189e3baecbb4044c648d356ddb75025b2ba8d14cdc9c2a19ba784c90bfb9
+#7 DONE 7.5s
+
+#12 [builder 4/4] RUN apt-get update && apt-get install --no-install-recommends -y        unzip=6.0-26+deb11u1     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo "$(cat vnu.linux.zip.sha1)  vnu.linux.zip" | sha1sum -c -     && unzip ./vnu.linux.zip     && rm ./vnu.linux.zip*     && apt-get purge -y --auto-remove unzip
+#12 1.526 Get:1 http://deb.debian.org/debian stable InRelease [151 kB]
+#12 1.868 Get:2 http://deb.debian.org/debian stable-updates InRelease [55.4 kB]
+#12 2.030 Get:3 http://deb.debian.org/debian-security stable-security InRelease [48.0 kB]
+#12 2.082 Get:4 http://deb.debian.org/debian stable/main amd64 Packages [8788 kB]
+#12 2.218 Get:5 http://deb.debian.org/debian stable-updates/main amd64 Packages [13.8 kB]
+#12 2.230 Get:6 http://deb.debian.org/debian-security stable-security/main amd64 Packages [169 kB]
+#12 3.531 Fetched 9225 kB in 2s (3956 kB/s)
+#12 3.531 Reading package lists...
+#12 4.233 Reading package lists...
+#12 4.915 Building dependency tree...
+#12 5.043 Reading state information...
+#12 5.048 Package unzip is not available, but is referred to by another package.
+#12 5.048 This may mean that the package is missing, has been obsoleted, or
+#12 5.048 is only available from another source
+#12 5.048 
+#12 5.052 E: Version '6.0-26+deb11u1' for 'unzip' was not found
+#12 ERROR: process "/bin/bash -o pipefail -c apt-get update && apt-get install --no-install-recommends -y        unzip=6.0-26+deb11u1     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo \"$(cat vnu.linux.zip.sha1)  vnu.linux.zip\" | sha1sum -c -     && unzip ./vnu.linux.zip     && rm ./vnu.linux.zip*     && apt-get purge -y --auto-remove unzip" did not complete successfully: exit code: 100
+------
+ > [builder 4/4] RUN apt-get update && apt-get install --no-install-recommends -y        unzip=6.0-26+deb11u1     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo "$(cat vnu.linux.zip.sha1)  vnu.linux.zip" | sha1sum -c -     && unzip ./vnu.linux.zip     && rm ./vnu.linux.zip*     && apt-get purge -y --auto-remove unzip:
+2.218 Get:5 http://deb.debian.org/debian stable-updates/main amd64 Packages [13.8 kB]
+2.230 Get:6 http://deb.debian.org/debian-security stable-security/main amd64 Packages [169 kB]
+
+
+
+5.048 Package unzip is not available, but is referred to by another package.
+5.048 This may mean that the package is missing, has been obsoleted, or
+5.048 is only available from another source
+5.048 
+5.052 E: Version '6.0-26+deb11u1' for 'unzip' was not found
+------
+Dockerfile:15
+--------------------
+  14 |     SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+  15 | >>> RUN apt-get update && apt-get install --no-install-recommends -y \
+  16 | >>>        unzip=6.0-26+deb11u1 \
+  17 | >>>     && apt-get clean \
+  18 | >>>     && rm -rf /var/lib/apt/lists/* \
+  19 | >>>     && echo "$(cat vnu.linux.zip.sha1)  vnu.linux.zip" | sha1sum -c - \
+  20 | >>>     && unzip ./vnu.linux.zip \
+  21 | >>>     && rm ./vnu.linux.zip* \
+  22 | >>>     && apt-get purge -y --auto-remove unzip
+  23 |     # hadolint ignore=DL3006
+--------------------
+ERROR: failed to solve: process "/bin/bash -o pipefail -c apt-get update && apt-get install --no-install-recommends -y        unzip=6.0-26+deb11u1     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && echo \"$(cat vnu.linux.zip.sha1)  vnu.linux.zip\" | sha1sum -c -     && unzip ./vnu.linux.zip     && rm ./vnu.linux.zip*     && apt-get purge -y --auto-remove unzip" did not complete successfully: exit code: 100
+Duration: 0:14.43

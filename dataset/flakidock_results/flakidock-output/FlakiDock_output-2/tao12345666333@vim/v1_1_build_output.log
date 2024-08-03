@@ -1,0 +1,1936 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 48B done
+#2 DONE 0.6s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.58kB done
+#1 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/debian:buster-slim
+#3 DONE 1.1s
+
+#4 [builder 1/3] FROM docker.io/library/debian:buster-slim@sha256:bb3dc79fddbca7e8903248ab916bb775c96ec61014b3d02b4f06043b604726dc
+#4 resolve docker.io/library/debian:buster-slim@sha256:bb3dc79fddbca7e8903248ab916bb775c96ec61014b3d02b4f06043b604726dc
+#4 resolve docker.io/library/debian:buster-slim@sha256:bb3dc79fddbca7e8903248ab916bb775c96ec61014b3d02b4f06043b604726dc 0.2s done
+#4 sha256:bb3dc79fddbca7e8903248ab916bb775c96ec61014b3d02b4f06043b604726dc 984B / 984B done
+#4 sha256:32220ea48be72979c9f0810d69f3de9145c9584c2ee966c6ec26edbcf4640c0b 529B / 529B done
+#4 sha256:e1a7bb630c8baa947c5430a7f0965ef6afe71e88e90547aced2e601a89b68399 1.46kB / 1.46kB done
+#4 sha256:b338562f40a7fb7360dfae935da6d7e40d2545db18bc461d9d70ec1b2b657f33 0B / 27.34MB 0.1s
+#4 sha256:b338562f40a7fb7360dfae935da6d7e40d2545db18bc461d9d70ec1b2b657f33 3.15MB / 27.34MB 0.3s
+#4 sha256:b338562f40a7fb7360dfae935da6d7e40d2545db18bc461d9d70ec1b2b657f33 11.53MB / 27.34MB 0.4s
+#4 sha256:b338562f40a7fb7360dfae935da6d7e40d2545db18bc461d9d70ec1b2b657f33 23.07MB / 27.34MB 0.6s
+#4 sha256:b338562f40a7fb7360dfae935da6d7e40d2545db18bc461d9d70ec1b2b657f33 27.34MB / 27.34MB 0.8s
+#4 sha256:b338562f40a7fb7360dfae935da6d7e40d2545db18bc461d9d70ec1b2b657f33 27.34MB / 27.34MB 1.1s done
+#4 extracting sha256:b338562f40a7fb7360dfae935da6d7e40d2545db18bc461d9d70ec1b2b657f33 0.1s
+#4 extracting sha256:b338562f40a7fb7360dfae935da6d7e40d2545db18bc461d9d70ec1b2b657f33 1.8s done
+#4 DONE 3.7s
+
+#5 [builder 2/3] RUN apt update && apt install -y --no-install-recommends         ca-certificates         exuberant-ctags         gcc         git         libncurses5-dev         make         python         python-dev         wget     && rm -rf /var/lib/apt/lists/*
+#5 0.535 
+#5 0.535 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#5 0.535 
+#5 0.575 Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+#5 0.898 Get:2 http://deb.debian.org/debian-security buster/updates InRelease [34.8 kB]
+#5 1.059 Get:3 http://deb.debian.org/debian buster-updates InRelease [56.6 kB]
+#5 1.072 Get:4 http://deb.debian.org/debian buster/main amd64 Packages [7909 kB]
+#5 1.202 Get:5 http://deb.debian.org/debian-security buster/updates/main amd64 Packages [610 kB]
+#5 1.211 Get:6 http://deb.debian.org/debian buster-updates/main amd64 Packages [8788 B]
+#5 2.690 Fetched 8741 kB in 2s (4104 kB/s)
+#5 2.690 Reading package lists...
+#5 3.414 Building dependency tree...
+#5 3.528 Reading state information...
+#5 3.542 2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+#5 3.548 
+#5 3.548 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#5 3.548 
+#5 3.557 Reading package lists...
+#5 4.279 Building dependency tree...
+#5 4.398 Reading state information...
+#5 4.532 The following additional packages will be installed:
+#5 4.532   binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-8 gcc-8 git-man
+#5 4.532   libasan5 libatomic1 libbinutils libc-dev-bin libc6 libc6-dev libcc1-0
+#5 4.532   libcurl3-gnutls liberror-perl libexpat1 libexpat1-dev libgcc-8-dev
+#5 4.532   libgdbm-compat4 libgdbm6 libgomp1 libgssapi-krb5-2 libisl19 libitm1
+#5 4.532   libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2
+#5 4.532   libldap-common liblsan0 libmpc3 libmpfr6 libmpx2 libncurses-dev libncurses6
+#5 4.532   libnghttp2-14 libpcre2-8-0 libperl5.28 libpsl5 libpython-dev
+#5 4.532   libpython-stdlib libpython2-dev libpython2-stdlib libpython2.7
+#5 4.532   libpython2.7-dev libpython2.7-minimal libpython2.7-stdlib libquadmath0
+#5 4.533   libreadline7 librtmp1 libsasl2-2 libsasl2-modules-db libsqlite3-0 libssh2-1
+#5 4.533   libssl1.1 libtsan0 libubsan1 linux-libc-dev mime-support openssl perl
+#5 4.533   perl-modules-5.28 python-minimal python2 python2-dev python2-minimal
+#5 4.533   python2.7 python2.7-dev python2.7-minimal readline-common
+#5 4.534 Suggested packages:
+#5 4.534   binutils-doc cpp-doc gcc-8-locales vim | nvi | vile | emacsen gcc-multilib
+#5 4.534   manpages-dev autoconf automake libtool flex bison gdb gcc-doc gcc-8-multilib
+#5 4.534   gcc-8-doc libgcc1-dbg libgomp1-dbg libitm1-dbg libatomic1-dbg libasan5-dbg
+#5 4.534   liblsan0-dbg libtsan0-dbg libubsan1-dbg libmpx2-dbg libquadmath0-dbg
+#5 4.534   gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-el git-email
+#5 4.534   git-gui gitk gitweb git-cvs git-mediawiki git-svn glibc-doc libc-l10n
+#5 4.534   locales gdbm-l10n krb5-doc krb5-user ncurses-doc sensible-utils make-doc
+#5 4.534   perl-doc libterm-readline-gnu-perl | libterm-readline-perl-perl
+#5 4.534   libb-debug-perl liblocale-codes-perl python-doc python-tk python2-doc
+#5 4.534   python2.7-doc binfmt-support readline-doc
+#5 4.534 Recommended packages:
+#5 4.534   patch less ssh-client manpages manpages-dev krb5-locales libgpm2
+#5 4.534   publicsuffix libsasl2-modules bzip2 file xz-utils netbase
+#5 4.957 The following NEW packages will be installed:
+#5 4.957   binutils binutils-common binutils-x86-64-linux-gnu ca-certificates cpp cpp-8
+#5 4.957   exuberant-ctags gcc gcc-8 git git-man libasan5 libatomic1 libbinutils
+#5 4.957   libc-dev-bin libc6-dev libcc1-0 libcurl3-gnutls liberror-perl libexpat1
+#5 4.957   libexpat1-dev libgcc-8-dev libgdbm-compat4 libgdbm6 libgomp1
+#5 4.957   libgssapi-krb5-2 libisl19 libitm1 libk5crypto3 libkeyutils1 libkrb5-3
+#5 4.957   libkrb5support0 libldap-2.4-2 libldap-common liblsan0 libmpc3 libmpfr6
+#5 4.957   libmpx2 libncurses-dev libncurses5-dev libncurses6 libnghttp2-14
+#5 4.957   libpcre2-8-0 libperl5.28 libpsl5 libpython-dev libpython-stdlib
+#5 4.957   libpython2-dev libpython2-stdlib libpython2.7 libpython2.7-dev
+#5 4.957   libpython2.7-minimal libpython2.7-stdlib libquadmath0 libreadline7 librtmp1
+#5 4.957   libsasl2-2 libsasl2-modules-db libsqlite3-0 libssh2-1 libssl1.1 libtsan0
+#5 4.957   libubsan1 linux-libc-dev make mime-support openssl perl perl-modules-5.28
+#5 4.957   python python-dev python-minimal python2 python2-dev python2-minimal
+#5 4.957   python2.7 python2.7-dev python2.7-minimal readline-common wget
+#5 4.958 The following packages will be upgraded:
+#5 4.959   libc6
+#5 5.007 1 upgraded, 80 newly installed, 0 to remove and 1 not upgraded.
+#5 5.007 Need to get 94.4 MB of archives.
+#5 5.007 After this operation, 314 MB of additional disk space will be used.
+#5 5.007 Get:1 http://deb.debian.org/debian buster/main amd64 perl-modules-5.28 all 5.28.1-6+deb10u1 [2873 kB]
+#5 5.091 Get:2 http://deb.debian.org/debian-security buster/updates/main amd64 libc6 amd64 2.28-10+deb10u4 [2869 kB]
+#5 5.127 Get:3 http://deb.debian.org/debian buster/main amd64 libgdbm6 amd64 1.18.1-4 [64.7 kB]
+#5 5.128 Get:4 http://deb.debian.org/debian buster/main amd64 libgdbm-compat4 amd64 1.18.1-4 [44.1 kB]
+#5 5.129 Get:5 http://deb.debian.org/debian buster/main amd64 libperl5.28 amd64 5.28.1-6+deb10u1 [3894 kB]
+#5 5.177 Get:6 http://deb.debian.org/debian buster/main amd64 perl amd64 5.28.1-6+deb10u1 [204 kB]
+#5 5.180 Get:7 http://deb.debian.org/debian-security buster/updates/main amd64 libpython2.7-minimal amd64 2.7.16-2+deb10u4 [396 kB]
+#5 5.185 Get:8 http://deb.debian.org/debian-security buster/updates/main amd64 python2.7-minimal amd64 2.7.16-2+deb10u4 [1367 kB]
+#5 5.202 Get:9 http://deb.debian.org/debian buster/main amd64 python2-minimal amd64 2.7.16-1 [41.4 kB]
+#5 5.203 Get:10 http://deb.debian.org/debian buster/main amd64 python-minimal amd64 2.7.16-1 [21.0 kB]
+#5 5.203 Get:11 http://deb.debian.org/debian-security buster/updates/main amd64 libssl1.1 amd64 1.1.1n-0+deb10u6 [1552 kB]
+#5 5.223 Get:12 http://deb.debian.org/debian buster/main amd64 mime-support all 3.62 [37.2 kB]
+#5 5.224 Get:13 http://deb.debian.org/debian-security buster/updates/main amd64 libexpat1 amd64 2.2.6-2+deb10u7 [108 kB]
+#5 5.225 Get:14 http://deb.debian.org/debian buster/main amd64 readline-common all 7.0-5 [70.6 kB]
+#5 5.227 Get:15 http://deb.debian.org/debian buster/main amd64 libreadline7 amd64 7.0-5 [151 kB]
+#5 5.229 Get:16 http://deb.debian.org/debian-security buster/updates/main amd64 libsqlite3-0 amd64 3.27.2-3+deb10u2 [641 kB]
+#5 5.237 Get:17 http://deb.debian.org/debian-security buster/updates/main amd64 libpython2.7-stdlib amd64 2.7.16-2+deb10u4 [1912 kB]
+#5 5.260 Get:18 http://deb.debian.org/debian-security buster/updates/main amd64 python2.7 amd64 2.7.16-2+deb10u4 [306 kB]
+#5 5.264 Get:19 http://deb.debian.org/debian buster/main amd64 libpython2-stdlib amd64 2.7.16-1 [20.8 kB]
+#5 5.265 Get:20 http://deb.debian.org/debian buster/main amd64 libpython-stdlib amd64 2.7.16-1 [20.8 kB]
+#5 5.265 Get:21 http://deb.debian.org/debian buster/main amd64 python2 amd64 2.7.16-1 [41.6 kB]
+#5 5.266 Get:22 http://deb.debian.org/debian buster/main amd64 python amd64 2.7.16-1 [22.8 kB]
+#5 5.267 Get:23 http://deb.debian.org/debian buster/main amd64 libkeyutils1 amd64 1.6-6 [15.0 kB]
+#5 5.267 Get:24 http://deb.debian.org/debian-security buster/updates/main amd64 libkrb5support0 amd64 1.17-3+deb10u6 [66.1 kB]
+#5 5.268 Get:25 http://deb.debian.org/debian-security buster/updates/main amd64 libk5crypto3 amd64 1.17-3+deb10u6 [122 kB]
+#5 5.270 Get:26 http://deb.debian.org/debian-security buster/updates/main amd64 libkrb5-3 amd64 1.17-3+deb10u6 [369 kB]
+#5 5.281 Get:27 http://deb.debian.org/debian-security buster/updates/main amd64 libgssapi-krb5-2 amd64 1.17-3+deb10u6 [159 kB]
+#5 5.285 Get:28 http://deb.debian.org/debian-security buster/updates/main amd64 libpcre2-8-0 amd64 10.32-5+deb10u1 [213 kB]
+#5 5.288 Get:29 http://deb.debian.org/debian buster/main amd64 libpsl5 amd64 0.20.2-2 [53.7 kB]
+#5 5.289 Get:30 http://deb.debian.org/debian buster/main amd64 wget amd64 1.20.1-1.1 [902 kB]
+#5 5.302 Get:31 http://deb.debian.org/debian buster/main amd64 binutils-common amd64 2.31.1-16 [2073 kB]
+#5 5.332 Get:32 http://deb.debian.org/debian buster/main amd64 libbinutils amd64 2.31.1-16 [478 kB]
+#5 5.338 Get:33 http://deb.debian.org/debian buster/main amd64 binutils-x86-64-linux-gnu amd64 2.31.1-16 [1823 kB]
+#5 5.596 Get:34 http://deb.debian.org/debian buster/main amd64 binutils amd64 2.31.1-16 [56.8 kB]
+#5 5.598 Get:35 http://deb.debian.org/debian-security buster/updates/main amd64 openssl amd64 1.1.1n-0+deb10u6 [855 kB]
+#5 5.610 Get:36 http://deb.debian.org/debian buster/main amd64 ca-certificates all 20200601~deb10u2 [166 kB]
+#5 5.612 Get:37 http://deb.debian.org/debian buster/main amd64 libisl19 amd64 0.20-2 [587 kB]
+#5 5.621 Get:38 http://deb.debian.org/debian buster/main amd64 libmpfr6 amd64 4.0.2-1 [775 kB]
+#5 5.632 Get:39 http://deb.debian.org/debian buster/main amd64 libmpc3 amd64 1.1.0-1 [41.3 kB]
+#5 5.633 Get:40 http://deb.debian.org/debian buster/main amd64 cpp-8 amd64 8.3.0-6 [8914 kB]
+#5 5.749 Get:41 http://deb.debian.org/debian buster/main amd64 cpp amd64 4:8.3.0-1 [19.4 kB]
+#5 5.763 Get:42 http://deb.debian.org/debian-security buster/updates/main amd64 exuberant-ctags amd64 1:5.9~svn20110310-12+deb10u1 [148 kB]
+#5 5.910 Get:43 http://deb.debian.org/debian buster/main amd64 libcc1-0 amd64 8.3.0-6 [46.6 kB]
+#5 5.912 Get:44 http://deb.debian.org/debian buster/main amd64 libgomp1 amd64 8.3.0-6 [75.8 kB]
+#5 5.913 Get:45 http://deb.debian.org/debian buster/main amd64 libitm1 amd64 8.3.0-6 [27.7 kB]
+#5 5.914 Get:46 http://deb.debian.org/debian buster/main amd64 libatomic1 amd64 8.3.0-6 [9032 B]
+#5 5.915 Get:47 http://deb.debian.org/debian buster/main amd64 libasan5 amd64 8.3.0-6 [362 kB]
+#5 5.921 Get:48 http://deb.debian.org/debian buster/main amd64 liblsan0 amd64 8.3.0-6 [131 kB]
+#5 5.924 Get:49 http://deb.debian.org/debian buster/main amd64 libtsan0 amd64 8.3.0-6 [283 kB]
+#5 5.928 Get:50 http://deb.debian.org/debian buster/main amd64 libubsan1 amd64 8.3.0-6 [120 kB]
+#5 5.930 Get:51 http://deb.debian.org/debian buster/main amd64 libmpx2 amd64 8.3.0-6 [11.4 kB]
+#5 5.930 Get:52 http://deb.debian.org/debian buster/main amd64 libquadmath0 amd64 8.3.0-6 [133 kB]
+#5 5.932 Get:53 http://deb.debian.org/debian buster/main amd64 libgcc-8-dev amd64 8.3.0-6 [2298 kB]
+#5 5.965 Get:54 http://deb.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9452 kB]
+#5 6.089 Get:55 http://deb.debian.org/debian buster/main amd64 gcc amd64 4:8.3.0-1 [5196 B]
+#5 6.089 Get:56 http://deb.debian.org/debian buster/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-1+deb10u2 [69.2 kB]
+#5 6.090 Get:57 http://deb.debian.org/debian buster/main amd64 libsasl2-2 amd64 2.1.27+dfsg-1+deb10u2 [106 kB]
+#5 6.092 Get:58 http://deb.debian.org/debian buster/main amd64 libldap-common all 2.4.47+dfsg-3+deb10u7 [90.1 kB]
+#5 6.093 Get:59 http://deb.debian.org/debian buster/main amd64 libldap-2.4-2 amd64 2.4.47+dfsg-3+deb10u7 [224 kB]
+#5 6.096 Get:60 http://deb.debian.org/debian-security buster/updates/main amd64 libnghttp2-14 amd64 1.36.0-2+deb10u3 [86.1 kB]
+#5 6.098 Get:61 http://deb.debian.org/debian buster/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2 [60.5 kB]
+#5 6.099 Get:62 http://deb.debian.org/debian-security buster/updates/main amd64 libssh2-1 amd64 1.8.0-2.1+deb10u1 [141 kB]
+#5 6.101 Get:63 http://deb.debian.org/debian-security buster/updates/main amd64 libcurl3-gnutls amd64 7.64.0-4+deb10u9 [333 kB]
+#5 6.106 Get:64 http://deb.debian.org/debian buster/main amd64 liberror-perl all 0.17027-2 [30.9 kB]
+#5 6.107 Get:65 http://deb.debian.org/debian-security buster/updates/main amd64 git-man all 1:2.20.1-2+deb10u9 [1624 kB]
+#5 6.130 Get:66 http://deb.debian.org/debian-security buster/updates/main amd64 git amd64 1:2.20.1-2+deb10u9 [5667 kB]
+#5 6.206 Get:67 http://deb.debian.org/debian-security buster/updates/main amd64 libc-dev-bin amd64 2.28-10+deb10u4 [276 kB]
+#5 6.210 Get:68 http://deb.debian.org/debian-security buster/updates/main amd64 linux-libc-dev amd64 4.19.316-1 [1625 kB]
+#5 6.233 Get:69 http://deb.debian.org/debian-security buster/updates/main amd64 libc6-dev amd64 2.28-10+deb10u4 [2694 kB]
+#5 6.270 Get:70 http://deb.debian.org/debian-security buster/updates/main amd64 libexpat1-dev amd64 2.2.6-2+deb10u7 [156 kB]
+#5 6.273 Get:71 http://deb.debian.org/debian-security buster/updates/main amd64 libncurses6 amd64 6.1+20181013-2+deb10u5 [102 kB]
+#5 6.274 Get:72 http://deb.debian.org/debian-security buster/updates/main amd64 libncurses-dev amd64 6.1+20181013-2+deb10u5 [333 kB]
+#5 6.279 Get:73 http://deb.debian.org/debian-security buster/updates/main amd64 libncurses5-dev amd64 6.1+20181013-2+deb10u5 [948 B]
+#5 6.279 Get:74 http://deb.debian.org/debian-security buster/updates/main amd64 libpython2.7 amd64 2.7.16-2+deb10u4 [1036 kB]
+#5 6.293 Get:75 http://deb.debian.org/debian-security buster/updates/main amd64 libpython2.7-dev amd64 2.7.16-2+deb10u4 [31.6 MB]
+#5 6.704 Get:76 http://deb.debian.org/debian buster/main amd64 libpython2-dev amd64 2.7.16-1 [20.9 kB]
+#5 6.704 Get:77 http://deb.debian.org/debian buster/main amd64 libpython-dev amd64 2.7.16-1 [20.9 kB]
+#5 6.705 Get:78 http://deb.debian.org/debian buster/main amd64 make amd64 4.2.1-1.2 [341 kB]
+#5 6.709 Get:79 http://deb.debian.org/debian-security buster/updates/main amd64 python2.7-dev amd64 2.7.16-2+deb10u4 [286 kB]
+#5 6.713 Get:80 http://deb.debian.org/debian buster/main amd64 python2-dev amd64 2.7.16-1 [1212 B]
+#5 6.713 Get:81 http://deb.debian.org/debian buster/main amd64 python-dev amd64 2.7.16-1 [1192 B]
+#5 6.909 debconf: delaying package configuration, since apt-utils is not installed
+#5 6.927 Fetched 94.4 MB in 2s (54.3 MB/s)
+#5 7.064 Selecting previously unselected package perl-modules-5.28.
+#5 7.064 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6433 files and directories currently installed.)
+#5 7.065 Preparing to unpack .../perl-modules-5.28_5.28.1-6+deb10u1_all.deb ...
+#5 7.093 Unpacking perl-modules-5.28 (5.28.1-6+deb10u1) ...
+#5 8.620 Preparing to unpack .../libc6_2.28-10+deb10u4_amd64.deb ...
+#5 8.818 debconf: unable to initialize frontend: Dialog
+#5 8.818 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 8.818 debconf: falling back to frontend: Readline
+#5 8.930 Unpacking libc6:amd64 (2.28-10+deb10u4) over (2.28-10+deb10u3) ...
+#5 17.97 Setting up libc6:amd64 (2.28-10+deb10u4) ...
+#5 18.18 debconf: unable to initialize frontend: Dialog
+#5 18.18 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 18.18 debconf: falling back to frontend: Readline
+#5 19.46 Selecting previously unselected package libgdbm6:amd64.
+#5 19.46 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7804 files and directories currently installed.)
+#5 19.46 Preparing to unpack .../00-libgdbm6_1.18.1-4_amd64.deb ...
+#5 19.48 Unpacking libgdbm6:amd64 (1.18.1-4) ...
+#5 19.71 Selecting previously unselected package libgdbm-compat4:amd64.
+#5 19.71 Preparing to unpack .../01-libgdbm-compat4_1.18.1-4_amd64.deb ...
+#5 19.74 Unpacking libgdbm-compat4:amd64 (1.18.1-4) ...
+#5 19.98 Selecting previously unselected package libperl5.28:amd64.
+#5 19.98 Preparing to unpack .../02-libperl5.28_5.28.1-6+deb10u1_amd64.deb ...
+#5 20.01 Unpacking libperl5.28:amd64 (5.28.1-6+deb10u1) ...
+#5 21.23 Selecting previously unselected package perl.
+#5 21.23 Preparing to unpack .../03-perl_5.28.1-6+deb10u1_amd64.deb ...
+#5 21.27 Unpacking perl (5.28.1-6+deb10u1) ...
+#5 21.52 Selecting previously unselected package libpython2.7-minimal:amd64.
+#5 21.52 Preparing to unpack .../04-libpython2.7-minimal_2.7.16-2+deb10u4_amd64.deb ...
+#5 21.56 Unpacking libpython2.7-minimal:amd64 (2.7.16-2+deb10u4) ...
+#5 21.93 Selecting previously unselected package python2.7-minimal.
+#5 21.93 Preparing to unpack .../05-python2.7-minimal_2.7.16-2+deb10u4_amd64.deb ...
+#5 22.05 Unpacking python2.7-minimal (2.7.16-2+deb10u4) ...
+#5 22.43 Selecting previously unselected package python2-minimal.
+#5 22.43 Preparing to unpack .../06-python2-minimal_2.7.16-1_amd64.deb ...
+#5 22.46 Unpacking python2-minimal (2.7.16-1) ...
+#5 22.63 Selecting previously unselected package python-minimal.
+#5 22.63 Preparing to unpack .../07-python-minimal_2.7.16-1_amd64.deb ...
+#5 23.61 Unpacking python-minimal (2.7.16-1) ...
+#5 23.97 Selecting previously unselected package libssl1.1:amd64.
+#5 23.97 Preparing to unpack .../08-libssl1.1_1.1.1n-0+deb10u6_amd64.deb ...
+#5 24.00 Unpacking libssl1.1:amd64 (1.1.1n-0+deb10u6) ...
+#5 24.40 Selecting previously unselected package mime-support.
+#5 24.40 Preparing to unpack .../09-mime-support_3.62_all.deb ...
+#5 24.43 Unpacking mime-support (3.62) ...
+#5 24.70 Selecting previously unselected package libexpat1:amd64.
+#5 24.70 Preparing to unpack .../10-libexpat1_2.2.6-2+deb10u7_amd64.deb ...
+#5 24.72 Unpacking libexpat1:amd64 (2.2.6-2+deb10u7) ...
+#5 24.94 Selecting previously unselected package readline-common.
+#5 24.94 Preparing to unpack .../11-readline-common_7.0-5_all.deb ...
+#5 24.96 Unpacking readline-common (7.0-5) ...
+#5 25.23 Selecting previously unselected package libreadline7:amd64.
+#5 25.23 Preparing to unpack .../12-libreadline7_7.0-5_amd64.deb ...
+#5 25.25 Unpacking libreadline7:amd64 (7.0-5) ...
+#5 25.47 Selecting previously unselected package libsqlite3-0:amd64.
+#5 25.47 Preparing to unpack .../13-libsqlite3-0_3.27.2-3+deb10u2_amd64.deb ...
+#5 25.50 Unpacking libsqlite3-0:amd64 (3.27.2-3+deb10u2) ...
+#5 25.78 Selecting previously unselected package libpython2.7-stdlib:amd64.
+#5 25.78 Preparing to unpack .../14-libpython2.7-stdlib_2.7.16-2+deb10u4_amd64.deb ...
+#5 25.81 Unpacking libpython2.7-stdlib:amd64 (2.7.16-2+deb10u4) ...
+#5 26.61 Selecting previously unselected package python2.7.
+#5 26.61 Preparing to unpack .../15-python2.7_2.7.16-2+deb10u4_amd64.deb ...
+#5 26.63 Unpacking python2.7 (2.7.16-2+deb10u4) ...
+#5 26.82 Selecting previously unselected package libpython2-stdlib:amd64.
+#5 26.82 Preparing to unpack .../16-libpython2-stdlib_2.7.16-1_amd64.deb ...
+#5 26.84 Unpacking libpython2-stdlib:amd64 (2.7.16-1) ...
+#5 27.06 Selecting previously unselected package libpython-stdlib:amd64.
+#5 27.06 Preparing to unpack .../17-libpython-stdlib_2.7.16-1_amd64.deb ...
+#5 27.09 Unpacking libpython-stdlib:amd64 (2.7.16-1) ...
+#5 27.23 Setting up libpython2.7-minimal:amd64 (2.7.16-2+deb10u4) ...
+#5 27.35 Setting up python2.7-minimal (2.7.16-2+deb10u4) ...
+#5 27.71 Linking and byte-compiling packages for runtime python2.7...
+#5 27.74 Setting up python2-minimal (2.7.16-1) ...
+#5 27.94 Selecting previously unselected package python2.
+#5 27.94 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9216 files and directories currently installed.)
+#5 27.94 Preparing to unpack .../python2_2.7.16-1_amd64.deb ...
+#5 27.97 Unpacking python2 (2.7.16-1) ...
+#5 28.18 Setting up python-minimal (2.7.16-1) ...
+#5 28.45 Selecting previously unselected package python.
+#5 28.45 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9249 files and directories currently installed.)
+#5 28.45 Preparing to unpack .../00-python_2.7.16-1_amd64.deb ...
+#5 28.48 Unpacking python (2.7.16-1) ...
+#5 28.69 Selecting previously unselected package libkeyutils1:amd64.
+#5 28.69 Preparing to unpack .../01-libkeyutils1_1.6-6_amd64.deb ...
+#5 28.71 Unpacking libkeyutils1:amd64 (1.6-6) ...
+#5 28.91 Selecting previously unselected package libkrb5support0:amd64.
+#5 28.91 Preparing to unpack .../02-libkrb5support0_1.17-3+deb10u6_amd64.deb ...
+#5 28.94 Unpacking libkrb5support0:amd64 (1.17-3+deb10u6) ...
+#5 29.13 Selecting previously unselected package libk5crypto3:amd64.
+#5 29.13 Preparing to unpack .../03-libk5crypto3_1.17-3+deb10u6_amd64.deb ...
+#5 29.16 Unpacking libk5crypto3:amd64 (1.17-3+deb10u6) ...
+#5 29.38 Selecting previously unselected package libkrb5-3:amd64.
+#5 29.38 Preparing to unpack .../04-libkrb5-3_1.17-3+deb10u6_amd64.deb ...
+#5 29.41 Unpacking libkrb5-3:amd64 (1.17-3+deb10u6) ...
+#5 29.69 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#5 29.69 Preparing to unpack .../05-libgssapi-krb5-2_1.17-3+deb10u6_amd64.deb ...
+#5 29.71 Unpacking libgssapi-krb5-2:amd64 (1.17-3+deb10u6) ...
+#5 29.93 Selecting previously unselected package libpcre2-8-0:amd64.
+#5 29.93 Preparing to unpack .../06-libpcre2-8-0_10.32-5+deb10u1_amd64.deb ...
+#5 29.96 Unpacking libpcre2-8-0:amd64 (10.32-5+deb10u1) ...
+#5 33.62 Selecting previously unselected package libpsl5:amd64.
+#5 33.62 Preparing to unpack .../07-libpsl5_0.20.2-2_amd64.deb ...
+#5 33.64 Unpacking libpsl5:amd64 (0.20.2-2) ...
+#5 33.82 Selecting previously unselected package wget.
+#5 33.82 Preparing to unpack .../08-wget_1.20.1-1.1_amd64.deb ...
+#5 33.84 Unpacking wget (1.20.1-1.1) ...
+#5 34.05 Selecting previously unselected package binutils-common:amd64.
+#5 34.05 Preparing to unpack .../09-binutils-common_2.31.1-16_amd64.deb ...
+#5 34.08 Unpacking binutils-common:amd64 (2.31.1-16) ...
+#5 34.46 Selecting previously unselected package libbinutils:amd64.
+#5 34.46 Preparing to unpack .../10-libbinutils_2.31.1-16_amd64.deb ...
+#5 34.50 Unpacking libbinutils:amd64 (2.31.1-16) ...
+#5 34.78 Selecting previously unselected package binutils-x86-64-linux-gnu.
+#5 34.78 Preparing to unpack .../11-binutils-x86-64-linux-gnu_2.31.1-16_amd64.deb ...
+#5 34.81 Unpacking binutils-x86-64-linux-gnu (2.31.1-16) ...
+#5 35.29 Selecting previously unselected package binutils.
+#5 35.29 Preparing to unpack .../12-binutils_2.31.1-16_amd64.deb ...
+#5 35.31 Unpacking binutils (2.31.1-16) ...
+#5 35.51 Selecting previously unselected package openssl.
+#5 35.51 Preparing to unpack .../13-openssl_1.1.1n-0+deb10u6_amd64.deb ...
+#5 35.54 Unpacking openssl (1.1.1n-0+deb10u6) ...
+#5 35.80 Selecting previously unselected package ca-certificates.
+#5 35.80 Preparing to unpack .../14-ca-certificates_20200601~deb10u2_all.deb ...
+#5 35.83 Unpacking ca-certificates (20200601~deb10u2) ...
+#5 36.14 Selecting previously unselected package libisl19:amd64.
+#5 36.14 Preparing to unpack .../15-libisl19_0.20-2_amd64.deb ...
+#5 36.16 Unpacking libisl19:amd64 (0.20-2) ...
+#5 36.49 Selecting previously unselected package libmpfr6:amd64.
+#5 36.49 Preparing to unpack .../16-libmpfr6_4.0.2-1_amd64.deb ...
+#5 36.51 Unpacking libmpfr6:amd64 (4.0.2-1) ...
+#5 36.73 Selecting previously unselected package libmpc3:amd64.
+#5 36.73 Preparing to unpack .../17-libmpc3_1.1.0-1_amd64.deb ...
+#5 36.77 Unpacking libmpc3:amd64 (1.1.0-1) ...
+#5 37.05 Selecting previously unselected package cpp-8.
+#5 37.05 Preparing to unpack .../18-cpp-8_8.3.0-6_amd64.deb ...
+#5 37.08 Unpacking cpp-8 (8.3.0-6) ...
+#5 40.00 Selecting previously unselected package cpp.
+#5 40.00 Preparing to unpack .../19-cpp_4%3a8.3.0-1_amd64.deb ...
+#5 40.03 Unpacking cpp (4:8.3.0-1) ...
+#5 40.24 Selecting previously unselected package exuberant-ctags.
+#5 40.24 Preparing to unpack .../20-exuberant-ctags_1%3a5.9~svn20110310-12+deb10u1_amd64.deb ...
+#5 40.27 Unpacking exuberant-ctags (1:5.9~svn20110310-12+deb10u1) ...
+#5 40.51 Selecting previously unselected package libcc1-0:amd64.
+#5 40.51 Preparing to unpack .../21-libcc1-0_8.3.0-6_amd64.deb ...
+#5 40.54 Unpacking libcc1-0:amd64 (8.3.0-6) ...
+#5 40.76 Selecting previously unselected package libgomp1:amd64.
+#5 40.76 Preparing to unpack .../22-libgomp1_8.3.0-6_amd64.deb ...
+#5 40.78 Unpacking libgomp1:amd64 (8.3.0-6) ...
+#5 41.00 Selecting previously unselected package libitm1:amd64.
+#5 41.00 Preparing to unpack .../23-libitm1_8.3.0-6_amd64.deb ...
+#5 41.03 Unpacking libitm1:amd64 (8.3.0-6) ...
+#5 41.26 Selecting previously unselected package libatomic1:amd64.
+#5 41.26 Preparing to unpack .../24-libatomic1_8.3.0-6_amd64.deb ...
+#5 41.29 Unpacking libatomic1:amd64 (8.3.0-6) ...
+#5 41.66 Selecting previously unselected package libasan5:amd64.
+#5 41.66 Preparing to unpack .../25-libasan5_8.3.0-6_amd64.deb ...
+#5 41.69 Unpacking libasan5:amd64 (8.3.0-6) ...
+#5 42.06 Selecting previously unselected package liblsan0:amd64.
+#5 42.06 Preparing to unpack .../26-liblsan0_8.3.0-6_amd64.deb ...
+#5 42.08 Unpacking liblsan0:amd64 (8.3.0-6) ...
+#5 42.31 Selecting previously unselected package libtsan0:amd64.
+#5 42.31 Preparing to unpack .../27-libtsan0_8.3.0-6_amd64.deb ...
+#5 42.33 Unpacking libtsan0:amd64 (8.3.0-6) ...
+#5 42.59 Selecting previously unselected package libubsan1:amd64.
+#5 42.59 Preparing to unpack .../28-libubsan1_8.3.0-6_amd64.deb ...
+#5 42.61 Unpacking libubsan1:amd64 (8.3.0-6) ...
+#5 42.83 Selecting previously unselected package libmpx2:amd64.
+#5 42.83 Preparing to unpack .../29-libmpx2_8.3.0-6_amd64.deb ...
+#5 42.87 Unpacking libmpx2:amd64 (8.3.0-6) ...
+#5 43.09 Selecting previously unselected package libquadmath0:amd64.
+#5 43.09 Preparing to unpack .../30-libquadmath0_8.3.0-6_amd64.deb ...
+#5 43.13 Unpacking libquadmath0:amd64 (8.3.0-6) ...
+#5 43.30 Selecting previously unselected package libgcc-8-dev:amd64.
+#5 43.30 Preparing to unpack .../31-libgcc-8-dev_8.3.0-6_amd64.deb ...
+#5 43.33 Unpacking libgcc-8-dev:amd64 (8.3.0-6) ...
+#5 43.83 Selecting previously unselected package gcc-8.
+#5 43.83 Preparing to unpack .../32-gcc-8_8.3.0-6_amd64.deb ...
+#5 43.87 Unpacking gcc-8 (8.3.0-6) ...
+#5 45.26 Selecting previously unselected package gcc.
+#5 45.26 Preparing to unpack .../33-gcc_4%3a8.3.0-1_amd64.deb ...
+#5 45.29 Unpacking gcc (4:8.3.0-1) ...
+#5 45.46 Selecting previously unselected package libsasl2-modules-db:amd64.
+#5 45.46 Preparing to unpack .../34-libsasl2-modules-db_2.1.27+dfsg-1+deb10u2_amd64.deb ...
+#5 45.49 Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#5 45.68 Selecting previously unselected package libsasl2-2:amd64.
+#5 45.68 Preparing to unpack .../35-libsasl2-2_2.1.27+dfsg-1+deb10u2_amd64.deb ...
+#5 45.71 Unpacking libsasl2-2:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#5 45.89 Selecting previously unselected package libldap-common.
+#5 45.89 Preparing to unpack .../36-libldap-common_2.4.47+dfsg-3+deb10u7_all.deb ...
+#5 45.92 Unpacking libldap-common (2.4.47+dfsg-3+deb10u7) ...
+#5 46.12 Selecting previously unselected package libldap-2.4-2:amd64.
+#5 46.12 Preparing to unpack .../37-libldap-2.4-2_2.4.47+dfsg-3+deb10u7_amd64.deb ...
+#5 46.15 Unpacking libldap-2.4-2:amd64 (2.4.47+dfsg-3+deb10u7) ...
+#5 46.42 Selecting previously unselected package libnghttp2-14:amd64.
+#5 46.42 Preparing to unpack .../38-libnghttp2-14_1.36.0-2+deb10u3_amd64.deb ...
+#5 46.45 Unpacking libnghttp2-14:amd64 (1.36.0-2+deb10u3) ...
+#5 46.68 Selecting previously unselected package librtmp1:amd64.
+#5 46.68 Preparing to unpack .../39-librtmp1_2.4+20151223.gitfa8646d.1-2_amd64.deb ...
+#5 46.71 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2) ...
+#5 46.94 Selecting previously unselected package libssh2-1:amd64.
+#5 46.94 Preparing to unpack .../40-libssh2-1_1.8.0-2.1+deb10u1_amd64.deb ...
+#5 47.07 Unpacking libssh2-1:amd64 (1.8.0-2.1+deb10u1) ...
+#5 47.28 Selecting previously unselected package libcurl3-gnutls:amd64.
+#5 47.28 Preparing to unpack .../41-libcurl3-gnutls_7.64.0-4+deb10u9_amd64.deb ...
+#5 47.32 Unpacking libcurl3-gnutls:amd64 (7.64.0-4+deb10u9) ...
+#5 47.53 Selecting previously unselected package liberror-perl.
+#5 47.53 Preparing to unpack .../42-liberror-perl_0.17027-2_all.deb ...
+#5 47.56 Unpacking liberror-perl (0.17027-2) ...
+#5 47.72 Selecting previously unselected package git-man.
+#5 47.72 Preparing to unpack .../43-git-man_1%3a2.20.1-2+deb10u9_all.deb ...
+#5 47.75 Unpacking git-man (1:2.20.1-2+deb10u9) ...
+#5 48.05 Selecting previously unselected package git.
+#5 48.05 Preparing to unpack .../44-git_1%3a2.20.1-2+deb10u9_amd64.deb ...
+#5 48.09 Unpacking git (1:2.20.1-2+deb10u9) ...
+#5 48.91 Selecting previously unselected package libc-dev-bin.
+#5 48.91 Preparing to unpack .../45-libc-dev-bin_2.28-10+deb10u4_amd64.deb ...
+#5 48.93 Unpacking libc-dev-bin (2.28-10+deb10u4) ...
+#5 49.12 Selecting previously unselected package linux-libc-dev:amd64.
+#5 49.12 Preparing to unpack .../46-linux-libc-dev_4.19.316-1_amd64.deb ...
+#5 49.14 Unpacking linux-libc-dev:amd64 (4.19.316-1) ...
+#5 49.72 Selecting previously unselected package libc6-dev:amd64.
+#5 49.72 Preparing to unpack .../47-libc6-dev_2.28-10+deb10u4_amd64.deb ...
+#5 49.75 Unpacking libc6-dev:amd64 (2.28-10+deb10u4) ...
+#5 50.45 Selecting previously unselected package libexpat1-dev:amd64.
+#5 50.45 Preparing to unpack .../48-libexpat1-dev_2.2.6-2+deb10u7_amd64.deb ...
+#5 50.48 Unpacking libexpat1-dev:amd64 (2.2.6-2+deb10u7) ...
+#5 50.77 Selecting previously unselected package libncurses6:amd64.
+#5 50.77 Preparing to unpack .../49-libncurses6_6.1+20181013-2+deb10u5_amd64.deb ...
+#5 50.80 Unpacking libncurses6:amd64 (6.1+20181013-2+deb10u5) ...
+#5 51.01 Selecting previously unselected package libncurses-dev:amd64.
+#5 51.01 Preparing to unpack .../50-libncurses-dev_6.1+20181013-2+deb10u5_amd64.deb ...
+#5 51.04 Unpacking libncurses-dev:amd64 (6.1+20181013-2+deb10u5) ...
+#5 51.29 Selecting previously unselected package libncurses5-dev:amd64.
+#5 51.29 Preparing to unpack .../51-libncurses5-dev_6.1+20181013-2+deb10u5_amd64.deb ...
+#5 51.31 Unpacking libncurses5-dev:amd64 (6.1+20181013-2+deb10u5) ...
+#5 51.50 Selecting previously unselected package libpython2.7:amd64.
+#5 51.50 Preparing to unpack .../52-libpython2.7_2.7.16-2+deb10u4_amd64.deb ...
+#5 51.52 Unpacking libpython2.7:amd64 (2.7.16-2+deb10u4) ...
+#5 51.85 Selecting previously unselected package libpython2.7-dev:amd64.
+#5 51.85 Preparing to unpack .../53-libpython2.7-dev_2.7.16-2+deb10u4_amd64.deb ...
+#5 51.89 Unpacking libpython2.7-dev:amd64 (2.7.16-2+deb10u4) ...
+#5 55.42 Selecting previously unselected package libpython2-dev:amd64.
+#5 55.42 Preparing to unpack .../54-libpython2-dev_2.7.16-1_amd64.deb ...
+#5 55.45 Unpacking libpython2-dev:amd64 (2.7.16-1) ...
+#5 55.61 Selecting previously unselected package libpython-dev:amd64.
+#5 55.61 Preparing to unpack .../55-libpython-dev_2.7.16-1_amd64.deb ...
+#5 55.64 Unpacking libpython-dev:amd64 (2.7.16-1) ...
+#5 55.81 Selecting previously unselected package make.
+#5 55.81 Preparing to unpack .../56-make_4.2.1-1.2_amd64.deb ...
+#5 55.84 Unpacking make (4.2.1-1.2) ...
+#5 56.01 Selecting previously unselected package python2.7-dev.
+#5 56.01 Preparing to unpack .../57-python2.7-dev_2.7.16-2+deb10u4_amd64.deb ...
+#5 56.04 Unpacking python2.7-dev (2.7.16-2+deb10u4) ...
+#5 56.16 Selecting previously unselected package python2-dev.
+#5 56.16 Preparing to unpack .../58-python2-dev_2.7.16-1_amd64.deb ...
+#5 56.19 Unpacking python2-dev (2.7.16-1) ...
+#5 56.32 Selecting previously unselected package python-dev.
+#5 56.32 Preparing to unpack .../59-python-dev_2.7.16-1_amd64.deb ...
+#5 56.35 Unpacking python-dev (2.7.16-1) ...
+#5 56.53 Setting up perl-modules-5.28 (5.28.1-6+deb10u1) ...
+#5 56.61 Setting up libexpat1:amd64 (2.2.6-2+deb10u7) ...
+#5 56.71 Setting up libkeyutils1:amd64 (1.6-6) ...
+#5 56.81 Setting up libpsl5:amd64 (0.20.2-2) ...
+#5 56.91 Setting up mime-support (3.62) ...
+#5 57.17 Setting up exuberant-ctags (1:5.9~svn20110310-12+deb10u1) ...
+#5 57.23 update-alternatives: using /usr/bin/ctags-exuberant to provide /usr/bin/ctags (ctags) in auto mode
+#5 57.23 update-alternatives: warning: skip creation of /usr/share/man/man1/ctags.1.gz because associated file /usr/share/man/man1/ctags-exuberant.1.gz (of link group ctags) doesn't exist
+#5 57.25 update-alternatives: using /usr/bin/ctags-exuberant to provide /usr/bin/etags (etags) in auto mode
+#5 57.25 update-alternatives: warning: skip creation of /usr/share/man/man1/etags.1.gz because associated file /usr/share/man/man1/ctags-exuberant.1.gz (of link group etags) doesn't exist
+#5 57.30 Setting up libssl1.1:amd64 (1.1.1n-0+deb10u6) ...
+#5 57.45 debconf: unable to initialize frontend: Dialog
+#5 57.45 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 57.45 debconf: falling back to frontend: Readline
+#5 57.56 Setting up libsqlite3-0:amd64 (3.27.2-3+deb10u2) ...
+#5 57.64 Setting up binutils-common:amd64 (2.31.1-16) ...
+#5 57.71 Setting up libnghttp2-14:amd64 (1.36.0-2+deb10u3) ...
+#5 57.80 Setting up linux-libc-dev:amd64 (4.19.316-1) ...
+#5 57.88 Setting up libgomp1:amd64 (8.3.0-6) ...
+#5 57.96 Setting up libldap-common (2.4.47+dfsg-3+deb10u7) ...
+#5 58.06 Setting up libkrb5support0:amd64 (1.17-3+deb10u6) ...
+#5 58.13 Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#5 58.21 Setting up libasan5:amd64 (8.3.0-6) ...
+#5 58.29 Setting up make (4.2.1-1.2) ...
+#5 58.37 Setting up libmpfr6:amd64 (4.0.2-1) ...
+#5 58.67 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2) ...
+#5 58.76 Setting up libncurses6:amd64 (6.1+20181013-2+deb10u5) ...
+#5 58.84 Setting up libquadmath0:amd64 (8.3.0-6) ...
+#5 58.92 Setting up libmpc3:amd64 (1.1.0-1) ...
+#5 58.99 Setting up libatomic1:amd64 (8.3.0-6) ...
+#5 59.07 Setting up libpcre2-8-0:amd64 (10.32-5+deb10u1) ...
+#5 59.14 Setting up libk5crypto3:amd64 (1.17-3+deb10u6) ...
+#5 59.24 Setting up libsasl2-2:amd64 (2.1.27+dfsg-1+deb10u2) ...
+#5 59.35 Setting up libmpx2:amd64 (8.3.0-6) ...
+#5 59.45 Setting up libubsan1:amd64 (8.3.0-6) ...
+#5 59.54 Setting up libisl19:amd64 (0.20-2) ...
+#5 59.62 Setting up git-man (1:2.20.1-2+deb10u9) ...
+#5 59.69 Setting up libssh2-1:amd64 (1.8.0-2.1+deb10u1) ...
+#5 59.77 Setting up libkrb5-3:amd64 (1.17-3+deb10u6) ...
+#5 59.84 Setting up libbinutils:amd64 (2.31.1-16) ...
+#5 59.92 Setting up cpp-8 (8.3.0-6) ...
+#5 60.00 Setting up libc-dev-bin (2.28-10+deb10u4) ...
+#5 60.10 Setting up openssl (1.1.1n-0+deb10u6) ...
+#5 60.23 Setting up readline-common (7.0-5) ...
+#5 60.33 Setting up libcc1-0:amd64 (8.3.0-6) ...
+#5 60.41 Setting up liblsan0:amd64 (8.3.0-6) ...
+#5 60.48 Setting up libitm1:amd64 (8.3.0-6) ...
+#5 60.56 Setting up libreadline7:amd64 (7.0-5) ...
+#5 60.64 Setting up libgdbm6:amd64 (1.18.1-4) ...
+#5 60.71 Setting up binutils-x86-64-linux-gnu (2.31.1-16) ...
+#5 60.79 Setting up libtsan0:amd64 (8.3.0-6) ...
+#5 60.89 Setting up wget (1.20.1-1.1) ...
+#5 61.02 Setting up libldap-2.4-2:amd64 (2.4.47+dfsg-3+deb10u7) ...
+#5 61.10 Setting up binutils (2.31.1-16) ...
+#5 61.18 Setting up libpython2.7-stdlib:amd64 (2.7.16-2+deb10u4) ...
+#5 61.27 Setting up ca-certificates (20200601~deb10u2) ...
+#5 61.44 debconf: unable to initialize frontend: Dialog
+#5 61.44 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 61.44 debconf: falling back to frontend: Readline
+#5 61.86 Updating certificates in /etc/ssl/certs...
+#5 62.49 137 added, 0 removed; done.
+#5 62.65 Setting up libgssapi-krb5-2:amd64 (1.17-3+deb10u6) ...
+#5 62.74 Setting up libgdbm-compat4:amd64 (1.18.1-4) ...
+#5 62.83 Setting up libgcc-8-dev:amd64 (8.3.0-6) ...
+#5 62.93 Setting up libperl5.28:amd64 (5.28.1-6+deb10u1) ...
+#5 63.02 Setting up cpp (4:8.3.0-1) ...
+#5 63.15 Setting up libc6-dev:amd64 (2.28-10+deb10u4) ...
+#5 63.23 Setting up libpython2.7:amd64 (2.7.16-2+deb10u4) ...
+#5 63.33 Setting up libncurses-dev:amd64 (6.1+20181013-2+deb10u5) ...
+#5 63.43 Setting up gcc-8 (8.3.0-6) ...
+#5 63.52 Setting up python2.7 (2.7.16-2+deb10u4) ...
+#5 64.47 Setting up libpython2-stdlib:amd64 (2.7.16-1) ...
+#5 64.57 Setting up libcurl3-gnutls:amd64 (7.64.0-4+deb10u9) ...
+#5 64.67 Setting up python2 (2.7.16-1) ...
+#5 64.75 Setting up gcc (4:8.3.0-1) ...
+#5 64.87 Setting up libpython-stdlib:amd64 (2.7.16-1) ...
+#5 64.95 Setting up perl (5.28.1-6+deb10u1) ...
+#5 65.06 Setting up libexpat1-dev:amd64 (2.2.6-2+deb10u7) ...
+#5 65.13 Setting up libncurses5-dev:amd64 (6.1+20181013-2+deb10u5) ...
+#5 65.21 Setting up python (2.7.16-1) ...
+#5 65.30 Setting up libpython2.7-dev:amd64 (2.7.16-2+deb10u4) ...
+#5 65.39 Setting up liberror-perl (0.17027-2) ...
+#5 65.47 Setting up git (1:2.20.1-2+deb10u9) ...
+#5 65.59 Setting up libpython2-dev:amd64 (2.7.16-1) ...
+#5 65.67 Setting up python2.7-dev (2.7.16-2+deb10u4) ...
+#5 65.74 Setting up python2-dev (2.7.16-1) ...
+#5 65.82 Setting up libpython-dev:amd64 (2.7.16-1) ...
+#5 65.92 Setting up python-dev (2.7.16-1) ...
+#5 66.04 Processing triggers for libc-bin (2.28-10+deb10u3) ...
+#5 66.15 Processing triggers for ca-certificates (20200601~deb10u2) ...
+#5 66.18 Updating certificates in /etc/ssl/certs...
+#5 66.68 0 added, 0 removed; done.
+#5 66.68 Running hooks in /etc/ca-certificates/update.d...
+#5 66.68 done.
+#5 DONE 67.5s
+
+#6 [builder 3/3] RUN git clone https://github.com/vim/vim.git     && cd vim     && ./configure        --disable-gui        --disable-netbeans        --enable-pythoninterp=yes        --enable-multibyte        --with-features=huge        --with-compiledby="Jintao Zhang <zhangjintao9020@gmail.com>"        --with-python-command=python     && make     && make install     && wget --no-check-certificate https://raw.githubusercontent.com/tao12345666333/vim/master/vimrc -O $HOME/.vimrc     && vim -E -u $HOME/.vimrc +qall
+#6 0.782 Cloning into 'vim'...
+#6 25.48 configure: creating cache auto/config.cache
+#6 25.48 checking whether make sets $(MAKE)... yes
+#6 25.49 checking for gcc... gcc
+#6 25.52 checking whether the C compiler works... yes
+#6 25.57 checking for C compiler default output file name... a.out
+#6 25.57 checking for suffix of executables... 
+#6 25.61 checking whether we are cross compiling... no
+#6 25.66 checking for suffix of object files... o
+#6 25.69 checking whether the compiler supports GNU C... yes
+#6 25.72 checking whether gcc accepts -g... yes
+#6 25.74 checking for gcc option to enable C11 features... none needed
+#6 25.81 checking how to run the C preprocessor... gcc -E
+#6 25.86 checking for grep that handles long lines and -e... /bin/grep
+#6 25.86 checking for egrep... /bin/grep -E
+#6 25.87 checking for fgrep... /bin/grep -F
+#6 25.87 checking for gawk... no
+#6 25.87 checking for mawk... mawk
+#6 25.87 checking for strip... strip
+#6 25.87 checking for sys/wait.h that is POSIX.1 compatible... yes
+#6 25.91 checking for unsigned long long int... yes
+#6 25.96 checking for long long int... yes
+#6 26.02 checking if the compiler supports trailing commas... yes
+#6 26.05 checking if the compiler supports C++ comments... yes
+#6 26.08 checking --enable-fail-if-missing argument... no
+#6 26.08 checking for clang version... N/A
+#6 26.08 checking for buggy tools... checking uname... Linux
+#6 26.09 checking uname -r... 3.10.0-1160.88.1.el7.x86_64
+#6 26.09 checking uname -m... x86_64
+#6 26.09 checking for Haiku... no
+#6 26.09 checking for QNX... no
+#6 26.09 checking for Darwin (Mac OS X)... no
+#6 26.09 checking for stdio.h... yes
+#6 26.12 checking for stdlib.h... yes
+#6 26.15 checking for string.h... yes
+#6 26.19 checking for inttypes.h... yes
+#6 26.22 checking for stdint.h... yes
+#6 26.26 checking for strings.h... yes
+#6 26.29 checking for sys/stat.h... yes
+#6 26.33 checking for sys/types.h... yes
+#6 26.37 checking for unistd.h... yes
+#6 26.41 checking for sys/time.h... yes
+#6 26.45 checking for sys/select.h... yes
+#6 26.49 checking for sys/socket.h... yes
+#6 26.53 checking for AvailabilityMacros.h... no
+#6 26.57 checking for dispatch/dispatch.h... no
+#6 26.61 checking --with-local-dir argument... Defaulting to /usr/local
+#6 26.65 checking --with-vim-name argument... Defaulting to vim
+#6 26.65 checking --with-ex-name argument... Defaulting to ex
+#6 26.65 checking --with-view-name argument... Defaulting to view
+#6 26.65 checking --with-global-runtime argument... no
+#6 26.65 checking --with-modified-by argument... no
+#6 26.65 checking if character set is EBCDIC... no
+#6 26.68 checking --disable-smack argument... no
+#6 26.68 checking for linux/xattr.h... yes
+#6 26.72 checking for sys/xattr.h... yes
+#6 26.75 checking for XATTR_NAME_SMACKEXEC in linux/xattr.h... no
+#6 26.77 checking --disable-selinux argument... no
+#6 26.77 checking for is_selinux_enabled in -lselinux... no
+#6 26.81 checking --enable-xattr argument... yes
+#6 26.81 checking for sys/xattr.h... (cached) yes
+#6 26.81 checking --with-features argument... huge
+#6 26.81 checking --with-compiledby argument... Jintao Zhang <zhangjintao9020@gmail.com>
+#6 26.81 checking --disable-xsmp argument... no
+#6 26.81 checking --disable-xsmp-interact argument... no
+#6 26.81 checking diff feature... enabled
+#6 26.81 checking --enable-luainterp argument... no
+#6 26.81 checking --enable-mzschemeinterp argument... no
+#6 26.81 checking --enable-perlinterp argument... no
+#6 26.82 checking --enable-pythoninterp argument... yes
+#6 26.82 checking --with-python-command argument... python
+#6 26.82 checking Python version... 2.7
+#6 26.83 checking Python is 2.3 or better... yep
+#6 26.84 checking Python's install prefix... /usr
+#6 26.86 checking Python's execution prefix... /usr
+#6 26.88 checking Python's configuration directory... /usr/lib/python2.7/config-x86_64-linux-gnu
+#6 26.91 /vim/src/config-PyMake18:1591: warning: overriding recipe for target 'Modules/timemodule.o'
+#6 26.91 /vim/src/config-PyMake18:1550: warning: ignoring old recipe for target 'Modules/timemodule.o'
+#6 26.92 checking Python's dll name... libpython2.7.so.1.0
+#6 26.92 checking if -pthread should be used... yes
+#6 26.97 checking if compile and link flags for Python are sane... yes
+#6 27.03 checking --enable-python3interp argument... no
+#6 27.03 checking if -fPIE can be added for Python... yes
+#6 27.09 checking --enable-tclinterp argument... no
+#6 27.09 checking --enable-rubyinterp argument... no
+#6 27.09 checking --enable-cscope argument... no
+#6 27.09 checking --disable-netbeans argument... yes
+#6 27.09 checking --disable-channel argument... no
+#6 27.10 checking for socket in -lsocket... no
+#6 27.14 checking whether compiling with IPv6 networking is possible... yes
+#6 27.21 checking for inet_ntop... yes
+#6 27.26 checking --enable-terminal argument... defaulting to yes
+#6 27.26 checking --enable-autoservername argument... no
+#6 27.26 checking --enable-multibyte argument... yes
+#6 27.26 checking --disable-rightleft argument... no
+#6 27.26 checking --disable-arabic argument... no
+#6 27.26 checking --enable-xim argument... defaulting to auto
+#6 27.26 checking --enable-fontset argument... no
+#6 27.26 checking for xmkmf... no
+#6 27.26 checking for X... no
+#6 27.34 checking if X11 header files can be found... no
+#6 27.36 checking --enable-gui argument... no GUI support
+#6 27.36 checking for pkg-config... no
+#6 27.37 checking for X11/SM/SMlib.h... no
+#6 27.41 checking for /proc link to executable... /proc/self/exe
+#6 27.41 checking for CYGWIN or MSYS environment... no
+#6 27.41 checking whether toupper is broken... no
+#6 27.47 checking whether __DATE__ and __TIME__ work... yes
+#6 27.51 checking whether __attribute__((unused)) is allowed... yes
+#6 27.55 checking for dirent.h that defines DIR... yes
+#6 27.59 checking for library containing opendir... none required
+#6 27.64 checking for stdint.h... (cached) yes
+#6 27.64 checking for stdlib.h... (cached) yes
+#6 27.64 checking for string.h... (cached) yes
+#6 27.64 checking for sys/select.h... (cached) yes
+#6 27.64 checking for sys/utsname.h... yes
+#6 27.68 checking for termcap.h... yes
+#6 27.72 checking for fcntl.h... yes
+#6 27.76 checking for sgtty.h... yes
+#6 27.80 checking for sys/ioctl.h... yes
+#6 27.84 checking for sys/time.h... (cached) yes
+#6 27.84 checking for sys/types.h... (cached) yes
+#6 27.84 checking for termio.h... yes
+#6 27.88 checking for iconv.h... yes
+#6 27.92 checking for inttypes.h... (cached) yes
+#6 27.92 checking for langinfo.h... yes
+#6 27.96 checking for math.h... yes
+#6 28.01 checking for unistd.h... (cached) yes
+#6 28.01 checking for stropts.h... yes
+#6 28.05 checking for errno.h... yes
+#6 28.09 checking for sys/resource.h... yes
+#6 28.13 checking for sys/systeminfo.h... no
+#6 28.17 checking for locale.h... yes
+#6 28.21 checking for sys/stream.h... no
+#6 28.25 checking for termios.h... yes
+#6 28.29 checking for libc.h... no
+#6 28.33 checking for sys/statfs.h... yes
+#6 28.37 checking for poll.h... yes
+#6 28.41 checking for sys/poll.h... yes
+#6 28.45 checking for pwd.h... yes
+#6 28.49 checking for utime.h... yes
+#6 28.53 checking for sys/param.h... yes
+#6 28.58 checking for sys/ptms.h... no
+#6 28.62 checking for libintl.h... yes
+#6 28.65 checking for libgen.h... yes
+#6 28.69 checking for util/debug.h... no
+#6 28.73 checking for util/msg18n.h... no
+#6 28.77 checking for frame.h... no
+#6 28.81 checking for sys/acl.h... no
+#6 28.85 checking for sys/access.h... no
+#6 28.89 checking for sys/sysinfo.h... yes
+#6 28.93 checking for wchar.h... yes
+#6 28.97 checking for wctype.h... yes
+#6 29.01 checking for sys/ptem.h... no
+#6 29.03 checking for sys/sysctl.h... yes
+#6 29.07 checking for pthread_np.h... no
+#6 29.10 checking for strings.h... (cached) yes
+#6 29.10 checking if strings.h can be included after string.h... yes
+#6 29.13 checking whether gcc needs -traditional... no
+#6 29.15 checking for an ANSI C-conforming const... yes
+#6 29.18 checking for working volatile... yes
+#6 29.22 checking for mode_t... yes
+#6 29.30 checking for off_t... yes
+#6 29.39 checking for pid_t... yes
+#6 29.50 checking for size_t... yes
+#6 29.59 checking for uid_t in sys/types.h... yes
+#6 29.60 checking for uint32_t... yes
+#6 29.65 checking for ino_t... yes
+#6 29.73 checking for dev_t... yes
+#6 29.82 checking whether byte ordering is bigendian... no
+#6 29.91 checking for inline... inline
+#6 29.93 checking for rlim_t... yes
+#6 29.95 checking for stack_t... yes
+#6 29.97 checking whether stack_t has an ss_base field... no
+#6 30.01 checking --with-tlib argument... empty: automatic terminal library selection
+#6 30.01 checking for tgetent in -ltinfo... yes
+#6 30.13 checking whether we talk terminfo... yes
+#6 30.19 checking what tgetent() returns for an unknown terminal... zero
+#6 30.26 checking whether termcap.h contains ospeed... yes
+#6 30.31 checking whether termcap.h contains UP, BC and PC... yes
+#6 30.37 checking whether tputs() uses outfuntype... no
+#6 30.39 checking whether del_curterm() can be used... yes
+#6 30.45 checking whether sys/select.h and sys/time.h may both be included... yes
+#6 30.49 checking for /dev/ptc... no
+#6 30.49 checking for SVR4 ptys... yes
+#6 30.54 checking for ptyranges... don't know
+#6 30.55 checking for struct sigcontext... yes
+#6 30.59 checking getcwd implementation is broken... no
+#6 30.64 checking for fchdir... yes
+#6 30.70 checking for fchown... yes
+#6 30.75 checking for fchmod... yes
+#6 30.80 checking for fsync... yes
+#6 30.85 checking for getcwd... yes
+#6 30.90 checking for getpseudotty... no
+#6 30.96 checking for getpwent... yes
+#6 31.02 checking for getpwnam... yes
+#6 31.07 checking for getpwuid... yes
+#6 31.12 checking for getrlimit... yes
+#6 31.17 checking for gettimeofday... yes
+#6 31.22 checking for localtime_r... yes
+#6 31.28 checking for lstat... yes
+#6 31.33 checking for memset... yes
+#6 31.38 checking for mkdtemp... yes
+#6 31.44 checking for nanosleep... yes
+#6 31.49 checking for opendir... yes
+#6 31.54 checking for putenv... yes
+#6 31.59 checking for qsort... yes
+#6 31.64 checking for readlink... yes
+#6 31.70 checking for select... yes
+#6 31.75 checking for setenv... yes
+#6 31.80 checking for getpgid... yes
+#6 31.85 checking for setpgid... yes
+#6 31.91 checking for setsid... yes
+#6 31.96 checking for sigaltstack... yes
+#6 32.01 checking for sigstack... yes
+#6 32.07 checking for sigset... yes
+#6 32.12 checking for sigsetjmp... no
+#6 32.18 checking for sigaction... yes
+#6 32.23 checking for sigprocmask... yes
+#6 32.29 checking for sigvec... no
+#6 32.34 checking for strcasecmp... yes
+#6 32.40 checking for strcoll... yes
+#6 32.45 checking for strerror... yes
+#6 32.51 checking for strftime... yes
+#6 32.56 checking for stricmp... no
+#6 32.62 checking for strncasecmp... yes
+#6 32.68 checking for strnicmp... no
+#6 32.74 checking for strpbrk... yes
+#6 32.80 checking for strptime... yes
+#6 32.85 checking for strtol... yes
+#6 32.90 checking for tgetent... yes
+#6 32.96 checking for towlower... yes
+#6 33.01 checking for towupper... yes
+#6 33.07 checking for iswupper... yes
+#6 33.13 checking for tzset... yes
+#6 33.18 checking for usleep... yes
+#6 33.23 checking for utime... yes
+#6 33.28 checking for utimes... yes
+#6 33.34 checking for mblen... yes
+#6 33.39 checking for ftruncate... yes
+#6 33.44 checking for unsetenv... yes
+#6 33.49 checking for posix_openpt... yes
+#6 33.55 checking for clock_gettime... yes
+#6 33.60 checking types of arguments for select... int,fd_set *,struct timeval *
+#6 33.65 checking for _LARGEFILE_SOURCE value needed for large files... no
+#6 33.71 checking for special C compiler options needed for large files... no
+#6 33.71 checking for _FILE_OFFSET_BITS value needed for large files... no
+#6 33.75 checking --enable-canberra argument... Defaulting to yes
+#6 33.75 checking for libcanberra... no; try installing libcanberra-dev
+#6 33.77 checking --enable-libsodium argument... Defaulting to yes
+#6 33.77 checking for libsodium... no; try installing libsodium-dev
+#6 33.79 checking for st_blksize... yes
+#6 33.83 checking for timer_create without -lrt... no
+#6 33.90 checking for timer_create with -lrt... yes
+#6 33.97 checking whether stat() ignores a trailing slash... no
+#6 34.04 checking for nanoseconds field of struct stat... st_mtim.tv_nsec
+#6 34.07 checking for iconv_open()... yes
+#6 34.17 checking for nl_langinfo(CODESET)... yes
+#6 34.23 checking for strtod in -lm... yes
+#6 34.29 checking for isinf()... yes
+#6 34.36 checking for isnan()... yes
+#6 34.44 checking --disable-acl argument... no
+#6 34.44 checking for acl_get_file in -lposix1e... no
+#6 34.48 checking for acl_get_file in -lacl... no
+#6 34.53 checking for POSIX ACL support... no
+#6 34.55 checking for acl_get in -lsec... no
+#6 34.60 checking for Solaris ACL support... no
+#6 34.62 checking for AIX ACL support... no
+#6 34.65 checking --enable-gpm argument... yes
+#6 34.65 checking for gpm... no
+#6 34.67 checking --disable-sysmouse argument... no
+#6 34.67 checking for sysmouse... no
+#6 34.69 checking for FD_CLOEXEC... yes
+#6 34.72 checking for rename... yes
+#6 34.79 checking for dirfd... yes
+#6 34.85 checking for flock... yes
+#6 34.91 checking for sysctl... not usable
+#6 34.94 checking for sysinfo... yes
+#6 35.00 checking for sysinfo.mem_unit... yes
+#6 35.04 checking for sysinfo.uptime... yes
+#6 35.08 checking for sysconf... yes
+#6 35.11 checking for _SC_SIGSTKSZ via sysconf()... not usable
+#6 35.14 checking size of int... 4
+#6 35.22 checking size of long... 8
+#6 35.30 checking size of time_t... 8
+#6 35.38 checking size of off_t... 8
+#6 35.46 checking uint32_t is 32 bits... ok
+#6 35.52 checking whether memmove handles overlaps... yes
+#6 35.60 checking for _xpg4_setrunelocale in -lxpg4... no
+#6 35.64 checking how to create tags... ctags -I INIT+,INIT2+,INIT3+,INIT4+,INIT5+ --fields=+S
+#6 35.65 checking how to run man with a section nr... man
+#6 35.65 checking --disable-nls argument... no
+#6 35.65 checking for msgfmt... no
+#6 35.65 checking for NLS... msgfmt not found - disabled
+#6 35.65 checking for dlfcn.h... yes
+#6 35.69 checking for dlopen()... no
+#6 35.76 checking for dlopen() in -ldl... yes
+#6 35.81 checking for dlsym()... yes
+#6 35.87 checking for setjmp.h... yes
+#6 35.91 checking for GCC 3 or later... yes
+#6 35.92 checking whether we need -D_FORTIFY_SOURCE=1... yes
+#6 35.92 checking whether we need to force -D_FILE_OFFSET_BITS=64... no
+#6 35.93 checking linker --as-needed support... yes
+#6 35.97 configure: updating cache auto/config.cache
+#6 35.98 configure: creating auto/config.status
+#6 36.08 config.status: creating auto/config.mk
+#6 36.10 config.status: creating auto/config.h
+#6 36.15 Starting make in the src directory.
+#6 36.16 If there are problems, cd to the src directory and run make there
+#6 36.16 cd src && make first
+#6 36.16 make[1]: Entering directory '/vim/src'
+#6 36.16 /bin/sh install-sh -c -d objects
+#6 36.17 touch objects/.dirstamp
+#6 36.17 CC="gcc -Iproto -DHAVE_CONFIG_H       " srcdir=. sh ./osdef.sh
+#6 36.30 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/alloc.o alloc.c
+#6 36.57 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/arabic.o arabic.c
+#6 36.79 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/arglist.o arglist.c
+#6 37.34 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/autocmd.o autocmd.c
+#6 38.19 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/beval.o beval.c
+#6 38.41 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/buffer.o buffer.c
+#6 40.14 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/change.o change.c
+#6 40.95 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/blob.o blob.c
+#6 41.31 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/blowfish.o blowfish.c
+#6 41.59 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/cindent.o cindent.c
+#6 42.78 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/clientserver.o clientserver.c
+#6 42.94 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/clipboard.o clipboard.c
+#6 43.09 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/cmdexpand.o cmdexpand.c
+#6 44.19 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/cmdhist.o cmdhist.c
+#6 44.58 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/crypt.o crypt.c
+#6 44.87 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/crypt_zip.o crypt_zip.c
+#6 45.06 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/debugger.o debugger.c
+#6 45.46 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/dict.o dict.c
+#6 45.98 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/diff.o diff.c
+#6 47.09 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/digraph.o digraph.c
+#6 47.44 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/drawline.o drawline.c
+#6 49.17 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/drawscreen.o drawscreen.c
+#6 50.12 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/edit.o edit.c
+#6 51.47 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/eval.o eval.c
+#6 53.20 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/evalbuffer.o evalbuffer.c
+#6 53.58 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/evalfunc.o evalfunc.c
+#6 55.79 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/evalvars.o evalvars.c
+#6 57.10 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/evalwindow.o evalwindow.c
+#6 57.57 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ex_cmds.o ex_cmds.c
+#6 58.95 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ex_cmds2.o ex_cmds2.c
+#6 59.32 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ex_docmd.o ex_docmd.c
+#6 61.79 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ex_eval.o ex_eval.c
+#6 62.41 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ex_getln.o ex_getln.c
+#6 63.81 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/fileio.o fileio.c
+#6 65.32 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/filepath.o filepath.c
+#6 66.35 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/findfile.o findfile.c
+#6 67.05 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/float.o float.c
+#6 67.38 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/fold.o fold.c
+#6 68.40 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/getchar.o getchar.c
+#6 69.45 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/gc.o gc.c
+#6 69.75 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/gui_xim.o gui_xim.c
+#6 69.93 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/hardcopy.o hardcopy.c
+#6 70.81 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/hashtab.o hashtab.c
+#6 71.06 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/help.o help.c
+#6 71.60 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/highlight.o highlight.c
+#6 72.61 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/if_cscope.o if_cscope.c
+#6 73.26 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/if_xcmdsrv.o if_xcmdsrv.c
+#6 73.41 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/indent.o indent.c
+#6 74.12 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/insexpand.o insexpand.c
+#6 75.62 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/list.o list.c
+#6 76.80 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/locale.o locale.c
+#6 77.00 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/logfile.o logfile.c
+#6 77.20 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/map.o map.c
+#6 78.12 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/mark.o mark.c
+#6 78.78 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/match.o match.c
+#6 79.27 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/mbyte.o mbyte.c
+#6 80.31 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/memline.o memline.c
+#6 81.69 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/menu.o menu.c
+#6 82.38 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/misc1.o misc1.c
+#6 83.09 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/misc2.o misc2.c
+#6 83.77 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/mouse.o mouse.c
+#6 84.47 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/move.o move.c
+#6 85.36 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/normal.o normal.c
+#6 87.22 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ops.o ops.c
+#6 88.47 gcc -c -I.   -I/usr/include/python2.7 -pthread -fPIE    -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1              -o objects/option.o option.c
+#6 90.47 gcc -c -I.   -I/usr/include/python2.7 -pthread -fPIE    -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1              -o objects/optionstr.o optionstr.c
+#6 91.42 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/os_unix.o os_unix.c
+#6 92.49 creating auto/pathdef.c
+#6 92.52 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/pathdef.o auto/pathdef.c
+#6 92.66 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/popupmenu.o popupmenu.c
+#6 93.28 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/popupwin.o popupwin.c
+#6 94.64 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/profiler.o profiler.c
+#6 95.07 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/pty.o pty.c
+#6 95.23 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/quickfix.o quickfix.c
+#6 97.30 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/regexp.o regexp.c
+#6 103.8 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/register.o register.c
+#6 104.7 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/screen.o screen.c
+#6 106.1 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/scriptfile.o scriptfile.c
+#6 106.9 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/search.o search.c
+#6 108.5 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/session.o session.c
+#6 109.0 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/sha256.o sha256.c
+#6 109.5 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/sign.o sign.c
+#6 110.2 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/sound.o sound.c
+#6 110.4 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/spell.o spell.c
+#6 111.8 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/spellfile.o spellfile.c
+#6 113.6 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/spellsuggest.o spellsuggest.c
+#6 115.1 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/strings.o strings.c
+#6 116.3 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/syntax.o syntax.c
+#6 117.9 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/tag.o tag.c
+#6 119.2 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/term.o term.c
+#6 120.6 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/terminal.o terminal.c
+#6 122.3 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/testing.o testing.c
+#6 122.7 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/textformat.o textformat.c
+#6 123.2 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/textobject.o textobject.c
+#6 123.9 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/textprop.o textprop.c
+#6 124.7 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/time.o time.c
+#6 125.1 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/typval.o typval.c
+#6 125.8 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ui.o ui.c
+#6 126.1 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/undo.o undo.c
+#6 127.1 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/usercmd.o usercmd.c
+#6 127.7 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/userfunc.o userfunc.c
+#6 129.8 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/version.o version.c
+#6 130.1 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9class.o vim9class.c
+#6 131.3 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9cmds.o vim9cmds.c
+#6 132.0 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9compile.o vim9compile.c
+#6 133.2 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9execute.o vim9execute.c
+#6 135.5 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9expr.o vim9expr.c
+#6 136.5 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9instr.o vim9instr.c
+#6 137.3 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9script.o vim9script.c
+#6 137.7 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9type.o vim9type.c
+#6 138.3 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/viminfo.o viminfo.c
+#6 139.5 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/window.o window.c
+#6 141.3 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/bufwrite.o bufwrite.c
+#6 142.0 gcc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_encoding.o libvterm/src/encoding.c
+#6 142.1 gcc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_keyboard.o libvterm/src/keyboard.c
+#6 142.2 gcc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_mouse.o libvterm/src/mouse.c
+#6 142.3 gcc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_parser.o libvterm/src/parser.c
+#6 142.4 gcc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_pen.o libvterm/src/pen.c
+#6 142.7 gcc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_screen.o libvterm/src/screen.c
+#6 143.3 gcc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_state.o libvterm/src/state.c
+#6 144.1 gcc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_unicode.o libvterm/src/unicode.c
+#6 144.1 gcc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_vterm.o libvterm/src/vterm.c
+#6 144.3 gcc -c -I. -I/usr/include/python2.7 -pthread -fPIE -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1         -o objects/if_python.o if_python.c
+#6 146.2 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/job.o job.c
+#6 146.9 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/channel.o channel.c
+#6 148.1 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xdiffi.o xdiff/xdiffi.c
+#6 148.6 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xemit.o xdiff/xemit.c
+#6 148.8 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xprepare.o xdiff/xprepare.c
+#6 149.1 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xutils.o xdiff/xutils.c
+#6 149.4 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xhistogram.o xdiff/xhistogram.c
+#6 149.7 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xpatience.o xdiff/xpatience.c
+#6 150.0 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/charset.o charset.c
+#6 150.8 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/json.o json.c
+#6 151.3 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/main.o main.c
+#6 151.9 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/memfile.o memfile.c
+#6 152.3 gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/message.o message.c
+#6 153.4 link.sh: $LINK_AS_NEEDED set to 'yes': invoking linker directly.
+#6 153.4   gcc   -L/usr/local/lib -Wl,--as-needed 	-o vim objects/alloc.o objects/arabic.o objects/arglist.o objects/autocmd.o objects/beval.o objects/buffer.o objects/change.o objects/blob.o objects/blowfish.o objects/cindent.o objects/clientserver.o objects/clipboard.o objects/cmdexpand.o objects/cmdhist.o objects/crypt.o objects/crypt_zip.o objects/debugger.o objects/dict.o objects/diff.o objects/digraph.o objects/drawline.o objects/drawscreen.o objects/edit.o objects/eval.o objects/evalbuffer.o objects/evalfunc.o objects/evalvars.o objects/evalwindow.o objects/ex_cmds.o objects/ex_cmds2.o objects/ex_docmd.o objects/ex_eval.o objects/ex_getln.o objects/fileio.o objects/filepath.o objects/findfile.o objects/float.o objects/fold.o objects/getchar.o objects/gc.o objects/gui_xim.o objects/hardcopy.o objects/hashtab.o objects/help.o objects/highlight.o objects/if_cscope.o objects/if_xcmdsrv.o objects/indent.o objects/insexpand.o objects/list.o objects/locale.o objects/logfile.o objects/map.o objects/mark.o objects/match.o objects/mbyte.o objects/memline.o objects/menu.o objects/misc1.o objects/misc2.o objects/mouse.o objects/move.o objects/normal.o objects/ops.o objects/option.o objects/optionstr.o objects/os_unix.o objects/pathdef.o objects/popupmenu.o objects/popupwin.o objects/profiler.o objects/pty.o objects/quickfix.o objects/regexp.o objects/register.o objects/screen.o objects/scriptfile.o objects/search.o objects/session.o objects/sha256.o objects/sign.o objects/sound.o objects/spell.o objects/spellfile.o objects/spellsuggest.o objects/strings.o objects/syntax.o objects/tag.o objects/term.o objects/terminal.o objects/testing.o objects/textformat.o objects/textobject.o objects/textprop.o objects/time.o objects/typval.o objects/ui.o objects/undo.o objects/usercmd.o objects/userfunc.o objects/version.o objects/vim9class.o objects/vim9cmds.o objects/vim9compile.o objects/vim9execute.o objects/vim9expr.o objects/vim9instr.o objects/vim9script.o objects/vim9type.o objects/viminfo.o objects/window.o objects/bufwrite.o  objects/vterm_encoding.o objects/vterm_keyboard.o objects/vterm_mouse.o objects/vterm_parser.o objects/vterm_pen.o objects/vterm_screen.o objects/vterm_state.o objects/vterm_unicode.o objects/vterm_vterm.o    objects/if_python.o      objects/job.o objects/channel.o objects/xdiffi.o objects/xemit.o objects/xprepare.o objects/xutils.o objects/xhistogram.o objects/xpatience.o  objects/charset.o objects/json.o objects/main.o objects/memfile.o objects/message.o        -lm -ltinfo   -lrt -ldl    -L/usr/lib/python2.7/config-x86_64-linux-gnu -lpython2.7 -lpthread -ldl -lutil -lm -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions       
+#6 154.0 link.sh: Linked fine
+#6 154.0 cd xxd; CC="gcc" CFLAGS=" -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1" LDFLAGS="-L/usr/local/lib -Wl,--as-needed" \
+#6 154.0 	make -f Makefile
+#6 154.0 make[2]: Entering directory '/vim/src/xxd'
+#6 154.0 gcc  -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1  -L/usr/local/lib -Wl,--as-needed -DUNIX -o xxd xxd.c 
+#6 154.5 make[2]: Leaving directory '/vim/src/xxd'
+#6 154.5 make[1]: Leaving directory '/vim/src'
+#6 154.5 Starting make in the src directory.
+#6 154.5 If there are problems, cd to the src directory and run make there
+#6 154.5 cd src && make install
+#6 154.5 make[1]: Entering directory '/vim/src'
+#6 154.5 if test -f /usr/local/bin/vim; then \
+#6 154.5   mv -f /usr/local/bin/vim /usr/local/bin/vim.rm; \
+#6 154.5   rm -f /usr/local/bin/vim.rm; \
+#6 154.5 fi
+#6 154.5 cp vim /usr/local/bin
+#6 154.5 strip /usr/local/bin/vim
+#6 154.5 chmod 755 /usr/local/bin/vim
+#6 154.5 cp vimtutor /usr/local/bin/vimtutor
+#6 154.5 chmod 755 /usr/local/bin/vimtutor
+#6 154.5 /bin/sh install-sh -c -d /usr/local/share/vim
+#6 154.5 chmod 755 /usr/local/share/vim
+#6 154.5 /bin/sh install-sh -c -d /usr/local/share/vim/vim91
+#6 154.5 chmod 755 /usr/local/share/vim/vim91
+#6 154.5 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/doc
+#6 154.5 chmod 755 /usr/local/share/vim/vim91/doc
+#6 154.5 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/print
+#6 154.6 chmod 755 /usr/local/share/vim/vim91/print
+#6 154.6 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/colors
+#6 154.6 chmod 755 /usr/local/share/vim/vim91/colors
+#6 154.6 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/syntax
+#6 154.6 chmod 755 /usr/local/share/vim/vim91/syntax
+#6 154.6 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/syntax/modula2
+#6 154.6 chmod 755 /usr/local/share/vim/vim91/syntax/modula2
+#6 154.6 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/syntax/modula2/opt
+#6 154.6 chmod 755 /usr/local/share/vim/vim91/syntax/modula2/opt
+#6 154.6 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/syntax/shared
+#6 154.6 chmod 755 /usr/local/share/vim/vim91/syntax/shared
+#6 154.6 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/indent
+#6 154.6 chmod 755 /usr/local/share/vim/vim91/indent
+#6 154.6 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/ftplugin
+#6 154.6 chmod 755 /usr/local/share/vim/vim91/ftplugin
+#6 154.6 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/autoload
+#6 154.6 chmod 755 /usr/local/share/vim/vim91/autoload
+#6 154.6 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/autoload/dist
+#6 154.6 chmod 755 /usr/local/share/vim/vim91/autoload/dist
+#6 154.6 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/autoload/xml
+#6 154.7 chmod 755 /usr/local/share/vim/vim91/autoload/xml
+#6 154.7 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/autoload/rust
+#6 154.7 chmod 755 /usr/local/share/vim/vim91/autoload/rust
+#6 154.7 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/autoload/cargo
+#6 154.7 chmod 755 /usr/local/share/vim/vim91/autoload/cargo
+#6 154.7 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/import
+#6 154.7 chmod 755 /usr/local/share/vim/vim91/import
+#6 154.7 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/import/dist
+#6 154.7 chmod 755 /usr/local/share/vim/vim91/import/dist
+#6 154.7 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/plugin
+#6 154.7 chmod 755 /usr/local/share/vim/vim91/plugin
+#6 154.7 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/tutor
+#6 154.7 chmod 755 /usr/local/share/vim/vim91/tutor
+#6 154.7 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/spell
+#6 154.7 chmod 755 /usr/local/share/vim/vim91/spell
+#6 154.7 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/compiler
+#6 154.7 chmod 755 /usr/local/share/vim/vim91/compiler
+#6 154.7 /bin/sh ./installman.sh install /usr/local/share/man/man1 "" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 154.7 creating /usr/local/share/man/man1
+#6 154.7 installing /usr/local/share/man/man1/vim.1
+#6 154.7 installing /usr/local/share/man/man1/vimtutor.1
+#6 154.8 installing /usr/local/share/man/man1/vimdiff.1
+#6 154.8 installing /usr/local/share/man/man1/evim.1
+#6 154.8 cd ../runtime/doc; if test -z "" -a -f tags; then \
+#6 154.8 	mv -f tags tags.dist; fi
+#6 154.8 generating help tags
+#6 154.8 make[2]: Entering directory '/vim/runtime/doc'
+#6 154.8 help tags updated
+#6 154.8 make[2]: Leaving directory '/vim/runtime/doc'
+#6 154.8 cd ../runtime/doc; \
+#6 154.8 	files=`ls *.txt tags`; \
+#6 154.8 	files="$files `ls *.??x tags-?? 2>/dev/null || true`"; \
+#6 154.8 	cp $files  /usr/local/share/vim/vim91/doc; \
+#6 154.8 	cd /usr/local/share/vim/vim91/doc; \
+#6 154.8 	chmod 644 $files
+#6 154.9 cp  ../runtime/doc/*.pl /usr/local/share/vim/vim91/doc
+#6 154.9 chmod 755 /usr/local/share/vim/vim91/doc/*.pl
+#6 154.9 cd ../runtime/doc; if test -f tags.dist; then mv -f tags.dist tags; fi
+#6 154.9 cp ../runtime/menu.vim /usr/local/share/vim/vim91/menu.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/menu.vim
+#6 154.9 cp ../runtime/synmenu.vim /usr/local/share/vim/vim91/synmenu.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/synmenu.vim
+#6 154.9 cp ../runtime/delmenu.vim /usr/local/share/vim/vim91/delmenu.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/delmenu.vim
+#6 154.9 cp ../runtime/defaults.vim /usr/local/share/vim/vim91/defaults.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/defaults.vim
+#6 154.9 cp ../runtime/evim.vim /usr/local/share/vim/vim91/evim.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/evim.vim
+#6 154.9 cp ../runtime/mswin.vim /usr/local/share/vim/vim91/mswin.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/mswin.vim
+#6 154.9 cp ../runtime/bugreport.vim /usr/local/share/vim/vim91/bugreport.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/bugreport.vim
+#6 154.9 cp ../runtime/vimrc_example.vim /usr/local/share/vim/vim91
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/vimrc_example.vim
+#6 154.9 cp ../runtime/gvimrc_example.vim /usr/local/share/vim/vim91
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/gvimrc_example.vim
+#6 154.9 cp ../runtime/filetype.vim /usr/local/share/vim/vim91/filetype.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/filetype.vim
+#6 154.9 cp ../runtime/ftoff.vim /usr/local/share/vim/vim91/ftoff.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/ftoff.vim
+#6 154.9 cp ../runtime/scripts.vim /usr/local/share/vim/vim91/scripts.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/scripts.vim
+#6 154.9 cp ../runtime/ftplugin.vim /usr/local/share/vim/vim91/ftplugin.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/ftplugin.vim
+#6 154.9 cp ../runtime/ftplugof.vim /usr/local/share/vim/vim91/ftplugof.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/ftplugof.vim
+#6 154.9 cp ../runtime/indent.vim /usr/local/share/vim/vim91/indent.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/indent.vim
+#6 154.9 cp ../runtime/indoff.vim /usr/local/share/vim/vim91/indoff.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/indoff.vim
+#6 154.9 cp ../runtime/optwin.vim /usr/local/share/vim/vim91/optwin.vim
+#6 154.9 chmod 644 /usr/local/share/vim/vim91/optwin.vim
+#6 154.9 cd ../runtime/print; cp *.ps /usr/local/share/vim/vim91/print
+#6 154.9 cd /usr/local/share/vim/vim91/print; chmod 644 *.ps
+#6 154.9 cd ../runtime/colors; cp -r *.vim lists tools README.txt /usr/local/share/vim/vim91/colors
+#6 154.9 cd /usr/local/share/vim/vim91/colors; chmod 755 lists tools
+#6 154.9 cd /usr/local/share/vim/vim91/colors; chmod 644 *.vim README.txt lists/*.vim tools/*.vim
+#6 154.9 cd ../runtime/syntax; cp *.vim README.txt /usr/local/share/vim/vim91/syntax
+#6 155.0 cd /usr/local/share/vim/vim91/syntax; chmod 644 *.vim README.txt
+#6 155.0 cd ../runtime/syntax/shared; cp *.vim README.txt /usr/local/share/vim/vim91/syntax/shared
+#6 155.0 cd /usr/local/share/vim/vim91/syntax/shared; chmod 644 *.vim README.txt
+#6 155.0 cd ../runtime/syntax/modula2/opt; cp *.vim /usr/local/share/vim/vim91/syntax/modula2/opt
+#6 155.0 cd /usr/local/share/vim/vim91/syntax/modula2/opt; chmod 644 *.vim
+#6 155.0 cd ../runtime/indent; cp *.vim README.txt /usr/local/share/vim/vim91/indent
+#6 155.0 cd /usr/local/share/vim/vim91/indent; chmod 644 *.vim README.txt
+#6 155.0 cd ../runtime/autoload; cp *.vim README.txt /usr/local/share/vim/vim91/autoload
+#6 155.0 cd /usr/local/share/vim/vim91/autoload; chmod 644 *.vim README.txt
+#6 155.0 cd ../runtime/autoload/dist; cp *.vim /usr/local/share/vim/vim91/autoload/dist
+#6 155.0 cd /usr/local/share/vim/vim91/autoload/dist; chmod 644 *.vim
+#6 155.0 cd ../runtime/autoload/xml; cp *.vim /usr/local/share/vim/vim91/autoload/xml
+#6 155.0 cd /usr/local/share/vim/vim91/autoload/xml; chmod 644 *.vim
+#6 155.0 cd ../runtime/autoload/cargo; cp *.vim /usr/local/share/vim/vim91/autoload/cargo
+#6 155.0 cd /usr/local/share/vim/vim91/autoload/cargo; chmod 644 *.vim
+#6 155.0 cd ../runtime/autoload/rust; cp *.vim /usr/local/share/vim/vim91/autoload/rust
+#6 155.0 cd /usr/local/share/vim/vim91/autoload/rust; chmod 644 *.vim
+#6 155.0 cd ../runtime/import/dist; cp *.vim /usr/local/share/vim/vim91/import/dist
+#6 155.0 cd /usr/local/share/vim/vim91/import/dist; chmod 644 *.vim
+#6 155.1 cd ../runtime/plugin; cp *.vim README.txt /usr/local/share/vim/vim91/plugin
+#6 155.1 cd /usr/local/share/vim/vim91/plugin; chmod 644 *.vim README.txt
+#6 155.1 cd ../runtime/ftplugin; cp *.vim README.txt logtalk.dict /usr/local/share/vim/vim91/ftplugin
+#6 155.1 cd /usr/local/share/vim/vim91/ftplugin; chmod 644 *.vim README.txt logtalk.dict
+#6 155.1 cd ../runtime/compiler; cp *.vim README.txt /usr/local/share/vim/vim91/compiler
+#6 155.1 cd /usr/local/share/vim/vim91/compiler; chmod 644 *.vim README.txt
+#6 155.1 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/macros
+#6 155.1 chmod 755 /usr/local/share/vim/vim91/macros
+#6 155.1 cp -r ../runtime/macros/* /usr/local/share/vim/vim91/macros
+#6 155.1 chmod 755 `find /usr/local/share/vim/vim91/macros -type d -print`
+#6 155.1 chmod 644 `find /usr/local/share/vim/vim91/macros -type f -print`
+#6 155.1 chmod 755 /usr/local/share/vim/vim91/macros/less.sh
+#6 155.1 cvs=`find /usr/local/share/vim/vim91/macros \( -name CVS -o -name AAPDIR -o -name "*.info" \) -print`; \
+#6 155.1       if test -n "$cvs"; then \
+#6 155.1 	 rm -rf $cvs; \
+#6 155.1       fi
+#6 155.1 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/pack
+#6 155.1 chmod 755 /usr/local/share/vim/vim91/pack
+#6 155.1 cp -r ../runtime/pack/* /usr/local/share/vim/vim91/pack
+#6 155.2 chmod 755 `find /usr/local/share/vim/vim91/pack -type d -print`
+#6 155.2 chmod 644 `find /usr/local/share/vim/vim91/pack -type f -print`
+#6 155.2 cp ../runtime/tutor/README* ../runtime/tutor/tutor* /usr/local/share/vim/vim91/tutor
+#6 155.2 rm -f /usr/local/share/vim/vim91/tutor/*.info
+#6 155.2 chmod 644 /usr/local/share/vim/vim91/tutor/*
+#6 155.2 if test -f ../runtime/spell/en.latin1.spl; then \
+#6 155.2   cp ../runtime/spell/*.spl ../runtime/spell/*.sug ../runtime/spell/*.vim /usr/local/share/vim/vim91/spell; \
+#6 155.2   chmod 644 /usr/local/share/vim/vim91/spell/*.spl /usr/local/share/vim/vim91/spell/*.sug /usr/local/share/vim/vim91/spell/*.vim; \
+#6 155.2 fi
+#6 155.2 cd /usr/local/bin; ln -s vim ex
+#6 155.2 cd /usr/local/bin; ln -s vim view
+#6 155.2 cd /usr/local/bin; ln -s vim rvim
+#6 155.2 cd /usr/local/bin; ln -s vim rview
+#6 155.2 cd /usr/local/bin; ln -s vim vimdiff
+#6 155.2 /bin/sh ./installml.sh install "" \
+#6 155.2 	/usr/local/share/man/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.2 creating link /usr/local/share/man/man1/ex.1
+#6 155.2 creating link /usr/local/share/man/man1/view.1
+#6 155.2 creating link /usr/local/share/man/man1/rvim.1
+#6 155.2 creating link /usr/local/share/man/man1/rview.1
+#6 155.2 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/tools
+#6 155.2 chmod 755 /usr/local/share/vim/vim91/tools
+#6 155.2 /bin/sh ./installman.sh xxd /usr/local/share/man/da/man1 "-da" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.2 creating /usr/local/share/man/da/man1
+#6 155.2 /bin/sh ./installman.sh xxd /usr/local/share/man/da.ISO8859-1/man1 "-da" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.2 creating /usr/local/share/man/da.ISO8859-1/man1
+#6 155.2 /bin/sh ./installman.sh xxd /usr/local/share/man/da.UTF-8/man1 "-da.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.2 creating /usr/local/share/man/da.UTF-8/man1
+#6 155.2 /bin/sh ./installman.sh xxd /usr/local/share/man/de/man1 "-de" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.2 creating /usr/local/share/man/de/man1
+#6 155.3 /bin/sh ./installman.sh xxd /usr/local/share/man/de.ISO8859-1/man1 "-de" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.3 creating /usr/local/share/man/de.ISO8859-1/man1
+#6 155.3 /bin/sh ./installman.sh xxd /usr/local/share/man/de.UTF-8/man1 "-de.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.3 creating /usr/local/share/man/de.UTF-8/man1
+#6 155.3 /bin/sh ./installman.sh xxd /usr/local/share/man/fr/man1 "-fr" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.3 creating /usr/local/share/man/fr/man1
+#6 155.3 installing /usr/local/share/man/fr/man1/xxd.1
+#6 155.3 /bin/sh ./installman.sh xxd /usr/local/share/man/fr.ISO8859-1/man1 "-fr" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.3 creating /usr/local/share/man/fr.ISO8859-1/man1
+#6 155.3 installing /usr/local/share/man/fr.ISO8859-1/man1/xxd.1
+#6 155.3 /bin/sh ./installman.sh xxd /usr/local/share/man/fr.UTF-8/man1 "-fr.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.3 creating /usr/local/share/man/fr.UTF-8/man1
+#6 155.3 installing /usr/local/share/man/fr.UTF-8/man1/xxd.1
+#6 155.3 /bin/sh ./installman.sh xxd /usr/local/share/man/it/man1 "-it" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.3 creating /usr/local/share/man/it/man1
+#6 155.3 installing /usr/local/share/man/it/man1/xxd.1
+#6 155.3 /bin/sh ./installman.sh xxd /usr/local/share/man/it.ISO8859-1/man1 "-it" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.3 creating /usr/local/share/man/it.ISO8859-1/man1
+#6 155.3 installing /usr/local/share/man/it.ISO8859-1/man1/xxd.1
+#6 155.4 /bin/sh ./installman.sh xxd /usr/local/share/man/it.UTF-8/man1 "-it.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.4 creating /usr/local/share/man/it.UTF-8/man1
+#6 155.4 installing /usr/local/share/man/it.UTF-8/man1/xxd.1
+#6 155.4 /bin/sh ./installman.sh xxd /usr/local/share/man/ja/man1 "-ja.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.4 creating /usr/local/share/man/ja/man1
+#6 155.4 installing /usr/local/share/man/ja/man1/xxd.1
+#6 155.4 /bin/sh ./installman.sh xxd /usr/local/share/man/pl/man1 "-pl" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.4 creating /usr/local/share/man/pl/man1
+#6 155.4 installing /usr/local/share/man/pl/man1/xxd.1
+#6 155.4 /bin/sh ./installman.sh xxd /usr/local/share/man/pl.ISO8859-2/man1 "-pl" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.4 creating /usr/local/share/man/pl.ISO8859-2/man1
+#6 155.4 installing /usr/local/share/man/pl.ISO8859-2/man1/xxd.1
+#6 155.4 /bin/sh ./installman.sh xxd /usr/local/share/man/pl.UTF-8/man1 "-pl.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.4 creating /usr/local/share/man/pl.UTF-8/man1
+#6 155.4 installing /usr/local/share/man/pl.UTF-8/man1/xxd.1
+#6 155.4 /bin/sh ./installman.sh xxd /usr/local/share/man/ru.KOI8-R/man1 "-ru" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.4 creating /usr/local/share/man/ru.KOI8-R/man1
+#6 155.4 installing /usr/local/share/man/ru.KOI8-R/man1/xxd.1
+#6 155.4 /bin/sh ./installman.sh xxd /usr/local/share/man/ru.UTF-8/man1 "-ru.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.4 creating /usr/local/share/man/ru.UTF-8/man1
+#6 155.4 installing /usr/local/share/man/ru.UTF-8/man1/xxd.1
+#6 155.4 /bin/sh ./installman.sh xxd /usr/local/share/man/tr/man1 "-tr" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.5 creating /usr/local/share/man/tr/man1
+#6 155.5 /bin/sh ./installman.sh xxd /usr/local/share/man/tr.ISO8859-9/man1 "-tr" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.5 creating /usr/local/share/man/tr.ISO8859-9/man1
+#6 155.5 /bin/sh ./installman.sh xxd /usr/local/share/man/tr.UTF-8/man1 "-tr.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.5 creating /usr/local/share/man/tr.UTF-8/man1
+#6 155.5 if test -f /usr/local/bin/xxd; then \
+#6 155.5   mv -f /usr/local/bin/xxd /usr/local/bin/xxd.rm; \
+#6 155.5   rm -f /usr/local/bin/xxd.rm; \
+#6 155.5 fi
+#6 155.5 cp xxd/xxd /usr/local/bin
+#6 155.5 strip /usr/local/bin/xxd
+#6 155.5 chmod 755 /usr/local/bin/xxd
+#6 155.5 /bin/sh ./installman.sh xxd /usr/local/share/man/man1 "" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.5 installing /usr/local/share/man/man1/xxd.1
+#6 155.5 cp -r ../runtime/tools/* /usr/local/share/vim/vim91/tools
+#6 155.5 cvs=`find /usr/local/share/vim/vim91/tools \( -name CVS -o -name AAPDIR \) -print`; \
+#6 155.5       if test -n "$cvs"; then \
+#6 155.5 	 rm -rf $cvs; \
+#6 155.5       fi
+#6 155.5 chmod 644 /usr/local/share/vim/vim91/tools/*
+#6 155.5 perlpath=`./which.sh perl` && sed -e "s+/usr/bin/perl+$perlpath+" ../runtime/tools/efm_perl.pl >/usr/local/share/vim/vim91/tools/efm_perl.pl
+#6 155.5 awkpath=`./which.sh nawk` && sed -e "s+/usr/bin/nawk+$awkpath+" ../runtime/tools/mve.awk >/usr/local/share/vim/vim91/tools/mve.awk; if test -z "$awkpath"; then \
+#6 155.5 	awkpath=`./which.sh gawk` && sed -e "s+/usr/bin/nawk+$awkpath+" ../runtime/tools/mve.awk >/usr/local/share/vim/vim91/tools/mve.awk; if test -z "$awkpath"; then \
+#6 155.5 	awkpath=`./which.sh awk` && sed -e "s+/usr/bin/nawk+$awkpath+" ../runtime/tools/mve.awk >/usr/local/share/vim/vim91/tools/mve.awk; fi; fi
+#6 155.5 chmod 755 `grep -l "^#!" /usr/local/share/vim/vim91/tools/*`
+#6 155.5 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/lang
+#6 155.5 chmod 755 /usr/local/share/vim/vim91/lang
+#6 155.5 /bin/sh install-sh -c -d /usr/local/share/vim/vim91/keymap
+#6 155.5 chmod 755 /usr/local/share/vim/vim91/keymap
+#6 155.5 /bin/sh ./installman.sh install /usr/local/share/man/da/man1 "-da" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.5 installing /usr/local/share/man/da/man1/vim.1
+#6 155.5 installing /usr/local/share/man/da/man1/vimtutor.1
+#6 155.5 installing /usr/local/share/man/da/man1/vimdiff.1
+#6 155.5 /bin/sh ./installman.sh install /usr/local/share/man/da.ISO8859-1/man1 "-da" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.5 installing /usr/local/share/man/da.ISO8859-1/man1/vim.1
+#6 155.5 installing /usr/local/share/man/da.ISO8859-1/man1/vimtutor.1
+#6 155.6 installing /usr/local/share/man/da.ISO8859-1/man1/vimdiff.1
+#6 155.6 /bin/sh ./installman.sh install /usr/local/share/man/da.UTF-8/man1 "-da.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.6 installing /usr/local/share/man/da.UTF-8/man1/vim.1
+#6 155.6 installing /usr/local/share/man/da.UTF-8/man1/vimtutor.1
+#6 155.6 installing /usr/local/share/man/da.UTF-8/man1/vimdiff.1
+#6 155.6 /bin/sh ./installman.sh install /usr/local/share/man/de/man1 "-de" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.6 installing /usr/local/share/man/de/man1/vim.1
+#6 155.6 /bin/sh ./installman.sh install /usr/local/share/man/de.ISO8859-1/man1 "-de" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.6 installing /usr/local/share/man/de.ISO8859-1/man1/vim.1
+#6 155.6 /bin/sh ./installman.sh install /usr/local/share/man/de.UTF-8/man1 "-de.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.6 installing /usr/local/share/man/de.UTF-8/man1/vim.1
+#6 155.6 /bin/sh ./installman.sh install /usr/local/share/man/fr/man1 "-fr" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.6 installing /usr/local/share/man/fr/man1/vim.1
+#6 155.6 installing /usr/local/share/man/fr/man1/vimtutor.1
+#6 155.6 installing /usr/local/share/man/fr/man1/vimdiff.1
+#6 155.6 installing /usr/local/share/man/fr/man1/evim.1
+#6 155.6 /bin/sh ./installman.sh install /usr/local/share/man/fr.ISO8859-1/man1 "-fr" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.6 installing /usr/local/share/man/fr.ISO8859-1/man1/vim.1
+#6 155.6 installing /usr/local/share/man/fr.ISO8859-1/man1/vimtutor.1
+#6 155.6 installing /usr/local/share/man/fr.ISO8859-1/man1/vimdiff.1
+#6 155.6 installing /usr/local/share/man/fr.ISO8859-1/man1/evim.1
+#6 155.6 /bin/sh ./installman.sh install /usr/local/share/man/fr.UTF-8/man1 "-fr.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.6 installing /usr/local/share/man/fr.UTF-8/man1/vim.1
+#6 155.6 installing /usr/local/share/man/fr.UTF-8/man1/vimtutor.1
+#6 155.6 installing /usr/local/share/man/fr.UTF-8/man1/vimdiff.1
+#6 155.6 installing /usr/local/share/man/fr.UTF-8/man1/evim.1
+#6 155.6 /bin/sh ./installman.sh install /usr/local/share/man/it/man1 "-it" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.6 installing /usr/local/share/man/it/man1/vim.1
+#6 155.6 installing /usr/local/share/man/it/man1/vimtutor.1
+#6 155.6 installing /usr/local/share/man/it/man1/vimdiff.1
+#6 155.6 installing /usr/local/share/man/it/man1/evim.1
+#6 155.6 /bin/sh ./installman.sh install /usr/local/share/man/it.ISO8859-1/man1 "-it" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.6 installing /usr/local/share/man/it.ISO8859-1/man1/vim.1
+#6 155.6 installing /usr/local/share/man/it.ISO8859-1/man1/vimtutor.1
+#6 155.6 installing /usr/local/share/man/it.ISO8859-1/man1/vimdiff.1
+#6 155.6 installing /usr/local/share/man/it.ISO8859-1/man1/evim.1
+#6 155.7 /bin/sh ./installman.sh install /usr/local/share/man/it.UTF-8/man1 "-it.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.7 installing /usr/local/share/man/it.UTF-8/man1/vim.1
+#6 155.7 installing /usr/local/share/man/it.UTF-8/man1/vimtutor.1
+#6 155.7 installing /usr/local/share/man/it.UTF-8/man1/vimdiff.1
+#6 155.7 installing /usr/local/share/man/it.UTF-8/man1/evim.1
+#6 155.7 /bin/sh ./installman.sh install /usr/local/share/man/ja/man1 "-ja.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.7 installing /usr/local/share/man/ja/man1/vim.1
+#6 155.7 installing /usr/local/share/man/ja/man1/vimtutor.1
+#6 155.7 installing /usr/local/share/man/ja/man1/vimdiff.1
+#6 155.7 installing /usr/local/share/man/ja/man1/evim.1
+#6 155.7 /bin/sh ./installman.sh install /usr/local/share/man/pl/man1 "-pl" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.7 installing /usr/local/share/man/pl/man1/vim.1
+#6 155.7 installing /usr/local/share/man/pl/man1/vimtutor.1
+#6 155.7 installing /usr/local/share/man/pl/man1/vimdiff.1
+#6 155.7 installing /usr/local/share/man/pl/man1/evim.1
+#6 155.7 /bin/sh ./installman.sh install /usr/local/share/man/pl.ISO8859-2/man1 "-pl" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.7 installing /usr/local/share/man/pl.ISO8859-2/man1/vim.1
+#6 155.7 installing /usr/local/share/man/pl.ISO8859-2/man1/vimtutor.1
+#6 155.7 installing /usr/local/share/man/pl.ISO8859-2/man1/vimdiff.1
+#6 155.7 installing /usr/local/share/man/pl.ISO8859-2/man1/evim.1
+#6 155.7 /bin/sh ./installman.sh install /usr/local/share/man/pl.UTF-8/man1 "-pl.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.7 installing /usr/local/share/man/pl.UTF-8/man1/vim.1
+#6 155.7 installing /usr/local/share/man/pl.UTF-8/man1/vimtutor.1
+#6 155.7 installing /usr/local/share/man/pl.UTF-8/man1/vimdiff.1
+#6 155.7 installing /usr/local/share/man/pl.UTF-8/man1/evim.1
+#6 155.7 /bin/sh ./installman.sh install /usr/local/share/man/ru.KOI8-R/man1 "-ru" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.7 installing /usr/local/share/man/ru.KOI8-R/man1/vim.1
+#6 155.7 installing /usr/local/share/man/ru.KOI8-R/man1/vimtutor.1
+#6 155.7 installing /usr/local/share/man/ru.KOI8-R/man1/vimdiff.1
+#6 155.7 installing /usr/local/share/man/ru.KOI8-R/man1/evim.1
+#6 155.7 /bin/sh ./installman.sh install /usr/local/share/man/ru.UTF-8/man1 "-ru.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.7 installing /usr/local/share/man/ru.UTF-8/man1/vim.1
+#6 155.7 installing /usr/local/share/man/ru.UTF-8/man1/vimtutor.1
+#6 155.7 installing /usr/local/share/man/ru.UTF-8/man1/vimdiff.1
+#6 155.7 installing /usr/local/share/man/ru.UTF-8/man1/evim.1
+#6 155.7 /bin/sh ./installman.sh install /usr/local/share/man/tr/man1 "-tr" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.7 installing /usr/local/share/man/tr/man1/vim.1
+#6 155.7 installing /usr/local/share/man/tr/man1/vimtutor.1
+#6 155.8 installing /usr/local/share/man/tr/man1/vimdiff.1
+#6 155.8 installing /usr/local/share/man/tr/man1/evim.1
+#6 155.8 /bin/sh ./installman.sh install /usr/local/share/man/tr.ISO8859-9/man1 "-tr" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.8 installing /usr/local/share/man/tr.ISO8859-9/man1/vim.1
+#6 155.8 installing /usr/local/share/man/tr.ISO8859-9/man1/vimtutor.1
+#6 155.8 installing /usr/local/share/man/tr.ISO8859-9/man1/vimdiff.1
+#6 155.8 installing /usr/local/share/man/tr.ISO8859-9/man1/evim.1
+#6 155.8 /bin/sh ./installman.sh install /usr/local/share/man/tr.UTF-8/man1 "-tr.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim91 /usr/local/share/vim ../runtime/doc 644 vim vimdiff evim
+#6 155.8 installing /usr/local/share/man/tr.UTF-8/man1/vim.1
+#6 155.8 installing /usr/local/share/man/tr.UTF-8/man1/vimtutor.1
+#6 155.8 installing /usr/local/share/man/tr.UTF-8/man1/vimdiff.1
+#6 155.8 installing /usr/local/share/man/tr.UTF-8/man1/evim.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/da/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/da/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/da/man1/view.1
+#6 155.8 creating link /usr/local/share/man/da/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/da/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/da.ISO8859-1/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/da.ISO8859-1/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/da.ISO8859-1/man1/view.1
+#6 155.8 creating link /usr/local/share/man/da.ISO8859-1/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/da.ISO8859-1/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/da.UTF-8/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/da.UTF-8/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/da.UTF-8/man1/view.1
+#6 155.8 creating link /usr/local/share/man/da.UTF-8/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/da.UTF-8/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/de/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/de/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/de/man1/view.1
+#6 155.8 creating link /usr/local/share/man/de/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/de/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/de.ISO8859-1/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/de.ISO8859-1/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/de.ISO8859-1/man1/view.1
+#6 155.8 creating link /usr/local/share/man/de.ISO8859-1/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/de.ISO8859-1/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/de.UTF-8/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/de.UTF-8/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/de.UTF-8/man1/view.1
+#6 155.8 creating link /usr/local/share/man/de.UTF-8/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/de.UTF-8/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/fr/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/fr/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/fr/man1/view.1
+#6 155.8 creating link /usr/local/share/man/fr/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/fr/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/fr.ISO8859-1/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/fr.ISO8859-1/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/fr.ISO8859-1/man1/view.1
+#6 155.8 creating link /usr/local/share/man/fr.ISO8859-1/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/fr.ISO8859-1/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/fr.UTF-8/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/fr.UTF-8/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/fr.UTF-8/man1/view.1
+#6 155.8 creating link /usr/local/share/man/fr.UTF-8/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/fr.UTF-8/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/it/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/it/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/it/man1/view.1
+#6 155.8 creating link /usr/local/share/man/it/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/it/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/it.ISO8859-1/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/it.ISO8859-1/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/it.ISO8859-1/man1/view.1
+#6 155.8 creating link /usr/local/share/man/it.ISO8859-1/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/it.ISO8859-1/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/it.UTF-8/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/it.UTF-8/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/it.UTF-8/man1/view.1
+#6 155.8 creating link /usr/local/share/man/it.UTF-8/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/it.UTF-8/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/ja/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/ja/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/ja/man1/view.1
+#6 155.8 creating link /usr/local/share/man/ja/man1/rvim.1
+#6 155.8 creating link /usr/local/share/man/ja/man1/rview.1
+#6 155.8 /bin/sh ./installml.sh install "" \
+#6 155.8 	/usr/local/share/man/pl/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.8 creating link /usr/local/share/man/pl/man1/ex.1
+#6 155.8 creating link /usr/local/share/man/pl/man1/view.1
+#6 155.9 creating link /usr/local/share/man/pl/man1/rvim.1
+#6 155.9 creating link /usr/local/share/man/pl/man1/rview.1
+#6 155.9 /bin/sh ./installml.sh install "" \
+#6 155.9 	/usr/local/share/man/pl.ISO8859-2/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.9 creating link /usr/local/share/man/pl.ISO8859-2/man1/ex.1
+#6 155.9 creating link /usr/local/share/man/pl.ISO8859-2/man1/view.1
+#6 155.9 creating link /usr/local/share/man/pl.ISO8859-2/man1/rvim.1
+#6 155.9 creating link /usr/local/share/man/pl.ISO8859-2/man1/rview.1
+#6 155.9 /bin/sh ./installml.sh install "" \
+#6 155.9 	/usr/local/share/man/pl.UTF-8/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.9 creating link /usr/local/share/man/pl.UTF-8/man1/ex.1
+#6 155.9 creating link /usr/local/share/man/pl.UTF-8/man1/view.1
+#6 155.9 creating link /usr/local/share/man/pl.UTF-8/man1/rvim.1
+#6 155.9 creating link /usr/local/share/man/pl.UTF-8/man1/rview.1
+#6 155.9 /bin/sh ./installml.sh install "" \
+#6 155.9 	/usr/local/share/man/ru.KOI8-R/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.9 creating link /usr/local/share/man/ru.KOI8-R/man1/ex.1
+#6 155.9 creating link /usr/local/share/man/ru.KOI8-R/man1/view.1
+#6 155.9 creating link /usr/local/share/man/ru.KOI8-R/man1/rvim.1
+#6 155.9 creating link /usr/local/share/man/ru.KOI8-R/man1/rview.1
+#6 155.9 /bin/sh ./installml.sh install "" \
+#6 155.9 	/usr/local/share/man/ru.UTF-8/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.9 creating link /usr/local/share/man/ru.UTF-8/man1/ex.1
+#6 155.9 creating link /usr/local/share/man/ru.UTF-8/man1/view.1
+#6 155.9 creating link /usr/local/share/man/ru.UTF-8/man1/rvim.1
+#6 155.9 creating link /usr/local/share/man/ru.UTF-8/man1/rview.1
+#6 155.9 /bin/sh ./installml.sh install "" \
+#6 155.9 	/usr/local/share/man/tr/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.9 creating link /usr/local/share/man/tr/man1/ex.1
+#6 155.9 creating link /usr/local/share/man/tr/man1/view.1
+#6 155.9 creating link /usr/local/share/man/tr/man1/rvim.1
+#6 155.9 creating link /usr/local/share/man/tr/man1/rview.1
+#6 155.9 /bin/sh ./installml.sh install "" \
+#6 155.9 	/usr/local/share/man/tr.ISO8859-9/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.9 creating link /usr/local/share/man/tr.ISO8859-9/man1/ex.1
+#6 155.9 creating link /usr/local/share/man/tr.ISO8859-9/man1/view.1
+#6 155.9 creating link /usr/local/share/man/tr.ISO8859-9/man1/rvim.1
+#6 155.9 creating link /usr/local/share/man/tr.ISO8859-9/man1/rview.1
+#6 155.9 /bin/sh ./installml.sh install "" \
+#6 155.9 	/usr/local/share/man/tr.UTF-8/man1 vim vimdiff evim ex view rvim rview gvim gview rgvim rgview gvimdiff eview
+#6 155.9 creating link /usr/local/share/man/tr.UTF-8/man1/ex.1
+#6 155.9 creating link /usr/local/share/man/tr.UTF-8/man1/view.1
+#6 155.9 creating link /usr/local/share/man/tr.UTF-8/man1/rvim.1
+#6 155.9 creating link /usr/local/share/man/tr.UTF-8/man1/rview.1
+#6 155.9 if test -n "" -a -f po/Makefile; then \
+#6 155.9    cd po; make prefix=/usr/local LOCALEDIR=/usr/local/share/vim/vim91/lang \
+#6 155.9    INSTALL_DATA=cp FILEMOD=644 install; \
+#6 155.9 fi
+#6 155.9 if test -d ../runtime/lang; then \
+#6 155.9    cp ../runtime/lang/README.txt ../runtime/lang/*.vim /usr/local/share/vim/vim91/lang; \
+#6 155.9    chmod 644 /usr/local/share/vim/vim91/lang/README.txt /usr/local/share/vim/vim91/lang/*.vim; \
+#6 155.9 fi
+#6 155.9 if test -d ../runtime/keymap; then \
+#6 155.9    cp ../runtime/keymap/README.txt ../runtime/keymap/*.vim /usr/local/share/vim/vim91/keymap; \
+#6 155.9    chmod 644 /usr/local/share/vim/vim91/keymap/README.txt /usr/local/share/vim/vim91/keymap/*.vim; \
+#6 155.9 fi
+#6 155.9 if test -n ""; then \
+#6 155.9 	/bin/sh install-sh -c -d /usr/local/share/icons/hicolor/48x48/apps /usr/local/share/icons/locolor/32x32/apps \
+#6 155.9 	/usr/local/share/icons/locolor/16x16/apps /usr/local/share/applications; \
+#6 155.9 fi
+#6 155.9 if test -d /usr/local/share/icons/hicolor/48x48/apps -a -w /usr/local/share/icons/hicolor/48x48/apps \
+#6 155.9 	-a ! -f /usr/local/share/icons/hicolor/48x48/apps/gvim.png; then \
+#6 155.9    cp ../runtime/vim48x48.png /usr/local/share/icons/hicolor/48x48/apps/gvim.png; \
+#6 155.9    if test -z "" -a -x "" \
+#6 155.9 	   -a -w /usr/local/share/icons/hicolor \
+#6 155.9 	   -a -f /usr/local/share/icons/hicolor/index.theme; then \
+#6 155.9 	 -q /usr/local/share/icons/hicolor; \
+#6 155.9    fi \
+#6 155.9 fi
+#6 155.9 if test -d /usr/local/share/icons/locolor/32x32/apps -a -w /usr/local/share/icons/locolor/32x32/apps \
+#6 155.9 	-a ! -f /usr/local/share/icons/locolor/32x32/apps/gvim.png; then \
+#6 155.9    cp ../runtime/vim32x32.png /usr/local/share/icons/locolor/32x32/apps/gvim.png; \
+#6 155.9 fi
+#6 155.9 if test -d /usr/local/share/icons/locolor/16x16/apps -a -w /usr/local/share/icons/locolor/16x16/apps \
+#6 155.9 	-a ! -f /usr/local/share/icons/locolor/16x16/apps/gvim.png; then \
+#6 155.9    cp ../runtime/vim16x16.png /usr/local/share/icons/locolor/16x16/apps/gvim.png; \
+#6 155.9 fi
+#6 155.9 if test -d /usr/local/share/applications -a -w /usr/local/share/applications; then \
+#6 155.9    if test -f po/vim.desktop -a -f po/gvim.desktop; then \
+#6 155.9 	cp po/vim.desktop po/gvim.desktop \
+#6 155.9 		/usr/local/share/applications; \
+#6 155.9    else \
+#6 155.9 	cp ../runtime/vim.desktop \
+#6 155.9 		../runtime/gvim.desktop \
+#6 155.9 		/usr/local/share/applications; \
+#6 155.9    fi; \
+#6 155.9    if test -z "" -a -x ""; then \
+#6 155.9        -q /usr/local/share/applications; \
+#6 155.9    fi \
+#6 155.9 fi
+#6 155.9 make[1]: Leaving directory '/vim/src'
+#6 155.9 --2024-08-01 01:38:25--  https://raw.githubusercontent.com/tao12345666333/vim/master/vimrc
+#6 155.9 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.110.133, 185.199.108.133, ...
+#6 155.9 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+#6 155.9 HTTP request sent, awaiting response... 200 OK
+#6 156.1 Length: 17300 (17K) [text/plain]
+#6 156.1 Saving to: '/root/.vimrc'
+#6 156.1 
+#6 156.1      0K .......... ......                                     100% 35.3M=0s
+#6 156.1 
+#6 156.1 2024-08-01 01:38:25 (35.3 MB/s) - '/root/.vimrc' saved [17300/17300]
+#6 156.1 
+#6 156.1 Cloning into '/root/.vim/bundle/vundle'...
+#6 157.7 Plugin 'VundleVim/Vundle.vim'
+#6 158.4 Plugin 'scrooloose/nerdtree'
+#6 159.3 Plugin 'scrooloose/nerdcommenter'
+#6 160.1 Plugin 'majutsushi/tagbar'
+#6 160.9 Plugin 'ctrlpvim/ctrlp.vim'
+#6 161.7 Plugin 'fisadev/vim-ctrlp-cmdpalette'
+#6 162.3 Plugin 'mattn/emmet-vim'
+#6 165.4 Plugin 'tpope/vim-fugitive'
+#6 166.2 Plugin 'kien/tabman.vim'
+#6 166.9 Plugin 'vim-airline/vim-airline'
+#6 167.8 Plugin 'vim-airline/vim-airline-themes'
+#6 168.8 Plugin 'rosenfeld/conque-term'
+#6 169.6 Plugin 'fisadev/FixedTaskList.vim'
+#6 170.2 Plugin 'tpope/vim-surround'
+#6 170.9 Plugin 'Townk/vim-autoclose'
+#6 171.6 Plugin 'michaeljsmith/vim-indent-object'
+#6 172.2 Plugin 'python-mode/python-mode'
+#6 193.0 Plugin 'Shougo/neocomplcache.vim'
+#6 193.9 Plugin 'MarcWeber/vim-addon-mw-utils'
+#6 194.6 Plugin 'tomtom/tlib_vim'
+#6 195.6 Plugin 'honza/vim-snippets'
+#6 197.8 Plugin 'garbas/vim-snipmate'
+#6 198.5 Plugin 'tomasr/molokai'
+#6 199.2 Plugin 'mhinz/vim-signify'
+#6 200.2 Plugin 'fisadev/vim-isort'
+#6 200.8 Plugin 'fisadev/dragvisuals.vim'
+#6 201.5 Plugin 't9md/vim-choosewin'
+#6 202.2 Plugin 'vim-syntastic/syntastic'
+#6 203.8 Plugin 'lilydjwg/colorizer'
+#6 204.6 Plugin 'ternjs/tern_for_vim'
+#6 205.3 Plugin 'fatih/vim-go'
+#6 206.3 Plugin 'mxw/vim-jsx'
+#6 207.3 Plugin 'godlygeek/tabular'
+#6 208.0 Plugin 'plasticboy/vim-markdown'
+#6 208.9 Plugin 'suan/vim-instant-markdown'
+#6 209.5 Plugin 'mustache/vim-mustache-handlebars'
+#6 210.1 Plugin 'tao12345666333/vim-vue'
+#6 210.8 Plugin 'terryma/vim-multiple-cursors'
+#6 211.8 Plugin 'tpope/vim-dadbod'
+#6 212.5 Plugin 'ekalinin/Dockerfile.vim'
+#6 213.3 Plugin 'IndexedSearch'
+#6 213.9 Plugin 'matchit.zip'
+#6 214.6 Plugin 'Wombat'
+#6 215.2 Plugin 'YankRing.vim'
+#6 215.9 Helptags
+#6 216.0  
+#6 DONE 217.2s
+
+#7 [stage-1 2/7] COPY --from=builder /usr/local/bin/ /usr/local/bin
+#7 DONE 0.5s
+
+#8 [stage-1 3/7] COPY --from=builder /usr/local/share/vim/ /usr/local/share/vim/
+#8 DONE 1.9s
+
+#9 [stage-1 4/7] COPY --from=builder /root/.vimrc /root/.vimrc
+#9 DONE 0.5s
+
+#10 [stage-1 5/7] COPY --from=builder /root/.vim /root/.vim
+#10 DONE 6.9s
+
+#11 [stage-1 6/7] RUN apt update && apt install -y --no-install-recommends         python         python-dev         python-pip         python-setuptools     && rm -rf /var/lib/apt/lists/*     && pip install pep8 flake8 pyflakes isort
+#11 0.661 
+#11 0.661 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#11 0.661 
+#11 0.848 Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+#11 1.023 Get:2 http://deb.debian.org/debian-security buster/updates InRelease [34.8 kB]
+#11 1.034 Get:3 http://deb.debian.org/debian buster-updates InRelease [56.6 kB]
+#11 1.047 Get:4 http://deb.debian.org/debian buster/main amd64 Packages [7909 kB]
+#11 1.185 Get:5 http://deb.debian.org/debian-security buster/updates/main amd64 Packages [610 kB]
+#11 1.285 Get:6 http://deb.debian.org/debian buster-updates/main amd64 Packages [8788 B]
+#11 2.676 Fetched 8741 kB in 2s (4392 kB/s)
+#11 2.676 Reading package lists...
+#11 3.435 Building dependency tree...
+#11 3.574 Reading state information...
+#11 3.588 2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+#11 3.595 
+#11 3.595 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#11 3.595 
+#11 3.605 Reading package lists...
+#11 4.333 Building dependency tree...
+#11 4.447 Reading state information...
+#11 4.572 The following additional packages will be installed:
+#11 4.572   ca-certificates libc-dev-bin libc6 libc6-dev libexpat1 libexpat1-dev
+#11 4.572   libpython-dev libpython-stdlib libpython2-dev libpython2-stdlib libpython2.7
+#11 4.572   libpython2.7-dev libpython2.7-minimal libpython2.7-stdlib libreadline7
+#11 4.573   libsqlite3-0 libssl1.1 linux-libc-dev mime-support openssl python-minimal
+#11 4.573   python-pip-whl python-pkg-resources python2 python2-dev python2-minimal
+#11 4.573   python2.7 python2.7-dev python2.7-minimal readline-common
+#11 4.573 Suggested packages:
+#11 4.573   glibc-doc libc-l10n locales manpages-dev python-doc python-tk
+#11 4.573   python-setuptools-doc python2-doc python2.7-doc binutils binfmt-support
+#11 4.573   readline-doc
+#11 4.573 Recommended packages:
+#11 4.573   manpages manpages-dev bzip2 file xz-utils build-essential python-all-dev
+#11 4.573   python-wheel
+#11 4.823 The following NEW packages will be installed:
+#11 4.823   ca-certificates libc-dev-bin libc6-dev libexpat1 libexpat1-dev libpython-dev
+#11 4.823   libpython-stdlib libpython2-dev libpython2-stdlib libpython2.7
+#11 4.824   libpython2.7-dev libpython2.7-minimal libpython2.7-stdlib libreadline7
+#11 4.824   libsqlite3-0 libssl1.1 linux-libc-dev mime-support openssl python python-dev
+#11 4.824   python-minimal python-pip python-pip-whl python-pkg-resources
+#11 4.824   python-setuptools python2 python2-dev python2-minimal python2.7
+#11 4.824   python2.7-dev python2.7-minimal readline-common
+#11 4.824 The following packages will be upgraded:
+#11 4.825   libc6
+#11 4.862 1 upgraded, 33 newly installed, 0 to remove and 1 not upgraded.
+#11 4.862 Need to get 50.7 MB of archives.
+#11 4.862 After this operation, 116 MB of additional disk space will be used.
+#11 4.862 Get:1 http://deb.debian.org/debian-security buster/updates/main amd64 libpython2.7-minimal amd64 2.7.16-2+deb10u4 [396 kB]
+#11 4.906 Get:2 http://deb.debian.org/debian-security buster/updates/main amd64 python2.7-minimal amd64 2.7.16-2+deb10u4 [1367 kB]
+#11 4.930 Get:3 http://deb.debian.org/debian buster/main amd64 python2-minimal amd64 2.7.16-1 [41.4 kB]
+#11 4.931 Get:4 http://deb.debian.org/debian buster/main amd64 python-minimal amd64 2.7.16-1 [21.0 kB]
+#11 4.932 Get:5 http://deb.debian.org/debian-security buster/updates/main amd64 libc6 amd64 2.28-10+deb10u4 [2869 kB]
+#11 4.971 Get:6 http://deb.debian.org/debian-security buster/updates/main amd64 libssl1.1 amd64 1.1.1n-0+deb10u6 [1552 kB]
+#11 4.993 Get:7 http://deb.debian.org/debian buster/main amd64 mime-support all 3.62 [37.2 kB]
+#11 4.994 Get:8 http://deb.debian.org/debian-security buster/updates/main amd64 libexpat1 amd64 2.2.6-2+deb10u7 [108 kB]
+#11 4.995 Get:9 http://deb.debian.org/debian buster/main amd64 readline-common all 7.0-5 [70.6 kB]
+#11 4.997 Get:10 http://deb.debian.org/debian buster/main amd64 libreadline7 amd64 7.0-5 [151 kB]
+#11 4.999 Get:11 http://deb.debian.org/debian-security buster/updates/main amd64 libsqlite3-0 amd64 3.27.2-3+deb10u2 [641 kB]
+#11 5.007 Get:12 http://deb.debian.org/debian-security buster/updates/main amd64 libpython2.7-stdlib amd64 2.7.16-2+deb10u4 [1912 kB]
+#11 5.033 Get:13 http://deb.debian.org/debian-security buster/updates/main amd64 python2.7 amd64 2.7.16-2+deb10u4 [306 kB]
+#11 5.037 Get:14 http://deb.debian.org/debian buster/main amd64 libpython2-stdlib amd64 2.7.16-1 [20.8 kB]
+#11 5.038 Get:15 http://deb.debian.org/debian buster/main amd64 libpython-stdlib amd64 2.7.16-1 [20.8 kB]
+#11 5.039 Get:16 http://deb.debian.org/debian buster/main amd64 python2 amd64 2.7.16-1 [41.6 kB]
+#11 5.039 Get:17 http://deb.debian.org/debian buster/main amd64 python amd64 2.7.16-1 [22.8 kB]
+#11 5.040 Get:18 http://deb.debian.org/debian-security buster/updates/main amd64 openssl amd64 1.1.1n-0+deb10u6 [855 kB]
+#11 5.052 Get:19 http://deb.debian.org/debian buster/main amd64 ca-certificates all 20200601~deb10u2 [166 kB]
+#11 5.054 Get:20 http://deb.debian.org/debian-security buster/updates/main amd64 libc-dev-bin amd64 2.28-10+deb10u4 [276 kB]
+#11 5.059 Get:21 http://deb.debian.org/debian-security buster/updates/main amd64 linux-libc-dev amd64 4.19.316-1 [1625 kB]
+#11 5.080 Get:22 http://deb.debian.org/debian-security buster/updates/main amd64 libc6-dev amd64 2.28-10+deb10u4 [2694 kB]
+#11 5.115 Get:23 http://deb.debian.org/debian-security buster/updates/main amd64 libexpat1-dev amd64 2.2.6-2+deb10u7 [156 kB]
+#11 5.118 Get:24 http://deb.debian.org/debian-security buster/updates/main amd64 libpython2.7 amd64 2.7.16-2+deb10u4 [1036 kB]
+#11 5.132 Get:25 http://deb.debian.org/debian-security buster/updates/main amd64 libpython2.7-dev amd64 2.7.16-2+deb10u4 [31.6 MB]
+#11 5.540 Get:26 http://deb.debian.org/debian buster/main amd64 libpython2-dev amd64 2.7.16-1 [20.9 kB]
+#11 5.540 Get:27 http://deb.debian.org/debian buster/main amd64 libpython-dev amd64 2.7.16-1 [20.9 kB]
+#11 5.541 Get:28 http://deb.debian.org/debian-security buster/updates/main amd64 python2.7-dev amd64 2.7.16-2+deb10u4 [286 kB]
+#11 5.544 Get:29 http://deb.debian.org/debian buster/main amd64 python2-dev amd64 2.7.16-1 [1212 B]
+#11 5.545 Get:30 http://deb.debian.org/debian buster/main amd64 python-dev amd64 2.7.16-1 [1192 B]
+#11 5.748 Get:31 http://deb.debian.org/debian buster/main amd64 python-pip-whl all 18.1-5 [1591 kB]
+#11 6.366 Get:32 http://deb.debian.org/debian buster/main amd64 python-pip all 18.1-5 [215 kB]
+#11 6.369 Get:33 http://deb.debian.org/debian buster/main amd64 python-pkg-resources all 40.8.0-1 [182 kB]
+#11 6.372 Get:34 http://deb.debian.org/debian buster/main amd64 python-setuptools all 40.8.0-1 [382 kB]
+#11 6.577 debconf: delaying package configuration, since apt-utils is not installed
+#11 6.594 Fetched 50.7 MB in 2s (32.9 MB/s)
+#11 6.764 Selecting previously unselected package libpython2.7-minimal:amd64.
+#11 6.764 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6433 files and directories currently installed.)
+#11 6.766 Preparing to unpack .../libpython2.7-minimal_2.7.16-2+deb10u4_amd64.deb ...
+#11 6.794 Unpacking libpython2.7-minimal:amd64 (2.7.16-2+deb10u4) ...
+#11 7.091 Selecting previously unselected package python2.7-minimal.
+#11 7.091 Preparing to unpack .../python2.7-minimal_2.7.16-2+deb10u4_amd64.deb ...
+#11 7.118 Unpacking python2.7-minimal (2.7.16-2+deb10u4) ...
+#11 7.558 Selecting previously unselected package python2-minimal.
+#11 7.558 Preparing to unpack .../python2-minimal_2.7.16-1_amd64.deb ...
+#11 7.582 Unpacking python2-minimal (2.7.16-1) ...
+#11 7.742 Selecting previously unselected package python-minimal.
+#11 7.742 Preparing to unpack .../python-minimal_2.7.16-1_amd64.deb ...
+#11 7.767 Unpacking python-minimal (2.7.16-1) ...
+#11 8.036 Preparing to unpack .../libc6_2.28-10+deb10u4_amd64.deb ...
+#11 8.232 debconf: unable to initialize frontend: Dialog
+#11 8.232 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#11 8.232 debconf: falling back to frontend: Readline
+#11 8.232 debconf: unable to initialize frontend: Readline
+#11 8.232 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#11 8.232 debconf: falling back to frontend: Teletype
+#11 8.347 Unpacking libc6:amd64 (2.28-10+deb10u4) over (2.28-10+deb10u3) ...
+#11 17.76 Setting up libc6:amd64 (2.28-10+deb10u4) ...
+#11 17.94 debconf: unable to initialize frontend: Dialog
+#11 17.94 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#11 17.94 debconf: falling back to frontend: Readline
+#11 17.94 debconf: unable to initialize frontend: Readline
+#11 17.94 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#11 17.94 debconf: falling back to frontend: Teletype
+#11 19.29 Selecting previously unselected package libssl1.1:amd64.
+#11 19.29 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6678 files and directories currently installed.)
+#11 19.29 Preparing to unpack .../0-libssl1.1_1.1.1n-0+deb10u6_amd64.deb ...
+#11 19.32 Unpacking libssl1.1:amd64 (1.1.1n-0+deb10u6) ...
+#11 19.72 Selecting previously unselected package mime-support.
+#11 19.72 Preparing to unpack .../1-mime-support_3.62_all.deb ...
+#11 19.75 Unpacking mime-support (3.62) ...
+#11 20.01 Selecting previously unselected package libexpat1:amd64.
+#11 20.01 Preparing to unpack .../2-libexpat1_2.2.6-2+deb10u7_amd64.deb ...
+#11 20.03 Unpacking libexpat1:amd64 (2.2.6-2+deb10u7) ...
+#11 20.23 Selecting previously unselected package readline-common.
+#11 20.23 Preparing to unpack .../3-readline-common_7.0-5_all.deb ...
+#11 20.26 Unpacking readline-common (7.0-5) ...
+#11 20.45 Selecting previously unselected package libreadline7:amd64.
+#11 20.45 Preparing to unpack .../4-libreadline7_7.0-5_amd64.deb ...
+#11 20.48 Unpacking libreadline7:amd64 (7.0-5) ...
+#11 20.71 Selecting previously unselected package libsqlite3-0:amd64.
+#11 20.71 Preparing to unpack .../5-libsqlite3-0_3.27.2-3+deb10u2_amd64.deb ...
+#11 20.74 Unpacking libsqlite3-0:amd64 (3.27.2-3+deb10u2) ...
+#11 20.96 Selecting previously unselected package libpython2.7-stdlib:amd64.
+#11 20.96 Preparing to unpack .../6-libpython2.7-stdlib_2.7.16-2+deb10u4_amd64.deb ...
+#11 20.99 Unpacking libpython2.7-stdlib:amd64 (2.7.16-2+deb10u4) ...
+#11 21.73 Selecting previously unselected package python2.7.
+#11 21.73 Preparing to unpack .../7-python2.7_2.7.16-2+deb10u4_amd64.deb ...
+#11 21.75 Unpacking python2.7 (2.7.16-2+deb10u4) ...
+#11 21.92 Selecting previously unselected package libpython2-stdlib:amd64.
+#11 21.92 Preparing to unpack .../8-libpython2-stdlib_2.7.16-1_amd64.deb ...
+#11 21.95 Unpacking libpython2-stdlib:amd64 (2.7.16-1) ...
+#11 22.10 Selecting previously unselected package libpython-stdlib:amd64.
+#11 22.10 Preparing to unpack .../9-libpython-stdlib_2.7.16-1_amd64.deb ...
+#11 22.13 Unpacking libpython-stdlib:amd64 (2.7.16-1) ...
+#11 22.38 Setting up libpython2.7-minimal:amd64 (2.7.16-2+deb10u4) ...
+#11 22.48 Setting up python2.7-minimal (2.7.16-2+deb10u4) ...
+#11 22.84 Linking and byte-compiling packages for runtime python2.7...
+#11 22.88 Setting up python2-minimal (2.7.16-1) ...
+#11 23.08 Selecting previously unselected package python2.
+#11 23.08 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7270 files and directories currently installed.)
+#11 23.08 Preparing to unpack .../python2_2.7.16-1_amd64.deb ...
+#11 23.10 Unpacking python2 (2.7.16-1) ...
+#11 23.28 Setting up python-minimal (2.7.16-1) ...
+#11 23.51 Selecting previously unselected package python.
+#11 23.51 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7303 files and directories currently installed.)
+#11 23.52 Preparing to unpack .../00-python_2.7.16-1_amd64.deb ...
+#11 23.55 Unpacking python (2.7.16-1) ...
+#11 23.73 Selecting previously unselected package openssl.
+#11 23.73 Preparing to unpack .../01-openssl_1.1.1n-0+deb10u6_amd64.deb ...
+#11 23.76 Unpacking openssl (1.1.1n-0+deb10u6) ...
+#11 24.05 Selecting previously unselected package ca-certificates.
+#11 24.05 Preparing to unpack .../02-ca-certificates_20200601~deb10u2_all.deb ...
+#11 24.07 Unpacking ca-certificates (20200601~deb10u2) ...
+#11 24.32 Selecting previously unselected package libc-dev-bin.
+#11 24.32 Preparing to unpack .../03-libc-dev-bin_2.28-10+deb10u4_amd64.deb ...
+#11 24.35 Unpacking libc-dev-bin (2.28-10+deb10u4) ...
+#11 24.53 Selecting previously unselected package linux-libc-dev:amd64.
+#11 24.53 Preparing to unpack .../04-linux-libc-dev_4.19.316-1_amd64.deb ...
+#11 24.56 Unpacking linux-libc-dev:amd64 (4.19.316-1) ...
+#11 25.07 Selecting previously unselected package libc6-dev:amd64.
+#11 25.07 Preparing to unpack .../05-libc6-dev_2.28-10+deb10u4_amd64.deb ...
+#11 25.10 Unpacking libc6-dev:amd64 (2.28-10+deb10u4) ...
+#11 25.77 Selecting previously unselected package libexpat1-dev:amd64.
+#11 25.77 Preparing to unpack .../06-libexpat1-dev_2.2.6-2+deb10u7_amd64.deb ...
+#11 25.80 Unpacking libexpat1-dev:amd64 (2.2.6-2+deb10u7) ...
+#11 26.06 Selecting previously unselected package libpython2.7:amd64.
+#11 26.06 Preparing to unpack .../07-libpython2.7_2.7.16-2+deb10u4_amd64.deb ...
+#11 26.08 Unpacking libpython2.7:amd64 (2.7.16-2+deb10u4) ...
+#11 26.39 Selecting previously unselected package libpython2.7-dev:amd64.
+#11 26.39 Preparing to unpack .../08-libpython2.7-dev_2.7.16-2+deb10u4_amd64.deb ...
+#11 26.41 Unpacking libpython2.7-dev:amd64 (2.7.16-2+deb10u4) ...
+#11 29.10 Selecting previously unselected package libpython2-dev:amd64.
+#11 29.10 Preparing to unpack .../09-libpython2-dev_2.7.16-1_amd64.deb ...
+#11 29.12 Unpacking libpython2-dev:amd64 (2.7.16-1) ...
+#11 29.27 Selecting previously unselected package libpython-dev:amd64.
+#11 29.27 Preparing to unpack .../10-libpython-dev_2.7.16-1_amd64.deb ...
+#11 29.30 Unpacking libpython-dev:amd64 (2.7.16-1) ...
+#11 30.17 Selecting previously unselected package python2.7-dev.
+#11 30.17 Preparing to unpack .../11-python2.7-dev_2.7.16-2+deb10u4_amd64.deb ...
+#11 30.20 Unpacking python2.7-dev (2.7.16-2+deb10u4) ...
+#11 30.33 Selecting previously unselected package python2-dev.
+#11 30.33 Preparing to unpack .../12-python2-dev_2.7.16-1_amd64.deb ...
+#11 30.36 Unpacking python2-dev (2.7.16-1) ...
+#11 30.48 Selecting previously unselected package python-dev.
+#11 30.48 Preparing to unpack .../13-python-dev_2.7.16-1_amd64.deb ...
+#11 30.50 Unpacking python-dev (2.7.16-1) ...
+#11 30.63 Selecting previously unselected package python-pip-whl.
+#11 30.63 Preparing to unpack .../14-python-pip-whl_18.1-5_all.deb ...
+#11 30.65 Unpacking python-pip-whl (18.1-5) ...
+#11 30.98 Selecting previously unselected package python-pip.
+#11 30.98 Preparing to unpack .../15-python-pip_18.1-5_all.deb ...
+#11 31.00 Unpacking python-pip (18.1-5) ...
+#11 31.29 Selecting previously unselected package python-pkg-resources.
+#11 31.29 Preparing to unpack .../16-python-pkg-resources_40.8.0-1_all.deb ...
+#11 31.32 Unpacking python-pkg-resources (40.8.0-1) ...
+#11 31.54 Selecting previously unselected package python-setuptools.
+#11 31.54 Preparing to unpack .../17-python-setuptools_40.8.0-1_all.deb ...
+#11 31.57 Unpacking python-setuptools (40.8.0-1) ...
+#11 31.82 Setting up libexpat1:amd64 (2.2.6-2+deb10u7) ...
+#11 31.90 Setting up mime-support (3.62) ...
+#11 32.04 Setting up libssl1.1:amd64 (1.1.1n-0+deb10u6) ...
+#11 32.19 debconf: unable to initialize frontend: Dialog
+#11 32.19 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#11 32.19 debconf: falling back to frontend: Readline
+#11 32.19 debconf: unable to initialize frontend: Readline
+#11 32.19 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#11 32.19 debconf: falling back to frontend: Teletype
+#11 32.38 Setting up libsqlite3-0:amd64 (3.27.2-3+deb10u2) ...
+#11 32.47 Setting up linux-libc-dev:amd64 (4.19.316-1) ...
+#11 32.57 Setting up libc-dev-bin (2.28-10+deb10u4) ...
+#11 32.66 Setting up openssl (1.1.1n-0+deb10u6) ...
+#11 32.76 Setting up readline-common (7.0-5) ...
+#11 32.83 Setting up libreadline7:amd64 (7.0-5) ...
+#11 32.91 Setting up libpython2.7-stdlib:amd64 (2.7.16-2+deb10u4) ...
+#11 32.99 Setting up ca-certificates (20200601~deb10u2) ...
+#11 33.14 debconf: unable to initialize frontend: Dialog
+#11 33.14 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#11 33.14 debconf: falling back to frontend: Readline
+#11 33.14 debconf: unable to initialize frontend: Readline
+#11 33.14 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#11 33.14 debconf: falling back to frontend: Teletype
+#11 33.56 Updating certificates in /etc/ssl/certs...
+#11 34.19 137 added, 0 removed; done.
+#11 34.61 Setting up libc6-dev:amd64 (2.28-10+deb10u4) ...
+#11 34.70 Setting up python-pip-whl (18.1-5) ...
+#11 34.78 Setting up libpython2.7:amd64 (2.7.16-2+deb10u4) ...
+#11 34.85 Setting up python2.7 (2.7.16-2+deb10u4) ...
+#11 35.80 Setting up libpython2-stdlib:amd64 (2.7.16-1) ...
+#11 35.87 Setting up python2 (2.7.16-1) ...
+#11 35.95 Setting up libpython-stdlib:amd64 (2.7.16-1) ...
+#11 36.03 Setting up libexpat1-dev:amd64 (2.2.6-2+deb10u7) ...
+#11 36.10 Setting up python (2.7.16-1) ...
+#11 36.19 Setting up libpython2.7-dev:amd64 (2.7.16-2+deb10u4) ...
+#11 36.26 Setting up python-pkg-resources (40.8.0-1) ...
+#11 37.47 Setting up python-pip (18.1-5) ...
+#11 38.69 Setting up python-setuptools (40.8.0-1) ...
+#11 40.21 Setting up libpython2-dev:amd64 (2.7.16-1) ...
+#11 40.29 Setting up python2.7-dev (2.7.16-2+deb10u4) ...
+#11 40.36 Setting up python2-dev (2.7.16-1) ...
+#11 40.44 Setting up libpython-dev:amd64 (2.7.16-1) ...
+#11 40.51 Setting up python-dev (2.7.16-1) ...
+#11 40.59 Processing triggers for libc-bin (2.28-10+deb10u3) ...
+#11 40.68 Processing triggers for ca-certificates (20200601~deb10u2) ...
+#11 40.71 Updating certificates in /etc/ssl/certs...
+#11 41.23 0 added, 0 removed; done.
+#11 41.23 Running hooks in /etc/ca-certificates/update.d...
+#11 41.23 done.
+#11 42.03 Collecting pep8
+#11 42.20   Downloading https://files.pythonhosted.org/packages/42/3f/669429ce58de2c22d8d2c542752e137ec4b9885fff398d3eceb1a7f5acb4/pep8-1.7.1-py2.py3-none-any.whl (41kB)
+#11 42.23 Collecting flake8
+#11 42.41   Downloading https://files.pythonhosted.org/packages/fc/80/35a0716e5d5101e643404dabd20f07f5528a21f3ef4032d31a49c913237b/flake8-3.9.2-py2.py3-none-any.whl (73kB)
+#11 42.46 Collecting pyflakes
+#11 42.58   Downloading https://files.pythonhosted.org/packages/43/fb/38848eb494af7df9aeb2d7673ace8b213313eb7e391691a79dbaeb6a838f/pyflakes-2.4.0-py2.py3-none-any.whl (69kB)
+#11 42.61 Collecting isort
+#11 42.86   Downloading https://files.pythonhosted.org/packages/e5/b0/c121fd1fa3419ea9bfd55c7f9c4fedfec5143208d8c7ad3ce3db6c623c21/isort-4.3.21-py2.py3-none-any.whl (42kB)
+#11 42.89 Collecting configparser; python_version < "3.2" (from flake8)
+#11 42.97   Downloading https://files.pythonhosted.org/packages/7a/2a/95ed0501cf5d8709490b1d3a3f9b5cf340da6c433f896bbe9ce08dbe6785/configparser-4.0.2-py2.py3-none-any.whl
+#11 42.99 Collecting functools32; python_version < "3.2" (from flake8)
+#11 43.08   Downloading https://files.pythonhosted.org/packages/c5/60/6ac26ad05857c601308d8fb9e87fa36d0ebf889423f47c3502ef034365db/functools32-3.2.3-2.tar.gz
+#11 43.29 Collecting importlib-metadata; python_version < "3.8" (from flake8)
+#11 43.46   Downloading https://files.pythonhosted.org/packages/cf/b4/877779cd7b5a15536ecbe0655cfb35a0de0ede6d888151fd7356d278c47d/importlib_metadata-2.1.3-py2.py3-none-any.whl
+#11 43.50 Collecting typing; python_version < "3.5" (from flake8)
+#11 43.53   Downloading https://files.pythonhosted.org/packages/0b/cb/da856e81731833b94da70a08712f658416266a5fb2a9d9e426c8061becef/typing-3.10.0.0-py2-none-any.whl
+#11 43.55 Collecting enum34; python_version < "3.4" (from flake8)
+#11 43.60   Downloading https://files.pythonhosted.org/packages/6f/2c/a9386903ece2ea85e9807e0e062174dc26fdce8b05f216d00491be29fad5/enum34-1.1.10-py2-none-any.whl
+#11 43.62 Collecting mccabe<0.7.0,>=0.6.0 (from flake8)
+#11 43.71   Downloading https://files.pythonhosted.org/packages/87/89/479dc97e18549e21354893e4ee4ef36db1d237534982482c3681ee6e7b57/mccabe-0.6.1-py2.py3-none-any.whl
+#11 43.73 Collecting pycodestyle<2.8.0,>=2.7.0 (from flake8)
+#11 43.84   Downloading https://files.pythonhosted.org/packages/de/cc/227251b1471f129bc35e966bb0fceb005969023926d744139642d847b7ae/pycodestyle-2.7.0-py2.py3-none-any.whl (41kB)
+#11 43.86 Collecting backports.functools-lru-cache; python_version < "3.2" (from isort)
+#11 43.90   Downloading https://files.pythonhosted.org/packages/08/e3/1387bd1c9aa95e354064ee29b8a1dfd3e795b066cc869af8f8d6b70ae4aa/backports.functools_lru_cache-1.6.6-py2.py3-none-any.whl
+#11 43.94 Collecting futures; python_version < "3.2" (from isort)
+#11 44.05   Downloading https://files.pythonhosted.org/packages/d4/ea/9d513529a89bcbcd07c8acbac9eecfad29e7562e0b9d69d14f475987ad70/futures-3.4.0-py2-none-any.whl
+#11 44.06 Collecting contextlib2; python_version < "3" (from importlib-metadata; python_version < "3.8"->flake8)
+#11 44.09   Downloading https://files.pythonhosted.org/packages/85/60/370352f7ef6aa96c52fb001831622f50f923c1d575427d021b8ab3311236/contextlib2-0.6.0.post1-py2.py3-none-any.whl
+#11 44.11 Collecting pathlib2; python_version < "3" (from importlib-metadata; python_version < "3.8"->flake8)
+#11 44.14   Downloading https://files.pythonhosted.org/packages/09/eb/4af4bcd5b8731366b676192675221c5324394a580dfae469d498313b5c4a/pathlib2-2.3.7.post1-py2.py3-none-any.whl
+#11 44.16 Collecting zipp>=0.5 (from importlib-metadata; python_version < "3.8"->flake8)
+#11 44.24   Downloading https://files.pythonhosted.org/packages/96/0a/67556e9b7782df7118c1f49bdc494da5e5e429c93aa77965f33e81287c8c/zipp-1.2.0-py2.py3-none-any.whl
+#11 44.27 Collecting scandir; python_version < "3.5" (from pathlib2; python_version < "3"->importlib-metadata; python_version < "3.8"->flake8)
+#11 44.33   Downloading https://files.pythonhosted.org/packages/df/f5/9c052db7bd54d0cbf1bc0bb6554362bba1012d03e5888950a4f5c5dadc4e/scandir-1.10.0.tar.gz
+#11 44.53 Collecting six (from pathlib2; python_version < "3"->importlib-metadata; python_version < "3.8"->flake8)
+#11 44.58   Downloading https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl
+#11 44.59 Building wheels for collected packages: functools32, scandir
+#11 44.59   Running setup.py bdist_wheel for functools32: started
+#11 44.76   Running setup.py bdist_wheel for functools32: finished with status 'error'
+#11 44.76   Complete output from command /usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-install-uZKIfh/functools32/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" bdist_wheel -d /tmp/pip-wheel-gSEPgx --python-tag cp27:
+#11 44.76   /usr/lib/python2.7/dist-packages/setuptools/dist.py:475: UserWarning: Normalizing '3.2.3-2' to '3.2.3.post2'
+#11 44.76     normalized_version,
+#11 44.76   usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+#11 44.76      or: -c --help [cmd1 cmd2 ...]
+#11 44.76      or: -c --help-commands
+#11 44.76      or: -c cmd --help
+#11 44.76   
+#11 44.76   error: invalid command 'bdist_wheel'
+#11 44.76   
+#11 44.76   ----------------------------------------
+#11 44.76   Failed building wheel for functools32
+#11 44.76   Running setup.py clean for functools32
+#11 44.92   Running setup.py bdist_wheel for scandir: started
+#11 45.10   Running setup.py bdist_wheel for scandir: finished with status 'error'
+#11 45.10   Complete output from command /usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-install-uZKIfh/scandir/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" bdist_wheel -d /tmp/pip-wheel-K8ayhY --python-tag cp27:
+#11 45.10   /usr/lib/python2.7/distutils/extension.py:133: UserWarning: Unknown Extension options: 'optional'
+#11 45.10     warnings.warn(msg)
+#11 45.10   usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+#11 45.10      or: -c --help [cmd1 cmd2 ...]
+#11 45.10      or: -c --help-commands
+#11 45.10      or: -c cmd --help
+#11 45.10   
+#11 45.10   error: invalid command 'bdist_wheel'
+#11 45.10   
+#11 45.10   ----------------------------------------
+#11 45.10   Failed building wheel for scandir
+#11 45.10   Running setup.py clean for scandir
+#11 45.27 Failed to build functools32 scandir
+#11 45.35 flake8 3.9.2 has requirement pyflakes<2.4.0,>=2.3.0, but you'll have pyflakes 2.4.0 which is incompatible.
+#11 45.35 Installing collected packages: pep8, configparser, functools32, contextlib2, typing, scandir, six, pathlib2, zipp, importlib-metadata, pyflakes, enum34, mccabe, pycodestyle, flake8, backports.functools-lru-cache, futures, isort
+#11 45.39   Running setup.py install for functools32: started
+#11 45.60     Running setup.py install for functools32: finished with status 'done'
+#11 45.63   Running setup.py install for scandir: started
+#11 45.84     Running setup.py install for scandir: finished with status 'done'
+#11 46.12 Successfully installed backports.functools-lru-cache-1.6.6 configparser-4.0.2 contextlib2-0.6.0.post1 enum34-1.1.10 flake8-3.9.2 functools32-3.2.3.post2 futures-3.4.0 importlib-metadata-2.1.3 isort-4.3.21 mccabe-0.6.1 pathlib2-2.3.7.post1 pep8-1.7.1 pycodestyle-2.7.0 pyflakes-2.4.0 scandir-1.10.0 six-1.16.0 typing-3.10.0.0 zipp-1.2.0
+#11 DONE 47.0s
+
+#12 [stage-1 7/7] WORKDIR /src
+#12 DONE 0.7s
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 2.1s done
+#13 writing image sha256:63c47f3984305d5b55b4a4cf95cda14bb72480978b793724c3ea2571d91908f3 0.0s done
+#13 naming to docker.io/library/image_name_v1_1 0.0s done
+#13 DONE 2.1s
+Duration: 5:50.41

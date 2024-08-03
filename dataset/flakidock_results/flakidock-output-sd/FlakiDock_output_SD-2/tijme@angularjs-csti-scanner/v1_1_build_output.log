@@ -1,0 +1,638 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.5s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 401B done
+#2 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/python:3.9-slim
+#3 DONE 1.4s
+
+#4 [1/4] FROM docker.io/library/python:3.9-slim@sha256:27211e8bbfd2c91ac9adbde0565b9ac18234bfcde8ef0e6a3404fd404f26ea13
+#4 resolve docker.io/library/python:3.9-slim@sha256:27211e8bbfd2c91ac9adbde0565b9ac18234bfcde8ef0e6a3404fd404f26ea13
+#4 resolve docker.io/library/python:3.9-slim@sha256:27211e8bbfd2c91ac9adbde0565b9ac18234bfcde8ef0e6a3404fd404f26ea13 0.2s done
+#4 sha256:27211e8bbfd2c91ac9adbde0565b9ac18234bfcde8ef0e6a3404fd404f26ea13 10.41kB / 10.41kB done
+#4 sha256:6a168e1359fe0cb7746746fe418bab1ffc1972294e5f75005db8d9e927739909 1.94kB / 1.94kB done
+#4 sha256:7bfcddd27f2b23ee199f3e4a938eaa80ef01c609d6d1c160787e764229ec3cb9 6.88kB / 6.88kB done
+#4 sha256:efc2b5ad9eec05befa54239d53feeae3569ccbef689aa5e5dbfc25da6c4df559 0B / 29.13MB 0.1s
+#4 sha256:efc2b5ad9eec05befa54239d53feeae3569ccbef689aa5e5dbfc25da6c4df559 14.68MB / 29.13MB 0.3s
+#4 sha256:7464ec8699ac1a9a0b7ecb92214d829bb4fd397807b7b7ea6a483493992a84ce 0B / 3.51MB 0.3s
+#4 sha256:1a6e97f2166ac8137bc106722ddb9e0ffc6ffd868f278e0c29d57584f7f5686c 0B / 11.89MB 0.3s
+#4 sha256:efc2b5ad9eec05befa54239d53feeae3569ccbef689aa5e5dbfc25da6c4df559 23.07MB / 29.13MB 0.4s
+#4 sha256:7464ec8699ac1a9a0b7ecb92214d829bb4fd397807b7b7ea6a483493992a84ce 3.51MB / 3.51MB 0.4s
+#4 sha256:efc2b5ad9eec05befa54239d53feeae3569ccbef689aa5e5dbfc25da6c4df559 29.13MB / 29.13MB 0.5s
+#4 sha256:7464ec8699ac1a9a0b7ecb92214d829bb4fd397807b7b7ea6a483493992a84ce 3.51MB / 3.51MB 0.4s done
+#4 sha256:1a6e97f2166ac8137bc106722ddb9e0ffc6ffd868f278e0c29d57584f7f5686c 1.05MB / 11.89MB 0.5s
+#4 sha256:1a6e97f2166ac8137bc106722ddb9e0ffc6ffd868f278e0c29d57584f7f5686c 9.44MB / 11.89MB 0.6s
+#4 sha256:27f64c4bf8446eb334eef17fb7bb926fc38019d35f12357148f19c86aaec7b7b 0B / 230B 0.6s
+#4 sha256:1a6e97f2166ac8137bc106722ddb9e0ffc6ffd868f278e0c29d57584f7f5686c 11.89MB / 11.89MB 0.8s
+#4 sha256:27f64c4bf8446eb334eef17fb7bb926fc38019d35f12357148f19c86aaec7b7b 230B / 230B 0.8s
+#4 sha256:efc2b5ad9eec05befa54239d53feeae3569ccbef689aa5e5dbfc25da6c4df559 29.13MB / 29.13MB 1.0s done
+#4 sha256:27f64c4bf8446eb334eef17fb7bb926fc38019d35f12357148f19c86aaec7b7b 230B / 230B 1.0s done
+#4 extracting sha256:efc2b5ad9eec05befa54239d53feeae3569ccbef689aa5e5dbfc25da6c4df559
+#4 sha256:1a6e97f2166ac8137bc106722ddb9e0ffc6ffd868f278e0c29d57584f7f5686c 11.89MB / 11.89MB 1.3s done
+#4 sha256:1d44c5b3324ee14545c10ae777ae3a1ca09f0ac1bb9b4c8cc65828b58526b5a0 0B / 2.77MB 1.4s
+#4 sha256:1d44c5b3324ee14545c10ae777ae3a1ca09f0ac1bb9b4c8cc65828b58526b5a0 2.77MB / 2.77MB 1.5s
+#4 sha256:1d44c5b3324ee14545c10ae777ae3a1ca09f0ac1bb9b4c8cc65828b58526b5a0 2.77MB / 2.77MB 1.7s done
+#4 extracting sha256:efc2b5ad9eec05befa54239d53feeae3569ccbef689aa5e5dbfc25da6c4df559 1.8s done
+#4 extracting sha256:7464ec8699ac1a9a0b7ecb92214d829bb4fd397807b7b7ea6a483493992a84ce
+#4 extracting sha256:7464ec8699ac1a9a0b7ecb92214d829bb4fd397807b7b7ea6a483493992a84ce 0.2s done
+#4 extracting sha256:1a6e97f2166ac8137bc106722ddb9e0ffc6ffd868f278e0c29d57584f7f5686c
+#4 extracting sha256:1a6e97f2166ac8137bc106722ddb9e0ffc6ffd868f278e0c29d57584f7f5686c 0.9s done
+#4 extracting sha256:27f64c4bf8446eb334eef17fb7bb926fc38019d35f12357148f19c86aaec7b7b
+#4 extracting sha256:27f64c4bf8446eb334eef17fb7bb926fc38019d35f12357148f19c86aaec7b7b done
+#4 extracting sha256:1d44c5b3324ee14545c10ae777ae3a1ca09f0ac1bb9b4c8cc65828b58526b5a0
+#4 extracting sha256:1d44c5b3324ee14545c10ae777ae3a1ca09f0ac1bb9b4c8cc65828b58526b5a0 0.3s done
+#4 DONE 7.2s
+
+#5 [2/4] RUN apt-get update && apt-get install -y locales git wget nano
+#5 0.558 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#5 0.587 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#5 0.599 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#5 0.672 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#5 0.833 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#5 0.833 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#5 2.138 Fetched 9225 kB in 2s (5757 kB/s)
+#5 2.138 Reading package lists...
+#5 2.822 Reading package lists...
+#5 3.497 Building dependency tree...
+#5 3.618 Reading state information...
+#5 3.766 The following additional packages will be installed:
+#5 3.766   git-man less libbrotli1 libbsd0 libc-l10n libcbor0.8 libcurl3-gnutls
+#5 3.767   libedit2 liberror-perl libfido2-1 libgdbm-compat4 libldap-2.5-0
+#5 3.767   libldap-common libnghttp2-14 libperl5.36 libpsl5 librtmp1 libsasl2-2
+#5 3.767   libsasl2-modules libsasl2-modules-db libssh2-1 libx11-6 libx11-data libxau6
+#5 3.767   libxcb1 libxdmcp6 libxext6 libxmuu1 openssh-client patch perl
+#5 3.767   perl-modules-5.36 publicsuffix xauth
+#5 3.768 Suggested packages:
+#5 3.768   gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui
+#5 3.768   gitk gitweb git-cvs git-mediawiki git-svn sensible-utils
+#5 3.768   libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal
+#5 3.768   libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql hunspell
+#5 3.768   keychain libpam-ssh monkeysphere ssh-askpass ed diffutils-doc perl-doc
+#5 3.768   libterm-readline-gnu-perl | libterm-readline-perl-perl make
+#5 3.768   libtap-harness-archive-perl
+#5 4.040 The following NEW packages will be installed:
+#5 4.040   git git-man less libbrotli1 libbsd0 libc-l10n libcbor0.8 libcurl3-gnutls
+#5 4.040   libedit2 liberror-perl libfido2-1 libgdbm-compat4 libldap-2.5-0
+#5 4.041   libldap-common libnghttp2-14 libperl5.36 libpsl5 librtmp1 libsasl2-2
+#5 4.041   libsasl2-modules libsasl2-modules-db libssh2-1 libx11-6 libx11-data libxau6
+#5 4.041   libxcb1 libxdmcp6 libxext6 libxmuu1 locales nano openssh-client patch perl
+#5 4.041   perl-modules-5.36 publicsuffix wget xauth
+#5 4.081 0 upgraded, 38 newly installed, 0 to remove and 0 not upgraded.
+#5 4.081 Need to get 27.3 MB of archives.
+#5 4.081 After this operation, 139 MB of additional disk space will be used.
+#5 4.081 Get:1 http://deb.debian.org/debian bookworm/main amd64 perl-modules-5.36 all 5.36.0-7+deb12u1 [2815 kB]
+#5 4.157 Get:2 http://deb.debian.org/debian bookworm/main amd64 libgdbm-compat4 amd64 1.23-3 [48.2 kB]
+#5 4.159 Get:3 http://deb.debian.org/debian bookworm/main amd64 libperl5.36 amd64 5.36.0-7+deb12u1 [4218 kB]
+#5 4.195 Get:4 http://deb.debian.org/debian bookworm/main amd64 perl amd64 5.36.0-7+deb12u1 [239 kB]
+#5 4.197 Get:5 http://deb.debian.org/debian bookworm/main amd64 less amd64 590-2.1~deb12u2 [132 kB]
+#5 4.199 Get:6 http://deb.debian.org/debian bookworm/main amd64 nano amd64 7.2-1+deb12u1 [690 kB]
+#5 4.205 Get:7 http://deb.debian.org/debian bookworm/main amd64 libc-l10n all 2.36-9+deb12u7 [675 kB]
+#5 4.211 Get:8 http://deb.debian.org/debian bookworm/main amd64 locales all 2.36-9+deb12u7 [3902 kB]
+#5 4.243 Get:9 http://deb.debian.org/debian bookworm/main amd64 libbsd0 amd64 0.11.7-2 [117 kB]
+#5 4.245 Get:10 http://deb.debian.org/debian bookworm/main amd64 libedit2 amd64 3.1-20221030-2 [93.0 kB]
+#5 4.246 Get:11 http://deb.debian.org/debian bookworm/main amd64 libcbor0.8 amd64 0.8.0-2+b1 [27.4 kB]
+#5 4.246 Get:12 http://deb.debian.org/debian bookworm/main amd64 libfido2-1 amd64 1.12.0-2+b1 [77.2 kB]
+#5 4.247 Get:13 http://deb.debian.org/debian-security bookworm-security/main amd64 openssh-client amd64 1:9.2p1-2+deb12u3 [991 kB]
+#5 4.254 Get:14 http://deb.debian.org/debian bookworm/main amd64 libpsl5 amd64 0.21.2-1 [58.7 kB]
+#5 4.255 Get:15 http://deb.debian.org/debian bookworm/main amd64 wget amd64 1.21.3-1+b2 [984 kB]
+#5 4.264 Get:16 http://deb.debian.org/debian bookworm/main amd64 libbrotli1 amd64 1.0.9-2+b6 [275 kB]
+#5 4.267 Get:17 http://deb.debian.org/debian bookworm/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg-10 [20.3 kB]
+#5 4.267 Get:18 http://deb.debian.org/debian bookworm/main amd64 libsasl2-2 amd64 2.1.28+dfsg-10 [59.7 kB]
+#5 4.276 Get:19 http://deb.debian.org/debian bookworm/main amd64 libldap-2.5-0 amd64 2.5.13+dfsg-5 [183 kB]
+#5 4.278 Get:20 http://deb.debian.org/debian bookworm/main amd64 libnghttp2-14 amd64 1.52.0-1+deb12u1 [72.4 kB]
+#5 4.279 Get:21 http://deb.debian.org/debian bookworm/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]
+#5 4.280 Get:22 http://deb.debian.org/debian bookworm/main amd64 libssh2-1 amd64 1.10.0-3+b1 [179 kB]
+#5 4.282 Get:23 http://deb.debian.org/debian bookworm/main amd64 libcurl3-gnutls amd64 7.88.1-10+deb12u6 [385 kB]
+#5 4.286 Get:24 http://deb.debian.org/debian bookworm/main amd64 liberror-perl all 0.17029-2 [29.0 kB]
+#5 4.286 Get:25 http://deb.debian.org/debian bookworm/main amd64 git-man all 1:2.39.2-1.1 [2049 kB]
+#5 4.305 Get:26 http://deb.debian.org/debian bookworm/main amd64 git amd64 1:2.39.2-1.1 [7171 kB]
+#5 4.371 Get:27 http://deb.debian.org/debian bookworm/main amd64 libldap-common all 2.5.13+dfsg-5 [29.3 kB]
+#5 4.371 Get:28 http://deb.debian.org/debian bookworm/main amd64 libsasl2-modules amd64 2.1.28+dfsg-10 [66.6 kB]
+#5 4.372 Get:29 http://deb.debian.org/debian bookworm/main amd64 libxau6 amd64 1:1.0.9-1 [19.7 kB]
+#5 4.373 Get:30 http://deb.debian.org/debian bookworm/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+#5 4.373 Get:31 http://deb.debian.org/debian bookworm/main amd64 libxcb1 amd64 1.15-1 [144 kB]
+#5 4.375 Get:32 http://deb.debian.org/debian bookworm/main amd64 libx11-data all 2:1.8.4-2+deb12u2 [292 kB]
+#5 4.378 Get:33 http://deb.debian.org/debian bookworm/main amd64 libx11-6 amd64 2:1.8.4-2+deb12u2 [760 kB]
+#5 4.384 Get:34 http://deb.debian.org/debian bookworm/main amd64 libxext6 amd64 2:1.3.4-1+b1 [52.9 kB]
+#5 4.385 Get:35 http://deb.debian.org/debian bookworm/main amd64 libxmuu1 amd64 2:1.1.3-3 [23.9 kB]
+#5 4.385 Get:36 http://deb.debian.org/debian bookworm/main amd64 patch amd64 2.7.6-7 [128 kB]
+#5 4.391 Get:37 http://deb.debian.org/debian bookworm/main amd64 publicsuffix all 20230209.2326-1 [126 kB]
+#5 4.392 Get:38 http://deb.debian.org/debian bookworm/main amd64 xauth amd64 1:1.1.2-1 [36.0 kB]
+#5 4.611 debconf: delaying package configuration, since apt-utils is not installed
+#5 4.742 Fetched 27.3 MB in 0s (79.2 MB/s)
+#5 4.857 Selecting previously unselected package perl-modules-5.36.
+#5 4.857 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6696 files and directories currently installed.)
+#5 4.860 Preparing to unpack .../00-perl-modules-5.36_5.36.0-7+deb12u1_all.deb ...
+#5 4.886 Unpacking perl-modules-5.36 (5.36.0-7+deb12u1) ...
+#5 6.230 Selecting previously unselected package libgdbm-compat4:amd64.
+#5 6.230 Preparing to unpack .../01-libgdbm-compat4_1.23-3_amd64.deb ...
+#5 6.286 Unpacking libgdbm-compat4:amd64 (1.23-3) ...
+#5 6.532 Selecting previously unselected package libperl5.36:amd64.
+#5 6.532 Preparing to unpack .../02-libperl5.36_5.36.0-7+deb12u1_amd64.deb ...
+#5 6.563 Unpacking libperl5.36:amd64 (5.36.0-7+deb12u1) ...
+#5 7.874 Selecting previously unselected package perl.
+#5 7.874 Preparing to unpack .../03-perl_5.36.0-7+deb12u1_amd64.deb ...
+#5 7.903 Unpacking perl (5.36.0-7+deb12u1) ...
+#5 8.159 Selecting previously unselected package less.
+#5 8.159 Preparing to unpack .../04-less_590-2.1~deb12u2_amd64.deb ...
+#5 8.192 Unpacking less (590-2.1~deb12u2) ...
+#5 8.420 Selecting previously unselected package nano.
+#5 8.420 Preparing to unpack .../05-nano_7.2-1+deb12u1_amd64.deb ...
+#5 8.451 Unpacking nano (7.2-1+deb12u1) ...
+#5 8.708 Selecting previously unselected package libc-l10n.
+#5 8.708 Preparing to unpack .../06-libc-l10n_2.36-9+deb12u7_all.deb ...
+#5 8.730 Unpacking libc-l10n (2.36-9+deb12u7) ...
+#5 9.035 Selecting previously unselected package locales.
+#5 9.035 Preparing to unpack .../07-locales_2.36-9+deb12u7_all.deb ...
+#5 9.066 Unpacking locales (2.36-9+deb12u7) ...
+#5 9.951 Selecting previously unselected package libbsd0:amd64.
+#5 9.951 Preparing to unpack .../08-libbsd0_0.11.7-2_amd64.deb ...
+#5 9.982 Unpacking libbsd0:amd64 (0.11.7-2) ...
+#5 10.23 Selecting previously unselected package libedit2:amd64.
+#5 10.23 Preparing to unpack .../09-libedit2_3.1-20221030-2_amd64.deb ...
+#5 10.26 Unpacking libedit2:amd64 (3.1-20221030-2) ...
+#5 10.49 Selecting previously unselected package libcbor0.8:amd64.
+#5 10.49 Preparing to unpack .../10-libcbor0.8_0.8.0-2+b1_amd64.deb ...
+#5 10.51 Unpacking libcbor0.8:amd64 (0.8.0-2+b1) ...
+#5 10.74 Selecting previously unselected package libfido2-1:amd64.
+#5 10.74 Preparing to unpack .../11-libfido2-1_1.12.0-2+b1_amd64.deb ...
+#5 10.77 Unpacking libfido2-1:amd64 (1.12.0-2+b1) ...
+#5 12.84 Selecting previously unselected package openssh-client.
+#5 12.84 Preparing to unpack .../12-openssh-client_1%3a9.2p1-2+deb12u3_amd64.deb ...
+#5 12.87 Unpacking openssh-client (1:9.2p1-2+deb12u3) ...
+#5 13.27 Selecting previously unselected package libpsl5:amd64.
+#5 13.27 Preparing to unpack .../13-libpsl5_0.21.2-1_amd64.deb ...
+#5 13.30 Unpacking libpsl5:amd64 (0.21.2-1) ...
+#5 13.51 Selecting previously unselected package wget.
+#5 13.51 Preparing to unpack .../14-wget_1.21.3-1+b2_amd64.deb ...
+#5 13.53 Unpacking wget (1.21.3-1+b2) ...
+#5 13.79 Selecting previously unselected package libbrotli1:amd64.
+#5 13.79 Preparing to unpack .../15-libbrotli1_1.0.9-2+b6_amd64.deb ...
+#5 13.82 Unpacking libbrotli1:amd64 (1.0.9-2+b6) ...
+#5 14.05 Selecting previously unselected package libsasl2-modules-db:amd64.
+#5 14.05 Preparing to unpack .../16-libsasl2-modules-db_2.1.28+dfsg-10_amd64.deb ...
+#5 14.08 Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#5 14.29 Selecting previously unselected package libsasl2-2:amd64.
+#5 14.29 Preparing to unpack .../17-libsasl2-2_2.1.28+dfsg-10_amd64.deb ...
+#5 14.31 Unpacking libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#5 14.53 Selecting previously unselected package libldap-2.5-0:amd64.
+#5 14.53 Preparing to unpack .../18-libldap-2.5-0_2.5.13+dfsg-5_amd64.deb ...
+#5 14.56 Unpacking libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#5 14.94 Selecting previously unselected package libnghttp2-14:amd64.
+#5 14.94 Preparing to unpack .../19-libnghttp2-14_1.52.0-1+deb12u1_amd64.deb ...
+#5 14.97 Unpacking libnghttp2-14:amd64 (1.52.0-1+deb12u1) ...
+#5 15.20 Selecting previously unselected package librtmp1:amd64.
+#5 15.20 Preparing to unpack .../20-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
+#5 15.23 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#5 15.48 Selecting previously unselected package libssh2-1:amd64.
+#5 15.48 Preparing to unpack .../21-libssh2-1_1.10.0-3+b1_amd64.deb ...
+#5 15.51 Unpacking libssh2-1:amd64 (1.10.0-3+b1) ...
+#5 15.76 Selecting previously unselected package libcurl3-gnutls:amd64.
+#5 15.76 Preparing to unpack .../22-libcurl3-gnutls_7.88.1-10+deb12u6_amd64.deb ...
+#5 15.78 Unpacking libcurl3-gnutls:amd64 (7.88.1-10+deb12u6) ...
+#5 16.02 Selecting previously unselected package liberror-perl.
+#5 16.02 Preparing to unpack .../23-liberror-perl_0.17029-2_all.deb ...
+#5 16.04 Unpacking liberror-perl (0.17029-2) ...
+#5 16.21 Selecting previously unselected package git-man.
+#5 16.21 Preparing to unpack .../24-git-man_1%3a2.39.2-1.1_all.deb ...
+#5 16.24 Unpacking git-man (1:2.39.2-1.1) ...
+#5 16.58 Selecting previously unselected package git.
+#5 16.58 Preparing to unpack .../25-git_1%3a2.39.2-1.1_amd64.deb ...
+#5 16.61 Unpacking git (1:2.39.2-1.1) ...
+#5 17.55 Selecting previously unselected package libldap-common.
+#5 17.55 Preparing to unpack .../26-libldap-common_2.5.13+dfsg-5_all.deb ...
+#5 17.57 Unpacking libldap-common (2.5.13+dfsg-5) ...
+#5 17.79 Selecting previously unselected package libsasl2-modules:amd64.
+#5 17.79 Preparing to unpack .../27-libsasl2-modules_2.1.28+dfsg-10_amd64.deb ...
+#5 17.82 Unpacking libsasl2-modules:amd64 (2.1.28+dfsg-10) ...
+#5 18.04 Selecting previously unselected package libxau6:amd64.
+#5 18.04 Preparing to unpack .../28-libxau6_1%3a1.0.9-1_amd64.deb ...
+#5 18.07 Unpacking libxau6:amd64 (1:1.0.9-1) ...
+#5 18.26 Selecting previously unselected package libxdmcp6:amd64.
+#5 18.26 Preparing to unpack .../29-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+#5 18.29 Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+#5 18.50 Selecting previously unselected package libxcb1:amd64.
+#5 18.50 Preparing to unpack .../30-libxcb1_1.15-1_amd64.deb ...
+#5 18.53 Unpacking libxcb1:amd64 (1.15-1) ...
+#5 18.71 Selecting previously unselected package libx11-data.
+#5 18.71 Preparing to unpack .../31-libx11-data_2%3a1.8.4-2+deb12u2_all.deb ...
+#5 18.74 Unpacking libx11-data (2:1.8.4-2+deb12u2) ...
+#5 19.12 Selecting previously unselected package libx11-6:amd64.
+#5 19.12 Preparing to unpack .../32-libx11-6_2%3a1.8.4-2+deb12u2_amd64.deb ...
+#5 19.15 Unpacking libx11-6:amd64 (2:1.8.4-2+deb12u2) ...
+#5 19.44 Selecting previously unselected package libxext6:amd64.
+#5 19.44 Preparing to unpack .../33-libxext6_2%3a1.3.4-1+b1_amd64.deb ...
+#5 19.47 Unpacking libxext6:amd64 (2:1.3.4-1+b1) ...
+#5 19.74 Selecting previously unselected package libxmuu1:amd64.
+#5 19.74 Preparing to unpack .../34-libxmuu1_2%3a1.1.3-3_amd64.deb ...
+#5 19.76 Unpacking libxmuu1:amd64 (2:1.1.3-3) ...
+#5 19.91 Selecting previously unselected package patch.
+#5 19.91 Preparing to unpack .../35-patch_2.7.6-7_amd64.deb ...
+#5 19.94 Unpacking patch (2.7.6-7) ...
+#5 20.12 Selecting previously unselected package publicsuffix.
+#5 20.12 Preparing to unpack .../36-publicsuffix_20230209.2326-1_all.deb ...
+#5 20.15 Unpacking publicsuffix (20230209.2326-1) ...
+#5 20.35 Selecting previously unselected package xauth.
+#5 20.35 Preparing to unpack .../37-xauth_1%3a1.1.2-1_amd64.deb ...
+#5 20.37 Unpacking xauth (1:1.1.2-1) ...
+#5 20.57 Setting up libxau6:amd64 (1:1.0.9-1) ...
+#5 20.65 Setting up libc-l10n (2.36-9+deb12u7) ...
+#5 20.73 Setting up libpsl5:amd64 (0.21.2-1) ...
+#5 20.80 Setting up wget (1.21.3-1+b2) ...
+#5 20.90 Setting up libcbor0.8:amd64 (0.8.0-2+b1) ...
+#5 21.01 Setting up libbrotli1:amd64 (1.0.9-2+b6) ...
+#5 21.08 Setting up libsasl2-modules:amd64 (2.1.28+dfsg-10) ...
+#5 21.17 Setting up libnghttp2-14:amd64 (1.52.0-1+deb12u1) ...
+#5 21.24 Setting up less (590-2.1~deb12u2) ...
+#5 21.35 Setting up locales (2.36-9+deb12u7) ...
+#5 21.55 debconf: unable to initialize frontend: Dialog
+#5 21.55 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 21.55 debconf: falling back to frontend: Readline
+#5 21.56 debconf: unable to initialize frontend: Readline
+#5 21.56 debconf: (This frontend requires a controlling tty.)
+#5 21.56 debconf: falling back to frontend: Teletype
+#5 22.10 Generating locales (this might take a while)...
+#5 22.11 Generation complete.
+#5 22.27 Setting up libldap-common (2.5.13+dfsg-5) ...
+#5 22.40 Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#5 22.48 Setting up perl-modules-5.36 (5.36.0-7+deb12u1) ...
+#5 22.55 Setting up libx11-data (2:1.8.4-2+deb12u2) ...
+#5 22.63 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#5 22.71 Setting up patch (2.7.6-7) ...
+#5 22.82 Setting up libgdbm-compat4:amd64 (1.23-3) ...
+#5 22.92 Setting up libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#5 23.01 Setting up nano (7.2-1+deb12u1) ...
+#5 23.10 update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+#5 23.10 update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group editor) doesn't exist
+#5 23.11 update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+#5 23.11 update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) doesn't exist
+#5 23.15 Setting up git-man (1:2.39.2-1.1) ...
+#5 23.23 Setting up libssh2-1:amd64 (1.10.0-3+b1) ...
+#5 23.31 Setting up libfido2-1:amd64 (1.12.0-2+b1) ...
+#5 23.43 Setting up libbsd0:amd64 (0.11.7-2) ...
+#5 23.51 Setting up publicsuffix (20230209.2326-1) ...
+#5 23.58 Setting up libperl5.36:amd64 (5.36.0-7+deb12u1) ...
+#5 23.67 Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+#5 23.77 Setting up libxcb1:amd64 (1.15-1) ...
+#5 23.87 Setting up libedit2:amd64 (3.1-20221030-2) ...
+#5 23.94 Setting up libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#5 24.03 Setting up perl (5.36.0-7+deb12u1) ...
+#5 24.16 Setting up libx11-6:amd64 (2:1.8.4-2+deb12u2) ...
+#5 24.26 Setting up libxmuu1:amd64 (2:1.1.3-3) ...
+#5 24.37 Setting up openssh-client (1:9.2p1-2+deb12u3) ...
+#5 24.79 Setting up libxext6:amd64 (2:1.3.4-1+b1) ...
+#5 24.90 Setting up libcurl3-gnutls:amd64 (7.88.1-10+deb12u6) ...
+#5 24.99 Setting up liberror-perl (0.17029-2) ...
+#5 25.06 Setting up git (1:2.39.2-1.1) ...
+#5 25.19 Setting up xauth (1:1.1.2-1) ...
+#5 25.27 Processing triggers for libc-bin (2.36-9+deb12u7) ...
+#5 DONE 30.8s
+
+#6 [3/4] RUN locale-gen en_US.UTF-8
+#6 0.745 Generating locales (this might take a while)...
+#6 0.759 Generation complete.
+#6 DONE 1.0s
+
+#7 [4/4] RUN pip install git+https://github.com/tijme/angularjs-csti-scanner.git
+#7 3.093 Collecting git+https://github.com/tijme/angularjs-csti-scanner.git
+#7 3.094   Cloning https://github.com/tijme/angularjs-csti-scanner.git to /tmp/pip-req-build-8g3_yynr
+#7 3.100   Running command git clone --filter=blob:none --quiet https://github.com/tijme/angularjs-csti-scanner.git /tmp/pip-req-build-8g3_yynr
+#7 10.28   Resolved https://github.com/tijme/angularjs-csti-scanner.git to commit dcf5bf3d36a0a6ee3a9db1340e68de95b33e4615
+#7 10.28   Preparing metadata (setup.py): started
+#7 10.76   Preparing metadata (setup.py): finished with status 'done'
+#7 10.95 Collecting colorlog==4.0.2
+#7 11.05   Downloading colorlog-4.0.2-py2.py3-none-any.whl (17 kB)
+#7 11.19 Collecting nyawc==1.8.2
+#7 11.20   Downloading nyawc-1.8.2.tar.gz (28 kB)
+#7 11.25   Preparing metadata (setup.py): started
+#7 11.52   Preparing metadata (setup.py): finished with status 'done'
+#7 11.66 Collecting requests==2.21.0
+#7 11.67   Downloading requests-2.21.0-py2.py3-none-any.whl (57 kB)
+#7 11.70      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.0/58.0 kB 1.8 MB/s eta 0:00:00
+#7 11.76 Collecting requests_toolbelt==0.9.1
+#7 11.77   Downloading requests_toolbelt-0.9.1-py2.py3-none-any.whl (54 kB)
+#7 11.79      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.3/54.3 kB 1.9 MB/s eta 0:00:00
+#7 11.99 Collecting selenium==3.141.0
+#7 12.00   Downloading selenium-3.141.0-py2.py3-none-any.whl (904 kB)
+#7 12.16      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 904.6/904.6 kB 6.0 MB/s eta 0:00:00
+#7 12.25 Collecting beautifulsoup4==4.7.1
+#7 12.26   Downloading beautifulsoup4-4.7.1-py3-none-any.whl (94 kB)
+#7 12.28      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.3/94.3 kB 4.7 MB/s eta 0:00:00
+#7 13.15 Collecting lxml==4.3.0
+#7 13.23   Downloading lxml-4.3.0.tar.gz (2.5 MB)
+#7 13.41      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 14.2 MB/s eta 0:00:00
+#7 13.67   Preparing metadata (setup.py): started
+#7 14.09   Preparing metadata (setup.py): finished with status 'done'
+#7 14.37 Collecting sphinx==1.8.3
+#7 14.38   Downloading Sphinx-1.8.3-py2.py3-none-any.whl (3.1 MB)
+#7 14.52      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 23.0 MB/s eta 0:00:00
+#7 14.65 Collecting sphinx-better-theme==0.1.5
+#7 14.66   Downloading sphinx-better-theme-0.1.5.tar.gz (7.3 kB)
+#7 14.70   Preparing metadata (setup.py): started
+#7 14.94   Preparing metadata (setup.py): finished with status 'done'
+#7 15.08 Collecting sphinxcontrib-napoleon==0.7
+#7 15.09   Downloading sphinxcontrib_napoleon-0.7-py2.py3-none-any.whl (17 kB)
+#7 15.25 Collecting urllib3<1.25,>=1.21.1
+#7 15.26   Downloading urllib3-1.24.3-py2.py3-none-any.whl (118 kB)
+#7 15.29      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.8/118.8 kB 4.1 MB/s eta 0:00:00
+#7 15.35 Collecting idna<2.9,>=2.5
+#7 15.36   Downloading idna-2.8-py2.py3-none-any.whl (58 kB)
+#7 15.39      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.6/58.6 kB 2.4 MB/s eta 0:00:00
+#7 15.43 Collecting chardet<3.1.0,>=3.0.2
+#7 15.44   Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+#7 15.46      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.4/133.4 kB 6.4 MB/s eta 0:00:00
+#7 15.54 Collecting certifi>=2017.4.17
+#7 15.55   Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+#7 15.58      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.0/163.0 kB 6.0 MB/s eta 0:00:00
+#7 15.69 Collecting soupsieve>=1.2
+#7 15.70   Downloading soupsieve-2.5-py3-none-any.whl (36 kB)
+#7 15.90 Collecting snowballstemmer>=1.1
+#7 15.91   Downloading snowballstemmer-2.2.0-py2.py3-none-any.whl (93 kB)
+#7 15.94      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 93.0/93.0 kB 3.4 MB/s eta 0:00:00
+#7 16.06 Collecting alabaster<0.8,>=0.7
+#7 16.07   Downloading alabaster-0.7.16-py3-none-any.whl (13 kB)
+#7 16.27 Collecting Pygments>=2.0
+#7 16.28   Downloading pygments-2.18.0-py3-none-any.whl (1.2 MB)
+#7 16.35      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 19.8 MB/s eta 0:00:00
+#7 16.44 Collecting babel!=2.0,>=1.3
+#7 16.45   Downloading Babel-2.15.0-py3-none-any.whl (9.6 MB)
+#7 16.77      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 30.5 MB/s eta 0:00:00
+#7 16.83 Requirement already satisfied: setuptools in /usr/local/lib/python3.9/site-packages (from sphinx==1.8.3->nyawc==1.8.2->acstis==3.0.6) (58.1.0)
+#7 16.91 Collecting packaging
+#7 16.92   Downloading packaging-24.1-py3-none-any.whl (53 kB)
+#7 16.94      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 kB 2.0 MB/s eta 0:00:00
+#7 16.99 Collecting six>=1.5
+#7 17.00   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#7 17.14 Collecting sphinxcontrib-websupport
+#7 17.15   Downloading sphinxcontrib_websupport-2.0.0-py3-none-any.whl (37 kB)
+#7 17.29 Collecting imagesize
+#7 17.30   Downloading imagesize-1.4.1-py2.py3-none-any.whl (8.8 kB)
+#7 17.38 Collecting Jinja2>=2.3
+#7 17.38   Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+#7 17.41      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.3/133.3 kB 5.4 MB/s eta 0:00:00
+#7 17.54 Collecting docutils>=0.11
+#7 17.55   Downloading docutils-0.21.2-py3-none-any.whl (587 kB)
+#7 17.59      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 587.4/587.4 kB 15.8 MB/s eta 0:00:00
+#7 17.73 Collecting pockets>=0.3
+#7 17.74   Downloading pockets-0.9.1-py2.py3-none-any.whl (26 kB)
+#7 18.08 Collecting MarkupSafe>=2.0
+#7 18.08   Downloading MarkupSafe-2.1.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+#7 18.27 Collecting sphinxcontrib-serializinghtml
+#7 18.28   Downloading sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl (92 kB)
+#7 18.31      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.1/92.1 kB 3.0 MB/s eta 0:00:00
+#7 18.36 Collecting sphinxcontrib-websupport
+#7 18.37   Downloading sphinxcontrib_websupport-1.2.7-py3-none-any.whl (37 kB)
+#7 18.42   Downloading sphinxcontrib_websupport-1.2.6-py3-none-any.whl (37 kB)
+#7 18.47   Downloading sphinxcontrib_websupport-1.2.5-py3-none-any.whl (37 kB)
+#7 18.53   Downloading sphinxcontrib_websupport-1.2.4-py2.py3-none-any.whl (39 kB)
+#7 18.64 Building wheels for collected packages: acstis, nyawc, lxml, sphinx-better-theme
+#7 18.64   Building wheel for acstis (setup.py): started
+#7 31.17   Building wheel for acstis (setup.py): finished with status 'done'
+#7 31.53   Created wheel for acstis: filename=acstis-3.0.6-py3-none-any.whl size=88690285 sha256=8babe58057267b38ea86e560c31c2f948eee373e2986f5eef93be00bb5ee830f
+#7 31.53   Stored in directory: /tmp/pip-ephem-wheel-cache-6st7zv5i/wheels/3f/b7/f8/b691ed3bd266932775c5338fd8378c3a2671d79a71633b947f
+#7 31.54   Building wheel for nyawc (setup.py): started
+#7 31.94   Building wheel for nyawc (setup.py): finished with status 'done'
+#7 31.95   Created wheel for nyawc: filename=nyawc-1.8.2-py3-none-any.whl size=60308 sha256=d9d5eab9e9dc1c1495d03d3d551af3bb01d72d22920308d7b1c73c2db67362df
+#7 31.95   Stored in directory: /root/.cache/pip/wheels/41/f9/55/9d61e54baacf48ff9e8d827d01d2af4b7c7a12c40cc6fc8012
+#7 31.95   Building wheel for lxml (setup.py): started
+#7 32.32   Building wheel for lxml (setup.py): finished with status 'error'
+#7 32.33   error: subprocess-exited-with-error
+#7 32.33   
+#7 32.33   × python setup.py bdist_wheel did not run successfully.
+#7 32.33   │ exit code: 1
+#7 32.33   ╰─> [87 lines of output]
+#7 32.33       Building lxml version 4.3.0.
+#7 32.33       Building without Cython.
+#7 32.33       ERROR: b'/bin/sh: 1: xslt-config: not found\n'
+#7 32.33       ** make sure the development packages of libxml2 and libxslt are installed **
+#7 32.33       
+#7 32.33       Using build configuration of libxslt
+#7 32.33       running bdist_wheel
+#7 32.33       running build
+#7 32.33       running build_py
+#7 32.33       creating build
+#7 32.33       creating build/lib.linux-x86_64-3.9
+#7 32.33       creating build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/sax.py -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/_elementpath.py -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/builder.py -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/ElementInclude.py -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/__init__.py -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/usedoctest.py -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/cssselect.py -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/pyclasslookup.py -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/doctestcompare.py -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       creating build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/__init__.py -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       creating build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/diff.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/ElementSoup.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/html5parser.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/builder.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/__init__.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/usedoctest.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/_setmixin.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/clean.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/soupparser.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/_html5builder.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/_diffcommand.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/formfill.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       copying src/lxml/html/defs.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 32.33       creating build/lib.linux-x86_64-3.9/lxml/isoschematron
+#7 32.33       copying src/lxml/isoschematron/__init__.py -> build/lib.linux-x86_64-3.9/lxml/isoschematron
+#7 32.33       copying src/lxml/etree.h -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/etree_api.h -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/lxml.etree.h -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/lxml.etree_api.h -> build/lib.linux-x86_64-3.9/lxml
+#7 32.33       copying src/lxml/includes/etreepublic.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/xinclude.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/xmlerror.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/htmlparser.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/config.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/__init__.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/xmlschema.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/uri.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/xslt.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/tree.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/xmlparser.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/dtdvalid.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/xpath.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/relaxng.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/c14n.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/schematron.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/etree_defs.h -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       copying src/lxml/includes/lxml-version.h -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 32.33       creating build/lib.linux-x86_64-3.9/lxml/isoschematron/resources
+#7 32.33       creating build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/rng
+#7 32.33       copying src/lxml/isoschematron/resources/rng/iso-schematron.rng -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/rng
+#7 32.33       creating build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl
+#7 32.33       copying src/lxml/isoschematron/resources/xsl/RNG2Schtrn.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl
+#7 32.33       copying src/lxml/isoschematron/resources/xsl/XSD2Schtrn.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl
+#7 32.33       creating build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 32.33       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_dsdl_include.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 32.33       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_abstract_expand.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 32.33       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_skeleton_for_xslt1.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 32.33       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_message.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 32.33       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_svrl_for_xslt1.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 32.33       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/readme.txt -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 32.33       running build_ext
+#7 32.33       building 'lxml.etree' extension
+#7 32.33       creating build/temp.linux-x86_64-3.9
+#7 32.33       creating build/temp.linux-x86_64-3.9/src
+#7 32.33       creating build/temp.linux-x86_64-3.9/src/lxml
+#7 32.33       gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC -DCYTHON_CLINE_IN_TRACEBACK=0 -Isrc -Isrc/lxml/includes -I/usr/local/include/python3.9 -c src/lxml/etree.c -o build/temp.linux-x86_64-3.9/src/lxml/etree.o -w
+#7 32.33       Compile failed: command 'gcc' failed: No such file or directory
+#7 32.33       creating tmp
+#7 32.33       cc -I/usr/include/libxml2 -c /tmp/xmlXPathInitc9oyo7qt.c -o tmp/xmlXPathInitc9oyo7qt.o
+#7 32.33       *********************************************************************************
+#7 32.33       Could not find function xmlCheckVersion in library libxml2. Is libxml2 installed?
+#7 32.33       *********************************************************************************
+#7 32.33       error: command 'gcc' failed: No such file or directory
+#7 32.33       [end of output]
+#7 32.33   
+#7 32.33   note: This error originates from a subprocess, and is likely not a problem with pip.
+#7 32.34   ERROR: Failed building wheel for lxml
+#7 32.34   Running setup.py clean for lxml
+#7 32.61   Building wheel for sphinx-better-theme (setup.py): started
+#7 32.96   Building wheel for sphinx-better-theme (setup.py): finished with status 'done'
+#7 32.96   Created wheel for sphinx-better-theme: filename=sphinx_better_theme-0.1.5-py3-none-any.whl size=8916 sha256=8a985567a3b3de1a2d75fe77f3d8f88d299936ef2943a1bec52ef52d834027de
+#7 32.97   Stored in directory: /root/.cache/pip/wheels/e9/07/5f/3041f43f27c59ed1a464cc3fd432b0a0ced64d832bba9418b3
+#7 32.97 Successfully built acstis nyawc sphinx-better-theme
+#7 32.97 Failed to build lxml
+#7 33.14 Installing collected packages: sphinx-better-theme, snowballstemmer, lxml, colorlog, chardet, urllib3, sphinxcontrib-serializinghtml, soupsieve, six, Pygments, packaging, MarkupSafe, imagesize, idna, docutils, certifi, babel, alabaster, sphinxcontrib-websupport, selenium, requests, pockets, Jinja2, beautifulsoup4, sphinxcontrib-napoleon, sphinx, requests_toolbelt, nyawc, acstis
+#7 33.47   Running setup.py install for lxml: started
+#7 33.78   Running setup.py install for lxml: finished with status 'error'
+#7 33.79   error: subprocess-exited-with-error
+#7 33.79   
+#7 33.79   × Running setup.py install for lxml did not run successfully.
+#7 33.79   │ exit code: 1
+#7 33.79   ╰─> [86 lines of output]
+#7 33.79       Building lxml version 4.3.0.
+#7 33.79       Building without Cython.
+#7 33.79       ERROR: b'/bin/sh: 1: xslt-config: not found\n'
+#7 33.79       ** make sure the development packages of libxml2 and libxslt are installed **
+#7 33.79       
+#7 33.79       Using build configuration of libxslt
+#7 33.79       running install
+#7 33.79       running build
+#7 33.79       running build_py
+#7 33.79       creating build
+#7 33.79       creating build/lib.linux-x86_64-3.9
+#7 33.79       creating build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/sax.py -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/_elementpath.py -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/builder.py -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/ElementInclude.py -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/__init__.py -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/usedoctest.py -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/cssselect.py -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/pyclasslookup.py -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/doctestcompare.py -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       creating build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/__init__.py -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       creating build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/diff.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/ElementSoup.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/html5parser.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/builder.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/__init__.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/usedoctest.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/_setmixin.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/clean.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/soupparser.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/_html5builder.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/_diffcommand.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/formfill.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       copying src/lxml/html/defs.py -> build/lib.linux-x86_64-3.9/lxml/html
+#7 33.79       creating build/lib.linux-x86_64-3.9/lxml/isoschematron
+#7 33.79       copying src/lxml/isoschematron/__init__.py -> build/lib.linux-x86_64-3.9/lxml/isoschematron
+#7 33.79       copying src/lxml/etree.h -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/etree_api.h -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/lxml.etree.h -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/lxml.etree_api.h -> build/lib.linux-x86_64-3.9/lxml
+#7 33.79       copying src/lxml/includes/etreepublic.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/xinclude.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/xmlerror.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/htmlparser.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/config.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/__init__.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/xmlschema.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/uri.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/xslt.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/tree.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/xmlparser.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/dtdvalid.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/xpath.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/relaxng.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/c14n.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/schematron.pxd -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/etree_defs.h -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       copying src/lxml/includes/lxml-version.h -> build/lib.linux-x86_64-3.9/lxml/includes
+#7 33.79       creating build/lib.linux-x86_64-3.9/lxml/isoschematron/resources
+#7 33.79       creating build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/rng
+#7 33.79       copying src/lxml/isoschematron/resources/rng/iso-schematron.rng -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/rng
+#7 33.79       creating build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl
+#7 33.79       copying src/lxml/isoschematron/resources/xsl/RNG2Schtrn.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl
+#7 33.79       copying src/lxml/isoschematron/resources/xsl/XSD2Schtrn.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl
+#7 33.79       creating build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 33.79       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_dsdl_include.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 33.79       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_abstract_expand.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 33.79       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_skeleton_for_xslt1.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 33.79       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_message.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 33.79       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_svrl_for_xslt1.xsl -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 33.79       copying src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/readme.txt -> build/lib.linux-x86_64-3.9/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+#7 33.79       running build_ext
+#7 33.79       building 'lxml.etree' extension
+#7 33.79       creating build/temp.linux-x86_64-3.9
+#7 33.79       creating build/temp.linux-x86_64-3.9/src
+#7 33.79       creating build/temp.linux-x86_64-3.9/src/lxml
+#7 33.79       gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC -DCYTHON_CLINE_IN_TRACEBACK=0 -Isrc -Isrc/lxml/includes -I/usr/local/include/python3.9 -c src/lxml/etree.c -o build/temp.linux-x86_64-3.9/src/lxml/etree.o -w
+#7 33.79       Compile failed: command 'gcc' failed: No such file or directory
+#7 33.79       cc -I/usr/include/libxml2 -c /tmp/xmlXPathInitifz34dgf.c -o tmp/xmlXPathInitifz34dgf.o
+#7 33.79       *********************************************************************************
+#7 33.79       Could not find function xmlCheckVersion in library libxml2. Is libxml2 installed?
+#7 33.79       *********************************************************************************
+#7 33.79       error: command 'gcc' failed: No such file or directory
+#7 33.79       [end of output]
+#7 33.79   
+#7 33.79   note: This error originates from a subprocess, and is likely not a problem with pip.
+#7 33.80 error: legacy-install-failure
+#7 33.80 
+#7 33.80 × Encountered error while trying to install package.
+#7 33.80 ╰─> lxml
+#7 33.80 
+#7 33.80 note: This is an issue with the package mentioned above, not pip.
+#7 33.80 hint: See above for output from the failure.
+#7 34.02 
+#7 34.02 [notice] A new release of pip is available: 23.0.1 -> 24.2
+#7 34.02 [notice] To update, run: pip install --upgrade pip
+#7 ERROR: process "/bin/sh -c pip install git+https://github.com/tijme/angularjs-csti-scanner.git" did not complete successfully: exit code: 1
+------
+ > [4/4] RUN pip install git+https://github.com/tijme/angularjs-csti-scanner.git:
+33.80 error: legacy-install-failure
+33.80 
+33.80 × Encountered error while trying to install package.
+33.80 ╰─> lxml
+33.80 
+33.80 note: This is an issue with the package mentioned above, not pip.
+33.80 hint: See above for output from the failure.
+34.02 
+34.02 [notice] A new release of pip is available: 23.0.1 -> 24.2
+34.02 [notice] To update, run: pip install --upgrade pip
+------
+v1_Dockerfile:12
+--------------------
+  10 |     ENV LANGUAGE en_US:en
+  11 |     
+  12 | >>> RUN pip install git+https://github.com/tijme/angularjs-csti-scanner.git
+  13 |     
+  14 |     CMD ["/bin/bash"]
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip install git+https://github.com/tijme/angularjs-csti-scanner.git" did not complete successfully: exit code: 1
+Duration: 1:16.60

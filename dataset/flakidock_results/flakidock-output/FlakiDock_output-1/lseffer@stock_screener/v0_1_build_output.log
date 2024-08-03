@@ -1,0 +1,82 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 389B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/python:3.7-slim
+#3 ...
+
+#4 [auth] library/python:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.7-slim
+#3 DONE 1.4s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b
+#6 resolve docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b
+#6 resolve docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b 0.2s done
+#6 sha256:ffd28e36ef37b3a4a24f6a771a48d7c5499ea42d6309ac911a3f699e122060be 1.37kB / 1.37kB done
+#6 sha256:a255ffcb469f2ec40f2958a76beb0c2bbebfe92ce9af67a9b48d84b4cb695ac8 7.54kB / 7.54kB done
+#6 sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b 1.86kB / 1.86kB done
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 799B done
+#5 DONE 0.5s
+
+#6 [1/5] FROM docker.io/library/python:3.7-slim@sha256:b53f496ca43e5af6994f8e316cf03af31050bf7944e0e4a308ad86c001cf028b
+#6 DONE 1.8s
+
+#7 [2/5] RUN useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat
+#7 2.473 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#7 2.506 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#7 2.512 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#7 2.633 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#7 2.776 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#7 2.785 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#7 4.085 Fetched 9225 kB in 2s (5650 kB/s)
+#7 4.085 Reading package lists...
+#7 4.773 Reading package lists...
+#7 5.454 Building dependency tree...
+#7 5.581 Reading state information...
+#7 5.586 Package netcat is a virtual package provided by:
+#7 5.586   netcat-openbsd 1.219-1
+#7 5.586   netcat-traditional 1.10-47
+#7 5.586 
+#7 5.591 E: Package 'netcat' has no installation candidate
+#7 ERROR: process "/bin/sh -c useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat" did not complete successfully: exit code: 100
+------
+ > [2/5] RUN useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat:
+2.776 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+2.785 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+
+
+
+5.586 Package netcat is a virtual package provided by:
+5.586   netcat-openbsd 1.219-1
+5.586   netcat-traditional 1.10-47
+5.586 
+5.591 E: Package 'netcat' has no installation candidate
+------
+Dockerfile:3
+--------------------
+   2 |     
+   3 | >>> RUN useradd -ms /bin/bash worker \
+   4 | >>>     && apt-get update \
+   5 | >>>     && apt-get install -y git netcat
+   6 |     COPY requirements.txt /requirements.txt
+--------------------
+ERROR: failed to solve: process "/bin/sh -c useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat" did not complete successfully: exit code: 100
+Duration: 0:10.60

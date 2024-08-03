@@ -1,0 +1,416 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 671B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/fedora:38
+#2 ...
+
+#3 [auth] library/fedora:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/fedora:38
+#2 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/fedora:38@sha256:b9ff6f23cceb5bde20bb1f79b492b98d71ef7a7ae518ca1b15b26661a11e6a94
+#5 resolve docker.io/library/fedora:38@sha256:b9ff6f23cceb5bde20bb1f79b492b98d71ef7a7ae518ca1b15b26661a11e6a94 0.0s done
+#5 sha256:633a2a041c85d22a814d80c8fd43a885066522afeea82db646cff81983f3dbaf 0B / 66.97MB 0.1s
+#5 sha256:b9ff6f23cceb5bde20bb1f79b492b98d71ef7a7ae518ca1b15b26661a11e6a94 1.25kB / 1.25kB done
+#5 sha256:f76d677659917e9e35c6ee4e91a04aa557ff18491cb99cb64cf1df8e17db1ca1 529B / 529B done
+#5 sha256:0ca0fed353fb77c247abada85aebc667fd1f5fa0b5f6ab1efb26867ba18f2f0a 2.00kB / 2.00kB done
+#5 sha256:633a2a041c85d22a814d80c8fd43a885066522afeea82db646cff81983f3dbaf 12.58MB / 66.97MB 0.3s
+#5 sha256:633a2a041c85d22a814d80c8fd43a885066522afeea82db646cff81983f3dbaf 34.60MB / 66.97MB 0.5s
+#5 sha256:633a2a041c85d22a814d80c8fd43a885066522afeea82db646cff81983f3dbaf 54.53MB / 66.97MB 0.7s
+#5 sha256:633a2a041c85d22a814d80c8fd43a885066522afeea82db646cff81983f3dbaf 63.96MB / 66.97MB 0.8s
+#5 extracting sha256:633a2a041c85d22a814d80c8fd43a885066522afeea82db646cff81983f3dbaf
+#5 sha256:633a2a041c85d22a814d80c8fd43a885066522afeea82db646cff81983f3dbaf 66.97MB / 66.97MB 1.2s done
+#5 extracting sha256:633a2a041c85d22a814d80c8fd43a885066522afeea82db646cff81983f3dbaf 2.6s done
+#5 DONE 4.0s
+
+#6 [2/2] RUN INSTALL_PKGS="gcc tox python3.6 python3.7 python3.8 python3.9 python3.10                   python3-setuptools python3-pip" &&     dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs                    --setopt=deltarpm=false $INSTALL_PKGS &&     dnf clean all
+#6 3.675 Fedora 38 - x86_64                               25 MB/s |  83 MB     00:03    
+#6 24.34 Fedora 38 openh264 (From Cisco) - x86_64        3.6 kB/s | 2.6 kB     00:00    
+#6 25.24 Fedora Modular 38 - x86_64                      4.2 MB/s | 2.8 MB     00:00    
+#6 27.50 Fedora 38 - x86_64 - Updates                     25 MB/s |  42 MB     00:01    
+#6 37.55 Fedora Modular 38 - x86_64 - Updates            2.8 MB/s | 2.2 MB     00:00    
+#6 41.65 Dependencies resolved.
+#6 41.67 ================================================================================
+#6 41.67  Package                       Arch      Version               Repository  Size
+#6 41.67 ================================================================================
+#6 41.67 Installing:
+#6 41.67  gcc                           x86_64    13.2.1-7.fc38         updates     34 M
+#6 41.67  python3-pip                   noarch    22.3.1-4.fc38         updates    3.1 M
+#6 41.67  python3-setuptools            noarch    65.5.1-2.fc38         fedora     1.7 M
+#6 41.67  python3.10                    x86_64    3.10.14-2.fc38        updates     26 k
+#6 41.67  python3.6                     x86_64    3.6.15-27.fc38        updates     19 M
+#6 41.67  python3.7                     x86_64    3.7.17-5.fc38         updates     16 M
+#6 41.67  python3.8                     x86_64    3.8.19-2.fc38         updates     17 M
+#6 41.67  python3.9                     x86_64    3.9.19-2.fc38         updates     19 M
+#6 41.67  tox                           noarch    4.14.2-1.fc38         updates    405 k
+#6 41.67 Upgrading:
+#6 41.67  glibc                         x86_64    2.37-19.fc38          updates    2.1 M
+#6 41.67  glibc-common                  x86_64    2.37-19.fc38          updates    320 k
+#6 41.67  glibc-minimal-langpack        x86_64    2.37-19.fc38          updates     42 k
+#6 41.67 Installing dependencies:
+#6 41.67  binutils                      x86_64    2.39-16.fc38          updates    5.4 M
+#6 41.67  binutils-gold                 x86_64    2.39-16.fc38          updates    795 k
+#6 41.67  cairo                         x86_64    1.17.8-4.fc38         updates    704 k
+#6 41.67  cpp                           x86_64    13.2.1-7.fc38         updates     11 M
+#6 41.67  elfutils-debuginfod-client    x86_64    0.191-1.fc38          updates     37 k
+#6 41.67  fontconfig                    x86_64    2.14.2-2.fc38         updates    295 k
+#6 41.67  fonts-filesystem              noarch    1:2.0.5-11.fc38       fedora     8.1 k
+#6 41.67  freetype                      x86_64    2.13.0-2.fc38         fedora     414 k
+#6 41.67  gc                            x86_64    8.2.2-3.fc38          fedora     110 k
+#6 41.67  glibc-devel                   x86_64    2.37-19.fc38          updates     56 k
+#6 41.67  glibc-headers-x86             noarch    2.37-19.fc38          updates    537 k
+#6 41.67  google-noto-fonts-common      noarch    20230201-2.fc38       updates     16 k
+#6 41.67  google-noto-sans-vf-fonts     noarch    20230201-2.fc38       updates    579 k
+#6 41.67  graphite2                     x86_64    1.3.14-11.fc38        fedora      95 k
+#6 41.67  guile22                       x86_64    2.2.7-7.fc38          fedora     6.5 M
+#6 41.67  harfbuzz                      x86_64    7.1.0-1.fc38          fedora     889 k
+#6 41.67  jansson                       x86_64    2.13.1-6.fc38         fedora      44 k
+#6 41.67  kernel-headers                x86_64    6.8.3-100.fc38        updates    1.6 M
+#6 41.67  langpacks-core-font-en        noarch    3.0-32.fc38           updates    9.6 k
+#6 41.67  libX11                        x86_64    1.8.9-1.fc38          updates    649 k
+#6 41.67  libX11-common                 noarch    1.8.9-1.fc38          updates    176 k
+#6 41.67  libXau                        x86_64    1.0.11-2.fc38         fedora      32 k
+#6 41.67  libXext                       x86_64    1.3.5-2.fc38          fedora      39 k
+#6 41.67  libXft                        x86_64    2.3.8-2.fc38          updates     72 k
+#6 41.67  libXrender                    x86_64    0.9.11-2.fc38         fedora      27 k
+#6 41.67  libmpc                        x86_64    1.3.1-2.fc38          fedora      70 k
+#6 41.67  libpkgconf                    x86_64    1.8.0-6.fc38          fedora      35 k
+#6 41.67  libpng                        x86_64    2:1.6.37-14.fc38      fedora     120 k
+#6 41.67  libtool-ltdl                  x86_64    2.4.7-6.fc38          fedora      37 k
+#6 41.67  libxcb                        x86_64    1.13.1-11.fc38        fedora     231 k
+#6 41.67  libxcrypt-devel               x86_64    4.4.36-1.fc38         updates     30 k
+#6 41.67  make                          x86_64    1:4.4.1-1.fc38        updates    588 k
+#6 41.67  openssl1.1                    x86_64    1:1.1.1q-4.fc38       fedora     1.5 M
+#6 41.67  pixman                        x86_64    0.42.2-1.fc38         fedora     285 k
+#6 41.67  pkgconf                       x86_64    1.8.0-6.fc38          fedora      41 k
+#6 41.67  pkgconf-m4                    noarch    1.8.0-6.fc38          fedora      14 k
+#6 41.67  pkgconf-pkg-config            x86_64    1.8.0-6.fc38          fedora     9.6 k
+#6 41.67  python-wheel-wheel            noarch    1:0.38.4-2.fc38       fedora      43 k
+#6 41.67  python-wheel0.37-wheel        noarch    0.37.1-3.fc38         fedora      41 k
+#6 41.67  python3-cachetools            noarch    5.3.0-1.fc38          fedora      38 k
+#6 41.67  python3-chardet               noarch    5.2.0-1.fc38          updates    304 k
+#6 41.67  python3-colorama              noarch    0.4.6-2.fc38          fedora      73 k
+#6 41.67  python3-distlib               noarch    0.3.6-2.fc38          fedora     270 k
+#6 41.67  python3-filelock              noarch    3.8.2-2.fc38          fedora      40 k
+#6 41.67  python3-packaging             noarch    23.0-1.fc38           fedora     106 k
+#6 41.67  python3-platformdirs          noarch    2.6.0-2.fc38          fedora      42 k
+#6 41.67  python3-pluggy                noarch    1.0.0-6.fc38          fedora      45 k
+#6 41.67  python3-pyproject-api         noarch    1.5.0-2.fc38          fedora      42 k
+#6 41.67  python3-virtualenv            noarch    20.21.1-7.fc38        updates    309 k
+#6 41.67  python3.10-libs               x86_64    3.10.14-2.fc38        updates    7.8 M
+#6 41.67  tcl                           x86_64    1:8.6.12-4.fc38       fedora     1.1 M
+#6 41.67  tk                            x86_64    1:8.6.12-4.fc38       fedora     1.6 M
+#6 41.67  xml-common                    noarch    0.6.3-60.fc38         fedora      31 k
+#6 41.67 
+#6 41.67 Transaction Summary
+#6 41.67 ================================================================================
+#6 41.67 Install  62 Packages
+#6 41.67 Upgrade   3 Packages
+#6 41.67 
+#6 41.68 Total download size: 156 M
+#6 41.68 Downloading Packages:
+#6 42.23 (1/65): fonts-filesystem-2.0.5-11.fc38.noarch.r 181 kB/s | 8.1 kB     00:00    
+#6 42.26 (2/65): graphite2-1.3.14-11.fc38.x86_64.rpm     3.4 MB/s |  95 kB     00:00    
+#6 42.27 (3/65): gc-8.2.2-3.fc38.x86_64.rpm              1.4 MB/s | 110 kB     00:00    
+#6 42.27 (4/65): freetype-2.13.0-2.fc38.x86_64.rpm       4.7 MB/s | 414 kB     00:00    
+#6 42.30 (5/65): jansson-2.13.1-6.fc38.x86_64.rpm        1.5 MB/s |  44 kB     00:00    
+#6 42.33 (6/65): harfbuzz-7.1.0-1.fc38.x86_64.rpm         15 MB/s | 889 kB     00:00    
+#6 42.34 (7/65): libXau-1.0.11-2.fc38.x86_64.rpm         948 kB/s |  32 kB     00:00    
+#6 42.35 (8/65): libXext-1.3.5-2.fc38.x86_64.rpm         1.5 MB/s |  39 kB     00:00    
+#6 42.41 (9/65): guile22-2.2.7-7.fc38.x86_64.rpm          44 MB/s | 6.5 MB     00:00    
+#6 42.41 (10/65): libXrender-0.9.11-2.fc38.x86_64.rpm    360 kB/s |  27 kB     00:00    
+#6 42.42 (11/65): libmpc-1.3.1-2.fc38.x86_64.rpm         1.1 MB/s |  70 kB     00:00    
+#6 42.43 (12/65): libpkgconf-1.8.0-6.fc38.x86_64.rpm     3.0 MB/s |  35 kB     00:00    
+#6 42.43 (13/65): libpng-1.6.37-14.fc38.x86_64.rpm       7.2 MB/s | 120 kB     00:00    
+#6 42.43 (14/65): libtool-ltdl-2.4.7-6.fc38.x86_64.rpm   2.2 MB/s |  37 kB     00:00    
+#6 42.44 (15/65): libxcb-1.13.1-11.fc38.x86_64.rpm        15 MB/s | 231 kB     00:00    
+#6 42.45 (16/65): pixman-0.42.2-1.fc38.x86_64.rpm         16 MB/s | 285 kB     00:00    
+#6 42.46 (17/65): pkgconf-1.8.0-6.fc38.x86_64.rpm        2.6 MB/s |  41 kB     00:00    
+#6 42.47 (18/65): pkgconf-m4-1.8.0-6.fc38.noarch.rpm     1.0 MB/s |  14 kB     00:00    
+#6 42.47 (19/65): pkgconf-pkg-config-1.8.0-6.fc38.x86_64 679 kB/s | 9.6 kB     00:00    
+#6 42.59 (20/65): python-wheel0.37-wheel-0.37.1-3.fc38.n 348 kB/s |  41 kB     00:00    
+#6 42.76 (21/65): openssl1.1-1.1.1q-4.fc38.x86_64.rpm    4.4 MB/s | 1.5 MB     00:00    
+#6 42.86 (22/65): python-wheel-wheel-0.38.4-2.fc38.noarc 108 kB/s |  43 kB     00:00    
+#6 43.00 (23/65): python3-cachetools-5.3.0-1.fc38.noarch  93 kB/s |  38 kB     00:00    
+#6 43.19 (24/65): python3-distlib-0.3.6-2.fc38.noarch.rp 837 kB/s | 270 kB     00:00    
+#6 43.20 (25/65): python3-packaging-23.0-1.fc38.noarch.r 7.5 MB/s | 106 kB     00:00    
+#6 43.24 (26/65): python3-colorama-0.4.6-2.fc38.noarch.r 152 kB/s |  73 kB     00:00    
+#6 43.40 (27/65): python3-filelock-3.8.2-2.fc38.noarch.r  98 kB/s |  40 kB     00:00    
+#6 43.52 (28/65): python3-platformdirs-2.6.0-2.fc38.noar 134 kB/s |  42 kB     00:00    
+#6 43.56 (29/65): python3-setuptools-65.5.1-2.fc38.noarc  37 MB/s | 1.7 MB     00:00    
+#6 43.74 (30/65): python3-pluggy-1.0.0-6.fc38.noarch.rpm  91 kB/s |  45 kB     00:00    
+#6 43.78 (31/65): tk-8.6.12-4.fc38.x86_64.rpm             40 MB/s | 1.6 MB     00:00    
+#6 43.79 (32/65): xml-common-0.6.3-60.fc38.noarch.rpm    2.3 MB/s |  31 kB     00:00    
+#6 43.91 (33/65): binutils-2.39-16.fc38.x86_64.rpm        46 MB/s | 5.4 MB     00:00    
+#6 43.93 (34/65): tcl-8.6.12-4.fc38.x86_64.rpm           3.0 MB/s | 1.1 MB     00:00    
+#6 43.95 (35/65): binutils-gold-2.39-16.fc38.x86_64.rpm   25 MB/s | 795 kB     00:00    
+#6 43.95 (36/65): python3-pyproject-api-1.5.0-2.fc38.noa  77 kB/s |  42 kB     00:00    
+#6 43.96 (37/65): cairo-1.17.8-4.fc38.x86_64.rpm          22 MB/s | 704 kB     00:00    
+#6 44.04 (38/65): elfutils-debuginfod-client-0.191-1.fc3 512 kB/s |  37 kB     00:00    
+#6 44.05 (39/65): fontconfig-2.14.2-2.fc38.x86_64.rpm    3.3 MB/s | 295 kB     00:00    
+#6 44.17 (40/65): cpp-13.2.1-7.fc38.x86_64.rpm            49 MB/s |  11 MB     00:00    
+#6 44.21 (41/65): glibc-devel-2.37-19.fc38.x86_64.rpm    374 kB/s |  56 kB     00:00    
+#6 44.32 (42/65): google-noto-fonts-common-20230201-2.fc 148 kB/s |  16 kB     00:00    
+#6 44.33 (43/65): glibc-headers-x86-2.37-19.fc38.noarch. 3.4 MB/s | 537 kB     00:00    
+#6 44.46 (44/65): google-noto-sans-vf-fonts-20230201-2.f 4.1 MB/s | 579 kB     00:00    
+#6 44.49 (45/65): kernel-headers-6.8.3-100.fc38.x86_64.r  10 MB/s | 1.6 MB     00:00    
+#6 44.78 (46/65): gcc-13.2.1-7.fc38.x86_64.rpm            46 MB/s |  34 MB     00:00    
+#6 44.79 (47/65): langpacks-core-font-en-3.0-32.fc38.noa  29 kB/s | 9.6 kB     00:00    
+#6 44.80 (48/65): libX11-1.8.9-1.fc38.x86_64.rpm         2.1 MB/s | 649 kB     00:00    
+#6 44.80 (49/65): libX11-common-1.8.9-1.fc38.noarch.rpm   10 MB/s | 176 kB     00:00    
+#6 44.81 (50/65): libXft-2.3.8-2.fc38.x86_64.rpm         3.3 MB/s |  72 kB     00:00    
+#6 44.81 (51/65): libxcrypt-devel-4.4.36-1.fc38.x86_64.r 1.7 MB/s |  30 kB     00:00    
+#6 44.83 (52/65): make-4.4.1-1.fc38.x86_64.rpm            26 MB/s | 588 kB     00:00    
+#6 44.84 (53/65): python3-chardet-5.2.0-1.fc38.noarch.rp  12 MB/s | 304 kB     00:00    
+#6 44.88 (54/65): python3-pip-22.3.1-4.fc38.noarch.rpm    48 MB/s | 3.1 MB     00:00    
+#6 45.15 (55/65): python3.10-3.10.14-2.fc38.x86_64.rpm    84 kB/s |  26 kB     00:00    
+#6 45.21 (56/65): python3.10-libs-3.10.14-2.fc38.x86_64.  24 MB/s | 7.8 MB     00:00    
+#6 45.35 (57/65): python3-virtualenv-20.21.1-7.fc38.noar 595 kB/s | 309 kB     00:00    
+#6 45.95 (58/65): python3.8-3.8.19-2.fc38.x86_64.rpm      28 MB/s |  17 MB     00:00    
+#6 46.30 (59/65): python3.9-3.9.19-2.fc38.x86_64.rpm      54 MB/s |  19 MB     00:00    
+#6 46.94 (60/65): python3.6-3.6.15-27.fc38.x86_64.rpm     11 MB/s |  19 MB     00:01    
+#6 46.94 (61/65): tox-4.14.2-1.fc38.noarch.rpm           630 kB/s | 405 kB     00:00    
+#6 47.07 (62/65): python3.7-3.7.17-5.fc38.x86_64.rpm     8.4 MB/s |  16 MB     00:01    
+#6 47.10 (63/65): glibc-2.37-19.fc38.x86_64.rpm           13 MB/s | 2.1 MB     00:00    
+#6 47.11 (64/65): glibc-common-2.37-19.fc38.x86_64.rpm   1.9 MB/s | 320 kB     00:00    
+#6 47.11 (65/65): glibc-minimal-langpack-2.37-19.fc38.x8 1.0 MB/s |  42 kB     00:00    
+#6 47.11 --------------------------------------------------------------------------------
+#6 47.11 Total                                            29 MB/s | 156 MB     00:05     
+#6 49.44 Running transaction check
+#6 49.67 Transaction check succeeded.
+#6 49.67 Running transaction test
+#6 51.91 Transaction test succeeded.
+#6 51.91 Running transaction
+#6 54.89   Preparing        :                                                        1/1 
+#6 54.94   Upgrading        : glibc-common-2.37-19.fc38.x86_64                      1/68 
+#6 54.96   Upgrading        : glibc-minimal-langpack-2.37-19.fc38.x86_64            2/68 
+#6 54.97   Running scriptlet: glibc-2.37-19.fc38.x86_64                             3/68 
+#6 55.02   Upgrading        : glibc-2.37-19.fc38.x86_64                             3/68 
+#6 55.03   Running scriptlet: glibc-2.37-19.fc38.x86_64                             3/68 
+#6 55.10   Installing       : tcl-1:8.6.12-4.fc38.x86_64                            4/68 
+#6 55.11   Installing       : libmpc-1.3.1-2.fc38.x86_64                            5/68 
+#6 55.12   Installing       : libpng-2:1.6.37-14.fc38.x86_64                        6/68 
+#6 55.15   Installing       : openssl1.1-1:1.1.1q-4.fc38.x86_64                     7/68 
+#6 55.58   Installing       : python3.10-libs-3.10.14-2.fc38.x86_64                 8/68 
+#6 55.62   Installing       : python3.10-3.10.14-2.fc38.x86_64                      9/68 
+#6 55.63   Installing       : python3-platformdirs-2.6.0-2.fc38.noarch             10/68 
+#6 55.65   Installing       : python3-packaging-23.0-1.fc38.noarch                 11/68 
+#6 55.66   Installing       : python3-filelock-3.8.2-2.fc38.noarch                 12/68 
+#6 55.67   Installing       : fonts-filesystem-1:2.0.5-11.fc38.noarch              13/68 
+#6 55.68   Installing       : python3-pyproject-api-1.5.0-2.fc38.noarch            14/68 
+#6 55.88   Installing       : cpp-13.2.1-7.fc38.x86_64                             15/68 
+#6 55.89   Installing       : gc-8.2.2-3.fc38.x86_64                               16/68 
+#6 55.90   Installing       : graphite2-1.3.14-11.fc38.x86_64                      17/68 
+#6 55.91   Installing       : jansson-2.13.1-6.fc38.x86_64                         18/68 
+#6 55.92   Installing       : libXau-1.0.11-2.fc38.x86_64                          19/68 
+#6 55.94   Installing       : libxcb-1.13.1-11.fc38.x86_64                         20/68 
+#6 55.95   Installing       : libpkgconf-1.8.0-6.fc38.x86_64                       21/68 
+#6 55.96   Installing       : pkgconf-1.8.0-6.fc38.x86_64                          22/68 
+#6 55.96   Installing       : libtool-ltdl-2.4.7-6.fc38.x86_64                     23/68 
+#6 56.28   Installing       : guile22-2.2.7-7.fc38.x86_64                          24/68 
+#6 56.30   Installing       : make-1:4.4.1-1.fc38.x86_64                           25/68 
+#6 56.31   Installing       : pixman-0.42.2-1.fc38.x86_64                          26/68 
+#6 56.32   Installing       : elfutils-debuginfod-client-0.191-1.fc38.x86_64       27/68 
+#6 56.34   Installing       : binutils-gold-2.39-16.fc38.x86_64                    28/68 
+#6 56.43   Installing       : binutils-2.39-16.fc38.x86_64                         29/68 
+#6 56.44   Running scriptlet: binutils-2.39-16.fc38.x86_64                         29/68 
+#6 56.51   Installing       : glibc-headers-x86-2.37-19.fc38.noarch                30/68 
+#6 56.55   Installing       : python3-chardet-5.2.0-1.fc38.noarch                  31/68 
+#6 56.60   Installing       : libX11-common-1.8.9-1.fc38.noarch                    32/68 
+#6 56.61   Installing       : libX11-1.8.9-1.fc38.x86_64                           33/68 
+#6 56.62   Installing       : libXrender-0.9.11-2.fc38.x86_64                      34/68 
+#6 56.63   Installing       : libXext-1.3.5-2.fc38.x86_64                          35/68 
+#6 56.76   Installing       : kernel-headers-6.8.3-100.fc38.x86_64                 36/68 
+#6 56.78   Installing       : google-noto-fonts-common-20230201-2.fc38.noarch      37/68 
+#6 56.79   Installing       : google-noto-sans-vf-fonts-20230201-2.fc38.noarch     38/68 
+#6 56.80   Installing       : langpacks-core-font-en-3.0-32.fc38.noarch            39/68 
+#6 56.80   Running scriptlet: xml-common-0.6.3-60.fc38.noarch                      40/68 
+#6 56.81   Installing       : xml-common-0.6.3-60.fc38.noarch                      40/68 
+#6 56.83   Installing       : cairo-1.17.8-4.fc38.x86_64                           41/68 
+#6 56.85   Installing       : harfbuzz-7.1.0-1.fc38.x86_64                         42/68 
+#6 56.86   Installing       : freetype-2.13.0-2.fc38.x86_64                        43/68 
+#6 56.89   Installing       : fontconfig-2.14.2-2.fc38.x86_64                      44/68 
+#6 56.90   Running scriptlet: fontconfig-2.14.2-2.fc38.x86_64                      44/68 
+#6 57.92   Installing       : libXft-2.3.8-2.fc38.x86_64                           45/68 
+#6 57.93   Running scriptlet: tk-1:8.6.12-4.fc38.x86_64                            46/68 
+#6 57.97   Installing       : tk-1:8.6.12-4.fc38.x86_64                            46/68 
+#6 58.09   Installing       : python3-setuptools-65.5.1-2.fc38.noarch              47/68 
+#6 58.12   Installing       : python3-pluggy-1.0.0-6.fc38.noarch                   48/68 
+#6 58.14   Installing       : python3-distlib-0.3.6-2.fc38.noarch                  49/68 
+#6 58.15   Installing       : python3-colorama-0.4.6-2.fc38.noarch                 50/68 
+#6 58.17   Installing       : python3-cachetools-5.3.0-1.fc38.noarch               51/68 
+#6 58.17   Installing       : python-wheel0.37-wheel-0.37.1-3.fc38.noarch          52/68 
+#6 58.18   Installing       : python-wheel-wheel-1:0.38.4-2.fc38.noarch            53/68 
+#6 58.22   Installing       : python3-virtualenv-20.21.1-7.fc38.noarch             54/68 
+#6 58.24   Installing       : pkgconf-m4-1.8.0-6.fc38.noarch                       55/68 
+#6 58.24   Installing       : pkgconf-pkg-config-1.8.0-6.fc38.x86_64               56/68 
+#6 58.25   Installing       : glibc-devel-2.37-19.fc38.x86_64                      57/68 
+#6 58.26   Installing       : libxcrypt-devel-4.4.36-1.fc38.x86_64                 58/68 
+#6 59.35   Installing       : python3.6-3.6.15-27.fc38.x86_64                      59/68 
+#6 60.68   Installing       : python3.7-3.7.17-5.fc38.x86_64                       60/68 
+#6 62.05   Installing       : python3.8-3.8.19-2.fc38.x86_64                       61/68 
+#6 63.29   Installing       : python3.9-3.9.19-2.fc38.x86_64                       62/68 
+#6 63.41   Installing       : tox-4.14.2-1.fc38.noarch                             63/68 
+#6 63.88   Installing       : gcc-13.2.1-7.fc38.x86_64                             64/68 
+#6 64.13   Installing       : python3-pip-22.3.1-4.fc38.noarch                     65/68 
+#6 64.17   Cleanup          : glibc-2.37-18.fc38.x86_64                            66/68 
+#6 64.18   Cleanup          : glibc-minimal-langpack-2.37-18.fc38.x86_64           67/68 
+#6 64.18   Cleanup          : glibc-common-2.37-18.fc38.x86_64                     68/68 
+#6 64.19   Running scriptlet: fontconfig-2.14.2-2.fc38.x86_64                      68/68 
+#6 64.21   Running scriptlet: glibc-common-2.37-18.fc38.x86_64                     68/68 
+#6 69.91   Verifying        : fonts-filesystem-1:2.0.5-11.fc38.noarch               1/68 
+#6 69.91   Verifying        : freetype-2.13.0-2.fc38.x86_64                         2/68 
+#6 69.91   Verifying        : gc-8.2.2-3.fc38.x86_64                                3/68 
+#6 69.91   Verifying        : graphite2-1.3.14-11.fc38.x86_64                       4/68 
+#6 69.91   Verifying        : guile22-2.2.7-7.fc38.x86_64                           5/68 
+#6 69.91   Verifying        : harfbuzz-7.1.0-1.fc38.x86_64                          6/68 
+#6 69.91   Verifying        : jansson-2.13.1-6.fc38.x86_64                          7/68 
+#6 69.91   Verifying        : libXau-1.0.11-2.fc38.x86_64                           8/68 
+#6 69.91   Verifying        : libXext-1.3.5-2.fc38.x86_64                           9/68 
+#6 69.91   Verifying        : libXrender-0.9.11-2.fc38.x86_64                      10/68 
+#6 69.91   Verifying        : libmpc-1.3.1-2.fc38.x86_64                           11/68 
+#6 69.91   Verifying        : libpkgconf-1.8.0-6.fc38.x86_64                       12/68 
+#6 69.91   Verifying        : libpng-2:1.6.37-14.fc38.x86_64                       13/68 
+#6 69.91   Verifying        : libtool-ltdl-2.4.7-6.fc38.x86_64                     14/68 
+#6 69.91   Verifying        : libxcb-1.13.1-11.fc38.x86_64                         15/68 
+#6 69.91   Verifying        : openssl1.1-1:1.1.1q-4.fc38.x86_64                    16/68 
+#6 69.91   Verifying        : pixman-0.42.2-1.fc38.x86_64                          17/68 
+#6 69.91   Verifying        : pkgconf-1.8.0-6.fc38.x86_64                          18/68 
+#6 69.91   Verifying        : pkgconf-m4-1.8.0-6.fc38.noarch                       19/68 
+#6 69.91   Verifying        : pkgconf-pkg-config-1.8.0-6.fc38.x86_64               20/68 
+#6 69.91   Verifying        : python-wheel-wheel-1:0.38.4-2.fc38.noarch            21/68 
+#6 69.91   Verifying        : python-wheel0.37-wheel-0.37.1-3.fc38.noarch          22/68 
+#6 69.91   Verifying        : python3-cachetools-5.3.0-1.fc38.noarch               23/68 
+#6 69.91   Verifying        : python3-colorama-0.4.6-2.fc38.noarch                 24/68 
+#6 69.91   Verifying        : python3-distlib-0.3.6-2.fc38.noarch                  25/68 
+#6 69.91   Verifying        : python3-filelock-3.8.2-2.fc38.noarch                 26/68 
+#6 69.91   Verifying        : python3-packaging-23.0-1.fc38.noarch                 27/68 
+#6 69.91   Verifying        : python3-platformdirs-2.6.0-2.fc38.noarch             28/68 
+#6 69.91   Verifying        : python3-pluggy-1.0.0-6.fc38.noarch                   29/68 
+#6 69.91   Verifying        : python3-pyproject-api-1.5.0-2.fc38.noarch            30/68 
+#6 69.91   Verifying        : python3-setuptools-65.5.1-2.fc38.noarch              31/68 
+#6 69.91   Verifying        : tcl-1:8.6.12-4.fc38.x86_64                           32/68 
+#6 69.91   Verifying        : tk-1:8.6.12-4.fc38.x86_64                            33/68 
+#6 69.91   Verifying        : xml-common-0.6.3-60.fc38.noarch                      34/68 
+#6 69.91   Verifying        : binutils-2.39-16.fc38.x86_64                         35/68 
+#6 69.91   Verifying        : binutils-gold-2.39-16.fc38.x86_64                    36/68 
+#6 69.91   Verifying        : cairo-1.17.8-4.fc38.x86_64                           37/68 
+#6 69.91   Verifying        : cpp-13.2.1-7.fc38.x86_64                             38/68 
+#6 69.91   Verifying        : elfutils-debuginfod-client-0.191-1.fc38.x86_64       39/68 
+#6 69.91   Verifying        : fontconfig-2.14.2-2.fc38.x86_64                      40/68 
+#6 69.91   Verifying        : gcc-13.2.1-7.fc38.x86_64                             41/68 
+#6 69.91   Verifying        : glibc-devel-2.37-19.fc38.x86_64                      42/68 
+#6 69.91   Verifying        : glibc-headers-x86-2.37-19.fc38.noarch                43/68 
+#6 69.91   Verifying        : google-noto-fonts-common-20230201-2.fc38.noarch      44/68 
+#6 69.91   Verifying        : google-noto-sans-vf-fonts-20230201-2.fc38.noarch     45/68 
+#6 69.91   Verifying        : kernel-headers-6.8.3-100.fc38.x86_64                 46/68 
+#6 69.91   Verifying        : langpacks-core-font-en-3.0-32.fc38.noarch            47/68 
+#6 69.91   Verifying        : libX11-1.8.9-1.fc38.x86_64                           48/68 
+#6 69.91   Verifying        : libX11-common-1.8.9-1.fc38.noarch                    49/68 
+#6 69.91   Verifying        : libXft-2.3.8-2.fc38.x86_64                           50/68 
+#6 69.91   Verifying        : libxcrypt-devel-4.4.36-1.fc38.x86_64                 51/68 
+#6 69.91   Verifying        : make-1:4.4.1-1.fc38.x86_64                           52/68 
+#6 69.91   Verifying        : python3-chardet-5.2.0-1.fc38.noarch                  53/68 
+#6 69.91   Verifying        : python3-pip-22.3.1-4.fc38.noarch                     54/68 
+#6 69.91   Verifying        : python3-virtualenv-20.21.1-7.fc38.noarch             55/68 
+#6 69.91   Verifying        : python3.10-3.10.14-2.fc38.x86_64                     56/68 
+#6 69.91   Verifying        : python3.10-libs-3.10.14-2.fc38.x86_64                57/68 
+#6 69.91   Verifying        : python3.6-3.6.15-27.fc38.x86_64                      58/68 
+#6 69.91   Verifying        : python3.7-3.7.17-5.fc38.x86_64                       59/68 
+#6 69.91   Verifying        : python3.8-3.8.19-2.fc38.x86_64                       60/68 
+#6 69.91   Verifying        : python3.9-3.9.19-2.fc38.x86_64                       61/68 
+#6 69.91   Verifying        : tox-4.14.2-1.fc38.noarch                             62/68 
+#6 69.91   Verifying        : glibc-2.37-19.fc38.x86_64                            63/68 
+#6 69.91   Verifying        : glibc-2.37-18.fc38.x86_64                            64/68 
+#6 69.91   Verifying        : glibc-common-2.37-19.fc38.x86_64                     65/68 
+#6 69.91   Verifying        : glibc-common-2.37-18.fc38.x86_64                     66/68 
+#6 69.92   Verifying        : glibc-minimal-langpack-2.37-19.fc38.x86_64           67/68 
+#6 69.92   Verifying        : glibc-minimal-langpack-2.37-18.fc38.x86_64           68/68 
+#6 70.18 
+#6 70.18 Upgraded:
+#6 70.18   glibc-2.37-19.fc38.x86_64                   glibc-common-2.37-19.fc38.x86_64 
+#6 70.18   glibc-minimal-langpack-2.37-19.fc38.x86_64 
+#6 70.18 Installed:
+#6 70.18   binutils-2.39-16.fc38.x86_64                                                  
+#6 70.18   binutils-gold-2.39-16.fc38.x86_64                                             
+#6 70.18   cairo-1.17.8-4.fc38.x86_64                                                    
+#6 70.18   cpp-13.2.1-7.fc38.x86_64                                                      
+#6 70.18   elfutils-debuginfod-client-0.191-1.fc38.x86_64                                
+#6 70.18   fontconfig-2.14.2-2.fc38.x86_64                                               
+#6 70.18   fonts-filesystem-1:2.0.5-11.fc38.noarch                                       
+#6 70.18   freetype-2.13.0-2.fc38.x86_64                                                 
+#6 70.18   gc-8.2.2-3.fc38.x86_64                                                        
+#6 70.18   gcc-13.2.1-7.fc38.x86_64                                                      
+#6 70.18   glibc-devel-2.37-19.fc38.x86_64                                               
+#6 70.18   glibc-headers-x86-2.37-19.fc38.noarch                                         
+#6 70.18   google-noto-fonts-common-20230201-2.fc38.noarch                               
+#6 70.18   google-noto-sans-vf-fonts-20230201-2.fc38.noarch                              
+#6 70.18   graphite2-1.3.14-11.fc38.x86_64                                               
+#6 70.18   guile22-2.2.7-7.fc38.x86_64                                                   
+#6 70.18   harfbuzz-7.1.0-1.fc38.x86_64                                                  
+#6 70.18   jansson-2.13.1-6.fc38.x86_64                                                  
+#6 70.18   kernel-headers-6.8.3-100.fc38.x86_64                                          
+#6 70.18   langpacks-core-font-en-3.0-32.fc38.noarch                                     
+#6 70.18   libX11-1.8.9-1.fc38.x86_64                                                    
+#6 70.18   libX11-common-1.8.9-1.fc38.noarch                                             
+#6 70.18   libXau-1.0.11-2.fc38.x86_64                                                   
+#6 70.18   libXext-1.3.5-2.fc38.x86_64                                                   
+#6 70.18   libXft-2.3.8-2.fc38.x86_64                                                    
+#6 70.18   libXrender-0.9.11-2.fc38.x86_64                                               
+#6 70.18   libmpc-1.3.1-2.fc38.x86_64                                                    
+#6 70.18   libpkgconf-1.8.0-6.fc38.x86_64                                                
+#6 70.18   libpng-2:1.6.37-14.fc38.x86_64                                                
+#6 70.18   libtool-ltdl-2.4.7-6.fc38.x86_64                                              
+#6 70.18   libxcb-1.13.1-11.fc38.x86_64                                                  
+#6 70.18   libxcrypt-devel-4.4.36-1.fc38.x86_64                                          
+#6 70.18   make-1:4.4.1-1.fc38.x86_64                                                    
+#6 70.18   openssl1.1-1:1.1.1q-4.fc38.x86_64                                             
+#6 70.18   pixman-0.42.2-1.fc38.x86_64                                                   
+#6 70.18   pkgconf-1.8.0-6.fc38.x86_64                                                   
+#6 70.18   pkgconf-m4-1.8.0-6.fc38.noarch                                                
+#6 70.18   pkgconf-pkg-config-1.8.0-6.fc38.x86_64                                        
+#6 70.18   python-wheel-wheel-1:0.38.4-2.fc38.noarch                                     
+#6 70.18   python-wheel0.37-wheel-0.37.1-3.fc38.noarch                                   
+#6 70.18   python3-cachetools-5.3.0-1.fc38.noarch                                        
+#6 70.18   python3-chardet-5.2.0-1.fc38.noarch                                           
+#6 70.18   python3-colorama-0.4.6-2.fc38.noarch                                          
+#6 70.18   python3-distlib-0.3.6-2.fc38.noarch                                           
+#6 70.18   python3-filelock-3.8.2-2.fc38.noarch                                          
+#6 70.18   python3-packaging-23.0-1.fc38.noarch                                          
+#6 70.18   python3-pip-22.3.1-4.fc38.noarch                                              
+#6 70.18   python3-platformdirs-2.6.0-2.fc38.noarch                                      
+#6 70.18   python3-pluggy-1.0.0-6.fc38.noarch                                            
+#6 70.18   python3-pyproject-api-1.5.0-2.fc38.noarch                                     
+#6 70.18   python3-setuptools-65.5.1-2.fc38.noarch                                       
+#6 70.18   python3-virtualenv-20.21.1-7.fc38.noarch                                      
+#6 70.18   python3.10-3.10.14-2.fc38.x86_64                                              
+#6 70.18   python3.10-libs-3.10.14-2.fc38.x86_64                                         
+#6 70.18   python3.6-3.6.15-27.fc38.x86_64                                               
+#6 70.18   python3.7-3.7.17-5.fc38.x86_64                                                
+#6 70.18   python3.8-3.8.19-2.fc38.x86_64                                                
+#6 70.18   python3.9-3.9.19-2.fc38.x86_64                                                
+#6 70.18   tcl-1:8.6.12-4.fc38.x86_64                                                    
+#6 70.18   tk-1:8.6.12-4.fc38.x86_64                                                     
+#6 70.18   tox-4.14.2-1.fc38.noarch                                                      
+#6 70.18   xml-common-0.6.3-60.fc38.noarch                                               
+#6 70.18 
+#6 70.18 Complete!
+#6 70.53 41 files removed
+#6 DONE 70.6s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 5.6s done
+#7 writing image sha256:7b4c54122b5449847f03e24405a20e01e0c4c3e2df26adbd9bfa43b99c1f8bcc done
+#7 naming to docker.io/library/image_name_v1_1 0.0s done
+#7 DONE 5.6s
+Duration: 1:21.62

@@ -1,0 +1,33 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 913B done
+#2 DONE 0.6s
+
+#1 [internal] load .dockerignore
+#1 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/bitnami/minideb-extras:stretch
+#3 ...
+
+#4 [auth] bitnami/minideb-extras:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/bitnami/minideb-extras:stretch
+#3 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+------
+ > [internal] load metadata for docker.io/bitnami/minideb-extras:stretch:
+------
+Dockerfile:1
+--------------------
+   1 | >>> FROM bitnami/minideb-extras:stretch
+   2 |     LABEL maintainer="Rashad Ansari <rashad.ansari1996@gmail.com>"
+   3 |     
+--------------------
+ERROR: failed to solve: bitnami/minideb-extras:stretch: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+Duration: 0:1.71

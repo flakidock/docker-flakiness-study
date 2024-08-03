@@ -1,0 +1,723 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 5.72kB done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/debian:stable-slim
+#3 ...
+
+#4 [auth] library/debian:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/debian:stable-slim
+#3 DONE 1.5s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [ 1/16] FROM docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755
+#6 resolve docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755 0.1s done
+#6 sha256:e5365b94db65754594422a8a101c873728711c6a4df029677f4a7f7200d6e1c3 529B / 529B done
+#6 sha256:ea3dacfdd555d2342b58d6ce6515c3a2c10ac60a826e15df4b213effd45e54ff 1.46kB / 1.46kB done
+#6 sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755 1.85kB / 1.85kB done
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 4.98kB done
+#5 DONE 0.4s
+
+#6 [ 1/16] FROM docker.io/library/debian:stable-slim@sha256:57bd74e95092e6d4c0cdb6e36ca3db5bb828c2f592788734d1a707a4b92e7755
+#6 sha256:b7d7012a817065b5fd444bd84265e11162ea9cc3d4388e8732ce320bf88aa9c6 0B / 29.13MB 0.2s
+#6 sha256:b7d7012a817065b5fd444bd84265e11162ea9cc3d4388e8732ce320bf88aa9c6 14.68MB / 29.13MB 0.4s
+#6 sha256:b7d7012a817065b5fd444bd84265e11162ea9cc3d4388e8732ce320bf88aa9c6 28.54MB / 29.13MB 0.5s
+#6 sha256:b7d7012a817065b5fd444bd84265e11162ea9cc3d4388e8732ce320bf88aa9c6 29.13MB / 29.13MB 1.0s done
+#6 extracting sha256:b7d7012a817065b5fd444bd84265e11162ea9cc3d4388e8732ce320bf88aa9c6
+#6 extracting sha256:b7d7012a817065b5fd444bd84265e11162ea9cc3d4388e8732ce320bf88aa9c6 1.8s done
+#6 DONE 3.5s
+
+#7 [ 2/16] RUN apt-get -qq update && apt-get install -qqy --no-install-recommends     build-essential     libpcre3-dev     uuid-dev     wget     zlib1g-dev &&     rm -rf /var/lib/apt/lists/*
+#7 5.887 debconf: delaying package configuration, since apt-utils is not installed
+#7 5.976 Selecting previously unselected package perl-modules-5.36.
+#7 5.976 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6089 files and directories currently installed.)
+#7 5.978 Preparing to unpack .../00-perl-modules-5.36_5.36.0-7+deb12u1_all.deb ...
+#7 6.013 Unpacking perl-modules-5.36 (5.36.0-7+deb12u1) ...
+#7 8.336 Selecting previously unselected package libgdbm6:amd64.
+#7 8.336 Preparing to unpack .../01-libgdbm6_1.23-3_amd64.deb ...
+#7 8.383 Unpacking libgdbm6:amd64 (1.23-3) ...
+#7 8.587 Selecting previously unselected package libgdbm-compat4:amd64.
+#7 8.587 Preparing to unpack .../02-libgdbm-compat4_1.23-3_amd64.deb ...
+#7 8.610 Unpacking libgdbm-compat4:amd64 (1.23-3) ...
+#7 8.849 Selecting previously unselected package libperl5.36:amd64.
+#7 8.849 Preparing to unpack .../03-libperl5.36_5.36.0-7+deb12u1_amd64.deb ...
+#7 8.880 Unpacking libperl5.36:amd64 (5.36.0-7+deb12u1) ...
+#7 10.06 Selecting previously unselected package perl.
+#7 10.06 Preparing to unpack .../04-perl_5.36.0-7+deb12u1_amd64.deb ...
+#7 10.09 Unpacking perl (5.36.0-7+deb12u1) ...
+#7 10.40 Selecting previously unselected package bzip2.
+#7 10.40 Preparing to unpack .../05-bzip2_1.0.8-5+b1_amd64.deb ...
+#7 10.42 Unpacking bzip2 (1.0.8-5+b1) ...
+#7 10.67 Selecting previously unselected package libpsl5:amd64.
+#7 10.67 Preparing to unpack .../06-libpsl5_0.21.2-1_amd64.deb ...
+#7 10.69 Unpacking libpsl5:amd64 (0.21.2-1) ...
+#7 10.90 Selecting previously unselected package wget.
+#7 10.90 Preparing to unpack .../07-wget_1.21.3-1+b2_amd64.deb ...
+#7 10.92 Unpacking wget (1.21.3-1+b2) ...
+#7 11.19 Selecting previously unselected package xz-utils.
+#7 11.19 Preparing to unpack .../08-xz-utils_5.4.1-0.2_amd64.deb ...
+#7 11.22 Unpacking xz-utils (5.4.1-0.2) ...
+#7 11.44 Selecting previously unselected package binutils-common:amd64.
+#7 11.44 Preparing to unpack .../09-binutils-common_2.40-2_amd64.deb ...
+#7 11.47 Unpacking binutils-common:amd64 (2.40-2) ...
+#7 11.92 Selecting previously unselected package libbinutils:amd64.
+#7 11.92 Preparing to unpack .../10-libbinutils_2.40-2_amd64.deb ...
+#7 11.94 Unpacking libbinutils:amd64 (2.40-2) ...
+#7 12.25 Selecting previously unselected package libctf-nobfd0:amd64.
+#7 12.25 Preparing to unpack .../11-libctf-nobfd0_2.40-2_amd64.deb ...
+#7 12.28 Unpacking libctf-nobfd0:amd64 (2.40-2) ...
+#7 12.55 Selecting previously unselected package libctf0:amd64.
+#7 12.55 Preparing to unpack .../12-libctf0_2.40-2_amd64.deb ...
+#7 12.58 Unpacking libctf0:amd64 (2.40-2) ...
+#7 12.80 Selecting previously unselected package libgprofng0:amd64.
+#7 12.80 Preparing to unpack .../13-libgprofng0_2.40-2_amd64.deb ...
+#7 12.83 Unpacking libgprofng0:amd64 (2.40-2) ...
+#7 13.15 Selecting previously unselected package libjansson4:amd64.
+#7 13.15 Preparing to unpack .../14-libjansson4_2.14-2_amd64.deb ...
+#7 13.18 Unpacking libjansson4:amd64 (2.14-2) ...
+#7 13.36 Selecting previously unselected package binutils-x86-64-linux-gnu.
+#7 13.36 Preparing to unpack .../15-binutils-x86-64-linux-gnu_2.40-2_amd64.deb ...
+#7 13.39 Unpacking binutils-x86-64-linux-gnu (2.40-2) ...
+#7 13.89 Selecting previously unselected package binutils.
+#7 13.89 Preparing to unpack .../16-binutils_2.40-2_amd64.deb ...
+#7 13.92 Unpacking binutils (2.40-2) ...
+#7 14.09 Selecting previously unselected package libc-dev-bin.
+#7 14.09 Preparing to unpack .../17-libc-dev-bin_2.36-9+deb12u7_amd64.deb ...
+#7 14.13 Unpacking libc-dev-bin (2.36-9+deb12u7) ...
+#7 14.32 Selecting previously unselected package linux-libc-dev:amd64.
+#7 14.32 Preparing to unpack .../18-linux-libc-dev_6.1.99-1_amd64.deb ...
+#7 14.34 Unpacking linux-libc-dev:amd64 (6.1.99-1) ...
+#7 15.19 Selecting previously unselected package libcrypt-dev:amd64.
+#7 15.19 Preparing to unpack .../19-libcrypt-dev_1%3a4.4.33-2_amd64.deb ...
+#7 15.23 Unpacking libcrypt-dev:amd64 (1:4.4.33-2) ...
+#7 15.50 Selecting previously unselected package libkrb5support0:amd64.
+#7 15.50 Preparing to unpack .../20-libkrb5support0_1.20.1-2+deb12u2_amd64.deb ...
+#7 15.52 Unpacking libkrb5support0:amd64 (1.20.1-2+deb12u2) ...
+#7 15.74 Selecting previously unselected package libk5crypto3:amd64.
+#7 15.74 Preparing to unpack .../21-libk5crypto3_1.20.1-2+deb12u2_amd64.deb ...
+#7 15.77 Unpacking libk5crypto3:amd64 (1.20.1-2+deb12u2) ...
+#7 18.62 Selecting previously unselected package libkeyutils1:amd64.
+#7 18.62 Preparing to unpack .../22-libkeyutils1_1.6.3-2_amd64.deb ...
+#7 18.64 Unpacking libkeyutils1:amd64 (1.6.3-2) ...
+#7 18.85 Selecting previously unselected package libssl3:amd64.
+#7 18.85 Preparing to unpack .../23-libssl3_3.0.13-1~deb12u1_amd64.deb ...
+#7 18.87 Unpacking libssl3:amd64 (3.0.13-1~deb12u1) ...
+#7 19.31 Selecting previously unselected package libkrb5-3:amd64.
+#7 19.31 Preparing to unpack .../24-libkrb5-3_1.20.1-2+deb12u2_amd64.deb ...
+#7 19.34 Unpacking libkrb5-3:amd64 (1.20.1-2+deb12u2) ...
+#7 19.66 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#7 19.66 Preparing to unpack .../25-libgssapi-krb5-2_1.20.1-2+deb12u2_amd64.deb ...
+#7 19.69 Unpacking libgssapi-krb5-2:amd64 (1.20.1-2+deb12u2) ...
+#7 19.91 Selecting previously unselected package libtirpc-common.
+#7 19.91 Preparing to unpack .../26-libtirpc-common_1.3.3+ds-1_all.deb ...
+#7 19.94 Unpacking libtirpc-common (1.3.3+ds-1) ...
+#7 20.24 Selecting previously unselected package libtirpc3:amd64.
+#7 20.24 Preparing to unpack .../27-libtirpc3_1.3.3+ds-1_amd64.deb ...
+#7 20.27 Unpacking libtirpc3:amd64 (1.3.3+ds-1) ...
+#7 20.49 Selecting previously unselected package libnsl2:amd64.
+#7 20.49 Preparing to unpack .../28-libnsl2_1.3.0-2_amd64.deb ...
+#7 20.51 Unpacking libnsl2:amd64 (1.3.0-2) ...
+#7 20.67 Selecting previously unselected package libtirpc-dev:amd64.
+#7 20.67 Preparing to unpack .../29-libtirpc-dev_1.3.3+ds-1_amd64.deb ...
+#7 20.70 Unpacking libtirpc-dev:amd64 (1.3.3+ds-1) ...
+#7 20.92 Selecting previously unselected package libnsl-dev:amd64.
+#7 20.92 Preparing to unpack .../30-libnsl-dev_1.3.0-2_amd64.deb ...
+#7 20.95 Unpacking libnsl-dev:amd64 (1.3.0-2) ...
+#7 21.14 Selecting previously unselected package rpcsvc-proto.
+#7 21.14 Preparing to unpack .../31-rpcsvc-proto_1.4.3-1_amd64.deb ...
+#7 21.17 Unpacking rpcsvc-proto (1.4.3-1) ...
+#7 21.35 Selecting previously unselected package libc6-dev:amd64.
+#7 21.35 Preparing to unpack .../32-libc6-dev_2.36-9+deb12u7_amd64.deb ...
+#7 21.37 Unpacking libc6-dev:amd64 (2.36-9+deb12u7) ...
+#7 22.02 Selecting previously unselected package libisl23:amd64.
+#7 22.02 Preparing to unpack .../33-libisl23_0.25-1.1_amd64.deb ...
+#7 22.05 Unpacking libisl23:amd64 (0.25-1.1) ...
+#7 22.46 Selecting previously unselected package libmpfr6:amd64.
+#7 22.46 Preparing to unpack .../34-libmpfr6_4.2.0-1_amd64.deb ...
+#7 22.49 Unpacking libmpfr6:amd64 (4.2.0-1) ...
+#7 22.75 Selecting previously unselected package libmpc3:amd64.
+#7 22.75 Preparing to unpack .../35-libmpc3_1.3.1-1_amd64.deb ...
+#7 22.78 Unpacking libmpc3:amd64 (1.3.1-1) ...
+#7 22.95 Selecting previously unselected package cpp-12.
+#7 22.95 Preparing to unpack .../36-cpp-12_12.2.0-14_amd64.deb ...
+#7 22.97 Unpacking cpp-12 (12.2.0-14) ...
+#7 24.42 Selecting previously unselected package cpp.
+#7 24.42 Preparing to unpack .../37-cpp_4%3a12.2.0-3_amd64.deb ...
+#7 24.44 Unpacking cpp (4:12.2.0-3) ...
+#7 24.65 Selecting previously unselected package libcc1-0:amd64.
+#7 24.65 Preparing to unpack .../38-libcc1-0_12.2.0-14_amd64.deb ...
+#7 24.67 Unpacking libcc1-0:amd64 (12.2.0-14) ...
+#7 24.91 Selecting previously unselected package libgomp1:amd64.
+#7 24.91 Preparing to unpack .../39-libgomp1_12.2.0-14_amd64.deb ...
+#7 24.94 Unpacking libgomp1:amd64 (12.2.0-14) ...
+#7 25.33 Selecting previously unselected package libitm1:amd64.
+#7 25.33 Preparing to unpack .../40-libitm1_12.2.0-14_amd64.deb ...
+#7 25.36 Unpacking libitm1:amd64 (12.2.0-14) ...
+#7 25.62 Selecting previously unselected package libatomic1:amd64.
+#7 25.62 Preparing to unpack .../41-libatomic1_12.2.0-14_amd64.deb ...
+#7 25.64 Unpacking libatomic1:amd64 (12.2.0-14) ...
+#7 25.81 Selecting previously unselected package libasan8:amd64.
+#7 25.81 Preparing to unpack .../42-libasan8_12.2.0-14_amd64.deb ...
+#7 25.83 Unpacking libasan8:amd64 (12.2.0-14) ...
+#7 26.38 Selecting previously unselected package liblsan0:amd64.
+#7 26.38 Preparing to unpack .../43-liblsan0_12.2.0-14_amd64.deb ...
+#7 26.41 Unpacking liblsan0:amd64 (12.2.0-14) ...
+#7 26.75 Selecting previously unselected package libtsan2:amd64.
+#7 26.75 Preparing to unpack .../44-libtsan2_12.2.0-14_amd64.deb ...
+#7 26.77 Unpacking libtsan2:amd64 (12.2.0-14) ...
+#7 27.33 Selecting previously unselected package libubsan1:amd64.
+#7 27.33 Preparing to unpack .../45-libubsan1_12.2.0-14_amd64.deb ...
+#7 27.36 Unpacking libubsan1:amd64 (12.2.0-14) ...
+#7 27.70 Selecting previously unselected package libquadmath0:amd64.
+#7 27.70 Preparing to unpack .../46-libquadmath0_12.2.0-14_amd64.deb ...
+#7 27.73 Unpacking libquadmath0:amd64 (12.2.0-14) ...
+#7 27.93 Selecting previously unselected package libgcc-12-dev:amd64.
+#7 27.93 Preparing to unpack .../47-libgcc-12-dev_12.2.0-14_amd64.deb ...
+#7 27.95 Unpacking libgcc-12-dev:amd64 (12.2.0-14) ...
+#7 28.45 Selecting previously unselected package gcc-12.
+#7 28.45 Preparing to unpack .../48-gcc-12_12.2.0-14_amd64.deb ...
+#7 28.48 Unpacking gcc-12 (12.2.0-14) ...
+#7 30.48 Selecting previously unselected package gcc.
+#7 30.48 Preparing to unpack .../49-gcc_4%3a12.2.0-3_amd64.deb ...
+#7 30.51 Unpacking gcc (4:12.2.0-3) ...
+#7 30.66 Selecting previously unselected package libstdc++-12-dev:amd64.
+#7 30.66 Preparing to unpack .../50-libstdc++-12-dev_12.2.0-14_amd64.deb ...
+#7 30.69 Unpacking libstdc++-12-dev:amd64 (12.2.0-14) ...
+#7 31.66 Selecting previously unselected package g++-12.
+#7 31.66 Preparing to unpack .../51-g++-12_12.2.0-14_amd64.deb ...
+#7 31.68 Unpacking g++-12 (12.2.0-14) ...
+#7 35.74 Selecting previously unselected package g++.
+#7 35.74 Preparing to unpack .../52-g++_4%3a12.2.0-3_amd64.deb ...
+#7 35.76 Unpacking g++ (4:12.2.0-3) ...
+#7 35.92 Selecting previously unselected package make.
+#7 35.92 Preparing to unpack .../53-make_4.3-4.1_amd64.deb ...
+#7 35.94 Unpacking make (4.3-4.1) ...
+#7 36.15 Selecting previously unselected package libdpkg-perl.
+#7 36.15 Preparing to unpack .../54-libdpkg-perl_1.21.22_all.deb ...
+#7 36.18 Unpacking libdpkg-perl (1.21.22) ...
+#7 36.41 Selecting previously unselected package patch.
+#7 36.41 Preparing to unpack .../55-patch_2.7.6-7_amd64.deb ...
+#7 36.43 Unpacking patch (2.7.6-7) ...
+#7 36.63 Selecting previously unselected package dpkg-dev.
+#7 36.63 Preparing to unpack .../56-dpkg-dev_1.21.22_all.deb ...
+#7 36.67 Unpacking dpkg-dev (1.21.22) ...
+#7 36.93 Selecting previously unselected package build-essential.
+#7 36.93 Preparing to unpack .../57-build-essential_12.9_amd64.deb ...
+#7 36.96 Unpacking build-essential (12.9) ...
+#7 37.17 Selecting previously unselected package libpcre16-3:amd64.
+#7 37.17 Preparing to unpack .../58-libpcre16-3_2%3a8.39-15_amd64.deb ...
+#7 37.20 Unpacking libpcre16-3:amd64 (2:8.39-15) ...
+#7 37.47 Selecting previously unselected package libpcre3:amd64.
+#7 37.47 Preparing to unpack .../59-libpcre3_2%3a8.39-15_amd64.deb ...
+#7 37.49 Unpacking libpcre3:amd64 (2:8.39-15) ...
+#7 37.73 Selecting previously unselected package libpcre32-3:amd64.
+#7 37.73 Preparing to unpack .../60-libpcre32-3_2%3a8.39-15_amd64.deb ...
+#7 37.75 Unpacking libpcre32-3:amd64 (2:8.39-15) ...
+#7 38.04 Selecting previously unselected package libpcrecpp0v5:amd64.
+#7 38.04 Preparing to unpack .../61-libpcrecpp0v5_2%3a8.39-15_amd64.deb ...
+#7 38.07 Unpacking libpcrecpp0v5:amd64 (2:8.39-15) ...
+#7 38.24 Selecting previously unselected package libpcre3-dev:amd64.
+#7 38.24 Preparing to unpack .../62-libpcre3-dev_2%3a8.39-15_amd64.deb ...
+#7 38.27 Unpacking libpcre3-dev:amd64 (2:8.39-15) ...
+#7 38.54 Selecting previously unselected package uuid-dev:amd64.
+#7 38.54 Preparing to unpack .../63-uuid-dev_2.38.1-5+deb12u1_amd64.deb ...
+#7 38.57 Unpacking uuid-dev:amd64 (2.38.1-5+deb12u1) ...
+#7 38.76 Selecting previously unselected package zlib1g-dev:amd64.
+#7 38.76 Preparing to unpack .../64-zlib1g-dev_1%3a1.2.13.dfsg-1_amd64.deb ...
+#7 38.79 Unpacking zlib1g-dev:amd64 (1:1.2.13.dfsg-1) ...
+#7 39.03 Setting up libkeyutils1:amd64 (1.6.3-2) ...
+#7 39.12 Setting up libpsl5:amd64 (0.21.2-1) ...
+#7 39.22 Setting up wget (1.21.3-1+b2) ...
+#7 39.33 Setting up libpcre16-3:amd64 (2:8.39-15) ...
+#7 39.41 Setting up libtirpc-common (1.3.3+ds-1) ...
+#7 39.53 Setting up binutils-common:amd64 (2.40-2) ...
+#7 39.64 Setting up libssl3:amd64 (3.0.13-1~deb12u1) ...
+#7 41.23 Setting up linux-libc-dev:amd64 (6.1.99-1) ...
+#7 41.38 Setting up libctf-nobfd0:amd64 (2.40-2) ...
+#7 41.45 Setting up libgomp1:amd64 (12.2.0-14) ...
+#7 41.53 Setting up bzip2 (1.0.8-5+b1) ...
+#7 41.60 Setting up libjansson4:amd64 (2.14-2) ...
+#7 41.68 Setting up libkrb5support0:amd64 (1.20.1-2+deb12u2) ...
+#7 41.77 Setting up libpcre3:amd64 (2:8.39-15) ...
+#7 41.85 Setting up perl-modules-5.36 (5.36.0-7+deb12u1) ...
+#7 41.93 Setting up rpcsvc-proto (1.4.3-1) ...
+#7 42.01 Setting up make (4.3-4.1) ...
+#7 42.11 Setting up libmpfr6:amd64 (4.2.0-1) ...
+#7 42.21 Setting up xz-utils (5.4.1-0.2) ...
+#7 42.27 update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+#7 42.27 update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
+#7 42.27 update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
+#7 42.27 update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
+#7 42.27 update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
+#7 42.27 update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
+#7 42.27 update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
+#7 42.27 update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
+#7 42.27 update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
+#7 42.27 update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
+#7 42.27 update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
+#7 42.32 Setting up libquadmath0:amd64 (12.2.0-14) ...
+#7 42.40 Setting up libpcre32-3:amd64 (2:8.39-15) ...
+#7 42.48 Setting up libmpc3:amd64 (1.3.1-1) ...
+#7 42.56 Setting up libatomic1:amd64 (12.2.0-14) ...
+#7 42.64 Setting up patch (2.7.6-7) ...
+#7 42.73 Setting up libk5crypto3:amd64 (1.20.1-2+deb12u2) ...
+#7 42.81 Setting up libubsan1:amd64 (12.2.0-14) ...
+#7 42.89 Setting up libcrypt-dev:amd64 (1:4.4.33-2) ...
+#7 42.97 Setting up libasan8:amd64 (12.2.0-14) ...
+#7 43.05 Setting up libkrb5-3:amd64 (1.20.1-2+deb12u2) ...
+#7 43.12 Setting up libtsan2:amd64 (12.2.0-14) ...
+#7 43.21 Setting up libbinutils:amd64 (2.40-2) ...
+#7 43.31 Setting up libisl23:amd64 (0.25-1.1) ...
+#7 43.38 Setting up libc-dev-bin (2.36-9+deb12u7) ...
+#7 43.48 Setting up libcc1-0:amd64 (12.2.0-14) ...
+#7 43.56 Setting up liblsan0:amd64 (12.2.0-14) ...
+#7 43.64 Setting up libitm1:amd64 (12.2.0-14) ...
+#7 43.71 Setting up libgdbm6:amd64 (1.23-3) ...
+#7 43.79 Setting up libctf0:amd64 (2.40-2) ...
+#7 43.87 Setting up libpcrecpp0v5:amd64 (2:8.39-15) ...
+#7 43.94 Setting up cpp-12 (12.2.0-14) ...
+#7 44.02 Setting up libgprofng0:amd64 (2.40-2) ...
+#7 44.10 Setting up libgcc-12-dev:amd64 (12.2.0-14) ...
+#7 44.17 Setting up libgssapi-krb5-2:amd64 (1.20.1-2+deb12u2) ...
+#7 44.25 Setting up libgdbm-compat4:amd64 (1.23-3) ...
+#7 44.33 Setting up cpp (4:12.2.0-3) ...
+#7 44.46 Setting up libperl5.36:amd64 (5.36.0-7+deb12u1) ...
+#7 44.56 Setting up binutils-x86-64-linux-gnu (2.40-2) ...
+#7 44.64 Setting up libtirpc3:amd64 (1.3.3+ds-1) ...
+#7 44.74 Setting up binutils (2.40-2) ...
+#7 44.83 Setting up perl (5.36.0-7+deb12u1) ...
+#7 44.94 Setting up libtirpc-dev:amd64 (1.3.3+ds-1) ...
+#7 45.02 Setting up gcc-12 (12.2.0-14) ...
+#7 45.19 Setting up libdpkg-perl (1.21.22) ...
+#7 45.27 Setting up libnsl2:amd64 (1.3.0-2) ...
+#7 45.34 Setting up gcc (4:12.2.0-3) ...
+#7 45.47 Setting up dpkg-dev (1.21.22) ...
+#7 45.61 Setting up libnsl-dev:amd64 (1.3.0-2) ...
+#7 45.69 Setting up libc6-dev:amd64 (2.36-9+deb12u7) ...
+#7 45.77 Setting up libstdc++-12-dev:amd64 (12.2.0-14) ...
+#7 45.86 Setting up libpcre3-dev:amd64 (2:8.39-15) ...
+#7 45.96 Setting up uuid-dev:amd64 (2.38.1-5+deb12u1) ...
+#7 46.05 Setting up zlib1g-dev:amd64 (1:1.2.13.dfsg-1) ...
+#7 46.13 Setting up g++-12 (12.2.0-14) ...
+#7 46.21 Setting up g++ (4:12.2.0-3) ...
+#7 46.26 update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+#7 46.31 Setting up build-essential (12.9) ...
+#7 46.38 Processing triggers for libc-bin (2.36-9+deb12u7) ...
+#7 DONE 46.9s
+
+#8 [ 3/16] RUN mkdir -p /tmp/nginx
+#8 DONE 2.0s
+
+#9 [ 4/16] WORKDIR /tmp/nginx
+#9 DONE 0.4s
+
+#10 [ 5/16] RUN wget --no-check-certificate http://nginx.org/download/nginx-1.22.1.tar.gz         -P /tmp/nginx/ &&         tar xzf nginx-1.22.1.tar.gz --strip-components=1 &&         rm -rf nginx-1.22.1.tar.gz
+#10 0.617 --2024-08-01 06:45:25--  http://nginx.org/download/nginx-1.22.1.tar.gz
+#10 0.617 Resolving nginx.org (nginx.org)... 52.58.199.22, 3.125.197.172, 2a05:d014:5c0:2600::6, ...
+#10 0.655 Connecting to nginx.org (nginx.org)|52.58.199.22|:80... connected.
+#10 0.807 HTTP request sent, awaiting response... 200 OK
+#10 0.959 Length: 1073948 (1.0M) [application/octet-stream]
+#10 0.960 Saving to: '/tmp/nginx/nginx-1.22.1.tar.gz'
+#10 0.960 
+#10 0.960      0K .......... .......... .......... .......... ..........  4%  165K 6s
+#10 1.264     50K .......... .......... .......... .......... ..........  9%  329K 4s
+#10 1.415    100K .......... .......... .......... .......... .......... 14% 49.8M 3s
+#10 1.416    150K .......... .......... .......... .......... .......... 19% 93.2M 2s
+#10 1.567    200K .......... .......... .......... .......... .......... 23%  330K 2s
+#10 1.568    250K .......... .......... .......... .......... .......... 28% 79.2M 2s
+#10 1.569    300K .......... .......... .......... .......... .......... 33% 88.9M 1s
+#10 1.570    350K .......... .......... .......... .......... .......... 38% 71.4M 1s
+#10 1.570    400K .......... .......... .......... .......... .......... 42%  335K 1s
+#10 1.720    450K .......... .......... .......... .......... .......... 47% 41.1M 1s
+#10 1.721    500K .......... .......... .......... .......... .......... 52% 86.1M 1s
+#10 1.721    550K .......... .......... .......... .......... .......... 57% 78.0M 1s
+#10 1.722    600K .......... .......... .......... .......... .......... 61% 85.4M 0s
+#10 1.722    650K .......... .......... .......... .......... .......... 66% 96.0M 0s
+#10 1.723    700K .......... .......... .......... .......... .......... 71%  105M 0s
+#10 1.723    750K .......... .......... .......... .......... .......... 76%  141M 0s
+#10 1.724    800K .......... .......... .......... .......... .......... 81%  340K 0s
+#10 1.871    850K .......... .......... .......... .......... .......... 85% 53.9M 0s
+#10 1.872    900K .......... .......... .......... .......... .......... 90% 98.6M 0s
+#10 1.872    950K .......... .......... .......... .......... .......... 95% 79.7M 0s
+#10 1.873   1000K .......... .......... .......... .......... ........  100%  124K=1.3s
+#10 2.268 
+#10 2.268 2024-08-01 06:45:26 (802 KB/s) - '/tmp/nginx/nginx-1.22.1.tar.gz' saved [1073948/1073948]
+#10 2.268 
+#10 DONE 2.9s
+
+#11 [ 6/16] RUN wget --no-check-certificate https://github.com/giom/nginx_accept_language_module/archive/master.tar.gz         -O /tmp/nginx/nginx_accept_language_module-master.tar.gz &&         tar xzf /tmp/nginx/nginx_accept_language_module-master.tar.gz &&         rm -rf /tmp/nginx/nginx_accept_language_module-master.tar.gz
+#11 0.778 --2024-08-01 06:45:28--  https://github.com/giom/nginx_accept_language_module/archive/master.tar.gz
+#11 0.778 Resolving github.com (github.com)... 140.82.114.3
+#11 0.779 Connecting to github.com (github.com)|140.82.114.3|:443... connected.
+#11 0.973 WARNING: The certificate of 'github.com' is not trusted.
+#11 0.973 WARNING: The certificate of 'github.com' doesn't have a known issuer.
+#11 0.973 HTTP request sent, awaiting response... 302 Found
+#11 1.129 Location: https://codeload.github.com/giom/nginx_accept_language_module/tar.gz/refs/heads/master [following]
+#11 1.129 --2024-08-01 06:45:28--  https://codeload.github.com/giom/nginx_accept_language_module/tar.gz/refs/heads/master
+#11 1.129 Resolving codeload.github.com (codeload.github.com)... 140.82.114.10
+#11 1.130 Connecting to codeload.github.com (codeload.github.com)|140.82.114.10|:443... connected.
+#11 1.323 WARNING: The certificate of 'codeload.github.com' is not trusted.
+#11 1.323 WARNING: The certificate of 'codeload.github.com' doesn't have a known issuer.
+#11 1.323 HTTP request sent, awaiting response... 200 OK
+#11 1.493 Length: unspecified [application/x-gzip]
+#11 1.493 Saving to: '/tmp/nginx/nginx_accept_language_module-master.tar.gz'
+#11 1.493 
+#11 1.493      0K ...                                                    25.0M=0s
+#11 1.493 
+#11 1.493 2024-08-01 06:45:28 (25.0 MB/s) - '/tmp/nginx/nginx_accept_language_module-master.tar.gz' saved [3394]
+#11 1.493 
+#11 DONE 1.7s
+
+#12 [ 7/16] RUN wget --no-check-certificate https://github.com/simpl/ngx_devel_kit/archive/v0.3.2.tar.gz         -O /tmp/nginx/ngx_devel_kit-0.3.2.tar.gz &&         tar xzf /tmp/nginx/ngx_devel_kit-0.3.2.tar.gz &&         rm -rf /tmp/nginx/ngx_devel_kit-0.3.2.tar.gz
+#12 0.610 --2024-08-01 06:45:29--  https://github.com/simpl/ngx_devel_kit/archive/v0.3.2.tar.gz
+#12 0.610 Resolving github.com (github.com)... 140.82.114.3
+#12 0.612 Connecting to github.com (github.com)|140.82.114.3|:443... connected.
+#12 0.808 WARNING: The certificate of 'github.com' is not trusted.
+#12 0.808 WARNING: The certificate of 'github.com' doesn't have a known issuer.
+#12 0.808 HTTP request sent, awaiting response... 301 Moved Permanently
+#12 0.960 Location: https://github.com/vision5/ngx_devel_kit/archive/v0.3.2.tar.gz [following]
+#12 0.960 --2024-08-01 06:45:30--  https://github.com/vision5/ngx_devel_kit/archive/v0.3.2.tar.gz
+#12 0.960 Reusing existing connection to github.com:443.
+#12 0.960 HTTP request sent, awaiting response... 302 Found
+#12 1.080 Location: https://codeload.github.com/vision5/ngx_devel_kit/tar.gz/refs/tags/v0.3.2 [following]
+#12 1.080 --2024-08-01 06:45:30--  https://codeload.github.com/vision5/ngx_devel_kit/tar.gz/refs/tags/v0.3.2
+#12 1.080 Resolving codeload.github.com (codeload.github.com)... 140.82.114.10
+#12 1.081 Connecting to codeload.github.com (codeload.github.com)|140.82.114.10|:443... connected.
+#12 1.274 WARNING: The certificate of 'codeload.github.com' is not trusted.
+#12 1.274 WARNING: The certificate of 'codeload.github.com' doesn't have a known issuer.
+#12 1.274 HTTP request sent, awaiting response... 200 OK
+#12 1.501 Length: unspecified [application/x-gzip]
+#12 1.501 Saving to: '/tmp/nginx/ngx_devel_kit-0.3.2.tar.gz'
+#12 1.502 
+#12 1.502      0K .......... .......... .......... .......... ..........  383K
+#12 1.632     50K .......... ....                                        39.1M=0.1s
+#12 1.633 
+#12 1.633 2024-08-01 06:45:30 (496 KB/s) - '/tmp/nginx/ngx_devel_kit-0.3.2.tar.gz' saved [66551]
+#12 1.633 
+#12 DONE 2.0s
+
+#13 [ 8/16] RUN wget --no-check-certificate https://github.com/openresty/headers-more-nginx-module/archive/v0.34.tar.gz         -O /tmp/nginx/headers-more-nginx-module-0.34.tar.gz &&         tar xzf /tmp/nginx/headers-more-nginx-module-0.34.tar.gz &&         rm -rf /tmp/nginx/headers-more-nginx-module-0.34.tar.gz
+#13 0.649 --2024-08-01 06:45:31--  https://github.com/openresty/headers-more-nginx-module/archive/v0.34.tar.gz
+#13 0.649 Resolving github.com (github.com)... 140.82.114.3
+#13 0.650 Connecting to github.com (github.com)|140.82.114.3|:443... connected.
+#13 0.844 WARNING: The certificate of 'github.com' is not trusted.
+#13 0.844 WARNING: The certificate of 'github.com' doesn't have a known issuer.
+#13 0.844 HTTP request sent, awaiting response... 302 Found
+#13 1.015 Location: https://codeload.github.com/openresty/headers-more-nginx-module/tar.gz/refs/tags/v0.34 [following]
+#13 1.015 --2024-08-01 06:45:32--  https://codeload.github.com/openresty/headers-more-nginx-module/tar.gz/refs/tags/v0.34
+#13 1.015 Resolving codeload.github.com (codeload.github.com)... 140.82.114.10
+#13 1.016 Connecting to codeload.github.com (codeload.github.com)|140.82.114.10|:443... connected.
+#13 1.210 WARNING: The certificate of 'codeload.github.com' is not trusted.
+#13 1.210 WARNING: The certificate of 'codeload.github.com' doesn't have a known issuer.
+#13 1.210 HTTP request sent, awaiting response... 200 OK
+#13 1.407 Length: unspecified [application/x-gzip]
+#13 1.407 Saving to: '/tmp/nginx/headers-more-nginx-module-0.34.tar.gz'
+#13 1.408 
+#13 1.408      0K .......... .......... ........                          429K=0.07s
+#13 1.473 
+#13 1.473 2024-08-01 06:45:32 (429 KB/s) - '/tmp/nginx/headers-more-nginx-module-0.34.tar.gz' saved [28827]
+#13 1.473 
+#13 DONE 1.8s
+
+#14 [ 9/16] RUN wget --no-check-certificate https://openssl.org/source/openssl-1.1.1t.tar.gz         -O /tmp/nginx/openssl-1.1.1t.tar.gz &&         tar xzf /tmp/nginx/openssl-1.1.1t.tar.gz &&         rm -rf /tmp/nginx/openssl-1.1.1t.tar.gz
+#14 0.660 --2024-08-01 06:45:33--  https://openssl.org/source/openssl-1.1.1t.tar.gz
+#14 0.660 Resolving openssl.org (openssl.org)... 34.49.79.89, 2600:1901:0:d50b::
+#14 0.860 Connecting to openssl.org (openssl.org)|34.49.79.89|:443... connected.
+#14 0.935 WARNING: The certificate of 'openssl.org' is not trusted.
+#14 0.935 WARNING: The certificate of 'openssl.org' doesn't have a known issuer.
+#14 0.935 HTTP request sent, awaiting response... 301 Moved Permanently
+#14 0.941 Location: https://github.com:443/openssl/openssl/releases/download/OpenSSL_1_1_1t/openssl-1.1.1t.tar.gz [following]
+#14 0.941 --2024-08-01 06:45:33--  https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1t/openssl-1.1.1t.tar.gz
+#14 0.941 Resolving github.com (github.com)... 140.82.114.3
+#14 0.942 Connecting to github.com (github.com)|140.82.114.3|:443... connected.
+#14 1.135 WARNING: The certificate of 'github.com' is not trusted.
+#14 1.135 WARNING: The certificate of 'github.com' doesn't have a known issuer.
+#14 1.135 HTTP request sent, awaiting response... 302 Found
+#14 1.291 Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/7634677/d7446444-0f18-4771-85f3-2083574c7934?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240801T064534Z&X-Amz-Expires=300&X-Amz-Signature=ede3b6fdbb4998b8349671168da74d07a35e3e1cf0ca404401adc08d3c7dfe57&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=7634677&response-content-disposition=attachment%3B%20filename%3Dopenssl-1.1.1t.tar.gz&response-content-type=application%2Foctet-stream [following]
+#14 1.291 --2024-08-01 06:45:34--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/7634677/d7446444-0f18-4771-85f3-2083574c7934?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240801T064534Z&X-Amz-Expires=300&X-Amz-Signature=ede3b6fdbb4998b8349671168da74d07a35e3e1cf0ca404401adc08d3c7dfe57&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=7634677&response-content-disposition=attachment%3B%20filename%3Dopenssl-1.1.1t.tar.gz&response-content-type=application%2Foctet-stream
+#14 1.291 Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.108.133, 185.199.111.133, 185.199.110.133, ...
+#14 1.292 Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.108.133|:443... connected.
+#14 1.297 WARNING: The certificate of 'objects.githubusercontent.com' is not trusted.
+#14 1.297 WARNING: The certificate of 'objects.githubusercontent.com' doesn't have a known issuer.
+#14 1.298 HTTP request sent, awaiting response... 200 OK
+#14 1.658 Length: 9881866 (9.4M) [application/octet-stream]
+#14 1.658 Saving to: '/tmp/nginx/openssl-1.1.1t.tar.gz'
+#14 1.658 
+#14 1.658      0K .......... .......... .......... .......... ..........  0% 30.4M 0s
+#14 1.659     50K .......... .......... .......... .......... ..........  1%  100M 0s
+#14 1.660    100K .......... .......... .......... .......... ..........  1% 59.9M 0s
+#14 1.661    150K .......... .......... .......... .......... ..........  2% 74.5M 0s
+#14 1.661    200K .......... .......... .......... .......... ..........  2% 99.5M 0s
+#14 1.662    250K .......... .......... .......... .......... ..........  3%  133M 0s
+#14 1.662    300K .......... .......... .......... .......... ..........  3% 96.1M 0s
+#14 1.663    350K .......... .......... .......... .......... ..........  4%  119M 0s
+#14 1.663    400K .......... .......... .......... .......... ..........  4%  110M 0s
+#14 1.664    450K .......... .......... .......... .......... ..........  5%  114M 0s
+#14 1.664    500K .......... .......... .......... .......... ..........  5%  111M 0s
+#14 1.664    550K .......... .......... .......... .......... ..........  6%  120M 0s
+#14 1.665    600K .......... .......... .......... .......... ..........  6%  101M 0s
+#14 1.665    650K .......... .......... .......... .......... ..........  7%  113M 0s
+#14 1.666    700K .......... .......... .......... .......... ..........  7%  111M 0s
+#14 1.666    750K .......... .......... .......... .......... ..........  8%  109M 0s
+#14 1.667    800K .......... .......... .......... .......... ..........  8%  101M 0s
+#14 1.667    850K .......... .......... .......... .......... ..........  9%  123M 0s
+#14 1.667    900K .......... .......... .......... .......... ..........  9%  118M 0s
+#14 1.668    950K .......... .......... .......... .......... .......... 10%  105M 0s
+#14 1.668   1000K .......... .......... .......... .......... .......... 10%  123M 0s
+#14 1.669   1050K .......... .......... .......... .......... .......... 11%  123M 0s
+#14 1.669   1100K .......... .......... .......... .......... .......... 11%  110M 0s
+#14 1.670   1150K .......... .......... .......... .......... .......... 12% 86.3M 0s
+#14 1.670   1200K .......... .......... .......... .......... .......... 12%  117M 0s
+#14 1.671   1250K .......... .......... .......... .......... .......... 13%  124M 0s
+#14 1.671   1300K .......... .......... .......... .......... .......... 13%  126M 0s
+#14 1.671   1350K .......... .......... .......... .......... .......... 14%  104M 0s
+#14 1.672   1400K .......... .......... .......... .......... .......... 15%  110M 0s
+#14 1.672   1450K .......... .......... .......... .......... .......... 15%  117M 0s
+#14 1.673   1500K .......... .......... .......... .......... .......... 16%  112M 0s
+#14 1.673   1550K .......... .......... .......... .......... .......... 16% 97.1M 0s
+#14 1.674   1600K .......... .......... .......... .......... .......... 17%  118M 0s
+#14 1.674   1650K .......... .......... .......... .......... .......... 17%  117M 0s
+#14 1.674   1700K .......... .......... .......... .......... .......... 18%  119M 0s
+#14 1.675   1750K .......... .......... .......... .......... .......... 18% 97.1M 0s
+#14 1.675   1800K .......... .......... .......... .......... .......... 19%  116M 0s
+#14 1.676   1850K .......... .......... .......... .......... .......... 19%  120M 0s
+#14 1.676   1900K .......... .......... .......... .......... .......... 20%  121M 0s
+#14 1.677   1950K .......... .......... .......... .......... .......... 20% 89.3M 0s
+#14 1.677   2000K .......... .......... .......... .......... .......... 21%  126M 0s
+#14 1.678   2050K .......... .......... .......... .......... .......... 21%  103M 0s
+#14 1.678   2100K .......... .......... .......... .......... .......... 22%  115M 0s
+#14 1.678   2150K .......... .......... .......... .......... .......... 22%  104M 0s
+#14 1.679   2200K .......... .......... .......... .......... .......... 23%  119M 0s
+#14 1.679   2250K .......... .......... .......... .......... .......... 23%  121M 0s
+#14 1.680   2300K .......... .......... .......... .......... .......... 24%  111M 0s
+#14 1.680   2350K .......... .......... .......... .......... .......... 24%  104M 0s
+#14 1.681   2400K .......... .......... .......... .......... .......... 25%  107M 0s
+#14 1.681   2450K .......... .......... .......... .......... .......... 25%  108M 0s
+#14 1.682   2500K .......... .......... .......... .......... .......... 26%  114M 0s
+#14 1.682   2550K .......... .......... .......... .......... .......... 26%  101M 0s
+#14 1.682   2600K .......... .......... .......... .......... .......... 27%  131M 0s
+#14 1.683   2650K .......... .......... .......... .......... .......... 27%  117M 0s
+#14 1.683   2700K .......... .......... .......... .......... .......... 28%  115M 0s
+#14 1.684   2750K .......... .......... .......... .......... .......... 29% 94.1M 0s
+#14 1.684   2800K .......... .......... .......... .......... .......... 29%  116M 0s
+#14 1.685   2850K .......... .......... .......... .......... .......... 30%  103M 0s
+#14 1.685   2900K .......... .......... .......... .......... .......... 30%  122M 0s
+#14 1.685   2950K .......... .......... .......... .......... .......... 31%  125M 0s
+#14 1.686   3000K .......... .......... .......... .......... .......... 31% 95.8M 0s
+#14 1.686   3050K .......... .......... .......... .......... .......... 32%  114M 0s
+#14 1.687   3100K .......... .......... .......... .......... .......... 32%  122M 0s
+#14 1.687   3150K .......... .......... .......... .......... .......... 33% 78.3M 0s
+#14 1.688   3200K .......... .......... .......... .......... .......... 33% 84.5M 0s
+#14 1.688   3250K .......... .......... .......... .......... .......... 34% 79.1M 0s
+#14 1.689   3300K .......... .......... .......... .......... .......... 34% 77.7M 0s
+#14 1.690   3350K .......... .......... .......... .......... .......... 35% 93.1M 0s
+#14 1.690   3400K .......... .......... .......... .......... .......... 35%  101M 0s
+#14 1.691   3450K .......... .......... .......... .......... .......... 36% 78.9M 0s
+#14 1.691   3500K .......... .......... .......... .......... .......... 36% 86.6M 0s
+#14 1.692   3550K .......... .......... .......... .......... .......... 37% 92.2M 0s
+#14 1.692   3600K .......... .......... .......... .......... .......... 37% 87.7M 0s
+#14 1.693   3650K .......... .......... .......... .......... .......... 38% 78.0M 0s
+#14 1.694   3700K .......... .......... .......... .......... .......... 38% 97.4M 0s
+#14 1.694   3750K .......... .......... .......... .......... .......... 39% 99.4M 0s
+#14 1.695   3800K .......... .......... .......... .......... .......... 39%  104M 0s
+#14 1.695   3850K .......... .......... .......... .......... .......... 40% 78.6M 0s
+#14 1.696   3900K .......... .......... .......... .......... .......... 40% 94.1M 0s
+#14 1.696   3950K .......... .......... .......... .......... .......... 41% 94.3M 0s
+#14 1.697   4000K .......... .......... .......... .......... .......... 41%  131M 0s
+#14 1.697   4050K .......... .......... .......... .......... .......... 42%  113M 0s
+#14 1.697   4100K .......... .......... .......... .......... .......... 43%  108M 0s
+#14 1.698   4150K .......... .......... .......... .......... .......... 43% 1.62M 0s
+#14 1.728   4200K .......... .......... .......... .......... .......... 44% 92.6M 0s
+#14 1.728   4250K .......... .......... .......... .......... .......... 44% 94.9M 0s
+#14 1.729   4300K .......... .......... .......... .......... .......... 45% 94.8M 0s
+#14 1.730   4350K .......... .......... .......... .......... .......... 45% 84.2M 0s
+#14 1.730   4400K .......... .......... .......... .......... .......... 46% 88.9M 0s
+#14 1.731   4450K .......... .......... .......... .......... .......... 46% 93.5M 0s
+#14 1.731   4500K .......... .......... .......... .......... .......... 47% 89.1M 0s
+#14 1.732   4550K .......... .......... .......... .......... .......... 47% 78.4M 0s
+#14 1.732   4600K .......... .......... .......... .......... .......... 48% 82.5M 0s
+#14 1.733   4650K .......... .......... .......... .......... .......... 48% 95.5M 0s
+#14 1.733   4700K .......... .......... .......... .......... .......... 49% 85.8M 0s
+#14 1.734   4750K .......... .......... .......... .......... .......... 49% 72.0M 0s
+#14 1.735   4800K .......... .......... .......... .......... .......... 50% 75.3M 0s
+#14 1.735   4850K .......... .......... .......... .......... .......... 50%  107M 0s
+#14 1.736   4900K .......... .......... .......... .......... .......... 51% 74.1M 0s
+#14 1.736   4950K .......... .......... .......... .......... .......... 51% 79.9M 0s
+#14 1.737   5000K .......... .......... .......... .......... .......... 52% 72.8M 0s
+#14 1.738   5050K .......... .......... .......... .......... .......... 52% 92.2M 0s
+#14 1.738   5100K .......... .......... .......... .......... .......... 53% 86.5M 0s
+#14 1.739   5150K .......... .......... .......... .......... .......... 53% 68.7M 0s
+#14 1.740   5200K .......... .......... .......... .......... .......... 54% 92.8M 0s
+#14 1.740   5250K .......... .......... .......... .......... .......... 54% 90.0M 0s
+#14 1.741   5300K .......... .......... .......... .......... .......... 55%  119M 0s
+#14 1.741   5350K .......... .......... .......... .......... .......... 55% 63.9M 0s
+#14 1.742   5400K .......... .......... .......... .......... .......... 56% 88.3M 0s
+#14 1.742   5450K .......... .......... .......... .......... .......... 56% 90.4M 0s
+#14 1.743   5500K .......... .......... .......... .......... .......... 57% 71.4M 0s
+#14 1.744   5550K .......... .......... .......... .......... .......... 58% 69.3M 0s
+#14 1.744   5600K .......... .......... .......... .......... .......... 58% 89.0M 0s
+#14 1.745   5650K .......... .......... .......... .......... .......... 59% 86.8M 0s
+#14 1.745   5700K .......... .......... .......... .......... .......... 59% 95.1M 0s
+#14 1.746   5750K .......... .......... .......... .......... .......... 60% 73.1M 0s
+#14 1.747   5800K .......... .......... .......... .......... .......... 60% 77.0M 0s
+#14 1.747   5850K .......... .......... .......... .......... .......... 61% 85.3M 0s
+#14 1.748   5900K .......... .......... .......... .......... .......... 61%  114M 0s
+#14 1.748   5950K .......... .......... .......... .......... .......... 62% 86.4M 0s
+#14 1.749   6000K .......... .......... .......... .......... .......... 62% 81.6M 0s
+#14 1.749   6050K .......... .......... .......... .......... .......... 63% 76.5M 0s
+#14 1.750   6100K .......... .......... .......... .......... .......... 63% 68.0M 0s
+#14 1.751   6150K .......... .......... .......... .......... .......... 64% 82.9M 0s
+#14 1.751   6200K .......... .......... .......... .......... .......... 64% 88.9M 0s
+#14 1.752   6250K .......... .......... .......... .......... .......... 65% 81.1M 0s
+#14 1.752   6300K .......... .......... .......... .......... .......... 65% 87.2M 0s
+#14 1.753   6350K .......... .......... .......... .......... .......... 66% 79.5M 0s
+#14 1.754   6400K .......... .......... .......... .......... .......... 66%  120M 0s
+#14 1.754   6450K .......... .......... .......... .......... .......... 67%  115M 0s
+#14 1.754   6500K .......... .......... .......... .......... .......... 67%  114M 0s
+#14 1.755   6550K .......... .......... .......... .......... .......... 68%  106M 0s
+#14 1.755   6600K .......... .......... .......... .......... .......... 68%  118M 0s
+#14 1.756   6650K .......... .......... .......... .......... .......... 69% 94.9M 0s
+#14 1.756   6700K .......... .......... .......... .......... .......... 69% 75.0M 0s
+#14 1.757   6750K .......... .......... .......... .......... .......... 70% 69.4M 0s
+#14 1.758   6800K .......... .......... .......... .......... .......... 70% 88.1M 0s
+#14 1.758   6850K .......... .......... .......... .......... .......... 71% 89.9M 0s
+#14 1.759   6900K .......... .......... .......... .......... .......... 72% 89.8M 0s
+#14 1.759   6950K .......... .......... .......... .......... .......... 72% 64.7M 0s
+#14 1.760   7000K .......... .......... .......... .......... .......... 73% 75.0M 0s
+#14 1.761   7050K .......... .......... .......... .......... .......... 73% 92.9M 0s
+#14 1.761   7100K .......... .......... .......... .......... .......... 74%  116M 0s
+#14 1.762   7150K .......... .......... .......... .......... .......... 74% 83.6M 0s
+#14 1.762   7200K .......... .......... .......... .......... .......... 75%  103M 0s
+#14 1.763   7250K .......... .......... .......... .......... .......... 75% 94.6M 0s
+#14 1.763   7300K .......... .......... .......... .......... .......... 76% 88.0M 0s
+#14 1.764   7350K .......... .......... .......... .......... .......... 76% 75.9M 0s
+#14 1.764   7400K .......... .......... .......... .......... .......... 77% 99.4M 0s
+#14 1.765   7450K .......... .......... .......... .......... .......... 77%  113M 0s
+#14 1.765   7500K .......... .......... .......... .......... .......... 78%  102M 0s
+#14 1.766   7550K .......... .......... .......... .......... .......... 78%  106M 0s
+#14 1.766   7600K .......... .......... .......... .......... .......... 79%  109M 0s
+#14 1.767   7650K .......... .......... .......... .......... .......... 79%  114M 0s
+#14 1.767   7700K .......... .......... .......... .......... .......... 80%  104M 0s
+#14 1.768   7750K .......... .......... .......... .......... .......... 80%  131M 0s
+#14 1.768   7800K .......... .......... .......... .......... .......... 81%  120M 0s
+#14 1.768   7850K .......... .......... .......... .......... .......... 81% 93.8M 0s
+#14 1.769   7900K .......... .......... .......... .......... .......... 82%  106M 0s
+#14 1.769   7950K .......... .......... .......... .......... .......... 82% 96.0M 0s
+#14 1.770   8000K .......... .......... .......... .......... .......... 83%  110M 0s
+#14 1.770   8050K .......... .......... .......... .......... .......... 83%  110M 0s
+#14 1.771   8100K .......... .......... .......... .......... .......... 84%  112M 0s
+#14 1.771   8150K .......... .......... .......... .......... .......... 84% 94.1M 0s
+#14 1.772   8200K .......... .......... .......... .......... .......... 85%  105M 0s
+#14 1.772   8250K .......... .......... .......... .......... .......... 86%  116M 0s
+#14 1.773   8300K .......... .......... .......... .......... .......... 86%  141M 0s
+#14 1.773   8350K .......... .......... .......... .......... .......... 87% 1.95M 0s
+#14 1.798   8400K .......... .......... .......... .......... .......... 87%  110M 0s
+#14 1.798   8450K .......... .......... .......... .......... .......... 88%  103M 0s
+#14 1.799   8500K .......... .......... .......... .......... .......... 88% 82.6M 0s
+#14 1.799   8550K .......... .......... .......... .......... .......... 89% 71.7M 0s
+#14 1.800   8600K .......... .......... .......... .......... .......... 89%  105M 0s
+#14 1.801   8650K .......... .......... .......... .......... .......... 90% 94.2M 0s
+#14 1.801   8700K .......... .......... .......... .......... .......... 90% 76.9M 0s
+#14 1.802   8750K .......... .......... .......... .......... .......... 91% 77.9M 0s
+#14 1.802   8800K .......... .......... .......... .......... .......... 91% 88.4M 0s
+#14 1.803   8850K .......... .......... .......... .......... .......... 92% 70.8M 0s
+#14 1.804   8900K .......... .......... .......... .......... .......... 92% 85.3M 0s
+#14 1.804   8950K .......... .......... .......... .......... .......... 93%  101M 0s
+#14 1.805   9000K .......... .......... .......... .......... .......... 93%  123M 0s
+#14 1.805   9050K .......... .......... .......... .......... .......... 94% 88.2M 0s
+#14 1.806   9100K .......... .......... .......... .......... .......... 94%  132M 0s
+#14 1.806   9150K .......... .......... .......... .......... .......... 95%  103M 0s
+#14 1.806   9200K .......... .......... .......... .......... .......... 95%  109M 0s
+#14 1.807   9250K .......... .......... .......... .......... .......... 96%  110M 0s
+#14 1.807   9300K .......... .......... .......... .......... .......... 96%  100M 0s
+#14 1.808   9350K .......... .......... .......... .......... .......... 97% 58.5M 0s
+#14 1.809   9400K .......... .......... .......... .......... .......... 97% 96.7M 0s
+#14 1.809   9450K .......... .......... .......... .......... .......... 98%  118M 0s
+#14 1.810   9500K .......... .......... .......... .......... .......... 98%  138M 0s
+#14 1.810   9550K .......... .......... .......... .......... .......... 99% 85.0M 0s
+#14 1.811   9600K .......... .......... .......... .......... .......... 99%  113M 0s
+#14 1.811   9650K                                                       100%  495G=0.2s
+#14 1.811 
+#14 1.811 2024-08-01 06:45:34 (61.5 MB/s) - '/tmp/nginx/openssl-1.1.1t.tar.gz' saved [9881866/9881866]
+#14 1.811 
+#14 DONE 3.7s
+
+#15 [10/16] RUN wget --no-check-certificate https://github.com/pagespeed/ngx_pagespeed/archive/v1.14.33.1-RC1.tar.gz         -O /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz &&         tar xzf /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz &&         cd /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1 &&         wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-1.14.33.1-RC1.tar.gz &&         tar xzf psol-1.14.33.1-RC1.tar.gz &&         rm -rf /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz &&         rm -rf psol-1.14.33.1-RC1.tar.gz
+#15 0.656 --2024-08-01 06:45:37--  https://github.com/pagespeed/ngx_pagespeed/archive/v1.14.33.1-RC1.tar.gz
+#15 0.656 Resolving github.com (github.com)... 140.82.114.3
+#15 0.658 Connecting to github.com (github.com)|140.82.114.3|:443... connected.
+#15 0.852 WARNING: The certificate of 'github.com' is not trusted.
+#15 0.852 WARNING: The certificate of 'github.com' doesn't have a known issuer.
+#15 0.852 HTTP request sent, awaiting response... 301 Moved Permanently
+#15 1.002 Location: https://github.com/apache/incubator-pagespeed-ngx/archive/v1.14.33.1-RC1.tar.gz [following]
+#15 1.002 --2024-08-01 06:45:37--  https://github.com/apache/incubator-pagespeed-ngx/archive/v1.14.33.1-RC1.tar.gz
+#15 1.002 Reusing existing connection to github.com:443.
+#15 1.002 HTTP request sent, awaiting response... 302 Found
+#15 1.115 Location: https://codeload.github.com/apache/incubator-pagespeed-ngx/tar.gz/refs/tags/v1.14.33.1-RC1 [following]
+#15 1.115 --2024-08-01 06:45:37--  https://codeload.github.com/apache/incubator-pagespeed-ngx/tar.gz/refs/tags/v1.14.33.1-RC1
+#15 1.115 Resolving codeload.github.com (codeload.github.com)... 140.82.114.10
+#15 1.116 Connecting to codeload.github.com (codeload.github.com)|140.82.114.10|:443... connected.
+#15 1.310 WARNING: The certificate of 'codeload.github.com' is not trusted.
+#15 1.310 WARNING: The certificate of 'codeload.github.com' doesn't have a known issuer.
+#15 1.310 HTTP request sent, awaiting response... 200 OK
+#15 1.523 Length: unspecified [application/x-gzip]
+#15 1.523 Saving to: '/tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz'
+#15 1.523 
+#15 1.523      0K .......... .......... .......... .......... ..........  381K
+#15 1.655     50K .......... .......... .......... .......... ..........  761K
+#15 1.720    100K .......... .......... .......... .......... .......... 34.5M
+#15 1.722    150K .......... .......... .......... .......... ........    759K=0.3s
+#15 1.785 
+#15 1.785 2024-08-01 06:45:38 (757 KB/s) - '/tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz' saved [202856]
+#15 1.785 
+#15 1.835 --2024-08-01 06:45:38--  https://dist.apache.org/repos/dist/release/incubator/pagespeed/1.14.36.1/x64/psol-1.14.36.1-apache-incubating-x64.tar.gz
+#15 1.835 Resolving dist.apache.org (dist.apache.org)... 13.90.137.153
+#15 1.860 Connecting to dist.apache.org (dist.apache.org)|13.90.137.153|:443... connected.
+#15 2.092 WARNING: The certificate of 'dist.apache.org' is not trusted.
+#15 2.092 WARNING: The certificate of 'dist.apache.org' doesn't have a known issuer.
+#15 2.092 HTTP request sent, awaiting response... 404 Not Found
+#15 2.185 2024-08-01 06:45:38 ERROR 404: Not Found.
+#15 2.185 
+#15 ERROR: process "/bin/sh -c wget --no-check-certificate https://github.com/pagespeed/ngx_pagespeed/archive/v$GOOGLE_PAGESPEED_VERSION.tar.gz         -O $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         tar xzf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         cd $GOOGLE_PAGESPEED_MODULE_PATH &&         wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-$GOOGLE_PAGESPEED_VERSION.tar.gz &&         tar xzf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz &&         rm -rf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         rm -rf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz" did not complete successfully: exit code: 8
+------
+ > [10/16] RUN wget --no-check-certificate https://github.com/pagespeed/ngx_pagespeed/archive/v1.14.33.1-RC1.tar.gz         -O /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz &&         tar xzf /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz &&         cd /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1 &&         wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-1.14.33.1-RC1.tar.gz &&         tar xzf psol-1.14.33.1-RC1.tar.gz &&         rm -rf /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz &&         rm -rf psol-1.14.33.1-RC1.tar.gz:
+1.116 Connecting to codeload.github.com (codeload.github.com)|140.82.114.10|:443... connected.
+1.310 WARNING: The certificate of 'codeload.github.com' is not trusted.
+1.310 WARNING: The certificate of 'codeload.github.com' doesn't have a known issuer.
+200 OK
+connected.
+2.092 WARNING: The certificate of 'dist.apache.org' is not trusted.
+2.092 WARNING: The certificate of 'dist.apache.org' doesn't have a known issuer.
+2.092 HTTP request sent, awaiting response... 404 Not Found
+2.185 2024-08-01 06:45:38 ERROR 404: Not Found.
+2.185 
+------
+Dockerfile:75
+--------------------
+  74 |     
+  75 | >>> RUN wget --no-check-certificate https://github.com/pagespeed/ngx_pagespeed/archive/v$GOOGLE_PAGESPEED_VERSION.tar.gz \
+  76 | >>>         -O $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz && \
+  77 | >>>         tar xzf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz && \
+  78 | >>>         cd $GOOGLE_PAGESPEED_MODULE_PATH && \
+  79 | >>>         wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-$GOOGLE_PAGESPEED_VERSION.tar.gz && \
+  80 | >>>         tar xzf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz && \
+  81 | >>>         rm -rf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz && \
+  82 | >>>         rm -rf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz
+  83 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c wget --no-check-certificate https://github.com/pagespeed/ngx_pagespeed/archive/v$GOOGLE_PAGESPEED_VERSION.tar.gz         -O $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         tar xzf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         cd $GOOGLE_PAGESPEED_MODULE_PATH &&         wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-$GOOGLE_PAGESPEED_VERSION.tar.gz &&         tar xzf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz &&         rm -rf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         rm -rf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz" did not complete successfully: exit code: 8
+Duration: 1:10.12

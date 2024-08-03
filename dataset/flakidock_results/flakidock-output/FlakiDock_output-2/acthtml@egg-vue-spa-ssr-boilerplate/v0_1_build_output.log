@@ -1,0 +1,95 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 580B done
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 174B done
+#2 DONE 0.5s
+
+#1 [internal] load build definition from Dockerfile
+#1 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/mhart/alpine-node:8.9
+#3 ...
+
+#4 [auth] mhart/alpine-node:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/mhart/alpine-node:8.9
+#3 DONE 1.2s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/6] FROM docker.io/mhart/alpine-node:8.9@sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2
+#6 resolve docker.io/mhart/alpine-node:8.9@sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2 0.1s done
+#6 sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2 740B / 740B done
+#6 sha256:9b2702ab4719621becb2c66ce01586674999d447ee903bfd4474ea16df40e3d7 6.87kB / 6.87kB done
+#6 sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32 0B / 1.99MB 0.2s
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 843.05kB 0.0s done
+#5 DONE 0.5s
+
+#6 [1/6] FROM docker.io/mhart/alpine-node:8.9@sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2
+#6 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 0B / 20.24MB 0.3s
+#6 sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32 1.99MB / 1.99MB 0.4s
+#6 extracting sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32
+#6 sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32 1.99MB / 1.99MB 0.5s done
+#6 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 6.29MB / 20.24MB 0.5s
+#6 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 20.24MB / 20.24MB 0.7s
+#6 extracting sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32 0.2s done
+#6 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 20.24MB / 20.24MB 1.1s done
+#6 extracting sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 0.1s
+#6 extracting sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 1.8s done
+#6 DONE 4.0s
+
+#7 [2/6] RUN mkdir -p /usr/local/project/
+#7 DONE 4.0s
+
+#8 [3/6] COPY . /usr/local/project/
+#8 DONE 0.7s
+
+#9 [4/6] WORKDIR /usr/local/project/
+#9 DONE 0.5s
+
+#10 [5/6] RUN npm i --registry=https://registry.npm.taobao.org
+#10 6.078 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: array-unique@0.2.1 (node_modules/array-unique):
+#10 6.079 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: request to https://registry.npm.taobao.org/array-unique failed, reason: certificate has expired
+#10 6.079 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: arr-diff@2.0.0 (node_modules/arr-diff):
+#10 6.079 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: request to https://registry.npm.taobao.org/arr-diff failed, reason: certificate has expired
+#10 6.079 
+#10 6.082 npm ERR! code CERT_HAS_EXPIRED
+#10 6.082 npm ERR! errno CERT_HAS_EXPIRED
+#10 6.082 npm ERR! request to https://registry.npm.taobao.org/abbrev failed, reason: certificate has expired
+#10 6.148 
+#10 6.148 npm ERR! A complete log of this run can be found in:
+#10 6.148 npm ERR!     /root/.npm/_logs/2024-08-01T02_27_26_847Z-debug.log
+#10 ERROR: process "/bin/sh -c npm i --registry=https://registry.npm.taobao.org" did not complete successfully: exit code: 1
+------
+ > [5/6] RUN npm i --registry=https://registry.npm.taobao.org:
+6.079 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: request to https://registry.npm.taobao.org/array-unique failed, reason: certificate has expired
+6.079 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: arr-diff@2.0.0 (node_modules/arr-diff):
+6.079 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: request to https://registry.npm.taobao.org/arr-diff failed, reason: certificate has expired
+6.079 
+6.082 npm ERR! code CERT_HAS_EXPIRED
+6.082 npm ERR! errno CERT_HAS_EXPIRED
+6.082 npm ERR! request to https://registry.npm.taobao.org/abbrev failed, reason: certificate has expired
+6.148 
+6.148 npm ERR! A complete log of this run can be found in:
+6.148 npm ERR!     /root/.npm/_logs/2024-08-01T02_27_26_847Z-debug.log
+------
+Dockerfile:14
+--------------------
+  12 |     
+  13 |     # 安装依赖
+  14 | >>> RUN npm i --registry=https://registry.npm.taobao.org
+  15 |     
+  16 |     # 编译
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm i --registry=https://registry.npm.taobao.org" did not complete successfully: exit code: 1
+Duration: 0:17.98

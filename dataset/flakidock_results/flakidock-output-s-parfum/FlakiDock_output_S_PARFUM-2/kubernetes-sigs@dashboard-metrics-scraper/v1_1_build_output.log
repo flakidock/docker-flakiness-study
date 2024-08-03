@@ -1,0 +1,15 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.55kB done
+#1 DONE 0.0s
+v1_Dockerfile:5
+--------------------
+   3 |     
+   4 |     # First stage: build the executable.
+   5 | >>> FROM golang ${GO_VERSION}-stretch builder
+   6 |     
+   7 |     # Expose global args
+--------------------
+ERROR: failed to solve: dockerfile parse error on line 5: FROM requires either one or three arguments
+Duration: 0:0.33

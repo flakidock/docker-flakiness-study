@@ -1,0 +1,106 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 690B done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/php:5.6-cli
+#3 ...
+
+#4 [auth] library/php:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/php:5.6-cli
+#3 DONE 1.5s
+
+#5 [1/6] FROM docker.io/library/php:5.6-cli@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143
+#5 resolve docker.io/library/php:5.6-cli@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143
+#5 resolve docker.io/library/php:5.6-cli@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143 0.2s done
+#5 sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143 2.06kB / 2.06kB done
+#5 sha256:43a5c6708c8f9ed1d59a133730c18fdec2362f040d9daf3b1cffa830d10af1a8 1.99kB / 1.99kB done
+#5 sha256:36c3c974e6ee402fdf62d52d3fb918ad97653661e10d9b59dac86b5f1fc52dd3 9.13kB / 9.13kB done
+#5 DONE 1.6s
+
+#6 [2/6] RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates curl git libssl-dev
+#6 0.463 Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+#6 0.465 Ign:2 http://security.debian.org/debian-security stretch/updates Release
+#6 0.468 Ign:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.471 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.473 Ign:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.476 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.479 Ign:5 http://deb.debian.org/debian stretch InRelease
+#6 0.479 Ign:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.481 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.484 Ign:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.487 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.489 Ign:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.490 Ign:6 http://deb.debian.org/debian stretch-updates InRelease
+#6 0.492 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.495 Err:3 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+#6 0.495   404  Not Found [IP: 151.101.66.132 80]
+#6 0.497 Ign:4 http://security.debian.org/debian-security stretch/updates/main all Packages
+#6 0.501 Ign:7 http://deb.debian.org/debian stretch Release
+#6 0.512 Ign:8 http://deb.debian.org/debian stretch-updates Release
+#6 0.523 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.534 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.545 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.557 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.568 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.579 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.590 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.601 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.612 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.622 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.633 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.643 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.654 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.665 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.676 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.688 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.698 Ign:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.709 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.719 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.730 Ign:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.740 Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+#6 0.740   404  Not Found
+#6 0.761 Ign:10 http://deb.debian.org/debian stretch/main all Packages
+#6 0.772 Ign:11 http://deb.debian.org/debian stretch-updates/main all Packages
+#6 0.782 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+#6 0.782   404  Not Found
+#6 0.786 Reading package lists...
+#6 0.796 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+#6 0.796 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+#6 0.796 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+#6 0.796 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+#6 0.796 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+#6 0.796 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+#6 0.796 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#6 ERROR: process "/bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates curl git libssl-dev" did not complete successfully: exit code: 100
+------
+ > [2/6] RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates curl git libssl-dev:
+0.782 Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+0.782   404  Not Found
+0.786 Reading package lists...
+0.796 W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+0.796 W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+0.796 W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+0.796 E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.66.132 80]
+0.796 E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+0.796 E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+0.796 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+Dockerfile:5
+--------------------
+   3 |     MAINTAINER Herman J. Radtke III <herman@hermanradtke.com>
+   4 |     
+   5 | >>> RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates curl git libssl-dev
+   6 |     RUN curl -sL https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz | tar xvz -C /tmp && /tmp/rust-nightly-x86_64-unknown-linux-gnu/install.sh
+   7 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates curl git libssl-dev" did not complete successfully: exit code: 100
+Duration: 0:6.87

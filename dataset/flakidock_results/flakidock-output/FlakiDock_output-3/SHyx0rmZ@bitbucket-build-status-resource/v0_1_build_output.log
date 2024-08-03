@@ -1,0 +1,150 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 66B done
+#2 DONE 0.3s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 415B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 ...
+
+#4 [auth] library/alpine:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 1.4s
+
+#5 [1/3] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 17.77kB done
+#6 DONE 0.3s
+
+#5 [1/3] FROM docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+#5 resolve docker.io/library/alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 0.3s done
+#5 sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 1.85kB / 1.85kB done
+#5 sha256:eddacbc7e24bf8799a4ed3cdcfa50d4b88a323695ad80f317b6629883b2c2a78 528B / 528B done
+#5 sha256:324bc02ae1231fd9255658c128086395d3fa0aedd5a41ab6b034fd649d1a9260 1.47kB / 1.47kB done
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s
+#5 sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 3.62MB / 3.62MB 0.3s done
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.1s
+#5 extracting sha256:c6a83fedfae6ed8a4f5f7cbb6a7b6f1c1ec3d86fea8cb9e5ba2e5e6673fde9f6 0.2s done
+#5 DONE 1.3s
+
+#7 [2/3] RUN apk update --no-progress &&     apk add --no-cache --no-progress         bash         python3         py3-pip         git         mercurial &&     pip3 install --upgrade pip &&     pip3 install 'requests>=2.8.1'
+#7 0.452 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#7 0.742 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#7 1.254 v3.20.2-45-g194e307d75d [https://dl-cdn.alpinelinux.org/alpine/v3.20/main]
+#7 1.254 v3.20.2-43-g4fdd3a681b2 [https://dl-cdn.alpinelinux.org/alpine/v3.20/community]
+#7 1.254 OK: 24154 distinct packages available
+#7 1.319 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#7 1.406 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#7 1.754 (1/40) Installing ncurses-terminfo-base (6.4_p20240420-r0)
+#7 1.794 (2/40) Installing libncursesw (6.4_p20240420-r0)
+#7 1.802 (3/40) Installing readline (8.2.10-r0)
+#7 1.809 (4/40) Installing bash (5.2.26-r0)
+#7 1.833 Executing bash-5.2.26-r0.post-install
+#7 1.836 (5/40) Installing ca-certificates (20240705-r0)
+#7 1.861 (6/40) Installing brotli-libs (1.1.0-r2)
+#7 1.875 (7/40) Installing c-ares (1.28.1-r0)
+#7 1.881 (8/40) Installing libunistring (1.2-r0)
+#7 1.899 (9/40) Installing libidn2 (2.3.7-r0)
+#7 1.906 (10/40) Installing nghttp2-libs (1.62.1-r0)
+#7 1.912 (11/40) Installing libpsl (0.21.5-r1)
+#7 1.917 (12/40) Installing zstd-libs (1.5.6-r0)
+#7 1.977 (13/40) Installing libcurl (8.9.0-r0)
+#7 1.987 (14/40) Installing libexpat (2.6.2-r0)
+#7 1.992 (15/40) Installing pcre2 (10.43-r0)
+#7 2.006 (16/40) Installing git (2.45.2-r0)
+#7 2.111 (17/40) Installing git-init-template (2.45.2-r0)
+#7 2.116 (18/40) Installing libbz2 (1.0.8-r6)
+#7 2.273 (19/40) Installing libffi (3.4.6-r0)
+#7 2.278 (20/40) Installing gdbm (1.23-r1)
+#7 2.282 (21/40) Installing xz-libs (5.6.1-r3)
+#7 2.289 (22/40) Installing libgcc (13.2.1_git20240309-r0)
+#7 2.294 (23/40) Installing libstdc++ (13.2.1_git20240309-r0)
+#7 2.320 (24/40) Installing mpdecimal (4.0.0-r0)
+#7 2.325 (25/40) Installing libpanelw (6.4_p20240420-r0)
+#7 2.328 (26/40) Installing sqlite-libs (3.45.3-r1)
+#7 2.350 (27/40) Installing python3 (3.12.3-r1)
+#7 3.911 (28/40) Installing python3-pycache-pyc0 (3.12.3-r1)
+#7 4.165 (29/40) Installing pyc (3.12.3-r1)
+#7 4.167 (30/40) Installing mercurial-pyc (6.7.4-r0)
+#7 4.407 (31/40) Installing python3-pyc (3.12.3-r1)
+#7 4.414 (32/40) Installing mercurial (6.7.4-r0)
+#7 4.628 (33/40) Installing py3-parsing (3.1.2-r1)
+#7 4.637 (34/40) Installing py3-parsing-pyc (3.1.2-r1)
+#7 4.647 (35/40) Installing py3-packaging (24.0-r1)
+#7 4.674 (36/40) Installing py3-packaging-pyc (24.0-r1)
+#7 4.681 (37/40) Installing py3-setuptools (69.5.1-r0)
+#7 4.790 (38/40) Installing py3-setuptools-pyc (69.5.1-r0)
+#7 4.912 (39/40) Installing py3-pip (24.0-r2)
+#7 5.092 (40/40) Installing py3-pip-pyc (24.0-r2)
+#7 5.319 Executing busybox-1.36.1-r29.trigger
+#7 5.325 Executing ca-certificates-20240705-r0.trigger
+#7 5.372 OK: 110 MiB in 54 packages
+#7 7.249 error: externally-managed-environment
+#7 7.249 
+#7 7.249 × This environment is externally managed
+#7 7.249 ╰─> 
+#7 7.249     The system-wide python installation should be maintained using the system
+#7 7.249     package manager (apk) only.
+#7 7.249     
+#7 7.249     If the package in question is not packaged already (and hence installable via
+#7 7.249     "apk add py3-somepackage"), please consider installing it inside a virtual
+#7 7.249     environment, e.g.:
+#7 7.249     
+#7 7.249     python3 -m venv /path/to/venv
+#7 7.249     . /path/to/venv/bin/activate
+#7 7.249     pip install mypackage
+#7 7.249     
+#7 7.249     To exit the virtual environment, run:
+#7 7.249     
+#7 7.249     deactivate
+#7 7.249     
+#7 7.249     The virtual environment is not deleted, and can be re-entered by re-sourcing
+#7 7.249     the activate file.
+#7 7.249     
+#7 7.249     To automatically manage virtual environments, consider using pipx (from the
+#7 7.249     pipx package).
+#7 7.249 
+#7 7.249 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+#7 7.249 hint: See PEP 668 for the detailed specification.
+#7 ERROR: process "/bin/sh -c apk update --no-progress &&     apk add --no-cache --no-progress         bash         python3         py3-pip         git         mercurial &&     pip3 install --upgrade pip &&     pip3 install 'requests>=2.8.1'" did not complete successfully: exit code: 1
+------
+ > [2/3] RUN apk update --no-progress &&     apk add --no-cache --no-progress         bash         python3         py3-pip         git         mercurial &&     pip3 install --upgrade pip &&     pip3 install 'requests>=2.8.1':
+7.249     deactivate
+7.249     
+7.249     The virtual environment is not deleted, and can be re-entered by re-sourcing
+7.249     the activate file.
+7.249     
+7.249     To automatically manage virtual environments, consider using pipx (from the
+7.249     pipx package).
+7.249 
+7.249 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+7.249 hint: See PEP 668 for the detailed specification.
+------
+Dockerfile:7
+--------------------
+   6 |     
+   7 | >>> RUN apk update --no-progress && \
+   8 | >>>     apk add --no-cache --no-progress \
+   9 | >>>         bash \
+  10 | >>>         python3 \
+  11 | >>>         py3-pip \
+  12 | >>>         git \
+  13 | >>>         mercurial && \
+  14 | >>>     pip3 install --upgrade pip && \
+  15 | >>>     pip3 install 'requests>=2.8.1'
+  16 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk update --no-progress &&     apk add --no-cache --no-progress         bash         python3         py3-pip         git         mercurial &&     pip3 install --upgrade pip &&     pip3 install 'requests>=2.8.1'" did not complete successfully: exit code: 1
+Duration: 0:15.16

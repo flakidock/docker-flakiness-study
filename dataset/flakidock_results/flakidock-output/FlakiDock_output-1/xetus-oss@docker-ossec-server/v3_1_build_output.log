@@ -1,0 +1,221 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v3_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 1.48kB done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/phusion/baseimage:0.9.18
+#3 ...
+
+#4 [auth] phusion/baseimage:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/phusion/baseimage:0.9.18
+#3 DONE 0.7s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/9] FROM docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825
+#6 resolve docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825 0.1s done
+#6 DONE 0.1s
+
+#6 [1/9] FROM docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825
+#6 resolve docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825 done
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 5.63kB done
+#5 DONE 0.4s
+
+#6 [1/9] FROM docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825
+#6 sha256:6ffe5d2d6a9775ef70b5a636aac1175f73f556ee82c6457600959bdeded94cb1 65.77MB / 65.77MB done
+#6 sha256:f4e00f994fd4f90d9eafda2f7b3f9ea984599c50d14e608f0a5ec9bb9e365b10 71.47kB / 71.47kB done
+#6 sha256:e99f3d1fc87b485492190612bf949108bd8b25f5299d3ffd16846c6e52760fd7 680B / 680B done
+#6 sha256:ededd75b6753f2169f5c9e895ff69105a336153928df844f15649a7011c40435 12.90kB / 12.90kB done
+#6 sha256:1ddde157dd3180fc84958005bb9fc2671f19fb498d1b4fac08cd01e7834da286 41.61MB / 41.61MB done
+#6 extracting sha256:6ffe5d2d6a9775ef70b5a636aac1175f73f556ee82c6457600959bdeded94cb1 0.1s
+#6 extracting sha256:6ffe5d2d6a9775ef70b5a636aac1175f73f556ee82c6457600959bdeded94cb1 4.6s done
+#6 extracting sha256:f4e00f994fd4f90d9eafda2f7b3f9ea984599c50d14e608f0a5ec9bb9e365b10
+#6 extracting sha256:f4e00f994fd4f90d9eafda2f7b3f9ea984599c50d14e608f0a5ec9bb9e365b10 0.1s done
+#6 extracting sha256:e99f3d1fc87b485492190612bf949108bd8b25f5299d3ffd16846c6e52760fd7
+#6 extracting sha256:e99f3d1fc87b485492190612bf949108bd8b25f5299d3ffd16846c6e52760fd7 done
+#6 extracting sha256:ededd75b6753f2169f5c9e895ff69105a336153928df844f15649a7011c40435
+#6 extracting sha256:ededd75b6753f2169f5c9e895ff69105a336153928df844f15649a7011c40435 done
+#6 extracting sha256:1ddde157dd3180fc84958005bb9fc2671f19fb498d1b4fac08cd01e7834da286
+#6 extracting sha256:1ddde157dd3180fc84958005bb9fc2671f19fb498d1b4fac08cd01e7834da286 3.0s done
+#6 DONE 16.1s
+
+#7 [2/9] RUN apt-get update && apt-get install -y curl gnupg &&     curl https://packages.wazuh.com/key/GPG-KEY-WAZUH -o ossec-key.gpg.key &&     apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key &&     echo "deb https://packages.wazuh.com/4.x/apt/ stable main" >> /etc/apt/sources.list &&     apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect wazuh-agent=4.3.0-1
+#7 13.92 Ign http://archive.ubuntu.com trusty InRelease
+#7 14.06 Get:1 http://archive.ubuntu.com trusty-updates InRelease [56.5 kB]
+#7 23.15 Get:2 http://archive.ubuntu.com trusty-security InRelease [56.4 kB]
+#7 23.41 Get:3 http://archive.ubuntu.com trusty Release.gpg [933 B]
+#7 23.54 Get:4 http://archive.ubuntu.com trusty Release [58.5 kB]
+#7 27.71 Get:5 http://archive.ubuntu.com trusty-updates/main Sources [809 kB]
+#7 37.27 Get:6 http://archive.ubuntu.com trusty-updates/restricted Sources [9993 B]
+#7 37.54 Get:7 http://archive.ubuntu.com trusty-updates/universe Sources [435 kB]
+#7 38.11 Get:8 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1460 kB]
+#7 38.33 Get:9 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [28.8 kB]
+#7 38.39 Get:10 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [883 kB]
+#7 38.49 Get:11 http://archive.ubuntu.com trusty-security/main Sources [314 kB]
+#7 38.96 Get:12 http://archive.ubuntu.com trusty-security/restricted Sources [7832 B]
+#7 39.42 Get:13 http://archive.ubuntu.com trusty-security/universe Sources [188 kB]
+#7 39.89 Get:14 http://archive.ubuntu.com trusty-security/multiverse Sources [4253 B]
+#7 40.35 Get:15 http://archive.ubuntu.com trusty-security/main amd64 Packages [877 kB]
+#7 40.64 Get:16 http://archive.ubuntu.com trusty-security/restricted amd64 Packages [24.6 kB]
+#7 41.10 Get:17 http://archive.ubuntu.com trusty-security/universe amd64 Packages [490 kB]
+#7 44.67 Get:18 http://archive.ubuntu.com trusty-security/multiverse amd64 Packages [6133 B]
+#7 45.13 Get:19 http://archive.ubuntu.com trusty/main Sources [1335 kB]
+#7 46.14 Get:20 http://archive.ubuntu.com trusty/restricted Sources [5335 B]
+#7 46.40 Get:21 http://archive.ubuntu.com trusty/universe Sources [7926 kB]
+#7 47.55 Get:22 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+#7 47.71 Get:23 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+#7 47.78 Get:24 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+#7 53.61 Fetched 24.3 MB in 35s (684 kB/s)
+#7 53.61 Reading package lists...
+#7 67.99 Reading package lists...
+#7 77.97 Building dependency tree...
+#7 78.09 Reading state information...
+#7 78.16 The following extra packages will be installed:
+#7 78.16   libcurl3
+#7 78.16 Suggested packages:
+#7 78.16   gnupg-curl gnupg-doc xloadimage imagemagick eog libpcsclite1
+#7 78.16 The following packages will be upgraded:
+#7 78.16   curl gnupg libcurl3
+#7 87.12 3 upgraded, 0 newly installed, 0 to remove and 120 not upgraded.
+#7 87.12 Need to get 908 kB of archives.
+#7 87.12 After this operation, 4096 B of additional disk space will be used.
+#7 87.12 Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main curl amd64 7.35.0-1ubuntu2.20 [123 kB]
+#7 87.44 Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libcurl3 amd64 7.35.0-1ubuntu2.20 [173 kB]
+#7 87.60 Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main gnupg amd64 1.4.16-1ubuntu2.6 [611 kB]
+#7 92.44 debconf: unable to initialize frontend: Dialog
+#7 92.44 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 92.44 debconf: falling back to frontend: Readline
+#7 92.45 debconf: unable to initialize frontend: Readline
+#7 92.45 debconf: (This frontend requires a controlling tty.)
+#7 92.45 debconf: falling back to frontend: Teletype
+#7 92.45 dpkg-preconfigure: unable to re-open stdin: 
+#7 92.50 Fetched 908 kB in 0s (1197 kB/s)
+#7 97.10 (Reading database ... 13649 files and directories currently installed.)
+#7 97.10 Preparing to unpack .../curl_7.35.0-1ubuntu2.20_amd64.deb ...
+#7 97.19 Unpacking curl (7.35.0-1ubuntu2.20) over (7.35.0-1ubuntu2.5) ...
+#7 97.50 Preparing to unpack .../libcurl3_7.35.0-1ubuntu2.20_amd64.deb ...
+#7 97.58 Unpacking libcurl3:amd64 (7.35.0-1ubuntu2.20) over (7.35.0-1ubuntu2.5) ...
+#7 97.92 Preparing to unpack .../gnupg_1.4.16-1ubuntu2.6_amd64.deb ...
+#7 98.00 Unpacking gnupg (1.4.16-1ubuntu2.6) over (1.4.16-1ubuntu2.3) ...
+#7 103.5 Setting up gnupg (1.4.16-1ubuntu2.6) ...
+#7 103.6 Setting up libcurl3:amd64 (7.35.0-1ubuntu2.20) ...
+#7 103.7 Setting up curl (7.35.0-1ubuntu2.20) ...
+#7 103.8 Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+#7 108.4   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#7 108.4                                  Dload  Upload   Total   Spent    Left  Speed
+#7 108.4   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3141  100  3141    0     0  76295      0 --:--:-- --:--:-- --:--:-- 76609
+#7 143.6 OK
+#7 143.6 removed 'ossec-key.gpg.key'
+#7 165.6 Get:1 https://packages.wazuh.com stable InRelease
+#7 174.4 Ign http://archive.ubuntu.com trusty InRelease
+#7 174.4 Hit http://archive.ubuntu.com trusty-updates InRelease
+#7 174.4 Hit http://archive.ubuntu.com trusty-security InRelease
+#7 174.6 Hit http://archive.ubuntu.com trusty Release.gpg
+#7 174.6 Hit http://archive.ubuntu.com trusty Release
+#7 187.8 Hit http://archive.ubuntu.com trusty-updates/main Sources
+#7 187.9 Hit http://archive.ubuntu.com trusty-updates/restricted Sources
+#7 188.0 Hit http://archive.ubuntu.com trusty-updates/universe Sources
+#7 188.1 Hit http://archive.ubuntu.com trusty-updates/main amd64 Packages
+#7 188.1 Hit http://archive.ubuntu.com trusty-updates/restricted amd64 Packages
+#7 188.2 Hit http://archive.ubuntu.com trusty-updates/universe amd64 Packages
+#7 192.2 Hit http://archive.ubuntu.com trusty-security/main Sources
+#7 192.3 Hit http://archive.ubuntu.com trusty-security/restricted Sources
+#7 192.4 Hit http://archive.ubuntu.com trusty-security/universe Sources
+#7 192.4 Hit http://archive.ubuntu.com trusty-security/multiverse Sources
+#7 192.5 Hit http://archive.ubuntu.com trusty-security/main amd64 Packages
+#7 192.6 Hit http://archive.ubuntu.com trusty-security/restricted amd64 Packages
+#7 192.6 Hit http://archive.ubuntu.com trusty-security/universe amd64 Packages
+#7 192.7 Hit http://archive.ubuntu.com trusty-security/multiverse amd64 Packages
+#7 192.8 Hit http://archive.ubuntu.com trusty/main Sources
+#7 192.9 Hit http://archive.ubuntu.com trusty/restricted Sources
+#7 192.9 Hit http://archive.ubuntu.com trusty/universe Sources
+#7 193.0 Hit http://archive.ubuntu.com trusty/main amd64 Packages
+#7 193.2 Hit http://archive.ubuntu.com trusty/restricted amd64 Packages
+#7 193.3 Hit http://archive.ubuntu.com trusty/universe amd64 Packages
+#7 199.0 Fetched 65.0 kB in 29s (2234 B/s)
+#7 199.0 Reading package lists...
+#7 213.4 Reading package lists...
+#7 223.3 Building dependency tree...
+#7 223.5 Reading state information...
+#7 223.5 The following extra packages will be installed:
+#7 223.5   libtcl8.6
+#7 223.5 Suggested packages:
+#7 223.5   tcl8.6
+#7 223.5 The following NEW packages will be installed:
+#7 223.5   expect libtcl8.6 wazuh-agent
+#7 241.3 0 upgraded, 3 newly installed, 0 to remove and 120 not upgraded.
+#7 241.3 Need to get 9236 kB of archives.
+#7 241.3 After this operation, 30.7 MB of additional disk space will be used.
+#7 241.3 Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main libtcl8.6 amd64 8.6.1-4ubuntu1 [841 kB]
+#7 241.5 Get:2 https://packages.wazuh.com/4.x/apt/ stable/main wazuh-agent amd64 4.3.0-1 [8244 kB]
+#7 241.8 Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main expect amd64 5.45-5ubuntu1 [152 kB]
+#7 274.2 Preconfiguring packages ...
+#7 274.3 Fetched 9236 kB in 0s (11.2 MB/s)
+#7 278.8 Selecting previously unselected package libtcl8.6:amd64.
+#7 278.8 (Reading database ... 13649 files and directories currently installed.)
+#7 278.8 Preparing to unpack .../libtcl8.6_8.6.1-4ubuntu1_amd64.deb ...
+#7 278.8 Unpacking libtcl8.6:amd64 (8.6.1-4ubuntu1) ...
+#7 279.3 Selecting previously unselected package expect.
+#7 279.3 Preparing to unpack .../expect_5.45-5ubuntu1_amd64.deb ...
+#7 279.3 Unpacking expect (5.45-5ubuntu1) ...
+#7 279.6 Selecting previously unselected package wazuh-agent.
+#7 279.6 Preparing to unpack .../wazuh-agent_4.3.0-1_amd64.deb ...
+#7 279.6 Unpacking wazuh-agent (4.3.0-1) ...
+#7 280.4 Processing triggers for ureadahead (0.100.0-16) ...
+#7 285.0 Setting up libtcl8.6:amd64 (8.6.1-4ubuntu1) ...
+#7 285.1 Setting up expect (5.45-5ubuntu1) ...
+#7 285.2 Setting up wazuh-agent (4.3.0-1) ...
+#7 286.6 Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+#7 286.6 Processing triggers for ureadahead (0.100.0-16) ...
+#7 DONE 291.4s
+
+#8 [3/9] ADD default_agent /var/ossec/default_agent
+#8 DONE 0.6s
+
+#9 [4/9] RUN service wazuh-agent restart &&     /var/ossec/bin/manage_agents -f /default_agent &&     rm /var/ossec/default_agent &&     service wazuh-agent stop &&     echo -n "" /var/ossec/logs/ossec.log
+#9 0.785 wazuh-modulesd not running...
+#9 0.787 wazuh-logcollector not running...
+#9 0.790 wazuh-syscheckd not running...
+#9 0.792 wazuh-agentd not running...
+#9 0.794 wazuh-execd not running...
+#9 0.795 Wazuh v4.3.0 Stopped
+#9 0.811 2024/07/31 01:52:11 wazuh-agentd: ERROR: (4112): Invalid server address found: 'MANAGER_IP'
+#9 0.811 2024/07/31 01:52:11 wazuh-agentd: CRITICAL: (1215): No client configured. Exiting.
+#9 0.812 wazuh-agentd: Configuration error. Exiting
+#9 ERROR: process "/bin/sh -c service wazuh-agent restart &&     /var/ossec/bin/manage_agents -f /default_agent &&     rm /var/ossec/default_agent &&     service wazuh-agent stop &&     echo -n \"\" /var/ossec/logs/ossec.log" did not complete successfully: exit code: 1
+------
+ > [4/9] RUN service wazuh-agent restart &&     /var/ossec/bin/manage_agents -f /default_agent &&     rm /var/ossec/default_agent &&     service wazuh-agent stop &&     echo -n "" /var/ossec/logs/ossec.log:
+0.785 wazuh-modulesd not running...
+0.787 wazuh-logcollector not running...
+0.790 wazuh-syscheckd not running...
+0.792 wazuh-agentd not running...
+0.794 wazuh-execd not running...
+0.795 Wazuh v4.3.0 Stopped
+0.811 2024/07/31 01:52:11 wazuh-agentd: ERROR: (4112): Invalid server address found: 'MANAGER_IP'
+0.811 2024/07/31 01:52:11 wazuh-agentd: CRITICAL: (1215): No client configured. Exiting.
+0.812 wazuh-agentd: Configuration error. Exiting
+------
+v3_Dockerfile:19
+--------------------
+  18 |     ADD default_agent /var/ossec/default_agent
+  19 | >>> RUN service wazuh-agent restart && \
+  20 | >>>     /var/ossec/bin/manage_agents -f /default_agent && \
+  21 | >>>     rm /var/ossec/default_agent && \
+  22 | >>>     service wazuh-agent stop && \
+  23 | >>>     echo -n "" /var/ossec/logs/ossec.log
+  24 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c service wazuh-agent restart &&     /var/ossec/bin/manage_agents -f /default_agent &&     rm /var/ossec/default_agent &&     service wazuh-agent stop &&     echo -n \"\" /var/ossec/logs/ossec.log" did not complete successfully: exit code: 1
+Duration: 5:10.88

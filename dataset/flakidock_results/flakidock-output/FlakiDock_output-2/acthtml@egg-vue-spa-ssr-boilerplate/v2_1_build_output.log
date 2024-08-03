@@ -1,0 +1,182 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v2_Dockerfile
+#1 transferring dockerfile:
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 174B done
+#2 DONE 0.5s
+
+#1 [internal] load build definition from v2_Dockerfile
+#1 transferring dockerfile: 594B done
+#1 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/mhart/alpine-node:8.9
+#3 DONE 0.5s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/mhart/alpine-node:8.9@sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2
+#5 resolve docker.io/mhart/alpine-node:8.9@sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2 0.1s done
+#5 sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2 740B / 740B done
+#5 sha256:9b2702ab4719621becb2c66ce01586674999d447ee903bfd4474ea16df40e3d7 6.87kB / 6.87kB done
+#5 sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32 1.99MB / 1.99MB 0.3s
+#5 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 0B / 20.24MB 0.3s
+#5 sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32 1.99MB / 1.99MB 0.3s done
+#5 extracting sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 843.65kB 0.0s done
+#4 DONE 0.6s
+
+#5 [1/6] FROM docker.io/mhart/alpine-node:8.9@sha256:f0995682c724a4a91d5343b77fa505414cc9a4ebdfab1d437a5957e97c9d7bb2
+#5 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 7.34MB / 20.24MB 0.5s
+#5 extracting sha256:605ce1bd3f3164f2949a30501cc596f52a72de05da1306ab360055f0d7130c32 0.2s done
+#5 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 14.68MB / 20.24MB 0.7s
+#5 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 20.24MB / 20.24MB 0.9s
+#5 sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 20.24MB / 20.24MB 1.1s done
+#5 extracting sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7
+#5 extracting sha256:1a6c57c6563ef99c36b144c48f2663034a40f906b683759b61450d4cb8216ca7 1.7s done
+#5 DONE 3.9s
+
+#6 [2/6] RUN mkdir -p /usr/local/project/
+#6 DONE 3.1s
+
+#7 [3/6] COPY . /usr/local/project/
+#7 DONE 0.7s
+
+#8 [4/6] WORKDIR /usr/local/project/
+#8 DONE 0.5s
+
+#9 [5/6] RUN npm config set registry=https://registry.npmjs.org/ && npm i
+#9 4.419 npm WARN notice [SECURITY] atob has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=atob - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 4.502 npm WARN notice [SECURITY] ansi-html has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=ansi-html - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 5.319 npm WARN notice [SECURITY] egg-scripts has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=egg-scripts - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 5.392 npm WARN notice [SECURITY] vue-template-compiler has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=vue-template-compiler - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 5.414 npm WARN notice [SECURITY] yargs-parser has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=yargs-parser - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 5.462 npm WARN notice [SECURITY] axios has the following vulnerabilities: 2 high, 2 moderate. Go here for more details: https://github.com/advisories?query=axios - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 5.793 npm WARN notice [SECURITY] y18n has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=y18n - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 5.793 npm WARN notice [SECURITY] yargs-parser has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=yargs-parser - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 5.972 npm WARN notice [SECURITY] html-minifier has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=html-minifier - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 5.987 npm WARN notice [SECURITY] nunjucks has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=nunjucks - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 6.747 npm WARN notice [SECURITY] degenerator has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=degenerator - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 6.747 npm WARN notice [SECURITY] pac-resolver has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=pac-resolver - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 6.813 npm WARN notice [SECURITY] async has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=async - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 6.841 npm WARN notice [SECURITY] webpack-dev-middleware has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=webpack-dev-middleware - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 6.932 npm WARN notice [SECURITY] kind-of has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=kind-of - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 7.009 npm WARN notice [SECURITY] handlebars has the following vulnerabilities: 3 critical, 6 high, 1 moderate. Go here for more details: https://github.com/advisories?query=handlebars - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 7.021 npm WARN notice [SECURITY] braces has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=braces - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 7.047 npm WARN notice [SECURITY] glob-parent has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=glob-parent - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 7.176 npm WARN notice [SECURITY] loader-utils has the following vulnerabilities: 1 critical, 2 high. Go here for more details: https://github.com/advisories?query=loader-utils - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 7.938 npm WARN notice [SECURITY] byte has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=byte - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 8.454 npm WARN notice [SECURITY] set-value has the following vulnerabilities: 1 critical, 1 high. Go here for more details: https://github.com/advisories?query=set-value - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 8.767 npm WARN notice [SECURITY] set-getter has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=set-getter - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 9.504 npm WARN notice [SECURITY] babel-traverse has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=babel-traverse - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 9.672 npm WARN notice [SECURITY] postcss has the following vulnerabilities: 2 moderate. Go here for more details: https://github.com/advisories?query=postcss - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 9.672 npm WARN notice [SECURITY] postcss has the following vulnerabilities: 2 moderate. Go here for more details: https://github.com/advisories?query=postcss - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 9.708 npm WARN notice [SECURITY] postcss has the following vulnerabilities: 2 moderate. Go here for more details: https://github.com/advisories?query=postcss - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 9.780 npm WARN notice [SECURITY] postcss has the following vulnerabilities: 2 moderate. Go here for more details: https://github.com/advisories?query=postcss - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 9.781 npm WARN notice [SECURITY] postcss has the following vulnerabilities: 2 moderate. Go here for more details: https://github.com/advisories?query=postcss - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 9.806 npm WARN notice [SECURITY] thenify has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=thenify - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 9.853 npm WARN notice [SECURITY] postcss has the following vulnerabilities: 2 moderate. Go here for more details: https://github.com/advisories?query=postcss - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 10.32 npm WARN notice [SECURITY] ajv has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=ajv - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 10.61 npm WARN notice [SECURITY] ansi-regex has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=ansi-regex - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 10.78 npm WARN notice [SECURITY] dicer has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=dicer - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 10.88 npm WARN notice [SECURITY] set-value has the following vulnerabilities: 1 critical, 1 high. Go here for more details: https://github.com/advisories?query=set-value - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 11.18 npm WARN notice [SECURITY] clean-css has the following vulnerability: 1 low. Go here for more details: https://github.com/advisories?query=clean-css - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 11.19 npm WARN notice [SECURITY] js-yaml has the following vulnerabilities: 1 high, 1 moderate. Go here for more details: https://github.com/advisories?query=js-yaml - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 11.28 npm WARN notice [SECURITY] js-yaml has the following vulnerabilities: 1 high, 1 moderate. Go here for more details: https://github.com/advisories?query=js-yaml - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 11.57 npm WARN notice [SECURITY] browserify-sign has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=browserify-sign - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 11.68 npm WARN notice [SECURITY] semver has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=semver - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 11.68 npm WARN notice [SECURITY] serialize-javascript has the following vulnerabilities: 1 high, 1 moderate. Go here for more details: https://github.com/advisories?query=serialize-javascript - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 12.07 npm WARN notice [SECURITY] braces has the following vulnerabilities: 2 low. Go here for more details: https://github.com/advisories?query=braces - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 12.42 npm WARN notice [SECURITY] randomatic has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=randomatic - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 12.58 npm WARN notice [SECURITY] qs has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=qs - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 12.71 npm WARN notice [SECURITY] postcss has the following vulnerabilities: 2 moderate. Go here for more details: https://github.com/advisories?query=postcss - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 13.06 npm WARN notice [SECURITY] ajv has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=ajv - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 13.18 npm WARN notice [SECURITY] path-parse has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=path-parse - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 13.22 npm WARN notice [SECURITY] semver has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=semver - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 13.46 npm WARN notice [SECURITY] minimist has the following vulnerabilities: 1 critical, 1 moderate. Go here for more details: https://github.com/advisories?query=minimist - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 13.47 npm WARN notice [SECURITY] loader-utils has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=loader-utils - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 13.78 npm WARN notice [SECURITY] netmask has the following vulnerabilities: 1 critical, 1 moderate. Go here for more details: https://github.com/advisories?query=netmask - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 13.99 npm WARN notice [SECURITY] https-proxy-agent has the following vulnerabilities: 1 critical, 1 moderate. Go here for more details: https://github.com/advisories?query=https-proxy-agent - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.01 npm WARN notice [SECURITY] debug has the following vulnerabilities: 1 high, 1 low. Go here for more details: https://github.com/advisories?query=debug - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.01 npm WARN notice [SECURITY] fsevents has the following vulnerabilities: 2 critical. Go here for more details: https://github.com/advisories?query=fsevents - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.01 npm WARN notice [SECURITY] http-proxy-agent has the following vulnerabilities: 1 high, 1 moderate. Go here for more details: https://github.com/advisories?query=http-proxy-agent - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.11 npm WARN notice [SECURITY] mixin-deep has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=mixin-deep - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.15 npm WARN notice [SECURITY] minimist has the following vulnerabilities: 1 critical, 1 moderate. Go here for more details: https://github.com/advisories?query=minimist - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.25 npm WARN notice [SECURITY] follow-redirects has the following vulnerabilities: 1 high, 3 moderate. Go here for more details: https://github.com/advisories?query=follow-redirects - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.40 npm WARN notice [SECURITY] moment-timezone has the following vulnerabilities: 1 moderate, 1 low. Go here for more details: https://github.com/advisories?query=moment-timezone - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.50 npm WARN notice [SECURITY] minimatch has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=minimatch - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.50 npm WARN notice [SECURITY] elliptic has the following vulnerabilities: 1 high, 1 moderate. Go here for more details: https://github.com/advisories?query=elliptic - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.57 npm WARN notice [SECURITY] mem has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=mem - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.66 npm WARN notice [SECURITY] moment has the following vulnerabilities: 2 high. Go here for more details: https://github.com/advisories?query=moment - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.73 npm WARN notice [SECURITY] macaddress has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=macaddress - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 14.80 npm WARN notice [SECURITY] lodash.template has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=lodash.template - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 15.01 npm WARN notice [SECURITY] lodash has the following vulnerabilities: 1 critical, 3 high, 2 moderate. Go here for more details: https://github.com/advisories?query=lodash - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 15.23 npm WARN notice [SECURITY] json5 has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=json5 - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 15.48 npm WARN notice [SECURITY] is-svg has the following vulnerabilities: 2 high. Go here for more details: https://github.com/advisories?query=is-svg - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 15.48 npm WARN notice [SECURITY] is-url has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=is-url - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 15.65 npm WARN notice [SECURITY] glob-parent has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=glob-parent - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 15.94 npm WARN notice [SECURITY] ini has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=ini - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 15.95 npm WARN notice [SECURITY] ip has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=ip - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 16.17 npm WARN notice [SECURITY] hosted-git-info has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=hosted-git-info - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 16.20 npm WARN notice [SECURITY] growl has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=growl - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 17.37 npm WARN notice [SECURITY] extend2 has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=extend2 - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 17.44 npm WARN notice [SECURITY] extend has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=extend - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 17.83 npm WARN notice [SECURITY] diff has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=diff - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 17.86 npm WARN notice [SECURITY] es5-ext has the following vulnerability: 1 low. Go here for more details: https://github.com/advisories?query=es5-ext - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 17.92 npm WARN notice [SECURITY] decode-uri-component has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=decode-uri-component - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 18.23 npm WARN notice [SECURITY] color-string has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=color-string - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#9 28.82 
+#9 28.82 > uglifyjs-webpack-plugin@0.4.6 postinstall /usr/local/project/node_modules/uglifyjs-webpack-plugin
+#9 28.82 > node lib/post_install.js
+#9 28.82 
+#9 28.96 
+#9 28.96 > egg-ci@1.8.0 postinstall /usr/local/project/node_modules/egg-ci
+#9 28.96 > node install.js
+#9 28.96 
+#9 29.09 [egg-ci] create /usr/local/project/.travis.yml success
+#9 29.09 [egg-ci] create /usr/local/project/appveyor.yml success
+#9 32.80 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/fsevents):
+#9 32.80 npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+#9 32.80 
+#9 32.80 added 1369 packages in 31.256s
+#9 DONE 37.5s
+
+#10 [6/6] RUN npm run build
+#10 1.229 
+#10 1.229 > front-resort-hotel@1.0.0 build /usr/local/project
+#10 1.229 > easywebpack-build
+#10 1.229 
+#10 1.715 build env: prod
+#10 12.90 Hash: [1mce53aed5e87f8f690b55[39m[22m
+#10 12.90 Version: webpack [1m3.11.0[39m[22m
+#10 12.90 Time: [1m10511[39m[22mms
+#10 12.90                               [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m       [1mChunk Names[39m[22m
+#10 12.90        [1m[32mjs/0.ce53aed5e87f8f690b55.js[39m[22m     6.1 kB       [1m0[39m[22m  [1m[32m[emitted][39m[22m         
+#10 12.90        [1m[32mjs/1.ce53aed5e87f8f690b55.js[39m[22m  758 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m         
+#10 12.90        [1m[32mjs/2.ce53aed5e87f8f690b55.js[39m[22m  755 bytes       [1m2[39m[22m  [1m[32m[emitted][39m[22m         
+#10 12.90        [1m[32mjs/3.ce53aed5e87f8f690b55.js[39m[22m  758 bytes       [1m3[39m[22m  [1m[32m[emitted][39m[22m         
+#10 12.90        [1m[32mjs/4.ce53aed5e87f8f690b55.js[39m[22m    1.24 kB       [1m4[39m[22m  [1m[32m[emitted][39m[22m         
+#10 12.90      [1m[33mjs/app.ce53aed5e87f8f690b55.js[39m[22m     [1m[33m262 kB[39m[22m       [1m5[39m[22m  [1m[32m[emitted][39m[22m  [1m[33m[big][39m[22m  app
+#10 12.90   [1m[32mjs/vendor.ce53aed5e87f8f690b55.js[39m[22m     126 kB       [1m6[39m[22m  [1m[32m[emitted][39m[22m         vendor
+#10 12.90 [1m[32mjs/manifest.ce53aed5e87f8f690b55.js[39m[22m     1.4 kB       [1m7[39m[22m  [1m[32m[emitted][39m[22m         manifest
+#10 12.90        [1m[32mvue-ssr-client-manifest.json[39m[22m    7.15 kB        [1m[39m[22m  [1m[32m[emitted][39m[22m         
+#10 12.90 Hash: [1mef576c21b101a1148a5d[39m[22m
+#10 12.90 Version: webpack [1m3.11.0[39m[22m
+#10 12.90 Time: [1m10491[39m[22mms
+#10 12.90                      [1mAsset[39m[22m    [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+#10 12.90 [1m[32mvue-ssr-server-bundle.json[39m[22m  223 kB        [1m[39m[22m  [1m[32m[emitted][39m[22m  
+#10 DONE 13.8s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 4.9s done
+#11 writing image sha256:235c5dacc2cf8459cbdd2639ac77bbb6b5141fd86da012e9a68e00e6feb3bee9 0.0s done
+#11 naming to docker.io/library/image_name_v2_1 0.0s done
+#11 DONE 4.9s
+Duration: 1:7.36

@@ -1,0 +1,66 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.51kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/phusion/baseimage:0.9.18
+#2 ...
+
+#3 [auth] phusion/baseimage:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/phusion/baseimage:0.9.18
+#2 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/9] FROM docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825
+#6 resolve docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825 0.1s done
+#6 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 5.87kB done
+#5 DONE 0.0s
+
+#6 [1/9] FROM docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825
+#6 resolve docker.io/phusion/baseimage:0.9.18@sha256:9e9b3519ecba8acbe7d5218ff53b618dd7308ef6473dd2c2b4bbbb478e2e1825 done
+#6 extracting sha256:6ffe5d2d6a9775ef70b5a636aac1175f73f556ee82c6457600959bdeded94cb1
+#6 sha256:1ddde157dd3180fc84958005bb9fc2671f19fb498d1b4fac08cd01e7834da286 41.61MB / 41.61MB done
+#6 sha256:6ffe5d2d6a9775ef70b5a636aac1175f73f556ee82c6457600959bdeded94cb1 65.77MB / 65.77MB done
+#6 sha256:f4e00f994fd4f90d9eafda2f7b3f9ea984599c50d14e608f0a5ec9bb9e365b10 71.47kB / 71.47kB done
+#6 sha256:e99f3d1fc87b485492190612bf949108bd8b25f5299d3ffd16846c6e52760fd7 680B / 680B done
+#6 sha256:ededd75b6753f2169f5c9e895ff69105a336153928df844f15649a7011c40435 12.90kB / 12.90kB done
+#6 extracting sha256:6ffe5d2d6a9775ef70b5a636aac1175f73f556ee82c6457600959bdeded94cb1 3.9s done
+#6 extracting sha256:f4e00f994fd4f90d9eafda2f7b3f9ea984599c50d14e608f0a5ec9bb9e365b10
+#6 extracting sha256:f4e00f994fd4f90d9eafda2f7b3f9ea984599c50d14e608f0a5ec9bb9e365b10 done
+#6 extracting sha256:e99f3d1fc87b485492190612bf949108bd8b25f5299d3ffd16846c6e52760fd7 done
+#6 extracting sha256:ededd75b6753f2169f5c9e895ff69105a336153928df844f15649a7011c40435 done
+#6 extracting sha256:1ddde157dd3180fc84958005bb9fc2671f19fb498d1b4fac08cd01e7834da286
+#6 extracting sha256:1ddde157dd3180fc84958005bb9fc2671f19fb498d1b4fac08cd01e7834da286 2.5s done
+#6 DONE 9.6s
+
+#7 [2/9] RUN curl -sSL https://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key -o ossec-key.gpg.key &&  apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key &&  echo "deb http://ossec.wazuh.com/repos/apt/ubuntu trusty main" >> /etc/apt/sources.list &&  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect ossec-hids   ossec-hids=2.8.3-4trusty
+#7 0.175 curl: (6) Could not resolve host: ossec.wazuh.com
+#7 ERROR: process "/bin/sh -c curl -sSL https://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key -o ossec-key.gpg.key &&  apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key &&  echo \"deb http://ossec.wazuh.com/repos/apt/ubuntu trusty main\" >> /etc/apt/sources.list &&  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect ossec-hids   ossec-hids=2.8.3-4trusty" did not complete successfully: exit code: 6
+------
+ > [2/9] RUN curl -sSL https://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key -o ossec-key.gpg.key &&  apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key &&  echo "deb http://ossec.wazuh.com/repos/apt/ubuntu trusty main" >> /etc/apt/sources.list &&  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect ossec-hids   ossec-hids=2.8.3-4trusty:
+0.175 curl: (6) Could not resolve host: ossec.wazuh.com
+------
+v1_Dockerfile:9
+--------------------
+   8 |     #
+   9 | >>> RUN curl -sSL https://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key -o ossec-key.gpg.key &&\
+  10 | >>>   apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key &&\
+  11 | >>>   echo "deb http://ossec.wazuh.com/repos/apt/ubuntu trusty main" >> /etc/apt/sources.list &&\
+  12 | >>>   apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect ossec-hids \
+  13 | >>>   ossec-hids=2.8.3-4trusty
+  14 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c curl -sSL https://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key -o ossec-key.gpg.key &&  apt-key add ossec-key.gpg.key && rm -v ossec-key.gpg.key &&  echo \"deb http://ossec.wazuh.com/repos/apt/ubuntu trusty main\" >> /etc/apt/sources.list &&  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yf install expect ossec-hids   ossec-hids=2.8.3-4trusty" did not complete successfully: exit code: 6
+Duration: 0:12.45

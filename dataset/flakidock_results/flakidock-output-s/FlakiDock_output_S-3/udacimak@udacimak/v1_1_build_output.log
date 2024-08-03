@@ -1,0 +1,78 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 1.40kB done
+#1 DONE 0.0s
+
+#2 [auth] library/debian:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/debian:latest
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/11] FROM docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3
+#5 resolve docker.io/library/debian:latest@sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 0.0s done
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 0B / 49.55MB 0.1s
+#5 sha256:45f2e735295654f13e3be10da2a6892c708f71a71be845818f6058982761a6d3 1.85kB / 1.85kB done
+#5 sha256:b1ae8b5bfaa9afa86b50c2a151a442d832c4449cf3731bddf8a728e5628ebb59 529B / 529B done
+#5 sha256:2e5b8d3ef33ebde2b2a943fadb241a63de1535a007a7bd185e7037abfff99f63 1.46kB / 1.46kB done
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 11.53MB / 49.55MB 0.3s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 18.87MB / 49.55MB 0.4s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 28.31MB / 49.55MB 0.5s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 38.80MB / 49.55MB 0.7s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 48.23MB / 49.55MB 0.8s
+#5 sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 49.55MB / 49.55MB 0.9s done
+#5 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 0.1s
+#5 extracting sha256:ca4e5d6727252f0dbc207fbf283cb95e278bf562bda42d35ce6c919583a110a0 2.5s done
+#5 DONE 3.7s
+
+#6 [ 2/11] RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+#6 DONE 0.6s
+
+#7 [ 3/11] RUN apt-get update     && apt-get install -y curl python git     && apt-get -y autoclean
+#7 0.231 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#7 0.269 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#7 0.283 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#7 0.344 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+#7 0.462 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+#7 0.472 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+#7 1.583 Fetched 9225 kB in 1s (6713 kB/s)
+#7 1.583 Reading package lists...
+#7 2.114 Reading package lists...
+#7 2.641 Building dependency tree...
+#7 2.752 Reading state information...
+#7 2.757 Package python is not available, but is referred to by another package.
+#7 2.757 This may mean that the package is missing, has been obsoleted, or
+#7 2.757 is only available from another source
+#7 2.757 However the following packages replace it:
+#7 2.757   python-is-python3 2to3
+#7 2.757 
+#7 2.759 E: Package 'python' has no installation candidate
+#7 ERROR: process "/bin/sh -c apt-get update     && apt-get install -y curl python git     && apt-get -y autoclean" did not complete successfully: exit code: 100
+------
+ > [ 3/11] RUN apt-get update     && apt-get install -y curl python git     && apt-get -y autoclean:
+
+
+
+2.757 Package python is not available, but is referred to by another package.
+2.757 This may mean that the package is missing, has been obsoleted, or
+2.757 is only available from another source
+2.757 However the following packages replace it:
+2.757   python-is-python3 2to3
+2.757 
+2.759 E: Package 'python' has no installation candidate
+------
+v1_Dockerfile:11
+--------------------
+  10 |     # and install dependencies
+  11 | >>> RUN apt-get update \
+  12 | >>>     && apt-get install -y curl python git \
+  13 | >>>     && apt-get -y autoclean
+  14 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update     && apt-get install -y curl python git     && apt-get -y autoclean" did not complete successfully: exit code: 100
+Duration: 0:8.40

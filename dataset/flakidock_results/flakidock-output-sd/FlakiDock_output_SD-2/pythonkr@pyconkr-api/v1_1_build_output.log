@@ -1,0 +1,27 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 285B done
+#2 DONE 0.7s
+
+#1 [internal] load .dockerignore
+#1 DONE 0.8s
+
+#3 [internal] load metadata for docker.io/library/python:3.6.8-buster
+#3 ERROR: docker.io/library/python:3.6.8-buster: not found
+------
+ > [internal] load metadata for docker.io/library/python:3.6.8-buster:
+------
+v1_Dockerfile:1
+--------------------
+   1 | >>> FROM python:3.6.8-buster
+   2 |     
+   3 |     ENV PYTHONUNBUFFERED 1
+--------------------
+ERROR: failed to solve: python:3.6.8-buster: docker.io/library/python:3.6.8-buster: not found
+Duration: 0:1.48

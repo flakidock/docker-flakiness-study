@@ -1,0 +1,341 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 transferring context: 2B done
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.70kB done
+#2 DONE 0.6s
+
+#1 [internal] load .dockerignore
+#1 DONE 0.8s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.9
+#3 DONE 0.6s
+
+#4 [production  1/10] FROM docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011
+#4 resolve docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 12.90kB done
+#5 DONE 0.5s
+
+#4 [production  1/10] FROM docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011
+#4 resolve docker.io/library/alpine:3.9@sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011 0.5s done
+#4 sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011 1.64kB / 1.64kB done
+#4 sha256:65b3a80ebe7471beecbc090c5b2cdd0aafeaefa0715f8f12e40dc918a3a70e32 528B / 528B done
+#4 sha256:78a2ce922f8665f5a227dc5cd9fda87221acba8a7a952b9665f99bc771a29963 1.51kB / 1.51kB done
+#4 sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 0B / 2.77MB 0.1s
+#4 sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 2.77MB / 2.77MB 0.4s
+#4 sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 2.77MB / 2.77MB 0.5s done
+#4 extracting sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5
+#4 extracting sha256:31603596830fc7e56753139f9c2c6bd3759e48a850659506ebfb885d1cf3aef5 0.2s done
+#4 DONE 1.7s
+
+#6 [production  2/10] RUN set -eux 	&& mkdir -p /var/www 	&& apk add --no-cache 		bash 		bind-tools 		curl 		jq 		python3 	&& ln -sf /usr/bin/python3 /usr/bin/python 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+#6 0.793 + mkdir -p /var/www
+#6 0.794 + apk add --no-cache bash bind-tools curl jq python3
+#6 0.799 fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/main/x86_64/APKINDEX.tar.gz
+#6 0.960 fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/community/x86_64/APKINDEX.tar.gz
+#6 1.360 (1/29) Installing ncurses-terminfo-base (6.1_p20190105-r0)
+#6 1.559 (2/29) Installing ncurses-terminfo (6.1_p20190105-r0)
+#6 2.053 (3/29) Installing ncurses-libs (6.1_p20190105-r0)
+#6 2.277 (4/29) Installing readline (7.0.003-r1)
+#6 2.493 (5/29) Installing bash (4.4.19-r1)
+#6 2.710 Executing bash-4.4.19-r1.post-install
+#6 2.713 (6/29) Installing libgcc (8.3.0-r0)
+#6 2.924 (7/29) Installing krb5-conf (1.0-r1)
+#6 3.120 (8/29) Installing libcom_err (1.44.5-r2)
+#6 3.373 (9/29) Installing keyutils-libs (1.6-r0)
+#6 3.569 (10/29) Installing libverto (0.3.0-r1)
+#6 3.844 (11/29) Installing krb5-libs (1.15.5-r1)
+#6 4.109 (12/29) Installing json-c (0.13.1-r1)
+#6 4.318 (13/29) Installing libxml2 (2.9.9-r3)
+#6 4.589 (14/29) Installing bind-libs (9.12.4_p2-r0)
+#6 4.860 (15/29) Installing bind-tools (9.12.4_p2-r0)
+#6 5.119 (16/29) Installing ca-certificates (20191127-r2)
+#6 ...
+
+#7 [builder 2/4] RUN set -x 	&& apk add --no-cache 		gcc 		libffi-dev 		make 		musl-dev 		openssl-dev 		python3 		python3-dev 		py3-pip
+#7 0.742 + apk add --no-cache gcc libffi-dev make musl-dev openssl-dev python3 python3-dev py3-pip
+#7 0.747 fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/main/x86_64/APKINDEX.tar.gz
+#7 0.960 fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/community/x86_64/APKINDEX.tar.gz
+#7 1.176 (1/32) Upgrading musl (1.1.20-r5 -> 1.1.20-r6)
+#7 1.187 (2/32) Upgrading libcrypto1.1 (1.1.1g-r0 -> 1.1.1k-r0)
+#7 1.222 (3/32) Upgrading libssl1.1 (1.1.1g-r0 -> 1.1.1k-r0)
+#7 1.230 (4/32) Installing binutils (2.31.1-r2)
+#7 1.343 (5/32) Installing gmp (6.1.2-r1)
+#7 1.351 (6/32) Installing isl (0.18-r0)
+#7 1.381 (7/32) Installing libgomp (8.3.0-r0)
+#7 1.391 (8/32) Installing libatomic (8.3.0-r0)
+#7 1.399 (9/32) Installing libgcc (8.3.0-r0)
+#7 1.402 (10/32) Installing mpfr3 (3.1.5-r1)
+#7 1.409 (11/32) Installing mpc1 (1.0.3-r1)
+#7 1.412 (12/32) Installing libstdc++ (8.3.0-r0)
+#7 1.426 (13/32) Installing gcc (8.3.0-r0)
+#7 2.255 (14/32) Upgrading musl-utils (1.1.20-r5 -> 1.1.20-r6)
+#7 2.259 (15/32) Installing linux-headers (4.18.13-r1)
+#7 2.429 (16/32) Installing libffi (3.2.1-r6)
+#7 2.432 (17/32) Installing pkgconf (1.6.0-r0)
+#7 2.436 (18/32) Installing libffi-dev (3.2.1-r6)
+#7 2.439 (19/32) Installing make (4.2.1-r2)
+#7 2.445 (20/32) Installing musl-dev (1.1.20-r6)
+#7 2.557 (21/32) Installing openssl-dev (1.1.1k-r0)
+#7 2.732 (22/32) Installing libbz2 (1.0.6-r7)
+#7 2.735 (23/32) Installing expat (2.2.8-r0)
+#7 2.739 (24/32) Installing gdbm (1.13-r1)
+#7 2.744 (25/32) Installing xz-libs (5.2.4-r0)
+#7 2.748 (26/32) Installing ncurses-terminfo-base (6.1_p20190105-r0)
+#7 2.752 (27/32) Installing ncurses-terminfo (6.1_p20190105-r0)
+#7 3.104 (28/32) Installing ncurses-libs (6.1_p20190105-r0)
+#7 3.114 (29/32) Installing readline (7.0.003-r1)
+#7 3.119 (30/32) Installing sqlite-libs (3.28.0-r3)
+#7 3.133 (31/32) Installing python3 (3.6.9-r3)
+#7 4.335 (32/32) Installing python3-dev (3.6.9-r3)
+#7 4.704 Executing busybox-1.29.3-r10.trigger
+#7 4.718 OK: 228 MiB in 42 packages
+#7 ...
+
+#6 [production  2/10] RUN set -eux 	&& mkdir -p /var/www 	&& apk add --no-cache 		bash 		bind-tools 		curl 		jq 		python3 	&& ln -sf /usr/bin/python3 /usr/bin/python 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+#6 8.475 (17/29) Installing nghttp2-libs (1.35.1-r2)
+#6 8.693 (18/29) Installing libssh2 (1.9.0-r1)
+#6 8.900 (19/29) Installing libcurl (7.64.0-r5)
+#6 8.955 (20/29) Installing curl (7.64.0-r5)
+#6 9.172 (21/29) Installing oniguruma (6.9.4-r1)
+#6 9.380 (22/29) Installing jq (1.6-r0)
+#6 9.645 (23/29) Installing libbz2 (1.0.6-r7)
+#6 9.861 (24/29) Installing expat (2.2.8-r0)
+#6 10.08 (25/29) Installing libffi (3.2.1-r6)
+#6 10.28 (26/29) Installing gdbm (1.13-r1)
+#6 10.49 (27/29) Installing xz-libs (5.2.4-r0)
+#6 10.77 (28/29) Installing sqlite-libs (3.28.0-r3)
+#6 11.03 (29/29) Installing python3 (3.6.9-r3)
+#6 ...
+
+#7 [builder 2/4] RUN set -x 	&& apk add --no-cache 		gcc 		libffi-dev 		make 		musl-dev 		openssl-dev 		python3 		python3-dev 		py3-pip
+#7 DONE 13.5s
+
+#8 [builder 3/4] RUN set -x 	&& pip3 install --upgrade pip 	&& pip3 install --no-cache-dir --no-compile awscli 	&& rm -r /usr/lib/python3.6/site-packages/awscli/examples 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf 	&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+'
+#8 1.096 + pip3 install --upgrade pip
+#8 1.814 Collecting pip
+#8 ...
+
+#6 [production  2/10] RUN set -eux 	&& mkdir -p /var/www 	&& apk add --no-cache 		bash 		bind-tools 		curl 		jq 		python3 	&& ln -sf /usr/bin/python3 /usr/bin/python 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+#6 14.32 Executing busybox-1.29.3-r10.trigger
+#6 14.32 Executing ca-certificates-20191127-r2.trigger
+#6 14.37 OK: 79 MiB in 43 packages
+#6 14.40 + ln -sf /usr/bin/python3 /usr/bin/python
+#6 14.40 + find /usr/lib/ -name __pycache__ -print0
+#6 14.40 + xargs -0 -n1 rm -rf
+#6 14.55 + find /usr/lib/ -name '*.pyc' -print0+ 
+#6 14.55 xargs -0 -n1 rm -rf
+#6 DONE 15.5s
+
+#8 [builder 3/4] RUN set -x 	&& pip3 install --upgrade pip 	&& pip3 install --no-cache-dir --no-compile awscli 	&& rm -r /usr/lib/python3.6/site-packages/awscli/examples 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf 	&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+'
+#8 2.057   Downloading https://files.pythonhosted.org/packages/a4/6d/6463d49a933f547439d6b5b98b46af8742cc03ae83543e4d7688c2420f8b/pip-21.3.1-py3-none-any.whl (1.7MB)
+#8 2.273 Installing collected packages: pip
+#8 2.274   Found existing installation: pip 18.1
+#8 2.477     Uninstalling pip-18.1:
+#8 16.00       Successfully uninstalled pip-18.1
+#8 17.59 Successfully installed pip-21.3.1
+#8 17.89 + pip3 install --no-cache-dir --no-compile awscli
+#8 21.48 Collecting awscli
+#8 21.51   Downloading awscli-1.24.10-py3-none-any.whl (3.9 MB)
+#8 21.79 Collecting docutils<0.17,>=0.10
+#8 21.80   Downloading docutils-0.16-py2.py3-none-any.whl (548 kB)
+#8 22.09 Collecting PyYAML<5.5,>=3.10
+#8 22.10   Downloading PyYAML-5.4.1.tar.gz (175 kB)
+#8 22.84   Installing build dependencies: started
+#8 29.53   Installing build dependencies: finished with status 'done'
+#8 29.54   Getting requirements to build wheel: started
+#8 30.07   Getting requirements to build wheel: finished with status 'error'
+#8 30.07   ERROR: Command errored out with exit status 1:
+#8 30.07    command: /usr/bin/python3.6 /usr/lib/python3.6/site-packages/pip/_vendor/pep517/in_process/_in_process.py get_requires_for_build_wheel /tmp/tmprm1buel9
+#8 30.07        cwd: /tmp/pip-install-s0f6y70j/pyyaml_ad6c92740ef743caba965c9ae2328a87
+#8 30.07   Complete output (44 lines):
+#8 30.07   running egg_info
+#8 30.07   writing lib3/PyYAML.egg-info/PKG-INFO
+#8 30.07   writing dependency_links to lib3/PyYAML.egg-info/dependency_links.txt
+#8 30.07   writing top-level names to lib3/PyYAML.egg-info/top_level.txt
+#8 30.07   Traceback (most recent call last):
+#8 30.07     File "/usr/lib/python3.6/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 363, in <module>
+#8 30.07       main()
+#8 30.07     File "/usr/lib/python3.6/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 345, in main
+#8 30.07       json_out['return_val'] = hook(**hook_input['kwargs'])
+#8 30.07     File "/usr/lib/python3.6/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 130, in get_requires_for_build_wheel
+#8 30.07       return hook(config_settings)
+#8 30.07     File "/tmp/pip-build-env-qomfyx8y/overlay/lib/python3.6/site-packages/setuptools/build_meta.py", line 163, in get_requires_for_build_wheel
+#8 30.07       config_settings, requirements=['wheel'])
+#8 30.07     File "/tmp/pip-build-env-qomfyx8y/overlay/lib/python3.6/site-packages/setuptools/build_meta.py", line 143, in _get_build_requires
+#8 30.07       self.run_setup()
+#8 30.07     File "/tmp/pip-build-env-qomfyx8y/overlay/lib/python3.6/site-packages/setuptools/build_meta.py", line 158, in run_setup
+#8 30.07       exec(compile(code, __file__, 'exec'), locals())
+#8 30.07     File "setup.py", line 295, in <module>
+#8 30.07       python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+#8 30.07     File "/tmp/pip-build-env-qomfyx8y/overlay/lib/python3.6/site-packages/setuptools/__init__.py", line 153, in setup
+#8 30.07       return distutils.core.setup(**attrs)
+#8 30.07     File "/usr/lib/python3.6/distutils/core.py", line 148, in setup
+#8 30.07       dist.run_commands()
+#8 30.07     File "/usr/lib/python3.6/distutils/dist.py", line 955, in run_commands
+#8 30.07       self.run_command(cmd)
+#8 30.07     File "/usr/lib/python3.6/distutils/dist.py", line 974, in run_command
+#8 30.07       cmd_obj.run()
+#8 30.07     File "/tmp/pip-build-env-qomfyx8y/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 299, in run
+#8 30.07       self.find_sources()
+#8 30.07     File "/tmp/pip-build-env-qomfyx8y/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 306, in find_sources
+#8 30.07       mm.run()
+#8 30.07     File "/tmp/pip-build-env-qomfyx8y/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 541, in run
+#8 30.07       self.add_defaults()
+#8 30.07     File "/tmp/pip-build-env-qomfyx8y/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 578, in add_defaults
+#8 30.07       sdist.add_defaults(self)
+#8 30.07     File "/tmp/pip-build-env-qomfyx8y/overlay/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 34, in add_defaults
+#8 30.07       self._add_defaults_ext()
+#8 30.07     File "/tmp/pip-build-env-qomfyx8y/overlay/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 118, in _add_defaults_ext
+#8 30.07       self.filelist.extend(build_ext.get_source_files())
+#8 30.07     File "setup.py", line 201, in get_source_files
+#8 30.07       self.cython_sources(ext.sources, ext)
+#8 30.07     File "/usr/lib/python3.6/distutils/cmd.py", line 103, in __getattr__
+#8 30.07       raise AttributeError(attr)
+#8 30.07   AttributeError: cython_sources
+#8 30.07   ----------------------------------------
+#8 30.07 WARNING: Discarding https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz#sha256=607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e (from https://pypi.org/simple/pyyaml/) (requires-python:>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*). Command errored out with exit status 1: /usr/bin/python3.6 /usr/lib/python3.6/site-packages/pip/_vendor/pep517/in_process/_in_process.py get_requires_for_build_wheel /tmp/tmprm1buel9 Check the logs for full command output.
+#8 30.08   Downloading PyYAML-5.4.tar.gz (174 kB)
+#8 30.43   Installing build dependencies: started
+#8 36.91   Installing build dependencies: finished with status 'done'
+#8 36.92   Getting requirements to build wheel: started
+#8 37.45   Getting requirements to build wheel: finished with status 'error'
+#8 37.45   ERROR: Command errored out with exit status 1:
+#8 37.45    command: /usr/bin/python3.6 /usr/lib/python3.6/site-packages/pip/_vendor/pep517/in_process/_in_process.py get_requires_for_build_wheel /tmp/tmpiz_kun2o
+#8 37.45        cwd: /tmp/pip-install-s0f6y70j/pyyaml_3cdd4dcdf8344a9bafcaa99513f04a68
+#8 37.45   Complete output (44 lines):
+#8 37.45   running egg_info
+#8 37.45   writing lib3/PyYAML.egg-info/PKG-INFO
+#8 37.45   writing dependency_links to lib3/PyYAML.egg-info/dependency_links.txt
+#8 37.45   writing top-level names to lib3/PyYAML.egg-info/top_level.txt
+#8 37.45   Traceback (most recent call last):
+#8 37.45     File "/usr/lib/python3.6/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 363, in <module>
+#8 37.45       main()
+#8 37.45     File "/usr/lib/python3.6/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 345, in main
+#8 37.45       json_out['return_val'] = hook(**hook_input['kwargs'])
+#8 37.45     File "/usr/lib/python3.6/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 130, in get_requires_for_build_wheel
+#8 37.45       return hook(config_settings)
+#8 37.45     File "/tmp/pip-build-env-rs7e9zt8/overlay/lib/python3.6/site-packages/setuptools/build_meta.py", line 163, in get_requires_for_build_wheel
+#8 37.45       config_settings, requirements=['wheel'])
+#8 37.45     File "/tmp/pip-build-env-rs7e9zt8/overlay/lib/python3.6/site-packages/setuptools/build_meta.py", line 143, in _get_build_requires
+#8 37.45       self.run_setup()
+#8 37.45     File "/tmp/pip-build-env-rs7e9zt8/overlay/lib/python3.6/site-packages/setuptools/build_meta.py", line 158, in run_setup
+#8 37.45       exec(compile(code, __file__, 'exec'), locals())
+#8 37.45     File "setup.py", line 295, in <module>
+#8 37.45       python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+#8 37.45     File "/tmp/pip-build-env-rs7e9zt8/overlay/lib/python3.6/site-packages/setuptools/__init__.py", line 153, in setup
+#8 37.45       return distutils.core.setup(**attrs)
+#8 37.45     File "/usr/lib/python3.6/distutils/core.py", line 148, in setup
+#8 37.45       dist.run_commands()
+#8 37.45     File "/usr/lib/python3.6/distutils/dist.py", line 955, in run_commands
+#8 37.45       self.run_command(cmd)
+#8 37.45     File "/usr/lib/python3.6/distutils/dist.py", line 974, in run_command
+#8 37.45       cmd_obj.run()
+#8 37.45     File "/tmp/pip-build-env-rs7e9zt8/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 299, in run
+#8 37.45       self.find_sources()
+#8 37.45     File "/tmp/pip-build-env-rs7e9zt8/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 306, in find_sources
+#8 37.45       mm.run()
+#8 37.45     File "/tmp/pip-build-env-rs7e9zt8/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 541, in run
+#8 37.45       self.add_defaults()
+#8 37.45     File "/tmp/pip-build-env-rs7e9zt8/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 578, in add_defaults
+#8 37.45       sdist.add_defaults(self)
+#8 37.45     File "/tmp/pip-build-env-rs7e9zt8/overlay/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 34, in add_defaults
+#8 37.45       self._add_defaults_ext()
+#8 37.45     File "/tmp/pip-build-env-rs7e9zt8/overlay/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 118, in _add_defaults_ext
+#8 37.45       self.filelist.extend(build_ext.get_source_files())
+#8 37.45     File "setup.py", line 201, in get_source_files
+#8 37.45       self.cython_sources(ext.sources, ext)
+#8 37.45     File "/usr/lib/python3.6/distutils/cmd.py", line 103, in __getattr__
+#8 37.45       raise AttributeError(attr)
+#8 37.45   AttributeError: cython_sources
+#8 37.45   ----------------------------------------
+#8 37.45 WARNING: Discarding https://files.pythonhosted.org/packages/b5/fd/15638de2da0a5aa91c095718444624aa565f766fc178249ca6faa372f71a/PyYAML-5.4.tar.gz#sha256=3c49e39ac034fd64fd576d63bb4db53cda89b362768a67f07749d55f128ac18a (from https://pypi.org/simple/pyyaml/) (requires-python:>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*). Command errored out with exit status 1: /usr/bin/python3.6 /usr/lib/python3.6/site-packages/pip/_vendor/pep517/in_process/_in_process.py get_requires_for_build_wheel /tmp/tmpiz_kun2o Check the logs for full command output.
+#8 37.48   Downloading PyYAML-5.3.1.tar.gz (269 kB)
+#8 37.74   Preparing metadata (setup.py): started
+#8 38.07   Preparing metadata (setup.py): finished with status 'done'
+#8 38.14 Collecting s3transfer<0.6.0,>=0.5.0
+#8 38.15   Downloading s3transfer-0.5.2-py3-none-any.whl (79 kB)
+#8 38.22 Collecting rsa<4.8,>=3.1.2
+#8 38.23   Downloading rsa-4.7.2-py3-none-any.whl (34 kB)
+#8 38.30 Collecting colorama<0.4.5,>=0.2.5
+#8 38.31   Downloading colorama-0.4.4-py2.py3-none-any.whl (16 kB)
+#8 41.02 Collecting botocore==1.26.10
+#8 41.04   Downloading botocore-1.26.10-py3-none-any.whl (8.8 MB)
+#8 41.31 Collecting python-dateutil<3.0.0,>=2.1
+#8 41.32   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#8 41.36 Collecting jmespath<2.0.0,>=0.7.1
+#8 41.37   Downloading jmespath-0.10.0-py2.py3-none-any.whl (24 kB)
+#8 41.55 Collecting urllib3<1.27,>=1.25.4
+#8 41.56   Downloading urllib3-1.26.19-py2.py3-none-any.whl (143 kB)
+#8 41.74 Collecting pyasn1>=0.1.3
+#8 41.75   Downloading pyasn1-0.5.1-py2.py3-none-any.whl (84 kB)
+#8 42.42 Collecting six>=1.5
+#8 42.43   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#8 42.51 Using legacy 'setup.py install' for PyYAML, since package 'wheel' is not installed.
+#8 42.71 Installing collected packages: six, urllib3, python-dateutil, jmespath, pyasn1, botocore, s3transfer, rsa, PyYAML, docutils, colorama, awscli
+#8 43.97     Running setup.py install for PyYAML: started
+#8 44.42     Running setup.py install for PyYAML: finished with status 'done'
+#8 46.73 Successfully installed PyYAML-5.3.1 awscli-1.24.10 botocore-1.26.10 colorama-0.4.4 docutils-0.16 jmespath-0.10.0 pyasn1-0.5.1 python-dateutil-2.9.0.post0 rsa-4.7.2 s3transfer-0.5.2 six-1.16.0 urllib3-1.26.19
+#8 46.73 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#8 47.96 + rm -r /usr/lib/python3.6/site-packages/awscli/examples
+#8 48.16 + find /usr/lib/ -name __pycache__ -print0
+#8 48.16 + xargs -0 -n1 rm -rf
+#8 48.47 + + find /usr/lib/ -namexargs '*.pyc' -print0 -0
+#8 48.47  -n1 rm -rf
+#8 48.51 + aws --version
+#8 48.51 + grep -E '^aws-cli/[.0-9]+'
+#8 50.49 aws-cli/1.24.10 Python/3.6.9 Linux/3.10.0-1160.88.1.el7.x86_64 botocore/1.26.10
+#8 DONE 53.0s
+
+#9 [builder 4/4] RUN set -x 	&& pip3 install --no-cache-dir --no-compile supervisor 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+#9 0.754 + pip3 install --no-cache-dir --no-compile supervisor
+#9 2.619 Collecting supervisor
+#9 2.660   Downloading supervisor-4.2.5-py2.py3-none-any.whl (319 kB)
+#9 2.705 Requirement already satisfied: setuptools in /usr/lib/python3.6/site-packages (from supervisor) (40.6.2)
+#9 2.785 Installing collected packages: supervisor
+#9 2.902 Successfully installed supervisor-4.2.5
+#9 2.902 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 3.204 + find /usr/lib/ -name __pycache__ -print0
+#9 3.204 + xargs -0 -n1 rm -rf
+#9 3.383 + find /usr/lib/ -name '*.pyc' -print0
+#9 3.384 + xargs -0 -n1 rm -rf
+#9 DONE 5.0s
+
+#10 [production  3/10] COPY --from=builder /usr/lib/python3.6/site-packages/ /usr/lib/python3.6/site-packages/
+#10 DONE 3.3s
+
+#11 [production  4/10] COPY --from=builder /usr/bin/aws /usr/bin/aws
+#11 DONE 0.5s
+
+#12 [production  5/10] COPY --from=builder /usr/bin/supervisord /usr/bin/supervisord
+#12 DONE 0.4s
+
+#13 [production  6/10] COPY data/docker-entrypoint.sh /docker-entrypoint.sh
+#13 DONE 0.4s
+
+#14 [production  7/10] COPY data/httpd.py /usr/bin/httpd.py
+#14 DONE 0.5s
+
+#15 [production  8/10] COPY data/update-metrics.sh /usr/bin/update-metrics.sh
+#15 DONE 0.5s
+
+#16 [production  9/10] COPY data/etc/supervisord.conf /etc/supervisord.conf
+#16 DONE 0.5s
+
+#17 [production 10/10] COPY data/src/aws-ec2-sg-exporter /usr/bin/aws-ec2-sg-exporter
+#17 DONE 0.6s
+
+#18 exporting to image
+#18 exporting layers
+#18 exporting layers 2.0s done
+#18 writing image sha256:f1f1a6663e49467c0afda1b79722da93dff1d86cc4c1b54831dff365abe64bd1 0.0s done
+#18 naming to docker.io/library/image_name_v1_1 0.0s done
+#18 DONE 2.0s
+Duration: 1:25.04

@@ -1,0 +1,410 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 1.29kB done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/golang:1.11.4
+#3 DONE 0.8s
+
+#4 [internal] load metadata for docker.io/library/debian:9.8
+#4 DONE 0.8s
+
+#5 [stage-1 1/8] FROM docker.io/library/debian:9.8@sha256:724b0fbbda7fda6372ffed586670573c59e07a48c86d606bab05db118abe0ef5
+#5 resolve docker.io/library/debian:9.8@sha256:724b0fbbda7fda6372ffed586670573c59e07a48c86d606bab05db118abe0ef5
+#5 resolve docker.io/library/debian:9.8@sha256:724b0fbbda7fda6372ffed586670573c59e07a48c86d606bab05db118abe0ef5 0.6s done
+#5 sha256:724b0fbbda7fda6372ffed586670573c59e07a48c86d606bab05db118abe0ef5 2.36kB / 2.36kB done
+#5 sha256:9a1b6b1073bf12428a55c54e6e3bb001946afbcf49b7fea6a02d345790356998 529B / 529B done
+#5 sha256:2d337f242f078dfa62c81db584e78e33fd6bf6138875ecfb11fa470f26a5411c 1.50kB / 1.50kB done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 25.59MB 0.8s done
+#6 DONE 1.2s
+
+#7 [stage-0 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 resolve docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf 0.5s done
+#7 sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf 3.46kB / 3.46kB done
+#7 sha256:40f419705a5d794eeff415b7593f813e02ae4eb1a55f084ed1bd439a6be6926f 1.80kB / 1.80kB done
+#7 sha256:dd46c12568290b942a5ec20c330269b06b9039a22c9945f58d2f05cbaf0ea8a1 5.47kB / 5.47kB done
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 12.58MB / 45.34MB 0.4s
+#7 sha256:f0cb1fa13079687d5118e5cd7e3ce3c09dc483fa44f0577eca349de8d76e4e8c 4.34MB / 4.34MB 0.4s
+#7 sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7 1.05MB / 10.78MB 0.4s
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 23.97MB / 45.34MB 0.6s
+#7 sha256:f0cb1fa13079687d5118e5cd7e3ce3c09dc483fa44f0577eca349de8d76e4e8c 4.34MB / 4.34MB 0.5s done
+#7 sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7 10.49MB / 10.78MB 0.6s
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 0B / 50.06MB 0.6s
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 40.89MB / 45.34MB 0.9s
+#7 sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7 10.78MB / 10.78MB 0.8s done
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 10.49MB / 50.06MB 0.9s
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 45.34MB / 45.34MB 1.0s
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 15.73MB / 50.06MB 1.0s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 0B / 57.62MB 1.0s
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 49.28MB / 50.06MB 1.6s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 33.55MB / 57.62MB 1.6s
+#7 sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 45.34MB / 45.34MB 1.6s done
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 39.85MB / 57.62MB 1.7s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 45.09MB / 57.62MB 1.8s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 56.62MB / 57.62MB 2.0s
+#7 extracting sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c
+#7 sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 50.06MB / 50.06MB 2.4s done
+#7 sha256:0b7ee073a53ef3517eb33b826455deade48221c5ebab6965459499a4963dc4f6 0B / 126B 2.5s
+#7 sha256:0b7ee073a53ef3517eb33b826455deade48221c5ebab6965459499a4963dc4f6 126B / 126B 2.8s
+#7 sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 57.62MB / 57.62MB 3.4s done
+#7 sha256:0b7ee073a53ef3517eb33b826455deade48221c5ebab6965459499a4963dc4f6 126B / 126B 3.6s done
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 0B / 126.64MB 3.6s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 14.68MB / 126.64MB 4.0s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 25.17MB / 126.64MB 4.2s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 33.55MB / 126.64MB 4.4s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 46.14MB / 126.64MB 4.6s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 56.62MB / 126.64MB 4.8s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 69.21MB / 126.64MB 5.0s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 84.93MB / 126.64MB 5.3s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 93.32MB / 126.64MB 5.5s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 105.91MB / 126.64MB 5.7s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 122.68MB / 126.64MB 6.0s
+#7 extracting sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 5.1s
+#7 sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 126.64MB / 126.64MB 8.0s done
+#7 extracting sha256:ab1fc7e4bf9195e554669fafa47f69befe22053d7100f5f7002cb9254a36f37c 8.2s done
+#7 extracting sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7
+#7 extracting sha256:35fba333ff5209042e8925a73f3cbabf00ba725257bdba38ec3b415e5d7e6cc7 1.6s done
+#7 extracting sha256:f0cb1fa13079687d5118e5cd7e3ce3c09dc483fa44f0577eca349de8d76e4e8c
+#7 ...
+
+#5 [stage-1 1/8] FROM docker.io/library/debian:9.8@sha256:724b0fbbda7fda6372ffed586670573c59e07a48c86d606bab05db118abe0ef5
+#5 sha256:e79bb959ec00faf01da52437df4fad4537ec669f60455a38ad583ec2b8f00498 45.34MB / 45.34MB 5.2s done
+#5 extracting sha256:e79bb959ec00faf01da52437df4fad4537ec669f60455a38ad583ec2b8f00498 7.7s
+#5 ...
+
+#7 [stage-0 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 extracting sha256:f0cb1fa13079687d5118e5cd7e3ce3c09dc483fa44f0577eca349de8d76e4e8c 1.2s done
+#7 extracting sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f
+#7 ...
+
+#5 [stage-1 1/8] FROM docker.io/library/debian:9.8@sha256:724b0fbbda7fda6372ffed586670573c59e07a48c86d606bab05db118abe0ef5
+#5 extracting sha256:e79bb959ec00faf01da52437df4fad4537ec669f60455a38ad583ec2b8f00498 8.6s done
+#5 DONE 15.9s
+
+#7 [stage-0 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 extracting sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 5.2s
+#7 extracting sha256:3d1dd648b5ade2bbdfe77fa94424b0314100b58fb5f6a98486538c2126e08e2f 10.0s done
+#7 ...
+
+#8 [stage-1 2/8] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 3.473 Ign:1 http://archive.debian.org/debian stretch InRelease
+#8 3.487 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#8 3.559 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#8 3.568 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#8 4.513 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
+#8 5.352 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [7080 kB]
+#8 7.892 Fetched 8042 kB in 4s (1768 kB/s)
+#8 7.892 Reading package lists...
+#8 10.43 Reading package lists...
+#8 ...
+
+#7 [stage-0 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 extracting sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac
+#7 extracting sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 5.0s
+#7 extracting sha256:866ed2e2b1fed04ab28f668a484a1275394fda33f82777064af66a2ba27290ac 7.4s done
+#7 extracting sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08
+#7 ...
+
+#8 [stage-1 2/8] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 10.43 Reading package lists...
+#8 13.00 Building dependency tree...
+#8 13.48 Reading state information...
+#8 13.83 The following additional packages will be installed:
+#8 13.83   libc-l10n libffi6 libgmp10 libgnutls30 libhogweed4 libidn2-0 libnettle6
+#8 13.83   libp11-kit0 libpsl5 libssl1.1 libtasn1-6 libunistring0 openssl
+#8 13.83 Suggested packages:
+#8 13.83   gnutls-bin
+#8 13.83 Recommended packages:
+#8 13.83   publicsuffix
+#8 13.99 The following NEW packages will be installed:
+#8 14.00   ca-certificates libc-l10n libffi6 libgmp10 libgnutls30 libhogweed4 libidn2-0
+#8 14.00   libp11-kit0 libpsl5 libssl1.1 libtasn1-6 libunistring0 locales openssl wget
+#8 14.00 The following packages will be upgraded:
+#8 14.00   libnettle6
+#8 14.05 1 upgraded, 15 newly installed, 0 to remove and 23 not upgraded.
+#8 14.05 Need to get 9228 kB of archives.
+#8 14.05 After this operation, 27.4 MB of additional disk space will be used.
+#8 14.05 Get:1 http://archive.debian.org/debian-security stretch/updates/main amd64 libssl1.1 amd64 1.1.0l-1~deb9u6 [1360 kB]
+#8 14.16 Get:2 http://archive.debian.org/debian-security stretch/updates/main amd64 libgmp10 amd64 2:6.1.2+dfsg-1+deb9u1 [253 kB]
+#8 14.18 Get:3 http://archive.debian.org/debian-security stretch/updates/main amd64 libnettle6 amd64 3.3-1+deb9u1 [192 kB]
+#8 14.20 Get:4 http://archive.debian.org/debian-security stretch/updates/main amd64 libhogweed4 amd64 3.3-1+deb9u1 [136 kB]
+#8 14.20 Get:5 http://archive.debian.org/debian stretch/main amd64 libffi6 amd64 3.2.1-6 [20.4 kB]
+#8 14.20 Get:6 http://archive.debian.org/debian-security stretch/updates/main amd64 libp11-kit0 amd64 0.23.3-2+deb9u1 [112 kB]
+#8 14.21 Get:7 http://archive.debian.org/debian stretch/main amd64 libtasn1-6 amd64 4.10-1.1+deb9u1 [50.6 kB]
+#8 14.21 Get:8 http://archive.debian.org/debian-security stretch/updates/main amd64 libgnutls30 amd64 3.5.8-5+deb9u6 [897 kB]
+#8 14.23 Get:9 http://archive.debian.org/debian stretch/main amd64 libunistring0 amd64 0.9.6+really0.9.3-0.1 [279 kB]
+#8 14.24 Get:10 http://archive.debian.org/debian stretch/main amd64 libidn2-0 amd64 0.16-1+deb9u1 [60.7 kB]
+#8 14.24 Get:11 http://archive.debian.org/debian stretch/main amd64 libpsl5 amd64 0.17.0-3 [41.8 kB]
+#8 14.24 Get:12 http://archive.debian.org/debian stretch/main amd64 wget amd64 1.18-5+deb9u3 [800 kB]
+#8 14.26 Get:13 http://archive.debian.org/debian stretch/main amd64 libc-l10n all 2.24-11+deb9u4 [820 kB]
+#8 14.50 Get:14 http://archive.debian.org/debian stretch/main amd64 locales all 2.24-11+deb9u4 [3289 kB]
+#8 15.29 Get:15 http://archive.debian.org/debian-security stretch/updates/main amd64 openssl amd64 1.1.0l-1~deb9u6 [749 kB]
+#8 15.33 Get:16 http://archive.debian.org/debian-security stretch/updates/main amd64 ca-certificates all 20200601~deb9u2 [168 kB]
+#8 16.06 debconf: delaying package configuration, since apt-utils is not installed
+#8 16.15 Fetched 9228 kB in 1s (7094 kB/s)
+#8 16.40 Selecting previously unselected package libssl1.1:amd64.
+#8 16.40 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6499 files and directories currently installed.)
+#8 16.41 Preparing to unpack .../00-libssl1.1_1.1.0l-1~deb9u6_amd64.deb ...
+#8 16.45 Unpacking libssl1.1:amd64 (1.1.0l-1~deb9u6) ...
+#8 17.04 Selecting previously unselected package libgmp10:amd64.
+#8 17.04 Preparing to unpack .../01-libgmp10_2%3a6.1.2+dfsg-1+deb9u1_amd64.deb ...
+#8 17.06 Unpacking libgmp10:amd64 (2:6.1.2+dfsg-1+deb9u1) ...
+#8 17.49 Preparing to unpack .../02-libnettle6_3.3-1+deb9u1_amd64.deb ...
+#8 17.57 Unpacking libnettle6:amd64 (3.3-1+deb9u1) over (3.3-1+b2) ...
+#8 18.15 Selecting previously unselected package libhogweed4:amd64.
+#8 18.16 Preparing to unpack .../03-libhogweed4_3.3-1+deb9u1_amd64.deb ...
+#8 18.18 Unpacking libhogweed4:amd64 (3.3-1+deb9u1) ...
+#8 18.50 Selecting previously unselected package libffi6:amd64.
+#8 18.51 Preparing to unpack .../04-libffi6_3.2.1-6_amd64.deb ...
+#8 18.54 Unpacking libffi6:amd64 (3.2.1-6) ...
+#8 18.78 Selecting previously unselected package libp11-kit0:amd64.
+#8 18.80 Preparing to unpack .../05-libp11-kit0_0.23.3-2+deb9u1_amd64.deb ...
+#8 18.82 Unpacking libp11-kit0:amd64 (0.23.3-2+deb9u1) ...
+#8 19.17 Selecting previously unselected package libtasn1-6:amd64.
+#8 19.17 Preparing to unpack .../06-libtasn1-6_4.10-1.1+deb9u1_amd64.deb ...
+#8 19.19 Unpacking libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+#8 19.47 Selecting previously unselected package libgnutls30:amd64.
+#8 19.48 Preparing to unpack .../07-libgnutls30_3.5.8-5+deb9u6_amd64.deb ...
+#8 19.50 Unpacking libgnutls30:amd64 (3.5.8-5+deb9u6) ...
+#8 ...
+
+#7 [stage-0 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 extracting sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 5.1s
+#7 extracting sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 10.2s
+#7 extracting sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 15.2s
+#7 extracting sha256:85221581e34928976f31b7ff5c31b190cc5101066fd4147c9aebd0a21486ec08 17.1s done
+#7 ...
+
+#8 [stage-1 2/8] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 39.14 Selecting previously unselected package libunistring0:amd64.
+#8 39.14 Preparing to unpack .../08-libunistring0_0.9.6+really0.9.3-0.1_amd64.deb ...
+#8 39.68 Unpacking libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+#8 40.37 Selecting previously unselected package libidn2-0:amd64.
+#8 40.37 Preparing to unpack .../09-libidn2-0_0.16-1+deb9u1_amd64.deb ...
+#8 40.42 Unpacking libidn2-0:amd64 (0.16-1+deb9u1) ...
+#8 40.93 Selecting previously unselected package libpsl5:amd64.
+#8 40.93 Preparing to unpack .../10-libpsl5_0.17.0-3_amd64.deb ...
+#8 41.00 Unpacking libpsl5:amd64 (0.17.0-3) ...
+#8 41.45 Selecting previously unselected package wget.
+#8 41.46 Preparing to unpack .../11-wget_1.18-5+deb9u3_amd64.deb ...
+#8 41.52 Unpacking wget (1.18-5+deb9u3) ...
+#8 42.24 Selecting previously unselected package libc-l10n.
+#8 42.24 Preparing to unpack .../12-libc-l10n_2.24-11+deb9u4_all.deb ...
+#8 ...
+
+#7 [stage-0 1/6] FROM docker.io/library/golang:1.11.4@sha256:4469b68518ffcae4cc1f5310752495c3ed53c039e28f1638b23c21f1fc7a54cf
+#7 extracting sha256:0b7ee073a53ef3517eb33b826455deade48221c5ebab6965459499a4963dc4f6 done
+#7 DONE 58.3s
+
+#8 [stage-1 2/8] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 42.29 Unpacking libc-l10n (2.24-11+deb9u4) ...
+#8 ...
+
+#9 [stage-0 2/6] COPY . /go/src/github.com/maddevsio/comedian
+#9 ...
+
+#8 [stage-1 2/8] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 52.25 Selecting previously unselected package locales.
+#8 ...
+
+#9 [stage-0 2/6] COPY . /go/src/github.com/maddevsio/comedian
+#9 DONE 10.0s
+
+#8 [stage-1 2/8] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 52.26 Preparing to unpack .../13-locales_2.24-11+deb9u4_all.deb ...
+#8 52.31 Unpacking locales (2.24-11+deb9u4) ...
+#8 ...
+
+#10 [stage-0 3/6] WORKDIR /go/src/github.com/maddevsio/comedian
+#10 DONE 0.5s
+
+#11 [stage-0 4/6] RUN go get -u github.com/golang/dep/cmd/dep
+#11 ...
+
+#8 [stage-1 2/8] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update   && apt-get install -y --no-install-recommends ca-certificates locales wget   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#8 53.98 Selecting previously unselected package openssl.
+#8 53.98 Preparing to unpack .../14-openssl_1.1.0l-1~deb9u6_amd64.deb ...
+#8 54.01 Unpacking openssl (1.1.0l-1~deb9u6) ...
+#8 54.65 Selecting previously unselected package ca-certificates.
+#8 54.65 Preparing to unpack .../15-ca-certificates_20200601~deb9u2_all.deb ...
+#8 54.67 Unpacking ca-certificates (20200601~deb9u2) ...
+#8 55.22 Setting up libnettle6:amd64 (3.3-1+deb9u1) ...
+#8 55.33 Setting up libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+#8 55.40 Setting up libgmp10:amd64 (2:6.1.2+dfsg-1+deb9u1) ...
+#8 55.49 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#8 55.60 Setting up libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+#8 55.70 Setting up libssl1.1:amd64 (1.1.0l-1~deb9u6) ...
+#8 56.08 debconf: unable to initialize frontend: Dialog
+#8 56.08 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#8 56.08 debconf: falling back to frontend: Readline
+#8 56.08 debconf: unable to initialize frontend: Readline
+#8 56.08 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.24.1 /usr/local/share/perl/5.24.1 /usr/lib/x86_64-linux-gnu/perl5/5.24 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.24 /usr/share/perl/5.24 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#8 56.08 debconf: falling back to frontend: Teletype
+#8 56.28 Setting up libc-l10n (2.24-11+deb9u4) ...
+#8 56.36 Setting up openssl (1.1.0l-1~deb9u6) ...
+#8 56.47 Setting up libffi6:amd64 (3.2.1-6) ...
+#8 56.54 Setting up ca-certificates (20200601~deb9u2) ...
+#8 56.97 debconf: unable to initialize frontend: Dialog
+#8 56.97 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#8 56.97 debconf: falling back to frontend: Readline
+#8 56.97 debconf: unable to initialize frontend: Readline
+#8 56.97 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.24.1 /usr/local/share/perl/5.24.1 /usr/lib/x86_64-linux-gnu/perl5/5.24 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.24 /usr/share/perl/5.24 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#8 56.97 debconf: falling back to frontend: Teletype
+#8 64.17 Updating certificates in /etc/ssl/certs...
+#8 74.32 137 added, 0 removed; done.
+#8 74.51 Setting up locales (2.24-11+deb9u4) ...
+#8 74.95 debconf: unable to initialize frontend: Dialog
+#8 74.95 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#8 74.95 debconf: falling back to frontend: Readline
+#8 74.95 debconf: unable to initialize frontend: Readline
+#8 74.95 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.24.1 /usr/local/share/perl/5.24.1 /usr/lib/x86_64-linux-gnu/perl5/5.24 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.24 /usr/share/perl/5.24 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#8 74.95 debconf: falling back to frontend: Teletype
+#8 82.74 Generating locales (this might take a while)...
+#8 82.82 Generation complete.
+#8 83.50 Setting up libidn2-0:amd64 (0.16-1+deb9u1) ...
+#8 83.58 Setting up libpsl5:amd64 (0.17.0-3) ...
+#8 83.66 Setting up libhogweed4:amd64 (3.3-1+deb9u1) ...
+#8 83.76 Setting up libp11-kit0:amd64 (0.23.3-2+deb9u1) ...
+#8 83.86 Setting up libgnutls30:amd64 (3.5.8-5+deb9u6) ...
+#8 83.94 Setting up wget (1.18-5+deb9u3) ...
+#8 84.05 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+#8 84.17 Processing triggers for ca-certificates (20200601~deb9u2) ...
+#8 84.26 Updating certificates in /etc/ssl/certs...
+#8 90.58 0 added, 0 removed; done.
+#8 90.58 Running hooks in /etc/ca-certificates/update.d...
+#8 90.61 done.
+#8 DONE 91.5s
+
+#12 [stage-1 3/8] RUN localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+#12 DONE 4.5s
+
+#11 [stage-0 4/6] RUN go get -u github.com/golang/dep/cmd/dep
+#11 ...
+
+#13 [stage-1 4/8] RUN wget https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.6.1.tar.gz     && rm dockerize-linux-amd64-v0.6.1.tar.gz
+#13 ...
+
+#11 [stage-0 4/6] RUN go get -u github.com/golang/dep/cmd/dep
+#11 DONE 43.4s
+
+#14 [stage-0 5/6] RUN dep ensure
+#14 ...
+
+#13 [stage-1 4/8] RUN wget https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.6.1.tar.gz     && rm dockerize-linux-amd64-v0.6.1.tar.gz
+#13 2.073 --2024-07-31 14:14:18--  https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz
+#13 2.159 Resolving github.com (github.com)... 140.82.113.3
+#13 2.178 Connecting to github.com (github.com)|140.82.113.3|:443... connected.
+#13 2.394 HTTP request sent, awaiting response... 302 Found
+#13 2.468 Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/25178920/ef020aa8-2eed-11e8-8e0f-c1fcce07ec65?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240731T141344Z&X-Amz-Expires=300&X-Amz-Signature=dec55eec045adc497d1f0deb91bc7d999a0c5f5c6c238898e4ecd10660c286f9&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=25178920&response-content-disposition=attachment%3B%20filename%3Ddockerize-linux-amd64-v0.6.1.tar.gz&response-content-type=application%2Foctet-stream [following]
+#13 2.468 --2024-07-31 14:14:18--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/25178920/ef020aa8-2eed-11e8-8e0f-c1fcce07ec65?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240731%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240731T141344Z&X-Amz-Expires=300&X-Amz-Signature=dec55eec045adc497d1f0deb91bc7d999a0c5f5c6c238898e4ecd10660c286f9&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=25178920&response-content-disposition=attachment%3B%20filename%3Ddockerize-linux-amd64-v0.6.1.tar.gz&response-content-type=application%2Foctet-stream
+#13 2.468 Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
+#13 2.481 Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.111.133|:443... connected.
+#13 2.508 HTTP request sent, awaiting response... 200 OK
+#13 2.864 Length: 3005823 (2.9M) [application/octet-stream]
+#13 2.864 Saving to: ‘dockerize-linux-amd64-v0.6.1.tar.gz’
+#13 2.864 
+#13 2.864      0K .......... .......... .......... .......... ..........  1% 13.1M 0s
+#13 2.868     50K .......... .......... .......... .......... ..........  3% 28.4M 0s
+#13 2.869    100K .......... .......... .......... .......... ..........  5% 41.1M 0s
+#13 2.870    150K .......... .......... .......... .......... ..........  6% 35.6M 0s
+#13 2.872    200K .......... .......... .......... .......... ..........  8% 36.4M 0s
+#13 2.873    250K .......... .......... .......... .......... .......... 10% 43.1M 0s
+#13 2.875    300K .......... .......... .......... .......... .......... 11% 74.6M 0s
+#13 2.875    350K .......... .......... .......... .......... .......... 13% 34.0M 0s
+#13 2.877    400K .......... .......... .......... .......... .......... 15% 80.4M 0s
+#13 2.877    450K .......... .......... .......... .......... .......... 17% 40.8M 0s
+#13 2.879    500K .......... .......... .......... .......... .......... 18% 91.9M 0s
+#13 2.879    550K .......... .......... .......... .......... .......... 20% 28.0M 0s
+#13 2.882    600K .......... .......... .......... .......... .......... 22% 62.4M 0s
+#13 2.882    650K .......... .......... .......... .......... .......... 23% 69.8M 0s
+#13 2.882    700K .......... .......... .......... .......... .......... 25% 40.4M 0s
+#13 2.884    750K .......... .......... .......... .......... .......... 27% 69.0M 0s
+#13 2.884    800K .......... .......... .......... .......... .......... 28% 29.3M 0s
+#13 2.886    850K .......... .......... .......... .......... .......... 30% 37.9M 0s
+#13 2.887    900K .......... .......... .......... .......... .......... 32% 27.8M 0s
+#13 2.889    950K .......... .......... .......... .......... .......... 34% 26.2M 0s
+#13 2.891   1000K .......... .......... .......... .......... .......... 35% 91.4M 0s
+#13 2.891   1050K .......... .......... .......... .......... .......... 37% 18.3M 0s
+#13 2.894   1100K .......... .......... .......... .......... .......... 39% 18.6M 0s
+#13 2.897   1150K .......... .......... .......... .......... .......... 40% 75.2M 0s
+#13 2.897   1200K .......... .......... .......... .......... .......... 42% 35.8M 0s
+#13 2.899   1250K .......... .......... .......... .......... .......... 44% 68.1M 0s
+#13 2.914   1300K .......... .......... .......... .......... .......... 45% 3.33M 0s
+#13 2.914   1350K .......... .......... .......... .......... .......... 47% 37.9M 0s
+#13 2.915   1400K .......... .......... .......... .......... .......... 49% 28.3M 0s
+#13 2.917   1450K .......... .......... .......... .......... .......... 51% 40.8M 0s
+#13 2.918   1500K .......... .......... .......... .......... .......... 52% 42.2M 0s
+#13 2.920   1550K .......... .......... .......... .......... .......... 54% 28.5M 0s
+#13 2.921   1600K .......... .......... .......... .......... .......... 56% 37.5M 0s
+#13 2.923   1650K .......... .......... .......... .......... .......... 57% 30.4M 0s
+#13 2.924   1700K .......... .......... .......... .......... .......... 59% 38.3M 0s
+#13 2.925   1750K .......... .......... .......... .......... .......... 61% 28.2M 0s
+#13 2.927   1800K .......... .......... .......... .......... .......... 63% 36.9M 0s
+#13 2.928   1850K .......... .......... .......... .......... .......... 64% 46.3M 0s
+#13 2.930   1900K .......... .......... .......... .......... .......... 66% 29.8M 0s
+#13 2.931   1950K .......... .......... .......... .......... .......... 68% 37.7M 0s
+#13 2.932   2000K .......... .......... .......... .......... .......... 69% 31.4M 0s
+#13 2.934   2050K .......... .......... .......... .......... .......... 71% 38.4M 0s
+#13 2.935   2100K .......... .......... .......... .......... .......... 73% 20.5M 0s
+#13 2.938   2150K .......... .......... .......... .......... .......... 74% 71.4M 0s
+#13 2.938   2200K .......... .......... .......... .......... .......... 76% 13.3M 0s
+#13 2.942   2250K .......... .......... .......... .......... .......... 78% 76.9M 0s
+#13 2.942   2300K .......... .......... .......... .......... .......... 80% 84.4M 0s
+#13 2.943   2350K .......... .......... .......... .......... .......... 81% 61.1M 0s
+#13 2.944   2400K .......... .......... .......... .......... .......... 83% 77.1M 0s
+#13 2.946   2450K .......... .......... .......... .......... .......... 85% 69.4M 0s
+#13 2.946   2500K .......... .......... .......... .......... .......... 86% 74.5M 0s
+#13 2.946   2550K .......... .......... .......... .......... .......... 88% 85.8M 0s
+#13 2.947   2600K .......... .......... .......... .......... .......... 90% 88.1M 0s
+#13 2.947   2650K .......... .......... .......... .......... .......... 91% 64.2M 0s
+#13 2.948   2700K .......... .......... .......... .......... .......... 93% 85.1M 0s
+#13 2.948   2750K .......... .......... .......... .......... .......... 95% 80.0M 0s
+#13 2.950   2800K .......... .......... .......... .......... .......... 97% 79.8M 0s
+#13 2.950   2850K .......... .......... .......... .......... .......... 98% 71.9M 0s
+#13 2.950   2900K .......... .......... .......... .....                100% 6.43M=0.09s
+#13 2.957 
+#13 2.957 2024-07-31 14:14:19 (31.4 MB/s) - ‘dockerize-linux-amd64-v0.6.1.tar.gz’ saved [3005823/3005823]
+#13 2.957 
+#13 2.983 dockerize
+#13 DONE 3.9s
+
+#15 [stage-1 5/8] COPY active.en.toml  /
+#15 DONE 0.5s
+
+#14 [stage-0 5/6] RUN dep ensure
+#14 ...
+
+#16 [stage-1 6/8] COPY active.ru.toml  /
+#16 DONE 0.4s
+
+#14 [stage-0 5/6] RUN dep ensure
+#14 DONE 64.3s
+
+#17 [stage-0 6/6] RUN GOOS=linux GOARCH=amd64 go build -o comedian main.go
+#17 DONE 31.6s
+
+#18 [stage-1 7/8] COPY --from=0  /go/src/github.com/maddevsio/comedian/comedian /
+#18 DONE 0.6s
+
+#19 [stage-1 8/8] COPY migrations /migrations
+#19 DONE 0.5s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 1.8s done
+#20 writing image sha256:9da0bd2ea371820dc96ee71e0ec65c7047ec348560089317320a2b9d00b6fbc7
+#20 writing image sha256:9da0bd2ea371820dc96ee71e0ec65c7047ec348560089317320a2b9d00b6fbc7 0.0s done
+#20 naming to docker.io/library/image_name_v1_1 0.0s done
+#20 DONE 1.8s
+Duration: 3:34.28

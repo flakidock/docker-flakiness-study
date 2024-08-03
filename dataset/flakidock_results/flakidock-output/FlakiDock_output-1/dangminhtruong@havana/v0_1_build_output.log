@@ -1,0 +1,611 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.4s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 922B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:16.04
+#3 ...
+
+#4 [auth] library/ubuntu:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:16.04
+#3 DONE 1.5s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/9] FROM docker.io/library/ubuntu:16.04@sha256:1f1a2d56de1d604801a9671f301190704c25d604a416f59e03c04f5c6ffee0d6
+#6 resolve docker.io/library/ubuntu:16.04@sha256:1f1a2d56de1d604801a9671f301190704c25d604a416f59e03c04f5c6ffee0d6 0.1s done
+#6 sha256:1f1a2d56de1d604801a9671f301190704c25d604a416f59e03c04f5c6ffee0d6 1.42kB / 1.42kB done
+#6 sha256:a3785f78ab8547ae2710c89e627783cfa7ee7824d3468cae6835c9f4eae23ff7 1.15kB / 1.15kB done
+#6 sha256:b6f50765242581c887ff1acc2511fa2d885c52d8fb3ac8c4bba131fd86567f2e 3.36kB / 3.36kB done
+#6 sha256:b51569e7c50720acf6860327847fe342a1afbe148d24c529fb81df105e3eed01 0B / 857B 0.1s
+#6 sha256:da8ef40b9ecabc2679fe2419957220c0272a965c5cf7e0269fa1aeeb8c56f2e1 0B / 528B 0.2s
+#6 sha256:b51569e7c50720acf6860327847fe342a1afbe148d24c529fb81df105e3eed01 857B / 857B 0.2s done
+#6 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 0B / 46.50MB 0.3s
+#6 sha256:da8ef40b9ecabc2679fe2419957220c0272a965c5cf7e0269fa1aeeb8c56f2e1 528B / 528B 0.4s
+#6 sha256:fb15d46c38dcd1ea0b1990006c3366ecd10c79d374f341687eb2cb23a2c8672e 0B / 170B 0.4s
+#6 sha256:da8ef40b9ecabc2679fe2419957220c0272a965c5cf7e0269fa1aeeb8c56f2e1 528B / 528B 0.5s done
+#6 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 11.53MB / 46.50MB 0.6s
+#6 sha256:fb15d46c38dcd1ea0b1990006c3366ecd10c79d374f341687eb2cb23a2c8672e 170B / 170B 0.6s done
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 32.32MB 0.4s done
+#5 DONE 0.8s
+
+#6 [1/9] FROM docker.io/library/ubuntu:16.04@sha256:1f1a2d56de1d604801a9671f301190704c25d604a416f59e03c04f5c6ffee0d6
+#6 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 24.12MB / 46.50MB 0.8s
+#6 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 36.70MB / 46.50MB 1.0s
+#6 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 44.04MB / 46.50MB 1.2s
+#6 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 46.50MB / 46.50MB 1.3s
+#6 sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 46.50MB / 46.50MB 2.0s done
+#6 extracting sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 0.1s
+#6 extracting sha256:58690f9b18fca6469a14da4e212c96849469f9b1be6661d2342a4bf01774aa50 2.9s done
+#6 extracting sha256:b51569e7c50720acf6860327847fe342a1afbe148d24c529fb81df105e3eed01
+#6 extracting sha256:b51569e7c50720acf6860327847fe342a1afbe148d24c529fb81df105e3eed01 done
+#6 extracting sha256:da8ef40b9ecabc2679fe2419957220c0272a965c5cf7e0269fa1aeeb8c56f2e1
+#6 extracting sha256:da8ef40b9ecabc2679fe2419957220c0272a965c5cf7e0269fa1aeeb8c56f2e1 done
+#6 extracting sha256:fb15d46c38dcd1ea0b1990006c3366ecd10c79d374f341687eb2cb23a2c8672e
+#6 extracting sha256:fb15d46c38dcd1ea0b1990006c3366ecd10c79d374f341687eb2cb23a2c8672e done
+#6 DONE 10.1s
+
+#7 [2/9] WORKDIR /app
+#7 DONE 4.7s
+
+#8 [3/9] ADD . /app
+#8 DONE 1.3s
+
+#9 [4/9] RUN apt-get update && apt-get install -y curl
+#9 0.875 Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [106 kB]
+#9 0.931 Get:2 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+#9 1.278 Get:3 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [1150 kB]
+#9 1.631 Get:4 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [15.9 kB]
+#9 1.631 Get:5 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [928 kB]
+#9 1.661 Get:6 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [106 kB]
+#9 1.670 Get:7 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [8820 B]
+#9 1.835 Get:8 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [106 kB]
+#9 1.967 Get:9 http://archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1558 kB]
+#9 2.343 Get:10 http://archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [14.1 kB]
+#9 2.345 Get:11 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [9827 kB]
+#9 2.856 Get:12 http://archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [176 kB]
+#9 2.860 Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1608 kB]
+#9 2.945 Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [16.4 kB]
+#9 2.945 Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [1483 kB]
+#9 2.998 Get:16 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [25.0 kB]
+#9 2.998 Get:17 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [11.3 kB]
+#9 2.999 Get:18 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [12.9 kB]
+#9 4.041 Fetched 17.4 MB in 3s (5165 kB/s)
+#9 4.041 Reading package lists...
+#9 5.017 Reading package lists...
+#9 5.968 Building dependency tree...
+#9 6.095 Reading state information...
+#9 6.182 The following additional packages will be installed:
+#9 6.182   ca-certificates krb5-locales libasn1-8-heimdal libcurl3-gnutls libffi6
+#9 6.182   libgmp10 libgnutls30 libgssapi-krb5-2 libgssapi3-heimdal libhcrypto4-heimdal
+#9 6.182   libheimbase1-heimdal libheimntlm0-heimdal libhogweed4 libhx509-5-heimdal
+#9 6.182   libidn11 libk5crypto3 libkeyutils1 libkrb5-26-heimdal libkrb5-3
+#9 6.183   libkrb5support0 libldap-2.4-2 libnettle6 libp11-kit0 libroken18-heimdal
+#9 6.183   librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libsqlite3-0
+#9 6.183   libssl1.0.0 libtasn1-6 libwind0-heimdal openssl
+#9 6.183 Suggested packages:
+#9 6.183   gnutls-bin krb5-doc krb5-user libsasl2-modules-otp libsasl2-modules-ldap
+#9 6.183   libsasl2-modules-sql libsasl2-modules-gssapi-mit
+#9 6.183   | libsasl2-modules-gssapi-heimdal
+#9 6.184 The following NEW packages will be installed:
+#9 6.184   ca-certificates curl krb5-locales libasn1-8-heimdal libcurl3-gnutls libffi6
+#9 6.184   libgmp10 libgnutls30 libgssapi-krb5-2 libgssapi3-heimdal libhcrypto4-heimdal
+#9 6.184   libheimbase1-heimdal libheimntlm0-heimdal libhogweed4 libhx509-5-heimdal
+#9 6.184   libidn11 libk5crypto3 libkeyutils1 libkrb5-26-heimdal libkrb5-3
+#9 6.184   libkrb5support0 libldap-2.4-2 libnettle6 libp11-kit0 libroken18-heimdal
+#9 6.184   librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libsqlite3-0
+#9 6.185   libssl1.0.0 libtasn1-6 libwind0-heimdal openssl
+#9 6.395 0 upgraded, 34 newly installed, 0 to remove and 2 not upgraded.
+#9 6.395 Need to get 5332 kB of archives.
+#9 6.395 After this operation, 19.0 MB of additional disk space will be used.
+#9 6.395 Get:1 http://archive.ubuntu.com/ubuntu xenial/main amd64 libffi6 amd64 3.2.1-4 [17.8 kB]
+#9 6.540 Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgmp10 amd64 2:6.1.0+dfsg-2 [240 kB]
+#9 6.782 Get:3 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libnettle6 amd64 3.2-1ubuntu0.16.04.2 [93.7 kB]
+#9 6.814 Get:4 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhogweed4 amd64 3.2-1ubuntu0.16.04.2 [136 kB]
+#9 6.849 Get:5 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libidn11 amd64 1.32-3ubuntu1.2 [46.5 kB]
+#9 6.859 Get:6 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libp11-kit0 amd64 0.23.2-5~ubuntu16.04.2 [107 kB]
+#9 6.879 Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtasn1-6 amd64 4.7-3ubuntu0.16.04.3 [43.5 kB]
+#9 6.886 Get:8 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgnutls30 amd64 3.4.10-4ubuntu1.9 [548 kB]
+#9 6.946 Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libsqlite3-0 amd64 3.11.0-1ubuntu1.5 [398 kB]
+#9 6.974 Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libssl1.0.0 amd64 1.0.2g-1ubuntu4.20 [1083 kB]
+#9 7.026 Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openssl amd64 1.0.2g-1ubuntu4.20 [492 kB]
+#9 7.044 Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ca-certificates all 20210119~16.04.1 [148 kB]
+#9 7.049 Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 krb5-locales all 1.13.2+dfsg-5ubuntu2.2 [13.7 kB]
+#9 7.049 Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libroken18-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [41.4 kB]
+#9 7.051 Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libasn1-8-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [174 kB]
+#9 7.055 Get:16 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libkrb5support0 amd64 1.13.2+dfsg-5ubuntu2.2 [31.2 kB]
+#9 7.057 Get:17 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libk5crypto3 amd64 1.13.2+dfsg-5ubuntu2.2 [81.2 kB]
+#9 7.069 Get:18 http://archive.ubuntu.com/ubuntu xenial/main amd64 libkeyutils1 amd64 1.5.9-8ubuntu1 [9904 B]
+#9 7.070 Get:19 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libkrb5-3 amd64 1.13.2+dfsg-5ubuntu2.2 [273 kB]
+#9 7.130 Get:20 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgssapi-krb5-2 amd64 1.13.2+dfsg-5ubuntu2.2 [120 kB]
+#9 7.134 Get:21 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhcrypto4-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [85.0 kB]
+#9 7.136 Get:22 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libheimbase1-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [29.3 kB]
+#9 7.137 Get:23 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libwind0-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [47.8 kB]
+#9 7.139 Get:24 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhx509-5-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [107 kB]
+#9 7.141 Get:25 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libkrb5-26-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [202 kB]
+#9 7.146 Get:26 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libheimntlm0-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [15.1 kB]
+#9 7.147 Get:27 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgssapi3-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [96.1 kB]
+#9 7.211 Get:28 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libsasl2-modules-db amd64 2.1.26.dfsg1-14ubuntu0.2 [14.5 kB]
+#9 7.212 Get:29 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libsasl2-2 amd64 2.1.26.dfsg1-14ubuntu0.2 [48.7 kB]
+#9 7.213 Get:30 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libldap-2.4-2 amd64 2.4.42+dfsg-2ubuntu3.13 [159 kB]
+#9 7.217 Get:31 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d-1ubuntu0.1 [54.4 kB]
+#9 7.219 Get:32 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcurl3-gnutls amd64 7.47.0-1ubuntu2.19 [189 kB]
+#9 7.282 Get:33 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libsasl2-modules amd64 2.1.26.dfsg1-14ubuntu0.2 [47.7 kB]
+#9 7.284 Get:34 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 curl amd64 7.47.0-1ubuntu2.19 [139 kB]
+#9 7.429 debconf: delaying package configuration, since apt-utils is not installed
+#9 7.456 Fetched 5332 kB in 1s (5163 kB/s)
+#9 7.580 Selecting previously unselected package libffi6:amd64.
+#9 7.580 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4785 files and directories currently installed.)
+#9 7.580 Preparing to unpack .../libffi6_3.2.1-4_amd64.deb ...
+#9 7.625 Unpacking libffi6:amd64 (3.2.1-4) ...
+#9 7.845 Selecting previously unselected package libgmp10:amd64.
+#9 7.845 Preparing to unpack .../libgmp10_2%3a6.1.0+dfsg-2_amd64.deb ...
+#9 7.869 Unpacking libgmp10:amd64 (2:6.1.0+dfsg-2) ...
+#9 8.097 Selecting previously unselected package libnettle6:amd64.
+#9 8.097 Preparing to unpack .../libnettle6_3.2-1ubuntu0.16.04.2_amd64.deb ...
+#9 8.122 Unpacking libnettle6:amd64 (3.2-1ubuntu0.16.04.2) ...
+#9 8.324 Selecting previously unselected package libhogweed4:amd64.
+#9 8.324 Preparing to unpack .../libhogweed4_3.2-1ubuntu0.16.04.2_amd64.deb ...
+#9 8.348 Unpacking libhogweed4:amd64 (3.2-1ubuntu0.16.04.2) ...
+#9 8.559 Selecting previously unselected package libidn11:amd64.
+#9 8.559 Preparing to unpack .../libidn11_1.32-3ubuntu1.2_amd64.deb ...
+#9 8.592 Unpacking libidn11:amd64 (1.32-3ubuntu1.2) ...
+#9 8.819 Selecting previously unselected package libp11-kit0:amd64.
+#9 8.819 Preparing to unpack .../libp11-kit0_0.23.2-5~ubuntu16.04.2_amd64.deb ...
+#9 8.843 Unpacking libp11-kit0:amd64 (0.23.2-5~ubuntu16.04.2) ...
+#9 9.064 Selecting previously unselected package libtasn1-6:amd64.
+#9 9.064 Preparing to unpack .../libtasn1-6_4.7-3ubuntu0.16.04.3_amd64.deb ...
+#9 9.088 Unpacking libtasn1-6:amd64 (4.7-3ubuntu0.16.04.3) ...
+#9 9.291 Selecting previously unselected package libgnutls30:amd64.
+#9 9.291 Preparing to unpack .../libgnutls30_3.4.10-4ubuntu1.9_amd64.deb ...
+#9 9.315 Unpacking libgnutls30:amd64 (3.4.10-4ubuntu1.9) ...
+#9 9.693 Selecting previously unselected package libsqlite3-0:amd64.
+#9 9.693 Preparing to unpack .../libsqlite3-0_3.11.0-1ubuntu1.5_amd64.deb ...
+#9 9.717 Unpacking libsqlite3-0:amd64 (3.11.0-1ubuntu1.5) ...
+#9 10.03 Selecting previously unselected package libssl1.0.0:amd64.
+#9 10.03 Preparing to unpack .../libssl1.0.0_1.0.2g-1ubuntu4.20_amd64.deb ...
+#9 10.06 Unpacking libssl1.0.0:amd64 (1.0.2g-1ubuntu4.20) ...
+#9 10.42 Selecting previously unselected package openssl.
+#9 10.42 Preparing to unpack .../openssl_1.0.2g-1ubuntu4.20_amd64.deb ...
+#9 10.44 Unpacking openssl (1.0.2g-1ubuntu4.20) ...
+#9 10.78 Selecting previously unselected package ca-certificates.
+#9 10.78 Preparing to unpack .../ca-certificates_20210119~16.04.1_all.deb ...
+#9 10.80 Unpacking ca-certificates (20210119~16.04.1) ...
+#9 11.08 Selecting previously unselected package krb5-locales.
+#9 11.08 Preparing to unpack .../krb5-locales_1.13.2+dfsg-5ubuntu2.2_all.deb ...
+#9 11.11 Unpacking krb5-locales (1.13.2+dfsg-5ubuntu2.2) ...
+#9 11.33 Selecting previously unselected package libroken18-heimdal:amd64.
+#9 11.33 Preparing to unpack .../libroken18-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+#9 11.36 Unpacking libroken18-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 11.57 Selecting previously unselected package libasn1-8-heimdal:amd64.
+#9 11.57 Preparing to unpack .../libasn1-8-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+#9 11.60 Unpacking libasn1-8-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 11.85 Selecting previously unselected package libkrb5support0:amd64.
+#9 11.85 Preparing to unpack .../libkrb5support0_1.13.2+dfsg-5ubuntu2.2_amd64.deb ...
+#9 11.87 Unpacking libkrb5support0:amd64 (1.13.2+dfsg-5ubuntu2.2) ...
+#9 12.07 Selecting previously unselected package libk5crypto3:amd64.
+#9 12.07 Preparing to unpack .../libk5crypto3_1.13.2+dfsg-5ubuntu2.2_amd64.deb ...
+#9 12.10 Unpacking libk5crypto3:amd64 (1.13.2+dfsg-5ubuntu2.2) ...
+#9 12.33 Selecting previously unselected package libkeyutils1:amd64.
+#9 12.33 Preparing to unpack .../libkeyutils1_1.5.9-8ubuntu1_amd64.deb ...
+#9 12.36 Unpacking libkeyutils1:amd64 (1.5.9-8ubuntu1) ...
+#9 12.56 Selecting previously unselected package libkrb5-3:amd64.
+#9 12.56 Preparing to unpack .../libkrb5-3_1.13.2+dfsg-5ubuntu2.2_amd64.deb ...
+#9 12.59 Unpacking libkrb5-3:amd64 (1.13.2+dfsg-5ubuntu2.2) ...
+#9 12.86 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#9 12.86 Preparing to unpack .../libgssapi-krb5-2_1.13.2+dfsg-5ubuntu2.2_amd64.deb ...
+#9 12.89 Unpacking libgssapi-krb5-2:amd64 (1.13.2+dfsg-5ubuntu2.2) ...
+#9 13.11 Selecting previously unselected package libhcrypto4-heimdal:amd64.
+#9 13.11 Preparing to unpack .../libhcrypto4-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+#9 13.17 Unpacking libhcrypto4-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 13.42 Selecting previously unselected package libheimbase1-heimdal:amd64.
+#9 13.42 Preparing to unpack .../libheimbase1-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+#9 13.44 Unpacking libheimbase1-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 13.66 Selecting previously unselected package libwind0-heimdal:amd64.
+#9 13.66 Preparing to unpack .../libwind0-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+#9 13.69 Unpacking libwind0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 13.92 Selecting previously unselected package libhx509-5-heimdal:amd64.
+#9 13.92 Preparing to unpack .../libhx509-5-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+#9 13.94 Unpacking libhx509-5-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 14.17 Selecting previously unselected package libkrb5-26-heimdal:amd64.
+#9 14.17 Preparing to unpack .../libkrb5-26-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+#9 14.19 Unpacking libkrb5-26-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 14.55 Selecting previously unselected package libheimntlm0-heimdal:amd64.
+#9 14.55 Preparing to unpack .../libheimntlm0-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+#9 14.57 Unpacking libheimntlm0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 14.79 Selecting previously unselected package libgssapi3-heimdal:amd64.
+#9 14.79 Preparing to unpack .../libgssapi3-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+#9 14.82 Unpacking libgssapi3-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 14.98 Selecting previously unselected package libsasl2-modules-db:amd64.
+#9 14.98 Preparing to unpack .../libsasl2-modules-db_2.1.26.dfsg1-14ubuntu0.2_amd64.deb ...
+#9 15.01 Unpacking libsasl2-modules-db:amd64 (2.1.26.dfsg1-14ubuntu0.2) ...
+#9 15.20 Selecting previously unselected package libsasl2-2:amd64.
+#9 15.20 Preparing to unpack .../libsasl2-2_2.1.26.dfsg1-14ubuntu0.2_amd64.deb ...
+#9 15.23 Unpacking libsasl2-2:amd64 (2.1.26.dfsg1-14ubuntu0.2) ...
+#9 15.45 Selecting previously unselected package libldap-2.4-2:amd64.
+#9 15.45 Preparing to unpack .../libldap-2.4-2_2.4.42+dfsg-2ubuntu3.13_amd64.deb ...
+#9 15.47 Unpacking libldap-2.4-2:amd64 (2.4.42+dfsg-2ubuntu3.13) ...
+#9 15.70 Selecting previously unselected package librtmp1:amd64.
+#9 15.70 Preparing to unpack .../librtmp1_2.4+20151223.gitfa8646d-1ubuntu0.1_amd64.deb ...
+#9 15.73 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d-1ubuntu0.1) ...
+#9 15.93 Selecting previously unselected package libcurl3-gnutls:amd64.
+#9 15.93 Preparing to unpack .../libcurl3-gnutls_7.47.0-1ubuntu2.19_amd64.deb ...
+#9 15.96 Unpacking libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.19) ...
+#9 16.17 Selecting previously unselected package libsasl2-modules:amd64.
+#9 16.17 Preparing to unpack .../libsasl2-modules_2.1.26.dfsg1-14ubuntu0.2_amd64.deb ...
+#9 16.20 Unpacking libsasl2-modules:amd64 (2.1.26.dfsg1-14ubuntu0.2) ...
+#9 16.38 Selecting previously unselected package curl.
+#9 16.38 Preparing to unpack .../curl_7.47.0-1ubuntu2.19_amd64.deb ...
+#9 16.40 Unpacking curl (7.47.0-1ubuntu2.19) ...
+#9 16.54 Processing triggers for libc-bin (2.23-0ubuntu11.3) ...
+#9 16.71 Setting up libffi6:amd64 (3.2.1-4) ...
+#9 16.84 Setting up libgmp10:amd64 (2:6.1.0+dfsg-2) ...
+#9 16.93 Setting up libnettle6:amd64 (3.2-1ubuntu0.16.04.2) ...
+#9 17.02 Setting up libhogweed4:amd64 (3.2-1ubuntu0.16.04.2) ...
+#9 17.12 Setting up libidn11:amd64 (1.32-3ubuntu1.2) ...
+#9 17.19 Setting up libp11-kit0:amd64 (0.23.2-5~ubuntu16.04.2) ...
+#9 17.29 Setting up libtasn1-6:amd64 (4.7-3ubuntu0.16.04.3) ...
+#9 17.37 Setting up libgnutls30:amd64 (3.4.10-4ubuntu1.9) ...
+#9 17.45 Setting up libsqlite3-0:amd64 (3.11.0-1ubuntu1.5) ...
+#9 17.54 Setting up libssl1.0.0:amd64 (1.0.2g-1ubuntu4.20) ...
+#9 17.67 debconf: unable to initialize frontend: Dialog
+#9 17.67 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#9 17.67 debconf: falling back to frontend: Readline
+#9 17.67 debconf: unable to initialize frontend: Readline
+#9 17.67 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#9 17.67 debconf: falling back to frontend: Teletype
+#9 17.77 Setting up openssl (1.0.2g-1ubuntu4.20) ...
+#9 17.87 Setting up ca-certificates (20210119~16.04.1) ...
+#9 18.01 debconf: unable to initialize frontend: Dialog
+#9 18.01 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#9 18.01 debconf: falling back to frontend: Readline
+#9 18.01 debconf: unable to initialize frontend: Readline
+#9 18.01 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#9 18.01 debconf: falling back to frontend: Teletype
+#9 18.59 Setting up krb5-locales (1.13.2+dfsg-5ubuntu2.2) ...
+#9 18.68 Setting up libroken18-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 18.75 Setting up libasn1-8-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 18.83 Setting up libkrb5support0:amd64 (1.13.2+dfsg-5ubuntu2.2) ...
+#9 18.90 Setting up libk5crypto3:amd64 (1.13.2+dfsg-5ubuntu2.2) ...
+#9 18.98 Setting up libkeyutils1:amd64 (1.5.9-8ubuntu1) ...
+#9 19.07 Setting up libkrb5-3:amd64 (1.13.2+dfsg-5ubuntu2.2) ...
+#9 19.14 Setting up libgssapi-krb5-2:amd64 (1.13.2+dfsg-5ubuntu2.2) ...
+#9 19.25 Setting up libhcrypto4-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 19.33 Setting up libheimbase1-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 19.41 Setting up libwind0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 19.58 Setting up libhx509-5-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 19.67 Setting up libkrb5-26-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 19.75 Setting up libheimntlm0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 19.82 Setting up libgssapi3-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+#9 19.90 Setting up libsasl2-modules-db:amd64 (2.1.26.dfsg1-14ubuntu0.2) ...
+#9 19.99 Setting up libsasl2-2:amd64 (2.1.26.dfsg1-14ubuntu0.2) ...
+#9 20.08 Setting up libldap-2.4-2:amd64 (2.4.42+dfsg-2ubuntu3.13) ...
+#9 20.20 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d-1ubuntu0.1) ...
+#9 20.27 Setting up libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.19) ...
+#9 20.35 Setting up libsasl2-modules:amd64 (2.1.26.dfsg1-14ubuntu0.2) ...
+#9 20.45 Setting up curl (7.47.0-1ubuntu2.19) ...
+#9 20.53 Processing triggers for libc-bin (2.23-0ubuntu11.3) ...
+#9 20.60 Processing triggers for ca-certificates (20210119~16.04.1) ...
+#9 20.63 Updating certificates in /etc/ssl/certs...
+#9 22.78 129 added, 0 removed; done.
+#9 22.78 Running hooks in /etc/ca-certificates/update.d...
+#9 22.79 done.
+#9 DONE 23.7s
+
+#10 [5/9] RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -     && apt-get install -y nodejs     && npm install -g nodemon eslint babel-eslint eslint-plugin-react yarn
+#10 1.086 
+#10 1.086 ================================================================================
+#10 1.086 ================================================================================
+#10 1.086 
+#10 1.086                               DEPRECATION WARNING                            
+#10 1.086 
+#10 1.086   Node.js 9.x is no longer actively supported!
+#10 1.086 
+#10 1.086   You will not receive security or critical stability updates for this version.
+#10 1.086 
+#10 1.086   You should migrate to a supported version of Node.js as soon as possible.
+#10 1.086   Use the installation script that corresponds to the version of Node.js you
+#10 1.086   wish to install. e.g.
+#10 1.086 
+#10 1.086    * https://deb.nodesource.com/setup_16.x — Node.js 16 "Gallium"
+#10 1.086    * https://deb.nodesource.com/setup_18.x — Node.js 18 LTS "Hydrogen" (recommended)
+#10 1.086    * https://deb.nodesource.com/setup_19.x — Node.js 19 "Nineteen"
+#10 1.086    * https://deb.nodesource.com/setup_20.x — Node.js 20 "Iron" (current)
+#10 1.086 
+#10 1.086   Please see https://github.com/nodejs/Release for details about which
+#10 1.086   version may be appropriate for you.
+#10 1.086 
+#10 1.086   The NodeSource Node.js distributions repository contains
+#10 1.086   information both about supported versions of Node.js and supported Linux
+#10 1.086   distributions. To learn more about usage, see the repository:
+#10 1.086     https://github.com/nodesource/distributions
+#10 1.086 
+#10 1.086 ================================================================================
+#10 1.086 ================================================================================
+#10 1.086 
+#10 1.086 Continuing in 20 seconds ...
+#10 1.086 
+#10 21.09 
+#10 21.09 ================================================================================
+#10 21.09 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+#10 21.09 ================================================================================
+#10 21.09 
+#10 21.09                            SCRIPT DEPRECATION WARNING                    
+#10 21.09 
+#10 21.09   
+#10 21.09   This script, located at https://deb.nodesource.com/setup_X, used to
+#10 21.09   install Node.js is deprecated now and will eventually be made inactive.
+#10 21.09 
+#10 21.09   Please visit the NodeSource distributions Github and follow the
+#10 21.09   instructions to migrate your repo.
+#10 21.09   https://github.com/nodesource/distributions
+#10 21.09 
+#10 21.09   The NodeSource Node.js Linux distributions GitHub repository contains
+#10 21.09   information about which versions of Node.js and which Linux distributions
+#10 21.09   are supported and how to install it.
+#10 21.09   https://github.com/nodesource/distributions
+#10 21.09 
+#10 21.09 
+#10 21.09                           SCRIPT DEPRECATION WARNING
+#10 21.09 
+#10 21.09 ================================================================================
+#10 21.09 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+#10 21.09 ================================================================================
+#10 21.09 
+#10 21.09 TO AVOID THIS WAIT MIGRATE THE SCRIPT
+#10 21.09 Continuing in 60 seconds (press Ctrl-C to abort) ...
+#10 21.09 
+#10 81.09 
+#10 81.09 ## Installing the NodeSource Node.js 9.x repo...
+#10 81.09 
+#10 81.09 
+#10 81.09 ## Populating apt-get cache...
+#10 81.09 
+#10 81.09 + apt-get update
+#10 81.30 Hit:1 http://security.ubuntu.com/ubuntu xenial-security InRelease
+#10 81.38 Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
+#10 81.53 Hit:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease
+#10 81.67 Hit:4 http://archive.ubuntu.com/ubuntu xenial-backports InRelease
+#10 81.76 Reading package lists...
+#10 82.72 
+#10 82.72 ## Installing packages required for setup: apt-transport-https lsb-release...
+#10 82.72 
+#10 82.72 + apt-get install -y apt-transport-https lsb-release > /dev/null 2>&1
+#10 96.10 
+#10 96.10 ## Confirming "xenial" is supported...
+#10 96.10 
+#10 96.10 + curl -sLf -o /dev/null 'https://deb.nodesource.com/node_9.x/dists/xenial/Release'
+#10 96.27 
+#10 96.27 ## Adding the NodeSource signing key to your keyring...
+#10 96.27 
+#10 96.27 + curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee /usr/share/keyrings/nodesource.gpg >/dev/null
+#10 96.45 
+#10 96.45 ## Creating apt sources list file for the NodeSource Node.js 9.x repo...
+#10 96.45 
+#10 96.45 + echo 'deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_9.x xenial main' > /etc/apt/sources.list.d/nodesource.list
+#10 96.45 + echo 'deb-src [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_9.x xenial main' >> /etc/apt/sources.list.d/nodesource.list
+#10 96.46 
+#10 96.46 ## Running `apt-get update` for you...
+#10 96.46 
+#10 96.46 + apt-get update
+#10 96.64 Hit:1 http://security.ubuntu.com/ubuntu xenial-security InRelease
+#10 96.64 Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
+#10 96.65 Get:3 https://deb.nodesource.com/node_9.x xenial InRelease [4622 B]
+#10 96.71 Hit:4 http://archive.ubuntu.com/ubuntu xenial-updates InRelease
+#10 96.79 Hit:5 http://archive.ubuntu.com/ubuntu xenial-backports InRelease
+#10 96.93 Get:6 https://deb.nodesource.com/node_9.x xenial/main amd64 Packages [765 B]
+#10 97.08 Fetched 5387 B in 0s (9446 B/s)
+#10 97.08 Reading package lists...
+#10 98.05 
+#10 98.05 ## Run `sudo apt-get install -y nodejs` to install Node.js 9.x and npm
+#10 98.05 ## You may also need development tools to build native addons:
+#10 98.05      sudo apt-get install gcc g++ make
+#10 98.05 ## To install the Yarn package manager, run:
+#10 98.05      curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+#10 98.05      echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+#10 98.05      sudo apt-get update && sudo apt-get install yarn
+#10 98.05 
+#10 98.05 
+#10 98.06 Reading package lists...
+#10 99.02 Building dependency tree...
+#10 99.15 Reading state information...
+#10 99.24 The following additional packages will be installed:
+#10 99.24   libpython-stdlib libpython2.7-minimal libpython2.7-stdlib python
+#10 99.24   python-minimal python2.7 python2.7-minimal
+#10 99.24 Suggested packages:
+#10 99.24   python-doc python-tk python2.7-doc binutils binfmt-support
+#10 99.24 The following NEW packages will be installed:
+#10 99.24   libpython-stdlib libpython2.7-minimal libpython2.7-stdlib nodejs python
+#10 99.24   python-minimal python2.7 python2.7-minimal
+#10 99.50 0 upgraded, 8 newly installed, 0 to remove and 2 not upgraded.
+#10 99.50 Need to get 16.7 MB of archives.
+#10 99.50 After this operation, 79.1 MB of additional disk space will be used.
+#10 99.50 Get:1 https://deb.nodesource.com/node_9.x xenial/main amd64 nodejs amd64 9.11.2-1nodesource1 [12.8 MB]
+#10 99.56 Get:2 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-minimal amd64 2.7.12-1ubuntu0~16.04.18 [338 kB]
+#10 100.3 Get:3 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7-minimal amd64 2.7.12-1ubuntu0~16.04.18 [1260 kB]
+#10 100.6 Get:4 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-minimal amd64 2.7.12-1~16.04 [28.1 kB]
+#10 100.6 Get:5 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-stdlib amd64 2.7.12-1ubuntu0~16.04.18 [1883 kB]
+#10 100.8 Get:6 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7 amd64 2.7.12-1ubuntu0~16.04.18 [224 kB]
+#10 100.8 Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython-stdlib amd64 2.7.12-1~16.04 [7768 B]
+#10 100.8 Get:8 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python amd64 2.7.12-1~16.04 [137 kB]
+#10 100.9 debconf: delaying package configuration, since apt-utils is not installed
+#10 100.9 Fetched 16.7 MB in 1s (11.2 MB/s)
+#10 101.0 Selecting previously unselected package libpython2.7-minimal:amd64.
+#10 101.0 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6301 files and directories currently installed.)
+#10 101.0 Preparing to unpack .../libpython2.7-minimal_2.7.12-1ubuntu0~16.04.18_amd64.deb ...
+#10 101.1 Unpacking libpython2.7-minimal:amd64 (2.7.12-1ubuntu0~16.04.18) ...
+#10 101.5 Selecting previously unselected package python2.7-minimal.
+#10 101.5 Preparing to unpack .../python2.7-minimal_2.7.12-1ubuntu0~16.04.18_amd64.deb ...
+#10 101.5 Unpacking python2.7-minimal (2.7.12-1ubuntu0~16.04.18) ...
+#10 101.9 Selecting previously unselected package python-minimal.
+#10 101.9 Preparing to unpack .../python-minimal_2.7.12-1~16.04_amd64.deb ...
+#10 101.9 Unpacking python-minimal (2.7.12-1~16.04) ...
+#10 102.1 Selecting previously unselected package libpython2.7-stdlib:amd64.
+#10 102.1 Preparing to unpack .../libpython2.7-stdlib_2.7.12-1ubuntu0~16.04.18_amd64.deb ...
+#10 102.1 Unpacking libpython2.7-stdlib:amd64 (2.7.12-1ubuntu0~16.04.18) ...
+#10 102.7 Selecting previously unselected package python2.7.
+#10 102.7 Preparing to unpack .../python2.7_2.7.12-1ubuntu0~16.04.18_amd64.deb ...
+#10 102.7 Unpacking python2.7 (2.7.12-1ubuntu0~16.04.18) ...
+#10 103.0 Selecting previously unselected package libpython-stdlib:amd64.
+#10 103.0 Preparing to unpack .../libpython-stdlib_2.7.12-1~16.04_amd64.deb ...
+#10 103.0 Unpacking libpython-stdlib:amd64 (2.7.12-1~16.04) ...
+#10 103.1 Processing triggers for mime-support (3.59ubuntu1) ...
+#10 103.2 Setting up libpython2.7-minimal:amd64 (2.7.12-1ubuntu0~16.04.18) ...
+#10 103.3 Setting up python2.7-minimal (2.7.12-1ubuntu0~16.04.18) ...
+#10 103.8 Linking and byte-compiling packages for runtime python2.7...
+#10 103.8 Setting up python-minimal (2.7.12-1~16.04) ...
+#10 104.0 Selecting previously unselected package python.
+#10 104.0 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7048 files and directories currently installed.)
+#10 104.0 Preparing to unpack .../python_2.7.12-1~16.04_amd64.deb ...
+#10 104.1 Unpacking python (2.7.12-1~16.04) ...
+#10 104.4 Selecting previously unselected package nodejs.
+#10 104.4 Preparing to unpack .../nodejs_9.11.2-1nodesource1_amd64.deb ...
+#10 104.4 Unpacking nodejs (9.11.2-1nodesource1) ...
+#10 108.0 Setting up libpython2.7-stdlib:amd64 (2.7.12-1ubuntu0~16.04.18) ...
+#10 108.1 Setting up python2.7 (2.7.12-1ubuntu0~16.04.18) ...
+#10 109.0 Setting up libpython-stdlib:amd64 (2.7.12-1~16.04) ...
+#10 109.1 Setting up python (2.7.12-1~16.04) ...
+#10 109.2 Setting up nodejs (9.11.2-1nodesource1) ...
+#10 110.6 npm WARN deprecated babel-eslint@10.1.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+#10 124.4 
+#10 124.4 > yarn@1.22.22 preinstall /usr/lib/node_modules/yarn
+#10 124.4 > :; (node ./preinstall.js > /dev/null 2>&1 || true)
+#10 124.4 
+#10 125.1 /usr/bin/eslint -> /usr/lib/node_modules/eslint/bin/eslint.js
+#10 125.1 /usr/bin/nodemon -> /usr/lib/node_modules/nodemon/bin/nodemon.js
+#10 125.1 /usr/bin/yarn -> /usr/lib/node_modules/yarn/bin/yarn.js
+#10 125.1 /usr/bin/yarnpkg -> /usr/lib/node_modules/yarn/bin/yarn.js
+#10 125.1 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.2 (node_modules/nodemon/node_modules/chokidar/node_modules/fsevents):
+#10 125.1 npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+#10 125.1 
+#10 125.1 + babel-eslint@10.1.0
+#10 125.1 + nodemon@3.1.4
+#10 125.1 + eslint-plugin-react@7.35.0
+#10 125.1 + yarn@1.22.22
+#10 125.1 + eslint@9.8.0
+#10 125.1 added 262 packages in 15.179s
+#10 DONE 127.7s
+
+#11 [6/9] RUN npm install
+#11 2.386 npm WARN notice [SECURITY] acorn has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=acorn - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.386 npm WARN notice [SECURITY] ansi_up has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=ansi_up - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.532 npm WARN notice [SECURITY] bson has the following vulnerabilities: 1 critical, 1 moderate. Go here for more details: https://github.com/advisories?query=bson - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.727 npm WARN notice [SECURITY] passport has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=passport - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.739 npm WARN notice [SECURITY] morgan has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=morgan - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.829 npm WARN notice [SECURITY] async has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=async - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.829 npm WARN notice [SECURITY] ejs has the following vulnerabilities: 1 critical, 1 moderate. Go here for more details: https://github.com/advisories?query=ejs - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.829 npm WARN notice [SECURITY] xmlhttprequest-ssl has the following vulnerabilities: 2 critical. Go here for more details: https://github.com/advisories?query=xmlhttprequest-ssl - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.829 npm WARN notice [SECURITY] slug has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=slug - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.829 npm WARN notice [SECURITY] socket.io has the following vulnerabilities: 1 high, 1 moderate. Go here for more details: https://github.com/advisories?query=socket.io - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.891 npm WARN notice [SECURITY] nodemailer has the following vulnerabilities: 1 critical, 2 moderate. Go here for more details: https://github.com/advisories?query=nodemailer - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.891 npm WARN notice [SECURITY] mongoose has the following vulnerabilities: 3 critical, 1 high. Go here for more details: https://github.com/advisories?query=mongoose - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.891 npm WARN notice [SECURITY] express has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=express - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 2.891 npm WARN notice [SECURITY] engine.io has the following vulnerabilities: 1 high, 1 moderate. Go here for more details: https://github.com/advisories?query=engine.io - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 3.298 npm WARN notice [SECURITY] mongodb has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=mongodb - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 3.340 npm WARN notice [SECURITY] jszip has the following vulnerabilities: 1 high, 1 moderate. Go here for more details: https://github.com/advisories?query=jszip - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 3.522 npm WARN notice [SECURITY] nodemailer has the following vulnerabilities: 1 critical, 2 moderate. Go here for more details: https://github.com/advisories?query=nodemailer - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 3.522 npm WARN notice [SECURITY] underscore has the following vulnerability: 1 critical. Go here for more details: https://github.com/advisories?query=underscore - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 3.560 npm WARN notice [SECURITY] trim-newlines has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=trim-newlines - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 3.813 npm WARN notice [SECURITY] ansi-regex has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=ansi-regex - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 3.826 npm WARN notice [SECURITY] dicer has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=dicer - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 3.858 npm WARN notice [SECURITY] socket.io-parser has the following vulnerabilities: 1 critical, 1 high. Go here for more details: https://github.com/advisories?query=socket.io-parser - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.049 npm WARN notice [SECURITY] semver has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=semver - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.122 npm WARN notice [SECURITY] mquery has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=mquery - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.168 npm WARN notice [SECURITY] qs has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=qs - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.592 npm WARN notice [SECURITY] lodash has the following vulnerabilities: 1 critical, 3 high, 3 moderate. Go here for more details: https://github.com/advisories?query=lodash - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.622 npm WARN notice [SECURITY] minimist has the following vulnerabilities: 1 critical, 1 moderate. Go here for more details: https://github.com/advisories?query=minimist - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.622 npm WARN notice [SECURITY] moment has the following vulnerabilities: 2 high. Go here for more details: https://github.com/advisories?query=moment - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.720 npm WARN notice [SECURITY] minimatch has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=minimatch - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.720 npm WARN notice [SECURITY] minimist has the following vulnerabilities: 1 critical, 1 moderate. Go here for more details: https://github.com/advisories?query=minimist - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.720 npm WARN notice [SECURITY] mpath has the following vulnerabilities: 1 high, 1 moderate. Go here for more details: https://github.com/advisories?query=mpath - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.737 npm WARN notice [SECURITY] async has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=async - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.748 npm WARN notice [SECURITY] moment-timezone has the following vulnerabilities: 1 moderate, 1 low. Go here for more details: https://github.com/advisories?query=moment-timezone - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.797 npm WARN notice [SECURITY] mime has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=mime - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.862 npm WARN notice [SECURITY] lodash has the following vulnerabilities: 1 critical, 3 high, 2 moderate. Go here for more details: https://github.com/advisories?query=lodash - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 4.968 npm WARN notice [SECURITY] js-yaml has the following vulnerabilities: 1 high, 1 moderate. Go here for more details: https://github.com/advisories?query=js-yaml - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 5.031 npm WARN notice [SECURITY] ajv has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=ajv - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 5.112 npm WARN notice [SECURITY] ip has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=ip - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 5.242 npm WARN notice [SECURITY] hosted-git-info has the following vulnerability: 1 moderate. Go here for more details: https://github.com/advisories?query=hosted-git-info - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 5.450 npm WARN notice [SECURITY] lodash has the following vulnerabilities: 1 critical, 3 high, 3 moderate. Go here for more details: https://github.com/advisories?query=lodash - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 5.460 npm WARN notice [SECURITY] qs has the following vulnerability: 1 high. Go here for more details: https://github.com/advisories?query=qs - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+#11 8.298 
+#11 8.298 > typechecker@2.0.8 preinstall /app/node_modules/extract-opts/node_modules/typechecker
+#11 8.298 > node ./cyclic.js
+#11 8.298 
+#11 8.389 
+#11 8.389 > typechecker@2.0.8 preinstall /app/node_modules/extendr/node_modules/typechecker
+#11 8.389 > node ./cyclic.js
+#11 8.389 
+#11 9.189 added 407 packages in 8.032s
+#11 DONE 13.9s
+
+#12 [7/9] RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+#12 0.754 Executing: /tmp/tmp.jY1rOmIqz4/gpg.1.sh --keyserver
+#12 0.754 hkp://keyserver.ubuntu.com:80
+#12 0.754 --recv
+#12 0.754 9DA31620334BD75D9DCB49F368818C72E52529D4
+#12 0.757 gpg: requesting key E52529D4 from hkp server keyserver.ubuntu.com
+#12 1.293 gpg: key E52529D4: public key "MongoDB 4.0 Release Signing Key <packaging@mongodb.com>" imported
+#12 1.293 gpg: Total number processed: 1
+#12 1.293 gpg:               imported: 1  (RSA: 1)
+#12 DONE 1.6s
+
+#13 [8/9] RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+#13 0.696 deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse
+#13 DONE 0.9s
+
+#14 [9/9] RUN apt update -y && apt-get install -y mongodb-org
+#14 0.677 
+#14 0.677 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#14 0.677 
+#14 0.905 Hit:1 https://deb.nodesource.com/node_9.x xenial InRelease
+#14 0.906 Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
+#14 0.934 Hit:3 http://security.ubuntu.com/ubuntu xenial-security InRelease
+#14 0.940 Hit:4 http://archive.ubuntu.com/ubuntu xenial-updates InRelease
+#14 0.944 Ign:5 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 InRelease
+#14 1.012 Hit:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease
+#14 1.066 Get:7 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 Release [3457 B]
+#14 1.167 Get:8 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 Release.gpg [801 B]
+#14 1.497 Ign:8 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 Release.gpg
+#14 1.504 Reading package lists...
+#14 2.468 W: GPG error: https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 Release: The following signatures were invalid: KEYEXPIRED 1681763820
+#14 2.468 E: The repository 'https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 Release' is not signed.
+#14 ERROR: process "/bin/sh -c apt update -y && apt-get install -y mongodb-org" did not complete successfully: exit code: 100
+------
+ > [9/9] RUN apt update -y && apt-get install -y mongodb-org:
+0.934 Hit:3 http://security.ubuntu.com/ubuntu xenial-security InRelease
+0.940 Hit:4 http://archive.ubuntu.com/ubuntu xenial-updates InRelease
+0.944 Ign:5 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 InRelease
+1.012 Hit:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease
+1.066 Get:7 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 Release [3457 B]
+1.167 Get:8 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 Release.gpg [801 B]
+1.497 Ign:8 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 Release.gpg
+
+2.468 W: GPG error: https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 Release: The following signatures were invalid: KEYEXPIRED 1681763820
+2.468 E: The repository 'https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 Release' is not signed.
+------
+Dockerfile:26
+--------------------
+  24 |     RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+  25 |     
+  26 | >>> RUN apt update -y && apt-get install -y mongodb-org
+  27 |     
+  28 |     CMD ["sh","-c","service mongod start ; nodemon -L; cd database/seeder && node category_seeder.js && node product_seeder.js"]
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt update -y && apt-get install -y mongodb-org" did not complete successfully: exit code: 100
+Duration: 3:9.32

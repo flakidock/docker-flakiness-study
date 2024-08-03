@@ -1,0 +1,26 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 4.28kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ruby:2.6.7-alpine3.13
+#2 ...
+
+#3 [auth] library/ruby:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ruby:2.6.7-alpine3.13
+#2 DONE 1.0s
+v1_Dockerfile:59
+--------------------
+  58 |     RUN mkdir -p /aquarium/components
+  59 | >>> COPY components ./componentsRUN mkdir -p /usr/local/etc \
+  60 | >>>   && { \
+  61 | >>>     echo 'install: --no-document'; \
+  62 | >>>     echo 'update: --no-document'; \
+  63 | >>>   } >> /usr/local/etc/gemrc;
+  64 |     
+--------------------
+ERROR: failed to solve: failed to process "'install:": unexpected end of statement while looking for matching single-quote
+Duration: 0:1.36

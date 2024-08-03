@@ -1,0 +1,25 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 878B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/damianh/dotnet-core-lts-sdks:2
+#2 ...
+
+#3 [auth] damianh/dotnet-core-lts-sdks:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/damianh/dotnet-core-lts-sdks:2
+#2 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+------
+ > [internal] load metadata for docker.io/damianh/dotnet-core-lts-sdks:2:
+------
+v1_Dockerfile:1
+--------------------
+   1 | >>> FROM damianh/dotnet-core-lts-sdks:2
+   2 |     
+   3 |     WORKDIR /repo
+--------------------
+ERROR: failed to solve: damianh/dotnet-core-lts-sdks:2: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+Duration: 0:0.80

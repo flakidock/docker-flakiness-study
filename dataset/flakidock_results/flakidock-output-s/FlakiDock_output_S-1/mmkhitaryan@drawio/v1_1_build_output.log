@@ -1,0 +1,158 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 846B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:12.20.0-alpine3.11
+#2 ...
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [auth] library/golang:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/golang:1.13.4-alpine
+#5 DONE 1.0s
+
+#2 [internal] load metadata for docker.io/library/node:12.20.0-alpine3.11
+#2 DONE 1.0s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [front 1/5] FROM docker.io/library/node:12.20.0-alpine3.11@sha256:c55997a1fa957458167ba4449de55f4bbc107b2fce78b85efdcf40e1981f16cb
+#7 resolve docker.io/library/node:12.20.0-alpine3.11@sha256:c55997a1fa957458167ba4449de55f4bbc107b2fce78b85efdcf40e1981f16cb 0.0s done
+#7 ...
+
+#8 [internal] load build context
+#8 transferring context: 132.63kB done
+#8 DONE 0.0s
+
+#7 [front 1/5] FROM docker.io/library/node:12.20.0-alpine3.11@sha256:c55997a1fa957458167ba4449de55f4bbc107b2fce78b85efdcf40e1981f16cb
+#7 sha256:1c5f444d75cc3ed4e3dee50f07aa66eba616c45217d6c8600819e4b245b8215e 1.16kB / 1.16kB done
+#7 sha256:e09c0033b650a16b648168d11a5d1060c1446c3c5c79ef1bf0febf0ad1a69b93 6.73kB / 6.73kB done
+#7 sha256:c55997a1fa957458167ba4449de55f4bbc107b2fce78b85efdcf40e1981f16cb 1.43kB / 1.43kB done
+#7 sha256:0a6724ff3fcd51338afdfdc2b1d4ffd04569818e31efad957213d67c29b45101 0B / 2.81MB 0.4s
+#7 sha256:0a6724ff3fcd51338afdfdc2b1d4ffd04569818e31efad957213d67c29b45101 1.05MB / 2.81MB 0.5s
+#7 sha256:27c04c85894ea87b1a8fc7ac20b84c226d7a36bba6740af0e1b80f8adc86e0c2 0B / 24.85MB 0.5s
+#7 extracting sha256:0a6724ff3fcd51338afdfdc2b1d4ffd04569818e31efad957213d67c29b45101
+#7 sha256:0a6724ff3fcd51338afdfdc2b1d4ffd04569818e31efad957213d67c29b45101 2.81MB / 2.81MB 0.5s done
+#7 extracting sha256:0a6724ff3fcd51338afdfdc2b1d4ffd04569818e31efad957213d67c29b45101 0.1s done
+#7 sha256:43f9bd82e7070a9a3a55c154656da27bce5780c6e90c584fc853110c57020555 0B / 2.24MB 0.6s
+#7 sha256:27c04c85894ea87b1a8fc7ac20b84c226d7a36bba6740af0e1b80f8adc86e0c2 9.44MB / 24.85MB 0.8s
+#7 sha256:43f9bd82e7070a9a3a55c154656da27bce5780c6e90c584fc853110c57020555 2.24MB / 2.24MB 0.7s done
+#7 sha256:76c453b6ebf423f429adde7646e3de0558ea0817fee3ff025d7714c40e65085a 0B / 284B 0.8s
+#7 sha256:27c04c85894ea87b1a8fc7ac20b84c226d7a36bba6740af0e1b80f8adc86e0c2 14.68MB / 24.85MB 0.9s
+#7 sha256:76c453b6ebf423f429adde7646e3de0558ea0817fee3ff025d7714c40e65085a 284B / 284B 0.8s done
+#7 sha256:27c04c85894ea87b1a8fc7ac20b84c226d7a36bba6740af0e1b80f8adc86e0c2 20.97MB / 24.85MB 1.0s
+#7 sha256:27c04c85894ea87b1a8fc7ac20b84c226d7a36bba6740af0e1b80f8adc86e0c2 24.12MB / 24.85MB 1.1s
+#7 extracting sha256:27c04c85894ea87b1a8fc7ac20b84c226d7a36bba6740af0e1b80f8adc86e0c2
+#7 sha256:27c04c85894ea87b1a8fc7ac20b84c226d7a36bba6740af0e1b80f8adc86e0c2 24.85MB / 24.85MB 1.1s done
+#7 extracting sha256:27c04c85894ea87b1a8fc7ac20b84c226d7a36bba6740af0e1b80f8adc86e0c2 2.3s done
+#7 extracting sha256:43f9bd82e7070a9a3a55c154656da27bce5780c6e90c584fc853110c57020555
+#7 extracting sha256:43f9bd82e7070a9a3a55c154656da27bce5780c6e90c584fc853110c57020555 0.1s done
+#7 extracting sha256:76c453b6ebf423f429adde7646e3de0558ea0817fee3ff025d7714c40e65085a
+#7 extracting sha256:76c453b6ebf423f429adde7646e3de0558ea0817fee3ff025d7714c40e65085a done
+#7 DONE 4.0s
+
+#9 [builder 1/8] FROM docker.io/library/golang:1.13.4-alpine@sha256:9d2a7c5b6447f525da0a4f18efd2cb05bf7d70228f75d713b7a67345f30157ac
+#9 resolve docker.io/library/golang:1.13.4-alpine@sha256:9d2a7c5b6447f525da0a4f18efd2cb05bf7d70228f75d713b7a67345f30157ac 0.0s done
+#9 sha256:9d2a7c5b6447f525da0a4f18efd2cb05bf7d70228f75d713b7a67345f30157ac 1.65kB / 1.65kB done
+#9 sha256:679fe3791d2710d53efe26b05ba1c7083178d6375318b0c669b6bcd98f25c448 1.36kB / 1.36kB done
+#9 sha256:3024b4e742b095f3c81ed71f3ddc7bb6796664827845988333fac28564a96b85 3.80kB / 3.80kB done
+#9 sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17 2.79MB / 2.79MB 0.3s done
+#9 sha256:8ef94372a977c02d425f12c8cbda5416e372b7a869a6c2b20342c589dba3eae5 301.72kB / 301.72kB 0.3s done
+#9 sha256:1ec62c064901392a6722bb47a377c01a381f4482b1ce094b6d28682b6b6279fd 155B / 155B 0.2s done
+#9 extracting sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17 0.1s done
+#9 sha256:bf1a3d23480071c91034bf7684daaa10b200efe6f553d9b9f8e4004492769888 125B / 125B 0.4s done
+#9 sha256:a47b1e89d1946bbe1b6d1b7ade6d64a4411a782d115fd2d2f937de8095942190 126.86MB / 126.86MB 2.3s done
+#9 extracting sha256:8ef94372a977c02d425f12c8cbda5416e372b7a869a6c2b20342c589dba3eae5 0.1s done
+#9 extracting sha256:1ec62c064901392a6722bb47a377c01a381f4482b1ce094b6d28682b6b6279fd done
+#9 extracting sha256:a47b1e89d1946bbe1b6d1b7ade6d64a4411a782d115fd2d2f937de8095942190 1.6s
+#9 ...
+
+#10 [front 2/5] WORKDIR /home/go/app
+#10 DONE 1.7s
+
+#9 [builder 1/8] FROM docker.io/library/golang:1.13.4-alpine@sha256:9d2a7c5b6447f525da0a4f18efd2cb05bf7d70228f75d713b7a67345f30157ac
+#9 ...
+
+#11 [front 3/5] COPY ./app .
+#11 DONE 0.5s
+
+#9 [builder 1/8] FROM docker.io/library/golang:1.13.4-alpine@sha256:9d2a7c5b6447f525da0a4f18efd2cb05bf7d70228f75d713b7a67345f30157ac
+#9 extracting sha256:a47b1e89d1946bbe1b6d1b7ade6d64a4411a782d115fd2d2f937de8095942190 6.5s done
+#9 extracting sha256:bf1a3d23480071c91034bf7684daaa10b200efe6f553d9b9f8e4004492769888 done
+#9 DONE 9.3s
+
+#12 [front 4/5] RUN npm install
+#12 0.962 npm WARN deprecated babel-eslint@10.1.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+#12 0.989 npm WARN deprecated axios@0.18.1: Critical security vulnerability fixed in v0.21.1. For more information, see https://github.com/axios/axios/pull/3410
+#12 1.472 npm WARN deprecated vue@2.7.16: Vue 2 has reached EOL and is no longer actively maintained. See https://v2.vuejs.org/eol/ for more details.
+#12 1.786 npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#12 2.701 npm WARN deprecated html-webpack-plugin@3.2.0: 3.x is no longer supported
+#12 2.919 npm WARN deprecated webpack-chain@6.5.1: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+#12 2.954 npm WARN deprecated eslint-loader@2.2.1: This loader has been deprecated. Please use eslint-webpack-plugin
+#12 3.521 npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#12 3.580 npm WARN deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+#12 4.073 npm WARN deprecated @hapi/joi@15.1.1: Switch to 'npm install joi'
+#12 4.086 npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+#12 4.665 npm WARN deprecated consolidate@0.15.1: Please upgrade to consolidate v1.0.0+ as it has been modernized with several long-awaited fixes implemented. Maintenance is supported by Forward Email at https://forwardemail.net ; follow/watch https://github.com/ladjs/consolidate for updates and release changelog
+#12 ...
+
+#13 [builder 2/8] RUN apk add --update --no-cache bash tzdata git
+#13 0.215 fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/main/x86_64/APKINDEX.tar.gz
+#13 0.464 fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/community/x86_64/APKINDEX.tar.gz
+#13 0.692 (1/10) Installing ncurses-terminfo-base (6.1_p20190518-r2)
+#13 0.708 (2/10) Installing ncurses-libs (6.1_p20190518-r2)
+#13 0.725 (3/10) Installing readline (8.0.0-r0)
+#13 0.741 (4/10) Installing bash (5.0.0-r0)
+#13 0.767 Executing bash-5.0.0-r0.post-install
+#13 0.769 (5/10) Installing nghttp2-libs (1.39.2-r1)
+#13 0.783 (6/10) Installing libcurl (7.66.0-r4)
+#13 0.806 (7/10) Installing expat (2.2.8-r0)
+#13 0.821 (8/10) Installing pcre2 (10.33-r0)
+#13 0.840 (9/10) Installing git (2.22.5-r0)
+#13 1.025 (10/10) Installing tzdata (2021a-r0)
+#13 1.126 Executing busybox-1.30.1-r2.trigger
+#13 1.133 OK: 26 MiB in 25 packages
+#13 DONE 1.7s
+
+#14 [builder 3/8] WORKDIR /go/src/github.com/mmkhitaryan/drawio
+#14 DONE 0.1s
+
+#15 [builder 4/8] RUN git clone https://github.com/mmkhitaryan/drawio.git .
+#15 0.202 Cloning into '.'...
+#15 DONE 0.6s
+
+#12 [front 4/5] RUN npm install
+#12 ...
+
+#16 [builder 5/8] RUN go install
+#16 0.277 main.go:8:2: cannot find package "github.com/gorilla/websocket" in any of:
+#16 0.277 	/usr/local/go/src/github.com/gorilla/websocket (from $GOROOT)
+#16 0.277 	/go/src/github.com/gorilla/websocket (from $GOPATH)
+#16 ERROR: process "/bin/sh -c go install" did not complete successfully: exit code: 1
+
+#12 [front 4/5] RUN npm install
+#12 5.718 npm WARN deprecated chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+#12 CANCELED
+------
+ > [builder 5/8] RUN go install:
+0.277 main.go:8:2: cannot find package "github.com/gorilla/websocket" in any of:
+0.277 	/usr/local/go/src/github.com/gorilla/websocket (from $GOROOT)
+0.277 	/go/src/github.com/gorilla/websocket (from $GOPATH)
+------
+v1_Dockerfile:12
+--------------------
+  10 |     WORKDIR /go/src/github.com/mmkhitaryan/drawio
+  11 |     RUN git clone https://github.com/mmkhitaryan/drawio.git .
+  12 | >>> RUN go install
+  13 |     RUN mkdir -p /home/go/app
+  14 |     RUN mkdir -p /usr/local/go/lib/time
+--------------------
+ERROR: failed to solve: process "/bin/sh -c go install" did not complete successfully: exit code: 1
+Duration: 0:13.49

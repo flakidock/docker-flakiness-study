@@ -1,0 +1,69 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 32B
+#1 transferring context: 150B done
+#1 DONE 0.5s
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 983B done
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.14
+#3 DONE 1.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [base 1/4] FROM docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#5 resolve docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 0.1s done
+#5 sha256:71859b0c62df47efaeae4f93698b56a8dddafbf041778fd668bbd1ab45a864f8 528B / 528B done
+#5 sha256:9e179bacf43c4d3428d57cf459799ba0285b901945f9eccb17b6da056d3532c7 1.47kB / 1.47kB done
+#5 sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 1.64kB / 1.64kB done
+#5 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 0B / 2.83MB 0.1s
+#5 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 1.05MB / 2.83MB 0.2s
+#5 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 2.83MB / 2.83MB 0.3s
+#5 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 2.83MB / 2.83MB 0.3s done
+#5 extracting sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8
+#5 extracting sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 0.2s done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 61.19MB 0.6s done
+#4 DONE 1.0s
+
+#5 [base 1/4] FROM docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#5 DONE 1.4s
+
+#6 [base 2/4] RUN apk add --no-cache --virtual .base-deps     nodejs=14.17.0-r0     npm=7.19.1-r0     tini
+#6 0.489 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#6 0.718 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#6 1.067 ERROR: unable to select packages:
+#6 1.098   nodejs-14.21.3-r0:
+#6 1.098     breaks: .base-deps-20240801.052330[nodejs=14.17.0-r0]
+#6 1.098     satisfies: npm-7.17.0-r0[cmd:node]
+#6 1.098   npm-7.17.0-r0:
+#6 1.098     breaks: .base-deps-20240801.052330[npm=7.19.1-r0]
+#6 ERROR: process "/bin/sh -c apk add --no-cache --virtual .base-deps     nodejs=14.17.0-r0     npm=7.19.1-r0     tini" did not complete successfully: exit code: 3
+------
+ > [base 2/4] RUN apk add --no-cache --virtual .base-deps     nodejs=14.17.0-r0     npm=7.19.1-r0     tini:
+0.489 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+0.718 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+1.067 ERROR: unable to select packages:
+1.098   nodejs-14.21.3-r0:
+1.098     breaks: .base-deps-20240801.052330[nodejs=14.17.0-r0]
+1.098     satisfies: npm-7.17.0-r0[cmd:node]
+1.098   npm-7.17.0-r0:
+1.098     breaks: .base-deps-20240801.052330[npm=7.19.1-r0]
+------
+v1_Dockerfile:3
+--------------------
+   2 |     
+   3 | >>> RUN apk add --no-cache --virtual .base-deps \
+   4 | >>>     nodejs=14.17.0-r0 \
+   5 | >>>     npm=7.19.1-r0 \
+   6 | >>>     tini
+   7 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apk add --no-cache --virtual .base-deps     nodejs=14.17.0-r0     npm=7.19.1-r0     tini" did not complete successfully: exit code: 3
+Duration: 0:6.49

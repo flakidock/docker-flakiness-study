@@ -1,0 +1,160 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 552B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:3.14
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#4 resolve docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 0.0s done
+#4 sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 1.64kB / 1.64kB done
+#4 sha256:71859b0c62df47efaeae4f93698b56a8dddafbf041778fd668bbd1ab45a864f8 528B / 528B done
+#4 sha256:9e179bacf43c4d3428d57cf459799ba0285b901945f9eccb17b6da056d3532c7 1.47kB / 1.47kB done
+#4 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 0B / 2.83MB 0.1s
+#4 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 2.83MB / 2.83MB 0.1s done
+#4 extracting sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 0.1s done
+#4 DONE 0.4s
+
+#5 [2/3] RUN apk --update add --no-cache python3 py3-requests py3-pip openssl ca-certificates   && apk --update add --virtual build-dependencies python3-dev build-base wget git   && git clone https://github.com/maldevel/EmailHarvester.git /EmailHarvester   && pip3 install -r /EmailHarvester/requirements.txt   && apk del build-dependencies
+#5 0.169 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#5 0.273 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#5 0.447 (1/40) Installing ca-certificates (20230506-r0)
+#5 0.470 (2/40) Installing openssl (1.1.1t-r2)
+#5 0.487 (3/40) Installing libbz2 (1.0.8-r1)
+#5 0.498 (4/40) Installing expat (2.5.0-r0)
+#5 0.512 (5/40) Installing libffi (3.3-r2)
+#5 0.530 (6/40) Installing gdbm (1.19-r0)
+#5 0.545 (7/40) Installing xz-libs (5.2.5-r1)
+#5 0.558 (8/40) Installing libgcc (10.3.1_git20210424-r2)
+#5 0.570 (9/40) Installing libstdc++ (10.3.1_git20210424-r2)
+#5 0.609 (10/40) Installing mpdecimal (2.5.1-r1)
+#5 0.625 (11/40) Installing ncurses-terminfo-base (6.2_p20210612-r1)
+#5 0.645 (12/40) Installing ncurses-libs (6.2_p20210612-r1)
+#5 0.660 (13/40) Installing readline (8.1.0-r0)
+#5 0.675 (14/40) Installing sqlite-libs (3.35.5-r0)
+#5 0.720 (15/40) Installing python3 (3.9.17-r0)
+#5 1.207 (16/40) Installing py3-appdirs (1.4.4-r2)
+#5 1.218 (17/40) Installing py3-chardet (4.0.0-r2)
+#5 1.244 (18/40) Installing py3-idna (3.2-r0)
+#5 1.258 (19/40) Installing py3-urllib3 (1.26.5-r0)
+#5 1.279 (20/40) Installing py3-certifi (2020.12.5-r1)
+#5 1.289 (21/40) Installing py3-requests (2.25.1-r4)
+#5 1.302 (22/40) Installing py3-msgpack (1.0.2-r1)
+#5 1.314 (23/40) Installing py3-lockfile (0.12.2-r4)
+#5 1.325 (24/40) Installing py3-cachecontrol (0.12.6-r1)
+#5 1.337 (25/40) Installing py3-colorama (0.4.4-r1)
+#5 1.347 (26/40) Installing py3-contextlib2 (0.6.0-r1)
+#5 1.358 (27/40) Installing py3-distlib (0.3.1-r3)
+#5 1.380 (28/40) Installing py3-distro (1.5.0-r3)
+#5 1.391 (29/40) Installing py3-six (1.15.0-r1)
+#5 1.400 (30/40) Installing py3-webencodings (0.5.1-r4)
+#5 1.412 (31/40) Installing py3-html5lib (1.1-r1)
+#5 1.433 (32/40) Installing py3-parsing (2.4.7-r2)
+#5 1.447 (33/40) Installing py3-packaging (20.9-r1)
+#5 1.459 (34/40) Installing py3-toml (0.10.2-r2)
+#5 1.469 (35/40) Installing py3-pep517 (0.10.0-r2)
+#5 1.482 (36/40) Installing py3-progress (1.5-r2)
+#5 1.494 (37/40) Installing py3-retrying (1.3.3-r1)
+#5 1.505 (38/40) Installing py3-ordered-set (4.0.2-r1)
+#5 1.514 (39/40) Installing py3-setuptools (52.0.0-r3)
+#5 1.555 (40/40) Installing py3-pip (20.3.4-r1)
+#5 1.684 Executing busybox-1.33.1-r8.trigger
+#5 1.688 Executing ca-certificates-20230506-r0.trigger
+#5 1.717 OK: 79 MiB in 54 packages
+#5 1.757 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#5 1.893 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#5 2.099 (1/30) Upgrading musl (1.2.2-r4 -> 1.2.2-r5)
+#5 2.116 (2/30) Installing pkgconf (1.7.4-r1)
+#5 2.135 (3/30) Installing python3-dev (3.9.17-r0)
+#5 2.494 (4/30) Installing binutils (2.35.2-r2)
+#5 2.575 (5/30) Installing libmagic (5.40-r1)
+#5 2.607 (6/30) Installing file (5.40-r1)
+#5 2.618 (7/30) Installing libgomp (10.3.1_git20210424-r2)
+#5 2.634 (8/30) Installing libatomic (10.3.1_git20210424-r2)
+#5 2.647 (9/30) Installing libgphobos (10.3.1_git20210424-r2)
+#5 2.703 (10/30) Installing gmp (6.2.1-r1)
+#5 2.719 (11/30) Installing isl22 (0.22-r0)
+#5 2.746 (12/30) Installing mpfr4 (4.1.0-r0)
+#5 2.783 (13/30) Installing mpc1 (1.2.1-r0)
+#5 2.796 (14/30) Installing gcc (10.3.1_git20210424-r2)
+#5 3.532 (15/30) Installing musl-dev (1.2.2-r5)
+#5 3.617 (16/30) Installing libc-dev (0.7.2-r3)
+#5 3.628 (17/30) Installing g++ (10.3.1_git20210424-r2)
+#5 4.096 (18/30) Installing make (4.3-r0)
+#5 4.114 (19/30) Installing fortify-headers (1.1-r1)
+#5 4.126 (20/30) Installing patch (2.7.6-r7)
+#5 4.140 (21/30) Installing build-base (0.5-r3)
+#5 4.151 (22/30) Installing libunistring (0.9.10-r1)
+#5 4.173 (23/30) Installing libidn2 (2.3.1-r0)
+#5 4.187 (24/30) Installing wget (1.21.1-r1)
+#5 4.205 (25/30) Installing brotli-libs (1.0.9-r5)
+#5 4.223 (26/30) Installing nghttp2-libs (1.43.0-r0)
+#5 4.237 (27/30) Installing libcurl (8.0.1-r0)
+#5 4.254 (28/30) Installing pcre2 (10.36-r1)
+#5 4.271 (29/30) Installing git (2.32.7-r0)
+#5 4.404 (30/30) Installing build-dependencies (20240801.015223)
+#5 4.404 Executing busybox-1.33.1-r8.trigger
+#5 4.408 OK: 327 MiB in 83 packages
+#5 4.448 Cloning into '/EmailHarvester'...
+#5 5.323 Collecting termcolor
+#5 5.366   Downloading termcolor-2.4.0-py3-none-any.whl (7.7 kB)
+#5 5.379 Requirement already satisfied: colorama in /usr/lib/python3.9/site-packages (from -r /EmailHarvester/requirements.txt (line 2)) (0.4.4)
+#5 5.380 Requirement already satisfied: requests in /usr/lib/python3.9/site-packages (from -r /EmailHarvester/requirements.txt (line 3)) (2.25.1)
+#5 5.437 Collecting validators
+#5 5.454   Downloading validators-0.33.0-py3-none-any.whl (43 kB)
+#5 5.503 Requirement already satisfied: chardet<5,>=3.0.2 in /usr/lib/python3.9/site-packages (from requests->-r /EmailHarvester/requirements.txt (line 3)) (4.0.0)
+#5 5.504 Requirement already satisfied: idna<3.3,>=2.5 in /usr/lib/python3.9/site-packages (from requests->-r /EmailHarvester/requirements.txt (line 3)) (3.2)
+#5 5.505 Requirement already satisfied: urllib3<1.27,>=1.21.1 in /usr/lib/python3.9/site-packages (from requests->-r /EmailHarvester/requirements.txt (line 3)) (1.26.5)
+#5 5.505 Requirement already satisfied: certifi>=2017.4.17 in /usr/lib/python3.9/site-packages (from requests->-r /EmailHarvester/requirements.txt (line 3)) (2020.12.5)
+#5 5.544 Installing collected packages: validators, termcolor
+#5 5.626 Successfully installed termcolor-2.4.0 validators-0.33.0
+#5 6.100 (1/29) Purging build-dependencies (20240801.015223)
+#5 6.100 (2/29) Purging python3-dev (3.9.17-r0)
+#5 6.108 (3/29) Purging build-base (0.5-r3)
+#5 6.108 (4/29) Purging file (5.40-r1)
+#5 6.108 (5/29) Purging g++ (10.3.1_git20210424-r2)
+#5 6.130 (6/29) Purging gcc (10.3.1_git20210424-r2)
+#5 6.151 (7/29) Purging binutils (2.35.2-r2)
+#5 6.154 (8/29) Purging libatomic (10.3.1_git20210424-r2)
+#5 6.154 (9/29) Purging libgomp (10.3.1_git20210424-r2)
+#5 6.154 (10/29) Purging libgphobos (10.3.1_git20210424-r2)
+#5 6.157 (11/29) Purging make (4.3-r0)
+#5 6.157 (12/29) Purging libc-dev (0.7.2-r3)
+#5 6.157 (13/29) Purging musl-dev (1.2.2-r5)
+#5 6.162 (14/29) Purging fortify-headers (1.1-r1)
+#5 6.162 (15/29) Purging patch (2.7.6-r7)
+#5 6.162 (16/29) Purging wget (1.21.1-r1)
+#5 6.162 (17/29) Purging git (2.32.7-r0)
+#5 6.166 (18/29) Purging pkgconf (1.7.4-r1)
+#5 6.166 (19/29) Purging libmagic (5.40-r1)
+#5 6.167 (20/29) Purging mpc1 (1.2.1-r0)
+#5 6.167 (21/29) Purging mpfr4 (4.1.0-r0)
+#5 6.167 (22/29) Purging isl22 (0.22-r0)
+#5 6.167 (23/29) Purging gmp (6.2.1-r1)
+#5 6.167 (24/29) Purging libidn2 (2.3.1-r0)
+#5 6.167 (25/29) Purging libunistring (0.9.10-r1)
+#5 6.167 (26/29) Purging libcurl (8.0.1-r0)
+#5 6.167 (27/29) Purging brotli-libs (1.0.9-r5)
+#5 6.168 (28/29) Purging nghttp2-libs (1.43.0-r0)
+#5 6.168 (29/29) Purging pcre2 (10.36-r1)
+#5 6.168 Executing busybox-1.33.1-r8.trigger
+#5 6.172 OK: 79 MiB in 54 packages
+#5 DONE 6.5s
+
+#6 [3/3] WORKDIR /EmailHarvester
+#6 DONE 0.1s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 0.7s done
+#7 writing image sha256:86c06aacf1c311c6bc54d6f3ed5438c66e0435cf99affd3cd43dffda101c3530
+#7 writing image sha256:86c06aacf1c311c6bc54d6f3ed5438c66e0435cf99affd3cd43dffda101c3530 done
+#7 naming to docker.io/library/image_name_v1_1 done
+#7 DONE 0.7s
+Duration: 0:8.65

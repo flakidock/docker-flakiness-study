@@ -1,0 +1,84 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 ...
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.3s
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 775B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/buildpack-deps:bullseye-scm
+#3 DONE 1.4s
+
+#4 [1/6] FROM docker.io/library/buildpack-deps:bullseye-scm@sha256:b4c97cafcf03994a3122df41f17f477e0d4d6db20dc8d959edc4aa67a889be04
+#4 resolve docker.io/library/buildpack-deps:bullseye-scm@sha256:b4c97cafcf03994a3122df41f17f477e0d4d6db20dc8d959edc4aa67a889be04
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 11.50MB 0.1s done
+#5 DONE 0.4s
+
+#4 [1/6] FROM docker.io/library/buildpack-deps:bullseye-scm@sha256:b4c97cafcf03994a3122df41f17f477e0d4d6db20dc8d959edc4aa67a889be04
+#4 resolve docker.io/library/buildpack-deps:bullseye-scm@sha256:b4c97cafcf03994a3122df41f17f477e0d4d6db20dc8d959edc4aa67a889be04 0.3s done
+#4 sha256:b4c97cafcf03994a3122df41f17f477e0d4d6db20dc8d959edc4aa67a889be04 1.85kB / 1.85kB done
+#4 sha256:69d36ad13ecffb8dd51412c7579dbecc4f17f661dd9fd8857c14875fa43c95c7 953B / 953B done
+#4 sha256:6cfdd900dd285a53a5afb08c6190630059edec24d4d75b3bc125b723de69ebcd 2.24kB / 2.24kB done
+#4 sha256:d53dfa00a586795de9dc9f5bc8ad4717b02a8c349b4bbc1f4600a926c5384f40 0B / 15.76MB 0.2s
+#4 sha256:bf8ed7043ae24342affc9e27ba2f362a3d02c164d6f2cc7b837f33b475f4ef54 0B / 54.59MB 0.2s
+#4 sha256:d53dfa00a586795de9dc9f5bc8ad4717b02a8c349b4bbc1f4600a926c5384f40 1.05MB / 15.76MB 0.3s
+#4 sha256:d53dfa00a586795de9dc9f5bc8ad4717b02a8c349b4bbc1f4600a926c5384f40 7.34MB / 15.76MB 0.4s
+#4 sha256:bf8ed7043ae24342affc9e27ba2f362a3d02c164d6f2cc7b837f33b475f4ef54 4.19MB / 54.59MB 0.4s
+#4 sha256:d53dfa00a586795de9dc9f5bc8ad4717b02a8c349b4bbc1f4600a926c5384f40 13.57MB / 15.76MB 0.5s
+#4 sha256:bf8ed7043ae24342affc9e27ba2f362a3d02c164d6f2cc7b837f33b475f4ef54 9.44MB / 54.59MB 0.5s
+#4 sha256:d53dfa00a586795de9dc9f5bc8ad4717b02a8c349b4bbc1f4600a926c5384f40 15.76MB / 15.76MB 0.6s
+#4 sha256:bf8ed7043ae24342affc9e27ba2f362a3d02c164d6f2cc7b837f33b475f4ef54 17.83MB / 54.59MB 0.6s
+#4 sha256:bf8ed7043ae24342affc9e27ba2f362a3d02c164d6f2cc7b837f33b475f4ef54 40.89MB / 54.59MB 0.9s
+#4 sha256:d53dfa00a586795de9dc9f5bc8ad4717b02a8c349b4bbc1f4600a926c5384f40 15.76MB / 15.76MB 0.9s done
+#4 sha256:bf8ed7043ae24342affc9e27ba2f362a3d02c164d6f2cc7b837f33b475f4ef54 49.28MB / 54.59MB 0.9s
+#4 extracting sha256:d53dfa00a586795de9dc9f5bc8ad4717b02a8c349b4bbc1f4600a926c5384f40
+#4 sha256:bf8ed7043ae24342affc9e27ba2f362a3d02c164d6f2cc7b837f33b475f4ef54 54.59MB / 54.59MB 1.0s
+#4 extracting sha256:d53dfa00a586795de9dc9f5bc8ad4717b02a8c349b4bbc1f4600a926c5384f40 0.6s done
+#4 sha256:bf8ed7043ae24342affc9e27ba2f362a3d02c164d6f2cc7b837f33b475f4ef54 54.59MB / 54.59MB 1.9s done
+#4 extracting sha256:bf8ed7043ae24342affc9e27ba2f362a3d02c164d6f2cc7b837f33b475f4ef54
+#4 extracting sha256:bf8ed7043ae24342affc9e27ba2f362a3d02c164d6f2cc7b837f33b475f4ef54 3.4s done
+#4 DONE 6.6s
+
+#6 [2/6] RUN apt-get update && apt-get -y --no-install-recommends install     ca-certificates     && rm -rf /var/cache/apt/*     && rm -rf /var/lib/apt/lists/*
+#6 1.138 Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#6 1.303 Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [48.4 kB]
+#6 1.315 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
+#6 1.386 Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8067 kB]
+#6 1.506 Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [280 kB]
+#6 1.613 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]
+#6 2.763 Fetched 8574 kB in 2s (5119 kB/s)
+#6 2.763 Reading package lists...
+#6 3.395 Reading package lists...
+#6 4.010 Building dependency tree...
+#6 4.128 Reading state information...
+#6 4.264 ca-certificates is already the newest version (20210119).
+#6 4.264 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+#6 DONE 7.8s
+
+#7 [3/6] RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl     && mkdir -p /usr/local/bin     && chmod +x kubectl     && mv kubectl /usr/local/bin
+#7 DONE 2.5s
+
+#8 [4/6] COPY kube-bench /kube-bench
+#8 DONE 0.6s
+
+#9 [5/6] COPY cfg/ /cfg
+#9 DONE 0.4s
+
+#10 [6/6] COPY run_checks.sh /run_checks.sh
+#10 DONE 0.4s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 1.1s done
+#11 writing image sha256:542a4b386662ac4243540a0f7699295e767c9bd308bc684942406ddada3cb7d3 0.0s done
+#11 naming to docker.io/library/image_name_v1_1 0.0s done
+#11 DONE 1.1s
+Duration: 0:21.83

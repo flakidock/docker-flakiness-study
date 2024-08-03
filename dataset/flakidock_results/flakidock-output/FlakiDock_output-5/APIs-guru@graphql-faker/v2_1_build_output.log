@@ -1,0 +1,89 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context:
+#1 ...
+
+#2 [internal] load build definition from v2_Dockerfile
+#2 transferring dockerfile: 218B done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 53B done
+#1 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/node:14.18.0-alpine
+#3 DONE 1.8s
+
+#4 [1/3] FROM docker.io/library/node:14.18.0-alpine@sha256:6e52e0b3bedfb494496488514d18bee7fd503fd4e44289ea012ad02f8f41a312
+#4 resolve docker.io/library/node:14.18.0-alpine@sha256:6e52e0b3bedfb494496488514d18bee7fd503fd4e44289ea012ad02f8f41a312 0.1s done
+#4 DONE 0.1s
+
+#4 [1/3] FROM docker.io/library/node:14.18.0-alpine@sha256:6e52e0b3bedfb494496488514d18bee7fd503fd4e44289ea012ad02f8f41a312
+#4 sha256:6e52e0b3bedfb494496488514d18bee7fd503fd4e44289ea012ad02f8f41a312 1.43kB / 1.43kB done
+#4 sha256:96bbc87132d5d6b3d8b5cad758ebae5d30bd75bbd8cdc5cd756fb6b0d500f153 1.16kB / 1.16kB done
+#4 sha256:ee0f6dca428df03d05ddad069bcb4b8345627bafa6c96e9b5862ced481ebb7bb 6.53kB / 6.53kB done
+#4 sha256:6a428f9f83b0a29f1fdd2ccccca19a9bab805a925b8eddf432a5a3d3da04afbc 0B / 2.82MB 0.1s
+#4 sha256:117b1bf70a74023f215a9cac718aa7a080ae87d74f97960a2dc32c2e0de1b0f8 0B / 36.37MB 0.2s
+#4 sha256:a19603468f9063a1e31dbf285658b29d19158974c5ee59b71309740683dabb32 0B / 2.24MB 0.2s
+#4 sha256:6a428f9f83b0a29f1fdd2ccccca19a9bab805a925b8eddf432a5a3d3da04afbc 2.82MB / 2.82MB 0.4s
+#4 sha256:a19603468f9063a1e31dbf285658b29d19158974c5ee59b71309740683dabb32 1.05MB / 2.24MB 0.4s
+#4 sha256:6a428f9f83b0a29f1fdd2ccccca19a9bab805a925b8eddf432a5a3d3da04afbc 2.82MB / 2.82MB 0.4s done
+#4 sha256:117b1bf70a74023f215a9cac718aa7a080ae87d74f97960a2dc32c2e0de1b0f8 3.15MB / 36.37MB 0.5s
+#4 sha256:a19603468f9063a1e31dbf285658b29d19158974c5ee59b71309740683dabb32 2.24MB / 2.24MB 0.5s
+#4 extracting sha256:6a428f9f83b0a29f1fdd2ccccca19a9bab805a925b8eddf432a5a3d3da04afbc
+#4 sha256:1d2672489abb42dc426d9c4ceb489548e07828f6f87c93b9b2224ad9b0fbc5fc 0B / 282B 0.5s
+#4 sha256:117b1bf70a74023f215a9cac718aa7a080ae87d74f97960a2dc32c2e0de1b0f8 7.34MB / 36.37MB 0.6s
+#4 sha256:a19603468f9063a1e31dbf285658b29d19158974c5ee59b71309740683dabb32 2.24MB / 2.24MB 0.5s done
+#4 sha256:117b1bf70a74023f215a9cac718aa7a080ae87d74f97960a2dc32c2e0de1b0f8 17.83MB / 36.37MB 0.8s
+#4 sha256:1d2672489abb42dc426d9c4ceb489548e07828f6f87c93b9b2224ad9b0fbc5fc 282B / 282B 0.6s done
+#4 sha256:117b1bf70a74023f215a9cac718aa7a080ae87d74f97960a2dc32c2e0de1b0f8 24.12MB / 36.37MB 0.9s
+#4 sha256:117b1bf70a74023f215a9cac718aa7a080ae87d74f97960a2dc32c2e0de1b0f8 35.65MB / 36.37MB 1.0s
+#4 extracting sha256:6a428f9f83b0a29f1fdd2ccccca19a9bab805a925b8eddf432a5a3d3da04afbc 0.8s done
+#4 sha256:117b1bf70a74023f215a9cac718aa7a080ae87d74f97960a2dc32c2e0de1b0f8 36.37MB / 36.37MB 1.7s done
+#4 extracting sha256:117b1bf70a74023f215a9cac718aa7a080ae87d74f97960a2dc32c2e0de1b0f8
+#4 extracting sha256:117b1bf70a74023f215a9cac718aa7a080ae87d74f97960a2dc32c2e0de1b0f8 5.0s
+#4 extracting sha256:117b1bf70a74023f215a9cac718aa7a080ae87d74f97960a2dc32c2e0de1b0f8 5.9s done
+#4 extracting sha256:a19603468f9063a1e31dbf285658b29d19158974c5ee59b71309740683dabb32
+#4 extracting sha256:a19603468f9063a1e31dbf285658b29d19158974c5ee59b71309740683dabb32 0.7s done
+#4 extracting sha256:1d2672489abb42dc426d9c4ceb489548e07828f6f87c93b9b2224ad9b0fbc5fc done
+#4 DONE 10.5s
+
+#5 [2/3] WORKDIR /workdir
+#5 DONE 3.5s
+
+#6 [3/3] RUN yarn global add graphql-faker &&     yarn cache clean --force
+#6 2.189 yarn global v1.22.5
+#6 2.380 [1/4] Resolving packages...
+#6 2.991 warning graphql-faker > express-graphql@0.12.0: This package is no longer maintained. We recommend using `graphql-http` instead. Please consult the migration document https://github.com/graphql/graphql-http#migrating-express-grpahql.
+#6 4.257 warning graphql-faker > graphql-voyager > viz.js@2.1.2: 2.x is no longer supported, 3.x published as @viz-js/viz
+#6 4.688 warning graphql-faker > graphql-voyager > @material-ui/core@3.9.4: Material UI v4 doesn't receive active development since September 2021. See the guide https://mui.com/material-ui/migration/migration-v4/ to upgrade to v5.
+#6 5.273 warning graphql-faker > graphql-voyager > @material-ui/core > @material-ui/system@3.0.0-alpha.2: You can now upgrade to @mui/system. See the guide: https://mui.com/guides/migration-v4/
+#6 5.663 warning graphql-faker > graphql-voyager > @material-ui/core > popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+#6 6.146 warning graphql-faker > graphql-voyager > @material-ui/core > recompose > fbjs > core-js@1.2.7: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+#6 6.912 [2/4] Fetching packages...
+#6 55.20 error graphql-faker@2.0.0: The engine "node" is incompatible with this module. Expected version ">= 18.12.0". Got "14.18.0"
+#6 55.20 info Visit https://yarnpkg.com/en/docs/cli/global for documentation about this command.
+#6 55.20 error Found incompatible module.
+#6 ERROR: process "/bin/sh -c yarn global add graphql-faker &&     yarn cache clean --force" did not complete successfully: exit code: 1
+------
+ > [3/3] RUN yarn global add graphql-faker &&     yarn cache clean --force:
+2.991 warning graphql-faker > express-graphql@0.12.0: This package is no longer maintained. We recommend using `graphql-http` instead. Please consult the migration document https://github.com/graphql/graphql-http#migrating-express-grpahql.
+4.257 warning graphql-faker > graphql-voyager > viz.js@2.1.2: 2.x is no longer supported, 3.x published as @viz-js/viz
+4.688 warning graphql-faker > graphql-voyager > @material-ui/core@3.9.4: Material UI v4 doesn't receive active development since September 2021. See the guide https://mui.com/material-ui/migration/migration-v4/ to upgrade to v5.
+5.273 warning graphql-faker > graphql-voyager > @material-ui/core > @material-ui/system@3.0.0-alpha.2: You can now upgrade to @mui/system. See the guide: https://mui.com/guides/migration-v4/
+5.663 warning graphql-faker > graphql-voyager > @material-ui/core > popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+6.146 warning graphql-faker > graphql-voyager > @material-ui/core > recompose > fbjs > core-js@1.2.7: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+6.912 [2/4] Fetching packages...
+55.20 error graphql-faker@2.0.0: The engine "node" is incompatible with this module. Expected version ">= 18.12.0". Got "14.18.0"
+55.20 info Visit https://yarnpkg.com/en/docs/cli/global for documentation about this command.
+55.20 error Found incompatible module.
+------
+v2_Dockerfile:8
+--------------------
+   7 |     
+   8 | >>> RUN yarn global add graphql-faker && \
+   9 | >>>     yarn cache clean --force
+--------------------
+ERROR: failed to solve: process "/bin/sh -c yarn global add graphql-faker &&     yarn cache clean --force" did not complete successfully: exit code: 1
+Duration: 1:14.12

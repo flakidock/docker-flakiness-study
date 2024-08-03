@@ -1,0 +1,24 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile: 913B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:xenial
+#2 ...
+
+#3 [auth] library/ubuntu:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:xenial
+#2 DONE 1.0s
+v1_Dockerfile:12
+--------------------
+  10 |     # Install hugo
+  11 |     ENV hugo_deb_url=https://github.com/gohugoio/hugo/releases/download/v0.26/hugo_0.26_Linux-64bit.deb
+  12 | >>> COPY ${hugo_deb_url} /tmp/hugo.deb
+  13 |     RUN dpkg -i /tmp/hugo.deb && rm -f /tmp/hugo.deb
+  14 |     
+--------------------
+ERROR: failed to solve: source can't be a URL for COPY
+Duration: 0:1.27

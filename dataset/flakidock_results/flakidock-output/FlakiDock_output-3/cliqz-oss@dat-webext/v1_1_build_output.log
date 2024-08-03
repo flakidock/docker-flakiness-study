@@ -1,0 +1,120 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 ...
+
+#2 [internal] load build definition from v1_Dockerfile
+#2 transferring dockerfile: 844B done
+#2 DONE 0.3s
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/node:12.13.0-stretch
+#3 DONE 0.9s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [ 1/11] FROM docker.io/library/node:12.13.0-stretch@sha256:fc6c1371e3a0883f17e34492bcaffb4d8ad986ebb4a5eeafa8817bd425446566
+#5 resolve docker.io/library/node:12.13.0-stretch@sha256:fc6c1371e3a0883f17e34492bcaffb4d8ad986ebb4a5eeafa8817bd425446566 0.1s done
+#5 sha256:fc6c1371e3a0883f17e34492bcaffb4d8ad986ebb4a5eeafa8817bd425446566 1.21kB / 1.21kB done
+#5 sha256:834225bc3af578aee9486fe3c5ad850a957c3c72c9f45688a9e0ce2eeee16794 2.21kB / 2.21kB done
+#5 sha256:11e92fc50c4a4f575757aa1d3d1d89a732b426269a9beb29d97b31b68950bd6f 7.77kB / 7.77kB done
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 476.82kB done
+#4 DONE 0.4s
+
+#5 [ 1/11] FROM docker.io/library/node:12.13.0-stretch@sha256:fc6c1371e3a0883f17e34492bcaffb4d8ad986ebb4a5eeafa8817bd425446566
+#5 sha256:524be717efb1e5a1cc0998f4ffeb8b3c2613195141ca4aa490da82e0353b235c 0B / 4.16kB 0.5s
+#5 sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a 0B / 22.27MB 0.5s
+#5 sha256:524be717efb1e5a1cc0998f4ffeb8b3c2613195141ca4aa490da82e0353b235c 4.16kB / 4.16kB 0.5s done
+#5 extracting sha256:524be717efb1e5a1cc0998f4ffeb8b3c2613195141ca4aa490da82e0353b235c 0.1s done
+#5 sha256:2c9863d012f52da0e48c18cc1d6ece21e8c0c22e76c4d776bae0b79504bff141 0B / 1.40MB 0.6s
+#5 sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a 19.92MB / 22.27MB 0.8s
+#5 sha256:2c9863d012f52da0e48c18cc1d6ece21e8c0c22e76c4d776bae0b79504bff141 1.40MB / 1.40MB 0.7s done
+#5 sha256:06cd084e76f0b4935953486edc4062e8ba0e8813401b19e1983830bc2c0f8044 293B / 293B 0.8s
+#5 sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a 22.27MB / 22.27MB 0.9s
+#5 sha256:06cd084e76f0b4935953486edc4062e8ba0e8813401b19e1983830bc2c0f8044 293B / 293B 0.8s done
+#5 extracting sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a
+#5 sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a 22.27MB / 22.27MB 1.2s done
+#5 extracting sha256:da330b3729a794d8abe64afc65916d5cb4bb22dfcf5ac6fa251e49fc1784f57a 3.2s done
+#5 extracting sha256:2c9863d012f52da0e48c18cc1d6ece21e8c0c22e76c4d776bae0b79504bff141
+#5 extracting sha256:2c9863d012f52da0e48c18cc1d6ece21e8c0c22e76c4d776bae0b79504bff141 0.3s done
+#5 extracting sha256:06cd084e76f0b4935953486edc4062e8ba0e8813401b19e1983830bc2c0f8044
+#5 extracting sha256:06cd084e76f0b4935953486edc4062e8ba0e8813401b19e1983830bc2c0f8044 done
+#5 DONE 7.2s
+
+#6 [ 2/11] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update --no-install-recommends &&     apt-get install -y python python-pip
+#6 0.475 Ign:1 http://archive.debian.org/debian stretch InRelease
+#6 0.477 Get:2 http://archive.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+#6 0.487 Get:3 http://archive.debian.org/debian stretch Release [118 kB]
+#6 0.492 Get:4 http://archive.debian.org/debian stretch Release.gpg [3177 B]
+#6 0.598 Get:5 http://archive.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
+#6 0.701 Get:6 http://archive.debian.org/debian stretch/main amd64 Packages [7080 kB]
+#6 2.020 Fetched 8042 kB in 1s (5259 kB/s)
+#6 2.020 Reading package lists...
+#6 2.741 Reading package lists...
+#6 3.440 Building dependency tree...
+#6 3.546 Reading state information...
+#6 3.631 python is already the newest version (2.7.13-2).
+#6 3.631 python set to manually installed.
+#6 3.631 The following additional packages will be installed:
+#6 3.631   build-essential dbus libapparmor1 libdbus-1-3 libdbus-glib-1-2
+#6 3.631   libpython-all-dev libpython-dev libpython2.7 libpython2.7-dev
+#6 3.631   libpython2.7-minimal libpython2.7-stdlib python-all python-all-dev
+#6 3.631   python-cffi-backend python-crypto python-cryptography python-dbus python-dev
+#6 3.631   python-enum34 python-gi python-idna python-ipaddress python-keyring
+#6 3.631   python-keyrings.alt python-pip-whl python-pkg-resources python-pyasn1
+#6 3.631   python-secretstorage python-setuptools python-wheel python-xdg python2.7
+#6 3.631   python2.7-dev python2.7-minimal
+#6 3.632 Suggested packages:
+#6 3.632   default-dbus-session-bus | dbus-session-bus python-crypto-dbg
+#6 3.632   python-crypto-doc python-cryptography-doc python-cryptography-vectors
+#6 3.632   python-dbus-dbg python-dbus-doc python-enum34-doc python-gi-cairo
+#6 3.632   gnome-keyring libkf5wallet-bin gir1.2-gnomekeyring-1.0 python-fs
+#6 3.632   python-gdata python-kde4 python-keyczar doc-base python-secretstorage-doc
+#6 3.632   python-setuptools-doc python2.7-doc binfmt-support
+#6 3.943 The following NEW packages will be installed:
+#6 3.943   build-essential dbus libapparmor1 libdbus-glib-1-2 libpython-all-dev
+#6 3.943   libpython-dev libpython2.7 libpython2.7-dev python-all python-all-dev
+#6 3.943   python-cffi-backend python-crypto python-cryptography python-dbus python-dev
+#6 3.943   python-enum34 python-gi python-idna python-ipaddress python-keyring
+#6 3.943   python-keyrings.alt python-pip python-pip-whl python-pkg-resources
+#6 3.943   python-pyasn1 python-secretstorage python-setuptools python-wheel python-xdg
+#6 3.943   python2.7-dev
+#6 3.944 The following packages will be upgraded:
+#6 3.944   libdbus-1-3 libpython2.7-minimal libpython2.7-stdlib python2.7
+#6 3.944   python2.7-minimal
+#6 3.951 E: You don't have enough free space in /var/cache/apt/archives/.
+#6 3.951 5 upgraded, 30 newly installed, 0 to remove and 160 not upgraded.
+#6 3.951 Need to get 37.8 MB of archives.
+#6 3.951 After this operation, 56.8 MB of additional disk space will be used.
+#6 ERROR: process "/bin/sh -c echo \"deb http://archive.debian.org/debian stretch main\" > /etc/apt/sources.list &&     echo \"deb http://archive.debian.org/debian-security stretch/updates main\" >> /etc/apt/sources.list &&     apt-get update --no-install-recommends &&     apt-get install -y python python-pip" did not complete successfully: exit code: 100
+------
+ > [ 2/11] RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list &&     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list &&     apt-get update --no-install-recommends &&     apt-get install -y python python-pip:
+3.943   python-keyrings.alt python-pip python-pip-whl python-pkg-resources
+3.943   python-pyasn1 python-secretstorage python-setuptools python-wheel python-xdg
+3.943   python2.7-dev
+3.944 The following packages will be upgraded:
+3.944   libdbus-1-3 libpython2.7-minimal libpython2.7-stdlib python2.7
+3.944   python2.7-minimal
+3.951 E: You don't have enough free space in /var/cache/apt/archives/.
+3.951 5 upgraded, 30 newly installed, 0 to remove and 160 not upgraded.
+3.951 Need to get 37.8 MB of archives.
+3.951 After this operation, 56.8 MB of additional disk space will be used.
+------
+v1_Dockerfile:6
+--------------------
+   5 |     # Use archived Debian repositories
+   6 | >>> RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+   7 | >>>     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list && \
+   8 | >>>     apt-get update --no-install-recommends && \
+   9 | >>>     apt-get install -y python python-pip
+  10 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c echo \"deb http://archive.debian.org/debian stretch main\" > /etc/apt/sources.list &&     echo \"deb http://archive.debian.org/debian-security stretch/updates main\" >> /etc/apt/sources.list &&     apt-get update --no-install-recommends &&     apt-get install -y python python-pip" did not complete successfully: exit code: 100
+Duration: 0:13.41

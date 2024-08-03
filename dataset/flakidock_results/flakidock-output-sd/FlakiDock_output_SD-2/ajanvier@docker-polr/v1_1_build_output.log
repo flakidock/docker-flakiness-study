@@ -1,0 +1,166 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from v1_Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 2.79kB done
+#1 DONE 0.6s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.7s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.14
+#3 DONE 0.9s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [ 1/20] FROM docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#5 resolve docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#5 resolve docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 0.2s done
+#5 sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed 1.64kB / 1.64kB done
+#5 sha256:71859b0c62df47efaeae4f93698b56a8dddafbf041778fd668bbd1ab45a864f8 528B / 528B done
+#5 sha256:9e179bacf43c4d3428d57cf459799ba0285b901945f9eccb17b6da056d3532c7 1.47kB / 1.47kB done
+#5 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 0B / 2.83MB 0.2s
+#5 ...
+
+#4 [internal] load build context
+#4 transferring context: 16.40kB done
+#4 DONE 0.4s
+
+#5 [ 1/20] FROM docker.io/library/alpine:3.14@sha256:0f2d5c38dd7a4f4f733e688e3a6733cb5ab1ac6e3cb4603a5dd564e5bfb80eed
+#5 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 2.83MB / 2.83MB 0.3s
+#5 sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 2.83MB / 2.83MB 0.4s done
+#5 extracting sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 0.1s
+#5 extracting sha256:f7dab3ab2d6ec29aa28769bec35331fb485b5837501b1e8556413d8b5a79c9c8 0.2s done
+#5 DONE 1.3s
+
+#6 [ 2/20] RUN apk --no-cache add bash git nginx supervisor curl &&     apk --no-cache add php7 php7-fpm         php7-opcache php7-mysqli php7-json php7-openssl php7-curl php7-zlib php7-xml php7-xmlwriter         php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session php7-mbstring php7-gd         php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-tokenizer &&     apk add --update libintl &&     apk add --virtual build_deps gettext &&      cp /usr/bin/envsubst /usr/local/bin/envsubst &&     rm -f /etc/nginx/conf.d/default.conf
+#6 0.610 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#6 0.837 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#6 1.185 (1/30) Installing ncurses-terminfo-base (6.2_p20210612-r1)
+#6 1.218 (2/30) Installing ncurses-libs (6.2_p20210612-r1)
+#6 1.235 (3/30) Installing readline (8.1.0-r0)
+#6 1.269 (4/30) Installing bash (5.1.16-r0)
+#6 1.293 Executing bash-5.1.16-r0.post-install
+#6 1.295 (5/30) Installing ca-certificates (20230506-r0)
+#6 1.320 (6/30) Installing brotli-libs (1.0.9-r5)
+#6 1.343 (7/30) Installing nghttp2-libs (1.43.0-r0)
+#6 1.349 (8/30) Installing libcurl (8.0.1-r0)
+#6 1.366 (9/30) Installing curl (8.0.1-r0)
+#6 1.373 (10/30) Installing expat (2.5.0-r0)
+#6 1.378 (11/30) Installing pcre2 (10.36-r1)
+#6 1.389 (12/30) Installing git (2.32.7-r0)
+#6 3.962 (13/30) Installing pcre (8.44-r0)
+#6 3.970 (14/30) Installing nginx (1.20.2-r1)
+#6 4.128 Executing nginx-1.20.2-r1.pre-install
+#6 4.287 Executing nginx-1.20.2-r1.post-install
+#6 4.290 (15/30) Installing libbz2 (1.0.8-r1)
+#6 4.294 (16/30) Installing libffi (3.3-r2)
+#6 4.297 (17/30) Installing gdbm (1.19-r0)
+#6 4.304 (18/30) Installing xz-libs (5.2.5-r1)
+#6 4.310 (19/30) Installing libgcc (10.3.1_git20210424-r2)
+#6 4.315 (20/30) Installing libstdc++ (10.3.1_git20210424-r2)
+#6 4.342 (21/30) Installing mpdecimal (2.5.1-r1)
+#6 4.370 (22/30) Installing sqlite-libs (3.35.5-r0)
+#6 4.388 (23/30) Installing python3 (3.9.17-r0)
+#6 12.00 (24/30) Installing py3-ordered-set (4.0.2-r1)
+#6 12.17 (25/30) Installing py3-appdirs (1.4.4-r2)
+#6 12.32 (26/30) Installing py3-parsing (2.4.7-r2)
+#6 12.48 (27/30) Installing py3-six (1.15.0-r1)
+#6 12.62 (28/30) Installing py3-packaging (20.9-r1)
+#6 13.14 (29/30) Installing py3-setuptools (52.0.0-r3)
+#6 13.35 (30/30) Installing supervisor (4.2.2-r2)
+#6 13.58 Executing busybox-1.33.1-r8.trigger
+#6 13.59 Executing ca-certificates-20230506-r0.trigger
+#6 13.62 OK: 81 MiB in 44 packages
+#6 13.67 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#6 13.90 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#6 14.25 (1/44) Installing php7-common (7.4.33-r0)
+#6 14.26 (2/44) Installing argon2-libs (20190702-r1)
+#6 14.26 (3/44) Installing libedit (20210216.3.1-r0)
+#6 14.27 (4/44) Installing libxml2 (2.9.14-r2)
+#6 14.29 (5/44) Installing php7 (7.4.33-r0)
+#6 14.35 (6/44) Installing php7-ctype (7.4.33-r0)
+#6 14.35 (7/44) Installing php7-curl (7.4.33-r0)
+#6 14.36 (8/44) Installing php7-dom (7.4.33-r0)
+#6 14.37 (9/44) Installing php7-fpm (7.4.33-r0)
+#6 14.43 (10/44) Installing libxau (1.0.9-r0)
+#6 14.43 (11/44) Installing libmd (1.0.3-r0)
+#6 14.44 (12/44) Installing libbsd (0.11.3-r0)
+#6 14.44 (13/44) Installing libxdmcp (1.1.3-r0)
+#6 14.46 (14/44) Installing libxcb (1.14-r2)
+#6 14.47 (15/44) Installing libx11 (1.7.3.1-r0)
+#6 15.22 (16/44) Installing libxext (1.3.4-r0)
+#6 15.22 (17/44) Installing libice (1.0.10-r0)
+#6 15.23 (18/44) Installing libuuid (2.37.4-r0)
+#6 15.23 (19/44) Installing libsm (1.2.3-r0)
+#6 15.24 (20/44) Installing libxt (1.2.1-r0)
+#6 15.25 (21/44) Installing libxpm (3.5.15-r0)
+#6 15.25 (22/44) Installing libpng (1.6.37-r1)
+#6 15.26 (23/44) Installing freetype (2.10.4-r3)
+#6 15.27 (24/44) Installing libjpeg-turbo (2.1.0-r0)
+#6 15.28 (25/44) Installing libwebp (1.2.0-r2)
+#6 15.30 (26/44) Installing php7-gd (7.4.33-r0)
+#6 15.30 (27/44) Installing icu-libs (67.1-r2)
+#6 15.60 (28/44) Installing php7-intl (7.4.33-r0)
+#6 15.62 (29/44) Installing php7-json (7.4.33-r0)
+#6 15.62 (30/44) Installing oniguruma (6.9.7.1-r0)
+#6 15.63 (31/44) Installing php7-mbstring (7.4.33-r0)
+#6 15.65 (32/44) Installing php7-openssl (7.4.33-r0)
+#6 15.66 (33/44) Installing php7-mysqlnd (7.4.33-r0)
+#6 15.66 (34/44) Installing php7-mysqli (7.4.33-r0)
+#6 15.81 (35/44) Installing php7-opcache (7.4.33-r0)
+#6 15.82 (36/44) Installing php7-pdo (7.4.33-r0)
+#6 15.83 (37/44) Installing php7-pdo_mysql (7.4.33-r0)
+#6 15.83 (38/44) Installing php7-pdo_sqlite (7.4.33-r0)
+#6 15.84 (39/44) Installing php7-phar (7.4.33-r0)
+#6 15.87 (40/44) Installing php7-session (7.4.33-r0)
+#6 15.88 (41/44) Installing php7-tokenizer (7.4.33-r0)
+#6 15.89 (42/44) Installing php7-xml (7.4.33-r0)
+#6 15.90 (43/44) Installing php7-xmlreader (7.4.33-r0)
+#6 15.91 (44/44) Installing php7-xmlwriter (7.4.33-r0)
+#6 15.91 Executing busybox-1.33.1-r8.trigger
+#6 15.92 OK: 137 MiB in 88 packages
+#6 15.97 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz
+#6 16.05 fetch https://dl-cdn.alpinelinux.org/alpine/v3.14/community/x86_64/APKINDEX.tar.gz
+#6 16.28 (1/1) Installing libintl (0.21-r0)
+#6 16.29 OK: 137 MiB in 89 packages
+#6 16.56 (1/5) Installing libgomp (10.3.1_git20210424-r2)
+#6 16.59 (2/5) Installing libunistring (0.9.10-r1)
+#6 16.61 (3/5) Installing gettext-libs (0.21-r0)
+#6 16.80 (4/5) Installing gettext (0.21-r0)
+#6 17.35 (5/5) Installing build_deps (20240801.062940)
+#6 17.35 Executing busybox-1.33.1-r8.trigger
+#6 17.36 OK: 141 MiB in 94 packages
+#6 DONE 19.9s
+
+#7 [ 3/20] COPY config/nginx.conf /etc/nginx/nginx.conf
+#7 DONE 0.6s
+
+#8 [ 4/20] COPY config/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
+#8 DONE 0.5s
+
+#9 [ 5/20] COPY config/php.ini /etc/php7/conf.d/custom.ini
+#9 DONE 0.5s
+
+#10 [ 6/20] COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#10 DONE 0.5s
+
+#11 [ 7/20] RUN ln -s php7 /usr/bin/php
+#11 0.645 ln: /usr/bin/php: File exists
+#11 ERROR: process "/bin/sh -c ln -s php7 /usr/bin/php" did not complete successfully: exit code: 1
+------
+ > [ 7/20] RUN ln -s php7 /usr/bin/php:
+0.645 ln: /usr/bin/php: File exists
+------
+v1_Dockerfile:36
+--------------------
+  34 |     
+  35 |     # Add symbolic link for php
+  36 | >>> RUN ln -s php7 /usr/bin/php
+  37 |     
+  38 |     # Install composer
+--------------------
+ERROR: failed to solve: process "/bin/sh -c ln -s php7 /usr/bin/php" did not complete successfully: exit code: 1
+Duration: 0:26.50
