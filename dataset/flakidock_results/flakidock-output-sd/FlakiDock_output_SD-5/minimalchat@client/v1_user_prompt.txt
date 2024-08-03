@@ -1,0 +1,56 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM node:11
+
+RUN mkdir -p /tmp
+WORKDIR /tmp/client
+
+## Run these together otherwise we have to remember to run it with --no-cache
+#  occasionally
+RUN apt update && \
+      apt install -y git build-essential
+
+
+RUN apt autoremove -y
+
+# RUN git clone https://github.com/minimalchat/client.git /tmp/client
+COPY . .
+
+ENV REMOTE_HOST "localhost:8000"
+
+# ENV DIGITAL_OCEAN_SPACES_KEY
+# ENV CLIENT_KEY
+
+
+# TODO: Is this the best way to go about supplying the theme details?
+# ENV CLIENT_THEME_PRIMARY_COLOUR
+
+# Build the scripts
+RUN make dependencies
+
+CMD ["make", "compile"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/7] RUN apt update &&       apt install -y git build-essential:
+Ign:2 http://deb.debian.org/debian stretch InRelease
+Err:3 http://security.debian.org/debian-security stretch/updates Release
+  404  Not Found
+Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+Err:5 http://deb.debian.org/debian stretch Release
+  404  Not Found
+Err:6 http://deb.debian.org/debian stretch-updates Release
+  404  Not Found
+Reading package lists...
+E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+ERROR: process "/bin/sh -c apt update &&       apt install -y git build-essential" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,40 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM node:8.7
+RUN npm install -g replicated-studio
+EXPOSE 8006
+CMD ["replicated-studio"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/2] RUN npm install -g replicated-studio:
+> snyk@1.postinstall /usr/local/lib/node_modules/replicated-studio/node_modules/snyk
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/usr/local/lib/node_modules/replicated-studio/node_modules/snyk/wrapper_dist/bootstrap.js:3:16)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! snyk@1.postinstall: `node wrapper_dist/bootstrap.js exec`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the snyk@1.postinstall script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2024-08-01T12_00_26_593Z-debug.log
+ERROR: process "/bin/sh -c npm install -g replicated-studio" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

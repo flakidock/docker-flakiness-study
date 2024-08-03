@@ -1,0 +1,34 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM php:7.0-apache
+
+LABEL maintainer="Ludovic Ortega ludovic.ortega@lyon-esport.fr"
+
+# update packages
+RUN apt-get update
+
+# install required packages
+RUN apt-get -y install curl
+
+# install apache extensions
+RUN docker-php-ext-install pdo_mysql
+
+# cleanhtml directory
+RUN rm -Rf /var/www/html/*
+
+# copy file to /var/www/html/
+COPY . /var/www/html/
+
+# set workdir
+WORKDIR /var/www/html/
+
+# remove useless file
+RUN rm adminafk.sql server.csv team.csv
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

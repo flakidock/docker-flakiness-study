@@ -1,0 +1,22 @@
+FROM amazonlinux:latest
+
+MAINTAINER Ryan Means <ryan.means@lifeway.com>
+
+RUN yum -y update && yum -y install zip && rm -rf /var/cache/yum
+
+# JAVA & SBT
+RUN yum -y install java-1.8.0 && \
+    curl -f -L https://www.scala-sbt.org/sbt-rpm.repo | tee /etc/yum.repos.d/sbt-rpm.repo && \
+    yum -y install sbt && rm -rf /var/cache/yum
+
+# PYTHON
+RUN yum -y install python3 python3-virtualenv python3-pip && rm -rf /var/cache/yum
+
+# NODE & YARN
+RUN rpm --import https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL && \
+    rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg && \
+    curl -f --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo && \
+    curl -f --silent --location https://rpm.nodesource.com/setup_6.x | bash - && \
+    yum -y install yarn && rm -rf /var/cache/yum
+
+RUN yum clean all

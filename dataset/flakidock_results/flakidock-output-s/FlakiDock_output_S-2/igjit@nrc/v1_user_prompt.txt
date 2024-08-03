@@ -1,0 +1,15 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM rocker/tidyverse:3.6.2
+
+RUN install2.r --error \
+    zeallot \
+ && rm -rf /tmp/downloaded_packages/
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

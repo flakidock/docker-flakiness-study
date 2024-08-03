@@ -1,0 +1,36 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM circleci/ruby:2.3.8
+USER root
+RUN apt-get update && sudo apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev
+RUN mkdir /alpr
+RUN chown -R circleci:circleci /alpr
+USER circleci
+WORKDIR /alpr
+COPY . /alpr
+RUN bundle install
+COPY . /alpr
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/8] RUN apt-get update && sudo apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev:
+Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+Err:2 http://security.debian.org/debian-security stretch/updates Release
+  404  Not Found
+Ign:3 http://deb.debian.org/debian stretch InRelease
+Err:5 http://deb.debian.org/debian stretch Release
+  404  Not Found
+Err:6 http://deb.debian.org/debian stretch-updates Release
+  404  Not Found
+E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does no longer have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch Release' does no longer have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' does no longer have a Release file.
+ERROR: process "/bin/sh -c apt-get update && sudo apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

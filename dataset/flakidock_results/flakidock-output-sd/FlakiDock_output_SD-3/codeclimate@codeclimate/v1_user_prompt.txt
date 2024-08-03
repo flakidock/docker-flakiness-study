@@ -1,0 +1,60 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM alpine:3.16.0
+
+WORKDIR /usr/src/app
+COPY Gemfile /usr/src/app/
+COPY Gemfile.lock /usr/src/app/
+COPY VERSION /usr/src/app/
+COPY codeclimate.gemspec /usr/src/app/
+ENV CODECLIMATE_DOCKER=1 BUNDLE_SILENCE_ROOT_WARNING=1
+
+RUN apk --no-cache upgrade && \
+      apk --no-cache --update add \
+      build-base \
+      ca-certificates \
+      git \
+      openssh-client \
+      openssl \
+      ruby \
+      ruby-bigdecimal \
+      ruby-bundler \
+      ruby-dev \
+      wget && \
+      bundle install -j 4 && \
+      apk del build-base && \
+      rm -fr /usr/share/ri
+
+RUN wget -q -O /tmp/docker.tgz \
+    https://download.docker.com/linux/static/stable/x86_64/docker-20.10.17.tgz && \
+    tar -C /tmp -xzvf /tmp/docker.tgz && \
+    mv /tmp/docker/docker /bin/docker && \
+    chmod +x /bin/docker && \
+    rm -rf /tmp/docker*
+
+COPY . /usr/src/app
+
+VOLUME /code
+WORKDIR /code
+ENTRYPOINT ["/usr/src/app/bin/codeclimate"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 7/10] RUN apk --no-cache upgrade &&       apk --no-cache --update add       build-base       ca-certificates       git       openssh-client       openssl       ruby       ruby-bigdecimal       ruby-bundler       ruby-dev       wget &&       bundle install -j 4 &&       apk del build-base &&       rm -fr /usr/share/ri:
+Executing busybox-1.35.0-r18.trigger
+Executing ca-certificates-20240226-r0.trigger
+OK: 233 MiB in 63 packages
+Bundler 2.is running, but your lockfile was generated with 2.3.16. Installing Bundler 2.and restarting using that version.
+Fetching bundler 2.3.16
+Installing bundler 2.3.16
+codeclimate-0.requires ruby version >= 2.6, <= 3.1.3, which is incompatible
+with the current version, ruby 3.1.5p252
+ERROR: process "/bin/sh -c apk --no-cache upgrade &&       apk --no-cache --update add       build-base       ca-certificates       git       openssh-client       openssl       ruby       ruby-bigdecimal       ruby-bundler       ruby-dev       wget &&       bundle install -j 4 &&       apk del build-base &&       rm -fr /usr/share/ri" did not complete successfully: exit code: 5```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

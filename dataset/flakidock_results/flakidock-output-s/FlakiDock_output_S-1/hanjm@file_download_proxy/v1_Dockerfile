@@ -1,0 +1,26 @@
+# Dockerfile
+FROM golang:1.8.4-alpine3.6
+
+# Update apk and install dependencies
+RUN apk update && apk add --no-cache lsof git aria2
+
+# Set the working directory
+WORKDIR /go
+
+# Set the GOPATH environment variable
+ENV GOPATH=/go
+
+# Download the Go package
+RUN go get -v github.com/hanjm/file_download_proxy/...
+
+# Set the working directory to the package directory
+WORKDIR /go/src/github.com/hanjm/file_download_proxy
+
+# Build the Go application
+RUN go build -o fdp
+
+# Expose the application port
+EXPOSE 8080
+
+# Set the entrypoint command
+CMD ["./fdp","-limit","100"]

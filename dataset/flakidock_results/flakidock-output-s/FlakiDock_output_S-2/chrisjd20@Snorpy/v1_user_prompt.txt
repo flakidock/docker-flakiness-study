@@ -1,0 +1,29 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM node:6
+# replace this with your application's default port
+EXPOSE 8080
+# docker build -t snorpy_app .
+# docker run -p 8080:8080 -it --rm --name snorpy_container snorpy_app
+
+RUN apt-get update && apt-get install p7zip-full wget
+
+RUN useradd -m --user-group -p $(echo SOMEPASSWORDHERE | openssl passwd -1 -stdin) snorpy
+
+RUN git clone https://github.com/chrisjd20/Snorpy.git /opt/snorpy
+
+RUN 7z x /opt/snorpy/node_modules.zip -o/opt/snorpy/
+
+RUN chown snorpy:snorpy /opt/snorpy -R
+
+USER snorpy
+WORKDIR /opt/snorpy
+ENTRYPOINT ["node","/opt/snorpy/app.js"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

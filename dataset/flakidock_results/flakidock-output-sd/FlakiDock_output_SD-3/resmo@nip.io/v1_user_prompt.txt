@@ -1,0 +1,34 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM bitnami/minideb:latest
+
+RUN install_packages python pdns-server pdns-backend-pipe
+ADD src/backend.conf.example /usr/local/bin/backend.conf
+ADD src/nip.py /usr/local/bin/nip
+ADD docker/pdns.conf /etc/pdns/pdns.conf
+
+EXPOSE 53/udp 53/tcp
+CMD ["pdns_server", "--master", "--daemon=no", "--local-address=0.0.0.0", "--config-dir=/etc/pdns/"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/5] RUN install_packages python pdns-server pdns-backend-pipe:
+E: Package 'python' has no installation candidate
+E: Package 'python' has no installation candidate
+apt failed, retrying
+Building dependency tree...
+Package python is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  python-is-python3 2to3
+E: Package 'python' has no installation candidate
+ERROR: process "/bin/sh -c install_packages python pdns-server pdns-backend-pipe" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

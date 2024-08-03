@@ -1,0 +1,51 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM elixir:1.4
+
+RUN mkdir /usr/src/app
+
+WORKDIR /usr/src/app
+
+ENV NODE_VERSION 7
+
+RUN mix archive.install --force \ 
+    https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+
+ADD mix.exs /usr/src/app/mix.exs
+ADD mix.lock /usr/src/app/mix.lock
+
+RUN mix local.hex --force && \
+    mix local.rebar --force && \
+    mix deps.get
+
+RUN curl -sL https://deb.nodesource.com/setup_$NODE_VERSION.x -o nodesource_setup.sh; \
+    /bin/bash nodesource_setup.sh; apt-get install -y nodejs build-essential
+
+ADD package.json /usr/src/app/package.json
+ADD brunch-config.js /usr/src/app/brunch-config.js
+
+RUN npm i
+
+ADD . /usr/src/app
+
+EXPOSE 4000
+
+CMD ["mix", "phoenix.server"]```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 4/12] RUN mix archive.install --force     https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez:
+04:54:[error] SSL: :hello: ssl_alert.erl:88:Fatal error: internal error
+** (Mix) httpc request failed with: {:failed_connect, [{:to_address, {'github.com', 443}}, {:inet, [:inet], {:tls_alert, 'internal error'}}]}
+Could not fetch archive at:
+    https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+Please download the archive above manually to your current directory and run:
+    mix archive.install ./phoenix_new.ez
+ERROR: process "/bin/sh -c mix archive.install --force     https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

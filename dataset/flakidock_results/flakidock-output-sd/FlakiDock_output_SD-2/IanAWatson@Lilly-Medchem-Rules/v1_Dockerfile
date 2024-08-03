@@ -1,0 +1,40 @@
+FROM gcc
+
+# Install dependencies for RVM and Ruby
+RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg2 \
+    build-essential \
+    libssl-dev \
+    libreadline-dev \
+    zlib1g-dev
+
+# Import GPG keys
+RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+RUN curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+
+# Install RVM
+RUN curl -L https://get.rvm.io | bash -s stable
+
+# Set up environment for RVM
+ENV PATH /usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+RUN /bin/bash -l -c "source /usr/local/rvm/scripts/rvm"
+
+# Install Ruby
+RUN /bin/bash -l -c "rvm install ruby-2.7.1"
+
+# Set Ruby version
+RUN /bin/bash -l -c "rvm use ruby-2.7.1 --default"
+
+# Copy application files
+COPY . /Lilly-Medchem-Rules
+WORKDIR /Lilly-Medchem-Rules
+
+# Build the application
+RUN make
+
+# Run tests
+RUN /bin/bash -l -c ". /etc/profile && rvm use 2.7.1 > /dev/null && make test"
+
+# Set the default command
+CMD /bin/bash -c ". /etc/profile && rvm use 2.7.1 > /dev/null && /Lilly-Medchem-Rules/Lilly_Medchem_Rules.rb -i smi -"

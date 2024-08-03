@@ -1,0 +1,28 @@
+# Dockerfile
+# Builds a docker image for TP-Link´s EAP Controller
+FROM phusion/baseimage:master
+MAINTAINER Mace Capri <macecapri@gmail.com>
+
+###############################################
+##           ENVIRONMENTAL CONFIG            ##
+###############################################
+# Set correct environment variables
+ENV DEBIAN_FRONTEND=noninteractive
+ENV HOME="/root" LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
+
+# Use baseimage-docker's init system
+CMD ["/sbin/my_init"]
+
+###############################################
+##   INSTALL ENVIRONMENT, INSTALL OPENVPN    ##
+###############################################
+COPY install.sh /tmp/
+RUN chmod +x /tmp/install.sh && /tmp/install.sh && rm /tmp/install.sh
+
+###############################################
+##             PORTS AND VOLUMES             ##
+###############################################
+
+# Expose 8088/tcp
+EXPOSE 8088
+VOLUME /config

@@ -1,0 +1,49 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM flyimg/base-image:1.2.1
+
+# Install other file processors
+RUN apt update && \
+    apt install -y \
+    ghostscript \
+    ffmpeg \
+    --no-install-recommends && \
+    pip3 install pillow && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY .    /var/www/html
+
+#add www-data + mdkdir var folder
+RUN usermod -u 1000 www-data && \
+    mkdir -p /var/www/html/var web/uploads/.tmb var/cache/ var/log/ && \
+    chown -R www-data:www-data var/  web/uploads/ && \
+    chmod 777 -R var/  web/uploads/
+
+RUN composer install --no-dev --optimize-autoloader
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/5] RUN apt update &&     apt install -y     ghostscript     ffmpeg     --no-install-recommends &&     pip3 install pillow &&     rm -rf /var/lib/apt/lists/*:
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Err:6 http://deb.debian.org/debian stretch Release
+  404  Not Found
+Err:7 http://deb.debian.org/debian stretch-updates Release
+  404  Not Found
+Get:8 http://security.debian.org/debian-security buster/updates InRelease [kB]
+Err:9 http://security.debian.org/debian-security stretch/updates Release
+  404  Not Found [IP: 151.101.80]
+Get:10 http://deb.debian.org/debian buster/main amd64 Packages [7909 kB]
+Get:11 http://deb.debian.org/debian buster-updates/main amd64 Packages [8788 B]
+Get:12 http://security.debian.org/debian-security buster/updates/main amd64 Packages [610 kB]
+E: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+ERROR: process "/bin/sh -c apt update &&     apt install -y     ghostscript     ffmpeg     --no-install-recommends &&     pip3 install pillow &&     rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

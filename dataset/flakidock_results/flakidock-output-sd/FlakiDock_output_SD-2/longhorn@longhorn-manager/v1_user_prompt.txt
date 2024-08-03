@@ -1,0 +1,59 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM registry.suse.com/bci/bci-base:15.4
+
+ARG DAPPER_HOST_ARCH=amd64
+ARG http_proxy
+ARG https_proxy
+ENV HOST_ARCH=${DAPPER_HOST_ARCH} ARCH=${DAPPER_HOST_ARCH}
+
+RUN zypper -n install gcc ca-certificates git wget curl vim less file python3-tox python3-devel iptables libdevmapper1_03 libltdl7 awk docker zip unzip && \
+    rm -f /bin/sh && ln -s /bin/bash /bin/sh && \
+    rm -rf /var/cache/zypp/*
+
+RUN if [ ${ARCH} == "s390x" ]; then \
+         ln -s /usr/bin/gcc /usr/bin/s390x-linux-gnu-gcc;\
+     fi
+
+ENV GOLANG_ARCH_amd64=amd64 GOLANG_ARCH_arm64=arm64 GOLANG_ARCH_s390x=s390x GOLANG_ARCH=GOLANG_ARCH_${ARCH} \
+    GOPATH=/go PATH=/go/bin:/usr/local/go/bin:${PATH} SHELL=/bin/bash
+
+RUN wget -O - https://storage.googleapis.com/golang/go1.17.10.linux-${!GOLANG_ARCH}.tar.gz | tar -xzf - -C /usr/local && \
+    go get -u golang.org/x/lint/golint
+
+ENV DAPPER_SOURCE /go/src/github.com/longhorn/longhorn-manager
+ENV DAPPER_OUTPUT ./bin coverage.out
+ENV DAPPER_DOCKER_SOCKET true
+ENV DAPPER_ENV IMAGE REPO VERSION TAG
+ENV DAPPER_RUN_ARGS --privileged --tmpfs /go/src/github.com/longhorn/longhorn/integration/.venv:exec --tmpfs /go/src/github.com/longhorn/longhorn/integration/.tox:exec -v /dev:/host/dev
+ENV TRASH_CACHE ${DAPPER_SOURCE}/.trash-cache
+ENV HOME ${DAPPER_SOURCE}
+WORKDIR ${DAPPER_SOURCE}
+
+ENTRYPOINT ["./scripts/entry"]
+CMD ["ci"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/5] RUN wget -O - https://storage.googleapis.com/golang/go1.17.10.linux-${!GOLANG_ARCH}.tar.gz | tar -xzf - -C /usr/local &&     go get -u golang.org/x/lint/golint:
+# golang.org/x/tools/internal/versions
+go/pkg/mod/golang.org/x/tools@v0.23.0/internal/versions/types.go:15:16: undefined: any
+go/pkg/mod/golang.org/x/tools@v0.23.0/internal/versions/versions.go:52:12: undefined: strings.Cut
+note: module requires Go 1.19
+# golang.org/x/tools/go/ast/astutil
+go/pkg/mod/golang.org/x/tools@v0.23.0/go/ast/astutil/enclosing.go:651:6: missing function body
+go/pkg/mod/golang.org/x/tools@v0.23.0/go/ast/astutil/enclosing.go:651:8: syntax error: unexpected [, expecting (
+note: module requires Go 1.19
+# golang.org/x/tools/internal/stdlib
+go/pkg/mod/golang.org/x/tools@v0.23.0/internal/stdlib/stdlib.go:78:22: undefined: strings.Cut
+go/pkg/mod/golang.org/x/tools@v0.23.0/internal/stdlib/stdlib.go:90:18: undefined: strings.Cut
+note: module requires Go 1.19
+ERROR: process "/bin/sh -c wget -O - https://storage.googleapis.com/golang/go1.17.10.linux-${!GOLANG_ARCH}.tar.gz | tar -xzf - -C /usr/local &&     go get -u golang.org/x/lint/golint" did not complete successfully: exit code: 2```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

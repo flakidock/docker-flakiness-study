@@ -1,0 +1,12 @@
+# Dockerfile
+FROM ruby:2.7
+
+WORKDIR /usr/src/app
+
+COPY Gemfile Gemfile.lock ./
+RUN gem install bundler -v 2.2.17 && \
+  bundle _2.2.17_ install
+
+ENV LC_ALL=C.UTF-8
+
+CMD bundle exec jekyll serve --host 0.0.0.0 --incremental

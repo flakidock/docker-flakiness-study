@@ -1,0 +1,33 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM bhomnick/python-multi
+ENV PYTHONUNBUFFERED 1
+RUN apt-get update -yy && apt-get install -q -y pandoc
+RUN mkdir /src
+WORKDIR /src
+COPY requirements.txt /src/
+RUN bash -lc "pip3.6 install -r requirements.txt"
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/6] RUN apt-get update -yy && apt-get install -q -y pandoc:
+Ign:1 http://deb.debian.org/debian stretch InRelease
+Ign:2 http://security.debian.org stretch/updates InRelease
+Err:4 http://security.debian.org stretch/updates Release
+  404  Not Found
+Err:5 http://deb.debian.org/debian stretch Release
+  404  Not Found
+Err:6 http://deb.debian.org/debian stretch-updates Release
+  404  Not Found
+E: The repository 'http://security.debian.org stretch/updates Release' does no longer have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch Release' does no longer have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' does no longer have a Release file.
+ERROR: process "/bin/sh -c apt-get update -yy && apt-get install -q -y pandoc" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

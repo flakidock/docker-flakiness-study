@@ -1,0 +1,25 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+# Create an up to date minimal Debian Jessi build
+
+# Pull base image
+FROM debian:jessie
+
+# Update packages
+RUN apt-get update && \
+  apt-get upgrade -y && \
+  apt-get clean -y && \
+  apt-get autoclean -y && \
+  apt-get autoremove -y && \
+  rm -rf /usr/share/locale/* && \
+  rm -rf /var/cache/debconf/*-old && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm -rf /usr/share/doc/*
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

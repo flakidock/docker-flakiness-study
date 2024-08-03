@@ -1,0 +1,63 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM johnpryan/dart-content-shell-docker
+
+MAINTAINER brian@brianegan.com
+
+RUN apt-get update
+RUN apt-get install -y lcov git-core libglu1
+
+WORKDIR /
+RUN git clone https://github.com/flutter/flutter.git
+RUN /flutter/bin/flutter
+
+ENV PATH $PATH:/usr/lib/dart/bin:/flutter/bin
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/6] RUN apt-get install -y lcov git-core libglu1:
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://storage.googleapis.com stable Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY E88979FB9B30ACF2
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://storage.googleapis.com unstable Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY E88979FB9B30ACF2
+W: Failed to fetch http://security.debian.org/dists/jessie/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.80]
+W: Failed to fetch https://storage.googleapis.com/download.dartlang.org/linux/debian/dists/stable/Release  
+W: Failed to fetch http://us.archive.ubuntu.com/ubuntu/dists/precise/main/binary-amd64/Packages  404  Not Found [IP: 91.189.80]
+W: Failed to fetch http://us.archive.ubuntu.com/ubuntu/dists/precise/multiverse/binary-amd64/Packages  404  Not Found [IP: 91.189.80]
+W: Failed to fetch https://storage.googleapis.com/download.dartlang.org/linux/debian/dists/unstable/Release  
+W: Failed to fetch http://httpredir.debian.org/debian/dists/jessie/main/binary-amd64/Packages  404  Not Found
+W: Failed to fetch http://httpredir.debian.org/debian/dists/jessie-updates/main/binary-amd64/Packages  404  Not Found
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+The following extra packages will be installed:
+  binutils gcc gcc-libasan1 libatomic1 libc-dev-bin libc6-dev libcilkrts5
+  libgcc-4.9-dev libgd-perl libgd3 libgomp1 libitm1 liblsan0 libquadmath0
+  libtsan0 libubsan0 libvpx1 linux-libc-dev manpages manpages-dev
+Suggested packages:
+  binutils-doc gcc-multilib make autoconf automake libtool flex bison gcc-doc
+  gcc-4.9-multilib gcc-4.9-doc gcc-4.9-locales libgcc1-dbg libgomp1-dbg
+  libitm1-dbg libatomic1-dbg libasan1-dbg liblsan0-dbg libtsan0-dbg
+  libubsan0-dbg libcilkrts5-dbg libquadmath0-dbg glibc-doc libgd-tools
+  man-browser
+Recommended packages:
+  libgd-gd2-perl
+The following NEW packages will be installed:
+  binutils gcc gcc-git-core lcov libasan1 libatomic1 libc-dev-bin
+  libc6-dev libcilkrts5 libgcc-4.9-dev libgd-perl libgd3 libglu1-mesa libgomp1
+  libitm1 liblsan0 libquadmath0 libtsan0 libubsan0 libvpx1 linux-libc-dev
+  manpages manpages-dev
+0 upgraded, 24 newly installed, 0 to remove and 6 not upgraded.
+Need to get MB of archives.
+After this operation, MB of additional disk space will be used.
+WARNING: The following packages cannot be authenticated!
+  libasan1 libatomic1 libcilkrts5 libvpx1 libgd3 libglu1-mesa libgomp1 libitm1
+  liblsan0 libquadmath0 libtsan0 libubsan0 manpages binutils libgcc-4.9-dev
+  gcc-gcc git-core lcov libc-dev-bin linux-libc-dev libc6-dev manpages-dev
+  libgd-perl
+E: There are problems and -y was used without --force-yes
+ERROR: process "/bin/sh -c apt-get install -y lcov git-core libglu1" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

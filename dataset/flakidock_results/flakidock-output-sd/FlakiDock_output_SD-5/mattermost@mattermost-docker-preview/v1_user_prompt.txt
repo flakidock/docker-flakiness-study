@@ -1,0 +1,63 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# Copyright (c) 2016-present Mattermost, Inc. All Rights Reserved.
+# See License.txt for license information.
+FROM mysql:5.7-debian
+
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 467B942D3A79BD29
+RUN apt-get update && apt-get install -y ca-certificates
+
+#
+# Configure SQL
+#
+
+ENV MYSQL_ROOT_PASSWORD=mostest
+ENV MYSQL_USER=mmuser
+ENV MYSQL_PASSWORD=mostest
+ENV MYSQL_DATABASE=mattermost_test
+
+#
+# Configure Mattermost
+#
+WORKDIR /mm
+
+# Copy over files
+ADD https://releases.mattermost.com/7.8.0/mattermost-team-7.8.0-linux-amd64.tar.gz .
+RUN tar -zxvf mattermost-team-*-linux-amd64.tar.gz
+ADD config_docker.json ./mattermost/config/config_docker.json
+ADD docker-entry.sh .
+
+RUN chmod +x ./docker-entry.sh
+ENTRYPOINT ./docker-entry.sh
+
+# Mattermost environment variables
+ENV PATH="/mm/mattermost/bin:${PATH}"
+
+# Create default storage directory
+RUN mkdir ./mattermost-data
+VOLUME /mm/mattermost-data
+
+# Ports
+EXPOSE 8065
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 3/10] RUN apt-get update && apt-get install -y ca-certificates:
+Get:3 http://deb.debian.org/debian-security buster/updates InRelease [kB]
+Get:4 http://deb.debian.org/debian buster-updates InRelease [kB]
+Get:5 http://deb.debian.org/debian buster/main amd64 Packages [7909 kB]
+Err:2 http://repo.mysql.com/apt/debian buster InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY B7B3B788A8D3785C
+Get:6 http://deb.debian.org/debian-security buster/updates/main amd64 Packages [610 kB]
+Get:7 http://deb.debian.org/debian buster-updates/main amd64 Packages [8788 B]
+W: GPG error: http://repo.mysql.com/apt/debian buster InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY B7B3B788A8D3785C
+E: The repository 'http://repo.mysql.com/apt/debian buster InRelease' is not signed.
+ERROR: process "/bin/sh -c apt-get update && apt-get install -y ca-certificates" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

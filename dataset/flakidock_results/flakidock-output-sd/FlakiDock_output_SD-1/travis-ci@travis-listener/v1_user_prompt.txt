@@ -1,0 +1,85 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ruby:2.5.8-slim
+
+LABEL maintainer Travis CI GmbH <support+travis-listener-docker-images@travis-ci.com>
+
+# packages required for bundle install
+RUN ( \
+   apt-get update ; \
+   apt-get install -y --no-install-recommends git make gcc \
+   && rm -rf /var/lib/apt/lists/* \
+)
+
+RUN mkdir -p /app
+WORKDIR /app
+
+COPY Gemfile      /app
+COPY Gemfile.lock /app
+
+RUN gem install bundler -v '1.17.3'
+# throw errors if Gemfile has been modified since Gemfile.lock
+RUN bundle config --global frozen 1
+RUN bundle install --verbose --retry=3 --deployment --without development test
+RUN gem install --user-install executable-hooks
+
+COPY . /app
+
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 9/11] RUN bundle install --verbose --retry=3 --deployment --without development test:
+Bundler::PathError: The path `/app/vendor/bundle/ruby/2.5.0/bundler/gems/jemalloc-rb-8c9dbef98f6b` does not exist.
+/usr/local/lib/ruby/site_ruby/2.5.0/bundler/source/path.rb:198:in `load_spec_files'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/source/git.rb:200:in `load_spec_files'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/source/path.rb:100:in `local_specs'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/source/git.rb:167:in `specs'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/lazy_specification.rb:76:in `__materialize__'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/spec_set.rb:88:in `block in materialize'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/spec_set.rb:85:in `map!'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/spec_set.rb:85:in `materialize'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/definition.rb:203:in `missing_specs'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/definition.rb:208:in `missing_specs?'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/installer.rb:307:in `resolve_if_needed'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/installer.rb:84:in `block in run'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/process_lock.rb:12:in `block in lock'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/process_lock.rb:9:in `open'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/process_lock.rb:9:in `lock'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/installer.rb:73:in `run'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/installer.rb:25:in `install'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli/install.rb:65:in `run'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:235:in `block in install'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/settings.rb:143:in `temporary'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:234:in `install'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:18:in `start'
+  /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.3/exe/bundle:30:in `block in <top (required)>'
+  /usr/local/lib/ruby/site_ruby/2.5.0/bundler/friendly_errors.rb:124:in `with_friendly_errors'
+  /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.3/exe/bundle:22:in `<top (required)>'
+  /usr/local/bundle/bin/bundle:23:in `load'
+  /usr/local/bundle/bin/bundle:23:in `<main>'
+The definition is missing dependencies, failed to resolve & materialize locally (https://github.com/joshk/jemalloc-rb (at master@8c9dbef) is not yet checked out. Run `bundle install` first.)
+fatal: could not read Username for 'https://github.com': No such device or address
+Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (2/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.
+fatal: could not read Username for 'https://github.com': No such device or address
+Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (3/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.
+fatal: could not read Username for 'https://github.com': No such device or address
+Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (4/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.
+fatal: could not read Username for 'https://github.com': No such device or address
+Git error: command `git clone 'https://github.com/joshk/jemalloc-rb'
+"/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4"
+--bare --no-hardlinks --quiet` in directory /app has failed.
+ERROR: process "/bin/sh -c bundle install --verbose --retry=3 --deployment --without development test" did not complete successfully: exit code: 11```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

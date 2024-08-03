@@ -1,0 +1,46 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM debian:9.5-slim
+
+RUN apt update
+RUN apt -yq install rsync openssh-client
+
+
+# Label
+LABEL "com.github.actions.name"="Deploy with rsync"
+LABEL "com.github.actions.description"="Deploy to a remote server using rsync over ssh"
+LABEL "com.github.actions.color"="green"
+LABEL "com.github.actions.icon"="truck"
+
+LABEL "repository"="http://github.com/AEnterprise/rsync-deploy"
+LABEL "homepage"="https://github.com/AEnterprise/rsync-deploy"
+LABEL "maintainer"="AEnterprise <aenterprise@aenterprise.info>"
+
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/5] RUN apt update:
+Err:2 http://security.debian.org/debian-security stretch/updates Release
+  404  Not Found [IP: 151.101.80]
+Ign:3 http://deb.debian.org/debian stretch InRelease
+Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+Err:5 http://deb.debian.org/debian stretch Release
+  404  Not Found
+Err:6 http://deb.debian.org/debian stretch-updates Release
+  404  Not Found
+Reading package lists...
+E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+ERROR: process "/bin/sh -c apt update" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

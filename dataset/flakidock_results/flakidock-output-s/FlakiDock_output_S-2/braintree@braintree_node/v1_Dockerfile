@@ -1,0 +1,8 @@
+# Dockerfile
+FROM debian:stretch
+
+RUN apt-get update && apt-get -y install curl gnupg2 rake
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get -y install nodejs
+
+WORKDIR /braintree-node

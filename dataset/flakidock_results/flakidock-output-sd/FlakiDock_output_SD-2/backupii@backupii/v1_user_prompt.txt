@@ -1,0 +1,42 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ruby:2.6.3
+
+## 1. Image metadata ##
+ LABEL maintainer="stuart@stuartellis.name" \
+    version="0.2.0" \
+    description="Image for running the backup Rubygem"
+
+## 2. Add operating system packages ##
+
+# Dependencies for developing and running Backup
+#  * The Nokogiri gem requires libxml2
+#  * The unf_ext gem requires the g++ compiler to build
+ENV APP_DEPS bsdtar ca-certificates curl g++ git \
+    libxml2 libxslt1.1 libyaml-0-2 openssl
+
+RUN apt-get update && apt-get install -y --no-install-recommends $APP_DEPS
+
+## 3. Set working directory ##
+
+ENV APP_HOME /usr/src/backup
+WORKDIR $APP_HOME
+
+# Update bundler to version 2
+RUN gem install bundler
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/4] RUN gem install bundler:
+ERROR:  Error installing bundler:
+	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.6.3.62.
+ERROR: process "/bin/sh -c gem install bundler" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

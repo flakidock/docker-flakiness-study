@@ -1,0 +1,17 @@
+# Dockerfile
+FROM alpine:latest
+
+# Install necessary packages
+RUN apk --no-cache add emacs git
+
+# Create workspace directory
+RUN mkdir -p /workspace
+
+# Add MELPA repository and install org-kanban package
+RUN emacs --batch --eval "(require 'package)" \
+    --eval "(add-to-list 'package-archives '(\"melpa\" . \"https://melpa.org/packages/\"))" \
+    --eval "(package-initialize)" \
+    --eval "(package-refresh-contents)" \
+    --eval "(package-install 'org-kanban)"
+
+CMD ["emacs"]

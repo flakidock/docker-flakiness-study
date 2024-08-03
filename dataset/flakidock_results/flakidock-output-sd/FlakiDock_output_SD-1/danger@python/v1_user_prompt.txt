@@ -1,0 +1,42 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM python:3.7
+
+LABEL maintainer="Jakub Turek <jkbturek@gmail.com>"
+LABEL "com.github.actions.name"="danger-python"
+LABEL "com.github.actions.description"="Runs Python Dangerfiles"
+LABEL "com.github.actions.icon"="zap"
+LABEL "com.github.actions.color"="blue"
+
+# Install dependencies
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install -y nodejs
+
+RUN python -m pip install --upgrade pip
+RUN pip install poetry
+
+RUN mkdir -p /usr/src/danger-python
+COPY . /usr/src/danger-python
+RUN cd /usr/src/danger-python && \
+    poetry config virtualenvs.create false && \
+    poetry install --no-dev
+
+ENTRYPOINT ["npx", "--package", "danger", "danger-python", "ci"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/8] RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -:
+## Installing packages required for setup: lsb-release...
++ apt-get install -y lsb-release > /dev/null 2>&1
+## Confirming "bookworm" is supported...
++ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_10.x/dists/bookworm/Release'
+## Your distribution, identified as "bookworm", is not currently supported, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support
+ERROR: process "/bin/sh -c curl -sL https://deb.nodesource.com/setup_10.x | bash -" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

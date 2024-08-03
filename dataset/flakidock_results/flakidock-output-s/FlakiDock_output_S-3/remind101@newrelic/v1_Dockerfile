@@ -1,0 +1,11 @@
+# Dockerfile
+FROM golang:1.4
+
+RUN go get github.com/remind101/newrelic
+
+COPY . /go/src/github.com/remind101/newrelic
+
+WORKDIR /go/src/github.com/remind101/newrelic
+
+RUN go get -d -v ./...
+RUN go install -v -tags newrelic_enabled ./...

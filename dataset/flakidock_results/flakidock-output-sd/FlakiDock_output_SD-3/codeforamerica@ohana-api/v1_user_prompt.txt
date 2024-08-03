@@ -1,0 +1,41 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# Use the official Ruby image because the Rails images have been deprecated
+FROM ruby:2.7.5
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends postgresql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir /usr/local/node \
+    && curl -L https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x64.tar.xz | tar Jx -C /usr/local/node --strip-components=1
+RUN ln -s ../node/bin/node /usr/local/bin/
+
+WORKDIR /ohana-api
+
+COPY Gemfile /ohana-api
+COPY Gemfile.lock /ohana-api
+
+RUN gem install bundler
+RUN bundle install --jobs 20 --retry 5 --without production
+
+COPY . /ohana-api
+
+EXPOSE 8080
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "8080"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 8/10] RUN gem install bundler:
+ERROR:  Error installing bundler:
+	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.5.203.
+ERROR: process "/bin/sh -c gem install bundler" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,21 @@
+# Dockerfile
+FROM flyimg/base-image:1.2.1
+
+# Install other file processors
+RUN apt-get update && \
+    apt-get install -y \
+    ghostscript \
+    ffmpeg \
+    --no-install-recommends && \
+    pip3 install pillow && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY . /var/www/html
+
+# Add www-data user and create necessary directories
+RUN usermod -u 1000 www-data && \
+    mkdir -p /var/www/html/var /var/www/html/web/uploads/.tmb /var/www/html/var/cache /var/www/html/var/log && \
+    chown -R www-data:www-data /var/www/html/var /var/www/html/web/uploads && \
+    chmod 777 -R /var/www/html/var /var/www/html/web/uploads
+
+RUN composer install --no-dev --optimize-autoloader

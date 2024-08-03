@@ -1,0 +1,24 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM golang:1.8.1 as build
+
+COPY . /go/src/relevant-xkcd
+WORKDIR /go/src/relevant-xkcd
+
+RUN go get -v .
+RUN go build -ldflags '-linkmode external -extldflags -static -w'
+
+FROM alpine:3.6
+
+COPY --from=build /go/src/relevant-xkcd/relevant-xkcd /relevant-xkcd/
+
+WORKDIR /relevant-xkcd
+ENTRYPOINT /relevant-xkcd/relevant-xkcd
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

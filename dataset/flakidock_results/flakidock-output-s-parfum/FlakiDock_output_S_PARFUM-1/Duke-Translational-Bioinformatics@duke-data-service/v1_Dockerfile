@@ -1,0 +1,36 @@
+# Heroku-16 is based on Ubuntu 16.4
+# Debian Stretch is the upstream of Ubuntu 16.4
+FROM ruby:2.6.4-stretch
+MAINTAINER Darin London <darin.london@duke.edu>
+
+# NodeJS and npm
+## Heroku-16 uses node 10.14. This installs node 10.15
+RUN curl -f -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install --no-install-recommends -y nodejs && rm -rf /var/lib/apt/lists/*;
+
+#Postgresql client
+RUN /usr/bin/apt-get update && /usr/bin/apt-get install --no-install-recommends -y postgresql libpq-dev && rm -rf /var/lib/apt/lists/*;
+
+#GraphViz for Rails ERD
+RUN /usr/bin/apt-get install --no-install-recommends -y graphviz && rm -rf /var/lib/apt/lists/*; RUN mkdir -p /usr/local/etc \
+  && { \
+    echo 'install: --no-document'; \
+    echo 'update: --no-document'; \
+  } >> /usr/local/etc/gemrc;
+
+#RubyGems system update
+RUN gem update --system 2.7.6 && rm -rf /root/.gem;
+
+#miscellaneous
+RUN ["mkdir","-p","/var/www"]
+WORKDIR /var/www
+RUN git clone https://github.com/Duke-Translational-Bioinformatics/duke-data-service.git app
+WORKDIR /var/www/app
+RUN git checkout develop
+COPY Gemfile /var/www/app/Gemfile
+COPY Gemfile.lock /var/www/app/Gemfile.lock
+RUN ["bundle", "config", "build.nokogiri", "--use-system-libraries"]
+RUN ["bundle", "install", "--jobs=4"]
+
+# run the app by defualt
+EXPOSE 3000
+CMD ["puma"]

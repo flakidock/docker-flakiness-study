@@ -1,0 +1,53 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM rust:1.34 as build
+
+WORKDIR /usr/src/gltf-viewer
+COPY src src
+COPY Cargo.toml Cargo.toml
+COPY Cargo.lock Cargo.lock
+RUN cargo build --release
+
+FROM debian:stretch-20190326-slim
+RUN apt-get update
+RUN apt-get install -y \
+    xvfb \
+    libxcursor1 \
+    libxrandr2 \
+    libxi6
+
+COPY --from=build /usr/src/gltf-viewer/target/release/gltf-viewer /bin/gltf-viewer
+COPY run_xvfb.sh run_xvfb.sh
+ENTRYPOINT [ "./run_xvfb.sh" ]
+
+# Hint: To try 'real' headless rendering,
+# toggle comments on the previous and following block and use the `--headless` parameter
+# RUN apt-get install -y libosmesa6-dev
+# ENTRYPOINT [ "gltf-viewer" ]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [stage-1 2/5] RUN apt-get update:
+Err:8 http://deb.debian.org/debian stretch/main amd64 Packages
+  404  Not Found
+Err:12 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+  404  Not Found [IP: 151.101.80]
+Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+  404  Not Found
+Reading package lists...
+W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.80]
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+ERROR: process "/bin/sh -c apt-get update" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

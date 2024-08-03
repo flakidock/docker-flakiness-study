@@ -1,0 +1,23 @@
+FROM node:12
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+
+RUN apt-get update && \
+  apt-get install -y \
+    libcairo2 \
+    libjpeg-dev \
+    libgif-dev \
+    fonts-wqy-zenhei
+
+EXPOSE 3000
+
+WORKDIR /app
+ADD . /app
+
+RUN npm install
+
+COPY ./fonts/font.woff /usr/share/fonts/
+RUN fc-cache -fv
+
+CMD bin/www

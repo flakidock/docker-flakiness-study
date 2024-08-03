@@ -1,0 +1,38 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM python:3
+
+WORKDIR /app
+
+RUN wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/helpers.py && \
+    wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/nova2.py && \
+    wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/nova2dl.py && \
+    wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/novaprinter.py && \
+    wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/sgmllib3.py && \
+    wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/socks.py
+
+COPY . /app
+
+RUN chmod -R 777 /app/tests
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/5] RUN wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/helpers.py &&     wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/nova2.py &&     wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/nova2dl.py &&     wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/novaprinter.py &&     wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/sgmllib3.py &&     wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/socks.py:
+Length: 3494 (3.4K) [text/plain]
+Saving to: ‘novaprinter.py’
+     0K ...                                                   100% 32.3M=0s
+2024-08-01 06:48:12 (MB/s) - ‘novaprinter.py’ saved [3494/3494]
+--2024-08-01 06:48:12--  https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/sgmllib3.py
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2024-08-01 06:48:12 ERROR 404: Not Found.
+ERROR: process "/bin/sh -c wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/helpers.py &&     wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/nova2.py &&     wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/nova2dl.py &&     wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/novaprinter.py &&     wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/sgmllib3.py &&     wget https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/src/searchengine/nova3/socks.py" did not complete successfully: exit code: 8```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

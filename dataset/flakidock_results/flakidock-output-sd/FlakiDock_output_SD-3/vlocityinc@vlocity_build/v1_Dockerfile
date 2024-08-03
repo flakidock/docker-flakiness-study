@@ -1,0 +1,23 @@
+FROM node:10
+
+RUN dpkg --add-architecture i386
+
+RUN apt-get update && apt-get install -y \
+    jq \
+    libc6:i386 \
+    libstdc++6:i386
+
+RUN npm install --global sfdx-cli@7.45.1
+RUN npm install --global publish-release 
+RUN npm install --global pkg-fetch
+RUN pkg-fetch -n node10 -p linux -a x64
+RUN pkg-fetch -n node10 -p macos -a x64
+RUN npm install --global pkg@4.3.8
+
+WORKDIR /vlocity_build
+
+COPY ./package*.json /vlocity_build/
+
+RUN npm install
+
+COPY . /vlocity_build

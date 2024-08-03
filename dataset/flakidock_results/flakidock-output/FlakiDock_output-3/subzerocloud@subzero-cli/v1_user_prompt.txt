@@ -1,0 +1,596 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM postgres:13-alpine
+
+ARG APGDIFF_VERSION=2.6.7
+ARG WORKBENCH_VERSION=127
+ENV TZ=Europe/Berlin
+ENV PATH=/usr/local/bin:$PATH
+
+    
+RUN echo "installing dependencies" \
+    && set -x \
+    && apk update \
+    && apk add --no-cache bash coreutils python3 cmd:pip3 ca-certificates \
+    && update-ca-certificates \
+    && apk add --no-cache --virtual .build-deps \
+        build-base perl-dev gnupg curl wget python3-dev \
+    && apk add --update --no-cache \
+        git \
+        tzdata \
+        perl \
+        openjdk8-jre \
+        nodejs npm \
+    && cd /tmp \
+    && curl -OSL https://github.com/subzerocloud/apgdiff/releases/download/${APGDIFF_VERSION}-subzero/apgdiff-${APGDIFF_VERSION}-subzero.jar \
+    && mv apgdiff-${APGDIFF_VERSION}-subzero.jar /usr/local/bin/apgdiff.jar \
+    && curl -sSL https://jdbc.postgresql.org/download/postgresql-42.2.18.jar \
+		 -o postgresql-42.2.18.jar \
+	&& mv postgresql-42.2.18.jar /usr/local/lib/ \
+    && curl -OSL https://www.sql-workbench.eu/Workbench-Build${WORKBENCH_VERSION}.zip \
+    && mkdir -p /workbench && unzip Workbench-Build${WORKBENCH_VERSION}.zip -d /workbench \
+    && pip3 install --upgrade --no-cache-dir pip\
+    && pip3 install --no-cache-dir psycopg2-binary migra\
+    && curl -L https://cpanmin.us | perl - App::cpanminus \
+    && cpanm --verbose --no-interactive --no-man-pages --notest DBD::Pg App::Sqitch \
+    && apk del .build-deps python3-dev \
+    rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
+
+VOLUME ["/src"]
+WORKDIR /src
+
+
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/3] RUN echo "installing dependencies"     && set -x     && apk update     && apk add --no-cache bash coreutils python3 cmd:pip3 ca-certificates     && update-ca-certificates     && apk add --no-cache --virtual .build-deps         build-base perl-dev gnupg curl wget python3-dev     && apk add --update --no-cache         git         tzdata         perl         openjdk8-jre         nodejs npm     && cd /tmp     && curl -OSL https://github.com/subzerocloud/apgdiff/releases/download/2.6.7-subzero/apgdiff-2.6.7-subzero.jar     && mv apgdiff-2.6.7-subzero.jar /usr/local/bin/apgdiff.jar     && curl -sSL https://jdbc.postgresql.org/download/postgresql-42.2.18.jar 		 -o postgresql-42.2.18.jar 	&& mv postgresql-42.2.18.jar /usr/local/lib/     && curl -OSL https://www.sql-workbench.eu/Workbench-Build127.zip     && mkdir -p /workbench && unzip Workbench-Build127.zip -d /workbench     && pip3 install --upgrade --no-cache-dir pip    && pip3 install --no-cache-dir psycopg2-binary migra    && curl -L https://cpanmin.us | perl - App::cpanminus     && cpanm --verbose --no-interactive --no-man-pages --notest DBD::Pg App::Sqitch     && apk del .build-deps python3-dev     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*:
++ mv apgdiff-2.6.7-subzero.jar /usr/local/bin/apgdiff.jar
++ curl -sSL https://jdbc.postgresql.org/download/postgresql-42.2.18.jar -o postgresql-42.2.18.jar
++ mv postgresql-42.2.18.jar /usr/local/lib/
++ curl -OSL https://www.sql-workbench.eu/Workbench-Build127.zip
+100  1271  100  1271    0     0   1766      0 --:--:-- --:--:-- --:--:--  1765
++ mkdir -p /workbench
++ unzip Workbench-Build127.zip -d /workbench
+Archive:  Workbench-Build127.zip
+unzip: short read
+ERROR: process "/bin/sh -c echo \"installing dependencies\"     && set -x     && apk update     && apk add --no-cache bash coreutils python3 cmd:pip3 ca-certificates     && update-ca-certificates     && apk add --no-cache --virtual .build-deps         build-base perl-dev gnupg curl wget python3-dev     && apk add --update --no-cache         git         tzdata         perl         openjdk8-jre         nodejs npm     && cd /tmp     && curl -OSL https://github.com/subzerocloud/apgdiff/releases/download/${APGDIFF_VERSION}-subzero/apgdiff-${APGDIFF_VERSION}-subzero.jar     && mv apgdiff-${APGDIFF_VERSION}-subzero.jar /usr/local/bin/apgdiff.jar     && curl -sSL https://jdbc.postgresql.org/download/postgresql-42.2.18.jar \t\t -o postgresql-42.2.18.jar \t&& mv postgresql-42.2.18.jar /usr/local/lib/     && curl -OSL https://www.sql-workbench.eu/Workbench-Build${WORKBENCH_VERSION}.zip     && mkdir -p /workbench && unzip Workbench-Build${WORKBENCH_VERSION}.zip -d /workbench     && pip3 install --upgrade --no-cache-dir pip    && pip3 install --no-cache-dir psycopg2-binary migra    && curl -L https://cpanmin.us | perl - App::cpanminus     && cpanm --verbose --no-interactive --no-man-pages --notest DBD::Pg App::Sqitch     && apk del .build-deps python3-dev     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*" did not complete successfully: exit code: 1```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+MAINTAINER Dockerfiles
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor && \
+	python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --upgrade pip setuptools && \
+    rm -r /root/.cache && \
+    pip3 install --upgrade pip setuptools && \
+    rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip3 install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip3 install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+## Example Build Error
+```> [ 3/11] RUN apk add bash 	git 	openssh 	python3 	python3-dev 	gcc 	build-base 	linux-headers 	pcre-dev 	postgresql-dev 	musl-dev 	libxml2-dev 	libxslt-dev 	nginx 	curl 	supervisor && 	python3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache:
+error: externally-managed-environment
+× This environment is externally managed
+╰─> 
+    The system-wide python installation should be maintained using the system
+    package manager (apk) only.
+    
+    If the package in question is not packaged already (and hence installable via
+    "apk add py3-somepackage"), please consider installing it inside a virtual
+    environment, e.g.:
+    
+    python3 -m venv /path/to/venv
+    . /path/to/venv/bin/activate
+    pip install mypackage
+    
+    To exit the virtual environment, run:
+    
+    deactivate
+    
+    The virtual environment is not deleted, and can be re-entered by re-sourcing
+    the activate file.
+    
+    To automatically manage virtual environments, consider using pipx (from the
+    pipx package).
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/lib/python3.11/ensurepip/__main__.py", line 5, in <module>
+    sys.exit(ensurepip._main())
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 286, in _main
+    return _bootstrap(
+           ^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 202, in _bootstrap
+    return _run_pip([*args, *_PACKAGE_NAMES], additional_paths)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 103, in _run_pip
+    return subprocess.run(cmd, check=True).returncode
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '-W', 'ignore::DeprecationWarning', '-c', '\nimport runpy\nimport sys\nsys.path = [\'/tmp/tmprolh5n5a/setuptools-65.5.0-py3-none-any.whl\', \'/tmp/tmprolh5n5a/pip-23.2.1-py3-none-any.whl\'] + sys.path\nsys.argv[1:] = [\'install\', \'--no-cache-dir\', \'--no-index\', \'--find-links\', \'/tmp/tmprolh5n5a\', \'setuptools\', \'pip\']\nrunpy.run_module("pip", run_name="__main__", alter_sys=True)\n']' returned non-zero exit status 1.
+ERROR: process "/bin/sh -c apk add bash \tgit \topenssh \tpython3 \tpython3-dev \tgcc \tbuild-base \tlinux-headers \tpcre-dev \tpostgresql-dev \tmusl-dev \tlibxml2-dev \tlibxslt-dev \tnginx \tcurl \tsupervisor && \tpython3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor
+
+RUN python3 -m venv /venv
+ENV VIRTUAL_ENV=/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+RUN pip install --upgrade pip setuptools && \
+	rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+
+### Repair 2
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor
+
+RUN rm /usr/lib/python*/EXTERNALLY-MANAGED && \
+	python3 -m ensurepip && \
+	rm -r /usr/lib/python*/ensurepip && \
+	pip3 install --upgrade pip setuptools && \
+	rm -r /root/.cache && \
+	pip3 install --upgrade pip setuptools && \
+	rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip3 install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip3 install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+
+# Example 2
+## Example Dockerfile
+```ARG ALPINE_VERSION=3.15
+
+FROM alpine:${ALPINE_VERSION}
+ARG BUILD_DATE
+ARG VCS_REF
+ARG YOUTUBE_DL_OVERWRITE=
+LABEL \
+    org.opencontainers.image.authors="quentin.mcgaw@gmail.com" \
+    org.opencontainers.image.created=$BUILD_DATE \
+    org.opencontainers.image.revision=$VCS_REF \
+    org.opencontainers.image.version="${YOUTUBE_DL_OVERWRITE}" \
+    org.opencontainers.image.url="https://github.com/qdm12/youtube-dl-docker" \
+    org.opencontainers.image.documentation="https://github.com/qdm12/youtube-dl-docker/blob/master/README.md" \
+    org.opencontainers.image.source="https://github.com/qdm12/youtube-dl-docker" \
+    org.opencontainers.image.title="youtube-dl-docker" \
+    org.opencontainers.image.description="Download with youtube-dl using command line arguments or configuration files"
+HEALTHCHECK --interval=10m --timeout=10s --retries=1 CMD [ "$(wget -qO- https://duckduckgo.com 2>/dev/null)" != "" ] || exit 1
+ENV AUTOUPDATE=no \
+    GOTIFYURL= \
+    GOTIFYTOKEN=
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["-h"]
+COPY entrypoint.sh /
+RUN apk add -q --progress --update --no-cache ca-certificates ffmpeg python3 && \
+    rm -rf /var/cache/apk/*
+RUN apk add -q --progress --update --no-cache --virtual deps gnupg && \
+    ln -s /usr/bin/python3 /usr/local/bin/python && \
+    LATEST=${YOUTUBE_DL_OVERWRITE:-latest} && \
+    wget -q https://yt-dl.org/downloads/$LATEST/youtube-dl -O /usr/local/bin/youtube-dl && \
+    wget -q https://yt-dl.org/downloads/$LATEST/youtube-dl.sig -O /tmp/youtube-dl.sig && \
+    gpg --keyserver keyserver.ubuntu.com --recv-keys 'ED7F5BF46B3BBED81C87368E2C393E0F18A9236D' && \
+    gpg --verify /tmp/youtube-dl.sig /usr/local/bin/youtube-dl && \
+    SHA256=$(wget -qO- https://yt-dl.org/downloads/$LATEST/SHA2-256SUMS | head -n 1 | cut -d " " -f 1) && \
+    [ $(sha256sum /usr/local/bin/youtube-dl | cut -d " " -f 1) = "$SHA256" ] && \
+    apk del deps && \
+    rm -rf /var/cache/apk/* /tmp/youtube-dl.sig && \
+    chown 1000 /entrypoint.sh /usr/local/bin/youtube-dl && \
+    chmod 555 /entrypoint.sh && \
+    chmod 777 /usr/local/bin/youtube-dl
+USER 1000
+
+```
+
+## Example Build Error
+```> [4/4] RUN apk add -q --progress --update --no-cache --virtual deps gnupg &&     ln -s /usr/bin/python3 /usr/local/bin/python &&     LATEST=latest &&     wget -q https://yt-dl.org/downloads/$LATEST/youtube-dl -O /usr/local/bin/youtube-dl &&     wget -q https://yt-dl.org/downloads/$LATEST/youtube-dl.sig -O /tmp/youtube-dl.sig &&     gpg --keyserver keyserver.ubuntu.com --recv-keys 'ED7F5BF46B3BBED81C87368E2C393E0F18A9236D' &&     gpg --verify /tmp/youtube-dl.sig /usr/local/bin/youtube-dl &&     SHA256=$(wget -qO- https://yt-dl.org/downloads/$LATEST/SHA2-256SUMS | head -n 1 | cut -d " " -f 1) &&     [ $(sha256sum /usr/local/bin/youtube-dl | cut -d " " -f 1) = "$SHA256" ] &&     apk del deps &&     rm -rf /var/cache/apk/* /tmp/youtube-dl.sig &&     chown 1000 /entrypoint.sh /usr/local/bin/youtube-dl &&     chmod 555 /entrypoint.sh &&     chmod 777 /usr/local/bin/youtube-dl:
+7  0%                                             8[0K7  2% #                                           8[0K7  3% #                                           8[0K7  4% ##                                          8[0K7  5% ##                                          8[0K7  6% ##                                          8[0K7  7% ###                                         8[0K7 25% ###########                                 8[0K7 27% ###########                                 8[0K7 29% ############                                8[0K7 29% #############                               8[0K7 43% ##################                          8[0K7 43% ###################                         8[0K7 48% #####################                       8[0K7 50% ######################                      8[0K7 51% ######################                      8[0K7 53% #######################                     8[0K7 54% #######################                     8[0K7 56% #########################                   8[0K7 60% ##########################                  8[0K7 66% #############################               8[0K7 72% ###############################             8[0K7 74% ################################            8[0K7 75% #################################           8[0K7 76% #################################           8[0K7 81% ###################################         8[0K7 88% ######################################      8[0K7 89% #######################################     8[0K7 90% #######################################     8[0K7 91% ########################################    8[0K7 92% ########################################    8[0K7 94% #########################################   8[0K7 96% ##########################################  8[0K7 97% ##########################################  8[0K7 99% ########################################### 8[0K7100% ############################################8[0Kwget: server returned error: HTTP/403 Forbidden
+ERROR: process "/bin/sh -c apk add -q --progress --update --no-cache --virtual deps gnupg &&     ln -s /usr/bin/python3 /usr/local/bin/python &&     LATEST=${YOUTUBE_DL_OVERWRITE:-latest} &&     wget -q https://yt-dl.org/downloads/$LATEST/youtube-dl -O /usr/local/bin/youtube-dl &&     wget -q https://yt-dl.org/downloads/$LATEST/youtube-dl.sig -O /tmp/youtube-dl.sig &&     gpg --keyserver keyserver.ubuntu.com --recv-keys 'ED7F5BF46B3BBED81C87368E2C393E0F18A9236D' &&     gpg --verify /tmp/youtube-dl.sig /usr/local/bin/youtube-dl &&     SHA256=$(wget -qO- https://yt-dl.org/downloads/$LATEST/SHA2-256SUMS | head -n 1 | cut -d \" \" -f 1) &&     [ $(sha256sum /usr/local/bin/youtube-dl | cut -d \" \" -f 1) = \"$SHA256\" ] &&     apk del deps &&     rm -rf /var/cache/apk/* /tmp/youtube-dl.sig &&     chown 1000 /entrypoint.sh /usr/local/bin/youtube-dl &&     chmod 555 /entrypoint.sh &&     chmod 777 /usr/local/bin/youtube-dl" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```ARG ALPINE_VERSION=3.15
+
+FROM alpine:${ALPINE_VERSION}
+ARG BUILD_DATE
+ARG VCS_REF
+ARG YOUTUBE_DL_OVERWRITE=
+LABEL \
+    org.opencontainers.image.authors="quentin.mcgaw@gmail.com" \
+    org.opencontainers.image.created=$BUILD_DATE \
+    org.opencontainers.image.revision=$VCS_REF \
+    org.opencontainers.image.version="${YOUTUBE_DL_OVERWRITE}" \
+    org.opencontainers.image.url="https://github.com/qdm12/youtube-dl-docker" \
+    org.opencontainers.image.documentation="https://github.com/qdm12/youtube-dl-docker/blob/master/README.md" \
+    org.opencontainers.image.source="https://github.com/qdm12/youtube-dl-docker" \
+    org.opencontainers.image.title="youtube-dl-docker" \
+    org.opencontainers.image.description="Download with youtube-dl using command line arguments or configuration files"
+HEALTHCHECK --interval=10m --timeout=10s --retries=1 CMD [ "$(wget -qO- https://duckduckgo.com 2>/dev/null)" != "" ] || exit 1
+ENV AUTOUPDATE=no \
+    GOTIFYURL= \
+    GOTIFYTOKEN=
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["-h"]
+COPY entrypoint.sh /
+RUN apk add -q --progress --update --no-cache ca-certificates ffmpeg python3 && \
+    rm -rf /var/cache/apk/*
+RUN apk add -q --progress --update --no-cache --virtual deps gnupg && \
+    ln -s /usr/bin/python3 /usr/local/bin/python && \
+    LATEST=${YOUTUBE_DL_OVERWRITE:-latest} && \
+    wget -q https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp && \
+    wget -q https://github.com/yt-dlp/yt-dlp/raw/master/public.key -O /tmp/public.key && \
+    gpg --import /tmp/public.key && \
+    wget -q https://github.com/yt-dlp/yt-dlp/releases/latest/download/SHA2-256SUMS.sig -O /tmp/SHA2-256SUMS.sig && \
+    wget -q https://github.com/yt-dlp/yt-dlp/releases/latest/download/SHA2-256SUMS -O /tmp/SHA2-256SUMS && \
+    gpg --verify /tmp/SHA2-256SUMS.sig /tmp/SHA2-256SUMS && \
+    apk del deps && \
+    rm -rf /var/cache/apk/* /tmp/public.key /tmp/SHA2-256SUMS.sig /tmp/SHA2-256SUMS && \
+    chown 1000 /entrypoint.sh /usr/local/bin/yt-dlp && \
+    chmod 555 /entrypoint.sh && \
+    chmod 777 /usr/local/bin/yt-dlp
+USER 1000
+```
+
+
+# Example 3
+## Example Dockerfile
+```FROM alpine:latest as main
+
+RUN set -eux; \
+    apk --update add bash openssh-client ruby git ruby-json python3 py3-pip openssl ca-certificates; \
+    apk --update add --virtual \
+      build-dependencies \
+      build-base \
+      python3-dev \
+      libffi-dev \
+      openssl-dev \
+      musl-dev \
+      cargo; \
+    pip3 install --upgrade pip cffi; \
+    pip3 install ansible boto pywinrm; \
+    apk del build-dependencies; \
+    rm -rf /var/cache/apk/*; \
+# Remove PIP and Cargo cache
+	rm -rf /root/.cargo /root/.cache; \
+# Remove Python cache files
+	find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf; \
+	find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf; \
+# Add hosts for convenience
+    mkdir -p /etc/ansible; \
+    echo -e "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+
+COPY assets/ /opt/resource/
+
+FROM main as testing
+
+RUN set -eux; \
+    gem install rspec; \
+    wget -q -O - https://raw.githubusercontent.com/troykinsella/mockleton/master/install.sh | bash; \
+    cp /usr/local/bin/mockleton /usr/local/bin/ansible-galaxy; \
+    cp /usr/local/bin/mockleton /usr/local/bin/ansible-playbook; \
+    cp /usr/local/bin/mockleton /usr/bin/ssh-add;
+
+COPY . /resource/
+
+WORKDIR /resource
+RUN rspec
+
+FROM main
+
+```
+
+## Example Build Error
+```> [main 2/3] RUN set -eux;     apk --update add bash openssh-client ruby git ruby-json python3 py3-pip openssl ca-certificates;     apk --update add --virtual       build-dependencies       build-base       python3-dev       libffi-dev       openssl-dev       musl-dev       cargo;     pip3 install --upgrade pip cffi;     pip3 install ansible boto pywinrm;     apk del build-dependencies;     rm -rf /var/cache/apk/*; 	rm -rf /root/.cargo /root/.cache; 	find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf; 	find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf;     mkdir -p /etc/ansible;     echo -e "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts:
+error: externally-managed-environment
+× This environment is externally managed
+╰─> 
+    The system-wide python installation should be maintained using the system
+    package manager (apk) only.
+    
+    If the package in question is not packaged already (and hence installable via
+    "apk add py3-somepackage"), please consider installing it inside a virtual
+    environment, e.g.:
+    
+    python3 -m venv /path/to/venv
+    . /path/to/venv/bin/activate
+    pip install mypackage
+    
+    To exit the virtual environment, run:
+    
+    deactivate
+    
+    The virtual environment is not deleted, and can be re-entered by re-sourcing
+    the activate file.
+    
+    To automatically manage virtual environments, consider using pipx (from the
+    pipx package).
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+ERROR: process "/bin/sh -c set -eux;     apk --update add bash openssh-client ruby git ruby-json python3 py3-pip openssl ca-certificates;     apk --update add --virtual       build-dependencies       build-base       python3-dev       libffi-dev       openssl-dev       musl-dev       cargo;     pip3 install --upgrade pip cffi;     pip3 install ansible boto pywinrm;     apk del build-dependencies;     rm -rf /var/cache/apk/*; \trm -rf /root/.cargo /root/.cache; \tfind /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf; \tfind /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf;     mkdir -p /etc/ansible;     echo -e \"[local]\\nlocalhost ansible_connection=local\" > /etc/ansible/hosts" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```FROM alpine:latest as main
+
+RUN set -eux; \
+    apk --update add bash openssh-client ruby git ruby-json python3 py3-pip openssl ca-certificates; \
+    apk --update add --virtual \
+      build-dependencies \
+      build-base \
+      python3-dev \
+      libffi-dev \
+      openssl-dev \
+      musl-dev \
+      cargo; \
+    python3 -m venv /opt/venv; \
+    . /opt/venv/bin/activate; \
+    pip install --upgrade pip cffi; \
+    pip install ansible boto pywinrm; \
+    deactivate; \
+    apk del build-dependencies; \
+    rm -rf /var/cache/apk/*; \
+    rm -rf /root/.cargo /root/.cache; \
+    find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf; \
+    find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf; \
+    mkdir -p /etc/ansible; \
+    echo -e "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+
+COPY assets/ /opt/resource/
+
+FROM main as testing
+
+RUN set -eux; \
+    gem install rspec; \
+    wget -q -O - https://raw.githubusercontent.com/troykinsella/mockleton/master/install.sh | bash; \
+    cp /usr/local/bin/mockleton /usr/local/bin/ansible-galaxy; \
+    cp /usr/local/bin/mockleton /usr/local/bin/ansible-playbook; \
+    cp /usr/local/bin/mockleton /usr/bin/ssh-add;
+
+COPY . /resource/
+
+WORKDIR /resource
+RUN . /opt/venv/bin/activate && rspec
+
+FROM main
+```
+
+
+### Repair 2
+```FROM alpine:latest as main
+
+RUN set -eux; \
+    apk --update add bash openssh-client ruby git ruby-json python3 py3-pip openssl ca-certificates; \
+    apk --update add --virtual \
+      build-dependencies \
+      build-base \
+      python3-dev \
+      libffi-dev \
+      openssl-dev \
+      musl-dev \
+      cargo; \
+    rm /usr/lib/python*/EXTERNALLY-MANAGED; \
+    python3 -m ensurepip; \
+    pip3 install --upgrade pip cffi; \
+    pip3 install ansible boto pywinrm; \
+    apk del build-dependencies; \
+    rm -rf /var/cache/apk/*; \
+    rm -rf /root/.cargo /root/.cache; \
+    find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf; \
+    find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf; \
+    mkdir -p /etc/ansible; \
+    echo -e "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+
+COPY assets/ /opt/resource/
+
+FROM main as testing
+
+RUN set -eux; \
+    gem install rspec; \
+    wget -q -O - https://raw.githubusercontent.com/troykinsella/mockleton/master/install.sh | bash; \
+    cp /usr/local/bin/mockleton /usr/local/bin/ansible-galaxy; \
+    cp /usr/local/bin/mockleton /usr/local/bin/ansible-playbook; \
+    cp /usr/local/bin/mockleton /usr/bin/ssh-add;
+
+COPY . /resource/
+
+WORKDIR /resource
+RUN rspec
+
+FROM main
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

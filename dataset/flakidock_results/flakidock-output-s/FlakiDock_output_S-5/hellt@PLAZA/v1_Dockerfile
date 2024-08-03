@@ -1,0 +1,25 @@
+# Dockerfile
+FROM alpine:latest
+MAINTAINER Roman Dodin <dodin.roman@gmail.com>
+
+# Install dependencies
+RUN apk add --no-cache python3 py3-pip && \
+    pip3 install --upgrade pip setuptools && \
+    rm -r /root/.cache
+
+# Copy requirements and install Python packages
+COPY ./web_app/requirements.txt /tmp/requirements.txt
+RUN pip3 install -r /tmp/requirements.txt
+
+# Copy application code
+RUN mkdir -p /opt/webapp
+COPY ./web_app /opt/webapp/
+
+# Set working directory
+WORKDIR /opt/webapp
+
+# Expose port
+EXPOSE 80
+
+# Command to run the application
+CMD ["python3", "app.py"]

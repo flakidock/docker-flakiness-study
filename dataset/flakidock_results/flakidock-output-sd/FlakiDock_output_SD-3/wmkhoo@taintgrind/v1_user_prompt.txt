@@ -1,0 +1,53 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ubuntu:bionic
+
+RUN apt update
+RUN apt install -y git wget gcc build-essential automake python gcc-multilib
+RUN mkdir /code
+
+# build, install valgrind
+RUN wget -O /code/valgrind.tar.bz2 https://sourceware.org/pub/valgrind/valgrind-3.18.1.tar.bz2
+RUN cd /code && \
+    tar jxf /code/valgrind.tar.bz2 && \
+    mv valgrind-3.18.1 valgrind
+
+# clone taintgrind
+RUN cd /code/valgrind && \
+    git clone https://github.com/wmkhoo/taintgrind
+
+# build capstone
+RUN cd /code/valgrind/taintgrind && \
+    ./build_taintgrind.sh
+
+# dispatch via entrypoint script
+# recommend mapping the /pwd volume, probably like (for ELF file):
+#
+#    docker run -it --rm -v $(pwd):/pwd taintgrind /pwd/someexe
+VOLUME /pwd
+WORKDIR /code/valgrind/taintgrind
+RUN chmod +x /code/valgrind/taintgrind/entrypoint.sh
+ENTRYPOINT ["/code/valgrind/taintgrind/entrypoint.sh"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 8/10] RUN cd /code/valgrind/taintgrind &&     ./build_taintgrind.sh:
+119.0                          ^
+119.0 tnt_main.c: In function 'vgTaintgrind_emit_next':
+119.0 tnt_main.c:3263:25: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+119.0        VG_(printf)("%p", (void *)pc);
+119.0                          ^
+119.0 make[2]: *** [taintgrind_x86_linux-tnt_main.o] Error 1
+119.0 make[2]: *** Waiting for unfinished jobs....
+119.0 make[2]: *** [taintgrind_amd64_linux-tnt_main.o] Error 1
+119.0 make[1]: *** [all-recursive] Error 1
+119.0 make: *** [all] Error 2
+ERROR: process "/bin/sh -c cd /code/valgrind/taintgrind &&     ./build_taintgrind.sh" did not complete successfully: exit code: 2```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

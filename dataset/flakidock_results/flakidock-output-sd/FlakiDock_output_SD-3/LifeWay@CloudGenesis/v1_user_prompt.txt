@@ -1,0 +1,43 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM amazonlinux:latest
+
+MAINTAINER Ryan Means <ryan.means@lifeway.com>
+
+RUN yum -y update && yum -y install zip
+
+# JAVA & SBT
+RUN yum -y install java-1.8.0 && \
+    curl -L https://www.scala-sbt.org/sbt-rpm.repo | tee /etc/yum.repos.d/sbt-rpm.repo && \
+    yum -y install sbt
+
+# PYTHON
+RUN yum -y install python3 python3-virtualenv python3-pip
+
+# NODE & YARN
+RUN rpm --import https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL && \
+    rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg && \
+    curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo && \
+    curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - && \
+    yum -y install yarn
+
+RUN yum clean all
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [5/6] RUN rpm --import https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL &&     rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg &&     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo &&     curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - &&     yum -y install yarn:
+system-release-2023.5.20240722-0.amzn2023.noarch
+exec system-release
+Release package: system-release-2023.5.20240722-0.amzn2023.noarch
+## Confirming "al2023-x86_64" is supported...
++ curl -sLf -o /dev/null 'https://rpm.nodesource.com/pub_6.x/al/2023/x86_64/nodesource-release-al2023-1.noarch.rpm'
+## Your distribution, identified as "system-release-2023.5.20240722-0.amzn2023.noarch", is not currently supported, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support
+ERROR: process "/bin/sh -c rpm --import https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL &&     rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg &&     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo &&     curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - &&     yum -y install yarn" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

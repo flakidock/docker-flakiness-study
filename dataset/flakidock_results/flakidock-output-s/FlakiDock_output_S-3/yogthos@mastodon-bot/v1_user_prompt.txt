@@ -1,0 +1,25 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM node:10-slim
+
+RUN apt-get update && apt-get install --assume-yes software-properties-common && \
+  apt-get install --assume-yes git cron
+
+RUN npm install -g mastodon-bot
+
+RUN mkdir /config && touch /config/config.edn && touch /var/log/cron.log
+
+ADD poll.sh /poll.sh
+
+ENV MASTODON_BOT_CONFIG /config/config.edn
+VOLUME /config
+
+CMD /poll.sh
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

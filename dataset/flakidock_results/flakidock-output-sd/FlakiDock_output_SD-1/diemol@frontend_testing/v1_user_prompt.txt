@@ -1,0 +1,40 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# Build
+#  docker build -t fe .
+# Use
+#  curl -sSL https://raw.githubusercontent.com/dosel/t/i/p | bash -s start
+#  docker run --rm -ti --net container:zalenium fe
+#  curl -sSL https://raw.githubusercontent.com/dosel/t/i/p | bash -s stop
+FROM node:7
+
+RUN apt-get -qqy update \
+  && apt-get -qqy install \
+    git-core \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/diemol/frontend_testing.git
+
+RUN ln -sf /frontend_testing/page-objects/js-webdriverio/complete /js-webdriverio
+
+WORKDIR /js-webdriverio
+RUN npm install
+
+CMD ["npm", "test"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/6] RUN apt-get -qqy update   && apt-get -qqy install     git-core   && rm -rf /var/lib/apt/lists/*:
+W: Failed to fetch http://security.debian.org/dists/jessie/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.80]
+W: Failed to fetch http://deb.debian.org/debian/dists/jessie/main/binary-amd64/Packages  404  Not Found
+W: Failed to fetch http://deb.debian.org/debian/dists/jessie-updates/main/binary-amd64/Packages  404  Not Found
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+ERROR: process "/bin/sh -c apt-get -qqy update   && apt-get -qqy install     git-core   && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

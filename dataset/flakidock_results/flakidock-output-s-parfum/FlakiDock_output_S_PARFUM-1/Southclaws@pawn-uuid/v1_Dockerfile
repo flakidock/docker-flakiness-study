@@ -1,0 +1,7 @@
+FROM maddinat0r/debian-samp
+
+RUN apt-get update && apt-get install --no-install-recommends -y uuid-dev:i386 curl && rm -rf /var/lib/apt/lists/*;
+RUN curl -f -L https://raw.githubusercontent.com/Southclaws/sampctl/master/install-bin.sh | sh && cp sampctl /usr/bin/sampctl
+COPY . .
+RUN mkdir build
+ENTRYPOINT [ "make", "build-inside" ]

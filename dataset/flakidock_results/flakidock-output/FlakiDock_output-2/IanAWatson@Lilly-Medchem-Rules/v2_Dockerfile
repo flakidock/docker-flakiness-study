@@ -1,0 +1,15 @@
+FROM gcc
+
+# Instructions copied from https://thenewstack.io/ruby-in-containers/
+RUN apt-get update && apt-get install -y gnupg2 curl
+RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+RUN curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+RUN curl -L https://get.rvm.io | bash -s stable
+ENV PATH /usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+RUN /bin/bash -c "source /usr/local/rvm/scripts/rvm && rvm install ruby-2.7.1 --with-openssl-dir=/usr/local/ssl"
+COPY . /Lilly-Medchem-Rules
+WORKDIR /Lilly-Medchem-Rules
+RUN make
+RUN [ "/bin/bash", "-l", "-c", ". /etc/profile && source /usr/local/rvm/scripts/rvm && rvm use 2.7.1 > /dev/null && make test" ]
+# docker run -i -a stdout -a stdin ianwatson/lilly_medchem_rules:v1.2 < file.smi
+CMD /bin/bash -c ". /etc/profile && source /usr/local/rvm/scripts/rvm && rvm use 2.7.1 > /dev/null && /Lilly-Medchem-Rules/Lilly_Medchem_Rules.rb -i smi -"

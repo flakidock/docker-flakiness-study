@@ -1,0 +1,11 @@
+FROM perl:5.32
+
+ENV LAST_UPDATED 2021-08-30
+
+ADD Makefile .
+
+USER root
+RUN apt-get update && apt-get install -y rsync \
+  && cpanm File::Rsync File::Rsync::Mirror::Recent \
+          XML::RSS Linux::Inotify2 \
+  && rm -fr ~/.cpanm

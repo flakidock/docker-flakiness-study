@@ -1,0 +1,34 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM python:alpine
+MAINTAINER Kyubi Systems 2020
+
+LABEL version="1.0.7" maintainer="Kyubi Systems <admin@kyubi.co.uk>"
+
+WORKDIR /usr/src/app
+
+COPY requirements.txt ./
+RUN apk add --no-cache --virtual .build-deps gcc musl-dev
+RUN apk add --no-cache --virtual freetype-dev jpeg-dev libpng-dev
+RUN apk add --no-cache --virtual cython
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
+RUN apk add --no-cache --virtual unrar xz
+RUN apk del .build-deps gcc musl-dev
+
+COPY . .
+
+RUN touch .docker
+
+EXPOSE 5000
+
+CMD [ "./start.sh" ]
+
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

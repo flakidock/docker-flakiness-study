@@ -1,0 +1,25 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```#FROM node:9.8
+FROM registry.cn-hangzhou.aliyuncs.com/zuowenbo/nodejs
+MAINTAINER bjfumac "macvsapple@gmail.com"
+RUN npm install  protobufjs chalk minimist glob tmp semver uglify-js espree escodegen estraverse -g
+VOLUME ["/proto/"]
+WORKDIR /
+ADD build.sh build.sh
+ADD fix.js fix.js
+ADD asconverter.js asconverter.js
+RUN chmod 777 /build.sh
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [internal] load metadata for registry.cn-hangzhou.aliyuncs.com/zuowenbo/nodejs:latest:
+ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

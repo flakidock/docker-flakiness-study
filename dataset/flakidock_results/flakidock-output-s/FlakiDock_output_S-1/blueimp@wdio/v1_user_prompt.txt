@@ -1,0 +1,47 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM alpine:3.14
+
+RUN apk --no-cache add \
+  tini \
+  nodejs \
+  npm \
+  ffmpeg \
+  android-tools \
+  && npm install -g \
+  npm@latest \
+  # Clean up obsolete files:
+  && rm -rf \
+  /tmp/* \
+  /root/.npm
+
+WORKDIR /usr/lib/wdio
+COPY package.json package-lock.json ./
+RUN npm install --production \
+  # Clean up obsolete files:
+  && rm -rf \
+  /tmp/* \
+  /root/.npm
+# Set NODE_PATH to be able to require installed packages:
+ENV NODE_PATH=/usr/lib/wdio/node_modules
+# Extend path to be able to run installed binaries:
+ENV PATH=$PATH:/usr/lib/wdio/node_modules/.bin
+
+COPY bin/wait-for-hosts.sh /usr/local/bin/wait-for-hosts
+
+WORKDIR /app
+
+# Avoid permission issues with host mounts by assigning a user/group with
+# uid/gid 1000 (usually the ID of the first user account on GNU/Linux):
+RUN adduser -D -u 1000 wdio
+USER wdio
+
+ENTRYPOINT ["tini", "-g", "--", "wait-for-hosts", "--", "wdio"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

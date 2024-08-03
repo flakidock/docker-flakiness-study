@@ -1,0 +1,29 @@
+# Dockerfile
+FROM node:8.12-alpine as builder
+
+# Install dependencies
+RUN apk add --no-cache g++ make python
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY ./package.json ./
+RUN npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+RUN npm --registry=https://registry.npm.taobao.org install
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the application
+RUN npm run build:prod
+
+# Use nginx to serve the application
+FROM nginx:alpine
+EXPOSE 9527
+
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Copy built application from builder stage
+COPY --from=builder /app/dist /usr/share/nginx/html/

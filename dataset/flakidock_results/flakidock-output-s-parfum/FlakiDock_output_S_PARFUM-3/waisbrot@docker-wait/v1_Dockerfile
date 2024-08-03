@@ -1,0 +1,8 @@
+FROM debian
+MAINTAINER Neil Chambers <n3llyb0y.uk@gmail.com>
+
+RUN apt-get update && apt-get install --no-install-recommends -y netcat && rm -rf /var/lib/apt/lists/*;
+
+COPY wait /wait
+
+CMD ["/wait"]

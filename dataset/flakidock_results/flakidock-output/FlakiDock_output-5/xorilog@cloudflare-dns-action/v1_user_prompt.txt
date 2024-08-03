@@ -1,0 +1,261 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM r.j3ss.co/terraform:latest
+
+LABEL "com.github.actions.name"="Cloudflare DNS"
+LABEL "com.github.actions.description"="Update or Create DNS record on cloudlfare"
+LABEL "com.github.actions.icon"="cloud"
+LABEL "com.github.actions.color"="orange"
+
+RUN apk add --no-cache \
+	git \
+	jq \
+	curl \
+	make
+
+COPY terraform /usr/src/terraform
+COPY Makefile /usr/src
+COPY deploy.sh /usr/local/bin/deploy
+
+WORKDIR /usr/src
+
+ENTRYPOINT ["deploy"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [internal] load metadata for r.j3ss.co/terraform:latest:
+ERROR: failed to do request: Head "https://r.j3ss.co/v2/terraform/manifests/latest": dial tcp: lookup r.j3ss.co on 137.82.1.2:53: no such host```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```FROM r.j3ss.co/terraform:latest
+
+LABEL "com.github.actions.name"="AWS Fargate"
+LABEL "com.github.actions.description"="Deploy to AWS Fargate on push to the master branch"
+LABEL "com.github.actions.icon"="cloud"
+LABEL "com.github.actions.color"="red"
+
+RUN apk add --no-cache \
+	git \
+	make
+
+COPY terraform /usr/src/terraform
+COPY Makefile /usr/src
+COPY deploy.sh /usr/local/bin/deploy
+
+WORKDIR /usr/src
+
+ENTRYPOINT ["deploy"]
+
+```
+
+## Example Build Error
+```> [internal] load metadata for r.j3ss.co/terraform:latest:
+ERROR: failed to do request: Head "https://r.j3ss.co/v2/terraform/manifests/latest": dial tcp 34.72.39.221:443: i/o timeout```
+
+## Example Repair
+
+### Repair 1
+```FROM hashicorp/terraform:latest
+
+LABEL "com.github.actions.name"="AWS Fargate"
+LABEL "com.github.actions.description"="Deploy to AWS Fargate on push to the master branch"
+LABEL "com.github.actions.icon"="cloud"
+LABEL "com.github.actions.color"="red"
+
+RUN apk add --no-cache \
+	git \
+	make
+
+COPY terraform /usr/src/terraform
+COPY Makefile /usr/src
+COPY deploy.sh /usr/local/bin/deploy
+
+WORKDIR /usr/src
+
+ENTRYPOINT ["deploy"]
+
+```
+
+
+# Example 2
+## Example Dockerfile
+```# Ã¤Â½Â¿Ã§ÂÂ¨DaoCloudÃ§ÂÂUbuntuÃ©ÂÂÃ¥ÂÂ
+FROM daocloud.io/library/ubuntu:14.04
+
+# Ã¨Â®Â¾Ã§Â½Â®Ã©ÂÂÃ¥ÂÂÃ¤Â½ÂÃ¨ÂÂ
+MAINTAINER Fundebug <help@fundebug.com>
+
+# Ã¨Â®Â¾Ã§Â½Â®Ã¦ÂÂ¶Ã¥ÂÂº
+RUN sudo sh -c "echo 'Asia/Shanghai' > /etc/timezone" && \
+    sudo dpkg-reconfigure -f noninteractive tzdata
+
+# Ã¤Â½Â¿Ã§ÂÂ¨Ã©ÂÂ¿Ã©ÂÂÃ¤ÂºÂÃ§ÂÂUbuntuÃ©ÂÂÃ¥ÂÂ
+RUN echo '\n\
+deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse\n\
+deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse\n\
+deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse\n\
+deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse\n\
+deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse\n\
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse\n\
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse\n\
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse\n\
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse\n\
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse\n'\
+> /etc/apt/sources.list
+
+# Ã¥Â®ÂÃ¨Â£Ânode v6.10.1
+RUN sudo apt-get update && sudo apt-get install -y wget
+
+# Ã¤Â½Â¿Ã§ÂÂ¨Ã¦Â·ÂÃ¥Â®ÂÃ©ÂÂÃ¥ÂÂÃ¥Â®ÂÃ¨Â£ÂNode.js v6.10.1
+RUN wget https://npm.taobao.org/mirrors/node/v6.10.1/node-v6.10.1-linux-x64.tar.gz && \
+    tar -C /usr/local --strip-components 1 -xzf node-v6.10.1-linux-x64.tar.gz && \
+    rm node-v6.10.1-linux-x64.tar.gz 
+
+WORKDIR /app
+
+# Ã¥Â®ÂÃ¨Â£ÂnpmÃ¦Â¨Â¡Ã¥ÂÂ
+ADD package.json /app/package.json
+
+# Ã¤Â½Â¿Ã§ÂÂ¨Ã¦Â·ÂÃ¥Â®ÂÃ§ÂÂnpmÃ©ÂÂÃ¥ÂÂ
+RUN npm install --production -d --registry=https://registry.npm.taobao.org
+
+# Ã¦Â·Â»Ã¥ÂÂ Ã¦ÂºÂÃ¤Â»Â£Ã§Â Â
+ADD . /app
+
+# Ã¨Â¿ÂÃ¨Â¡Âapp.js
+CMD ["node", "/app/app.js"]
+
+```
+
+## Example Build Error
+```> [internal] load metadata for daocloud.io/library/ubuntu:14.04:
+ERROR: failed to copy: httpReadSeeker: failed open: failed to do request: Get "http://daohub.ufile.ucloud.com.cn/docker/registry/v2/blobs/sha256/13/13b66b487594a1f2b75396013bc05d29d9f527852d96c5577cc4f187559875d0/data?Expires=1680823156&Signature=RO6U7fvKmSe417%2BR4JyxnM0P5Xo%3D&UCloudPublicKey=ucloudit%40daocloud.io14149252192085992294": dial tcp: lookup daohub.ufile.ucloud.com.cn on 137.82.1.2:53: no such host```
+
+## Example Repair
+
+### Repair 1
+```# Use DaoCloud's Ubuntu image
+FROM ubuntu:14.04
+
+# Set image author
+MAINTAINER Fundebug <help@fundebug.com>
+
+# Set timezone
+RUN sudo sh -c "echo 'Asia/Shanghai' > /etc/timezone" && \
+    sudo dpkg-reconfigure -f noninteractive tzdata
+
+# Use Alibaba Cloud's Ubuntu image
+RUN echo '\n\
+deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse\n\
+deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse\n\
+deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse\n\
+deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse\n\
+deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse\n\
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse\n\
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse\n\
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse\n\
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse\n\
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse\n'\
+> /etc/apt/sources.list
+
+# Install node v6.10.1
+RUN sudo apt-get update && sudo apt-get install -y wget
+
+# Use the official npm registry to install Node.js v6.10.1
+RUN wget https://nodejs.org/dist/v6.10.1/node-v6.10.1-linux-x64.tar.gz && \
+    tar -C /usr/local --strip-components 1 -xzf node-v6.10.1-linux-x64.tar.gz && \
+    rm node-v6.10.1-linux-x64.tar.gz 
+
+WORKDIR /app
+
+# Add npm modules
+ADD package.json /app/package.json
+
+# Use the official npm registry
+RUN npm install --production -d --registry=https://registry.npmjs.org
+
+# Add source code
+ADD . /app
+
+# Run app.js
+CMD ["node", "/app/app.js"]
+```
+
+
+# Example 3
+## Example Dockerfile
+```FROM consul
+
+# Add Containerpilot and set its configuration
+ENV CONTAINERPILOT_VERSION 2.6.0
+ENV CONTAINERPILOT file:///etc/containerpilot.json
+ENV HEALTH_URL http://localhost:8500/ui/
+
+RUN export CONTAINERPILOT_CHECKSUM=c1bcd137fadd26ca2998eec192d04c08f62beb1f \
+    && export archive=containerpilot-${CONTAINERPILOT_VERSION}.tar.gz \
+    && curl -Lso /tmp/${archive} \
+         "https://github.com/joyent/containerpilot/releases/download/${CONTAINERPILOT_VERSION}/${archive}" \
+    && echo "${CONTAINERPILOT_CHECKSUM}  /tmp/${archive}" | sha1sum -c \
+    && tar zxf /tmp/${archive} -C /usr/local/bin \
+    && rm /tmp/${archive} \
+    && apk add --no-cache bash curl \
+    && curl -sL https://github.com/sequenceiq/docker-alpine-dig/releases/download/v9.10.2/dig.tgz|tar -xzv -C /usr/local/bin/
+
+# configuration files and bootstrap scripts
+COPY etc/containerpilot.json etc/
+COPY bin/* /usr/local/bin/
+
+HEALTHCHECK --interval=30s --timeout=20s --retries=10 CMD curl --fail -s $HEALTH_URL || exit 1
+
+ENTRYPOINT ["/usr/local/bin/containerpilot", "/usr/local/bin/docker-entrypoint.sh" ]
+CMD ["agent", "-server", "-bootstrap-expect", "3", "-ui", "-client=0.0.0.0", "-retry-interval", "5s", "--log-level", "warn", "-disable-host-node-id"]
+
+
+```
+
+## Example Build Error
+```> [internal] load metadata for docker.io/library/consul:latest:
+ERROR: docker.io/library/consul:latest: not found```
+
+## Example Repair
+
+### Repair 1
+```FROM hashicorp/consul
+
+# Add Containerpilot and set its configuration
+ENV CONTAINERPILOT_VERSION 2.6.0
+ENV CONTAINERPILOT file:///etc/containerpilot.json
+ENV HEALTH_URL http://localhost:8500/ui/
+
+RUN export CONTAINERPILOT_CHECKSUM=c1bcd137fadd26ca2998eec192d04c08f62beb1f \
+    && export archive=containerpilot-${CONTAINERPILOT_VERSION}.tar.gz \
+    && curl -Lso /tmp/${archive} \
+         "https://github.com/joyent/containerpilot/releases/download/${CONTAINERPILOT_VERSION}/${archive}" \
+    && echo "${CONTAINERPILOT_CHECKSUM}  /tmp/${archive}" | sha1sum -c \
+    && tar zxf /tmp/${archive} -C /usr/local/bin \
+    && rm /tmp/${archive} \
+    && apk add --no-cache bash curl \
+    && curl -sL https://github.com/sequenceiq/docker-alpine-dig/releases/download/v9.10.2/dig.tgz|tar -xzv -C /usr/local/bin/
+
+# configuration files and bootstrap scripts
+COPY etc/containerpilot.json etc/
+COPY bin/* /usr/local/bin/
+
+HEALTHCHECK --interval=30s --timeout=20s --retries=10 CMD curl --fail -s $HEALTH_URL || exit 1
+
+ENTRYPOINT ["/usr/local/bin/containerpilot", "/usr/local/bin/docker-entrypoint.sh" ]
+CMD ["agent", "-server", "-bootstrap-expect", "3", "-ui", "-client=0.0.0.0", "-retry-interval", "5s", "--log-level", "warn", "-disable-host-node-id"]
+
+
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,103 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM funkyfuture/nest-of-serpents
+
+ENTRYPOINT tox
+WORKDIR /src
+
+RUN pip3.7 install black flake8 pre-commit pytest tox PyYAML Sphinx \
+ && mkdir /home/tox \
+ && mv /root/.cache /home/tox/
+
+RUN useradd -m tox \
+ && chown -R tox.tox /home/tox/.cache
+
+ADD . .
+RUN mkdir .tox \
+ && chown -R tox.tox .
+
+USER tox
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/6] RUN pip3.7 install black flake8 pre-commit pytest tox PyYAML Sphinx  && mkdir /home/tox  && mv /root/.cache /home/tox/:
+[3/6] RUN pipinstall black flake8 pre-commit pytest tox PyYAML Sphinx  && mkdir /home/tox  && mv /root/.cache /home/tox/
+Collecting distlib<1,>=0.(from virtualenv>=20.10.0->pre-commit)
+  Building wheel for typed-ast (setup.py): finished with status 'error'
+  ERROR: Complete output from command /usr/bin/python-u -c 'import setuptools, tokenize;__file__='"'"'/tmp/pip-install-aiib8ua8/typed-ast/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-wfe35xr5 --python-tag cp37:
+  ERROR: running bdist_wheel
+  running build
+  running build_py
+  creating build
+  creating build/lib.linux-x86_64-3.7
+  creating build/lib.linux-x86_64-3.7/typed_ast
+  copying typed_ast/__init__.py -> build/lib.linux-x86_64-3.7/typed_ast
+  copying typed_ast/ast27.py -> build/lib.linux-x86_64-3.7/typed_ast
+  copying typed_ast/ast3.py -> build/lib.linux-x86_64-3.7/typed_ast
+  copying typed_ast/conversions.py -> build/lib.linux-x86_64-3.7/typed_ast
+  package init file 'ast3/tests/__init__.py' not found (or not a regular file)
+  creating build/lib.linux-x86_64-3.7/typed_ast/tests
+  copying ast3/tests/test_basics.py -> build/lib.linux-x86_64-3.7/typed_ast/tests
+  running build_ext
+  building '_ast27' extension
+  creating build/temp.linux-x86_64-3.7
+  creating build/temp.linux-x86_64-3.7/ast27
+  creating build/temp.linux-x86_64-3.7/ast27/Parser
+  creating build/temp.linux-x86_64-3.7/ast27/Python
+  creating build/temp.linux-x86_64-3.7/ast27/Custom
+  x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Iast27/Include -I/usr/include/python3.7m -c ast27/Parser/acceler.c -o build/temp.linux-x86_64-3.7/ast27/Parser/acceler.o
+  In file included from ast27/Parser/acceler.c:13:0:
+  ast27/Parser/../Include/pgenheaders.h:8:10: fatal error: Python.h: No such file or directory
+   #include "Python.h"
+            ^~~~~~~~~~
+  compilation terminated.
+  error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+  ----------------------------------------
+  ERROR: Failed building wheel for typed-ast
+  Running setup.py clean for typed-ast
+ERROR: virtualenv 20.has requirement importlib-metadata>=6.6; python_version < "3.8", but you'll have importlib-metadata 4.which is incompatible.
+ERROR: tox 4.has requirement importlib-metadata>=6.7; python_version < "3.8", but you'll have importlib-metadata 4.which is incompatible.
+ERROR: sphinx 5.has requirement importlib-metadata>=4.8; python_version < "3.10", but you'll have importlib-metadata 4.which is incompatible.
+Installing collected packages: typing-extensions, platformdirs, mypy-extensions, typed-ast, pathspec, tomli, zipp, importlib-metadata, click, packaging, black, pycodestyle, mccabe, pyflakes, flake8, nodeenv, cfgv, identify, filelock, distlib, virtualenv, PyYAML, pre-commit, iniconfig, exceptiongroup, pluggy, pytest, pyproject-api, cachetools, colorama, chardet, tox, MarkupSafe, Jinja2, sphinxcontrib-qthelp, snowballstemmer, imagesize, sphinxcontrib-jsmath, pytz, babel, sphinxcontrib-htmlhelp, sphinxcontrib-serializinghtml, alabaster, sphinxcontrib-devhelp, Pygments, sphinxcontrib-applehelp, urllib3, charset-normalizer, certifi, idna, requests, docutils, Sphinx
+    Running setup.py install for typed-ast: finished with status 'error'
+    ERROR: Complete output from command /usr/bin/python-u -c 'import setuptools, tokenize;__file__='"'"'/tmp/pip-install-aiib8ua8/typed-ast/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-w12_2ce2/install-record.txt --single-version-externally-managed --compile:
+    ERROR: running install
+    running build
+    running build_py
+    creating build
+    creating build/lib.linux-x86_64-3.7
+    creating build/lib.linux-x86_64-3.7/typed_ast
+    copying typed_ast/__init__.py -> build/lib.linux-x86_64-3.7/typed_ast
+    copying typed_ast/ast27.py -> build/lib.linux-x86_64-3.7/typed_ast
+    copying typed_ast/ast3.py -> build/lib.linux-x86_64-3.7/typed_ast
+    copying typed_ast/conversions.py -> build/lib.linux-x86_64-3.7/typed_ast
+    package init file 'ast3/tests/__init__.py' not found (or not a regular file)
+    creating build/lib.linux-x86_64-3.7/typed_ast/tests
+    copying ast3/tests/test_basics.py -> build/lib.linux-x86_64-3.7/typed_ast/tests
+    running build_ext
+    building '_ast27' extension
+    creating build/temp.linux-x86_64-3.7
+    creating build/temp.linux-x86_64-3.7/ast27
+    creating build/temp.linux-x86_64-3.7/ast27/Parser
+    creating build/temp.linux-x86_64-3.7/ast27/Python
+    creating build/temp.linux-x86_64-3.7/ast27/Custom
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Iast27/Include -I/usr/include/python3.7m -c ast27/Parser/acceler.c -o build/temp.linux-x86_64-3.7/ast27/Parser/acceler.o
+    In file included from ast27/Parser/acceler.c:13:0:
+    ast27/Parser/../Include/pgenheaders.h:8:10: fatal error: Python.h: No such file or directory
+     #include "Python.h"
+              ^~~~~~~~~~
+    compilation terminated.
+    error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+    ----------------------------------------
+ERROR: Command "/usr/bin/python-u -c 'import setuptools, tokenize;__file__='"'"'/tmp/pip-install-aiib8ua8/typed-ast/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-w12_2ce2/install-record.txt --single-version-externally-managed --compile" failed with error code 1 in /tmp/pip-install-aiib8ua8/typed-ast/
+WARNING: You are using pip version 19.1, however version is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+ERROR: process "/bin/sh -c pipinstall black flake8 pre-commit pytest tox PyYAML Sphinx  && mkdir /home/tox  && mv /root/.cache /home/tox/" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

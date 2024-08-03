@@ -1,0 +1,506 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM alpine:3.9 as builder
+
+RUN set -x \
+	&& apk add --no-cache \
+		gcc \
+		libffi-dev \
+		make \
+		musl-dev \
+		openssl-dev \
+		python3 \
+		python3-dev
+
+RUN set -x \
+	&& pip3 install --no-cache-dir --no-compile awscli \
+	&& rm -r /usr/lib/python3.6/site-packages/awscli/examples \
+	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
+	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf \
+	&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+'
+
+RUN set -x \
+	&& pip3 install --no-cache-dir --no-compile supervisor \
+	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
+	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+
+
+FROM alpine:3.9 as production
+LABEL \
+	maintainer="cytopia <cytopia@everythingcli.org>" \
+	repo="https://github.com/cytopia/aws-ec2-sg-exporter"
+
+RUN set -eux \
+	&& mkdir -p /var/www \
+	&& apk add --no-cache \
+		bash \
+		bind-tools \
+		curl \
+		jq \
+		python3 \
+	&& ln -sf /usr/bin/python3 /usr/bin/python \
+	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
+	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+
+COPY --from=builder /usr/lib/python3.6/site-packages/ /usr/lib/python3.6/site-packages/
+COPY --from=builder /usr/bin/aws /usr/bin/aws
+COPY --from=builder /usr/bin/supervisord /usr/bin/supervisord
+
+COPY data/docker-entrypoint.sh /docker-entrypoint.sh
+COPY data/httpd.py /usr/bin/httpd.py
+COPY data/update-metrics.sh /usr/bin/update-metrics.sh
+
+COPY data/etc/supervisord.conf /etc/supervisord.conf
+COPY data/src/aws-ec2-sg-exporter /usr/bin/aws-ec2-sg-exporter
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder 3/4] RUN set -x 	&& pip3 install --no-cache-dir --no-compile awscli 	&& rm -r /usr/lib/python3.6/site-packages/awscli/examples 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf 	&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+':
+    Complete output from command python setup.py egg_info:
+    running egg_info
+    creating pip-egg-info/PyYAML.egg-info
+    writing pip-egg-info/PyYAML.egg-info/PKG-INFO
+    writing dependency_links to pip-egg-info/PyYAML.egg-info/dependency_links.txt
+    writing top-level names to pip-egg-info/PyYAML.egg-info/top_level.txt
+    writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-install-lsgs5spj/PyYAML/setup.py", line 295, in <module>
+        python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+      File "/tmp/pip-build-env-zm_fifpj/lib/python3.6/site-packages/setuptools/__init__.py", line 153, in setup
+        return distutils.core.setup(**attrs)
+      File "/usr/lib/python3.6/distutils/core.py", line 148, in setup
+        dist.run_commands()
+      File "/usr/lib/python3.6/distutils/dist.py", line 955, in run_commands
+        self.run_command(cmd)
+      File "/usr/lib/python3.6/distutils/dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "/tmp/pip-build-env-zm_fifpj/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 299, in run
+        self.find_sources()
+      File "/tmp/pip-build-env-zm_fifpj/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 306, in find_sources
+        mm.run()
+      File "/tmp/pip-build-env-zm_fifpj/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 541, in run
+        self.add_defaults()
+      File "/tmp/pip-build-env-zm_fifpj/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 578, in add_defaults
+        sdist.add_defaults(self)
+      File "/tmp/pip-build-env-zm_fifpj/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 34, in add_defaults
+        self._add_defaults_ext()
+      File "/tmp/pip-build-env-zm_fifpj/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 118, in _add_defaults_ext
+        self.filelist.extend(build_ext.get_source_files())
+      File "/tmp/pip-install-lsgs5spj/PyYAML/setup.py", line 201, in get_source_files
+        self.cython_sources(ext.sources, ext)
+      File "/usr/lib/python3.6/distutils/cmd.py", line 103, in __getattr__
+        raise AttributeError(attr)
+    AttributeError: cython_sources
+    
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-lsgs5spj/PyYAML/
+You are using pip version 18.1, however version 21.is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+ERROR: process "/bin/sh -c set -x \t&& pip3 install --no-cache-dir --no-compile awscli \t&& rm -r /usr/lib/python3.6/site-packages/awscli/examples \t&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \t&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf \t&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+'" did not complete successfully: exit code: 1```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```FROM node:10-alpine
+
+LABEL maintainer="Odd Networks <info@oddnetworks.com>"
+
+RUN \
+	mkdir -p /opt/app && \
+	chmod -R 777 /opt/app && \
+	apk update && \
+	apk --no-cache --update add \
+	bash make g++ python py-pip jq && \
+	pip install awscli && \
+	npm i -g npm
+
+ENV PS1='$NODE_ENV-${debian_chroot:+($debian_chroot)}\u@\h:\w\$ ' \
+	PROJECT_DIR=/opt/app \
+	PATH=/opt/app/node_modules/.bin:$PATH
+
+WORKDIR $PROJECT_DIR
+
+EXPOSE 3001
+
+CMD /bin/bash
+
+```
+
+## Example Build Error
+```> [2/3] RUN 	mkdir -p /opt/app && 	chmod -R 777 /opt/app && 	apk update && 	apk --no-cache --update add 	bash make g++ python py-pip jq && 	pip install awscli && 	npm i -g npm:
+    Complete output from command python setup.py egg_info:
+    running egg_info
+    creating pip-egg-info/PyYAML.egg-info
+    writing pip-egg-info/PyYAML.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/PyYAML.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/PyYAML.egg-info/dependency_links.txt
+    writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-install-qaJuZR/PyYAML/setup.py", line 295, in <module>
+        python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/__init__.py", line 162, in setup
+        return distutils.core.setup(**attrs)
+      File "/usr/lib/python2.7/distutils/core.py", line 151, in setup
+        dist.run_commands()
+      File "/usr/lib/python2.7/distutils/dist.py", line 953, in run_commands
+        self.run_command(cmd)
+      File "/usr/lib/python2.7/distutils/dist.py", line 972, in run_command
+        cmd_obj.run()
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 296, in run
+        self.find_sources()
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 303, in find_sources
+        mm.run()
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 534, in run
+        self.add_defaults()
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 570, in add_defaults
+        sdist.add_defaults(self)
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 36, in add_defaults
+        self._add_defaults_ext()
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+        self.filelist.extend(build_ext.get_source_files())
+      File "/tmp/pip-install-qaJuZR/PyYAML/setup.py", line 201, in get_source_files
+        self.cython_sources(ext.sources, ext)
+      File "/usr/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+        raise AttributeError, attr
+    AttributeError: cython_sources
+    
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-qaJuZR/PyYAML/
+ERROR: process "/bin/sh -c mkdir -p /opt/app && \tchmod -R 777 /opt/app && \tapk update && \tapk --no-cache --update add \tbash make g++ python py-pip jq && \tpip install awscli && \tnpm i -g npm" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```FROM node:10-alpine
+
+LABEL maintainer="Odd Networks <info@oddnetworks.com>"
+
+RUN \
+	mkdir -p /opt/app && \
+	chmod -R 777 /opt/app && \
+	apk update && \
+	apk --no-cache --update add \
+	bash make g++ python3 py3-pip jq && \
+	pip3 install awscli && \
+	npm i -g npm
+
+ENV PS1='$NODE_ENV-${debian_chroot:+($debian_chroot)}\u@\h:\w\$ ' \
+	PROJECT_DIR=/opt/app \
+	PATH=/opt/app/node_modules/.bin:$PATH
+
+WORKDIR $PROJECT_DIR
+
+EXPOSE 3001
+
+CMD /bin/bash
+```
+
+
+# Example 2
+## Example Dockerfile
+```# By default - docker build will pull master
+# If you want the local WS to be used - please use
+# "--build-arg ." to the docker build command - like:
+#
+# 'docker build -t mypyaci:latest --build-arg PYACI_SOURCE=. .
+# You can only specify '.' as PYACI_SOURCE
+#
+
+FROM python:2.7-alpine
+ARG PYACI_SOURCE=https://github.com/datacenter/pyaci/archive/master.zip
+
+RUN apk add --update build-base
+RUN apk add --update libffi-dev libxml2-dev libxslt-dev openssl openssl-dev
+
+WORKDIR /localws
+
+#hadolint ignore=DL3013
+RUN pip install -U pip
+COPY . $WORKDIR
+#hadolint ignore=DL3013
+RUN pip install $PYACI_SOURCE
+
+COPY meta/aci-meta.limited.json /root/.aci-meta/aci-meta.limited.json
+RUN cd /root/.aci-meta && ln -s aci-meta.limited.json aci-meta.json
+
+```
+
+## Example Build Error
+```> [7/9] RUN pip install https://github.com/datacenter/pyaci/archive/master.zip:
+  Getting requirements to build wheel: finished with status 'error'
+  ERROR: Command errored out with exit status 1:
+   command: /usr/local/bin/python /usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpu656p8
+       cwd: /tmp/pip-install-_TYrH8/pyyaml
+  Complete output (46 lines):
+  running egg_info
+  creating lib/PyYAML.egg-info
+  writing lib/PyYAML.egg-info/PKG-INFO
+  writing top-level names to lib/PyYAML.egg-info/top_level.txt
+  writing dependency_links to lib/PyYAML.egg-info/dependency_links.txt
+  writing manifest file 'lib/PyYAML.egg-info/SOURCES.txt'
+  Traceback (most recent call last):
+    File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 280, in <module>
+      main()
+    File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 263, in main
+      json_out['return_val'] = hook(**hook_input['kwargs'])
+    File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 114, in get_requires_for_build_wheel
+      return hook(config_settings)
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 146, in get_requires_for_build_wheel
+      return self._get_build_requires(config_settings, requirements=['wheel'])
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 127, in _get_build_requires
+      self.run_setup()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 142, in run_setup
+      exec(compile(code, __file__, 'exec'), locals())
+    File "setup.py", line 295, in <module>
+      python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/__init__.py", line 162, in setup
+      return distutils.core.setup(**attrs)
+    File "/usr/local/lib/python2.7/distutils/core.py", line 151, in setup
+      dist.run_commands()
+    File "/usr/local/lib/python2.7/distutils/dist.py", line 953, in run_commands
+      self.run_command(cmd)
+    File "/usr/local/lib/python2.7/distutils/dist.py", line 972, in run_command
+      cmd_obj.run()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 296, in run
+      self.find_sources()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 303, in find_sources
+      mm.run()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 534, in run
+      self.add_defaults()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 570, in add_defaults
+      sdist.add_defaults(self)
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 36, in add_defaults
+      self._add_defaults_ext()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+      self.filelist.extend(build_ext.get_source_files())
+    File "setup.py", line 201, in get_source_files
+      self.cython_sources(ext.sources, ext)
+    File "/usr/local/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+      raise AttributeError, attr
+  AttributeError: cython_sources
+  ----------------------------------------
+ERROR: Command errored out with exit status 1: /usr/local/bin/python /usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpu656p8 Check the logs for full command output.
+ERROR: process "/bin/sh -c pip install $PYACI_SOURCE" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```FROM python:3.12-alpine
+ARG PYACI_SOURCE=https://github.com/datacenter/pyaci/archive/master.zip
+
+RUN apk add --update build-base
+RUN apk add --update libffi-dev libxml2-dev libxslt-dev openssl openssl-dev
+
+WORKDIR /localws
+
+#hadolint ignore=DL3013
+RUN pip install -U pip
+COPY . $WORKDIR
+#hadolint ignore=DL3013
+RUN pip install $PYACI_SOURCE
+
+COPY meta/aci-meta.limited.json /root/.aci-meta/aci-meta.limited.json
+RUN cd /root/.aci-meta && ln -s aci-meta.limited.json aci-meta.json
+
+```
+
+
+# Example 3
+## Example Dockerfile
+```FROM docker.io/python:3.10-alpine
+ENV PYTHONUNBUFFERED 1
+
+RUN apk add --no-cache --upgrade \
+        ca-certificates \
+        nodejs \
+        build-base \
+        libffi-dev \
+        openssl-dev \
+        unzip && \
+    rm -rf /var/cache/apk/*
+
+WORKDIR /wheels
+
+COPY . /flexget
+
+RUN pip install -U pip && \
+    pip wheel -e /flexget && \
+    pip wheel 'transmission-rpc>=3.0.0,<4.0.0' && \
+    pip wheel deluge-client && \
+    pip wheel cloudscraper
+
+WORKDIR /flexget-ui-v2
+RUN wget https://github.com/Flexget/webui/releases/latest/download/dist.zip && \
+    unzip dist.zip && \
+    rm dist.zip
+
+FROM docker.io/python:3.10-alpine
+ENV PYTHONUNBUFFERED 1
+
+RUN apk add --no-cache --upgrade \
+        ca-certificates \
+        nodejs \
+        tzdata && \
+    rm -rf /var/cache/apk/*
+
+COPY --from=0 /wheels /wheels
+
+RUN pip install -U pip && \
+    pip install --no-cache-dir \
+                --no-index \
+                -f /wheels \
+                FlexGet \
+                'transmission-rpc>=3.0.0,<4.0.0' \
+                deluge-client \
+                cloudscraper && \
+    rm -rf /wheels
+
+COPY --from=0 /flexget-ui-v2 /usr/local/lib/python3.10/site-packages/flexget/ui/v2/
+
+VOLUME /config
+WORKDIR /config
+
+ENTRYPOINT ["flexget"]
+
+```
+
+## Example Build Error
+```> [stage-0 5/7] RUN pip install -U pip &&     pip wheel -e /flexget &&     pip wheel 'transmission-rpc>=3.0.0,<4.0.0' &&     pip wheel deluge-client &&     pip wheel cloudscraper:
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [48 lines of output]
+      running egg_info
+      writing lib/PyYAML.egg-info/PKG-INFO
+      writing dependency_links to lib/PyYAML.egg-info/dependency_links.txt
+      writing top-level names to lib/PyYAML.egg-info/top_level.txt
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+        File "/usr/local/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+        File "/usr/local/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+          return hook(config_settings)
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 341, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=['wheel'])
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 323, in _get_build_requires
+          self.run_setup()
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 338, in run_setup
+          exec(code, locals())
+        File "<string>", line 288, in <module>
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/__init__.py", line 107, in setup
+          return distutils.core.setup(**attrs)
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 185, in setup
+          return run_commands(dist)
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 201, in run_commands
+          dist.run_commands()
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 969, in run_commands
+          self.run_command(cmd)
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/dist.py", line 1234, in run_command
+          super().run_command(command)
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 988, in run_command
+          cmd_obj.run()
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 314, in run
+          self.find_sources()
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 322, in find_sources
+          mm.run()
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 551, in run
+          self.add_defaults()
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 589, in add_defaults
+          sdist.add_defaults(self)
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/command/sdist.py", line 104, in add_defaults
+          super().add_defaults()
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/_distutils/command/sdist.py", line 251, in add_defaults
+          self._add_defaults_ext()
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/_distutils/command/sdist.py", line 336, in _add_defaults_ext
+          self.filelist.extend(build_ext.get_source_files())
+        File "<string>", line 204, in get_source_files
+        File "/tmp/pip-build-env-fjpwffhu/overlay/lib/python3.10/site-packages/setuptools/_distutils/cmd.py", line 107, in __getattr__
+          raise AttributeError(attr)
+      AttributeError: cython_sources
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: process "/bin/sh -c pip install -U pip &&     pip wheel -e /flexget &&     pip wheel 'transmission-rpc>=3.0.0,<4.0.0' &&     pip wheel deluge-client &&     pip wheel cloudscraper" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```FROM docker.io/python:3.10-alpine
+ENV PYTHONUNBUFFERED 1
+
+RUN apk add --no-cache --upgrade \
+        ca-certificates \
+        nodejs \
+        build-base \
+        libffi-dev \
+        openssl-dev \
+        unzip && \
+    rm -rf /var/cache/apk/*
+
+WORKDIR /wheels
+
+COPY . /flexget
+
+RUN echo "cython<3" > /tmp/constraint.txt
+
+RUN pip install -U pip && \
+    PIP_CONSTRAINT=/tmp/constraint.txt pip wheel -e /flexget && \
+    pip wheel 'transmission-rpc>=3.0.0,<4.0.0' && \
+    pip wheel deluge-client && \
+    pip wheel cloudscraper
+
+WORKDIR /flexget-ui-v2
+RUN wget https://github.com/Flexget/webui/releases/latest/download/dist.zip && \
+    unzip dist.zip && \
+    rm dist.zip
+
+FROM docker.io/python:3.10-alpine
+ENV PYTHONUNBUFFERED 1
+
+RUN apk add --no-cache --upgrade \
+        ca-certificates \
+        nodejs \
+        tzdata && \
+    rm -rf /var/cache/apk/*
+
+COPY --from=0 /wheels /wheels
+
+RUN pip install -U pip && \
+    pip install --no-cache-dir \
+                --no-index \
+                -f /wheels \
+                FlexGet \
+                'transmission-rpc>=3.0.0,<4.0.0' \
+                deluge-client \
+                cloudscraper && \
+    rm -rf /wheels
+
+COPY --from=0 /flexget-ui-v2 /usr/local/lib/python3.10/site-packages/flexget/ui/v2/
+
+VOLUME /config
+WORKDIR /config
+
+ENTRYPOINT ["flexget"]
+
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

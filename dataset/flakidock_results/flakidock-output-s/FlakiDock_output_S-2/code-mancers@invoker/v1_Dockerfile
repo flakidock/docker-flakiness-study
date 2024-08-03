@@ -1,0 +1,14 @@
+# Dockerfile
+FROM ruby:2.3
+
+MAINTAINER hemant@codemancers.com
+
+RUN apt-get update && apt-get -y install dnsmasq socat && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /invoker
+
+COPY Gemfile Gemfile.lock ./
+
+RUN bundle install --path vendor/
+
+CMD bundle exec rake spec

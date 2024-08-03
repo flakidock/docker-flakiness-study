@@ -1,0 +1,19 @@
+FROM library/python:3.10-buster as server
+WORKDIR /build
+RUN curl -sSL https://install.python-poetry.org | python -
+COPY poetry.lock pyproject.toml ./
+RUN /root/.local/bin/poetry export --without-hashes > requirements.txt
+RUN pip install --user -r requirements.txt
+COPY . .
+RUN pip install --user .
+
+FROM python:3.10-buster
+WORKDIR /virtool
+COPY --from=server /root/.local /root/.local
+COPY run.py pyproject.toml VERSION* /virtool/
+COPY virtool /virtool/virtool
+COPY example /virtool/example
+EXPOSE 9950
+ENV PATH="/root/.local/bin:$PATH"
+ENTRYPOINT ["python", "run.py"]
+CMD ["server"]

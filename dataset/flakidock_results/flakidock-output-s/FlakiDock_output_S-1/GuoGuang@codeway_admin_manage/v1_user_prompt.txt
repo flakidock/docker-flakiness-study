@@ -1,0 +1,24 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM node:8.12-alpine as builder
+RUN apk add g++ make python
+WORKDIR '/app'
+COPY ./package.json ./
+RUN npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+RUN npm --registry=https://registry.npm.taobao.org install
+RUN npm install
+COPY . .
+RUN npm run build:prod
+
+FROM nginx
+EXPOSE 9527
+COPY nginx.conf /etc/nginx/
+COPY --from=builder /app/dist /usr/share/nginx/html/
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

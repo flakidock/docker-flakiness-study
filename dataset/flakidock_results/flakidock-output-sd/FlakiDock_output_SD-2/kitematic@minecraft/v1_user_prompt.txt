@@ -1,0 +1,71 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# Minecraft 1.11 Dockerfile - Example with notes
+
+# Use the offical Debian Docker image with a specified version tag, Stretch, so not all
+# versions of Debian images are downloaded.
+FROM debian:stretch
+
+MAINTAINER Michael Chiang <mchiang@docker.com>
+
+# Simple utility for download a specific version of the minecraft server.jar
+ENV MINECRAFT_UTILITY https://github.com/marblenix/minecraft_downloader/releases/download/latest/minecraft_downloader_linux
+# Version of minecraft to download
+ENV MINECRAFT_VERSION latest
+
+# Use APT (Advanced Packaging Tool) built in the Linux distro to download Java, a dependency
+# to run Minecraft.
+# First, we need to ensure the right repo is available for JRE 8
+# Then we update apt
+# Then we pull in all of our dependencies, 
+# Finally, we download the correct .jar file using wget
+# .jar file fetched from the official page https://minecraft.net/en-us/download/server/
+RUN apt update; \
+    apt install -y default-jre ca-certificates-java curl; \
+    curl -sL "${MINECRAFT_UTILITY}" -o minecraft_downloader; \
+    chmod +x ./minecraft_downloader; \
+    ./minecraft_downloader -o minecraft_server_${MINECRAFT_VERSION}.jar;
+# We do the above in a single line to reduce the number of layers in our container
+
+# Sets working directory for the CMD instruction (also works for RUN, ENTRYPOINT commands)
+# Create mount point, and mark it as holding externally mounted volume
+WORKDIR /data
+VOLUME /data
+
+# Expose the container's network port: 25565 during runtime.
+EXPOSE 25565
+
+#Automatically accept Minecraft EULA, and start Minecraft server
+CMD echo eula=true > /data/eula.txt && java -jar /minecraft_server_${MINECRAFT_VERSION}.jar
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/3] RUN apt update;     apt install -y default-jre ca-certificates-java curl;     curl -sL "https://github.com/marblenix/minecraft_downloader/releases/download/latest/minecraft_downloader_linux" -o minecraft_downloader;     chmod +x ./minecraft_downloader;     ./minecraft_downloader -o minecraft_server_latest.jar;:
+Err:2 http://security.debian.org/debian-security stretch/updates Release
+  404  Not Found [IP: 151.101.80]
+Err:5 http://deb.debian.org/debian stretch Release
+  404  Not Found
+Err:6 http://deb.debian.org/debian stretch-updates Release
+  404  Not Found
+E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+E: Unable to locate package default-jre
+E: Unable to locate package ca-certificates-java
+E: Unable to locate package curl
+/bin/sh: 1: curl: not found
+chmod: cannot access './minecraft_downloader': No such file or directory
+/bin/sh: 1: ./minecraft_downloader: not found
+ERROR: process "/bin/sh -c apt update;     apt install -y default-jre ca-certificates-java curl;     curl -sL \"${MINECRAFT_UTILITY}\" -o minecraft_downloader;     chmod +x ./minecraft_downloader;     ./minecraft_downloader -o minecraft_server_${MINECRAFT_VERSION}.jar;" did not complete successfully: exit code: 127```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

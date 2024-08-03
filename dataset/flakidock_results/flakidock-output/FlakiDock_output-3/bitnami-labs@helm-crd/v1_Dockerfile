@@ -1,0 +1,12 @@
+FROM golang:1.9 as gobuild
+WORKDIR /go/src/github.com/bitnami-labs/helm-crd/
+COPY . .
+RUN make controller-static
+
+FROM bitnami/minideb:stretch
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list && \
+    apt-get update && \
+    install_packages ca-certificates
+COPY --from=gobuild /go/src/github.com/bitnami-labs/helm-crd/controller-static /controller
+CMD ["/controller"]

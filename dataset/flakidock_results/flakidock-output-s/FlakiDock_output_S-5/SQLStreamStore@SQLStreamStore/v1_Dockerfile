@@ -1,0 +1,35 @@
+# Dockerfile
+FROM damianh/dotnet-core-lts-sdks:2
+
+WORKDIR /repo
+
+# Copy solution and project files
+COPY ./*.sln ./
+COPY ./build/ ./build/
+
+# Copy and move src project files
+COPY ./src/*/*.csproj ./src/
+RUN for file in $(ls src/*.csproj); do mkdir -p ./src/${file%.*}/ && mv $file ./src/${file%.*}/; done
+
+# Copy and move test project files
+COPY ./tests/*/*.csproj ./tests/
+RUN for file in $(ls tests/*.csproj); do mkdir -p ./tests/${file%.*}/ && mv $file ./tests/${file%.*}/; done
+
+# Restore dependencies
+RUN dotnet restore
+
+# Copy remaining files
+COPY ./assets ./assets/
+COPY ./src ./src/
+COPY ./tests ./tests/
+
+WORKDIR /repo/build
+
+# Copy and restore build project
+COPY ./build/build.csproj .
+RUN dotnet restore
+
+# Copy build files
+COPY ./build .
+
+WORKDIR /repo

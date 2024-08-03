@@ -1,0 +1,25 @@
+FROM python:3.7-slim-stretch AS base
+
+ENV PYROOT /pyroot
+ENV PYTHONUSERBASE $PYROOT
+
+FROM base AS builder
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list && \
+    apt-get update -y && \
+    apt-get install -y git && \
+    pip install pipenv==2020.8.13
+
+COPY Pipfile* /home/src/
+
+WORKDIR /home/src
+
+RUN PIP_USER=1 PIP_IGNORE_INSTALLED=1 pipenv install --system --deploy --ignore-pipfile
+
+FROM base
+
+COPY --from=builder $PYROOT/lib/ $PYROOT/lib/
+COPY run.py /bin
+
+CMD ["run.py"]

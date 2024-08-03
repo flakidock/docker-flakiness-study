@@ -1,0 +1,28 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM node:4.2.2
+
+# Install location
+ENV dir /opt/ldf-client
+
+# Copy the client files
+ADD . ${dir}
+
+# Install the node module
+RUN cd ${dir} && npm install
+
+# Run base binary
+WORKDIR ${dir}
+ENTRYPOINT ["node", "bin/ldf-client"]
+
+# Default command
+CMD ["--help"]
+
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

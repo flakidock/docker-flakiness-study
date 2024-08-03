@@ -1,0 +1,23 @@
+# Dockerfile
+FROM debian:9.5-slim
+
+# Update and install packages in a single RUN command to reduce layers and ensure consistency
+RUN apt-get update && \
+    apt-get -yq install rsync openssh-client && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Label
+LABEL "com.github.actions.name"="rsync deployments"
+LABEL "com.github.actions.description"="For deploying code to a webserver via rsync over ssh"
+LABEL "com.github.actions.icon"="truck"
+LABEL "com.github.actions.color"="yellow"
+
+LABEL "repository"="http://github.com/contention/rsync-deployments"
+LABEL "homepage"="https://github.com/contention/rsync-deployments"
+LABEL "maintainer"="Contention <hello@contention.agency>"
+
+# Copy entrypoint
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

@@ -1,0 +1,35 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+#Grab the latest alpine image
+FROM alpine:latest
+
+# Install python and pip
+RUN apk add --no-cache --update python3 py3-pip bash
+ADD ./webapp/requirements.txt /tmp/requirements.txt
+
+# Install dependencies
+RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
+
+# Add our code
+ADD ./webapp /opt/webapp/
+WORKDIR /opt/webapp
+
+# Expose is NOT supported by Heroku
+# EXPOSE 5000 		
+
+# Run the image as a non-root user
+RUN adduser -D myuser
+USER myuser
+
+# Run the app.  CMD is required to run on Heroku
+# $PORT is set by Heroku			
+CMD gunicorn --bind 0.0.0.0:$PORT wsgi 
+
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

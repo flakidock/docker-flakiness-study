@@ -1,0 +1,47 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# docker部署
+# 1. docker build --build-arg EGG_SERVER_ENV=prod -t app .
+# 2. docker run -d -e EGG_SERVER_ENV=prod --name app -p 7001:7001 app:latest
+
+# 安装node环境 https://github.com/mhart/alpine-node
+FROM mhart/alpine-node:8.9
+
+# 创建app目录
+RUN mkdir -p /usr/local/project/
+COPY . /usr/local/project/
+WORKDIR /usr/local/project/
+
+# 安装依赖
+RUN npm i --registry=https://registry.npm.taobao.org
+
+# 编译
+ARG EGG_SERVER_ENV
+ENV EGG_SERVER_ENV=${EGG_SERVER_ENV:-prod}
+RUN npm run build
+
+# 运行
+EXPOSE 7001
+CMD npm run start
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [5/6] RUN npm i --registry=https://registry.npm.taobao.org:
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: arr-diff@2.(node_modules/arr-diff):
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: request to https://registry.npm.taobao.org/arr-diff failed, reason: certificate has expired
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: array-unique@0.(node_modules/array-unique):
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: request to https://registry.npm.taobao.org/array-unique failed, reason: certificate has expired
+npm ERR! code CERT_HAS_EXPIRED
+npm ERR! errno CERT_HAS_EXPIRED
+npm ERR! request to https://registry.npm.taobao.org/a-sync-waterfall failed, reason: certificate has expired
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2024-08-01T08_47_23_162Z-debug.log
+ERROR: process "/bin/sh -c npm i --registry=https://registry.npm.taobao.org" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

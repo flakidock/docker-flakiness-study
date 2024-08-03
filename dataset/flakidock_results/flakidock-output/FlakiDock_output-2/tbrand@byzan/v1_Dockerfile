@@ -1,0 +1,16 @@
+FROM rust:stretch
+
+WORKDIR /usr/local/byzan
+
+COPY . .
+
+ENV PATH $PATH:/usr/local/byzan/target/release
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list && \
+    apt-get update -y && apt-get install cmake golang -y
+
+RUN rustup default stable
+RUN cargo install protobuf-codegen
+RUN cargo install grpcio-compiler
+RUN cargo build --release

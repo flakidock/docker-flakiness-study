@@ -1,0 +1,24 @@
+# Dockerfile
+FROM node:12.22.1-alpine3.11
+
+# Set working directory
+WORKDIR '/root'
+
+# Install dependencies
+RUN apk add --no-cache git python2 py2-pip
+
+# Copy package.json and install npm dependencies
+COPY ./package.json ./
+RUN npm install
+
+# Install mkdocs
+RUN pip install mkdocs==0.17.5
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose volume for docs
+VOLUME /root/docs
+
+# Command to run the application
+CMD ["npm", "run", "build:docs:docker"]

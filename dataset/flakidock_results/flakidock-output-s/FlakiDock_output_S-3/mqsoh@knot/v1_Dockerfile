@@ -1,0 +1,30 @@
+# Dockerfile
+FROM erlang:18.3.4
+
+# Install dependencies
+RUN apt-get update && \
+    apt-get install --assume-yes inotify-tools git make && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Clone and build LFE
+RUN git clone https://github.com/rvirding/lfe.git /usr/local/lib/erlang/lib/lfe && \
+    cd /usr/local/lib/erlang/lib/lfe && \
+    git checkout v1.0 && \
+    make compile install
+
+# Copy source files
+COPY src /usr/local/lib/erlang/lib/knot/src
+COPY ebin/knot.app /usr/local/lib/erlang/lib/knot/ebin/knot.app
+
+# Compile LFE source files
+RUN cd /usr/local/lib/erlang/lib/knot && \
+    lfec -o ebin src/*.lfe
+
+# Copy entrypoint script
+COPY ./docker_entrypoint.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/docker_entrypoint.sh
+
+# Set entrypoint and working directory
+ENTRYPOINT ["docker_entrypoint.sh"]
+WORKDIR /workdir

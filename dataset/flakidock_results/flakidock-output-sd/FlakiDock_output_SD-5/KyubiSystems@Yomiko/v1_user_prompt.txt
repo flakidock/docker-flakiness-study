@@ -1,0 +1,49 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM python:alpine
+MAINTAINER Kyubi Systems 2020
+
+LABEL version="1.0.7" maintainer="Kyubi Systems <admin@kyubi.co.uk>"
+
+WORKDIR /usr/src/app
+
+COPY requirements.txt ./
+RUN apk add --no-cache --virtual .build-deps gcc musl-dev
+RUN apk add --no-cache --virtual freetype-dev jpeg-dev libpng-dev
+RUN apk add --no-cache --virtual cython
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
+RUN apk add --no-cache --virtual unrar xz
+RUN apk del .build-deps gcc musl-dev
+
+COPY . .
+
+RUN touch .docker
+
+EXPOSE 5000
+
+CMD [ "./start.sh" ]
+
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 8/12] RUN pip install --no-cache-dir -r requirements.txt:
+317.0   Building wheel for typed-ast (setup.py): finished with status 'done'
+317.0   Created wheel for typed-ast: filename=typed_ast-1.5.5-cp312-cp312-linux_x86_64.whl size=829836 sha256=c9c7a7cd58f352941888646f99f1c1b835d3ef8f019e7a49bd0e81d891f3f6aa
+317.0   Stored in directory: /tmp/pip-ephem-wheel-cache-rmzfb9iv/wheels/7d/85/f8/cb309265bf60f840369ca24241385ae985caab44af05272b6a
+317.0   Building wheel for zope.interface (setup.py): started
+322.0   Building wheel for zope.interface (setup.py): finished with status 'done'
+322.0   Created wheel for zope.interface: filename=zope.interface-6.4.post2-cp312-cp312-linux_x86_64.whl size=251740 sha256=05e9423fe1226749bfdf71e0820f29e12ba542fb4ac8378290ccc5e212a7943c
+322.0   Stored in directory: /tmp/pip-ephem-wheel-cache-rmzfb9iv/wheels/57/92/a1/98de5346be3ac7c88fcb6444f3c0fee4f2ca24b9da1aacece4
+322.0 Successfully built Pillow peewee progressbar typed-ast zope.interface
+322.0 Failed to build gevent greenlet
+322.6 ERROR: ERROR: Failed to build installable wheels for some pyproject.toml based projects (gevent, greenlet)
+ERROR: process "/bin/sh -c pip install --no-cache-dir -r requirements.txt" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,19 @@
+FROM python:3.7-buster AS builder
+
+USER root
+RUN mkdir /rep
+COPY . /rep
+WORKDIR /rep
+RUN apt-get update && apt-get install -y python3 python3-pip build-essential python3-setuptools
+RUN pip3 wheel . --wheel-dir=/rep/wheels
+
+FROM python:3.7-buster
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pip python3-setuptools && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY --from=builder /rep /rep
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+WORKDIR /rep
+RUN pip3 install --no-index --find-links=/rep/wheels .
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["gordian"]

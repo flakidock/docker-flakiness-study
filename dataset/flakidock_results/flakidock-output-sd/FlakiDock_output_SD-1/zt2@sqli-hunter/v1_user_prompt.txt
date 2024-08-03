@@ -1,0 +1,51 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ruby:2.7.1
+
+WORKDIR /root
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends python-pip && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN wget https://github.com/sqlmapproject/sqlmap/archive/1.3.12.tar.gz && \
+    tar -zxf 1.3.12.tar.gz && \
+    rm -rf 1.3.12.tar.gz && \
+    mv sqlmap-1.3.12 sqlmap
+
+RUN wget https://github.com/zt2/sqli-hunter/archive/1.2.2.tar.gz && \
+    tar -zxf 1.2.2.tar.gz && \
+    rm -rf 1.2.2.tar.gz && \
+    mv sqli-hunter-1.2.2 sqli-hunter && \
+    cd sqli-hunter && \
+    gem install bundler && \
+    bundler install
+
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
+VOLUME /tmp
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [5/7] RUN wget https://github.com/zt2/sqli-hunter/archive/1.2.2.tar.gz &&     tar -zxf 1.2.2.tar.gz &&     rm -rf 1.2.2.tar.gz &&     mv sqli-hunter-1.2.2 sqli-hunter &&     cd sqli-hunter &&     gem install bundler &&     bundler install:
+[5/7] RUN wget https://github.com/zt2/sqli-hunter/archive/1.2.2.tar.gz &&     tar -zxf 1.2.2.tar.gz &&     rm -rf 1.2.2.tar.gz &&     mv sqli-hunter-1.sqli-hunter &&     cd sqli-hunter &&     gem install bundler &&     bundler install
+Location: https://codeload.github.com/zt2/sqli-hunter/tar.gz/refs/tags/1.[following]
+Length: unspecified [application/x-gzip]
+Saving to: ‘1.2.2.tar.gz’
+     0K ..........                                             28.4M=0s
+2024-08-01 04:49:30 (MB/s) - ‘1.2.2.tar.gz’ saved [10749]
+ERROR:  Error installing bundler:
+	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.1.83.
+ERROR: process "/bin/sh -c wget https://github.com/zt2/sqli-hunter/archive/1.2.2.tar.gz &&     tar -zxf 1.2.2.tar.gz &&     rm -rf 1.2.2.tar.gz &&     mv sqli-hunter-1.sqli-hunter &&     cd sqli-hunter &&     gem install bundler &&     bundler install" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

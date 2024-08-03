@@ -1,0 +1,1052 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM --platform=linux/amd64 debian:stable-slim
+
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+
+LABEL maintainer="hello@mazzotta.me" \
+    org.label-schema.build-date=$BUILD_DATE \
+    org.label-schema.name="Docker Nginx" \
+    org.label-schema.description="Docker for Nginx with More Headers and Google Pagespeed preinstalled" \
+    org.label-schema.url="https://github.com/emazzotta/docker-nginx-lua" \
+    org.label-schema.vcs-ref=$VCS_REF \
+    org.label-schema.vcs-url="https://github.com/emazzotta/docker-nginx-lua" \
+    org.label-schema.vendor="Emanuele Mazzotta" \
+    org.label-schema.version=$VERSION \
+    org.label-schema.schema-version="1.0"
+
+RUN apt-get -qq update && apt-get install -qqy --no-install-recommends \
+    build-essential \
+    libpcre3-dev \
+    uuid-dev \
+    wget \
+    zlib1g-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
+ENV NGINX_TEMP_DIR=/tmp/nginx
+ENV NGINX_DIR=/etc/nginx
+
+# http://nginx.org/en/download.html
+ENV NGINX_VERSION=1.22.1
+# https://github.com/simpl/ngx_devel_kit/releases
+ENV NGINX_DEV_VERSION=0.3.2
+# https://www.openssl.org/source/
+ENV OPENSSL_VERSION=1.1.1t
+# https://github.com/openresty/headers-more-nginx-module/tags
+ENV HEADERS_MORE_VERSION=0.34
+# https://github.com/pagespeed/ngx_pagespeed/releases
+ENV GOOGLE_PAGESPEED_VERSION=1.14.33.1-RC1
+
+ENV NGINX_ACCEPT_LANGUAGE_MODULE_PATH=$NGINX_TEMP_DIR/nginx_accept_language_module-master
+ENV NGX_DEV_MODULE_PATH=$NGINX_TEMP_DIR/ngx_devel_kit-$NGINX_DEV_VERSION
+ENV OPENSSL_MODULE_PATH=$NGINX_TEMP_DIR/openssl-$OPENSSL_VERSION
+ENV HEADERS_MORE_MODULE_PATH=$NGINX_TEMP_DIR/headers-more-nginx-module-$HEADERS_MORE_VERSION
+ENV GOOGLE_PAGESPEED_MODULE_PATH=$NGINX_TEMP_DIR/incubator-pagespeed-ngx-$GOOGLE_PAGESPEED_VERSION
+
+RUN mkdir -p $NGINX_TEMP_DIR
+WORKDIR $NGINX_TEMP_DIR
+
+RUN wget --no-check-certificate http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz \
+        -P $NGINX_TEMP_DIR/ && \
+        tar xzf nginx-$NGINX_VERSION.tar.gz --strip-components=1 && \
+        rm -rf nginx-$NGINX_VERSION.tar.gz
+
+RUN wget --no-check-certificate https://github.com/giom/nginx_accept_language_module/archive/master.tar.gz \
+        -O $NGINX_ACCEPT_LANGUAGE_MODULE_PATH.tar.gz && \
+        tar xzf $NGINX_ACCEPT_LANGUAGE_MODULE_PATH.tar.gz && \
+        rm -rf $NGINX_ACCEPT_LANGUAGE_MODULE_PATH.tar.gz
+
+RUN wget --no-check-certificate https://github.com/simpl/ngx_devel_kit/archive/v$NGINX_DEV_VERSION.tar.gz \
+        -O $NGX_DEV_MODULE_PATH.tar.gz && \
+        tar xzf $NGX_DEV_MODULE_PATH.tar.gz && \
+        rm -rf $NGX_DEV_MODULE_PATH.tar.gz
+
+RUN wget --no-check-certificate https://github.com/openresty/headers-more-nginx-module/archive/v$HEADERS_MORE_VERSION.tar.gz \
+        -O $HEADERS_MORE_MODULE_PATH.tar.gz && \
+        tar xzf $HEADERS_MORE_MODULE_PATH.tar.gz && \
+        rm -rf $HEADERS_MORE_MODULE_PATH.tar.gz
+
+RUN wget --no-check-certificate https://openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz \
+        -O $OPENSSL_MODULE_PATH.tar.gz && \
+        tar xzf $OPENSSL_MODULE_PATH.tar.gz && \
+        rm -rf $OPENSSL_MODULE_PATH.tar.gz
+
+RUN wget --no-check-certificate https://github.com/pagespeed/ngx_pagespeed/archive/v$GOOGLE_PAGESPEED_VERSION.tar.gz \
+        -O $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz && \
+        tar xzf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz && \
+        cd $GOOGLE_PAGESPEED_MODULE_PATH && \
+        wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-$GOOGLE_PAGESPEED_VERSION.tar.gz && \
+        tar xzf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz && \
+        rm -rf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz && \
+        rm -rf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz
+
+RUN ./configure \
+        --prefix=$NGINX_DIR \
+        --add-module=$NGINX_ACCEPT_LANGUAGE_MODULE_PATH \
+        --add-module=$GOOGLE_PAGESPEED_MODULE_PATH \
+        --add-module=$NGX_DEV_MODULE_PATH \
+        --add-module=$HEADERS_MORE_MODULE_PATH \
+        --with-openssl=$OPENSSL_MODULE_PATH \
+        --with-http_v2_module \
+        --with-http_ssl_module \
+        --with-http_realip_module \
+        --with-http_addition_module \
+        --with-http_sub_module \
+        --with-http_dav_module \
+        --with-http_flv_module \
+        --with-http_mp4_module \
+        --with-http_gunzip_module \
+        --with-http_gzip_static_module \
+        --with-http_random_index_module \
+        --with-http_secure_link_module \
+        --with-http_stub_status_module \
+        --with-mail \
+        --with-mail_ssl_module \
+        --with-file-aio \
+        --with-cc-opt='-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security' \
+        --with-ld-opt=-Wl,-z,relro \
+        --sbin-path=/usr/sbin/nginx \
+        --conf-path=/etc/nginx/nginx.conf \
+        --error-log-path=/var/log/nginx/error.log \
+        --http-log-path=/var/log/nginx/access.log \
+        --pid-path=/var/run/nginx.pid \
+        --lock-path=/var/run/nginx.lock \
+        --http-client-body-temp-path=/var/cache/nginx/client_temp \
+        --http-proxy-temp-path=/var/cache/nginx/proxy_temp \
+        --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \
+        --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \
+        --http-scgi-temp-path=/var/cache/nginx/scgi_temp \
+        --user=nginx \
+        --group=nginx && \
+        make && \
+        make install && \
+        rm -rf /tmp/nginx
+
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
+    ln -sf /dev/stderr /var/log/nginx/error.log
+
+WORKDIR $NGINX_DIR
+
+ADD nginx.conf /etc/nginx/nginx.conf
+ADD mime.types /etc/nginx/mime.types
+RUN mkdir -p /etc/nginx/conf.d
+
+VOLUME ["/var/cache/nginx"]
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [10/16] RUN wget --no-check-certificate https://github.com/pagespeed/ngx_pagespeed/archive/v1.14.33.1-RC1.tar.gz         -O /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz &&         tar xzf /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz &&         cd /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1 &&         wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-1.14.33.1-RC1.tar.gz &&         tar xzf psol-1.14.33.1-RC1.tar.gz &&         rm -rf /tmp/nginx/incubator-pagespeed-ngx-1.14.33.1-RC1.tar.gz &&         rm -rf psol-1.14.33.1-RC1.tar.gz:
+Connecting to codeload.github.com (codeload.github.com)|140.82.114.9|:443... connected.
+WARNING: The certificate of 'codeload.github.com' is not trusted.
+WARNING: The certificate of 'codeload.github.com' doesn't have a known issuer.
+HTTP request sent, awaiting response... 200 OK
+WARNING: The certificate of 'dist.apache.org' is not trusted.
+WARNING: The certificate of 'dist.apache.org' doesn't have a known issuer.
+HTTP request sent, awaiting response... 404 Not Found
+2024-07-31 21:50:08 ERROR 404: Not Found.
+ERROR: process "/bin/sh -c wget --no-check-certificate https://github.com/pagespeed/ngx_pagespeed/archive/v$GOOGLE_PAGESPEED_VERSION.tar.gz         -O $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         tar xzf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         cd $GOOGLE_PAGESPEED_MODULE_PATH &&         wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-$GOOGLE_PAGESPEED_VERSION.tar.gz &&         tar xzf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz &&         rm -rf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         rm -rf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz" did not complete successfully: exit code: 8```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```FROM node:latest
+
+# App install directory
+WORKDIR /usr/local/yugastore
+
+#
+# Install app dependencies.
+#
+
+# Install jq for parsing env vars to congfig
+ENV JQ_VERSION='1.5'
+
+RUN wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/jq-release.key -O /tmp/jq-release.key && \
+    wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/v${JQ_VERSION}/jq-linux64.asc -O /tmp/jq-linux64.asc && \
+    wget --no-check-certificate https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 -O /tmp/jq-linux64 && \
+    gpg --import /tmp/jq-release.key && \
+    gpg --verify /tmp/jq-linux64.asc /tmp/jq-linux64 && \
+    cp /tmp/jq-linux64 /usr/bin/jq && \
+    chmod +x /usr/bin/jq && \
+    rm -f /tmp/jq-release.key && \
+    rm -f /tmp/jq-linux64.asc && \
+    rm -f /tmp/jq-linux64
+
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+# If you are building your code for production, add '--only=production'.
+RUN npm install --only=production
+
+# Bundle app source.
+COPY app.js ./
+ADD bin ./bin
+ADD config ./config
+ADD models ./models
+ADD public ./public
+ADD routes ./routes
+ADD test ./test
+ADD ui ./ui
+
+# Set the config file.
+COPY config/config.docker.json ./config.json
+
+# Expose necessary ports.
+EXPOSE 3001
+
+# Start npm.
+CMD [ "./bin/start.sh" ]
+
+#
+# To build:
+#   cd ui && npm run build # if ui has changed
+#   docker build -t yugastore .
+#
+# To run:
+#   docker run -p 3001:3001 -d --network yb-net --name yugastore yugastore
+#
+# Stop:
+#   docker stop yugastore
+#   docker rm yugastore
+#
+
+```
+
+## Example Build Error
+```> [ 3/14] RUN wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/jq-release.key -O /tmp/jq-release.key &&     wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/v1.5/jq-linux64.asc -O /tmp/jq-linux64.asc &&     wget --no-check-certificate https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 -O /tmp/jq-linux64 &&     gpg --import /tmp/jq-release.key &&     gpg --verify /tmp/jq-linux64.asc /tmp/jq-linux64 &&     cp /tmp/jq-linux64 /usr/bin/jq &&     chmod +x /usr/bin/jq &&     rm -f /tmp/jq-release.key &&     rm -f /tmp/jq-linux64.asc &&     rm -f /tmp/jq-linux64:
+--2023-08-05 08:03:36--  https://raw.githubusercontent.com/stedolan/jq/master/sig/jq-release.key
+2023-08-05 08:03:36 ERROR 404: Not Found.
+ERROR: process "/bin/sh -c wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/jq-release.key -O /tmp/jq-release.key &&     wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/v${JQ_VERSION}/jq-linux64.asc -O /tmp/jq-linux64.asc &&     wget --no-check-certificate https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 -O /tmp/jq-linux64 &&     gpg --import /tmp/jq-release.key &&     gpg --verify /tmp/jq-linux64.asc /tmp/jq-linux64 &&     cp /tmp/jq-linux64 /usr/bin/jq &&     chmod +x /usr/bin/jq &&     rm -f /tmp/jq-release.key &&     rm -f /tmp/jq-linux64.asc &&     rm -f /tmp/jq-linux64" did not complete successfully: exit code: 8```
+
+## Example Repair
+
+### Repair 1
+```FROM node:latest
+
+# App install directory
+WORKDIR /usr/local/yugastore
+
+#
+# Install app dependencies.
+#
+
+# Install jq for parsing env vars to congfig
+ENV JQ_VERSION='1.5'
+
+RUN wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/jq-release-old.key -O /tmp/jq-release.key && \
+    wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/v${JQ_VERSION}/jq-linux64.asc -O /tmp/jq-linux64.asc && \
+    wget --no-check-certificate https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 -O /tmp/jq-linux64 && \
+    gpg --import /tmp/jq-release.key && \
+    gpg --verify /tmp/jq-linux64.asc /tmp/jq-linux64 && \
+    cp /tmp/jq-linux64 /usr/bin/jq && \
+    chmod +x /usr/bin/jq && \
+    rm -f /tmp/jq-release.key && \
+    rm -f /tmp/jq-linux64.asc && \
+    rm -f /tmp/jq-linux64
+
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+# If you are building your code for production, add '--only=production'.
+RUN npm install --only=production
+
+# Bundle app source.
+COPY app.js ./
+ADD bin ./bin
+ADD config ./config
+ADD models ./models
+ADD public ./public
+ADD routes ./routes
+ADD test ./test
+ADD ui ./ui
+
+# Set the config file.
+COPY config/config.docker.json ./config.json
+
+# Expose necessary ports.
+EXPOSE 3001
+
+# Start npm.
+CMD [ "./bin/start.sh" ]
+
+#
+# To build:
+#   cd ui && npm run build # if ui has changed
+#   docker build -t yugastore .
+#
+# To run:
+#   docker run -p 3001:3001 -d --network yb-net --name yugastore yugastore
+#
+# Stop:
+#   docker stop yugastore
+#   docker rm yugastore
+#
+
+```
+
+
+### Repair 2
+```FROM node:latest
+
+# App install directory
+WORKDIR /usr/local/yugastore
+
+#
+# Install app dependencies.
+#
+
+# Install jq for parsing env vars to congfig
+ENV JQ_VERSION='1.5'
+
+RUN wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/13d1930154d30a049f424e3c140b4d045499eb65/sig/jq-release.key -O /tmp/jq-release.key && \
+    wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/master/sig/v${JQ_VERSION}/jq-linux64.asc -O /tmp/jq-linux64.asc && \
+    wget --no-check-certificate https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 -O /tmp/jq-linux64 && \
+    gpg --import /tmp/jq-release.key && \
+    gpg --verify /tmp/jq-linux64.asc /tmp/jq-linux64 && \
+    cp /tmp/jq-linux64 /usr/bin/jq && \
+    chmod +x /usr/bin/jq && \
+    rm -f /tmp/jq-release.key && \
+    rm -f /tmp/jq-linux64.asc && \
+    rm -f /tmp/jq-linux64
+
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+# If you are building your code for production, add '--only=production'.
+RUN npm install --only=production
+
+# Bundle app source.
+COPY app.js ./
+ADD bin ./bin
+ADD config ./config
+ADD models ./models
+ADD public ./public
+ADD routes ./routes
+ADD test ./test
+ADD ui ./ui
+
+# Set the config file.
+COPY config/config.docker.json ./config.json
+
+# Expose necessary ports.
+EXPOSE 3001
+
+# Start npm.
+CMD [ "./bin/start.sh" ]
+
+#
+# To build:
+#   cd ui && npm run build # if ui has changed
+#   docker build -t yugastore .
+#
+# To run:
+#   docker run -p 3001:3001 -d --network yb-net --name yugastore yugastore
+#
+# Stop:
+#   docker stop yugastore
+#   docker rm yugastore
+#
+
+```
+
+
+# Example 2
+## Example Dockerfile
+```# Start from ubuntu
+FROM ubuntu:16.04
+
+# Update repos and install dependencies
+RUN apt-get update \
+  && apt-get -y upgrade \
+  && apt-get -y install build-essential wget curl libsqlite3-dev zlib1g-dev libpng-dev
+
+# Create a directory and copy in all files
+RUN mkdir -p /tmp/tile-count-src
+WORKDIR /tmp/tile-count-src
+COPY . /tmp/tile-count-src
+
+# Build tile-count
+RUN make \
+  && make install
+
+# Install tippecanoe since the tests depend on it
+ENV TIPPECANOE_VERSION="1.26.3"
+
+RUN wget https://github.com/mapbox/tippecanoe/archive/${TIPPECANOE_VERSION}.tar.gz  && \
+    tar -xvf ${TIPPECANOE_VERSION}.tar.gz && \
+    cd tippecanoe-${TIPPECANOE_VERSION} && \
+    make && \
+    make install
+
+RUN curl https://nodejs.org/dist/v4.8.6/node-v4.8.6-linux-x64.tar.gz | tar zxC /usr/local --strip-components=1
+
+# Run the tests
+CMD make test
+
+```
+
+## Example Build Error
+```> [8/8] RUN curl https://nodejs.org/dist/v4.8.6/node-v4.8.6-linux-x64.tar.gz | tar zxC /usr/local --strip-components=1:
+  4 11.4M    4  576k    0     0   5887      0  0:34:02  0:01:40  0:32:22 39003
+curl: (18) transfer closed with 11432394 bytes remaining to read
+gzip: stdin: unexpected end of file
+tar: Unexpected EOF in archive
+tar: Unexpected EOF in archive
+tar: Error is not recoverable: exiting now
+ERROR: process "/bin/sh -c curl https://nodejs.org/dist/v4.8.6/node-v4.8.6-linux-x64.tar.gz | tar zxC /usr/local --strip-components=1" did not complete successfully: exit code: 2```
+
+## Example Repair
+
+### Repair 1
+```#```
+
+
+### Repair 2
+``` ```
+
+
+### Repair 3
+```S```
+
+
+### Repair 4
+```U```
+
+
+### Repair 5
+```G```
+
+
+### Repair 6
+```G```
+
+
+### Repair 7
+```E```
+
+
+### Repair 8
+```S```
+
+
+### Repair 9
+```T```
+
+
+### Repair 10
+```I```
+
+
+### Repair 11
+```O```
+
+
+### Repair 12
+```N```
+
+
+### Repair 13
+```:```
+
+
+### Repair 14
+```
+```
+
+
+### Repair 15
+```-```
+
+
+### Repair 16
+``` ```
+
+
+### Repair 17
+```c```
+
+
+### Repair 18
+```h```
+
+
+### Repair 19
+```e```
+
+
+### Repair 20
+```c```
+
+
+### Repair 21
+```k```
+
+
+### Repair 22
+``` ```
+
+
+### Repair 23
+```t```
+
+
+### Repair 24
+```h```
+
+
+### Repair 25
+```e```
+
+
+### Repair 26
+``` ```
+
+
+### Repair 27
+```l```
+
+
+### Repair 28
+```i```
+
+
+### Repair 29
+```n```
+
+
+### Repair 30
+```k```
+
+
+### Repair 31
+``` ```
+
+
+### Repair 32
+```a```
+
+
+### Repair 33
+```g```
+
+
+### Repair 34
+```a```
+
+
+### Repair 35
+```i```
+
+
+### Repair 36
+```n```
+
+
+### Repair 37
+``` ```
+
+
+### Repair 38
+```l```
+
+
+### Repair 39
+```a```
+
+
+### Repair 40
+```t```
+
+
+### Repair 41
+```e```
+
+
+### Repair 42
+```r```
+
+
+### Repair 43
+```.```
+
+
+# Example 3
+## Example Dockerfile
+```# This dockerfile is meant to compile a core-lightning x64 image
+# It is using multi stage build:
+# * downloader: Download litecoin/bitcoin and qemu binaries needed for core-lightning
+# * builder: Compile core-lightning dependencies, then core-lightning itself with static linking
+# * final: Copy the binaries required at runtime
+# The resulting image uploaded to dockerhub will only contain what is needed for runtime.
+# From the root of the repository, run "docker build -t yourimage:yourtag ."
+FROM debian:bullseye-slim as downloader
+
+RUN set -ex \
+	&& apt-get update \
+	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr wget
+
+WORKDIR /opt
+
+RUN wget -qO /opt/tini "https://github.com/krallin/tini/releases/download/v0.18.0/tini" \
+    && echo "12d20136605531b09a2c2dac02ccee85e1b874eb322ef6baf7561cd93f93c855 /opt/tini" | sha256sum -c - \
+    && chmod +x /opt/tini
+
+ARG BITCOIN_VERSION=22.0
+ENV BITCOIN_TARBALL bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV BITCOIN_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/$BITCOIN_TARBALL
+ENV BITCOIN_ASC_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/SHA256SUMS
+
+RUN mkdir /opt/bitcoin && cd /opt/bitcoin \
+    && wget -qO $BITCOIN_TARBALL "$BITCOIN_URL" \
+    && wget -qO bitcoin "$BITCOIN_ASC_URL" \
+    && grep $BITCOIN_TARBALL bitcoin | tee SHA256SUMS \
+    && sha256sum -c SHA256SUMS \
+    && BD=bitcoin-$BITCOIN_VERSION/bin \
+    && tar -xzvf $BITCOIN_TARBALL $BD/bitcoin-cli --strip-components=1 \
+    && rm $BITCOIN_TARBALL
+
+ENV LITECOIN_VERSION 0.16.3
+ENV LITECOIN_PGP_KEY FE3348877809386C
+ENV LITECOIN_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV LITECOIN_ASC_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-linux-signatures.asc
+ENV LITECOIN_SHA256 686d99d1746528648c2c54a1363d046436fd172beadaceea80bdc93043805994
+
+# install litecoin binaries
+RUN mkdir /opt/litecoin && cd /opt/litecoin \
+    && wget -qO litecoin.tar.gz "$LITECOIN_URL" \
+    && echo "$LITECOIN_SHA256  litecoin.tar.gz" | sha256sum -c - \
+    && BD=litecoin-$LITECOIN_VERSION/bin \
+    && tar -xzvf litecoin.tar.gz $BD/litecoin-cli --strip-components=1 --exclude=*-qt \
+    && rm litecoin.tar.gz
+
+FROM debian:bullseye-slim as builder
+
+ENV LIGHTNINGD_VERSION=master
+RUN apt-get update -qq && \
+    apt-get install -qq -y --no-install-recommends \
+        autoconf \
+        automake \
+        build-essential \
+        ca-certificates \
+        curl \
+        dirmngr \
+        gettext \
+        git \
+        gnupg \
+        libpq-dev \
+        libtool \
+        libffi-dev \
+        python3 \
+        python3-dev \
+        python3-mako \
+        python3-pip \
+        python3-venv \
+        python3-setuptools \
+        wget
+
+RUN wget -q https://zlib.net/zlib-1.2.13.tar.gz \
+    && tar xvf zlib-1.2.13.tar.gz \
+    && cd zlib-1.2.13 \
+    && ./configure \
+    && make \
+    && make install && cd .. && \
+    rm zlib-1.2.13.tar.gz && \
+    rm -rf zlib-1.2.13
+
+RUN apt-get install -y --no-install-recommends unzip tclsh \
+    && wget -q https://www.sqlite.org/2019/sqlite-src-3290000.zip \
+    && unzip sqlite-src-3290000.zip \
+    && cd sqlite-src-3290000 \
+    && ./configure --enable-static --disable-readline --disable-threadsafe --disable-load-extension \
+    && make \
+    && make install && cd .. && rm sqlite-src-3290000.zip && rm -rf sqlite-src-3290000
+
+RUN wget -q https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz \
+    && tar xvf gmp-6.1.2.tar.xz \
+    && cd gmp-6.1.2 \
+    && ./configure --disable-assembly \
+    && make \
+    && make install && cd .. && rm gmp-6.1.2.tar.xz && rm -rf gmp-6.1.2
+
+ENV RUST_PROFILE=release
+ENV PATH=$PATH:/root/.cargo/bin/
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN rustup toolchain install stable --component rustfmt --allow-downgrade
+
+WORKDIR /opt/lightningd
+COPY . /tmp/lightning
+RUN git clone --recursive /tmp/lightning . && \
+    git checkout $(git --work-tree=/tmp/lightning --git-dir=/tmp/lightning/.git rev-parse HEAD)
+
+ARG DEVELOPER=1
+ENV PYTHON_VERSION=3
+RUN curl -sSL https://install.python-poetry.org | python3 - \
+    && pip3 install -U pip \
+    && pip3 install -U wheel \
+    && /root/.local/bin/poetry install
+
+RUN ./configure --prefix=/tmp/lightning_install --enable-static && \
+    make DEVELOPER=${DEVELOPER} && \
+    /root/.local/bin/poetry run make install
+
+FROM debian:bullseye-slim as final
+
+COPY --from=downloader /opt/tini /usr/bin/tini
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      socat \
+      inotify-tools \
+      python3 \
+      python3-pip \
+      libpq5 && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV LIGHTNINGD_DATA=/root/.lightning
+ENV LIGHTNINGD_RPC_PORT=9835
+ENV LIGHTNINGD_PORT=9735
+ENV LIGHTNINGD_NETWORK=bitcoin
+
+RUN mkdir $LIGHTNINGD_DATA && \
+    touch $LIGHTNINGD_DATA/config
+VOLUME [ "/root/.lightning" ]
+COPY --from=builder /tmp/lightning_install/ /usr/local/
+COPY --from=downloader /opt/bitcoin/bin /usr/bin
+COPY --from=downloader /opt/litecoin/bin /usr/bin
+COPY tools/docker-entrypoint.sh entrypoint.sh
+
+EXPOSE 9735 9835
+ENTRYPOINT  [ "/usr/bin/tini", "-g", "--", "./entrypoint.sh" ]
+
+```
+
+## Example Build Error
+```> [builder  3/12] RUN wget -q https://zlib.net/zlib-1.2.13.tar.gz     && tar xvf zlib-1.2.13.tar.gz     && cd zlib-1.2.13     && ./configure     && make     && make install && cd .. &&     rm zlib-1.2.13.tar.gz &&     rm -rf zlib-1.2.13:
+[builder  3/12] RUN wget -q https://zlib.net/zlib-1.2.13.tar.gz     && tar xvf zlib-1.2.13.tar.gz     && cd zlib-1.    && ./configure     && make     && make install && cd .. &&     rm zlib-1.2.13.tar.gz &&     rm -rf zlib-1.2.13
+ERROR: process "/bin/sh -c wget -q https://zlib.net/zlib-1.2.13.tar.gz     && tar xvf zlib-1.2.13.tar.gz     && cd zlib-1.    && ./configure     && make     && make install && cd .. &&     rm zlib-1.2.13.tar.gz &&     rm -rf zlib-1.2.13" did not complete successfully: exit code: 8```
+
+## Example Repair
+
+### Repair 1
+```# This dockerfile is meant to compile a core-lightning x64 image
+# It is using multi stage build:
+# * downloader: Download litecoin/bitcoin and qemu binaries needed for core-lightning
+# * builder: Compile core-lightning dependencies, then core-lightning itself with static linking
+# * final: Copy the binaries required at runtime
+# The resulting image uploaded to dockerhub will only contain what is needed for runtime.
+# From the root of the repository, run "docker build -t yourimage:yourtag ."
+FROM debian:bullseye-slim as downloader
+
+RUN set -ex \
+	&& apt-get update \
+	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr wget
+
+WORKDIR /opt
+
+RUN wget -qO /opt/tini "https://github.com/krallin/tini/releases/download/v0.18.0/tini" \
+    && echo "12d20136605531b09a2c2dac02ccee85e1b874eb322ef6baf7561cd93f93c855 /opt/tini" | sha256sum -c - \
+    && chmod +x /opt/tini
+
+ARG BITCOIN_VERSION=22.0
+ENV BITCOIN_TARBALL bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV BITCOIN_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/$BITCOIN_TARBALL
+ENV BITCOIN_ASC_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/SHA256SUMS
+
+RUN mkdir /opt/bitcoin && cd /opt/bitcoin \
+    && wget -qO $BITCOIN_TARBALL "$BITCOIN_URL" \
+    && wget -qO bitcoin "$BITCOIN_ASC_URL" \
+    && grep $BITCOIN_TARBALL bitcoin | tee SHA256SUMS \
+    && sha256sum -c SHA256SUMS \
+    && BD=bitcoin-$BITCOIN_VERSION/bin \
+    && tar -xzvf $BITCOIN_TARBALL $BD/bitcoin-cli --strip-components=1 \
+    && rm $BITCOIN_TARBALL
+
+ENV LITECOIN_VERSION 0.16.3
+ENV LITECOIN_PGP_KEY FE3348877809386C
+ENV LITECOIN_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV LITECOIN_ASC_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-linux-signatures.asc
+ENV LITECOIN_SHA256 686d99d1746528648c2c54a1363d046436fd172beadaceea80bdc93043805994
+
+# install litecoin binaries
+RUN mkdir /opt/litecoin && cd /opt/litecoin \
+    && wget -qO litecoin.tar.gz "$LITECOIN_URL" \
+    && echo "$LITECOIN_SHA256  litecoin.tar.gz" | sha256sum -c - \
+    && BD=litecoin-$LITECOIN_VERSION/bin \
+    && tar -xzvf litecoin.tar.gz $BD/litecoin-cli --strip-components=1 --exclude=*-qt \
+    && rm litecoin.tar.gz
+
+FROM debian:bullseye-slim as builder
+
+ENV LIGHTNINGD_VERSION=master
+RUN apt-get update -qq && \
+    apt-get install -qq -y --no-install-recommends \
+        autoconf \
+        automake \
+        build-essential \
+        ca-certificates \
+        curl \
+        dirmngr \
+        gettext \
+        git \
+        gnupg \
+        libpq-dev \
+        libtool \
+        libffi-dev \
+        python3 \
+        python3-dev \
+        python3-mako \
+        python3-pip \
+        python3-venv \
+        python3-setuptools \
+        wget
+
+RUN wget -q https://zlib.net/fossils/zlib-1.2.13.tar.gz \
+    && tar xvf zlib-1.2.13.tar.gz \
+    && cd zlib-1.2.13 \
+    && ./configure \
+    && make \
+    && make install && cd .. && \
+    rm zlib-1.2.13.tar.gz && \
+    rm -rf zlib-1.2.13
+
+RUN apt-get install -y --no-install-recommends unzip tclsh \
+    && wget -q https://www.sqlite.org/2019/sqlite-src-3290000.zip \
+    && unzip sqlite-src-3290000.zip \
+    && cd sqlite-src-3290000 \
+    && ./configure --enable-static --disable-readline --disable-threadsafe --disable-load-extension \
+    && make \
+    && make install && cd .. && rm sqlite-src-3290000.zip && rm -rf sqlite-src-3290000
+
+RUN wget -q https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz \
+    && tar xvf gmp-6.1.2.tar.xz \
+    && cd gmp-6.1.2 \
+    && ./configure --disable-assembly \
+    && make \
+    && make install && cd .. && rm gmp-6.1.2.tar.xz && rm -rf gmp-6.1.2
+
+ENV RUST_PROFILE=release
+ENV PATH=$PATH:/root/.cargo/bin/
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN rustup toolchain install stable --component rustfmt --allow-downgrade
+
+WORKDIR /opt/lightningd
+COPY . /tmp/lightning
+RUN git clone --recursive /tmp/lightning . && \
+    git checkout $(git --work-tree=/tmp/lightning --git-dir=/tmp/lightning/.git rev-parse HEAD)
+
+ARG DEVELOPER=1
+ENV PYTHON_VERSION=3
+RUN curl -sSL https://install.python-poetry.org | python3 - \
+    && pip3 install -U pip \
+    && pip3 install -U wheel \
+    && /root/.local/bin/poetry install
+
+RUN ./configure --prefix=/tmp/lightning_install --enable-static && \
+    make DEVELOPER=${DEVELOPER} && \
+    /root/.local/bin/poetry run make install
+
+FROM debian:bullseye-slim as final
+
+COPY --from=downloader /opt/tini /usr/bin/tini
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      socat \
+      inotify-tools \
+      python3 \
+      python3-pip \
+      libpq5 && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV LIGHTNINGD_DATA=/root/.lightning
+ENV LIGHTNINGD_RPC_PORT=9835
+ENV LIGHTNINGD_PORT=9735
+ENV LIGHTNINGD_NETWORK=bitcoin
+
+RUN mkdir $LIGHTNINGD_DATA && \
+    touch $LIGHTNINGD_DATA/config
+VOLUME [ "/root/.lightning" ]
+COPY --from=builder /tmp/lightning_install/ /usr/local/
+COPY --from=downloader /opt/bitcoin/bin /usr/bin
+COPY --from=downloader /opt/litecoin/bin /usr/bin
+COPY tools/docker-entrypoint.sh entrypoint.sh
+
+EXPOSE 9735 9835
+ENTRYPOINT  [ "/usr/bin/tini", "-g", "--", "./entrypoint.sh" ]
+
+```
+
+Below are a few false repairs that an LLM previously made by mistake for the input flaky Dockerfile along with their build outputs as further demonstrations. These examples are provided to help you understand the task better and to avoid making the same mistakes. So, do not generate the exact false repair generated previously, but you can get ideas from them.
+
+# False Repair 1
+## False Repair Dockerfile
+```FROM --platform=linux/amd64 debian:stable-slim
+
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+
+LABEL maintainer="hello@mazzotta.me" \
+    org.label-schema.build-date=$BUILD_DATE \
+    org.label-schema.name="Docker Nginx" \
+    org.label-schema.description="Docker for Nginx with More Headers and Google Pagespeed preinstalled" \
+    org.label-schema.url="https://github.com/emazzotta/docker-nginx-lua" \
+    org.label-schema.vcs-ref=$VCS_REF \
+    org.label-schema.vcs-url="https://github.com/emazzotta/docker-nginx-lua" \
+    org.label-schema.vendor="Emanuele Mazzotta" \
+    org.label-schema.version=$VERSION \
+    org.label-schema.schema-version="1.0"
+
+RUN apt-get -qq update && apt-get install -qqy --no-install-recommends \
+    build-essential \
+    libpcre3-dev \
+    uuid-dev \
+    wget \
+    zlib1g-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
+ENV NGINX_TEMP_DIR=/tmp/nginx
+ENV NGINX_DIR=/etc/nginx
+
+# http://nginx.org/en/download.html
+ENV NGINX_VERSION=1.22.1
+# https://github.com/simpl/ngx_devel_kit/releases
+ENV NGINX_DEV_VERSION=0.3.2
+# https://www.openssl.org/source/
+ENV OPENSSL_VERSION=1.1.1t
+# https://github.com/openresty/headers-more-nginx-module/tags
+ENV HEADERS_MORE_VERSION=0.34
+# https://github.com/apache/incubator-pagespeed-ngx/releases
+ENV GOOGLE_PAGESPEED_VERSION=1.14.36.1-RC1
+
+ENV NGINX_ACCEPT_LANGUAGE_MODULE_PATH=$NGINX_TEMP_DIR/nginx_accept_language_module-master
+ENV NGX_DEV_MODULE_PATH=$NGINX_TEMP_DIR/ngx_devel_kit-$NGINX_DEV_VERSION
+ENV OPENSSL_MODULE_PATH=$NGINX_TEMP_DIR/openssl-$OPENSSL_VERSION
+ENV HEADERS_MORE_MODULE_PATH=$NGINX_TEMP_DIR/headers-more-nginx-module-$HEADERS_MORE_VERSION
+ENV GOOGLE_PAGESPEED_MODULE_PATH=$NGINX_TEMP_DIR/incubator-pagespeed-ngx-$GOOGLE_PAGESPEED_VERSION
+
+RUN mkdir -p $NGINX_TEMP_DIR
+WORKDIR $NGINX_TEMP_DIR
+
+RUN wget --no-check-certificate http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz \
+        -P $NGINX_TEMP_DIR/ && \
+        tar xzf nginx-$NGINX_VERSION.tar.gz --strip-components=1 && \
+        rm -rf nginx-$NGINX_VERSION.tar.gz
+
+RUN wget --no-check-certificate https://github.com/giom/nginx_accept_language_module/archive/master.tar.gz \
+        -O $NGINX_ACCEPT_LANGUAGE_MODULE_PATH.tar.gz && \
+        tar xzf $NGINX_ACCEPT_LANGUAGE_MODULE_PATH.tar.gz && \
+        rm -rf $NGINX_ACCEPT_LANGUAGE_MODULE_PATH.tar.gz
+
+RUN wget --no-check-certificate https://github.com/simpl/ngx_devel_kit/archive/v$NGINX_DEV_VERSION.tar.gz \
+        -O $NGX_DEV_MODULE_PATH.tar.gz && \
+        tar xzf $NGX_DEV_MODULE_PATH.tar.gz && \
+        rm -rf $NGX_DEV_MODULE_PATH.tar.gz
+
+RUN wget --no-check-certificate https://github.com/openresty/headers-more-nginx-module/archive/v$HEADERS_MORE_VERSION.tar.gz \
+        -O $HEADERS_MORE_MODULE_PATH.tar.gz && \
+        tar xzf $HEADERS_MORE_MODULE_PATH.tar.gz && \
+        rm -rf $HEADERS_MORE_MODULE_PATH.tar.gz
+
+RUN wget --no-check-certificate https://openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz \
+        -O $OPENSSL_MODULE_PATH.tar.gz && \
+        tar xzf $OPENSSL_MODULE_PATH.tar.gz && \
+        rm -rf $OPENSSL_MODULE_PATH.tar.gz
+
+RUN wget --no-check-certificate https://github.com/apache/incubator-pagespeed-ngx/archive/v$GOOGLE_PAGESPEED_VERSION.tar.gz \
+        -O $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz && \
+        tar xzf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz && \
+        cd $GOOGLE_PAGESPEED_MODULE_PATH && \
+        wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-$GOOGLE_PAGESPEED_VERSION.tar.gz && \
+        tar xzf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz && \
+        rm -rf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz && \
+        rm -rf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz
+
+RUN ./configure \
+        --prefix=$NGINX_DIR \
+        --add-module=$NGINX_ACCEPT_LANGUAGE_MODULE_PATH \
+        --add-module=$GOOGLE_PAGESPEED_MODULE_PATH \
+        --add-module=$NGX_DEV_MODULE_PATH \
+        --add-module=$HEADERS_MORE_MODULE_PATH \
+        --with-openssl=$OPENSSL_MODULE_PATH \
+        --with-http_v2_module \
+        --with-http_ssl_module \
+        --with-http_realip_module \
+        --with-http_addition_module \
+        --with-http_sub_module \
+        --with-http_dav_module \
+        --with-http_flv_module \
+        --with-http_mp4_module \
+        --with-http_gunzip_module \
+        --with-http_gzip_static_module \
+        --with-http_random_index_module \
+        --with-http_secure_link_module \
+        --with-http_stub_status_module \
+        --with-mail \
+        --with-mail_ssl_module \
+        --with-file-aio \
+        --with-cc-opt='-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security' \
+        --with-ld-opt=-Wl,-z,relro \
+        --sbin-path=/usr/sbin/nginx \
+        --conf-path=/etc/nginx/nginx.conf \
+        --error-log-path=/var/log/nginx/error.log \
+        --http-log-path=/var/log/nginx/access.log \
+        --pid-path=/var/run/nginx.pid \
+        --lock-path=/var/run/nginx.lock \
+        --http-client-body-temp-path=/var/cache/nginx/client_temp \
+        --http-proxy-temp-path=/var/cache/nginx/proxy_temp \
+        --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \
+        --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \
+        --http-scgi-temp-path=/var/cache/nginx/scgi_temp \
+        --user=nginx \
+        --group=nginx && \
+        make && \
+        make install && \
+        rm -rf /tmp/nginx
+
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
+    ln -sf /dev/stderr /var/log/nginx/error.log
+
+WORKDIR $NGINX_DIR
+
+ADD nginx.conf /etc/nginx/nginx.conf
+ADD mime.types /etc/nginx/mime.types
+RUN mkdir -p /etc/nginx/conf.d
+
+VOLUME ["/var/cache/nginx"]
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]```
+
+## False Repair Build Output
+```> [10/16] RUN wget --no-check-certificate https://github.com/apache/incubator-pagespeed-ngx/archive/v1.14.36.1-RC1.tar.gz         -O /tmp/nginx/incubator-pagespeed-ngx-1.14.36.1-RC1.tar.gz &&         tar xzf /tmp/nginx/incubator-pagespeed-ngx-1.14.36.1-RC1.tar.gz &&         cd /tmp/nginx/incubator-pagespeed-ngx-1.14.36.1-RC1 &&         wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-1.14.36.1-RC1.tar.gz &&         tar xzf psol-1.14.36.1-RC1.tar.gz &&         rm -rf /tmp/nginx/incubator-pagespeed-ngx-1.14.36.1-RC1.tar.gz &&         rm -rf psol-1.14.36.1-RC1.tar.gz:
+Location: https://codeload.github.com/apache/incubator-pagespeed-ngx/tar.gz/v1.14.36.1-RC1 [following]
+--2024-07-31 21:51:37--  https://codeload.github.com/apache/incubator-pagespeed-ngx/tar.gz/v1.14.36.1-RC1
+Resolving codeload.github.com (codeload.github.com)... 140.82.112.10
+Connecting to codeload.github.com (codeload.github.com)|140.82.112.10|:443... connected.
+WARNING: The certificate of 'codeload.github.com' is not trusted.
+WARNING: The certificate of 'codeload.github.com' doesn't have a known issuer.
+HTTP request sent, awaiting response... 404 Not Found
+2024-07-31 21:51:38 ERROR 404: Not Found.
+ERROR: process "/bin/sh -c wget --no-check-certificate https://github.com/apache/incubator-pagespeed-ngx/archive/v$GOOGLE_PAGESPEED_VERSION.tar.gz         -O $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         tar xzf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         cd $GOOGLE_PAGESPEED_MODULE_PATH &&         wget --no-check-certificate $(scripts/format_binary_url.sh PSOL_BINARY_URL) -O psol-$GOOGLE_PAGESPEED_VERSION.tar.gz &&         tar xzf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz &&         rm -rf $GOOGLE_PAGESPEED_MODULE_PATH.tar.gz &&         rm -rf psol-$GOOGLE_PAGESPEED_VERSION.tar.gz" did not complete successfully: exit code: 8```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

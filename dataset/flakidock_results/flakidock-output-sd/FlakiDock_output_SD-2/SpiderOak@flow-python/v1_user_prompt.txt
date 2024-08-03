@@ -1,0 +1,41 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM python:2.7
+
+LABEL maintainer "lucas@spideroak-inc.com"
+
+# Update pip
+RUN pip install --upgrade \
+    pip
+
+# Download and install Semaphor
+RUN wget https://spideroak.com/releases/semaphor/debian \
+    && dpkg -i debian \
+    && rm -rf debian
+
+COPY . /flow-python
+WORKDIR /flow-python
+
+# Install flow-python
+RUN pip install -r requirements.txt \
+&& pip install .
+
+# Execute python to start using flow-python
+CMD python
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/6] RUN wget https://spideroak.com/releases/semaphor/debian     && dpkg -i debian     && rm -rf debian:
+--2024-08-01 06:03:10--  https://spideroak.com/releases/semaphor/debian
+Resolving spideroak.com (spideroak.com)... 3.136.70.228
+Connecting to spideroak.com (spideroak.com)|3.136.70.228|:443... connected.
+2024-08-01 06:03:12 ERROR 404: Not Found.
+ERROR: process "/bin/sh -c wget https://spideroak.com/releases/semaphor/debian     && dpkg -i debian     && rm -rf debian" did not complete successfully: exit code: 8```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

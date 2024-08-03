@@ -1,0 +1,27 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM node:4.4
+
+WORKDIR /watchmen
+
+# Installs dependencies first
+ADD package.json bower.json .bowerrc /watchmen/
+RUN set -x \
+ && npm install -g bower \
+ && npm install \
+ && bower install --allow-root
+
+# Add all the project
+ADD . /watchmen
+
+ENV WATCHMEN_WEB_PORT=3000
+
+EXPOSE 3000
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

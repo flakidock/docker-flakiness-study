@@ -1,0 +1,62 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# Build image
+FROM python:3.9
+
+LABEL description="dcrdocs build"
+LABEL version="1.0"
+LABEL maintainer "jholdstock@decred.org"
+
+USER root
+WORKDIR /root
+
+RUN python -m pip install --upgrade pip
+
+COPY ./ /root/
+
+RUN pip install mkdocs && \
+	pip install --user -r requirements.txt
+
+# Install dependencies for generating social cards.
+# https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards
+RUN apt update && \
+    apt install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev && \
+	pip install pillow cairosvg
+
+ENV DCRDOCS_CARDS true
+
+RUN ./bin/build_docs.sh
+
+# Serve image (stable nginx version)
+FROM nginx:1.20
+
+LABEL description="dcrdocs serve"
+LABEL version="1.0"
+LABEL maintainer "jholdstock@decred.org"
+
+COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
+
+COPY --from=0 ./root/site/ /usr/share/nginx/html
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [stage-0 7/7] RUN ./bin/build_docs.sh:
+    self.font = self._load_font(config)
+  File "/root/.local/lib/python3.9/site-packages/material/plugins/social/plugin.py", line 355, in _load_font
+    self._load_font_from_google(name)
+  File "/root/.local/lib/python3.9/site-packages/material/plugins/social/plugin.py", line 379, in _load_font_from_google
+    zip = ZipFile(tmp)
+  File "/usr/local/lib/python3.9/zipfile.py", line 1268, in __init__
+    self._RealGetContents()
+  File "/usr/local/lib/python3.9/zipfile.py", line 1335, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+ERROR: process "/bin/sh -c ./bin/build_docs.sh" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

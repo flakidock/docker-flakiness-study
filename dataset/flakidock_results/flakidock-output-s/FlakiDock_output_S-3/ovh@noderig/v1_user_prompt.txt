@@ -1,0 +1,25 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM debian:stretch
+EXPOSE 9100
+
+RUN apt-get update && \
+    apt-get install -y curl wget git ca-certificates && \
+    mkdir /app && cd /app && \
+    LAST_RELEASE=$(curl -s https://api.github.com/repos/ovh/noderig/releases | grep tag_name | head -n 1 | cut -d '"' -f 4) && \
+    curl -s https://api.github.com/repos/ovh/noderig/releases | grep ${LAST_RELEASE} | grep browser_download_url | cut -d '"' -f 4 > files && \
+    cat files | sort | uniq > filesToDownload && \
+    while read f; do wget $f; done < filesToDownload && \
+    chmod +x noderig && \
+    chown -R nobody:nogroup /app && \
+    rm -rf /var/lib/apt/lists/*
+
+ENTRYPOINT ["/app/noderig"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

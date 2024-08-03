@@ -1,0 +1,31 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM maddinat0r/debian-samp
+
+RUN apt update && apt install -y uuid-dev:i386 curl
+RUN curl https://raw.githubusercontent.com/Southclaws/sampctl/master/install-bin.sh | sh && cp sampctl /usr/bin/sampctl
+ADD . .
+RUN mkdir build
+ENTRYPOINT [ "make", "build-inside" ]```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/5] RUN apt update && apt install -y uuid-dev:i386 curl:
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Err:2 http://security.debian.org/debian-security stretch/updates Release
+  404  Not Found [IP: 151.101.80]
+Err:5 http://deb.debian.org/debian stretch Release
+  404  Not Found
+Err:6 http://deb.debian.org/debian stretch-updates Release
+  404  Not Found
+E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does no longer have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch Release' does no longer have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' does no longer have a Release file.
+ERROR: process "/bin/sh -c apt update && apt install -y uuid-dev:i386 curl" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,29 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+# Dockerfile for building Yarn.
+# docker build -t yarnpkg/dev -f Dockerfile.dev .
+
+FROM node:10
+
+# Debian packages
+RUN apt-get -y update && \
+  apt-get install -y --no-install-recommends \
+    fakeroot \
+    lintian \
+    rpm \
+    ruby \
+    ruby-dev \
+  && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
+
+# Ruby packages
+RUN gem install fpm
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

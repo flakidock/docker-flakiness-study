@@ -1,0 +1,40 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM alpine AS builder
+
+RUN mkdir /src /app
+WORKDIR /src
+COPY . /src/
+COPY CHECKS /app/CHECKS
+
+RUN apk add --no-cache curl make gcc musl-dev libffi-dev python3 python3-dev
+RUN env
+RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/etc/poetry python3 -
+
+ENV PATH /etc/poetry/bin/:$PATH
+
+RUN poetry install
+RUN make run 
+
+FROM nginx:1.17-alpine
+
+COPY --from=builder /src/_build /www
+COPY vhost.conf /etc/nginx/conf.d/default.conf
+COPY CHECKS /app/CHECKS
+EXPOSE 80
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder  9/10] RUN poetry install:
+Creating virtualenv osgameclones-VsnhxLU2-pyin /root/.cache/pypoetry/virtualenvs
+Installing dependencies from lock file
+pyproject.toml changed significantly since poetry.lock was last generated. Run `poetry lock [--no-update]` to fix the lock file.
+ERROR: process "/bin/sh -c poetry install" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

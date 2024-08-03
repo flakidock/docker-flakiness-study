@@ -1,0 +1,21 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM debian
+RUN apt-get -y update && \
+    apt-get -y install zip build-essential autoconf bison python vim git && \
+    apt-get clean
+WORKDIR /opt
+COPY bash2py-3.5.zip /opt
+RUN unzip /opt/bash2py-3.5.zip 
+WORKDIR /opt/bash2py-3.5
+RUN mkdir /root/bin
+RUN sh install
+CMD /bin/bash
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

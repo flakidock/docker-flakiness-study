@@ -1,0 +1,22 @@
+FROM python:2.7
+
+LABEL maintainer "lucas@spideroak-inc.com"
+
+# Update pip
+RUN pip install --upgrade \
+    pip
+
+# Download and install Semaphor
+RUN wget https://spideroak.com/releases/semaphor/latest/semaphor.deb \
+    && dpkg -i semaphor.deb \
+    && rm -rf semaphor.deb
+
+COPY . /flow-python
+WORKDIR /flow-python
+
+# Install flow-python
+RUN pip install -r requirements.txt \
+&& pip install .
+
+# Execute python to start using flow-python
+CMD python

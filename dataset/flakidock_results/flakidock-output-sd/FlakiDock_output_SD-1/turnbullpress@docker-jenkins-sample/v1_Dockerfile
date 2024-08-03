@@ -1,0 +1,13 @@
+FROM ubuntu:16.04
+MAINTAINER James Turnbull "james@example.com"
+ENV REFRESHED_AT 2016-06-01
+
+# Install Ruby from Brightbox PPA to get a newer version
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    apt-add-repository ppa:brightbox/ruby-ng && \
+    apt-get update && \
+    apt-get install -y ruby2.5 ruby2.5-dev build-essential && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN gem install --no-rdoc --no-ri rspec ci_reporter_rspec

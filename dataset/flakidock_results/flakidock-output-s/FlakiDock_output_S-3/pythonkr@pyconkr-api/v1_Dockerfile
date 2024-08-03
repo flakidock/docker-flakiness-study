@@ -1,0 +1,12 @@
+# Dockerfile
+FROM python:3.6.8-stretch
+
+ENV PYTHONUNBUFFERED 1
+WORKDIR /config
+COPY requirements.txt /config/
+RUN apt-get update && apt-get install -y cron && rm -rf /var/lib/apt/lists/*
+RUN pip install -r requirements.txt
+
+COPY . /web
+WORKDIR /web
+ENTRYPOINT ["/web/docker-entrypoint.sh"]

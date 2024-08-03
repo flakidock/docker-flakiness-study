@@ -1,0 +1,55 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM    php:apache
+COPY    backend-php/ /var/www/html/
+COPY    frontend/ /var/www/html/
+COPY    docker/start.sh .
+
+RUN     apt-get update && \
+        apt-get install -y memcached libmemcached-dev zlib1g-dev libldap2-dev && \
+        pecl install memcached && \
+        docker-php-ext-enable memcached && \
+        docker-php-ext-configure ldap --with-libdir=lib/*-linux-gnu*/ && \
+        docker-php-ext-install ldap
+
+EXPOSE  80/tcp
+VOLUME  /etc/hauk
+
+STOPSIGNAL SIGINT
+RUN     chmod +x ./start.sh
+CMD     ["./start.sh"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [5/6] RUN     apt-get update &&         apt-get install -y memcached libmemcached-dev zlib1g-dev libldap2-dev &&         pecl install memcached &&         docker-php-ext-enable memcached &&         docker-php-ext-configure ldap --with-libdir=lib/*-linux-gnu*/ &&         docker-php-ext-install ldap:
+checking if zts is enabled... no
+checking for gawk... no
+checking for nawk... nawk
+checking if nawk is broken... no
+checking whether to enable memcached support... yes, shared
+checking for libmemcached... yes, shared
+checking whether to enable memcached session handler support... yes
+checking whether to enable memcached igbinary serializer support... no
+checking whether to enable memcached json serializer support... no
+checking whether to enable memcached msgpack serializer support... no
+checking whether to enable memcached sasl support... yes
+checking whether to enable memcached protocol support... no
+checking whether to use system FastLZ library... no
+checking for ZLIB... yes, shared
+checking for pkg-config... /usr/bin/pkg-config
+checking for zlib location... /usr
+checking for session includes... /usr/local/include/php
+checking for memcached session support... enabled
+checking for memcached igbinary support... disabled
+checking for memcached msgpack support... disabled
+checking for libmemcached location... configure: error: memcached support requires libmemcached. Use --with-libmemcached-dir=<DIR> to specify the prefix where libmemcached headers and library are located
+ERROR: `/tmp/pear/temp/memcached/configure --with-php-config=/usr/local/bin/php-config --with-libmemcached-dir=no --with-zlib-dir=no --with-system-fastlz=no --enable-memcached-igbinary=no --enable-memcached-msgpack=no --enable-memcached-json=no --enable-memcached-protocol=no --enable-memcached-sasl=yes --enable-memcached-session=yes' failed
+ERROR: process "/bin/sh -c apt-get update &&         apt-get install -y memcached libmemcached-dev zlib1g-dev libldap2-dev &&         pecl install memcached &&         docker-php-ext-enable memcached &&         docker-php-ext-configure ldap --with-libdir=lib/*-linux-gnu*/ &&         docker-php-ext-install ldap" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

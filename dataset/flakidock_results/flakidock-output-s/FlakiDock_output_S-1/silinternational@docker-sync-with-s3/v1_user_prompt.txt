@@ -1,0 +1,25 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM alpine:3.8
+
+RUN apk update \
+    && apk add python py-pip rsyslog rsyslog-tls ca-certificates openssl \
+    && pip install awscli
+
+COPY run.py /run.py
+COPY crontab.txt /crontab.txt
+COPY crontab-syslog.txt /crontab-syslog.txt
+COPY rsyslog.conf /etc/rsyslog.conf
+COPY entry.sh /entry.sh
+
+RUN chmod 755 /entry.sh
+
+CMD ["/entry.sh"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

@@ -1,0 +1,117 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```#
+# docker build --build-arg=COMMIT=$(git rev-parse --short HEAD) \
+# --build-arg=BRANCH=$(git name-rev --name-only HEAD) -t akiko/redmine_banner:latest .
+#
+#
+FROM ruby:2.5
+LABEL maintainer="AKIKO TAKANO / (Twitter: @akiko_pusu)" \
+  description="Image to run Redmine simply with sqlite to try/review plugin."
+
+ARG BRANCH="master"
+ARG COMMIT="commit_sha"
+
+ENV COMMIT_SHA=${COMMIT}
+ENV COMMIT_BRANCH=${BRANCH}
+
+RUN mkdir /app
+
+### get Redmine source
+### Replace shell with bash so we can source files ###
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+### install default sys packeges ###
+
+RUN apt-get update
+RUN apt-get install -qq -y --no-install-recommends \
+    git vim subversion      \
+    sqlite3 && rm -rf /var/lib/apt/lists/*
+
+RUN cd /app && svn co http://svn.redmine.org/redmine/branches/4.0-stable/ redmine
+WORKDIR /app/redmine
+
+COPY . /app/redmine/plugins/redmine_banner/
+
+# add database.yml (for development, development with mysql, test)
+RUN echo $'test:\n\
+  adapter: sqlite3\n\
+  database: /app/data/redmine_test.sqlite3\n\
+  encoding: utf8mb4\n\
+development:\n\
+  adapter: sqlite3\n\
+  database: /app/data/redmine_development.sqlite3\n\
+  encoding: utf8mb4\n'\
+>> config/database.yml
+
+RUN gem update bundler
+RUN bundle install --without postgresql rmagick mysql
+RUN bundle exec rake db:migrate && bundle exec rake redmine:plugins:migrate \
+  && bundle exec rake generate_secret_token
+RUN bundle exec rails runner \
+  "Setting.send('plugin_redmine_banner=', {enable: 'true', type: 'info', display_part: 'both', banner_description: 'This is a test message for Global Banner. (${COMMIT_BRANCH}:${COMMIT_SHA})'}.stringify_keys)"
+
+# Change Admin's password to 'redmine_banner_${COMMIT_SHA}'
+# Default is 'redmine_banner_commit_sha'
+RUN bundle exec rails runner \
+  "User.find_by_login('admin').update!(password: 'redmine_banner_${COMMIT_SHA}', must_change_passwd: false)"
+
+EXPOSE  3000
+RUN ls /app/redmine
+CMD ["rails", "server", "-b", "0.0.0.0"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [12/15] RUN bundle exec rake db:migrate && bundle exec rake redmine:plugins:migrate   && bundle exec rake generate_secret_token:
+NameError: uninitialized constant Nokogiri::HTML4
+Did you mean?  Nokogiri::HTML
+/usr/local/bundle/gems/loofah-2.21.1/lib/loofah/html4/document.rb:10:in `<module:HTML4>'
+/usr/local/bundle/gems/loofah-2.21.1/lib/loofah/html4/document.rb:4:in `<module:Loofah>'
+/usr/local/bundle/gems/loofah-2.21.1/lib/loofah/html4/document.rb:3:in `<top (required)>'
+/usr/local/bundle/gems/loofah-2.21.1/lib/loofah.rb:36:in `require_relative'
+/usr/local/bundle/gems/loofah-2.21.1/lib/loofah.rb:36:in `<top (required)>'
+/usr/local/bundle/gems/rails-html-sanitizer-1.5.0/lib/rails-html-sanitizer.rb:2:in `require'
+/usr/local/bundle/gems/rails-html-sanitizer-1.5.0/lib/rails-html-sanitizer.rb:2:in `<top (required)>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/sanitize_helper.rb:4:in `require'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/sanitize_helper.rb:4:in `<top (required)>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/text_helper.rb:34:in `require'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/text_helper.rb:34:in `<module:TextHelper>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/text_helper.rb:31:in `<module:Helpers>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/text_helper.rb:8:in `<module:ActionView>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/text_helper.rb:6:in `<top (required)>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/form_tag_helper.rb:20:in `require'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/form_tag_helper.rb:20:in `<module:FormTagHelper>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/form_tag_helper.rb:16:in `<module:Helpers>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/form_tag_helper.rb:10:in `<module:ActionView>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/form_tag_helper.rb:8:in `<top (required)>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/form_helper.rb:6:in `require'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers/form_helper.rb:6:in `<top (required)>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers.rb:54:in `require'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers.rb:54:in `<module:Helpers>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers.rb:6:in `<module:ActionView>'
+/usr/local/bundle/gems/actionview-5.2.5/lib/action_view/helpers.rb:5:in `<top (required)>'
+/usr/local/bundle/gems/sprockets-rails-3.4.2/lib/sprockets/rails/context.rb:1:in `require'
+/usr/local/bundle/gems/sprockets-rails-3.4.2/lib/sprockets/rails/context.rb:1:in `<top (required)>'
+/usr/local/bundle/gems/sprockets-rails-3.4.2/lib/sprockets/railtie.rb:10:in `require'
+/usr/local/bundle/gems/sprockets-rails-3.4.2/lib/sprockets/railtie.rb:10:in `<top (required)>'
+/usr/local/bundle/gems/railties-5.2.5/lib/rails/all.rb:17:in `require'
+/usr/local/bundle/gems/railties-5.2.5/lib/rails/all.rb:17:in `block in <top (required)>'
+/usr/local/bundle/gems/railties-5.2.5/lib/rails/all.rb:15:in `each'
+/usr/local/bundle/gems/railties-5.2.5/lib/rails/all.rb:15:in `<top (required)>'
+/app/redmine/config/application.rb:3:in `require'
+/app/redmine/config/application.rb:3:in `<top (required)>'
+/app/redmine/Rakefile:5:in `require'
+/app/redmine/Rakefile:5:in `<top (required)>'
+/usr/local/bundle/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/bin/bundle:22:in `<main>'
+(See full trace by running task with --trace)
+ERROR: process "/bin/sh -c bundle exec rake db:migrate && bundle exec rake redmine:plugins:migrate   && bundle exec rake generate_secret_token" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

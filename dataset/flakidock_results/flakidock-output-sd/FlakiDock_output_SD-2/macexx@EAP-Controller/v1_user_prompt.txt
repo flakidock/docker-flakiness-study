@@ -1,0 +1,43 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# Builds a docker image for TP-Link´s  EAP Controller
+From phusion/baseimage:master
+MAINTAINER Mace Capri <macecapri@gmail.com>
+
+
+###############################################
+##           ENVIRONMENTAL CONFIG            ##
+###############################################
+# Set correct environment variables
+ENV DEBIAN_FRONTEND noninteractive
+ENV HOME="/root" LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
+
+# Use baseimage-docker's init system
+CMD ["/sbin/my_init"]
+
+###############################################
+##   INTALL ENVIORMENT, INSTALL OPENVPN      ##
+###############################################
+COPY install.sh /tmp/
+RUN chmod +x /tmp/install.sh && sleep 1 && /tmp/install.sh && rm /tmp/install.sh
+
+
+###############################################
+##             PORTS AND VOLUMES             ##
+###############################################
+
+#expose 8088/tcp
+VOLUME /config
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [internal] load metadata for docker.io/phusion/baseimage:master:
+ERROR: docker.io/phusion/baseimage:master: not found```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

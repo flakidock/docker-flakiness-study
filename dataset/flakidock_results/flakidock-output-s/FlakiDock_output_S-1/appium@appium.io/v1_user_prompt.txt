@@ -1,0 +1,19 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM node:12.22.1-alpine3.11
+WORKDIR '/root'
+RUN apk add git python2 py-pip
+COPY ./package.json ./
+RUN pip install mkdocs==0.17.5
+RUN npm install
+VOLUME docs/ ./docs/
+COPY . .
+CMD ["npm", "run", "build:docs:docker"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

@@ -1,0 +1,8 @@
+# Dockerfile
+FROM rocker/tidyverse:3.6.2
+
+RUN install2.r --error \
+    zeallot \
+ && rm -rf /tmp/downloaded_packages/ \
+ && apt-get update \
+ && apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev

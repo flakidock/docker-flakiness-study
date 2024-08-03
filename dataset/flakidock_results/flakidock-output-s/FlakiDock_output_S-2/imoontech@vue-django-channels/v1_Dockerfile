@@ -1,0 +1,17 @@
+# Dockerfile
+FROM node:6
+
+# Install Yarn using the official method
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && apt-get install -y yarn net-tools
+
+RUN mkdir -p /code
+WORKDIR /code
+ADD ./package.json package.json
+
+# Set the location of yarn-cache so we can mount it as a volume in docker-compose to benefit from yarn's caching
+RUN yarn config set cache-folder /root/yarn-cache
+
+# Environment variable
+ENV DOCKER 1

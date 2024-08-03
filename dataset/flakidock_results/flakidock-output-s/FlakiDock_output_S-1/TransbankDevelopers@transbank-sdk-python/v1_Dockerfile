@@ -1,0 +1,18 @@
+# Dockerfile
+FROM python:3.7.4-stretch
+
+# Ensure the package list is updated and install dependencies
+RUN apt-get update && apt-get install -y python3-pip
+
+# Upgrade pip to the latest version to avoid potential issues
+RUN pip install --upgrade pip
+
+# Install pipenv
+RUN pip install pipenv
+
+# Create and set the working directory
+RUN mkdir -p /sdk
+WORKDIR /sdk
+
+# Copy the current directory contents into the container
+COPY . /sdk

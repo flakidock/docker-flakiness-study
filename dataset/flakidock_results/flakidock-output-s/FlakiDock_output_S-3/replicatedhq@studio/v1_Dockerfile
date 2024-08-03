@@ -1,0 +1,11 @@
+# Dockerfile
+FROM node:8.7
+
+# Update npm to the latest version to avoid potential issues with older versions
+RUN npm install -g npm@latest
+
+# Install replicated-studio
+RUN npm install -g replicated-studio
+
+EXPOSE 8006
+CMD ["replicated-studio"]

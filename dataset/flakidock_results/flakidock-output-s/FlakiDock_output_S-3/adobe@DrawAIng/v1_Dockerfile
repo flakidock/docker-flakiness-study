@@ -1,0 +1,17 @@
+# Dockerfile
+FROM bvlc/caffe:cpu
+
+# Update the package list and install pip
+RUN apt-get update && apt-get install -y python3-pip
+
+# Copy the application code
+ADD ./app /code
+
+# Set the working directory
+WORKDIR /code
+
+# Install the required Python packages
+RUN pip3 install -r requirements.txt
+
+# Set the command to run the application
+CMD ["python3", "app.py"]

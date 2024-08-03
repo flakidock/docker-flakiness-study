@@ -1,0 +1,19 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM java:7
+MAINTAINER Matt Fullerton <matt.fullerton@gmail.com>
+
+RUN mkdir /setup
+ADD install.sh /setup/install.sh
+RUN /setup/install.sh
+ENTRYPOINT java -jar /srv/tika-server-1.*-SNAPSHOT.jar -host 0.0.0.0
+
+EXPOSE 9998
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

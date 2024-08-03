@@ -1,0 +1,15 @@
+FROM node:10-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends --assume-yes software-properties-common && \
+  apt-get install -y --no-install-recommends --assume-yes git cron && rm -rf /var/lib/apt/lists/*;
+
+RUN npm install -g mastodon-bot && npm cache clean --force;
+
+RUN mkdir /config && touch /config/config.edn && touch /var/log/cron.log
+
+COPY poll.sh /poll.sh
+
+ENV MASTODON_BOT_CONFIG /config/config.edn
+VOLUME /config
+
+CMD /poll.sh

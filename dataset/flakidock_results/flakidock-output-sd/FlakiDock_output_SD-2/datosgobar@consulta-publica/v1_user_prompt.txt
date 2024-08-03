@@ -1,0 +1,106 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM democracyos/democracyos:2.11.15
+
+MAINTAINER Democracia en Red <it@democracyos.io>
+
+COPY ./dos-override/models/comment.js /usr/src/lib/models/comment.js
+COPY ./dos-override/api-v2/db-api/comments/index.js /usr/src/lib/api-v2/db-api/comments/index.js
+COPY ./dos-override/api-v2/db-api/comments/scopes.js /usr/src/lib/api-v2/db-api/comments/scopes.js
+COPY ./dos-override/api-v2/db-api/users/scopes.js /usr/src/lib/api-v2/db-api/users/scopes.js
+
+ENV LOCALE=es \
+  AVAILABLE_LOCALES=es,en \
+  ENFORCE_LOCALE=true \
+  MODERATOR_ENABLED=true \
+  MULTI_FORUM=true \
+  RESTRICT_FORUM_CREATION=true \
+  FAVICON=/ext/lib/boot/favicon.ico \
+  LOGO=/ext/lib/site/footer/logo-footer.svg \
+  LOGO_MOBILE=/ext/lib/site/footer/logo-footer.svg \
+  NOTIFICATIONS_MAILER_EMAIL=gobiernoabierto@jefatura.gob.ar \
+  NOTIFICATIONS_MAILER_NAME='Consulta Pública Argentina' \
+  ORGANIZATION_EMAIL=gobiernoabierto@jefatura.gob.ar \
+  ORGANIZATION_NAME='Consulta Pública Argentina' \
+  SOCIALSHARE_SITE_NAME='Consulta Pública Argentina' \
+  SOCIALSHARE_SITE_DESCRIPTION='Plataforma de participación ciudadana de la República Argentina.' \
+  SOCIALSHARE_IMAGE=https://cldup.com/Y7mWiU4D1Q.png \
+  SOCIALSHARE_DOMAIN=consultapublica.argentina.gob.ar \
+  SOCIALSHARE_TWITTER_USERNAME=@innovacionar \
+  TWEET_TEXT='Estoy tratando de mejorar esta propuesta “{topic.mediaTitle}” ¡Participá vos también! #GobiernoAbierto'
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/5] RUN npm run build -- --minify:
+npm ERR! Linux 3.10.0-1160.88.1.el7.x86_64
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--quiet"
+npm ERR! node v6.15.1
+npm ERR! npm  v3.10.10
+npm ERR! path /usr/src/ext/node_modules/.staging/@types/babylon-d228c3cb/package.json
+npm ERR! code ENOTDIR
+npm ERR! errno -20
+npm ERR! syscall open
+npm ERR! ENOTDIR: not a directory, open '/usr/src/ext/node_modules/.staging/@types/babylon-d228c3cb/package.json'
+npm ERR! 
+npm ERR! If you need help, you may report this error at:
+npm ERR!     <https://github.com/npm/npm/issues>
+npm ERR! Please include the following file with any support request:
+npm ERR!     /usr/src/ext/npm-debug.log
+> There was an error installing dependencies on /ext folder.
+Error: Failed to find ext/node_modules/argob-poncho/dist/css/poncho.css from /usr/src/ext/lib/admin/boot/boot.css in [
+    node_modules/tags-input,
+    lib/simple-line-icons,
+    node_modules/democracyos-quill/dist,
+    node_modules/democracyos-aurora-tip,
+    node_modules/democracyos-aurora-popover,
+    node_modules/democracyos-aurora-calendar,
+    node_modules/democracyos-calendar/lib,
+    node_modules/democracyos-datepicker,
+    node_modules/democracyos-tip,
+    node_modules/overlay-component,
+    node_modules/dialog-component,
+    node_modules/democracyos-confirmation,
+    node_modules/democracyos-loading-lock,
+    node_modules/democracyos-toggle/lib,
+    .,
+    /usr/src/ext/lib/admin/boot
+    at exists (/usr/src/node_modules/rework-import/index.js:109:9)
+    at /usr/src/node_modules/rework-import/index.js:162:17
+    at Array.forEach (native)
+    at run (/usr/src/node_modules/rework-import/index.js:143:8)
+    at /usr/src/node_modules/rework-import/index.js:192:3
+    at Rework.use (/usr/src/node_modules/rework/index.js:50:3)
+    at DestroyableTransform._transform (/usr/src/node_modules/gulp-concat-css/index.js:90:37)
+    at DestroyableTransform.Transform._read (/usr/src/node_modules/gulp-concat-css/node_modules/readable-stream/lib/_stream_transform.js:184:10)
+    at DestroyableTransform.Transform._write (/usr/src/node_modules/gulp-concat-css/node_modules/readable-stream/lib/_stream_transform.js:172:12)
+    at doWrite (/usr/src/node_modules/gulp-concat-css/node_modules/readable-stream/lib/_stream_writable.js:279:12)
+npm ERR! Linux 3.10.0-1160.88.1.el7.x86_64
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "build" "--" "--minify"
+npm ERR! node v6.15.1
+npm ERR! npm  v3.10.10
+npm ERR! code ELIFECYCLE
+npm ERR! democracyos@2.build: `NODE_PATH=. gulp build "--minify"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the democracyos@2.build script 'NODE_PATH=. gulp build "--minify"'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the democracyos package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     NODE_PATH=. gulp build "--minify"
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs democracyos
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls democracyos
+npm ERR! There is likely additional logging output above.
+npm ERR! Please include the following file with any support request:
+npm ERR!     /usr/src/npm-debug.log
+ERROR: process "/bin/sh -c npm run build -- --minify" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

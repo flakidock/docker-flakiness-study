@@ -1,0 +1,71 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM alpine:3.8
+
+RUN apk update \
+    && apk add python py-pip rsyslog rsyslog-tls ca-certificates openssl \
+    && pip install awscli
+
+COPY run.py /run.py
+COPY crontab.txt /crontab.txt
+COPY crontab-syslog.txt /crontab-syslog.txt
+COPY rsyslog.conf /etc/rsyslog.conf
+COPY entry.sh /entry.sh
+
+RUN chmod 755 /entry.sh
+
+CMD ["/entry.sh"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/8] RUN apk update     && apk add python py-pip rsyslog rsyslog-tls ca-certificates openssl     && pip install awscli:
+    Complete output from command python setup.py egg_info:
+    running egg_info
+    creating pip-egg-info/PyYAML.egg-info
+    writing pip-egg-info/PyYAML.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/PyYAML.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/PyYAML.egg-info/dependency_links.txt
+    writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-install-3SDpZ8/PyYAML/setup.py", line 295, in <module>
+        python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+      File "/tmp/pip-build-env-ZForDR/lib/python2.7/site-packages/setuptools/__init__.py", line 162, in setup
+        return distutils.core.setup(**attrs)
+      File "/usr/lib/python2.7/distutils/core.py", line 151, in setup
+        dist.run_commands()
+      File "/usr/lib/python2.7/distutils/dist.py", line 953, in run_commands
+        self.run_command(cmd)
+      File "/usr/lib/python2.7/distutils/dist.py", line 972, in run_command
+        cmd_obj.run()
+      File "/tmp/pip-build-env-ZForDR/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 296, in run
+        self.find_sources()
+      File "/tmp/pip-build-env-ZForDR/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 303, in find_sources
+        mm.run()
+      File "/tmp/pip-build-env-ZForDR/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 534, in run
+        self.add_defaults()
+      File "/tmp/pip-build-env-ZForDR/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 570, in add_defaults
+        sdist.add_defaults(self)
+      File "/tmp/pip-build-env-ZForDR/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 36, in add_defaults
+        self._add_defaults_ext()
+      File "/tmp/pip-build-env-ZForDR/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+        self.filelist.extend(build_ext.get_source_files())
+      File "/tmp/pip-install-3SDpZ8/PyYAML/setup.py", line 201, in get_source_files
+        self.cython_sources(ext.sources, ext)
+      File "/usr/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+        raise AttributeError, attr
+    AttributeError: cython_sources
+    
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-3SDpZ8/PyYAML/
+You are using pip version 10.0.1, however version 20.is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+ERROR: process "/bin/sh -c apk update     && apk add python py-pip rsyslog rsyslog-tls ca-certificates openssl     && pip install awscli" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

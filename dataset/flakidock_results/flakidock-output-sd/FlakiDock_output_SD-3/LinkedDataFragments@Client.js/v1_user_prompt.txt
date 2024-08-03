@@ -1,0 +1,55 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM node:4.2.2
+
+# Install location
+ENV dir /opt/ldf-client
+
+# Copy the client files
+ADD . ${dir}
+
+# Install the node module
+RUN cd ${dir} && npm install
+
+# Run base binary
+WORKDIR ${dir}
+ENTRYPOINT ["node", "bin/ldf-client"]
+
+# Default command
+CMD ["--help"]
+
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/4] RUN cd /opt/ldf-client && npm install:
+npm info install eslint@3.19.0
+npm info postinstall eslint@3.19.0
+npm ERR! Linux 3.10.0-1127.el7.x86_64
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+npm ERR! node v4.2.2
+npm ERR! npm  v2.14.7
+npm ERR! path /opt/ldf-client/node_modules/jsdoc/node_modules/@types/markdown-it/node_modules/@types/linkify-it/package.json
+npm ERR! code ENOTDIR
+npm ERR! errno -20
+npm ERR! syscall open
+npm ERR! ENOTDIR: not a directory, open '/opt/ldf-client/node_modules/jsdoc/node_modules/@types/markdown-it/node_modules/@types/linkify-it/package.json'
+npm ERR! 
+npm ERR! If you need help, you may report this error at:
+npm ERR!     <https://github.com/npm/npm/issues>
+npm info preuninstall @types/markdown-it@12.2.3
+npm info uninstall @types/markdown-it@12.2.3
+npm info postuninstall @types/markdown-it@12.2.3
+npm info preuninstall jsdoc@3.6.11
+npm info uninstall jsdoc@3.6.11
+npm info postuninstall jsdoc@3.6.11
+npm ERR! Please include the following file with any support request:
+npm ERR!     /opt/ldf-client/npm-debug.log
+ERROR: process "/bin/sh -c cd ${dir} && npm install" did not complete successfully: exit code: 236```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

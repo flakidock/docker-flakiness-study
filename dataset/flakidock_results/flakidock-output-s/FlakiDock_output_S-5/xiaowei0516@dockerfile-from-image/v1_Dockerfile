@@ -1,0 +1,9 @@
+# Dockerfile
+FROM alpine
+
+RUN apk add --update python3 py3-pip \
+    && pip3 install -U docker-py
+
+COPY entrypoint.py /root
+
+ENTRYPOINT ["python3", "/root/entrypoint.py"]

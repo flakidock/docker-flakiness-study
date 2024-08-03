@@ -1,0 +1,31 @@
+# Dockerfile
+FROM golang:1.13-stretch as builder
+
+ENV GO111MODULE=on
+ENV GOPROXY=https://goproxy.io
+
+RUN mkdir -p /go/src/github.com/Kucoin/kumex-level3-sdk
+
+COPY . /go/src/github.com/Kucoin/kumex-level3-sdk
+
+RUN cd /go/src/github.com/Kucoin/kumex-level3-sdk \
+    && go mod download \
+    && CGO_ENABLED=0 go build -ldflags '-s -w' -o /go/bin/kumex_market kumex_market.go
+
+FROM debian:stretch
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=builder /go/bin/kumex_market /usr/local/bin/
+
+WORKDIR /app
+VOLUME /app
+
+EXPOSE 9090
+
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["kumex_market", "-c", "/app/.env", "-symbol", "XBTUSDM", "-p", "9090", "-rpckey", "XBTUSDM"]

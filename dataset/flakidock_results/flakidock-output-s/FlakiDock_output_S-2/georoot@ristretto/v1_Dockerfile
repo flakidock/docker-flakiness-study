@@ -1,0 +1,29 @@
+# Dockerfile
+FROM node:boron
+
+# Install dependencies and tools in a single RUN command to reduce layers and ensure consistency
+RUN apt-get update && \
+    apt-get -y install openssh-client nginx && \
+    ssh-keygen -q -t rsa -N '' -f /id_rsa && \
+    rm /etc/nginx/sites-enabled/default
+
+# Create app directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Install app dependencies
+COPY package.json /usr/src/app/
+RUN npm install
+
+# Bundle app source
+COPY . /usr/src/app
+
+# Copy nginx configuration
+COPY config/nginx/default /etc/nginx/sites-enabled/
+
+# Expose ports
+EXPOSE 8090
+EXPOSE 80
+
+# Start services
+CMD service nginx start && node bin/ristretto.js

@@ -1,0 +1,38 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM gcc
+# Instructions copied from https://thenewstack.io/ruby-in-containers/
+RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+RUN curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+RUN curl -L https://get.rvm.io | bash -s stable
+ENV PATH /usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+RUN rvm install ruby-2.7.1
+COPY . /Lilly-Medchem-Rules
+WORKDIR /Lilly-Medchem-Rules
+RUN make
+RUN [ "/bin/bash", "-l", "-c", ". /etc/profile && rvm use 2.7.1 > /dev/null && make test" ]
+# docker run -i -a stdout -a stdin ianwatson/lilly_medchem_rules:v1.2 < file.smi
+CMD /bin/bash -c ". /etc/profile && rvm use 2.7.1 > /dev/null && /Lilly-Medchem-Rules/Lilly_Medchem_Rules.rb -i smi -"
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [5/9] RUN rvm install ruby-2.7.1:
+Requirements installation successful.
+Installing Ruby from source to: /usr/local/rvm/rubies/ruby-2.7.1, this may take a while depending on your cpu(s)...
+ruby-2.- #downloading ruby-2.7.1, this may take a while depending on your connection...
+ruby-2.- #extracting ruby-2.to /usr/local/rvm/src/ruby-2.7.1.....
+ruby-2.- #configuring.......................................................................
+ruby-2.- #post-configuration..
+ruby-2.- #compiling..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Error running '__rvm_make -j24',
+please read /usr/local/rvm/log/1722494712_ruby-2.7.1/make.log
+There has been an error while running make. Halting the installation.
+ERROR: process "/bin/sh -c rvm install ruby-2.7.1" did not complete successfully: exit code: 2```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

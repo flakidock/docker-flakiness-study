@@ -1,0 +1,52 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM jenkins/jenkins:lts
+MAINTAINER yuequan1997@gamil.com
+# for main web interface:
+EXPOSE ${http_port}
+# will be used by attached slave agents:
+EXPOSE ${agent_port}
+USER ${user}
+
+
+
+RUN \
+    echo "deb http://mirrors.aliyun.com/debian stretch main contrib non-free" > /etc/apt/sources.list && \
+    echo "deb-src http://mirrors.aliyun.com/debian stretch main contrib non-free" >> /etc/apt/sources.list && \
+    echo "deb http://mirrors.aliyun.com/debian stretch-updates main contrib non-free" >> /etc/apt/sources.list && \
+    echo "deb-src http://mirrors.aliyun.com/debian stretch-updates main contrib non-free" >> /etc/apt/sources.list && \
+    echo "deb http://mirrors.aliyun.com/debian-security stretch/updates main contrib non-free" >> /etc/apt/sources.list && \
+    echo "deb-src http://mirrors.aliyun.com/debian-security stretch/updates main contrib non-free" >> /etc/apt/sources.list
+RUN apt-get clean all && apt-get update
+
+ENV DOCKERVERSION=17.12.0-ce
+RUN curl -fsSLO https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/static/stable/x86_64/docker-${DOCKERVERSION}.tgz \
+  && mv docker-${DOCKERVERSION}.tgz docker.tgz \
+  && tar xzvf docker.tgz \
+  && mv docker/docker /usr/local/bin \
+  && rm -r docker docker.tgz
+
+ENV DOCKER_COMPOSE_VERSION=1.20.1
+RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose \
+    && chmod +x /usr/local/bin/docker-compose```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/5] RUN apt-get clean all && apt-get update:
+Err:12 http://mirrors.aliyun.com/debian stretch Release
+  404  Not Found [IP: 47.246.80]
+Err:13 http://mirrors.aliyun.com/debian stretch-updates Release
+  404  Not Found [IP: 47.246.80]
+Err:14 http://mirrors.aliyun.com/debian-security stretch/updates Release
+  404  Not Found [IP: 47.246.80]
+E: The repository 'http://mirrors.aliyun.com/debian stretch Release' does not have a Release file.
+E: The repository 'http://mirrors.aliyun.com/debian stretch-updates Release' does not have a Release file.
+E: The repository 'http://mirrors.aliyun.com/debian-security stretch/updates Release' does not have a Release file.
+ERROR: process "/bin/sh -c apt-get clean all && apt-get update" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

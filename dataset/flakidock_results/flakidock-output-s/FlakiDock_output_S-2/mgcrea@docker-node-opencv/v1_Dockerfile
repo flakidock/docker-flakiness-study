@@ -1,0 +1,64 @@
+# Dockerfile
+FROM node:6
+MAINTAINER Olivier Louvignes <olivier@mg-crea.com>
+
+ARG OPENCV_VERSION
+ENV OPENCV_VERSION ${OPENCV_VERSION:-2.4.13.3}
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    unzip \
+    cmake \
+    libv4l-dev \
+    beignet-dev \
+    opencl-headers \
+    curl \
+    build-essential \
+    pkg-config \
+    libjpeg-dev \
+    libtiff-dev \
+    libjasper-dev \
+    libpng-dev \
+    libavcodec-dev \
+    libavformat-dev \
+    libswscale-dev \
+    libdc1394-22-dev \
+    libxine2-dev \
+    libv4l-dev \
+    libgstreamer0.10-dev \
+    libgstreamer-plugins-base0.10-dev \
+    libgtk2.0-dev \
+    libtbb-dev \
+    libatlas-base-dev \
+    libfaac-dev \
+    libmp3lame-dev \
+    libtheora-dev \
+    libvorbis-dev \
+    libxvidcore-dev \
+    x264 \
+    v4l-utils \
+    \
+  && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/local
+RUN curl -SLO "https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.tar.gz" \
+  && tar -xzvf ${OPENCV_VERSION}.tar.gz \
+  && mv /usr/local/opencv-${OPENCV_VERSION} /usr/local/opencv \
+  && rm ${OPENCV_VERSION}.tar.gz
+
+RUN mkdir /usr/local/opencv/build
+WORKDIR /usr/local/opencv/build
+RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
+      -D BUILD_PYTHON_SUPPORT=ON \
+      -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D WITH_OPENGL=ON \
+      -D WITH_TBB=OFF \
+      -D BUILD_EXAMPLES=ON \
+      -D BUILD_NEW_PYTHON_SUPPORT=ON \
+      -D WITH_V4L=ON \
+      -D WITH_OPENCL=ON \
+      ..
+
+RUN make -j$(nproc)
+RUN make install
+WORKDIR /usr/src/app

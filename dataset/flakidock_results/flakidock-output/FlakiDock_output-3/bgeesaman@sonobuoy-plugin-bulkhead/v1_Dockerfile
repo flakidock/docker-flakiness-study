@@ -1,0 +1,21 @@
+FROM buildpack-deps:bullseye-scm
+MAINTAINER Brad Geesaman "bradgeesaman+github@gmail.com"
+
+RUN apt-get update && apt-get -y --no-install-recommends install \
+    ca-certificates \
+    && rm -rf /var/cache/apt/* \
+    && rm -rf /var/lib/apt/lists/* 
+
+# Grab latest kubectl binary
+RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
+    && mkdir -p /usr/local/bin \
+    && chmod +x kubectl \
+    && mv kubectl /usr/local/bin
+
+# Copy in needed files to root of image
+COPY kube-bench /kube-bench
+COPY cfg/ /cfg
+
+# Kick off tests script
+COPY run_checks.sh /run_checks.sh
+CMD ["/bin/bash", "-c", "/run_checks.sh"]

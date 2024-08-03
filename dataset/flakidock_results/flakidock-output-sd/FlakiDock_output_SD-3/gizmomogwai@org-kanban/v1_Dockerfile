@@ -1,0 +1,5 @@
+FROM alpine:latest
+RUN apk --no-cache add emacs-nox
+RUN mkdir -p /workspace
+RUN emacs --batch --eval "(progn (package-initialize) (message \"1\") (setq network-security-level 'low) (message \"2\") (add-to-list 'package-archives '(\"melpa\" . \"https://melpa.org/packages/\") t) (message \"3\") (package-refresh-contents) (message \"4\") (sleep-for 4) (package-install 'org-kanban))"
+CMD ["emacs"]

@@ -1,0 +1,57 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# Run 'docker build --target rockerh3 -t crazycapivara/rocker-h3-only:latest .',
+# if you want to build the image without 'sf'
+
+FROM rocker/tidyverse:3.5.3 AS rockerh3
+
+LABEL maintainer="Stefan Kuethe <crazycapivara@gmail.com>"
+
+ENV BRANCH master
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends cmake
+
+# RUN git clone --single-branch -b $BRANCH https://github.com/crazycapivara/h3-r.git
+COPY . /h3-r
+
+RUN cd h3-r \
+  && chmod +x install-h3c.sh \
+  && bash ./install-h3c.sh \
+  && R -q -e 'devtools::install()' \
+  && cd .. \
+  && rm -rf h3-r
+
+FROM rockerh3 AS rockerh3sf
+
+RUN apt-get install -y --no-install-recommends \
+  libudunits2-dev \
+  libgdal-dev
+
+RUN install2.r --error \
+  sf \
+  leaflet
+
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [rockerh3 2/4] RUN apt-get update   && apt-get install -y --no-install-recommends cmake:
+Ign:1 http://security.debian.org/debian-security stretch/updates InRelease
+Err:2 http://security.debian.org/debian-security stretch/updates Release
+  404  Not Found [IP: 151.101.80]
+Err:5 http://deb.debian.org/debian stretch Release
+  404  Not Found
+Err:6 http://deb.debian.org/debian stretch-updates Release
+  404  Not Found
+E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does no longer have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch Release' does no longer have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' does no longer have a Release file.
+ERROR: process "/bin/sh -c apt-get update   && apt-get install -y --no-install-recommends cmake" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

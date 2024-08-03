@@ -1,0 +1,131 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ubuntu:16.04
+
+#Author
+MAINTAINER dangminhtruong
+
+#Work dir 
+
+WORKDIR /app
+ADD . /app
+
+#Install curl 
+RUN apt-get update && apt-get install -y curl
+
+# Install Nodejs, Nodemon, Eslint, Babel-.., Yarn
+RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g nodemon eslint babel-eslint eslint-plugin-react yarn
+# install packages
+RUN npm install
+
+# install mongoDB
+
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+
+RUN apt update -y && apt-get install -y mongodb-org
+
+CMD ["sh","-c","service mongod start ; nodemon -L; cd database/seeder && node category_seeder.js && node product_seeder.js"]
+
+EXPOSE 3000```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [9/9] RUN apt update -y && apt-get install -y mongodb-org:
+================================================================================
+================================================================================
+                              DEPRECATION WARNING                            
+  Node.js 9.x is no longer actively supported!
+  You will not receive security or critical stability updates for this version.
+  You should migrate to a supported version of Node.js as soon as possible.
+  Use the installation script that corresponds to the version of Node.js you
+  wish to install. e.g.
+   * https://deb.nodesource.com/setup_16.x — Node.js 16 "Gallium"
+   * https://deb.nodesource.com/setup_18.x — Node.js 18 LTS "Hydrogen" (recommended)
+   * https://deb.nodesource.com/setup_19.x — Node.js 19 "Nineteen"
+   * https://deb.nodesource.com/setup_20.x — Node.js 20 "Iron" (current)
+  Please see https://github.com/nodejs/Release for details about which
+  version may be appropriate for you.
+  The NodeSource Node.js distributions repository contains
+  information both about supported versions of Node.js and supported Linux
+  distributions. To learn more about usage, see the repository:
+    https://github.com/nodesource/distributions
+================================================================================
+================================================================================
+Continuing in 20 seconds ...
+================================================================================
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+================================================================================
+                           SCRIPT DEPRECATION WARNING                    
+  
+  This script, located at https://deb.nodesource.com/setup_X, used to
+  install Node.js is deprecated now and will eventually be made inactive.
+  Please visit the NodeSource distributions Github and follow the
+  instructions to migrate your repo.
+  https://github.com/nodesource/distributions
+  The NodeSource Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to install it.
+  https://github.com/nodesource/distributions
+                          SCRIPT DEPRECATION WARNING
+================================================================================
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+================================================================================
+TO AVOID THIS WAIT MIGRATE THE SCRIPT
+Continuing in 60 seconds (press Ctrl-C to abort) ...
+## Installing the NodeSource Node.js 9.x repo...
+## Populating apt-get cache...
++ apt-get update
+## Installing packages required for setup: apt-transport-https lsb-release...
++ apt-get install -y apt-transport-https lsb-release > /dev/null 2>&1
+## Confirming "xenial" is supported...
++ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_9.x/dists/xenial/Release'
+## Adding the NodeSource signing key to your keyring...
++ curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee /usr/share/keyrings/nodesource.gpg >/dev/null
+## Creating apt sources list file for the NodeSource Node.js 9.x repo...
+## Running `apt-get update` for you...
++ apt-get update
+## Run `sudo apt-get install -y nodejs` to install Node.js 9.x and npm
+## You may also need development tools to build native addons:
+     sudo apt-get install gcc g++ make
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+     echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn
+Reading package lists...
+Unpacking nodejs (9.11.2-1nodesource1) ...
+> yarn@1.preinstall /usr/lib/node_modules/yarn
+> :; (node ./preinstall.js > /dev/null 2>&1 || true)
++ eslint-plugin-react@7.35.0
++ babel-eslint@10.1.0
++ nodemon@3.1.4
++ yarn@1.22.22
++ eslint@9.8.0
+added 262 packages in 11.946s
+> typechecker@2.preinstall /app/node_modules/extract-opts/node_modules/typechecker
+> node ./cyclic.js
+> typechecker@2.preinstall /app/node_modules/extendr/node_modules/typechecker
+> node ./cyclic.js
+gpg: key E52529D4: public key "MongoDB Release Signing Key <packaging@mongodb.com>" imported
+[8/9] RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/multiverse
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Ign:3 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:5 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/Release [3457 B]
+Hit:6 http://archive.ubuntu.com/ubuntu xenial-updates InRelease
+Hit:7 http://archive.ubuntu.com/ubuntu xenial-backports InRelease
+Get:8 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/Release.gpg [801 B]
+Ign:8 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/Release.gpg
+W: GPG error: https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/Release: The following signatures were invalid: KEYEXPIRED 1681763820
+E: The repository 'https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/Release' is not signed.
+ERROR: process "/bin/sh -c apt update -y && apt-get install -y mongodb-org" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

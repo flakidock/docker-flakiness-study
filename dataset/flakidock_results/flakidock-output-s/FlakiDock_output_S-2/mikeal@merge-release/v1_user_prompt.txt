@@ -1,0 +1,31 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM node:12-slim
+
+LABEL version="1.0.0"
+LABEL repository="http://github.com/mikeal/merge-release"
+LABEL homepage="http://github.com/merge-release"
+LABEL maintainer="Mikeal Rogers <mikeal.rogers@gmail.com>"
+
+LABEL com.github.actions.name="Automated releases for npm packages."
+LABEL com.github.actions.description="Release npm package based on commit metadata."
+LABEL com.github.actions.icon="package"
+LABEL com.github.actions.color="red"
+
+RUN apt-get update && apt-get -y --no-install-recommends install git jq findutils curl ca-certificates && rm -rf /var/lib/apt/lists/*
+
+COPY . .
+
+# Install dependencies here
+RUN cd src && npm i
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["help"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

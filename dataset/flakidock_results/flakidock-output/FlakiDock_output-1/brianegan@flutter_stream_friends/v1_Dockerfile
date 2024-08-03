@@ -1,0 +1,16 @@
+FROM johnpryan/dart-content-shell-docker
+
+MAINTAINER brian@brianegan.com
+
+RUN apt-get update && apt-get install -y --no-install-recommends apt-transport-https ca-certificates gnupg
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E88979FB9B30ACF2
+RUN echo "deb https://storage.googleapis.com/download.dartlang.org/linux/debian stable main" > /etc/apt/sources.list.d/dart_stable.list
+
+RUN apt-get update
+RUN apt-get install -y lcov git-core libglu1
+
+WORKDIR /
+RUN git clone https://github.com/flutter/flutter.git
+RUN /flutter/bin/flutter
+
+ENV PATH $PATH:/usr/lib/dart/bin:/flutter/bin

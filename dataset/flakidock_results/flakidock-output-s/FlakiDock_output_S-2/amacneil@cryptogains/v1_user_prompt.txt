@@ -1,0 +1,34 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM node:12
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install postgresql-client
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends postgresql-client \
+  && rm -rf /var/lib/apt/lists/*
+
+# install dbmate
+RUN curl -fsSL -o /usr/local/bin/dbmate \
+    https://github.com/amacneil/dbmate/releases/download/v1.4.1/dbmate-linux-amd64 \
+  && chmod +x /usr/local/bin/dbmate
+
+# create app directory
+RUN mkdir /app
+WORKDIR /app
+
+# install packages
+COPY package.json yarn.lock /app/
+RUN yarn install
+
+# copy remaining files
+COPY . /app/
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

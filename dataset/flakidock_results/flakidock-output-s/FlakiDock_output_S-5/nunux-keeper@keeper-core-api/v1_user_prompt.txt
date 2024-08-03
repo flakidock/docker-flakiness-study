@@ -1,0 +1,27 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+# Nunux Keeper core API server.
+#
+# VERSION 2.0
+
+FROM node:6-onbuild
+
+MAINTAINER Nicolas Carlier <https://github.com/ncarlier>
+
+# Create storage directory
+RUN bash -c 'mkdir -p /var/opt/app/storage/{upload,exports}'
+
+# Ports
+EXPOSE 3000 8080
+
+ENTRYPOINT ["/usr/local/bin/npm"]
+
+CMD ["start"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

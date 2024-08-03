@@ -1,0 +1,11 @@
+FROM debian:stretch
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+
+RUN apt-get update
+RUN apt-get -y install curl gpg rake
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get -y install nodejs
+
+WORKDIR /braintree-node

@@ -1,0 +1,29 @@
+# Dockerfile
+FROM golang:1.11-alpine AS builder
+
+# Prepare dependencies
+RUN apk add --no-cache git
+
+ENV GO111MODULE=on
+
+# Include sources
+COPY . /go/src/github.com/kocircuit/kocircuit/
+
+# Build ko
+WORKDIR /go/src/github.com/kocircuit/kocircuit/
+RUN go get -d ./... && \
+    go build -o /go/bin/ko ./lang/ko
+
+# Package ko container
+FROM alpine
+
+ENV GOPATH=/ko
+WORKDIR $GOPATH
+
+# Copy binary
+COPY --from=builder /go/bin/ko /usr/bin/
+
+# Copy library sources
+COPY ./lib/ /ko/src/github.com/kocircuit/kocircuit/lib/
+
+ENTRYPOINT [ "/usr/bin/ko" ]

@@ -1,0 +1,32 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM amazonlinux:latest
+
+MAINTAINER Ryan Means <ryan.means@lifeway.com>
+
+RUN yum -y update && yum -y install zip
+
+# JAVA & SBT
+RUN yum -y install java-1.8.0 && \
+    curl -L https://www.scala-sbt.org/sbt-rpm.repo | tee /etc/yum.repos.d/sbt-rpm.repo && \
+    yum -y install sbt
+
+# PYTHON
+RUN yum -y install python3 python3-virtualenv python3-pip
+
+# NODE & YARN
+RUN rpm --import https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL && \
+    rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg && \
+    curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo && \
+    curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - && \
+    yum -y install yarn
+
+RUN yum clean all
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

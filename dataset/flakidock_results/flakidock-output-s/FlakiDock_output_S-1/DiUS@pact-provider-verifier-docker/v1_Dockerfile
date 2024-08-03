@@ -1,0 +1,16 @@
+# Dockerfile
+FROM ruby:2-alpine
+
+COPY Gemfile /app/
+COPY Gemfile.lock /app/
+RUN apk add --no-cache --virtual .build-deps build-base && \
+    gem install bundler && \
+    cd /app && bundle install && \
+    apk del .build-deps && \
+    rm -r ~/.bundle/ /usr/local/bundle/cache
+
+COPY src/ /app/
+
+WORKDIR /app
+
+CMD ["bundle", "exec", "rake", "verify_pacts"]

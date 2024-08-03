@@ -1,0 +1,57 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM node:14.10
+LABEL maintainer="Ali Khalili hyperir@gmail.com"
+# Update aptitude with new repo
+RUN apt-get update
+# Install software
+RUN apt-get install -y git
+
+RUN mkdir /ld-r
+WORKDIR /ld-r
+
+RUN npm install webpack -g
+
+ADD package.json /ld-r/
+RUN npm install
+
+ADD . /ld-r
+#handle initial configs
+RUN if [ ! -e "/ld-r/configs/general.js" ]; then cp /ld-r/configs/general.sample.js /ld-r/configs/general.js ; fi
+RUN if [ ! -e "/ld-r/configs/server.js" ]; then cp /ld-r/configs/server.sample.js /ld-r/configs/server.js ; fi
+RUN if [ ! -e "/ld-r/configs/reactor.js" ]; then cp /ld-r/configs/reactor.sample.js /ld-r/configs/reactor.js ; fi
+RUN if [ ! -e "/ld-r/configs/facets.js" ]; then cp /ld-r/configs/facets.sample.js /ld-r/configs/facets.js ; fi
+RUN if [ ! -e "/ld-r/plugins/email/config.js" ]; then cp /ld-r/plugins/email/config.sample.js /ld-r/plugins/email/config.js ; fi
+
+#specify the port used by ld-r app
+EXPOSE 4000
+
+ENTRYPOINT ["npm", "run", "build"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 2/14] RUN apt-get update:
+Err:4 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+  404  Not Found
+Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+  404  Not Found
+Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+  404  Not Found
+Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+Reading package lists...
+W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+ERROR: process "/bin/sh -c apt-get update" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

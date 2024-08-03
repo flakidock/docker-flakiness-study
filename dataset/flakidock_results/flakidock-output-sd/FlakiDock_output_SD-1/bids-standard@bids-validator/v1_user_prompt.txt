@@ -1,0 +1,43 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM node:14-alpine
+
+COPY . /src
+
+RUN npm install -g npm
+WORKDIR /src
+RUN npm install 
+RUN npm -w bids-validator run build
+RUN npm -w bids-validator pack
+RUN npm install -g bids-validator-*.tgz
+
+ENTRYPOINT ["/usr/local/bin/bids-validator"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [5/8] RUN npm install:
+ERROR: npm v10.is known not to run on Node.js v14.21.3.  This version of npm supports the following node versions: `^18.|| >=20.5.0`. You can find the latest version at https://nodejs.org/.
+ERROR:
+/usr/local/lib/node_modules/npm/lib/utils/error-message.js:11
+  er.message &&= replaceInfo(er.message)
+             ^^^
+SyntaxError: Unexpected token '&&='
+    at wrapSafe (internal/modules/cjs/loader.js:1029:16)
+    at Module._compile (internal/modules/cjs/loader.js:1078:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:979:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:819:12)
+    at Module.require (internal/modules/cjs/loader.js:1003:19)
+    at require (internal/modules/cjs/helpers.js:107:18)
+    at Object.<anonymous> (/usr/local/lib/node_modules/npm/lib/cli/exit-handler.js:2:48)
+    at Module._compile (internal/modules/cjs/loader.js:1114:14)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+ERROR: process "/bin/sh -c npm install" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

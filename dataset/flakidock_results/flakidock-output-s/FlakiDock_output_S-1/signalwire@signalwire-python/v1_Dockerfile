@@ -1,0 +1,13 @@
+# Dockerfile
+FROM python:3.10-alpine
+
+COPY . /app
+WORKDIR /app
+
+# Install dependencies in a single RUN command to reduce layers and potential issues
+RUN apk add --no-cache gcc musl-dev libffi-dev && \
+    pip install --upgrade pip && \
+    pip install pipenv && \
+    pipenv install --dev
+
+CMD ["pipenv", "run", "pytest"]

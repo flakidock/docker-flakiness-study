@@ -1,0 +1,51 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM golang:1.14-stretch
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV VER 6.4
+
+RUN /bin/bash -c \
+	'curl -s https://packagecloud.io/install/repositories/varnishcache/varnish${VER/./}/script.deb.sh | /bin/bash' \
+	&& apt-get install -y \
+	  libjemalloc1 \
+	  pkg-config \
+	  varnish \
+	  varnish-dev \
+	&& apt-get clean && rm -rf /var/lib/apt/lists/*
+
+ADD . $GOPATH/src/github.com/phenomenes/varnishlogbeat
+
+WORKDIR $GOPATH/src/github.com/phenomenes/varnishlogbeat
+
+ADD default.vcl /etc/varnish/default.vcl
+ADD docker-entrypoint.sh /docker-entrypoint.sh
+
+RUN sed -i 's/localhost:9200/elasticsearch:9200/' \
+	$GOPATH/src/github.com/phenomenes/varnishlogbeat/varnishlogbeat.yml \
+	&& go build .
+
+EXPOSE 8080
+
+CMD /docker-entrypoint.sh
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/7] RUN /bin/bash -c 	'curl -s https://packagecloud.io/install/repositories/varnishcache/varnish${VER/./}/script.deb.sh | /bin/bash' 	&& apt-get install -y 	  libjemalloc1 	  pkg-config 	  varnish 	  varnish-dev 	&& apt-get clean && rm -rf /var/lib/apt/lists/*:
+The repository is setup! You can now install packages.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package libjemalloc1 is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+E: Package 'libjemalloc1' has no installation candidate
+ERROR: process "/bin/sh -c /bin/bash -c \t'curl -s https://packagecloud.io/install/repositories/varnishcache/varnish${VER/./}/script.deb.sh | /bin/bash' \t&& apt-get install -y \t  libjemalloc1 \t  pkg-config \t  varnish \t  varnish-dev \t&& apt-get clean && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

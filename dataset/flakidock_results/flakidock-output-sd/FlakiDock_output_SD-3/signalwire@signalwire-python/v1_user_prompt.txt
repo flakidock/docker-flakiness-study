@@ -1,0 +1,33 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM python:3.10-alpine
+
+COPY . /app
+WORKDIR /app
+
+RUN pip install --upgrade pip && pip install pipenv && pipenv install --dev
+
+CMD ["pipenv", "run", "pytest"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/4] RUN pip install --upgrade pip && pip install pipenv && pipenv install --dev:
+42.01 [pipenv.exceptions.InstallError]: note: This error originates from a subprocess, and is likely not a problem with pip.
+42.01 ERROR: Couldn't install package: {}
+42.01  Package installation failed...
+42.02 /usr/local/lib/python3.10/subprocess.py:1072: ResourceWarning: subprocess 104 is still running
+42.02   _warn("subprocess %s is still running" % self.pid,
+42.02 ResourceWarning: Enable tracemalloc to get the object allocation traceback
+42.02 sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='utf-8'>
+42.02 ResourceWarning: Enable tracemalloc to get the object allocation traceback
+42.02 sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name=7 encoding='utf-8'>
+42.02 ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ERROR: process "/bin/sh -c pip install --upgrade pip && pip install pipenv && pipenv install --dev" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

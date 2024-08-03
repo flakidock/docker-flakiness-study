@@ -1,0 +1,42 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM golang:1.12.3-stretch
+
+RUN apt-get update
+# install bats
+RUN git clone https://github.com/sstephenson/bats.git && cd bats && ./install.sh /usr
+
+# install godap requirements
+RUN apt-get install -y libpcap0.8-dev libgeoip-dev jq
+
+# build and install godap, but call it *dap* for sake of simplifying testing between dap and godap
+WORKDIR /opt/godap
+COPY . .
+RUN go install -v -tags="libpcap libgeoip"
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/7] RUN apt-get update:
+Err:8 http://deb.debian.org/debian stretch/main amd64 Packages
+  404  Not Found
+Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+  404  Not Found
+Err:10 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+  404  Not Found
+Reading package lists...
+W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+ERROR: process "/bin/sh -c apt-get update" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

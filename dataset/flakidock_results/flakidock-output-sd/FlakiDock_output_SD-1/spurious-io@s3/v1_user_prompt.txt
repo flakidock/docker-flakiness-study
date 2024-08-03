@@ -1,0 +1,29 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ruby:2.1.4
+MAINTAINER Steven Jack <stevenmajack@gmail.com>
+
+RUN mkdir -p /var/data/fake-s3 /usr/src/app
+WORKDIR /usr/src/app
+
+RUN gem install fakes3
+
+EXPOSE 4569
+
+ENTRYPOINT ["fakes3", "-r" ,"/var/data/fake-s3", "-p", "4569"]
+
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/4] RUN gem install fakes3:
+ERROR:  Error installing fakes3:
+	thor requires Ruby version >= 2.6.0.
+ERROR: process "/bin/sh -c gem install fakes3" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

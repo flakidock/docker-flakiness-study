@@ -1,0 +1,47 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# Start with node 10.15.0
+FROM node:lts-stretch-slim
+RUN apt update && apt install --assume-yes git python curl dnsutils build-essential
+
+ARG buildtime_settings=local_docker
+ENV SETTINGS_ENV=$buildtime_settings
+
+RUN mkdir /source
+
+WORKDIR /source
+
+COPY package.json /source/
+COPY yarn.lock /source/
+
+RUN yarn install --frozen-lockfile --ignore-optional --non-interactive
+RUN yarn global add truffle@5.0.2
+
+COPY . /source/
+
+ENTRYPOINT ["/source/docker-entrypoint.sh"]
+CMD ["none"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/9] RUN apt update && apt install --assume-yes git python curl dnsutils build-essential:
+Err:3 http://security.debian.org/debian-security stretch/updates Release
+  404  Not Found [IP: 151.101.80]
+Ign:4 http://deb.debian.org/debian stretch-updates InRelease
+Err:5 http://deb.debian.org/debian stretch Release
+  404  Not Found
+Err:6 http://deb.debian.org/debian stretch-updates Release
+  404  Not Found
+Reading package lists...
+E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+ERROR: process "/bin/sh -c apt update && apt install --assume-yes git python curl dnsutils build-essential" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

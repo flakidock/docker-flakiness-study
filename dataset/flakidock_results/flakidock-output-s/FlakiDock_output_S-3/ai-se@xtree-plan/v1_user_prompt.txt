@@ -1,0 +1,27 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM ubuntu:latest
+RUN export DEBIAN_FRONTEND=noninteractive
+# Update APT
+RUN apt-get update
+# We need timezone for tk, so do that here
+RUN apt-get install -y tzdata
+# Set the timezone
+RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+RUN apt-get install -y \
+    python3 \ 
+    python3-pip \
+    python3-setuptools \
+    python3-tk
+COPY . /
+RUN pip3 install -r requirements.txt
+CMD ["python3", "xtree_plan.py"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

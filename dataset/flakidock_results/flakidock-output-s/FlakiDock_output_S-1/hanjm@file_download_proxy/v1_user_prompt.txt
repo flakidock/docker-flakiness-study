@@ -1,0 +1,18 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM golang:1.8.4-alpine3.6
+RUN apk -U add lsof git aria2
+WORKDIR /go
+ENV GOPATH=/go
+RUN go get -v github.com/hanjm/file_download_proxy/...
+WORKDIR /go/src/github.com/hanjm/file_download_proxy
+RUN go build -o fdp
+EXPOSE 8080
+CMD ["./fdp","-limit","100"]
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

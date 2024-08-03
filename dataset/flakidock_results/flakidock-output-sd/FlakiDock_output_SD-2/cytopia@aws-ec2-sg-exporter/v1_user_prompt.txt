@@ -1,0 +1,110 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM alpine:3.9 as builder
+
+RUN set -x \
+	&& apk add --no-cache \
+		gcc \
+		libffi-dev \
+		make \
+		musl-dev \
+		openssl-dev \
+		python3 \
+		python3-dev
+
+RUN set -x \
+	&& pip3 install --no-cache-dir --no-compile awscli \
+	&& rm -r /usr/lib/python3.6/site-packages/awscli/examples \
+	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
+	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf \
+	&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+'
+
+RUN set -x \
+	&& pip3 install --no-cache-dir --no-compile supervisor \
+	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
+	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+
+
+FROM alpine:3.9 as production
+LABEL \
+	maintainer="cytopia <cytopia@everythingcli.org>" \
+	repo="https://github.com/cytopia/aws-ec2-sg-exporter"
+
+RUN set -eux \
+	&& mkdir -p /var/www \
+	&& apk add --no-cache \
+		bash \
+		bind-tools \
+		curl \
+		jq \
+		python3 \
+	&& ln -sf /usr/bin/python3 /usr/bin/python \
+	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
+	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
+
+COPY --from=builder /usr/lib/python3.6/site-packages/ /usr/lib/python3.6/site-packages/
+COPY --from=builder /usr/bin/aws /usr/bin/aws
+COPY --from=builder /usr/bin/supervisord /usr/bin/supervisord
+
+COPY data/docker-entrypoint.sh /docker-entrypoint.sh
+COPY data/httpd.py /usr/bin/httpd.py
+COPY data/update-metrics.sh /usr/bin/update-metrics.sh
+
+COPY data/etc/supervisord.conf /etc/supervisord.conf
+COPY data/src/aws-ec2-sg-exporter /usr/bin/aws-ec2-sg-exporter
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder 3/4] RUN set -x 	&& pip3 install --no-cache-dir --no-compile awscli 	&& rm -r /usr/lib/python3.6/site-packages/awscli/examples 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf 	&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+':
+    Complete output from command python setup.py egg_info:
+    running egg_info
+    creating pip-egg-info/PyYAML.egg-info
+    writing pip-egg-info/PyYAML.egg-info/PKG-INFO
+    writing dependency_links to pip-egg-info/PyYAML.egg-info/dependency_links.txt
+    writing top-level names to pip-egg-info/PyYAML.egg-info/top_level.txt
+    writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-install-q6ehdefi/PyYAML/setup.py", line 295, in <module>
+        python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+      File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/__init__.py", line 153, in setup
+        return distutils.core.setup(**attrs)
+      File "/usr/lib/python3.6/distutils/core.py", line 148, in setup
+        dist.run_commands()
+      File "/usr/lib/python3.6/distutils/dist.py", line 955, in run_commands
+        self.run_command(cmd)
+      File "/usr/lib/python3.6/distutils/dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 299, in run
+        self.find_sources()
+      File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 306, in find_sources
+        mm.run()
+      File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 541, in run
+        self.add_defaults()
+      File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 578, in add_defaults
+        sdist.add_defaults(self)
+      File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 34, in add_defaults
+        self._add_defaults_ext()
+      File "/tmp/pip-build-env-83vw3_k3/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 118, in _add_defaults_ext
+        self.filelist.extend(build_ext.get_source_files())
+      File "/tmp/pip-install-q6ehdefi/PyYAML/setup.py", line 201, in get_source_files
+        self.cython_sources(ext.sources, ext)
+      File "/usr/lib/python3.6/distutils/cmd.py", line 103, in __getattr__
+        raise AttributeError(attr)
+    AttributeError: cython_sources
+    
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-q6ehdefi/PyYAML/
+You are using pip version 18.1, however version 21.is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+ERROR: process "/bin/sh -c set -x \t&& pip3 install --no-cache-dir --no-compile awscli \t&& rm -r /usr/lib/python3.6/site-packages/awscli/examples \t&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \t&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf \t&& aws --version 2>&1 | grep -E '^aws-cli/[.0-9]+'" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,10 @@
+# Dockerfile
+FROM debian:stretch
+MAINTAINER Morten "br0ns" Brøns-Pedersen <mortenbp@gmail.com>
+
+# Ensure the package list is updated and install necessary packages
+RUN apt-get update && apt-get install -y make gcc libssl-dev --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+CMD ["make"]

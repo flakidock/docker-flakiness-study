@@ -1,0 +1,18 @@
+The build error indicates that the certificate for the npm registry at "https://registry.npm.taobao.org/" has expired. To fix this, we can switch to the default npm registry or another reliable registry.
+
+Here is the repaired Dockerfile:
+
+
+FROM mhart/alpine-node:9
+
+WORKDIR /app
+COPY . /app
+
+RUN rm -f package-lock.json \
+    ; rm -rf .idea \
+    ; rm -rf node_modules \
+    ; npm config set registry "https://registry.npmjs.org/" \
+    && npm install
+
+EXPOSE 3001
+CMD ["npm", "run", "dev"]

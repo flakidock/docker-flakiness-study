@@ -1,0 +1,23 @@
+# dockeré¨ç½²
+# 1. docker build --build-arg EGG_SERVER_ENV=prod -t app .
+# 2. docker run -d -e EGG_SERVER_ENV=prod --name app -p 7001:7001 app:latest
+
+# å®è£nodeç¯å¢ https://github.com/mhart/alpine-node
+FROM mhart/alpine-node:8.9
+
+# åå»ºappç®å½
+RUN mkdir -p /usr/local/project/
+COPY . /usr/local/project/
+WORKDIR /usr/local/project/
+
+# å®è£ä¾èµ
+RUN npm i --registry=https://registry.npm.taobao.org && npm cache clean --force;
+
+# ç¼è¯
+ARG EGG_SERVER_ENV
+ENV EGG_SERVER_ENV=${EGG_SERVER_ENV:-prod}
+RUN npm run build
+
+# è¿è¡
+EXPOSE 7001
+CMD npm run start

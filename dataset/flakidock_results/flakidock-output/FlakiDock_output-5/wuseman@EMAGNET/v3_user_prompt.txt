@@ -1,0 +1,777 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM "ubuntu:18.04"
+MAINTAINER "M2kar<m2kar.cn@gmail.com>"
+ARG EMAGNET_VERSION=3.4
+RUN apt update \
+    && apt-get install -y --no-install-recommends \
+        inetutils-ping \
+        wget \
+        curl \
+        screen \
+        ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+RUN curl https://codeload.github.com/wuseman/EMAGNET/tar.gz/${EMAGNET_VERSION} > /tmp/emagnet.tar.gz \
+    && tar -xzv -f /tmp/emagnet.tar.gz -C / \
+    && ln -s /EMAGNET-${EMAGNET_VERSION} /EMAGNET
+WORKDIR  /EMAGNET
+CMD ["/EMAGNET/emagnet","--emagnet"]
+
+
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/4] RUN curl https://codeload.github.com/wuseman/EMAGNET/tar.gz/3.4 > /tmp/emagnet.tar.gz     && tar -xzv -f /tmp/emagnet.tar.gz -C /     && ln -s /EMAGNET-3.4 /EMAGNET:
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+[3/4] RUN curl https://codeload.github.com/wuseman/EMAGNET/tar.gz/> /tmp/emagnet.tar.gz     && tar -xzv -f /tmp/emagnet.tar.gz -C /     && ln -s /EMAGNET-/EMAGNET
+100    14  100    14    0     0     46      0 --:--:-- --:--:-- --:--:--    46
+gzip: stdin: not in gzip format
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+ERROR: process "/bin/sh -c curl https://codeload.github.com/wuseman/EMAGNET/tar.gz/${EMAGNET_VERSION} > /tmp/emagnet.tar.gz     && tar -xzv -f /tmp/emagnet.tar.gz -C /     && ln -s /EMAGNET-${EMAGNET_VERSION} /EMAGNET" did not complete successfully: exit code: 2```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```# Start from ubuntu
+FROM ubuntu:16.04
+
+# Update repos and install dependencies
+RUN apt-get update \
+  && apt-get -y upgrade \
+  && apt-get -y install build-essential wget curl libsqlite3-dev zlib1g-dev libpng-dev
+
+# Create a directory and copy in all files
+RUN mkdir -p /tmp/tile-count-src
+WORKDIR /tmp/tile-count-src
+COPY . /tmp/tile-count-src
+
+# Build tile-count
+RUN make \
+  && make install
+
+# Install tippecanoe since the tests depend on it
+ENV TIPPECANOE_VERSION="1.26.3"
+
+RUN wget https://github.com/mapbox/tippecanoe/archive/${TIPPECANOE_VERSION}.tar.gz  && \
+    tar -xvf ${TIPPECANOE_VERSION}.tar.gz && \
+    cd tippecanoe-${TIPPECANOE_VERSION} && \
+    make && \
+    make install
+
+RUN curl https://nodejs.org/dist/v4.8.6/node-v4.8.6-linux-x64.tar.gz | tar zxC /usr/local --strip-components=1
+
+# Run the tests
+CMD make test
+
+```
+
+## Example Build Error
+```> [8/8] RUN curl https://nodejs.org/dist/v4.8.6/node-v4.8.6-linux-x64.tar.gz | tar zxC /usr/local --strip-components=1:
+  4 11.4M    4  576k    0     0   5887      0  0:34:02  0:01:40  0:32:22 39003
+curl: (18) transfer closed with 11432394 bytes remaining to read
+gzip: stdin: unexpected end of file
+tar: Unexpected EOF in archive
+tar: Unexpected EOF in archive
+tar: Error is not recoverable: exiting now
+ERROR: process "/bin/sh -c curl https://nodejs.org/dist/v4.8.6/node-v4.8.6-linux-x64.tar.gz | tar zxC /usr/local --strip-components=1" did not complete successfully: exit code: 2```
+
+## Example Repair
+
+### Repair 1
+```#```
+
+
+### Repair 2
+``` ```
+
+
+### Repair 3
+```S```
+
+
+### Repair 4
+```U```
+
+
+### Repair 5
+```G```
+
+
+### Repair 6
+```G```
+
+
+### Repair 7
+```E```
+
+
+### Repair 8
+```S```
+
+
+### Repair 9
+```T```
+
+
+### Repair 10
+```I```
+
+
+### Repair 11
+```O```
+
+
+### Repair 12
+```N```
+
+
+### Repair 13
+```:```
+
+
+### Repair 14
+```
+```
+
+
+### Repair 15
+```-```
+
+
+### Repair 16
+``` ```
+
+
+### Repair 17
+```c```
+
+
+### Repair 18
+```h```
+
+
+### Repair 19
+```e```
+
+
+### Repair 20
+```c```
+
+
+### Repair 21
+```k```
+
+
+### Repair 22
+``` ```
+
+
+### Repair 23
+```t```
+
+
+### Repair 24
+```h```
+
+
+### Repair 25
+```e```
+
+
+### Repair 26
+``` ```
+
+
+### Repair 27
+```l```
+
+
+### Repair 28
+```i```
+
+
+### Repair 29
+```n```
+
+
+### Repair 30
+```k```
+
+
+### Repair 31
+``` ```
+
+
+### Repair 32
+```a```
+
+
+### Repair 33
+```g```
+
+
+### Repair 34
+```a```
+
+
+### Repair 35
+```i```
+
+
+### Repair 36
+```n```
+
+
+### Repair 37
+``` ```
+
+
+### Repair 38
+```l```
+
+
+### Repair 39
+```a```
+
+
+### Repair 40
+```t```
+
+
+### Repair 41
+```e```
+
+
+### Repair 42
+```r```
+
+
+### Repair 43
+```.```
+
+
+# Example 2
+## Example Dockerfile
+```FROM adoptopenjdk/openjdk11:jdk-11.0.3_7-alpine as BUILD
+
+# Setup maven, we don't use https://hub.docker.com/_/maven/ as it declare .m2 as volume, we loose all mvn cache
+# We can alternatively do as proposed by https://github.com/carlossg/docker-maven#packaging-a-local-repository-with-the-image
+# this was meant to make the image smaller, but we use multi-stage build so we don't care
+RUN apk add --no-cache curl tar bash
+
+ARG MAVEN_VERSION=3.6.3
+ARG USER_HOME_DIR="/root"
+ARG SHA=c35a1803a6e70a126e80b2b3ae33eed961f83ed74d18fcd16909b2d44d7dada3203f1ffe726c17ef8dcca2dcaa9fca676987befeadc9b9f759967a8cb77181c0
+ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
+
+RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
+  && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
+  && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c - \
+  && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
+  && rm -f /tmp/apache-maven.tar.gz \
+  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+
+ENV MAVEN_HOME /usr/share/maven
+ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
+
+# Let's fetch eclair dependencies, so that Docker can cache them
+# This way we won't have to fetch dependencies again if only the source code changes
+# The easiest way to reliably get dependencies is to build the project with no sources
+WORKDIR /usr/src
+COPY pom.xml pom.xml
+COPY eclair-core/pom.xml eclair-core/pom.xml
+COPY eclair-front/pom.xml eclair-front/pom.xml
+COPY eclair-node/pom.xml eclair-node/pom.xml
+COPY eclair-node/modules/assembly.xml eclair-node/modules/assembly.xml
+RUN mkdir -p eclair-core/src/main/scala && touch eclair-core/src/main/scala/empty.scala
+# Blank build. We only care about eclair-node, and we use install because eclair-node depends on eclair-core
+RUN mvn install -pl eclair-node -am
+RUN mvn clean
+
+# Only then do we copy the sources
+COPY . .
+
+# And this time we can build in offline mode, specifying 'notag' instead of git commit
+RUN mvn package -pl eclair-node -am -DskipTests -Dgit.commit.id=notag -Dgit.commit.id.abbrev=notag -o
+# It might be good idea to run the tests here, so that the docker build fail if the code is bugged
+
+# We currently use a debian image for runtime because of some jni-related issue with sqlite
+FROM openjdk:11.0.4-jre-slim
+WORKDIR /app
+
+# install jq for eclair-cli
+RUN apt-get update && apt-get install -y bash jq curl unzip
+
+# copy and install eclair-cli executable
+COPY --from=BUILD /usr/src/eclair-core/eclair-cli .
+RUN chmod +x eclair-cli && mv eclair-cli /sbin/eclair-cli
+
+# we only need the eclair-node.zip to run
+COPY --from=BUILD /usr/src/eclair-node/target/eclair-node-*.zip ./eclair-node.zip
+RUN unzip eclair-node.zip && mv eclair-node-* eclair-node && chmod +x eclair-node/bin/eclair-node.sh
+
+ENV ECLAIR_DATADIR=/data
+ENV JAVA_OPTS=
+
+RUN mkdir -p "$ECLAIR_DATADIR"
+VOLUME [ "/data" ]
+
+ENTRYPOINT JAVA_OPTS="${JAVA_OPTS}" eclair-node/bin/eclair-node.sh "-Declair.datadir=${ECLAIR_DATADIR}"
+
+```
+
+## Example Build Error
+```> [build  3/14] RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz https://apache.osuosl.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz   && echo "c35a1803a6e70a126e80b2b3ae33eed961f83ed74d18fcd16909b2d44d7dada3203f1ffe726c17ef8dcca2dcaa9fca676987befeadc9b9f759967a8cb77181c0  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn:
+curl: (22) The requested URL returned error: 404 Not Found
+ERROR: process "/bin/sh -c mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo \"${SHA}  /tmp/apache-maven.tar.gz\" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn" did not complete successfully: exit code: 22```
+
+## Example Repair
+
+### Repair 1
+```FROM adoptopenjdk/openjdk11:jdk-11.0.3_7-alpine as BUILD
+
+# Setup maven, we don't use https://hub.docker.com/_/maven/ as it declare .m2 as volume, we loose all mvn cache
+# We can alternatively do as proposed by https://github.com/carlossg/docker-maven#packaging-a-local-repository-with-the-image
+# this was meant to make the image smaller, but we use multi-stage build so we don't care
+RUN apk add --no-cache curl tar bash
+
+ARG MAVEN_VERSION=3.6.3
+ARG USER_HOME_DIR="/root"
+ARG SHA=c35a1803a6e70a126e80b2b3ae33eed961f83ed74d18fcd16909b2d44d7dada3203f1ffe726c17ef8dcca2dcaa9fca676987befeadc9b9f759967a8cb77181c0
+ARG ARG BASE_URL=https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries
+
+RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
+  && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
+  && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c - \
+  && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
+  && rm -f /tmp/apache-maven.tar.gz \
+  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+
+ENV MAVEN_HOME /usr/share/maven
+ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
+
+# Let's fetch eclair dependencies, so that Docker can cache them
+# This way we won't have to fetch dependencies again if only the source code changes
+# The easiest way to reliably get dependencies is to build the project with no sources
+WORKDIR /usr/src
+COPY pom.xml pom.xml
+COPY eclair-core/pom.xml eclair-core/pom.xml
+COPY eclair-front/pom.xml eclair-front/pom.xml
+COPY eclair-node/pom.xml eclair-node/pom.xml
+COPY eclair-node/modules/assembly.xml eclair-node/modules/assembly.xml
+RUN mkdir -p eclair-core/src/main/scala && touch eclair-core/src/main/scala/empty.scala
+# Blank build. We only care about eclair-node, and we use install because eclair-node depends on eclair-core
+RUN mvn install -pl eclair-node -am
+RUN mvn clean
+
+# Only then do we copy the sources
+COPY . .
+
+# And this time we can build in offline mode, specifying 'notag' instead of git commit
+RUN mvn package -pl eclair-node -am -DskipTests -Dgit.commit.id=notag -Dgit.commit.id.abbrev=notag -o
+# It might be good idea to run the tests here, so that the docker build fail if the code is bugged
+
+# We currently use a debian image for runtime because of some jni-related issue with sqlite
+FROM openjdk:11.0.4-jre-slim
+WORKDIR /app
+
+# install jq for eclair-cli
+RUN apt-get update && apt-get install -y bash jq curl unzip
+
+# copy and install eclair-cli executable
+COPY --from=BUILD /usr/src/eclair-core/eclair-cli .
+RUN chmod +x eclair-cli && mv eclair-cli /sbin/eclair-cli
+
+# we only need the eclair-node.zip to run
+COPY --from=BUILD /usr/src/eclair-node/target/eclair-node-*.zip ./eclair-node.zip
+RUN unzip eclair-node.zip && mv eclair-node-* eclair-node && chmod +x eclair-node/bin/eclair-node.sh
+
+ENV ECLAIR_DATADIR=/data
+ENV JAVA_OPTS=
+
+RUN mkdir -p "$ECLAIR_DATADIR"
+VOLUME [ "/data" ]
+
+ENTRYPOINT JAVA_OPTS="${JAVA_OPTS}" eclair-node/bin/eclair-node.sh "-Declair.datadir=${ECLAIR_DATADIR}"
+
+```
+
+
+# Example 3
+## Example Dockerfile
+```# This dockerfile is meant to compile a core-lightning x64 image
+# It is using multi stage build:
+# * downloader: Download litecoin/bitcoin and qemu binaries needed for core-lightning
+# * builder: Compile core-lightning dependencies, then core-lightning itself with static linking
+# * final: Copy the binaries required at runtime
+# The resulting image uploaded to dockerhub will only contain what is needed for runtime.
+# From the root of the repository, run "docker build -t yourimage:yourtag ."
+FROM debian:bullseye-slim as downloader
+
+RUN set -ex \
+	&& apt-get update \
+	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr wget
+
+WORKDIR /opt
+
+RUN wget -qO /opt/tini "https://github.com/krallin/tini/releases/download/v0.18.0/tini" \
+    && echo "12d20136605531b09a2c2dac02ccee85e1b874eb322ef6baf7561cd93f93c855 /opt/tini" | sha256sum -c - \
+    && chmod +x /opt/tini
+
+ARG BITCOIN_VERSION=22.0
+ENV BITCOIN_TARBALL bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV BITCOIN_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/$BITCOIN_TARBALL
+ENV BITCOIN_ASC_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/SHA256SUMS
+
+RUN mkdir /opt/bitcoin && cd /opt/bitcoin \
+    && wget -qO $BITCOIN_TARBALL "$BITCOIN_URL" \
+    && wget -qO bitcoin "$BITCOIN_ASC_URL" \
+    && grep $BITCOIN_TARBALL bitcoin | tee SHA256SUMS \
+    && sha256sum -c SHA256SUMS \
+    && BD=bitcoin-$BITCOIN_VERSION/bin \
+    && tar -xzvf $BITCOIN_TARBALL $BD/bitcoin-cli --strip-components=1 \
+    && rm $BITCOIN_TARBALL
+
+ENV LITECOIN_VERSION 0.16.3
+ENV LITECOIN_PGP_KEY FE3348877809386C
+ENV LITECOIN_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV LITECOIN_ASC_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-linux-signatures.asc
+ENV LITECOIN_SHA256 686d99d1746528648c2c54a1363d046436fd172beadaceea80bdc93043805994
+
+# install litecoin binaries
+RUN mkdir /opt/litecoin && cd /opt/litecoin \
+    && wget -qO litecoin.tar.gz "$LITECOIN_URL" \
+    && echo "$LITECOIN_SHA256  litecoin.tar.gz" | sha256sum -c - \
+    && BD=litecoin-$LITECOIN_VERSION/bin \
+    && tar -xzvf litecoin.tar.gz $BD/litecoin-cli --strip-components=1 --exclude=*-qt \
+    && rm litecoin.tar.gz
+
+FROM debian:bullseye-slim as builder
+
+ENV LIGHTNINGD_VERSION=master
+RUN apt-get update -qq && \
+    apt-get install -qq -y --no-install-recommends \
+        autoconf \
+        automake \
+        build-essential \
+        ca-certificates \
+        curl \
+        dirmngr \
+        gettext \
+        git \
+        gnupg \
+        libpq-dev \
+        libtool \
+        libffi-dev \
+        python3 \
+        python3-dev \
+        python3-mako \
+        python3-pip \
+        python3-venv \
+        python3-setuptools \
+        wget
+
+RUN wget -q https://zlib.net/zlib-1.2.13.tar.gz \
+    && tar xvf zlib-1.2.13.tar.gz \
+    && cd zlib-1.2.13 \
+    && ./configure \
+    && make \
+    && make install && cd .. && \
+    rm zlib-1.2.13.tar.gz && \
+    rm -rf zlib-1.2.13
+
+RUN apt-get install -y --no-install-recommends unzip tclsh \
+    && wget -q https://www.sqlite.org/2019/sqlite-src-3290000.zip \
+    && unzip sqlite-src-3290000.zip \
+    && cd sqlite-src-3290000 \
+    && ./configure --enable-static --disable-readline --disable-threadsafe --disable-load-extension \
+    && make \
+    && make install && cd .. && rm sqlite-src-3290000.zip && rm -rf sqlite-src-3290000
+
+RUN wget -q https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz \
+    && tar xvf gmp-6.1.2.tar.xz \
+    && cd gmp-6.1.2 \
+    && ./configure --disable-assembly \
+    && make \
+    && make install && cd .. && rm gmp-6.1.2.tar.xz && rm -rf gmp-6.1.2
+
+ENV RUST_PROFILE=release
+ENV PATH=$PATH:/root/.cargo/bin/
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN rustup toolchain install stable --component rustfmt --allow-downgrade
+
+WORKDIR /opt/lightningd
+COPY . /tmp/lightning
+RUN git clone --recursive /tmp/lightning . && \
+    git checkout $(git --work-tree=/tmp/lightning --git-dir=/tmp/lightning/.git rev-parse HEAD)
+
+ARG DEVELOPER=1
+ENV PYTHON_VERSION=3
+RUN curl -sSL https://install.python-poetry.org | python3 - \
+    && pip3 install -U pip \
+    && pip3 install -U wheel \
+    && /root/.local/bin/poetry install
+
+RUN ./configure --prefix=/tmp/lightning_install --enable-static && \
+    make DEVELOPER=${DEVELOPER} && \
+    /root/.local/bin/poetry run make install
+
+FROM debian:bullseye-slim as final
+
+COPY --from=downloader /opt/tini /usr/bin/tini
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      socat \
+      inotify-tools \
+      python3 \
+      python3-pip \
+      libpq5 && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV LIGHTNINGD_DATA=/root/.lightning
+ENV LIGHTNINGD_RPC_PORT=9835
+ENV LIGHTNINGD_PORT=9735
+ENV LIGHTNINGD_NETWORK=bitcoin
+
+RUN mkdir $LIGHTNINGD_DATA && \
+    touch $LIGHTNINGD_DATA/config
+VOLUME [ "/root/.lightning" ]
+COPY --from=builder /tmp/lightning_install/ /usr/local/
+COPY --from=downloader /opt/bitcoin/bin /usr/bin
+COPY --from=downloader /opt/litecoin/bin /usr/bin
+COPY tools/docker-entrypoint.sh entrypoint.sh
+
+EXPOSE 9735 9835
+ENTRYPOINT  [ "/usr/bin/tini", "-g", "--", "./entrypoint.sh" ]
+
+```
+
+## Example Build Error
+```> [builder  3/12] RUN wget -q https://zlib.net/zlib-1.2.13.tar.gz     && tar xvf zlib-1.2.13.tar.gz     && cd zlib-1.2.13     && ./configure     && make     && make install && cd .. &&     rm zlib-1.2.13.tar.gz &&     rm -rf zlib-1.2.13:
+[builder  3/12] RUN wget -q https://zlib.net/zlib-1.2.13.tar.gz     && tar xvf zlib-1.2.13.tar.gz     && cd zlib-1.    && ./configure     && make     && make install && cd .. &&     rm zlib-1.2.13.tar.gz &&     rm -rf zlib-1.2.13
+ERROR: process "/bin/sh -c wget -q https://zlib.net/zlib-1.2.13.tar.gz     && tar xvf zlib-1.2.13.tar.gz     && cd zlib-1.    && ./configure     && make     && make install && cd .. &&     rm zlib-1.2.13.tar.gz &&     rm -rf zlib-1.2.13" did not complete successfully: exit code: 8```
+
+## Example Repair
+
+### Repair 1
+```# This dockerfile is meant to compile a core-lightning x64 image
+# It is using multi stage build:
+# * downloader: Download litecoin/bitcoin and qemu binaries needed for core-lightning
+# * builder: Compile core-lightning dependencies, then core-lightning itself with static linking
+# * final: Copy the binaries required at runtime
+# The resulting image uploaded to dockerhub will only contain what is needed for runtime.
+# From the root of the repository, run "docker build -t yourimage:yourtag ."
+FROM debian:bullseye-slim as downloader
+
+RUN set -ex \
+	&& apt-get update \
+	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr wget
+
+WORKDIR /opt
+
+RUN wget -qO /opt/tini "https://github.com/krallin/tini/releases/download/v0.18.0/tini" \
+    && echo "12d20136605531b09a2c2dac02ccee85e1b874eb322ef6baf7561cd93f93c855 /opt/tini" | sha256sum -c - \
+    && chmod +x /opt/tini
+
+ARG BITCOIN_VERSION=22.0
+ENV BITCOIN_TARBALL bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV BITCOIN_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/$BITCOIN_TARBALL
+ENV BITCOIN_ASC_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/SHA256SUMS
+
+RUN mkdir /opt/bitcoin && cd /opt/bitcoin \
+    && wget -qO $BITCOIN_TARBALL "$BITCOIN_URL" \
+    && wget -qO bitcoin "$BITCOIN_ASC_URL" \
+    && grep $BITCOIN_TARBALL bitcoin | tee SHA256SUMS \
+    && sha256sum -c SHA256SUMS \
+    && BD=bitcoin-$BITCOIN_VERSION/bin \
+    && tar -xzvf $BITCOIN_TARBALL $BD/bitcoin-cli --strip-components=1 \
+    && rm $BITCOIN_TARBALL
+
+ENV LITECOIN_VERSION 0.16.3
+ENV LITECOIN_PGP_KEY FE3348877809386C
+ENV LITECOIN_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV LITECOIN_ASC_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-linux-signatures.asc
+ENV LITECOIN_SHA256 686d99d1746528648c2c54a1363d046436fd172beadaceea80bdc93043805994
+
+# install litecoin binaries
+RUN mkdir /opt/litecoin && cd /opt/litecoin \
+    && wget -qO litecoin.tar.gz "$LITECOIN_URL" \
+    && echo "$LITECOIN_SHA256  litecoin.tar.gz" | sha256sum -c - \
+    && BD=litecoin-$LITECOIN_VERSION/bin \
+    && tar -xzvf litecoin.tar.gz $BD/litecoin-cli --strip-components=1 --exclude=*-qt \
+    && rm litecoin.tar.gz
+
+FROM debian:bullseye-slim as builder
+
+ENV LIGHTNINGD_VERSION=master
+RUN apt-get update -qq && \
+    apt-get install -qq -y --no-install-recommends \
+        autoconf \
+        automake \
+        build-essential \
+        ca-certificates \
+        curl \
+        dirmngr \
+        gettext \
+        git \
+        gnupg \
+        libpq-dev \
+        libtool \
+        libffi-dev \
+        python3 \
+        python3-dev \
+        python3-mako \
+        python3-pip \
+        python3-venv \
+        python3-setuptools \
+        wget
+
+RUN wget -q https://zlib.net/fossils/zlib-1.2.13.tar.gz \
+    && tar xvf zlib-1.2.13.tar.gz \
+    && cd zlib-1.2.13 \
+    && ./configure \
+    && make \
+    && make install && cd .. && \
+    rm zlib-1.2.13.tar.gz && \
+    rm -rf zlib-1.2.13
+
+RUN apt-get install -y --no-install-recommends unzip tclsh \
+    && wget -q https://www.sqlite.org/2019/sqlite-src-3290000.zip \
+    && unzip sqlite-src-3290000.zip \
+    && cd sqlite-src-3290000 \
+    && ./configure --enable-static --disable-readline --disable-threadsafe --disable-load-extension \
+    && make \
+    && make install && cd .. && rm sqlite-src-3290000.zip && rm -rf sqlite-src-3290000
+
+RUN wget -q https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz \
+    && tar xvf gmp-6.1.2.tar.xz \
+    && cd gmp-6.1.2 \
+    && ./configure --disable-assembly \
+    && make \
+    && make install && cd .. && rm gmp-6.1.2.tar.xz && rm -rf gmp-6.1.2
+
+ENV RUST_PROFILE=release
+ENV PATH=$PATH:/root/.cargo/bin/
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN rustup toolchain install stable --component rustfmt --allow-downgrade
+
+WORKDIR /opt/lightningd
+COPY . /tmp/lightning
+RUN git clone --recursive /tmp/lightning . && \
+    git checkout $(git --work-tree=/tmp/lightning --git-dir=/tmp/lightning/.git rev-parse HEAD)
+
+ARG DEVELOPER=1
+ENV PYTHON_VERSION=3
+RUN curl -sSL https://install.python-poetry.org | python3 - \
+    && pip3 install -U pip \
+    && pip3 install -U wheel \
+    && /root/.local/bin/poetry install
+
+RUN ./configure --prefix=/tmp/lightning_install --enable-static && \
+    make DEVELOPER=${DEVELOPER} && \
+    /root/.local/bin/poetry run make install
+
+FROM debian:bullseye-slim as final
+
+COPY --from=downloader /opt/tini /usr/bin/tini
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      socat \
+      inotify-tools \
+      python3 \
+      python3-pip \
+      libpq5 && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV LIGHTNINGD_DATA=/root/.lightning
+ENV LIGHTNINGD_RPC_PORT=9835
+ENV LIGHTNINGD_PORT=9735
+ENV LIGHTNINGD_NETWORK=bitcoin
+
+RUN mkdir $LIGHTNINGD_DATA && \
+    touch $LIGHTNINGD_DATA/config
+VOLUME [ "/root/.lightning" ]
+COPY --from=builder /tmp/lightning_install/ /usr/local/
+COPY --from=downloader /opt/bitcoin/bin /usr/bin
+COPY --from=downloader /opt/litecoin/bin /usr/bin
+COPY tools/docker-entrypoint.sh entrypoint.sh
+
+EXPOSE 9735 9835
+ENTRYPOINT  [ "/usr/bin/tini", "-g", "--", "./entrypoint.sh" ]
+
+```
+
+Below are a few false repairs that an LLM previously made by mistake for the input flaky Dockerfile along with their build outputs as further demonstrations. These examples are provided to help you understand the task better and to avoid making the same mistakes. So, do not generate the exact false repair generated previously, but you can get ideas from them.
+
+# False Repair 1
+## False Repair Dockerfile
+```FROM ubuntu:18.04
+MAINTAINER "M2kar<m2kar.cn@gmail.com>"
+ARG EMAGNET_VERSION=3.4
+RUN apt update \
+    && apt-get install -y --no-install-recommends \
+        inetutils-ping \
+        wget \
+        curl \
+        screen \
+        ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+RUN curl -L https://codeload.github.com/wuseman/EMAGNET/tar.gz/${EMAGNET_VERSION} -o /tmp/emagnet.tar.gz \
+    && tar -xzv -f /tmp/emagnet.tar.gz -C / \
+    && ln -s /EMAGNET-${EMAGNET_VERSION} /EMAGNET
+WORKDIR /EMAGNET
+CMD ["/EMAGNET/emagnet","--emagnet"]```
+
+## False Repair Build Output
+```> [3/4] RUN curl -L https://codeload.github.com/wuseman/EMAGNET/tar.gz/3.4 -o /tmp/emagnet.tar.gz     && tar -xzv -f /tmp/emagnet.tar.gz -C /     && ln -s /EMAGNET-3.4 /EMAGNET:
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+[3/4] RUN curl -L https://codeload.github.com/wuseman/EMAGNET/tar.gz/-o /tmp/emagnet.tar.gz     && tar -xzv -f /tmp/emagnet.tar.gz -C /     && ln -s /EMAGNET-/EMAGNET
+100    14  100    14    0     0     40      0 --:--:-- --:--:-- --:--:--    40
+gzip: stdin: not in gzip format
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+ERROR: process "/bin/sh -c curl -L https://codeload.github.com/wuseman/EMAGNET/tar.gz/${EMAGNET_VERSION} -o /tmp/emagnet.tar.gz     && tar -xzv -f /tmp/emagnet.tar.gz -C /     && ln -s /EMAGNET-${EMAGNET_VERSION} /EMAGNET" did not complete successfully: exit code: 2```
+
+
+# False Repair 2
+## False Repair Dockerfile
+```FROM ubuntu:18.04
+MAINTAINER "M2kar<m2kar.cn@gmail.com>"
+ARG EMAGNET_VERSION=3.4
+RUN apt update \
+    && apt-get install -y --no-install-recommends \
+        inetutils-ping \
+        wget \
+        curl \
+        screen \
+        ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+RUN curl -L https://github.com/wuseman/EMAGNET/archive/refs/tags/${EMAGNET_VERSION}.tar.gz -o /tmp/emagnet.tar.gz \
+    && tar -xzv -f /tmp/emagnet.tar.gz -C / \
+    && mv /EMAGNET-${EMAGNET_VERSION} /EMAGNET
+WORKDIR /EMAGNET
+CMD ["/EMAGNET/emagnet","--emagnet"]```
+
+## False Repair Build Output
+```> [3/4] RUN curl -L https://github.com/wuseman/EMAGNET/archive/refs/tags/3.4.tar.gz -o /tmp/emagnet.tar.gz     && tar -xzv -f /tmp/emagnet.tar.gz -C /     && mv /EMAGNET-3.4 /EMAGNET:
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+[3/4] RUN curl -L https://github.com/wuseman/EMAGNET/archive/refs/tags/3.4.tar.gz -o /tmp/emagnet.tar.gz     && tar -xzv -f /tmp/emagnet.tar.gz -C /     && mv /EMAGNET-/EMAGNET
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100     9  100     9    0     0     32      0 --:--:-- --:--:-- --:--:--    32
+gzip: stdin: not in gzip format
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+ERROR: process "/bin/sh -c curl -L https://github.com/wuseman/EMAGNET/archive/refs/tags/${EMAGNET_VERSION}.tar.gz -o /tmp/emagnet.tar.gz     && tar -xzv -f /tmp/emagnet.tar.gz -C /     && mv /EMAGNET-${EMAGNET_VERSION} /EMAGNET" did not complete successfully: exit code: 2```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

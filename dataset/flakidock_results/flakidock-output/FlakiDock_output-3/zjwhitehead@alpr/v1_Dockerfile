@@ -1,0 +1,12 @@
+FROM circleci/ruby:2.3.8
+USER root
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list && \
+    apt-get update && apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev --allow-unauthenticated
+RUN mkdir /alpr
+RUN chown -R circleci:circleci /alpr
+USER circleci
+WORKDIR /alpr
+COPY . /alpr
+RUN bundle install
+COPY . /alpr

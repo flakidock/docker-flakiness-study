@@ -1,0 +1,560 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM python:3.8.1-alpine3.11
+
+COPY includes/requirements.txt /
+RUN apk add --no-cache tzdata \
+    && pip install -r /requirements.txt \
+    && addgroup -g 1000 holiday \
+    && adduser -D -u 1000 -G holiday holiday \ 
+    && rm requirements.txt
+
+COPY includes/*.py /usr/bin/
+COPY includes/*.yaml /etc
+USER holiday
+
+ENTRYPOINT ["python", "/usr/bin/holiday_exporter.py"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/5] RUN apk add --no-cache tzdata     && pip install -r /requirements.txt     && addgroup -g 1000 holiday     && adduser -D -u 1000 -G holiday holiday     && rm requirements.txt:
+  Getting requirements to build wheel: finished with status 'error'
+  ERROR: Command errored out with exit status 1:
+   command: /usr/local/bin/python /usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmp2rl0cats
+       cwd: /tmp/pip-install-ssg80272/pyyaml
+  Complete output (48 lines):
+  running egg_info
+  writing lib3/PyYAML.egg-info/PKG-INFO
+  writing dependency_links to lib3/PyYAML.egg-info/dependency_links.txt
+  writing top-level names to lib3/PyYAML.egg-info/top_level.txt
+  Traceback (most recent call last):
+    File "/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py", line 257, in <module>
+      main()
+    File "/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py", line 240, in main
+      json_out['return_val'] = hook(**hook_input['kwargs'])
+    File "/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py", line 91, in get_requires_for_build_wheel
+      return hook(config_settings)
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 327, in get_requires_for_build_wheel
+      return self._get_build_requires(config_settings, requirements=[])
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 297, in _get_build_requires
+      self.run_setup()
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 313, in run_setup
+      exec(code, locals())
+    File "<string>", line 271, in <module>
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/__init__.py", line 108, in setup
+      return distutils.core.setup(**attrs)
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/_distutils/core.py", line 184, in setup
+      return run_commands(dist)
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/_distutils/core.py", line 200, in run_commands
+      dist.run_commands()
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/_distutils/dist.py", line 970, in run_commands
+      self.run_command(cmd)
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/dist.py", line 945, in run_command
+      super().run_command(command)
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/_distutils/dist.py", line 989, in run_command
+      cmd_obj.run()
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 310, in run
+      self.find_sources()
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 318, in find_sources
+      mm.run()
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 539, in run
+      self.add_defaults()
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 577, in add_defaults
+      sdist.add_defaults(self)
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/command/sdist.py", line 102, in add_defaults
+      super().add_defaults()
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/_distutils/command/sdist.py", line 250, in add_defaults
+      self._add_defaults_ext()
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/_distutils/command/sdist.py", line 335, in _add_defaults_ext
+      self.filelist.extend(build_ext.get_source_files())
+    File "<string>", line 201, in get_source_files
+    File "/tmp/pip-build-env-drbj7ntq/overlay/lib/python3.8/site-packages/setuptools/_distutils/cmd.py", line 107, in __getattr__
+      raise AttributeError(attr)
+  AttributeError: cython_sources
+  ----------------------------------------
+ERROR: Command errored out with exit status 1: /usr/local/bin/python /usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmp2rl0cats Check the logs for full command output.
+WARNING: You are using pip version 20.0.2; however, version is available.
+You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+ERROR: process "/bin/sh -c apk add --no-cache tzdata     && pip install -r /requirements.txt     && addgroup -g 1000 holiday     && adduser -D -u 1000 -G holiday holiday     && rm requirements.txt" did not complete successfully: exit code: 1```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```# By default - docker build will pull master
+# If you want the local WS to be used - please use
+# "--build-arg ." to the docker build command - like:
+#
+# 'docker build -t mypyaci:latest --build-arg PYACI_SOURCE=. .
+# You can only specify '.' as PYACI_SOURCE
+#
+
+FROM python:2.7-alpine
+ARG PYACI_SOURCE=https://github.com/datacenter/pyaci/archive/master.zip
+
+RUN apk add --update build-base
+RUN apk add --update libffi-dev libxml2-dev libxslt-dev openssl openssl-dev
+
+WORKDIR /localws
+
+#hadolint ignore=DL3013
+RUN pip install -U pip
+COPY . $WORKDIR
+#hadolint ignore=DL3013
+RUN pip install $PYACI_SOURCE
+
+COPY meta/aci-meta.limited.json /root/.aci-meta/aci-meta.limited.json
+RUN cd /root/.aci-meta && ln -s aci-meta.limited.json aci-meta.json
+
+```
+
+## Example Build Error
+```> [7/9] RUN pip install https://github.com/datacenter/pyaci/archive/master.zip:
+  Getting requirements to build wheel: finished with status 'error'
+  ERROR: Command errored out with exit status 1:
+   command: /usr/local/bin/python /usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpu656p8
+       cwd: /tmp/pip-install-_TYrH8/pyyaml
+  Complete output (46 lines):
+  running egg_info
+  creating lib/PyYAML.egg-info
+  writing lib/PyYAML.egg-info/PKG-INFO
+  writing top-level names to lib/PyYAML.egg-info/top_level.txt
+  writing dependency_links to lib/PyYAML.egg-info/dependency_links.txt
+  writing manifest file 'lib/PyYAML.egg-info/SOURCES.txt'
+  Traceback (most recent call last):
+    File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 280, in <module>
+      main()
+    File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 263, in main
+      json_out['return_val'] = hook(**hook_input['kwargs'])
+    File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py", line 114, in get_requires_for_build_wheel
+      return hook(config_settings)
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 146, in get_requires_for_build_wheel
+      return self._get_build_requires(config_settings, requirements=['wheel'])
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 127, in _get_build_requires
+      self.run_setup()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/build_meta.py", line 142, in run_setup
+      exec(compile(code, __file__, 'exec'), locals())
+    File "setup.py", line 295, in <module>
+      python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/__init__.py", line 162, in setup
+      return distutils.core.setup(**attrs)
+    File "/usr/local/lib/python2.7/distutils/core.py", line 151, in setup
+      dist.run_commands()
+    File "/usr/local/lib/python2.7/distutils/dist.py", line 953, in run_commands
+      self.run_command(cmd)
+    File "/usr/local/lib/python2.7/distutils/dist.py", line 972, in run_command
+      cmd_obj.run()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 296, in run
+      self.find_sources()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 303, in find_sources
+      mm.run()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 534, in run
+      self.add_defaults()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 570, in add_defaults
+      sdist.add_defaults(self)
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 36, in add_defaults
+      self._add_defaults_ext()
+    File "/tmp/pip-build-env-NNhJPX/overlay/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+      self.filelist.extend(build_ext.get_source_files())
+    File "setup.py", line 201, in get_source_files
+      self.cython_sources(ext.sources, ext)
+    File "/usr/local/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+      raise AttributeError, attr
+  AttributeError: cython_sources
+  ----------------------------------------
+ERROR: Command errored out with exit status 1: /usr/local/bin/python /usr/local/lib/python2.7/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpu656p8 Check the logs for full command output.
+ERROR: process "/bin/sh -c pip install $PYACI_SOURCE" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```FROM python:3.12-alpine
+ARG PYACI_SOURCE=https://github.com/datacenter/pyaci/archive/master.zip
+
+RUN apk add --update build-base
+RUN apk add --update libffi-dev libxml2-dev libxslt-dev openssl openssl-dev
+
+WORKDIR /localws
+
+#hadolint ignore=DL3013
+RUN pip install -U pip
+COPY . $WORKDIR
+#hadolint ignore=DL3013
+RUN pip install $PYACI_SOURCE
+
+COPY meta/aci-meta.limited.json /root/.aci-meta/aci-meta.limited.json
+RUN cd /root/.aci-meta && ln -s aci-meta.limited.json aci-meta.json
+
+```
+
+
+# Example 2
+## Example Dockerfile
+```FROM node:10-alpine
+
+LABEL maintainer="Odd Networks <info@oddnetworks.com>"
+
+RUN \
+	mkdir -p /opt/app && \
+	chmod -R 777 /opt/app && \
+	apk update && \
+	apk --no-cache --update add \
+	bash make g++ python py-pip jq && \
+	pip install awscli && \
+	npm i -g npm
+
+ENV PS1='$NODE_ENV-${debian_chroot:+($debian_chroot)}\u@\h:\w\$ ' \
+	PROJECT_DIR=/opt/app \
+	PATH=/opt/app/node_modules/.bin:$PATH
+
+WORKDIR $PROJECT_DIR
+
+EXPOSE 3001
+
+CMD /bin/bash
+
+```
+
+## Example Build Error
+```> [2/3] RUN 	mkdir -p /opt/app && 	chmod -R 777 /opt/app && 	apk update && 	apk --no-cache --update add 	bash make g++ python py-pip jq && 	pip install awscli && 	npm i -g npm:
+    Complete output from command python setup.py egg_info:
+    running egg_info
+    creating pip-egg-info/PyYAML.egg-info
+    writing pip-egg-info/PyYAML.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/PyYAML.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/PyYAML.egg-info/dependency_links.txt
+    writing manifest file 'pip-egg-info/PyYAML.egg-info/SOURCES.txt'
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-install-qaJuZR/PyYAML/setup.py", line 295, in <module>
+        python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/__init__.py", line 162, in setup
+        return distutils.core.setup(**attrs)
+      File "/usr/lib/python2.7/distutils/core.py", line 151, in setup
+        dist.run_commands()
+      File "/usr/lib/python2.7/distutils/dist.py", line 953, in run_commands
+        self.run_command(cmd)
+      File "/usr/lib/python2.7/distutils/dist.py", line 972, in run_command
+        cmd_obj.run()
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 296, in run
+        self.find_sources()
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 303, in find_sources
+        mm.run()
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 534, in run
+        self.add_defaults()
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/egg_info.py", line 570, in add_defaults
+        sdist.add_defaults(self)
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 36, in add_defaults
+        self._add_defaults_ext()
+      File "/tmp/pip-build-env-dupA9N/lib/python2.7/site-packages/setuptools/command/py36compat.py", line 120, in _add_defaults_ext
+        self.filelist.extend(build_ext.get_source_files())
+      File "/tmp/pip-install-qaJuZR/PyYAML/setup.py", line 201, in get_source_files
+        self.cython_sources(ext.sources, ext)
+      File "/usr/lib/python2.7/distutils/cmd.py", line 105, in __getattr__
+        raise AttributeError, attr
+    AttributeError: cython_sources
+    
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-qaJuZR/PyYAML/
+ERROR: process "/bin/sh -c mkdir -p /opt/app && \tchmod -R 777 /opt/app && \tapk update && \tapk --no-cache --update add \tbash make g++ python py-pip jq && \tpip install awscli && \tnpm i -g npm" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```FROM node:10-alpine
+
+LABEL maintainer="Odd Networks <info@oddnetworks.com>"
+
+RUN \
+	mkdir -p /opt/app && \
+	chmod -R 777 /opt/app && \
+	apk update && \
+	apk --no-cache --update add \
+	bash make g++ python3 py3-pip jq && \
+	pip3 install awscli && \
+	npm i -g npm
+
+ENV PS1='$NODE_ENV-${debian_chroot:+($debian_chroot)}\u@\h:\w\$ ' \
+	PROJECT_DIR=/opt/app \
+	PATH=/opt/app/node_modules/.bin:$PATH
+
+WORKDIR $PROJECT_DIR
+
+EXPOSE 3001
+
+CMD /bin/bash
+```
+
+
+# Example 3
+## Example Dockerfile
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+MAINTAINER Dockerfiles
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor && \
+	python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --upgrade pip setuptools && \
+    rm -r /root/.cache && \
+    pip3 install --upgrade pip setuptools && \
+    rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip3 install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip3 install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+## Example Build Error
+```> [ 3/11] RUN apk add bash 	git 	openssh 	python3 	python3-dev 	gcc 	build-base 	linux-headers 	pcre-dev 	postgresql-dev 	musl-dev 	libxml2-dev 	libxslt-dev 	nginx 	curl 	supervisor && 	python3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache:
+error: externally-managed-environment
+× This environment is externally managed
+╰─> 
+    The system-wide python installation should be maintained using the system
+    package manager (apk) only.
+    
+    If the package in question is not packaged already (and hence installable via
+    "apk add py3-somepackage"), please consider installing it inside a virtual
+    environment, e.g.:
+    
+    python3 -m venv /path/to/venv
+    . /path/to/venv/bin/activate
+    pip install mypackage
+    
+    To exit the virtual environment, run:
+    
+    deactivate
+    
+    The virtual environment is not deleted, and can be re-entered by re-sourcing
+    the activate file.
+    
+    To automatically manage virtual environments, consider using pipx (from the
+    pipx package).
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/lib/python3.11/ensurepip/__main__.py", line 5, in <module>
+    sys.exit(ensurepip._main())
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 286, in _main
+    return _bootstrap(
+           ^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 202, in _bootstrap
+    return _run_pip([*args, *_PACKAGE_NAMES], additional_paths)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 103, in _run_pip
+    return subprocess.run(cmd, check=True).returncode
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '-W', 'ignore::DeprecationWarning', '-c', '\nimport runpy\nimport sys\nsys.path = [\'/tmp/tmprolh5n5a/setuptools-65.5.0-py3-none-any.whl\', \'/tmp/tmprolh5n5a/pip-23.2.1-py3-none-any.whl\'] + sys.path\nsys.argv[1:] = [\'install\', \'--no-cache-dir\', \'--no-index\', \'--find-links\', \'/tmp/tmprolh5n5a\', \'setuptools\', \'pip\']\nrunpy.run_module("pip", run_name="__main__", alter_sys=True)\n']' returned non-zero exit status 1.
+ERROR: process "/bin/sh -c apk add bash \tgit \topenssh \tpython3 \tpython3-dev \tgcc \tbuild-base \tlinux-headers \tpcre-dev \tpostgresql-dev \tmusl-dev \tlibxml2-dev \tlibxslt-dev \tnginx \tcurl \tsupervisor && \tpython3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor
+
+RUN python3 -m venv /venv
+ENV VIRTUAL_ENV=/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+RUN pip install --upgrade pip setuptools && \
+	rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+
+### Repair 2
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor
+
+RUN rm /usr/lib/python*/EXTERNALLY-MANAGED && \
+	python3 -m ensurepip && \
+	rm -r /usr/lib/python*/ensurepip && \
+	pip3 install --upgrade pip setuptools && \
+	rm -r /root/.cache && \
+	pip3 install --upgrade pip setuptools && \
+	rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip3 install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip3 install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

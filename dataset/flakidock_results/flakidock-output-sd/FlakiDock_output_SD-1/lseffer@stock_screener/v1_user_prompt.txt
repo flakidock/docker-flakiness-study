@@ -1,0 +1,36 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM python:3.7-slim
+
+RUN useradd -ms /bin/bash worker \
+    && apt-get update \
+    && apt-get install -y git netcat
+COPY requirements.txt /requirements.txt
+RUN python3 -m pip install -U pip setuptools \
+    && python3 -m pip install -U -r /requirements.txt
+
+USER worker
+WORKDIR /home/worker
+ENV PYTHONPATH="${PYTHONPATH}:${HOME}"
+
+EXPOSE 5000 5050
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/5] RUN useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat:
+Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [169 kB]
+Building dependency tree...
+Reading state information...
+Package netcat is a virtual package provided by:
+  netcat-openbsd 1.219-1
+  netcat-traditional 1.10-47
+E: Package 'netcat' has no installation candidate
+ERROR: process "/bin/sh -c useradd -ms /bin/bash worker     && apt-get update     && apt-get install -y git netcat" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

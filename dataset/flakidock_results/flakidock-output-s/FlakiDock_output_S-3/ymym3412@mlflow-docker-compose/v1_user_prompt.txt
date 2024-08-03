@@ -1,0 +1,37 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM conda/miniconda3:latest
+
+RUN mkdir -p /mlflow/mlruns
+
+WORKDIR /mlflow
+
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
+
+RUN echo "export LC_ALL=$LC_ALL" >> /etc/profile.d/locale.sh
+RUN echo "export LANG=$LANG" >> /etc/profile.d/locale.sh
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3-dev \
+    libpq-dev
+
+RUN pip install -U pip && \
+    pip install --ignore-installed google-cloud-storage && \
+    pip install psycopg2 mlflow
+
+COPY ./start.sh ./start.sh
+RUN chmod +x ./start.sh
+
+EXPOSE 80
+EXPOSE 443
+
+CMD ["./start.sh"]
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

@@ -1,0 +1,51 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM node:14-alpine
+
+ARG hubot_owner
+ARG hubot_description
+ARG hubot_name
+
+RUN adduser -D -s /bin/bash hubot-matteruser
+
+RUN mkdir -p /usr/src/hubot-matteruser
+RUN chown hubot-matteruser:hubot-matteruser /usr/src/hubot-matteruser
+RUN chown hubot-matteruser:hubot-matteruser /usr/local/lib/node_modules/
+RUN chown hubot-matteruser:hubot-matteruser /usr/local/bin/
+
+WORKDIR /usr/src/hubot-matteruser
+USER hubot-matteruser
+RUN npm install -g yo
+RUN npm install -g generator-hubot
+
+RUN echo "No" | yo hubot --adapter matteruser --owner="${hubot_owner}" --name="${hubot_name}" --description="${hubot_desciption}" --defaults \
+&& sed -i '/heroku/d' external-scripts.json
+
+RUN rm hubot-scripts.json
+
+CMD ["-a", "matteruser"]
+ENTRYPOINT ["./bin/hubot"]
+
+EXPOSE 8080
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [10/11] RUN echo "No" | yo hubot --adapter matteruser --owner="${hubot_owner}" --name="${hubot_name}" --description="${hubot_desciption}" --defaults && sed -i '/heroku/d' external-scripts.json:
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'stream' imported from /usr/local/lib/node_modules/yo/node_modules/mem-fs/dist/index.js
+    at new NodeError (internal/errors.js:322:7)
+    at packageResolve (internal/modules/esm/resolve.js:732:9)
+    at moduleResolve (internal/modules/esm/resolve.js:773:18)
+    at Loader.defaultResolve [as _resolve] (internal/modules/esm/resolve.js:887:11)
+    at Loader.resolve (internal/modules/esm/loader.js:89:40)
+    at Loader.getModuleJob (internal/modules/esm/loader.js:242:28)
+    at ModuleWrap.<anonymous> (internal/modules/esm/module_job.js:76:40)
+    at link (internal/modules/esm/module_job.js:75:36)
+ERROR: process "/bin/sh -c echo \"No\" | yo hubot --adapter matteruser --owner=\"${hubot_owner}\" --name=\"${hubot_name}\" --description=\"${hubot_desciption}\" --defaults && sed -i '/heroku/d' external-scripts.json" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

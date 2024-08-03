@@ -1,0 +1,21 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM        python:3.5.3-slim
+
+RUN         apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+
+COPY        requirements.txt /tmp/
+RUN         pip3 install -r /tmp/requirements.txt
+
+COPY        . /app
+ENV         PYTHONPATH /app
+
+ENTRYPOINT  ["python3", "/app/southwestalerts/app.py"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

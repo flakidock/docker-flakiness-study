@@ -1,0 +1,36 @@
+# Dockerfile
+FROM heroku/heroku:18-build
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
+
+# -- Install Pipenv:
+RUN apt-get update && apt-get upgrade -y && apt-get install -y python3.7 python3.7-dev curl
+RUN curl --silent https://bootstrap.pypa.io/get-pip.py | python3.7
+
+# Backwards compatibility.
+RUN rm -fr /usr/bin/python3 && ln -s /usr/bin/python3.7 /usr/bin/python3
+
+RUN pip3 install pipenv
+
+# -- Install Application into container:
+RUN set -ex && mkdir /bob
+WORKDIR /bob
+
+# -- Adding Pipfiles
+COPY Pipfile Pipfile
+COPY Pipfile.lock Pipfile.lock
+
+# Install Docker.
+RUN apt-get install -y docker.io
+
+# -- Install dependencies:
+RUN set -ex && pipenv install --deploy --system
+
+COPY . /bob
+RUN pip3 install -e .
+
+ENTRYPOINT ["bob-builder", "/app"]
+VOLUME /var/lib/docker
+VOLUME /app

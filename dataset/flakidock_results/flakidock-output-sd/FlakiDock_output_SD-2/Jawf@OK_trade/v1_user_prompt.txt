@@ -1,0 +1,41 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM daocloud.io/python:3-onbuild
+
+MAINTAINER Robin<robin.chen@b-uxin.com>
+
+ENV LANG C.UTF-8
+
+RUN  mkdir -p /app
+
+WORKDIR /app
+
+COPY /app /app
+COPY base.txt /app
+COPY requirements.txt /app
+
+#安装Python程序运行的依赖库
+RUN cd /app && pip install -r base.txt
+RUN cd /app && pip install -r requirements.txt
+
+
+EXPOSE 80
+
+
+ENTRYPOINT ["python", "/app/ok_trade.py"]```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [10/8] RUN cd /app && pip install -r base.txt:
+Collecting requests==2.(from -r base.txt (line 1))
+  Could not fetch URL https://pypi.python.org/simple/requests/: There was a problem confirming the ssl certificate: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:748) - skipping
+  Could not find a version that satisfies the requirement requests==2.(from -r base.txt (line 1)) (from versions: )
+No matching distribution found for requests==2.(from -r base.txt (line 1))
+ERROR: process "/bin/sh -c cd /app && pip install -r base.txt" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

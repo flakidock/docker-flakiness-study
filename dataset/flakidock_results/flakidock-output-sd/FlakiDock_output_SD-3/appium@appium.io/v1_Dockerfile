@@ -1,0 +1,20 @@
+FROM node:12.22.1-alpine3.11
+
+WORKDIR '/root'
+
+RUN apk add --no-cache git python2 py-pip
+
+COPY ./package.json ./
+
+# Upgrade pip to the latest version to avoid compatibility issues
+RUN pip install --upgrade pip
+
+RUN pip install mkdocs==0.17.5
+
+RUN npm install
+
+VOLUME docs/ ./docs/
+
+COPY . .
+
+CMD ["npm", "run", "build:docs:docker"]

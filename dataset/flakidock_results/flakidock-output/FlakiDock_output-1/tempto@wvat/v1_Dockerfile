@@ -1,0 +1,8 @@
+FROM node:10
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+
+RUN apt-get update
+RUN apt-get install -y p7zip-full
+RUN apt-get install -y nsis

@@ -1,0 +1,38 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM eclipse-temurin:17.0.5_8-jdk-alpine
+
+RUN apk add curl
+
+# installs node v18.9.1 and npm 8.10.0 at the time of commit
+RUN apk add nodejs-current npm
+
+RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
+  && curl -fsSL -o /tmp/apache-maven.tar.gz https://apache.osuosl.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz \
+  && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
+  && rm -f /tmp/apache-maven.tar.gz \
+  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+
+RUN mkdir flex-poker
+
+COPY / /flex-poker/
+
+WORKDIR /flex-poker
+
+RUN npm install
+RUN mvn package
+
+
+FROM eclipse-temurin:17.0.5_8-jre-alpine
+
+COPY --from=0 /flex-poker/target/flexpoker.war .
+
+ENTRYPOINT java -jar flexpoker.war
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

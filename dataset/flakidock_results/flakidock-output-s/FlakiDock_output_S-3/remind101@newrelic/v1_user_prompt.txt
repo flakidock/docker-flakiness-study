@@ -1,0 +1,17 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM remind101/go:1.4-newrelic
+
+COPY . /go/src/github.com/remind101/newrelic
+
+WORKDIR /go/src/github.com/remind101/newrelic
+
+RUN go-wrapper download -tags newrelic_enabled ./...
+RUN go-wrapper install -tags newrelic_enabled ./...
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

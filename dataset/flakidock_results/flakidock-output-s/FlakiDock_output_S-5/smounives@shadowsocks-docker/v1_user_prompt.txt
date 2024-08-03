@@ -1,0 +1,19 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM alpine
+MAINTAINER smounives <smounives@outlook.com>
+
+RUN set -ex \
+    && if [ $(wget -qO- ipinfo.io/country) == CN ]; then echo "http://mirrors.aliyun.com/alpine/latest-stable/main/" > /etc/apk/repositories ;fi \
+    && apk add --no-cache libsodium py-pip \
+    && pip --no-cache-dir install https://github.com/shadowsocks/shadowsocks/archive/master.zip
+
+ENTRYPOINT ["/usr/bin/ssserver"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

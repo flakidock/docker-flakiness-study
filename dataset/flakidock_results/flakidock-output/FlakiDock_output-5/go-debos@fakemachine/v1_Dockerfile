@@ -1,0 +1,27 @@
+FROM debian:stretch-slim
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+ENV HOME=/scratch
+
+# Update sources.list to use archive.debian.org
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+
+# Always install procps in case the docker file gets used in jenkins
+RUN apt-get update && apt-get install --no-install-recommends -y procps
+
+# Bits needed to run fakemachine
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y qemu-system-x86 \
+                                               qemu-user-static \
+                                               busybox \
+                                               linux-image-amd64 \
+                                               systemd \
+                                               dbus
+
+# Bits needed to build fakemachine
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y golang-go git ca-certificates
+
+WORKDIR /scratch

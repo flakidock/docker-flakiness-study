@@ -1,0 +1,20 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+#FROM node:9.8
+FROM registry.cn-hangzhou.aliyuncs.com/zuowenbo/nodejs
+MAINTAINER bjfumac "macvsapple@gmail.com"
+RUN npm install  protobufjs chalk minimist glob tmp semver uglify-js espree escodegen estraverse -g
+VOLUME ["/proto/"]
+WORKDIR /
+ADD build.sh build.sh
+ADD fix.js fix.js
+ADD asconverter.js asconverter.js
+RUN chmod 777 /build.sh
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

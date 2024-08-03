@@ -1,0 +1,45 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM node:7.10
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD [ "npm", "start" ]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [5/5] RUN npm install:
+five-bells-ledger@21./usr/src/app
+npm WARN pg@8.requires a peer of pg-native@>=2.but none was installed.
+npm WARN five-bells-shared@26.requires a peer of mag@^0.but none was installed.
+npm WARN five-bells-shared@26.requires a peer of mag-hub@^0.but none was installed.
+npm ERR! Linux 3.10.0-1127.10.1.el7.x86_64
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+npm ERR! node v7.10.1
+npm ERR! npm  v4.2.0
+npm ERR! path /usr/src/app/node_modules/.staging/@types/triple-beam-c220f220/package.json
+npm ERR! code ENOTDIR
+npm ERR! errno -20
+npm ERR! syscall open
+npm ERR! ENOTDIR: not a directory, open '/usr/src/app/node_modules/.staging/@types/triple-beam-c220f220/package.json'
+npm ERR! 
+npm ERR! If you need help, you may report this error at:
+npm ERR!     <https://github.com/npm/npm/issues>
+npm ERR! Please include the following file with any support request:
+npm ERR!     /root/.npm/_logs/2024-08-01T08_03_15_971Z-debug.log
+ERROR: process "/bin/sh -c npm install" did not complete successfully: exit code: 236```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

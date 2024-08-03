@@ -1,0 +1,32 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM composer
+
+FROM php:7.2-cli-stretch
+
+RUN apt-get update && apt-get install git unzip -y
+
+WORKDIR /app
+
+EXPOSE 4001
+
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+COPY ./bin /app/bin
+COPY ./src /app/src
+COPY ./start_zenaton /app/start_zenaton
+COPY composer.json composer.lock ./
+
+RUN composer install
+
+# Install Zenaton
+RUN curl https://install.zenaton.com | sh
+
+ENTRYPOINT ["./start_zenaton"]
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

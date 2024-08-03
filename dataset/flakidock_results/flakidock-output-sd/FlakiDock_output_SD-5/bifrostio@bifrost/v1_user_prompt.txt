@@ -1,0 +1,38 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM node:6
+
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+
+EXPOSE 3000
+CMD npm start
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/5] RUN npm install:
+npm ERR! Linux 3.10.0-1127.10.1.el7.x86_64
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+npm ERR! node v6.17.1
+npm ERR! npm  v3.10.10
+npm ERR! path /app/node_modules/.staging/@types/ramda-af690b7b/package.json
+npm ERR! code ENOTDIR
+npm ERR! errno -20
+npm ERR! syscall open
+npm ERR! ENOTDIR: not a directory, open '/app/node_modules/.staging/@types/ramda-af690b7b/package.json'
+npm ERR! 
+npm ERR! If you need help, you may report this error at:
+npm ERR!     <https://github.com/npm/npm/issues>
+npm ERR! Please include the following file with any support request:
+npm ERR!     /app/npm-debug.log
+ERROR: process "/bin/sh -c npm install" did not complete successfully: exit code: 236```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,12 @@
+FROM php:5.6-apache
+
+RUN a2enmod rewrite
+
+RUN echo "date.timezone = Europe/London" > /usr/local/etc/php/conf.d/timezone.ini
+
+# mcrypt
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+
+RUN apt-get update && apt-get install -y libmcrypt-dev
+RUN docker-php-ext-install mcrypt

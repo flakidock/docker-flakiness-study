@@ -1,0 +1,31 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM debian:stretch-slim
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN useradd -d /lynis-report-converter -U lynis
+
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends \
+       htmldoc libxml-writer-perl libarchive-zip-perl libjson-perl \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+COPY . /lynis-report-converter
+
+USER lynis
+
+WORKDIR /lynis-report-converter
+
+ENTRYPOINT ["/lynis-report-converter/lynis-report-converter.pl"]
+CMD ["--help"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

@@ -1,0 +1,23 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM golang:1.12.3-stretch
+
+RUN apt-get update
+# install bats
+RUN git clone https://github.com/sstephenson/bats.git && cd bats && ./install.sh /usr
+
+# install godap requirements
+RUN apt-get install -y libpcap0.8-dev libgeoip-dev jq
+
+# build and install godap, but call it *dap* for sake of simplifying testing between dap and godap
+WORKDIR /opt/godap
+COPY . .
+RUN go install -v -tags="libpcap libgeoip"
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

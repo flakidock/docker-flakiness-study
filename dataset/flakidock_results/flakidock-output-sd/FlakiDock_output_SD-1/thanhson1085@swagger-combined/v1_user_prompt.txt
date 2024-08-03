@@ -1,0 +1,53 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM alpine:3.2
+MAINTAINER Nguyen Sy Thanh Son <thanhson1085@gmail.com>
+
+ENV NODE_VERSION=v4.2.2 NPM_VERSION=2.14.2
+
+RUN apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold && \
+    curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz && \
+    cd /node-${NODE_VERSION} && \
+    ./configure --prefix=/usr --without-snapshot --fully-static && \
+    make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
+    make install && \
+    cd / && \
+    npm install -g npm@${NPM_VERSION} && \
+    apk del gcc g++ linux-headers libgcc libstdc++ binutils-gold && \
+    rm -rf /etc/ssl /node-${NODE_VERSION} /usr/include \
+    /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
+    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
+
+WORKDIR /build
+COPY ./package.json /build/package.json
+
+RUN npm install
+
+ADD . /build
+
+# run app
+CMD ["node", "index.js"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/6] RUN apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold &&     curl -sSL https://nodejs.org/dist/v4.2.2/node-v4.2.2.tar.gz | tar -xz &&     cd /node-v4.2.2 &&     ./configure --prefix=/usr --without-snapshot --fully-static &&     make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) &&     make install &&     cd / &&     npm install -g npm@2.14.2 &&     apk del gcc g++ linux-headers libgcc libstdc++ binutils-gold &&     rm -rf /etc/ssl /node-v4.2.2 /usr/include     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html:
+[2/6] RUN apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold &&     curl -sSL https://nodejs.org/dist/v4.2.2/node-v4.2.2.tar.gz | tar -xz &&     cd /node-v4.&&     ./configure --prefix=/usr --without-snapshot --fully-static &&     make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) &&     make install &&     cd / &&     npm install -g npm@2.&&     apk del gcc g++ linux-headers libgcc libstdc++ binutils-gold &&     rm -rf /etc/ssl /node-v4./usr/include     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
+(35/39) Installing gdbm (1.11-r0)
+(36/39) Installing ncurses-libs (5.9-r3)
+(37/39) Installing readline (6.3.008-r0)
+(38/39) Installing sqlite-libs (3.8.10.2-r0)
+(39/39) Installing python (2.7.12-r0)
+Executing busybox-1.23.2-r3.trigger
+Executing ca-certificates-20161130-r0.trigger
+OK: 195 MiB in 54 packages
+curl: (18) transfer closed with 18417540 bytes remaining to read
+tar: short read
+ERROR: process "/bin/sh -c apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold &&     curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz &&     cd /node-${NODE_VERSION} &&     ./configure --prefix=/usr --without-snapshot --fully-static &&     make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) &&     make install &&     cd / &&     npm install -g npm@${NPM_VERSION} &&     apk del gcc g++ linux-headers libgcc libstdc++ binutils-gold &&     rm -rf /etc/ssl /node-${NODE_VERSION} /usr/include     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

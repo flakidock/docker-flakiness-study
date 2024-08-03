@@ -1,0 +1,18 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM golang:1.19.2-alpine AS builder
+RUN apk add build-base libpcap-dev
+RUN go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+
+FROM alpine:3.16.2
+RUN apk add nmap libpcap-dev bind-tools ca-certificates nmap-scripts
+COPY --from=builder /go/bin/naabu /usr/local/bin/naabu
+ENTRYPOINT ["naabu"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

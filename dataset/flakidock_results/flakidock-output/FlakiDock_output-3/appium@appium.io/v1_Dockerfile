@@ -1,0 +1,9 @@
+FROM node:12.22.1-alpine3.11
+WORKDIR '/root'
+RUN apk add git python3 py3-pip
+COPY ./package.json ./
+RUN pip3 install mkdocs==0.17.5
+RUN npm install
+VOLUME docs/ ./docs/
+COPY . .
+CMD ["npm", "run", "build:docs:docker"]

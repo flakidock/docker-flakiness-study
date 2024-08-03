@@ -1,0 +1,43 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM golang:1.11.3-alpine3.8 AS builder
+
+RUN apk upgrade \
+    && apk add git \
+    && go get -ldflags '-w -s' \
+        github.com/ihciah/go-shadowsocks-magic
+
+FROM alpine:3.8
+
+LABEL maintainer="ihciah <ihciah@gmail.com>"
+
+RUN apk upgrade \
+    && apk add bash tzdata \
+    && rm -rf /var/cache/apk/*
+
+COPY --from=builder /go/bin/go-shadowsocks-magic /usr/bin/shadowsocks
+
+ENTRYPOINT ["shadowsocks"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder 2/2] RUN apk upgrade     && apk add git     && go get -ldflags '-w -s'         github.com/ihciah/go-shadowsocks-magic:
+OK: 5 MiB in 14 packages
+(1/6) Installing nghttp2-libs (1.39.2-r0)
+(2/6) Installing libssh2 (1.9.0-r1)
+(3/6) Installing libcurl (7.61.1-r3)
+(4/6) Installing expat (2.2.8-r0)
+(5/6) Installing pcre2 (10.31-r0)
+(6/6) Installing git (2.18.4-r0)
+Executing busybox-1.28.4-r3.trigger
+OK: 19 MiB in 20 packages
+package golang.org/x/sys/cpu: C source files not allowed when not using cgo or SWIG: cpu_gccgo_x86.c
+ERROR: process "/bin/sh -c apk upgrade     && apk add git     && go get -ldflags '-w -s'         github.com/ihciah/go-shadowsocks-magic" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,7 @@
+FROM node:8.7
+
+# Install a specific version of replicated-studio to avoid issues with dependencies
+RUN npm install -g replicated-studio@0.0.1
+
+EXPOSE 8006
+CMD ["replicated-studio"]

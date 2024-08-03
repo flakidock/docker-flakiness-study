@@ -1,0 +1,18 @@
+FROM alpine:latest
+MAINTAINER Roman Dodin <dodin.roman@gmail.com>
+
+# Install python3 and pip using apk packages
+RUN apk add --no-cache python3 py3-pip
+
+# Upgrade pip and setuptools
+RUN pip3 install --upgrade pip setuptools
+
+COPY ./web_app/requirements.txt /tmp/requirements.txt
+RUN pip3 install -qr /tmp/requirements.txt
+
+RUN mkdir -p /opt/webapp
+COPY ./web_app /opt/webapp/
+WORKDIR /opt/webapp
+
+EXPOSE 80
+CMD ["python3", "app.py"]

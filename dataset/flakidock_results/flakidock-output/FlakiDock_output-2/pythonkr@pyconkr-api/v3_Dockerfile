@@ -1,0 +1,13 @@
+FROM python:3.6.8-stretch
+
+ENV PYTHONUNBUFFERED 1
+WORKDIR /config
+COPY . /web
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list && \
+    apt-get update && apt-get install -y cron
+ADD requirements.txt /config/
+RUN pip install -r requirements.txt
+
+WORKDIR /web
+ENTRYPOINT ["/web/docker-entrypoint.sh"]

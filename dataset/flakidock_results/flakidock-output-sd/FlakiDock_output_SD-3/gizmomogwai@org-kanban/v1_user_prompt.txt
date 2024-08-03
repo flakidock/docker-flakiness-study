@@ -1,0 +1,21 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM alpine:latest
+RUN apk --no-cache add emacs
+RUN mkdir -p /workspace
+RUN emacs --batch --execute "(progn (package-initialize) (message \"1\") (setq network-security-level 'low) (message \"2\") (add-to-list 'package-archives '(\"melpa\" . \"https://melpa.org/packages/\") t) (message \"3\") (package-list-packages) (message \"4\") (sleep-for 4) (package-install 'org-kanban))"
+CMD ["emacs"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/4] RUN emacs --batch --execute "(progn (package-initialize) (message "1") (setq network-security-level 'low) (message "2") (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t) (message "3") (package-list-packages) (message "4") (sleep-for 4) (package-install 'org-kanban))":
+/bin/sh: emacs: not found
+ERROR: process "/bin/sh -c emacs --batch --execute \"(progn (package-initialize) (message \\\"1\\\") (setq network-security-level 'low) (message \\\"2\\\") (add-to-list 'package-archives '(\\\"melpa\\\" . \\\"https://melpa.org/packages/\\\") t) (message \\\"3\\\") (package-list-packages) (message \\\"4\\\") (sleep-for 4) (package-install 'org-kanban))\"" did not complete successfully: exit code: 127```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

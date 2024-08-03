@@ -1,0 +1,45 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM node:boron
+
+# Create app directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Install app dependencies
+COPY package.json /usr/src/app/
+RUN npm install
+
+# Bundle app source
+COPY . /usr/src/app
+COPY ./db/tarchive.db.example /usr/src/app/db/tarchive.db
+
+EXPOSE 3000
+CMD [ "npm", "start" ]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [5/7] RUN npm install:
+npm ERR! Linux 3.10.0-1160.31.1.el7.x86_64
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+npm ERR! node v6.17.1
+npm ERR! npm  v3.10.10
+npm ERR! path /usr/src/app/node_modules/.staging/@types/babylon-34a7a879/package.json
+npm ERR! code ENOTDIR
+npm ERR! errno -20
+npm ERR! syscall open
+npm ERR! ENOTDIR: not a directory, open '/usr/src/app/node_modules/.staging/@types/babylon-34a7a879/package.json'
+npm ERR! 
+npm ERR! If you need help, you may report this error at:
+npm ERR!     <https://github.com/npm/npm/issues>
+npm ERR! Please include the following file with any support request:
+npm ERR!     /usr/src/app/npm-debug.log
+ERROR: process "/bin/sh -c npm install" did not complete successfully: exit code: 236```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

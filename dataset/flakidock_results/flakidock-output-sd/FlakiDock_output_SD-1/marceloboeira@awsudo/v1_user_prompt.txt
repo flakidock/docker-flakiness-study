@@ -1,0 +1,28 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# DISCLAIMER: This docker image is only for testings purposes
+FROM rust:1.31
+
+# Installs file watcher
+RUN cargo install funzzy
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/2] RUN cargo install funzzy:
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded funzzy v1.4.0
+error: failed to parse manifest at `/usr/local/cargo/registry/src/github.com-1ecc6299db9ec823/funzzy-1.4.0/Cargo.toml`
+Caused by:
+  failed to parse the `edition` key
+Caused by:
+  supported edition values are `2015` or `2018`, but `2021` is unknown
+ERROR: process "/bin/sh -c cargo install funzzy" did not complete successfully: exit code: 101```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,24 @@
+# Dockerfile
+FROM python:alpine
+MAINTAINER Kyubi Systems 2020
+
+LABEL version="1.0.7" maintainer="Kyubi Systems <admin@kyubi.co.uk>"
+
+WORKDIR /usr/src/app
+
+COPY requirements.txt ./
+RUN apk add --no-cache --virtual .build-deps gcc musl-dev \
+    && apk add --no-cache freetype-dev jpeg-dev libpng-dev cython \
+    && pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apk del .build-deps
+
+RUN apk add --no-cache unrar xz
+
+COPY . .
+
+RUN touch .docker
+
+EXPOSE 5000
+
+CMD [ "./start.sh" ]

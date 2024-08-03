@@ -1,0 +1,51 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# Elixir 1.4: https://hub.docker.com/_/elixir/
+FROM elixir:1.4.5
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install hex
+RUN mix local.hex --force
+
+# Install rebar
+RUN mix local.rebar --force
+
+# Install the Phoenix framework itself
+RUN mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez --force
+
+# Install NodeJS 6.x and the NPM
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install -y -q nodejs
+
+# Install inotify for live reload
+RUN apt-get install inotify-tools -y
+
+# Set /app as workdir
+RUN mkdir /app
+ADD . /app
+WORKDIR /app
+
+# Install phoenix dependencies
+RUN mix deps.get
+
+# Install node dependecies
+RUN cd assets/ && npm install -g yarn && yarn install && cd ..
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 4/12] RUN mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez --force:
+06:50:[error] SSL: :hello: ssl_alert.erl:88:Fatal error: internal error
+** (Mix) httpc request failed with: {:failed_connect, [{:to_address, {'github.com', 443}}, {:inet, [:inet], {:tls_alert, 'internal error'}}]}
+Could not fetch archive at:
+    https://github.com/phoenixframework/archives/raw/master/phx_new.ez
+Please download the archive above manually to your current directory and run:
+    mix archive.install ./phx_new.ez
+ERROR: process "/bin/sh -c mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez --force" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

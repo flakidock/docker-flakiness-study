@@ -1,0 +1,28 @@
+# Dockerfile
+FROM alpine:3.14
+MAINTAINER Nguyen Sy Thanh Son <thanhson1085@gmail.com>
+
+ENV NODE_VERSION=v14.17.6 NPM_VERSION=6.14.15
+
+RUN apk add --no-cache git curl make gcc g++ python3 linux-headers && \
+    curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz && \
+    cd /node-${NODE_VERSION} && \
+    ./configure --prefix=/usr --without-snapshot --fully-static && \
+    make -j$(nproc) && \
+    make install && \
+    cd / && \
+    npm install -g npm@${NPM_VERSION} && \
+    apk del gcc g++ linux-headers && \
+    rm -rf /etc/ssl /node-${NODE_VERSION} /usr/include \
+    /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
+    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
+
+WORKDIR /build
+COPY ./package.json /build/package.json
+
+RUN npm install
+
+ADD . /build
+
+# run app
+CMD ["node", "index.js"]

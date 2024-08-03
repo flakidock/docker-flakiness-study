@@ -1,0 +1,369 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM centos:7
+
+ENV PATH=$PATH:/dbsync/bin
+
+COPY . /tmp/aliyun/
+
+RUN set -ex \
+    && { \
+        echo '[mysql57-community]'; \
+        echo 'name=mysql57-community'; \
+        echo 'baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/$releasever/$basearch/'; \
+        echo 'enabled=1'; \
+        echo 'gpgcheck=0'; \
+        echo '[pgdg10]'; \
+        echo 'name=pgdg10'; \
+        echo 'baseurl=https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-$releasever-$basearch'; \
+        echo 'enabled=1'; \
+        echo 'gpgcheck=0'; \
+    } > /etc/yum.repos.d/dbsync_deps.repo \
+    && cp -ra /var/log/yum.log /tmp/yum.log.old \
+    && yum install mysql-community-client mysql-community-devel postgresql10-devel gcc gcc-c++ make unzip -y \
+    && update-alternatives --install /usr/bin/pg_config pgsql-pg_config /usr/pgsql-10/bin/pg_config 300 \
+    && ( \
+        cd /tmp/aliyun/dbsync \
+        && make \
+        && install -D -d /dbsync/bin /dbsync/lib \
+        && install -p -D -m 0755 *2pgsql /dbsync/bin \
+        && install -p -D -m 0755 ali_recvlogical.so /dbsync/lib \
+        && install -p -D -m 0644 my.cfg ../LICENSE ../README.md /dbsync \
+        && ln -sf /usr/share/mysql /dbsync/share \
+    ) \
+    && update-alternatives --remove pgsql-pg_config /usr/pgsql-10/bin/pg_config \
+    && mkdir -p /tmp/extbin \
+    && curl -L https://github.com/aliyun/rds_dbsync/files/1555186/mysql2pgsql.bin.el7.20171213.zip -o /tmp/extbin/bin.zip \
+    && (cd /tmp/extbin && unzip -o bin.zip && install -p -D -m 0755 mysql2pgsql.bin*/bin/binlog_* /dbsync/bin) \
+    && yum remove -y mysql-community-devel postgresql10-devel unzip gcc gcc-c++ make cpp glibc-devel glibc-headers libicu-devel libstdc++-devel kernel-headers \
+    && yum clean all && mv /tmp/yum.log.old /var/log/yum.log \
+    && rm -rf /tmp/aliyun /tmp/extbin /var/cache/yum/* /etc/yum.repos.d/dbsync_deps.repo \
+    && ls -alhR /dbsync && ldd /dbsync/bin/* && mysql --version && psql --version && mysql2pgsql -h
+
+WORKDIR /dbsync
+
+CMD ["mysql2pgsql", "-h"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/4] RUN set -ex     && {         echo '[mysql57-community]';         echo 'name=mysql57-community';         echo 'baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/$releasever/$basearch/';         echo 'enabled=1';         echo 'gpgcheck=0';         echo '[pgdg10]';         echo 'name=pgdg10';         echo 'baseurl=https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-$releasever-$basearch';         echo 'enabled=1';         echo 'gpgcheck=0';     } > /etc/yum.repos.d/dbsync_deps.repo     && cp -ra /var/log/yum.log /tmp/yum.log.old     && yum install mysql-community-client mysql-community-devel postgresql10-devel gcc gcc-c++ make unzip -y     && update-alternatives --install /usr/bin/pg_config pgsql-pg_config /usr/pgsql-10/bin/pg_config 300     && (         cd /tmp/aliyun/dbsync         && make         && install -D -d /dbsync/bin /dbsync/lib         && install -p -D -m 0755 *2pgsql /dbsync/bin         && install -p -D -m 0755 ali_recvlogical.so /dbsync/lib         && install -p -D -m 0644 my.cfg ../LICENSE ../README.md /dbsync         && ln -sf /usr/share/mysql /dbsync/share     )     && update-alternatives --remove pgsql-pg_config /usr/pgsql-10/bin/pg_config     && mkdir -p /tmp/extbin     && curl -L https://github.com/aliyun/rds_dbsync/files/1555186/mysql2pgsql.bin.el7.20171213.zip -o /tmp/extbin/bin.zip     && (cd /tmp/extbin && unzip -o bin.zip && install -p -D -m 0755 mysql2pgsql.bin*/bin/binlog_* /dbsync/bin)     && yum remove -y mysql-community-devel postgresql10-devel unzip gcc gcc-c++ make cpp glibc-devel glibc-headers libicu-devel libstdc++-devel kernel-headers     && yum clean all && mv /tmp/yum.log.old /var/log/yum.log     && rm -rf /tmp/aliyun /tmp/extbin /var/cache/yum/* /etc/yum.repos.d/dbsync_deps.repo     && ls -alhR /dbsync && ldd /dbsync/bin/* && mysql --version && psql --version && mysql2pgsql -h:
+Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&arch=x86_64&repo=os&infra=container error was
+14: curl- "Could not resolve host: mirrorlist.centos.org; Unknown error"
+ One of the configured repositories failed (Unknown),
+ and yum doesn't have enough cached data to continue. At this point the only
+ safe thing yum can do is fail. There are a few ways to work "fix" this:
+     1. Contact the upstream for the repository and get them to fix the problem.
+     2. Reconfigure the baseurl/etc. for the repository, to point to a working
+        upstream. This is most often useful if you are using a newer
+        distribution release than is supported by the repository (and the
+        packages for the previous distribution release still work).
+     3. Run the command with the repository temporarily disabled
+            yum --disablerepo=<repoid> ...
+     4. Disable the repository permanently, so yum won't use it by default. Yum
+        will then just ignore the repository until you permanently enable it
+        again or use --enablerepo for temporary usage:
+            yum-config-manager --disable <repoid>
+        or
+            subscription-manager repos --disable=<repoid>
+     5. Configure the failing repository to be skipped, if it is unavailable.
+        Note that yum will try to contact the repo. when it runs most commands,
+        so will have to try and fail each time (and thus. yum will be be much
+        slower). If it is a very temporary problem though, this is often a nice
+        compromise:
+            yum-config-manager --save --setopt=<repoid>.skip_if_unavailable=true
+Cannot find a valid baseurl for repo: base/7/x86_64
+ERROR: process "/bin/sh -c set -ex     && {         echo '[mysql57-community]';         echo 'name=mysql57-community';         echo 'baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/$releasever/$basearch/';         echo 'enabled=1';         echo 'gpgcheck=0';         echo '[pgdg10]';         echo 'name=pgdg10';         echo 'baseurl=https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-$releasever-$basearch';         echo 'enabled=1';         echo 'gpgcheck=0';     } > /etc/yum.repos.d/dbsync_deps.repo     && cp -ra /var/log/yum.log /tmp/yum.log.old     && yum install mysql-community-client mysql-community-devel postgresql10-devel gcc gcc-c++ make unzip -y     && update-alternatives --install /usr/bin/pg_config pgsql-pg_config /usr/pgsql-10/bin/pg_config 300     && (         cd /tmp/aliyun/dbsync         && make         && install -D -d /dbsync/bin /dbsync/lib         && install -p -D -m 0755 *2pgsql /dbsync/bin         && install -p -D -m 0755 ali_recvlogical.so /dbsync/lib         && install -p -D -m 0644 my.cfg ../LICENSE ../README.md /dbsync         && ln -sf /usr/share/mysql /dbsync/share     )     && update-alternatives --remove pgsql-pg_config /usr/pgsql-10/bin/pg_config     && mkdir -p /tmp/extbin     && curl -L https://github.com/aliyun/rds_dbsync/files/1555186/mysql2pgsql.bin.el7.20171213.zip -o /tmp/extbin/bin.zip     && (cd /tmp/extbin && unzip -o bin.zip && install -p -D -m 0755 mysql2pgsql.bin*/bin/binlog_* /dbsync/bin)     && yum remove -y mysql-community-devel postgresql10-devel unzip gcc gcc-c++ make cpp glibc-devel glibc-headers libicu-devel libstdc++-devel kernel-headers     && yum clean all && mv /tmp/yum.log.old /var/log/yum.log     && rm -rf /tmp/aliyun /tmp/extbin /var/cache/yum/* /etc/yum.repos.d/dbsync_deps.repo     && ls -alhR /dbsync && ldd /dbsync/bin/* && mysql --version && psql --version && mysql2pgsql -h" did not complete successfully: exit code: 1```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```FROM python:3.6-slim-stretch
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+RUN mkdir /code && \
+    mkdir -p /usr/share/man/man1/ && \
+    mkdir -p /usr/share/man/man7/ && \
+    apt-get -qq update && \
+    apt-get install -y --no-install-recommends \
+        gcc libc6-dev libc-dev libssl-dev make automake libtool autoconf \
+        pkg-config libffi-dev postgresql-client postgresql-client-common && \
+    pip3 install pipenv setuptools pip --upgrade && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get -qq update && apt-get install -my wget gnupg && \
+    apt-get -qq update && apt-get -qq -y install curl && \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    apt-get -qq update && apt-get -y -qq install nodejs
+
+WORKDIR /code
+
+COPY Pipfile Pipfile
+COPY Pipfile.lock Pipfile.lock
+COPY entrypoint.sh /usr/bin/entrypoint.sh
+COPY package*.json ./
+
+RUN npm install
+
+RUN set -ex && pipenv install --deploy --system
+
+RUN apt-get purge -y --auto-remove \
+        gcc libc6-dev libc-dev libssl-dev make automake libtool autoconf \
+        pkg-config libffi-dev
+
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+
+```
+
+## Example Build Error
+```> [ 2/10] RUN mkdir /code &&     mkdir -p /usr/share/man/man1/ &&     mkdir -p /usr/share/man/man7/ &&     apt-get -qq update &&     apt-get install -y --no-install-recommends         gcc libc6-dev libc-dev libssl-dev make automake libtool autoconf         pkg-config libffi-dev postgresql-client postgresql-client-common &&     pip3 install pipenv setuptools pip --upgrade &&     rm -rf /var/lib/apt/lists/* &&     apt-get -qq update && apt-get install -my wget gnupg &&     apt-get -qq update && apt-get -qq -y install curl &&     curl -sL https://deb.nodesource.com/setup_8.x | bash - &&     apt-get -qq update && apt-get -y -qq install nodejs:
+W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+ERROR: process "/bin/sh -c mkdir /code &&     mkdir -p /usr/share/man/man1/ &&     mkdir -p /usr/share/man/man7/ &&     apt-get -qq update &&     apt-get install -y --no-install-recommends         gcc libc6-dev libc-dev libssl-dev make automake libtool autoconf         pkg-config libffi-dev postgresql-client postgresql-client-common &&     pip3 install pipenv setuptools pip --upgrade &&     rm -rf /var/lib/apt/lists/* &&     apt-get -qq update && apt-get install -my wget gnupg &&     apt-get -qq update && apt-get -qq -y install curl &&     curl -sL https://deb.nodesource.com/setup_8.x | bash - &&     apt-get -qq update && apt-get -y -qq install nodejs" did not complete successfully: exit code: 100```
+
+## Example Repair
+
+### Repair 1
+```FROM python:3.6-slim-buster
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+RUN mkdir /code && \
+    mkdir -p /usr/share/man/man1/ && \
+    mkdir -p /usr/share/man/man7/ && \
+    apt-get -qq update && \
+    apt-get install -y --no-install-recommends \
+        gcc libc6-dev libc-dev libssl-dev make automake libtool autoconf \
+        pkg-config libffi-dev postgresql-client postgresql-client-common && \
+    pip3 install pipenv setuptools pip --upgrade && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get -qq update && apt-get install -my wget gnupg && \
+    apt-get -qq update && apt-get -qq -y install curl && \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    apt-get -qq update && apt-get -y -qq install nodejs npm
+
+WORKDIR /code
+
+COPY Pipfile Pipfile
+COPY Pipfile.lock Pipfile.lock
+COPY entrypoint.sh /usr/bin/entrypoint.sh
+COPY package*.json ./
+
+RUN npm install
+
+RUN set -ex && pipenv install --deploy --system
+
+RUN apt-get purge -y --auto-remove \
+        gcc libc6-dev libc-dev libssl-dev make automake libtool autoconf \
+        pkg-config libffi-dev
+
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+
+```
+
+
+### Repair 2
+```FROM python:3.6-slim-stretch
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+
+RUN mkdir /code && \
+    mkdir -p /usr/share/man/man1/ && \
+    mkdir -p /usr/share/man/man7/ && \
+    apt-get -qq update && \
+    apt-get install -y --no-install-recommends \
+        gcc libc6-dev libc-dev libssl-dev make automake libtool autoconf \
+        pkg-config libffi-dev postgresql-client postgresql-client-common && \
+    pip3 install pipenv setuptools pip --upgrade && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get -qq update && apt-get install -my wget gnupg && \
+    apt-get -qq update && apt-get -qq -y install curl && \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    apt-get -qq update && apt-get -y -qq install nodejs
+
+WORKDIR /code
+
+COPY Pipfile Pipfile
+COPY Pipfile.lock Pipfile.lock
+COPY entrypoint.sh /usr/bin/entrypoint.sh
+COPY package*.json ./
+
+RUN npm install
+
+RUN set -ex && pipenv install --deploy --system
+
+RUN apt-get purge -y --auto-remove \
+        gcc libc6-dev libc-dev libssl-dev make automake libtool autoconf \
+        pkg-config libffi-dev
+
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+
+```
+
+
+# Example 2
+## Example Dockerfile
+```FROM openjdk:8u212-jre
+
+RUN useradd opentsdb && \
+    apt-get update && \
+    apt-get install --no-install-recommends -y gnuplot-nox && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    curl -L https://github.com/OpenTSDB/opentsdb/releases/download/v2.4.0/opentsdb-2.4.0_all.deb > /tmp/opentsdb.deb && \
+    echo "36cd2a7a571706e1265f26d77add40931ff4ee76c3a8756b9196852903ddf1c466cdb3960a249adee141184f3cecf2f245f849561d5569be5dd19fd5acbcda12  /tmp/opentsdb.deb" | sha512sum -c && \
+    dpkg -i /tmp/opentsdb.deb && \
+    rm /tmp/opentsdb.deb && \
+    rm /etc/opentsdb/opentsdb.conf && \
+    curl -sL "https://github.com/tianon/gosu/releases/download/1.11/gosu-amd64" > /usr/sbin/gosu && \
+    echo "0b843df6d86e270c5b0f5cbd3c326a04e18f4b7f9b8457fa497b0454c4b138d7 /usr/sbin/gosu" | sha256sum -c && \
+    chmod +x /usr/sbin/gosu
+
+COPY ./logback.xml /etc/opentsdb/logback.xml
+
+COPY ./run.sh /run.sh
+COPY ./unprivileged.sh /unprivileged.sh
+
+VOLUME /var/cache/opentsdb
+
+ENTRYPOINT ["/run.sh"]
+
+```
+
+## Example Build Error
+```> [2/5] RUN useradd opentsdb &&     apt-get update &&     apt-get install --no-install-recommends -y gnuplot-nox &&     apt-get clean &&     rm -rf /var/lib/apt/lists/* &&     curl -L https://github.com/OpenTSDB/opentsdb/releases/download/v2.4.0/opentsdb-2.4.0_all.deb > /tmp/opentsdb.deb &&     echo "36cd2a7a571706e1265f26d77add40931ff4ee76c3a8756b9196852903ddf1c466cdb3960a249adee141184f3cecf2f245f849561d5569be5dd19fd5acbcda12  /tmp/opentsdb.deb" | sha512sum -c &&     dpkg -i /tmp/opentsdb.deb &&     rm /tmp/opentsdb.deb &&     rm /etc/opentsdb/opentsdb.conf &&     curl -sL "https://github.com/tianon/gosu/releases/download/1.11/gosu-amd64" > /usr/sbin/gosu &&     echo "0b843df6d86e270c5b0f5cbd3c326a04e18f4b7f9b8457fa497b0454c4b138d7 /usr/sbin/gosu" | sha256sum -c &&     chmod +x /usr/sbin/gosu:
+Err:9 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+  404  Not Found
+Err:10 http://deb.debian.org/debian stretch/main amd64 Packages
+  404  Not Found
+Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+  404  Not Found
+Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+Reading package lists...
+W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+ERROR: process "/bin/sh -c useradd opentsdb &&     apt-get update &&     apt-get install --no-install-recommends -y gnuplot-nox &&     apt-get clean &&     rm -rf /var/lib/apt/lists/* &&     curl -L https://github.com/OpenTSDB/opentsdb/releases/download/v2.4.0/opentsdb-2.4.0_all.deb > /tmp/opentsdb.deb &&     echo \"36cd2a7a571706e1265f26d77add40931ff4ee76c3a8756b9196852903ddf1c466cdb3960a249adee141184f3cecf2f245f849561d5569be5dd19fd5acbcda12  /tmp/opentsdb.deb\" | sha512sum -c &&     dpkg -i /tmp/opentsdb.deb &&     rm /tmp/opentsdb.deb &&     rm /etc/opentsdb/opentsdb.conf &&     curl -sL \"https://github.com/tianon/gosu/releases/download/1.11/gosu-amd64\" > /usr/sbin/gosu &&     echo \"0b843df6d86e270c5b0f5cbd3c326a04e18f4b7f9b8457fa497b0454c4b138d7 /usr/sbin/gosu\" | sha256sum -c &&     chmod +x /usr/sbin/gosu" did not complete successfully: exit code: 100```
+
+## Example Repair
+
+### Repair 1
+```FROM openjdk:8u212-jre
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+
+RUN useradd opentsdb && \
+    apt-get update && \
+    apt-get install --no-install-recommends -y gnuplot-nox && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    curl -L https://github.com/OpenTSDB/opentsdb/releases/download/v2.4.0/opentsdb-2.4.0_all.deb > /tmp/opentsdb.deb && \
+    echo "36cd2a7a571706e1265f26d77add40931ff4ee76c3a8756b9196852903ddf1c466cdb3960a249adee141184f3cecf2f245f849561d5569be5dd19fd5acbcda12  /tmp/opentsdb.deb" | sha512sum -c && \
+    dpkg -i /tmp/opentsdb.deb && \
+    rm /tmp/opentsdb.deb && \
+    rm /etc/opentsdb/opentsdb.conf && \
+    curl -sL "https://github.com/tianon/gosu/releases/download/1.11/gosu-amd64" > /usr/sbin/gosu && \
+    echo "0b843df6d86e270c5b0f5cbd3c326a04e18f4b7f9b8457fa497b0454c4b138d7 /usr/sbin/gosu" | sha256sum -c && \
+    chmod +x /usr/sbin/gosu
+
+COPY ./logback.xml /etc/opentsdb/logback.xml
+
+COPY ./run.sh /run.sh
+COPY ./unprivileged.sh /unprivileged.sh
+
+VOLUME /var/cache/opentsdb
+
+ENTRYPOINT ["/run.sh"]
+
+```
+
+
+# Example 3
+## Example Dockerfile
+```FROM metacpan/metacpan-base:latest
+
+COPY cpanfile cpanfile.snapshot /metacpan-api/
+WORKDIR /metacpan-api
+
+# CPM installations of dependencies does not install or run tests. This is
+# because the modules themselves have been tested, and the metacpan use of the
+# modules is tested by the test suite. Removing the tests, reduces the overall
+# size of the images.
+RUN mkdir /CPAN \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends rsync=3.1.3-6 jq \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && cpm install --global \
+    && rm -fr /root/.cpanm /root/.perl-cpm /var/cache/apt/lists/* /tmp/*
+
+VOLUME /CPAN
+
+EXPOSE 5000
+
+CMD [ "/wait-for-it.sh", "${PGDB}",  "--", "${API_SERVER}", "./bin/api.pl" ]
+
+```
+
+## Example Build Error
+```> [4/4] RUN mkdir /CPAN     && apt-get update     && apt-get install -y --no-install-recommends rsync=3.1.3-6 jq     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && cpm install --global     && rm -fr /root/.cpanm /root/.perl-cpm /var/cache/apt/lists/* /tmp/*:
+Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
+Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [kB]
+Get:3 http://deb.debian.org/debian bullseye-updates InRelease [kB]
+Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8183 kB]
+Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [239 kB]
+Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [kB]
+E: Version '3.1.3-6' for 'rsync' was not found
+ERROR: process "/bin/sh -c mkdir /CPAN     && apt-get update     && apt-get install -y --no-install-recommends rsync=3.1.3-6 jq     && apt-get clean     && rm -rf /var/lib/apt/lists/*     && cpm install --global     && rm -fr /root/.cpanm /root/.perl-cpm /var/cache/apt/lists/* /tmp/*" did not complete successfully: exit code: 100```
+
+## Example Repair
+
+### Repair 1
+```FROM metacpan/metacpan-base:latest
+
+COPY cpanfile cpanfile.snapshot /metacpan-api/
+WORKDIR /metacpan-api
+
+# CPM installations of dependencies does not install or run tests. This is
+# because the modules themselves have been tested, and the metacpan use of the
+# modules is tested by the test suite. Removing the tests, reduces the overall
+# size of the images.
+RUN mkdir /CPAN \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends rsync jq \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && cpm install --global \
+    && rm -fr /root/.cpanm /root/.perl-cpm /var/cache/apt/lists/* /tmp/*
+
+VOLUME /CPAN
+
+EXPOSE 5000
+
+CMD [ "/wait-for-it.sh", "${PGDB}",  "--", "${API_SERVER}", "./bin/api.pl" ]
+
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

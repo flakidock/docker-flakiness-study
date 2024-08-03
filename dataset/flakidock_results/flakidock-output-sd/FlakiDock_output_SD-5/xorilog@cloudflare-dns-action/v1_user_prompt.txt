@@ -1,0 +1,35 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM r.j3ss.co/terraform:latest
+
+LABEL "com.github.actions.name"="Cloudflare DNS"
+LABEL "com.github.actions.description"="Update or Create DNS record on cloudlfare"
+LABEL "com.github.actions.icon"="cloud"
+LABEL "com.github.actions.color"="orange"
+
+RUN apk add --no-cache \
+	git \
+	jq \
+	curl \
+	make
+
+COPY terraform /usr/src/terraform
+COPY Makefile /usr/src
+COPY deploy.sh /usr/local/bin/deploy
+
+WORKDIR /usr/src
+
+ENTRYPOINT ["deploy"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [internal] load metadata for r.j3ss.co/terraform:latest:
+ERROR: failed to do request: Head "https://r.j3ss.co/v2/terraform/manifests/latest": dial tcp: lookup r.j3ss.co on 137.82.1.2:53: no such host```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

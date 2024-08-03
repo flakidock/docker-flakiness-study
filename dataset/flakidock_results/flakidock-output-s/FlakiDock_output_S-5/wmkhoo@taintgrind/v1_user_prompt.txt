@@ -1,0 +1,38 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM ubuntu:bionic
+
+RUN apt update
+RUN apt install -y git wget gcc build-essential automake python gcc-multilib
+RUN mkdir /code
+
+# build, install valgrind
+RUN wget -O /code/valgrind.tar.bz2 https://sourceware.org/pub/valgrind/valgrind-3.18.1.tar.bz2
+RUN cd /code && \
+    tar jxf /code/valgrind.tar.bz2 && \
+    mv valgrind-3.18.1 valgrind
+
+# clone taintgrind
+RUN cd /code/valgrind && \
+    git clone https://github.com/wmkhoo/taintgrind
+
+# build capstone
+RUN cd /code/valgrind/taintgrind && \
+    ./build_taintgrind.sh
+
+# dispatch via entrypoint script
+# recommend mapping the /pwd volume, probably like (for ELF file):
+#
+#    docker run -it --rm -v $(pwd):/pwd taintgrind /pwd/someexe
+VOLUME /pwd
+WORKDIR /code/valgrind/taintgrind
+RUN chmod +x /code/valgrind/taintgrind/entrypoint.sh
+ENTRYPOINT ["/code/valgrind/taintgrind/entrypoint.sh"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

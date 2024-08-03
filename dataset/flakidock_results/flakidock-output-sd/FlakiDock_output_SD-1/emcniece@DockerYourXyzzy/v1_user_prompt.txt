@@ -1,0 +1,58 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM davidcaste/alpine-tomcat:jdk8tomcat7
+
+# MAVEN
+ENV MAVEN_VERSION 3.5.4
+ENV USER_HOME_DIR /root
+ENV SHA ce50b1c91364cb77efe3776f756a6d92b76d9038b0a0782f7d53acf1e997a14d
+ENV BASE_URL https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
+ENV MAVEN_HOME /usr/share/maven
+ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
+
+RUN apk add --no-cache curl tar procps \
+ && mkdir -p /usr/share/maven/ref \
+ && curl -fsSL -o /tmp/apache-maven.tar.gz "${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz" \
+ && echo "${SHA} /tmp/apache-maven.tar.gz" | sha256sum -c - || true \
+ && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
+ && rm -f /tmp/apache-maven.tar.gz \
+ && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+
+# PYX
+ADD scripts/default.sh scripts/overrides.sh /
+ENV GIT_BRANCH master
+
+RUN apk add dos2unix git --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/community/ --allow-untrusted \
+  && dos2unix /default.sh /overrides.sh \
+  && git clone -b $GIT_BRANCH https://github.com/ajanata/PretendYoureXyzzy.git /project \
+  && apk del dos2unix git \
+  && chmod +x /default.sh /overrides.sh \
+  && mkdir /overrides
+
+ADD ./overrides/settings-docker.xml /usr/share/maven/ref/
+VOLUME [ "/overrides" ]
+
+WORKDIR /project
+CMD [ "/default.sh" ]```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/6] RUN apk add --no-cache curl tar procps  && mkdir -p /usr/share/maven/ref  && curl -fsSL -o /tmp/apache-maven.tar.gz "https://apache.osuosl.org/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz"  && echo "ce50b1c91364cb77efe3776f756a6d92b76d9038b0a0782f7d53acf1e997a14d /tmp/apache-maven.tar.gz" | sha256sum -c - || true  && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1  && rm -f /tmp/apache-maven.tar.gz  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn:
+(5/6) Installing procps (3.3.9-r3)
+(6/6) Installing tar (1.29-r1)
+Executing busybox-1.24.2-r14.trigger
+Executing glibc-bin-2.23-r3.trigger
+OK: 22 MiB in 26 packages
+curl: (22) The requested URL returned error: 404 Not Found
+tar (child): /tmp/apache-maven.tar.gz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+ERROR: process "/bin/sh -c apk add --no-cache curl tar procps  && mkdir -p /usr/share/maven/ref  && curl -fsSL -o /tmp/apache-maven.tar.gz \"${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz\"  && echo \"${SHA} /tmp/apache-maven.tar.gz\" | sha256sum -c - || true  && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1  && rm -f /tmp/apache-maven.tar.gz  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn" did not complete successfully: exit code: 2```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

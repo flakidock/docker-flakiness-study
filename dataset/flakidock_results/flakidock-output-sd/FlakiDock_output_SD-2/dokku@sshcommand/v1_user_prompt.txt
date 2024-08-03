@@ -1,0 +1,42 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM golang:1.20.1-buster
+
+# hadolint ignore=DL3027
+RUN apt-get update \
+    && apt install apt-transport-https build-essential curl gnupg2 jq lintian rsync rubygems-integration ruby-dev ruby software-properties-common sudo -qy \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# hadolint ignore=DL3028
+RUN gem install --no-ri --no-rdoc --quiet rake fpm package_cloud
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/3] RUN gem install --no-ri --no-rdoc --quiet rake fpm package_cloud:
+ERROR:  Error installing fpm:
+	The last version of dotenv (>= 0) to support your Ruby & RubyGems was 2.8.1. Try installing it with `gem install dotenv -v 2.8.1` and then running the current command again
+	dotenv requires Ruby version >= 3.0. The current ruby version is 2.5.0.
+Successfully installed rake-13.2.1
+Successfully installed rexml-3.3.4
+Successfully installed stud-0.0.23
+Building native extensions. This could take a while...
+/usr/lib/ruby/2.5.0/rubygems/ext/builder.rb:76: warning: Insecure world writable dir /go/bin in PATH, mode 040777
+ERROR:  Error installing package_cloud:
+	The last version of domain_name (~> 0.5) to support your Ruby & RubyGems was 0.5.20190701. Try installing it with `gem install domain_name -v 0.5.20190701` and then running the current command again
+	domain_name requires Ruby version >= 2.7.0. The current ruby version is 2.5.0.
+Successfully installed rainbow-2.2.2
+Successfully installed json_pure-2.3.1
+Successfully installed netrc-0.11.0
+Successfully installed mime-types-data-3.2024.0702
+Successfully installed mime-types-3.5.2
+1 gem installed
+ERROR: process "/bin/sh -c gem install --no-ri --no-rdoc --quiet rake fpm package_cloud" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

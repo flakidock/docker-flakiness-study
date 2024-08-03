@@ -1,0 +1,31 @@
+# Dockerfile
+FROM golang:1.14-stretch
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV VER 6.4
+
+RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg \
+    && curl -s https://packagecloud.io/install/repositories/varnishcache/varnish${VER/./}/script.deb.sh | bash \
+    && apt-get install -y \
+      libjemalloc1 \
+      pkg-config \
+      varnish \
+      varnish-dev \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+ADD . $GOPATH/src/github.com/phenomenes/varnishlogbeat
+
+WORKDIR $GOPATH/src/github.com/phenomenes/varnishlogbeat
+
+ADD default.vcl /etc/varnish/default.vcl
+ADD docker-entrypoint.sh /docker-entrypoint.sh
+
+RUN sed -i 's/localhost:9200/elasticsearch:9200/' \
+    $GOPATH/src/github.com/phenomenes/varnishlogbeat/varnishlogbeat.yml \
+    && go build .
+
+EXPOSE 8080
+
+CMD ["/docker-entrypoint.sh"]

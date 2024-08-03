@@ -1,0 +1,11 @@
+# Dockerfile
+FROM node:14.3.0-alpine
+
+WORKDIR /workdir
+
+RUN yarn global add graphql-faker && \
+    yarn cache clean --force
+
+ENTRYPOINT ["node", "/usr/local/bin/graphql-faker"]
+
+EXPOSE 9002

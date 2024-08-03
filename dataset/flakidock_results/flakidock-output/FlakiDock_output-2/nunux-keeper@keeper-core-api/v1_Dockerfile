@@ -1,0 +1,26 @@
+# Nunux Keeper core API server.
+#
+# VERSION 2.0
+
+FROM node:16
+
+MAINTAINER Nicolas Carlier <https://github.com/ncarlier>
+
+# Create app directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Copy package.json and install dependencies
+COPY package.json /usr/src/app
+RUN npm install && npm cache clean --force
+
+# Copy the rest of the application code
+COPY . /usr/src/app
+
+# Create storage directory
+RUN mkdir -p /var/opt/app/storage/{upload,exports}
+
+# Ports
+EXPOSE 3000 8080
+
+CMD ["npm", "start"]

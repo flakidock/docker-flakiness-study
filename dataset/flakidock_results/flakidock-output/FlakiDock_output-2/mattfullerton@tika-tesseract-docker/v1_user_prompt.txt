@@ -1,0 +1,271 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM java:7
+MAINTAINER Matt Fullerton <matt.fullerton@gmail.com>
+
+RUN mkdir /setup
+ADD install.sh /setup/install.sh
+RUN /setup/install.sh
+ENTRYPOINT java -jar /srv/tika-server-1.*-SNAPSHOT.jar -host 0.0.0.0
+
+EXPOSE 9998
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [internal] load metadata for docker.io/library/java:7:
+ERROR: docker.io/library/java:7: not found```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```FROM consul
+
+# Add Containerpilot and set its configuration
+ENV CONTAINERPILOT_VERSION 2.6.0
+ENV CONTAINERPILOT file:///etc/containerpilot.json
+ENV HEALTH_URL http://localhost:8500/ui/
+
+RUN export CONTAINERPILOT_CHECKSUM=c1bcd137fadd26ca2998eec192d04c08f62beb1f \
+    && export archive=containerpilot-${CONTAINERPILOT_VERSION}.tar.gz \
+    && curl -Lso /tmp/${archive} \
+         "https://github.com/joyent/containerpilot/releases/download/${CONTAINERPILOT_VERSION}/${archive}" \
+    && echo "${CONTAINERPILOT_CHECKSUM}  /tmp/${archive}" | sha1sum -c \
+    && tar zxf /tmp/${archive} -C /usr/local/bin \
+    && rm /tmp/${archive} \
+    && apk add --no-cache bash curl \
+    && curl -sL https://github.com/sequenceiq/docker-alpine-dig/releases/download/v9.10.2/dig.tgz|tar -xzv -C /usr/local/bin/
+
+# configuration files and bootstrap scripts
+COPY etc/containerpilot.json etc/
+COPY bin/* /usr/local/bin/
+
+HEALTHCHECK --interval=30s --timeout=20s --retries=10 CMD curl --fail -s $HEALTH_URL || exit 1
+
+ENTRYPOINT ["/usr/local/bin/containerpilot", "/usr/local/bin/docker-entrypoint.sh" ]
+CMD ["agent", "-server", "-bootstrap-expect", "3", "-ui", "-client=0.0.0.0", "-retry-interval", "5s", "--log-level", "warn", "-disable-host-node-id"]
+
+
+```
+
+## Example Build Error
+```> [internal] load metadata for docker.io/library/consul:latest:
+ERROR: docker.io/library/consul:latest: not found```
+
+## Example Repair
+
+### Repair 1
+```FROM hashicorp/consul
+
+# Add Containerpilot and set its configuration
+ENV CONTAINERPILOT_VERSION 2.6.0
+ENV CONTAINERPILOT file:///etc/containerpilot.json
+ENV HEALTH_URL http://localhost:8500/ui/
+
+RUN export CONTAINERPILOT_CHECKSUM=c1bcd137fadd26ca2998eec192d04c08f62beb1f \
+    && export archive=containerpilot-${CONTAINERPILOT_VERSION}.tar.gz \
+    && curl -Lso /tmp/${archive} \
+         "https://github.com/joyent/containerpilot/releases/download/${CONTAINERPILOT_VERSION}/${archive}" \
+    && echo "${CONTAINERPILOT_CHECKSUM}  /tmp/${archive}" | sha1sum -c \
+    && tar zxf /tmp/${archive} -C /usr/local/bin \
+    && rm /tmp/${archive} \
+    && apk add --no-cache bash curl \
+    && curl -sL https://github.com/sequenceiq/docker-alpine-dig/releases/download/v9.10.2/dig.tgz|tar -xzv -C /usr/local/bin/
+
+# configuration files and bootstrap scripts
+COPY etc/containerpilot.json etc/
+COPY bin/* /usr/local/bin/
+
+HEALTHCHECK --interval=30s --timeout=20s --retries=10 CMD curl --fail -s $HEALTH_URL || exit 1
+
+ENTRYPOINT ["/usr/local/bin/containerpilot", "/usr/local/bin/docker-entrypoint.sh" ]
+CMD ["agent", "-server", "-bootstrap-expect", "3", "-ui", "-client=0.0.0.0", "-retry-interval", "5s", "--log-level", "warn", "-disable-host-node-id"]
+
+
+```
+
+
+# Example 2
+## Example Dockerfile
+```FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
+
+RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm /etc/apt/sources.list.d/nvidia-ml.list
+
+RUN apt-get update
+RUN apt-get install -y software-properties-common vim
+RUN apt-get install -y libsm6 libxext6 libxrender-dev libusb-1.0-0-dev && apt-get update
+RUN apt-get install -y git
+RUN apt-get install -y python3-pip python3-dev \
+    && cd /usr/local/bin \
+    && ln -s /usr/bin/python3 python \
+    && pip3 install --upgrade pip
+
+# set workspace
+RUN mkdir /workspace/
+WORKDIR /workspace
+
+COPY requirements.txt /workspace/requirements.txt
+RUN pip install -U Cython numpy
+RUN pip install -U -r requirements.txt
+
+# set cuda path
+ENV CUDA_HOME /usr/local/cuda
+ENV PATH "/usr/local/cuda/bin:$PATH"
+ENV LD_LIBRARY_PATH "$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
+ENV LIBRARY_PATH "$LIBRARY_PATH:/usr/local/cuda/lib64"
+
+RUN apt-get update && apt-get install -y libgl1-mesa-glx
+```
+
+## Example Build Error
+```> [internal] load metadata for docker.io/nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04:
+ERROR: docker.io/nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04: not found```
+
+## Example Repair
+
+### Repair 1
+```FROM nvidia/cuda:11.2.2-cudnn8-devel-ubuntu18.04
+
+RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm /etc/apt/sources.list.d/nvidia-ml.list
+
+RUN apt-get update
+RUN apt-get install -y software-properties-common vim
+RUN apt-get install -y libsm6 libxext6 libxrender-dev libusb-1.0-0-dev && apt-get update
+RUN apt-get install -y git
+RUN apt-get install -y python3-pip python3-dev \
+    && cd /usr/local/bin \
+    && ln -s /usr/bin/python3 python \
+    && pip3 install --upgrade pip
+
+# set workspace
+RUN mkdir /workspace/
+WORKDIR /workspace
+
+COPY requirements.txt /workspace/requirements.txt
+RUN pip install -U Cython numpy
+RUN pip install -U -r requirements.txt
+
+# set cuda path
+ENV CUDA_HOME /usr/local/cuda
+ENV PATH "/usr/local/cuda/bin:$PATH"
+ENV LD_LIBRARY_PATH "$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
+ENV LIBRARY_PATH "$LIBRARY_PATH:/usr/local/cuda/lib64"
+
+RUN apt-get update && apt-get install -y libgl1-mesa-glx
+```
+
+
+# Example 3
+## Example Dockerfile
+```FROM unidata/tomcat-docker:8.5
+MAINTAINER Kyle Wilcox <kyle@axiomdatascience.com>
+
+RUN \
+    apt-get update && \
+    apt-get install -y \
+        git \
+        maven \
+        unzip \
+        && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Compile edal to use required features in develop branch
+ENV EDAL_VERSION edal-1.5.2
+# Remove this for releases
+#ENV EDAL_VERSION develop
+RUN mkdir /edal && \
+    cd /edal && \
+    git clone https://github.com/Reading-eScience-Centre/edal-java.git && \
+    cd edal-java && \
+    git checkout ${EDAL_VERSION} && \
+    JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 mvn clean install
+
+# Compile and install ncWMS
+COPY . /ncWMS
+RUN cd /ncWMS && \
+    JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 mvn clean install && \
+    unzip target/ncWMS2.war -d $CATALINA_HOME/webapps/ncWMS2/ && \
+    rm -rf /edal && \
+    rm -rf /ncWMS/target
+
+# Set login-config to BASIC since it is handled through Tomcat
+RUN sed -i -e 's/DIGEST/BASIC/' $CATALINA_HOME/webapps/ncWMS2/WEB-INF/web.xml && \
+    cp /ncWMS/config/setenv.sh $CATALINA_HOME/bin/setenv.sh && \
+    cp /ncWMS/config/ecache.xml $CATALINA_HOME/conf/ecache.xml && \
+    cp /ncWMS/config/tomcat-users.xml $CATALINA_HOME/conf/tomcat-users.xml && \
+    mkdir -p $CATALINA_HOME/conf/Catalina/localhost/ && \
+    cp /ncWMS/config/ncWMS.xml $CATALINA_HOME/conf/Catalina/localhost/ncWMS.xml && \
+    mkdir -p $CATALINA_HOME/.ncWMS2 && \
+    cp /ncWMS/config/config.xml $CATALINA_HOME/.ncWMS2/config.xml
+
+ENTRYPOINT ["/ncWMS/entrypoint.sh"]
+
+EXPOSE 8080 8443 9090
+CMD ["catalina.sh", "run"]
+
+```
+
+## Example Build Error
+```> [internal] load metadata for docker.io/unidata/tomcat-docker:8.5:
+ERROR: docker.io/unidata/tomcat-docker:8.5: not found```
+
+## Example Repair
+
+### Repair 1
+```FROM tomcat:8.5
+MAINTAINER Kyle Wilcox <kyle@axiomdatascience.com>
+
+RUN \
+    apt-get update && \
+    apt-get install -y \
+        git \
+        maven \
+        unzip \
+        && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Compile edal to use required features in develop branch
+ENV EDAL_VERSION edal-1.5.2
+# Remove this for releases
+#ENV EDAL_VERSION develop
+RUN mkdir /edal && \
+    cd /edal && \
+    git clone https://github.com/Reading-eScience-Centre/edal-java.git && \
+    cd edal-java && \
+    git checkout ${EDAL_VERSION} && \
+    JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 mvn clean install
+
+# Compile and install ncWMS
+COPY . /ncWMS
+RUN cd /ncWMS && \
+    JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 mvn clean install && \
+    unzip target/ncWMS2.war -d $CATALINA_HOME/webapps/ncWMS2/ && \
+    rm -rf /edal && \
+    rm -rf /ncWMS/target
+
+# Set login-config to BASIC since it is handled through Tomcat
+RUN sed -i -e 's/DIGEST/BASIC/' $CATALINA_HOME/webapps/ncWMS2/WEB-INF/web.xml && \
+    cp /ncWMS/config/setenv.sh $CATALINA_HOME/bin/setenv.sh && \
+    cp /ncWMS/config/ecache.xml $CATALINA_HOME/conf/ecache.xml && \
+    cp /ncWMS/config/tomcat-users.xml $CATALINA_HOME/conf/tomcat-users.xml && \
+    mkdir -p $CATALINA_HOME/conf/Catalina/localhost/ && \
+    cp /ncWMS/config/ncWMS.xml $CATALINA_HOME/conf/Catalina/localhost/ncWMS.xml && \
+    mkdir -p $CATALINA_HOME/.ncWMS2 && \
+    cp /ncWMS/config/config.xml $CATALINA_HOME/.ncWMS2/config.xml
+
+ENTRYPOINT ["/ncWMS/entrypoint.sh"]
+
+EXPOSE 8080 8443 9090
+CMD ["catalina.sh", "run"]
+
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

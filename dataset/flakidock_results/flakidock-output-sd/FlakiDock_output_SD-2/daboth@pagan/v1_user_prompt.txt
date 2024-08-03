@@ -1,0 +1,47 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```from python:3.11
+
+RUN apt-get update
+
+# Installing dependencies
+RUN apt-get install -y \
+    python-setuptools \
+    openssh-server \
+    openssh-client \
+    x11-xserver-utils \
+    sudo
+RUN pip install Pillow bottle
+
+# Adding pagan user in order to be able to connect through ssh (user: pagan, pass: pagan)
+RUN useradd -m pagan && echo "pagan:pagan" | chpasswd && adduser pagan sudo
+
+
+# Copying files
+COPY . .
+
+# Installing pagan
+RUN python3 setup.py install
+
+# Exposing port
+EXPOSE 8080
+
+#Starting ssh server and webserver app
+CMD service ssh start && python3 tools/webserver/webserver.py
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/7] RUN apt-get install -y     python-setuptools     openssh-server     openssh-client     x11-xserver-utils     sudo:
+Package python-setuptools is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+E: Package 'python-setuptools' has no installation candidate
+ERROR: process "/bin/sh -c apt-get install -y     python-setuptools     openssh-server     openssh-client     x11-xserver-utils     sudo" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

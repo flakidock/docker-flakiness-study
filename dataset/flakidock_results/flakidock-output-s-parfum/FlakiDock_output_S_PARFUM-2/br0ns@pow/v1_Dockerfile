@@ -1,0 +1,4 @@
+FROM debian:stretch
+MAINTAINER Morten "br0ns" BrÃ¸ns-Pedersen <mortenbp@gmail.com>
+RUN apt-get update && apt-get install --no-install-recommends -y make gcc libssl-dev && rm -rf /var/lib/apt/lists/*;
+CMD make

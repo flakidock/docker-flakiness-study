@@ -1,0 +1,32 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM python:2.7
+
+LABEL maintainer "lucas@spideroak-inc.com"
+
+# Update pip
+RUN pip install --upgrade \
+    pip
+
+# Download and install Semaphor
+RUN wget https://spideroak.com/releases/semaphor/debian \
+    && dpkg -i debian \
+    && rm -rf debian
+
+COPY . /flow-python
+WORKDIR /flow-python
+
+# Install flow-python
+RUN pip install -r requirements.txt \
+&& pip install .
+
+# Execute python to start using flow-python
+CMD python
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

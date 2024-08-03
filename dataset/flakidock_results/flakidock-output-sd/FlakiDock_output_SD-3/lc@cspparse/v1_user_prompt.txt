@@ -1,0 +1,46 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM golang:1.11.4-alpine3.7 AS build-env
+RUN apk add --no-cache --upgrade git openssh-client ca-certificates
+RUN go get -u github.com/golang/dep/cmd/dep
+WORKDIR /go/src/app
+
+COPY . /go/src/app 
+RUN go get -u github.com/pkg/errors && \
+    go get -u github.com/PuerkitoBio/goquery && \
+    go build -o cspparse cspparse.go
+
+FROM alpine:3.9
+
+RUN apk add shadow bash && \
+    useradd --create-home --shell /sbin/nologin cspparse && \
+    mkdir /cspparse && \
+    chown cspparse:cspparse /cspparse
+
+COPY --from=build-env /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+COPY --from=build-env /go/src/app/cspparse /cspparse/cspparse
+
+USER cspparse 
+WORKDIR /cspparse
+
+ENTRYPOINT ["/cspparse/cspparse"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [build-env 6/6] RUN go get -u github.com/pkg/errors &&     go get -u github.com/PuerkitoBio/goquery &&     go build -o cspparse cspparse.go:
+go get: warning: modules disabled by GO111MODULE=auto in GOPATH/src;
+	ignoring go.mod;
+	see 'go help modules'
+go get: warning: modules disabled by GO111MODULE=auto in GOPATH/src;
+	ignoring go.mod;
+	see 'go help modules'
+package golang.org/x/net/html/atom: found packages atom (atom.go) and main (gen.go) in /go/src/golang.org/x/net/html/atom
+ERROR: process "/bin/sh -c go get -u github.com/pkg/errors &&     go get -u github.com/PuerkitoBio/goquery &&     go build -o cspparse cspparse.go" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

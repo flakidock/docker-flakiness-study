@@ -1,0 +1,66 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM heroku/heroku:18-build
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
+
+# -- Install Pipenv:
+RUN apt update && apt upgrade -y && apt install python3.7-dev -y
+RUN curl --silent https://bootstrap.pypa.io/get-pip.py | python3.7
+
+# Backwards compatility.
+RUN rm -fr /usr/bin/python3 && ln /usr/bin/python3.7 /usr/bin/python3
+
+RUN pip3 install pipenv
+
+# -- Install Application into container:
+RUN set -ex && mkdir /bob
+WORKDIR /bob
+
+# -- Adding Pipfiles
+COPY Pipfile Pipfile
+COPY Pipfile.lock Pipfile.lock
+
+# Install Docker.
+RUN apt install -y docker.io
+
+# Install daemontools
+# RUN apt-get update -qq && apt-get install -qq -y daemontools && apt-get -qq -y --allow-downgrades --allow-remove-essential --allow-change-held-packages dist-upgrade && apt-get clean  && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* /var/tmp/*
+
+# Install Herokuish.
+# RUN curl --location --silent https://github.com/gliderlabs/herokuish/releases/download/v0.4.4/herokuish_0.4.4_linux_x86_64.tgz | tar -xzC /bin
+
+# -- Install dependencies:
+RUN set -ex && pipenv install --deploy --system
+
+COPY . /bob
+RUN pip3 install -e .
+
+ENTRYPOINT ["bob-builder", "/app"]
+VOLUME /var/lib/docker
+VOLUME /app
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 2/13] RUN apt update && apt upgrade -y && apt install python3.7-dev -y:
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Err:5 http://apt.postgresql.org/pub/repos/apt bionic-pgdg Release
+  404  Not Found [IP: 147.75.80]
+Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [MB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic-security/main amd64 Packages [3373 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [1637 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [2411 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [3786 kB]
+E: The repository 'http://apt.postgresql.org/pub/repos/apt bionic-pgdg Release' does not have a Release file.
+ERROR: process "/bin/sh -c apt update && apt upgrade -y && apt install python3.7-dev -y" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

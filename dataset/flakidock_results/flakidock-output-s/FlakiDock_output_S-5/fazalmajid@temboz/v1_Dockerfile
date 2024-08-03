@@ -1,0 +1,30 @@
+# Dockerfile
+FROM alpine:latest
+
+# Install dependencies
+RUN apk add --no-cache python3 py3-pip py3-cffi gcc linux-headers musl-dev sqlite
+
+# Upgrade pip
+RUN pip3 install --upgrade pip
+
+# Install Python packages
+RUN pip3 install flask requests html5lib passlib argon2_cffi translitcodec waitress feedparser
+
+# Copy application files
+COPY . /temboz
+
+# Remove conflicting file
+RUN rm -f /temboz/tembozapp/feedparser.py
+
+# Set up volume and working directory
+VOLUME ["/temboz/data"]
+WORKDIR /temboz/data
+
+# Set environment variable
+ENV DOCKER=true
+
+# Expose port
+EXPOSE 9999/tcp
+
+# Set entrypoint
+ENTRYPOINT ["python3", "/temboz/temboz", "--server"]

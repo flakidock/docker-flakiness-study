@@ -1,0 +1,33 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM golang:1.8.4-alpine3.6
+RUN apk -U add lsof git aria2
+WORKDIR /go
+ENV GOPATH=/go
+RUN go get -v github.com/hanjm/file_download_proxy/...
+WORKDIR /go/src/github.com/hanjm/file_download_proxy
+RUN go build -o fdp
+EXPOSE 8080
+CMD ["./fdp","-limit","100"]```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/6] RUN go get -v github.com/hanjm/file_download_proxy/...:
+golang.org/x/net/internal/socks
+golang.org/x/net/proxy
+github.com/gorilla/websocket
+# github.com/gorilla/websocket
+src/github.com/gorilla/websocket/client.go:386: undefined: io.NopCloser
+src/github.com/gorilla/websocket/client.go:404: undefined: io.NopCloser
+src/github.com/gorilla/websocket/client.go:426: tlsConn.HandshakeContext undefined (type *tls.Conn has no field or method HandshakeContext)
+src/github.com/gorilla/websocket/conn.go:801: undefined: io.Discard
+src/github.com/gorilla/websocket/conn.go:1102: undefined: io.ReadAll
+src/github.com/gorilla/websocket/server.go:175: undefined: http.NewResponseController
+ERROR: process "/bin/sh -c go get -v github.com/hanjm/file_download_proxy/..." did not complete successfully: exit code: 2```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

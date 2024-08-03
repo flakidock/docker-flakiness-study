@@ -1,0 +1,28 @@
+# Dockerfile
+FROM library/python:3.10-buster as server
+WORKDIR /build
+
+# Install curl and other dependencies
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+# Install Poetry
+RUN curl -sSL https://install.python-poetry.org | python -
+
+# Ensure Poetry is in PATH
+ENV PATH="/root/.local/bin:$PATH"
+
+COPY poetry.lock pyproject.toml ./
+RUN poetry export --without-hashes -f requirements.txt -o requirements.txt
+RUN pip install --user -r requirements.txt
+COPY . .
+RUN pip install --user .
+
+FROM virtool/workflow-tools:2.0.1
+WORKDIR /virtool
+COPY --from=server /root/.local /root/.local
+COPY run.py pyproject.toml VERSION* /virtool/
+COPY virtool /virtool/virtool
+COPY example /virtool/example
+EXPOSE 9950
+ENTRYPOINT ["python", "run.py"]
+CMD ["server"]

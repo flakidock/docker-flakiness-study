@@ -1,0 +1,7 @@
+# Dockerfile
+FROM node:10
+
+RUN apt-get update && apt-get install -y \
+    p7zip-full \
+    nsis \
+    && rm -rf /var/lib/apt/lists/*

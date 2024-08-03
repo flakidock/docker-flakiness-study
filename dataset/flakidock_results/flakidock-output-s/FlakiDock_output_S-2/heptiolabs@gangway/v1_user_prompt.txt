@@ -1,0 +1,25 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM golang:1.14.2-stretch
+WORKDIR /go/src/github.com/heptiolabs/gangway
+
+RUN go get -u github.com/mjibson/esc/...
+COPY . .
+RUN esc -o cmd/gangway/bindata.go templates/
+
+ENV GO111MODULE on
+RUN go mod verify
+RUN CGO_ENABLED=0 GOOS=linux go install -ldflags="-w -s" -v github.com/heptiolabs/gangway/...
+
+FROM debian:9.12-slim
+RUN apt-get update && apt-get install -y ca-certificates
+USER 1001:1001
+COPY --from=0 /go/bin/gangway /bin/gangway
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

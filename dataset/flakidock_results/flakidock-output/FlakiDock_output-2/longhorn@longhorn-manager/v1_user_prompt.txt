@@ -1,0 +1,473 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM registry.suse.com/bci/bci-base:15.4
+
+ARG DAPPER_HOST_ARCH=amd64
+ARG http_proxy
+ARG https_proxy
+ENV HOST_ARCH=${DAPPER_HOST_ARCH} ARCH=${DAPPER_HOST_ARCH}
+
+RUN zypper -n install gcc ca-certificates git wget curl vim less file python3-tox python3-devel iptables libdevmapper1_03 libltdl7 awk docker zip unzip && \
+    rm -f /bin/sh && ln -s /bin/bash /bin/sh && \
+    rm -rf /var/cache/zypp/*
+
+RUN if [ ${ARCH} == "s390x" ]; then \
+         ln -s /usr/bin/gcc /usr/bin/s390x-linux-gnu-gcc;\
+     fi
+
+ENV GOLANG_ARCH_amd64=amd64 GOLANG_ARCH_arm64=arm64 GOLANG_ARCH_s390x=s390x GOLANG_ARCH=GOLANG_ARCH_${ARCH} \
+    GOPATH=/go PATH=/go/bin:/usr/local/go/bin:${PATH} SHELL=/bin/bash
+
+RUN wget -O - https://storage.googleapis.com/golang/go1.17.10.linux-${!GOLANG_ARCH}.tar.gz | tar -xzf - -C /usr/local && \
+    go get -u golang.org/x/lint/golint
+
+ENV DAPPER_SOURCE /go/src/github.com/longhorn/longhorn-manager
+ENV DAPPER_OUTPUT ./bin coverage.out
+ENV DAPPER_DOCKER_SOCKET true
+ENV DAPPER_ENV IMAGE REPO VERSION TAG
+ENV DAPPER_RUN_ARGS --privileged --tmpfs /go/src/github.com/longhorn/longhorn/integration/.venv:exec --tmpfs /go/src/github.com/longhorn/longhorn/integration/.tox:exec -v /dev:/host/dev
+ENV TRASH_CACHE ${DAPPER_SOURCE}/.trash-cache
+ENV HOME ${DAPPER_SOURCE}
+WORKDIR ${DAPPER_SOURCE}
+
+ENTRYPOINT ["./scripts/entry"]
+CMD ["ci"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/5] RUN wget -O - https://storage.googleapis.com/golang/go1.17.10.linux-${!GOLANG_ARCH}.tar.gz | tar -xzf - -C /usr/local &&     go get -u golang.org/x/lint/golint:
+# golang.org/x/tools/go/ast/astutil
+go/pkg/mod/golang.org/x/tools@v0.23.0/go/ast/astutil/enclosing.go:651:6: missing function body
+go/pkg/mod/golang.org/x/tools@v0.23.0/go/ast/astutil/enclosing.go:651:8: syntax error: unexpected [, expecting (
+note: module requires Go 1.19
+# golang.org/x/tools/internal/versions
+go/pkg/mod/golang.org/x/tools@v0.23.0/internal/versions/types.go:15:16: undefined: any
+go/pkg/mod/golang.org/x/tools@v0.23.0/internal/versions/versions.go:52:12: undefined: strings.Cut
+note: module requires Go 1.19
+# golang.org/x/tools/internal/stdlib
+go/pkg/mod/golang.org/x/tools@v0.23.0/internal/stdlib/stdlib.go:78:22: undefined: strings.Cut
+go/pkg/mod/golang.org/x/tools@v0.23.0/internal/stdlib/stdlib.go:90:18: undefined: strings.Cut
+note: module requires Go 1.19
+ERROR: process "/bin/sh -c wget -O - https://storage.googleapis.com/golang/go1.17.10.linux-${!GOLANG_ARCH}.tar.gz | tar -xzf - -C /usr/local &&     go get -u golang.org/x/lint/golint" did not complete successfully: exit code: 2```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```FROM golang:1.14.3
+COPY . /onionbox
+WORKDIR /onionbox
+RUN go get github.com/cespare/reflex
+RUN go get -u -a -v -x github.com/ipsn/go-libtor
+EXPOSE 80
+ENTRYPOINT ["reflex", "-c", "reflex.conf"]
+
+```
+
+## Example Build Error
+```> [5/5] RUN go get -u -a -v -x github.com/ipsn/go-libtor:
+18.96 packagefile strconv=$WORK/b024/_pkg_.a
+18.96 packagefile strings=$WORK/b049/_pkg_.a
+18.96 packagefile sync=$WORK/b013/_pkg_.a
+18.96 packagefile time=$WORK/b016/_pkg_.a
+18.96 packagefile unicode/utf8=$WORK/b025/_pkg_.a
+18.96 EOF
+18.96 cd /usr/local/go/src/crypto/x509
+18.96 /usr/local/go/pkg/tool/linux_amd64/compile -o $WORK/b051/_pkg_.a -trimpath "$WORK/b051=>" -p crypto/x509 -std -complete -buildid xdwxFKXrjL6PoVDkYtAV/xdwxFKXrjL6PoVDkYtAV -goversion go1.14.3 -D "" -importcfg $WORK/b051/importcfg -pack -c=4 ./cert_pool.go ./pem_decrypt.go ./pkcs1.go ./pkcs8.go ./root.go ./root_linux.go ./root_unix.go ./sec1.go ./verify.go ./x509.go
+19.15 /usr/local/go/pkg/tool/linux_amd64/buildid -w $WORK/b051/_pkg_.a # internal
+19.20 cp $WORK/b051/_pkg_.a /root/.cache/go-build/92/92e98fc94f34731888d42736a04e3987cef00ca9f00f1324f94c38772735bfaf-d # internal
+ERROR: process "/bin/sh -c go get -u -a -v -x github.com/ipsn/go-libtor" did not complete successfully: exit code: 2```
+
+## Example Repair
+
+### Repair 1
+```FROM golang:1.22
+COPY . /onionbox
+WORKDIR /onionbox
+RUN go get github.com/cespare/reflex
+RUN go get -u -a -v -x github.com/ipsn/go-libtor
+EXPOSE 80
+ENTRYPOINT ["reflex", "-c", "reflex.conf"]
+
+```
+
+
+# Example 2
+## Example Dockerfile
+```# build stage
+FROM golang:1.9.1 AS build-env
+RUN go get -d -v github.com/armon/go-socks5
+ADD . /src
+RUN cd /src && go build -ldflags "-linkmode external -extldflags -static" -o proxy
+
+# final stage
+FROM scratch
+WORKDIR /app
+COPY --from=build-env /src/proxy /app/
+ENV SOCKS_USER=user
+ENV SOCKS_PASSWORD=password
+CMD ["./proxy"]
+
+```
+
+## Example Build Error
+```> [build-env 4/4] RUN cd /src && go build -ldflags "-linkmode external -extldflags -static" -o proxy:
+# golang.org/x/net/context
+/go/src/golang.org/x/net/context/pre_go17.go:47:2: background redeclared in this block
+	previous declaration at /go/src/golang.org/x/net/context/go17.go:16:2
+/go/src/golang.org/x/net/context/pre_go17.go:48:2: todo redeclared in this block
+	previous declaration at /go/src/golang.org/x/net/context/go17.go:15:2
+/go/src/golang.org/x/net/context/pre_go17.go:52:5: Canceled redeclared in this block
+	previous declaration at /go/src/golang.org/x/net/context/go17.go:20:5
+/go/src/golang.org/x/net/context/pre_go17.go:56:5: DeadlineExceeded redeclared in this block
+	previous declaration at /go/src/golang.org/x/net/context/go17.go:24:5
+/go/src/golang.org/x/net/context/pre_go17.go:64:54: WithCancel redeclared in this block
+	previous declaration at /go/src/golang.org/x/net/context/go17.go:32:54
+/go/src/golang.org/x/net/context/pre_go17.go:204:65: WithDeadline redeclared in this block
+	previous declaration at /go/src/golang.org/x/net/context/go17.go:46:65
+/go/src/golang.org/x/net/context/pre_go17.go:271:67: WithTimeout redeclared in this block
+	previous declaration at /go/src/golang.org/x/net/context/go17.go:61:67
+/go/src/golang.org/x/net/context/pre_go17.go:280:66: WithValue redeclared in this block
+	previous declaration at /go/src/golang.org/x/net/context/go17.go:70:66
+/go/src/golang.org/x/net/context/pre_go19.go:15:6: Context redeclared in this block
+	previous declaration at /go/src/golang.org/x/net/context/go19.go:15:6
+/go/src/golang.org/x/net/context/pre_go19.go:109:6: CancelFunc redeclared in this block
+	previous declaration at /go/src/golang.org/x/net/context/go19.go:20:6
+/go/src/golang.org/x/net/context/pre_go19.go:109:6: too many errors
+ERROR: process "/bin/sh -c cd /src && go build -ldflags \"-linkmode external -extldflags -static\" -o proxy" did not complete successfully: exit code: 2```
+
+## Example Repair
+
+### Repair 1
+```# build stage
+FROM golang:1.22 AS build-env
+WORKDIR /src
+RUN go mod init my_module
+RUN go get -d -v github.com/armon/go-socks5
+ADD . /src
+RUN cd /src && go build -ldflags "-linkmode external -extldflags -static" -o proxy
+
+# final stage
+FROM scratch
+WORKDIR /app
+COPY --from=build-env /src/proxy /app/
+ENV SOCKS_USER=user
+ENV SOCKS_PASSWORD=password
+CMD ["./proxy"]
+
+```
+
+
+# Example 3
+## Example Dockerfile
+```# This dockerfile is meant to compile a core-lightning x64 image
+# It is using multi stage build:
+# * downloader: Download litecoin/bitcoin and qemu binaries needed for core-lightning
+# * builder: Compile core-lightning dependencies, then core-lightning itself with static linking
+# * final: Copy the binaries required at runtime
+# The resulting image uploaded to dockerhub will only contain what is needed for runtime.
+# From the root of the repository, run "docker build -t yourimage:yourtag ."
+FROM debian:bullseye-slim as downloader
+
+RUN set -ex \
+	&& apt-get update \
+	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr wget
+
+WORKDIR /opt
+
+RUN wget -qO /opt/tini "https://github.com/krallin/tini/releases/download/v0.18.0/tini" \
+    && echo "12d20136605531b09a2c2dac02ccee85e1b874eb322ef6baf7561cd93f93c855 /opt/tini" | sha256sum -c - \
+    && chmod +x /opt/tini
+
+ARG BITCOIN_VERSION=22.0
+ENV BITCOIN_TARBALL bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV BITCOIN_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/$BITCOIN_TARBALL
+ENV BITCOIN_ASC_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/SHA256SUMS
+
+RUN mkdir /opt/bitcoin && cd /opt/bitcoin \
+    && wget -qO $BITCOIN_TARBALL "$BITCOIN_URL" \
+    && wget -qO bitcoin "$BITCOIN_ASC_URL" \
+    && grep $BITCOIN_TARBALL bitcoin | tee SHA256SUMS \
+    && sha256sum -c SHA256SUMS \
+    && BD=bitcoin-$BITCOIN_VERSION/bin \
+    && tar -xzvf $BITCOIN_TARBALL $BD/bitcoin-cli --strip-components=1 \
+    && rm $BITCOIN_TARBALL
+
+ENV LITECOIN_VERSION 0.16.3
+ENV LITECOIN_PGP_KEY FE3348877809386C
+ENV LITECOIN_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV LITECOIN_ASC_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-linux-signatures.asc
+ENV LITECOIN_SHA256 686d99d1746528648c2c54a1363d046436fd172beadaceea80bdc93043805994
+
+# install litecoin binaries
+RUN mkdir /opt/litecoin && cd /opt/litecoin \
+    && wget -qO litecoin.tar.gz "$LITECOIN_URL" \
+    && echo "$LITECOIN_SHA256  litecoin.tar.gz" | sha256sum -c - \
+    && BD=litecoin-$LITECOIN_VERSION/bin \
+    && tar -xzvf litecoin.tar.gz $BD/litecoin-cli --strip-components=1 --exclude=*-qt \
+    && rm litecoin.tar.gz
+
+FROM debian:bullseye-slim as builder
+
+ENV LIGHTNINGD_VERSION=master
+RUN apt-get update -qq && \
+    apt-get install -qq -y --no-install-recommends \
+        autoconf \
+        automake \
+        build-essential \
+        ca-certificates \
+        curl \
+        dirmngr \
+        gettext \
+        git \
+        gnupg \
+        libpq-dev \
+        libtool \
+        libffi-dev \
+        python3 \
+        python3-dev \
+        python3-mako \
+        python3-pip \
+        python3-venv \
+        python3-setuptools \
+        wget
+
+RUN wget -q https://zlib.net/zlib-1.2.13.tar.gz \
+    && tar xvf zlib-1.2.13.tar.gz \
+    && cd zlib-1.2.13 \
+    && ./configure \
+    && make \
+    && make install && cd .. && \
+    rm zlib-1.2.13.tar.gz && \
+    rm -rf zlib-1.2.13
+
+RUN apt-get install -y --no-install-recommends unzip tclsh \
+    && wget -q https://www.sqlite.org/2019/sqlite-src-3290000.zip \
+    && unzip sqlite-src-3290000.zip \
+    && cd sqlite-src-3290000 \
+    && ./configure --enable-static --disable-readline --disable-threadsafe --disable-load-extension \
+    && make \
+    && make install && cd .. && rm sqlite-src-3290000.zip && rm -rf sqlite-src-3290000
+
+RUN wget -q https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz \
+    && tar xvf gmp-6.1.2.tar.xz \
+    && cd gmp-6.1.2 \
+    && ./configure --disable-assembly \
+    && make \
+    && make install && cd .. && rm gmp-6.1.2.tar.xz && rm -rf gmp-6.1.2
+
+ENV RUST_PROFILE=release
+ENV PATH=$PATH:/root/.cargo/bin/
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN rustup toolchain install stable --component rustfmt --allow-downgrade
+
+WORKDIR /opt/lightningd
+COPY . /tmp/lightning
+RUN git clone --recursive /tmp/lightning . && \
+    git checkout $(git --work-tree=/tmp/lightning --git-dir=/tmp/lightning/.git rev-parse HEAD)
+
+ARG DEVELOPER=1
+ENV PYTHON_VERSION=3
+RUN curl -sSL https://install.python-poetry.org | python3 - \
+    && pip3 install -U pip \
+    && pip3 install -U wheel \
+    && /root/.local/bin/poetry install
+
+RUN ./configure --prefix=/tmp/lightning_install --enable-static && \
+    make DEVELOPER=${DEVELOPER} && \
+    /root/.local/bin/poetry run make install
+
+FROM debian:bullseye-slim as final
+
+COPY --from=downloader /opt/tini /usr/bin/tini
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      socat \
+      inotify-tools \
+      python3 \
+      python3-pip \
+      libpq5 && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV LIGHTNINGD_DATA=/root/.lightning
+ENV LIGHTNINGD_RPC_PORT=9835
+ENV LIGHTNINGD_PORT=9735
+ENV LIGHTNINGD_NETWORK=bitcoin
+
+RUN mkdir $LIGHTNINGD_DATA && \
+    touch $LIGHTNINGD_DATA/config
+VOLUME [ "/root/.lightning" ]
+COPY --from=builder /tmp/lightning_install/ /usr/local/
+COPY --from=downloader /opt/bitcoin/bin /usr/bin
+COPY --from=downloader /opt/litecoin/bin /usr/bin
+COPY tools/docker-entrypoint.sh entrypoint.sh
+
+EXPOSE 9735 9835
+ENTRYPOINT  [ "/usr/bin/tini", "-g", "--", "./entrypoint.sh" ]
+
+```
+
+## Example Build Error
+```> [builder  3/12] RUN wget -q https://zlib.net/zlib-1.2.13.tar.gz     && tar xvf zlib-1.2.13.tar.gz     && cd zlib-1.2.13     && ./configure     && make     && make install && cd .. &&     rm zlib-1.2.13.tar.gz &&     rm -rf zlib-1.2.13:
+[builder  3/12] RUN wget -q https://zlib.net/zlib-1.2.13.tar.gz     && tar xvf zlib-1.2.13.tar.gz     && cd zlib-1.    && ./configure     && make     && make install && cd .. &&     rm zlib-1.2.13.tar.gz &&     rm -rf zlib-1.2.13
+ERROR: process "/bin/sh -c wget -q https://zlib.net/zlib-1.2.13.tar.gz     && tar xvf zlib-1.2.13.tar.gz     && cd zlib-1.    && ./configure     && make     && make install && cd .. &&     rm zlib-1.2.13.tar.gz &&     rm -rf zlib-1.2.13" did not complete successfully: exit code: 8```
+
+## Example Repair
+
+### Repair 1
+```# This dockerfile is meant to compile a core-lightning x64 image
+# It is using multi stage build:
+# * downloader: Download litecoin/bitcoin and qemu binaries needed for core-lightning
+# * builder: Compile core-lightning dependencies, then core-lightning itself with static linking
+# * final: Copy the binaries required at runtime
+# The resulting image uploaded to dockerhub will only contain what is needed for runtime.
+# From the root of the repository, run "docker build -t yourimage:yourtag ."
+FROM debian:bullseye-slim as downloader
+
+RUN set -ex \
+	&& apt-get update \
+	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr wget
+
+WORKDIR /opt
+
+RUN wget -qO /opt/tini "https://github.com/krallin/tini/releases/download/v0.18.0/tini" \
+    && echo "12d20136605531b09a2c2dac02ccee85e1b874eb322ef6baf7561cd93f93c855 /opt/tini" | sha256sum -c - \
+    && chmod +x /opt/tini
+
+ARG BITCOIN_VERSION=22.0
+ENV BITCOIN_TARBALL bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV BITCOIN_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/$BITCOIN_TARBALL
+ENV BITCOIN_ASC_URL https://bitcoincore.org/bin/bitcoin-core-$BITCOIN_VERSION/SHA256SUMS
+
+RUN mkdir /opt/bitcoin && cd /opt/bitcoin \
+    && wget -qO $BITCOIN_TARBALL "$BITCOIN_URL" \
+    && wget -qO bitcoin "$BITCOIN_ASC_URL" \
+    && grep $BITCOIN_TARBALL bitcoin | tee SHA256SUMS \
+    && sha256sum -c SHA256SUMS \
+    && BD=bitcoin-$BITCOIN_VERSION/bin \
+    && tar -xzvf $BITCOIN_TARBALL $BD/bitcoin-cli --strip-components=1 \
+    && rm $BITCOIN_TARBALL
+
+ENV LITECOIN_VERSION 0.16.3
+ENV LITECOIN_PGP_KEY FE3348877809386C
+ENV LITECOIN_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-x86_64-linux-gnu.tar.gz
+ENV LITECOIN_ASC_URL https://download.litecoin.org/litecoin-${LITECOIN_VERSION}/linux/litecoin-${LITECOIN_VERSION}-linux-signatures.asc
+ENV LITECOIN_SHA256 686d99d1746528648c2c54a1363d046436fd172beadaceea80bdc93043805994
+
+# install litecoin binaries
+RUN mkdir /opt/litecoin && cd /opt/litecoin \
+    && wget -qO litecoin.tar.gz "$LITECOIN_URL" \
+    && echo "$LITECOIN_SHA256  litecoin.tar.gz" | sha256sum -c - \
+    && BD=litecoin-$LITECOIN_VERSION/bin \
+    && tar -xzvf litecoin.tar.gz $BD/litecoin-cli --strip-components=1 --exclude=*-qt \
+    && rm litecoin.tar.gz
+
+FROM debian:bullseye-slim as builder
+
+ENV LIGHTNINGD_VERSION=master
+RUN apt-get update -qq && \
+    apt-get install -qq -y --no-install-recommends \
+        autoconf \
+        automake \
+        build-essential \
+        ca-certificates \
+        curl \
+        dirmngr \
+        gettext \
+        git \
+        gnupg \
+        libpq-dev \
+        libtool \
+        libffi-dev \
+        python3 \
+        python3-dev \
+        python3-mako \
+        python3-pip \
+        python3-venv \
+        python3-setuptools \
+        wget
+
+RUN wget -q https://zlib.net/fossils/zlib-1.2.13.tar.gz \
+    && tar xvf zlib-1.2.13.tar.gz \
+    && cd zlib-1.2.13 \
+    && ./configure \
+    && make \
+    && make install && cd .. && \
+    rm zlib-1.2.13.tar.gz && \
+    rm -rf zlib-1.2.13
+
+RUN apt-get install -y --no-install-recommends unzip tclsh \
+    && wget -q https://www.sqlite.org/2019/sqlite-src-3290000.zip \
+    && unzip sqlite-src-3290000.zip \
+    && cd sqlite-src-3290000 \
+    && ./configure --enable-static --disable-readline --disable-threadsafe --disable-load-extension \
+    && make \
+    && make install && cd .. && rm sqlite-src-3290000.zip && rm -rf sqlite-src-3290000
+
+RUN wget -q https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz \
+    && tar xvf gmp-6.1.2.tar.xz \
+    && cd gmp-6.1.2 \
+    && ./configure --disable-assembly \
+    && make \
+    && make install && cd .. && rm gmp-6.1.2.tar.xz && rm -rf gmp-6.1.2
+
+ENV RUST_PROFILE=release
+ENV PATH=$PATH:/root/.cargo/bin/
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN rustup toolchain install stable --component rustfmt --allow-downgrade
+
+WORKDIR /opt/lightningd
+COPY . /tmp/lightning
+RUN git clone --recursive /tmp/lightning . && \
+    git checkout $(git --work-tree=/tmp/lightning --git-dir=/tmp/lightning/.git rev-parse HEAD)
+
+ARG DEVELOPER=1
+ENV PYTHON_VERSION=3
+RUN curl -sSL https://install.python-poetry.org | python3 - \
+    && pip3 install -U pip \
+    && pip3 install -U wheel \
+    && /root/.local/bin/poetry install
+
+RUN ./configure --prefix=/tmp/lightning_install --enable-static && \
+    make DEVELOPER=${DEVELOPER} && \
+    /root/.local/bin/poetry run make install
+
+FROM debian:bullseye-slim as final
+
+COPY --from=downloader /opt/tini /usr/bin/tini
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      socat \
+      inotify-tools \
+      python3 \
+      python3-pip \
+      libpq5 && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV LIGHTNINGD_DATA=/root/.lightning
+ENV LIGHTNINGD_RPC_PORT=9835
+ENV LIGHTNINGD_PORT=9735
+ENV LIGHTNINGD_NETWORK=bitcoin
+
+RUN mkdir $LIGHTNINGD_DATA && \
+    touch $LIGHTNINGD_DATA/config
+VOLUME [ "/root/.lightning" ]
+COPY --from=builder /tmp/lightning_install/ /usr/local/
+COPY --from=downloader /opt/bitcoin/bin /usr/bin
+COPY --from=downloader /opt/litecoin/bin /usr/bin
+COPY tools/docker-entrypoint.sh entrypoint.sh
+
+EXPOSE 9735 9835
+ENTRYPOINT  [ "/usr/bin/tini", "-g", "--", "./entrypoint.sh" ]
+
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,30 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM python:3.6-slim-stretch
+LABEL maintainer "DataMade <info@datamade.us>"
+
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update && \
+    apt-get install -y libxml2-dev gdal-bin && \
+    apt-get clean && \
+    rm -rf /var/cache/apt/* /var/lib/apt/lists/*
+
+RUN mkdir /src
+WORKDIR /src
+
+COPY ./requirements.txt /src/requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+COPY . /src
+
+ENTRYPOINT ["/src/docker-entrypoint.sh"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

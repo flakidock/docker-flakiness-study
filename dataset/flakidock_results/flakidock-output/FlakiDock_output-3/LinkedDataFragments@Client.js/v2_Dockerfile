@@ -1,0 +1,17 @@
+FROM node:14
+
+# Install location
+ENV dir /opt/ldf-client
+
+# Copy the client files
+ADD . ${dir}
+
+# Install the node module
+WORKDIR ${dir}
+RUN npm install
+
+# Run base binary
+ENTRYPOINT ["node", "bin/ldf-client"]
+
+# Default command
+CMD ["--help"]

@@ -1,0 +1,27 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM remind101/go:1.4-newrelic
+
+COPY . /go/src/github.com/remind101/newrelic
+
+WORKDIR /go/src/github.com/remind101/newrelic
+
+RUN go-wrapper download -tags newrelic_enabled ./...
+RUN go-wrapper install -tags newrelic_enabled ./...```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/5] RUN go-wrapper download -tags newrelic_enabled ./...:
++ exec go get -v -d -tags newrelic_enabled ./...
+Fetching https://golang.org/x/net/context?go-get=1
+Parsing meta tags from https://golang.org/x/net/context?go-get=1 (status code 200)
+import "golang.org/x/net/context": parsing golang.org/x/net/context: XML syntax error on line 7: unexpected end element </head>
+package golang.org/x/net/context: unrecognized import path "golang.org/x/net/context"
+ERROR: process "/bin/sh -c go-wrapper download -tags newrelic_enabled ./..." did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

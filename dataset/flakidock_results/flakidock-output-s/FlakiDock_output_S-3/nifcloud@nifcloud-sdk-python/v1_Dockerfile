@@ -1,0 +1,19 @@
+# Dockerfile
+FROM python:3.7.3
+
+WORKDIR /usr/local/app
+
+# Install dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    groff-base \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add Pipfile and install pipenv
+ADD Pipfile /usr/local/app
+RUN pip install --no-cache-dir pipenv==2018.11.26
+
+# Install project dependencies
+COPY . /usr/local/app
+RUN pipenv install --skip-lock -d
+
+ENTRYPOINT ["pipenv", "run"]

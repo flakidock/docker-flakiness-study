@@ -1,0 +1,8 @@
+# DISCLAIMER: This docker image is only for testings purposes
+FROM rust:1.31
+
+# Update the Rust toolchain to a version that supports the 2021 edition
+RUN rustup update stable && rustup default stable
+
+# Installs file watcher
+RUN cargo install funzzy

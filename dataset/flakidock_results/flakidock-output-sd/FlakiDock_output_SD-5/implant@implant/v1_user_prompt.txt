@@ -1,0 +1,54 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM openjdk:8u222-stretch
+
+ENV SDK=https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip \
+    YQ=https://github.com/mikefarah/yq/releases/download/2.4.0/yq_linux_amd64 \
+    HOME=/root \
+    IMPLANT=/root/implant \
+    ANDROID_HOME=/root/Android/Sdk
+
+RUN apt-get update && \
+    apt-get install --no-install-suggests --no-install-recommends -y sudo less zip xxd jq && \
+    apt-get clean -y && rm -rf /var/lib/apt/lists/* && \
+    wget $YQ -O /usr/local/bin/yq -o /dev/null && \
+    chmod +x /usr/local/bin/yq && \
+    wget $SDK -O sdk.zip -o /dev/null && \
+    mkdir -p $ANDROID_HOME /root/.implant && \
+    unzip sdk.zip -d $ANDROID_HOME && \
+    rm sdk.zip && \
+    yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses && \
+    $ANDROID_HOME/tools/bin/sdkmanager "platform-tools"
+
+WORKDIR $IMPLANT
+
+COPY . $IMPLANT/
+
+ENTRYPOINT ["/root/implant/implant.sh"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/4] RUN apt-get update &&     apt-get install --no-install-suggests --no-install-recommends -y sudo less zip xxd jq &&     apt-get clean -y && rm -rf /var/lib/apt/lists/* &&     wget https://github.com/mikefarah/yq/releases/download/2.4.0/yq_linux_amd64 -O /usr/local/bin/yq -o /dev/null &&     chmod +x /usr/local/bin/yq &&     wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip -O sdk.zip -o /dev/null &&     mkdir -p /root/Android/Sdk /root/.implant &&     unzip sdk.zip -d /root/Android/Sdk &&     rm sdk.zip &&     yes | /root/Android/Sdk/tools/bin/sdkmanager --licenses &&     /root/Android/Sdk/tools/bin/sdkmanager "platform-tools":
+Err:11 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+  404  Not Found
+Err:8 http://deb.debian.org/debian stretch/main amd64 Packages
+  404  Not Found
+Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+  404  Not Found
+Reading package lists...
+W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+ERROR: process "/bin/sh -c apt-get update &&     apt-get install --no-install-suggests --no-install-recommends -y sudo less zip xxd jq &&     apt-get clean -y && rm -rf /var/lib/apt/lists/* &&     wget $YQ -O /usr/local/bin/yq -o /dev/null &&     chmod +x /usr/local/bin/yq &&     wget $SDK -O sdk.zip -o /dev/null &&     mkdir -p $ANDROID_HOME /root/.implant &&     unzip sdk.zip -d $ANDROID_HOME &&     rm sdk.zip &&     yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses &&     $ANDROID_HOME/tools/bin/sdkmanager \"platform-tools\"" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

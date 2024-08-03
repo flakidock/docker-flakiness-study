@@ -1,0 +1,24 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```ARG BASE=containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0
+FROM ${BASE}
+
+ARG REGISTRY=https://pm.community.intersystems.com
+
+RUN --mount=type=bind,src=.,dst=/home/irisowner/zpm/ \
+  iris start iris && \
+  iris session iris "##class(%SYSTEM.OBJ).Load(\"/home/irisowner/zpm/Installer.cls\",\"ck\")" && \
+  iris session iris "##class(%ZPM.Installer).setup(\"/home/irisowner/zpm/\",3)" && \
+  iris stop iris quietly```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [internal] load metadata for containers.intersystems.com/intersystems/irishealth-community:2022.2.0.368.0:
+ERROR: pulling from host containers.intersystems.com failed with status code [manifests 2022.2.0.368.0]: 403 Forbidden```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

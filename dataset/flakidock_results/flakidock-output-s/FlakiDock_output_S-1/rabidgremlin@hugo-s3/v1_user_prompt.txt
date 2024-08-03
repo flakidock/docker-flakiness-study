@@ -1,0 +1,33 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM ubuntu:xenial
+# Hugo install sequence based on Dockerfile from https://bitbucket.org/fmanco/docker-images
+
+# Upgrade
+RUN apt-get update && apt-get -y upgrade -u && apt-get clean
+
+# Install git and ssh client to retrieve sources
+RUN apt-get install -y --no-install-recommends openssh-client git
+
+# Install hugo
+ENV hugo_deb_url=https://github.com/gohugoio/hugo/releases/download/v0.26/hugo_0.26_Linux-64bit.deb
+ADD ${hugo_deb_url} /tmp/hugo.deb
+RUN dpkg -i /tmp/hugo.deb && rm -f /tmp/hugo.deb
+
+# install AWS CLI and pygments
+RUN apt-get -y install python-pip && \
+    pip install awscli && \
+    pip install pygments
+
+COPY hugo-s3.sh /
+RUN chmod +x /hugo-s3.sh
+
+ENTRYPOINT ["/hugo-s3.sh"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

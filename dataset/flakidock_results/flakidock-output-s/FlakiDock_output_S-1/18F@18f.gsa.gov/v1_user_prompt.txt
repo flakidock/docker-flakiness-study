@@ -1,0 +1,28 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM ruby:2.7
+
+# set locales
+RUN  apt-get update >/dev/null && \
+     apt-get install -y locales >/dev/null && \
+     echo "en_US UTF-8" > /etc/locale.gen  && \
+     locale-gen en_US.UTF-8  && \
+     gem install bundler -v 1.17.1 && \
+     export LANG=en_US.UTF-8  && \
+     export LANGUAGE=en_US.UTF-8  && \
+     export LC_ALL=en_US.UTF-8
+
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+apt-get install -y nodejs
+
+COPY Gemfile Gemfile.lock /app/
+
+RUN cd /app && gem install bundler && bundle install
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

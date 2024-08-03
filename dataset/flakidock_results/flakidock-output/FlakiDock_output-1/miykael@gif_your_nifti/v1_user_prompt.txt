@@ -1,0 +1,542 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM debian:stable-slim
+
+ADD . /code
+WORKDIR /code
+ENV DEBIAN_FRONTEND noninteractive
+
+# try to provide binary packages for requirements.txt, amend this list if necessary
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+    python3-setuptools \
+    python3-wheel \
+    python3-pip \
+    python3-numpy \
+    python3-nibabel \
+    python3-matplotlib \
+    python3-imageio \
+    python3-skimage
+
+# should not build things from source, can be forced with '--only-binary all'
+RUN pip3 install --upgrade-strategy only-if-needed .
+
+# minor cleanup
+RUN apt-get clean && \
+    rm -rf /var/lib/apt && \
+    rm -rf /code/gifs
+
+ENTRYPOINT ["/usr/local/bin/gif_your_nifti"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/6] RUN apt-get update -qq && apt-get install -y --no-install-recommends     python3-setuptools     python3-wheel     python3-pip     python3-numpy     python3-nibabel     python3-matplotlib     python3-imageio     python3-skimage:
+  libpythonlibpython3.11-dev libpython3.11-minimal libpython3.11-stdlib
+  python3-tz python3-ufolib2 pythonpython3.11-dev python3.11-minimal
+  readline-common rpcsvc-proto tk8.6-bltunicode-data x11-common zlib1g-dev
+  libpythonlibpython3.11-dev libpython3.11-minimal libpython3.11-stdlib
+  libqhull-rlibquadmath0 libraqm0 libreadline8 libsqlite3-0 libssl3
+  libstdc++-12-dev libtcllibtiff6 libtirpc-common libtirpc-dev libtirpc3
+  libtklibtsan2 libubsan1 libwebp7 libwebpdemux2 libwebpmux3 libx11-6
+  libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxft2 libxml2 libxrender1
+  libxsimd-dev libxsltlibxss1 linux-libc-dev media-types openssl
+  python-matplotlib-data python3 python3-all python3-all-dev python3-appdirs
+  python3-attr python3-beniget python3-brotli python3-contourpy python3-cycler
+  python3-dateutil python3-decorator python3-dev python3-distutils
+  python3-fonttools python3-fs python3-gast python3-imageio python3-kiwisolver
+  python3-lib2to3 python3-lxml python3-lz4 python3-matplotlib python3-minimal
+  python3-mpmath python3-networkx python3-nibabel python3-numpy
+  python3-packaging python3-pil python3-pil.imagetk python3-pip
+  python3-pkg-resources python3-ply python3-pyparsing python3-pythran
+  python3-pywt python3-scipy python3-setuptools python3-six python3-skimage
+  python3-skimage-lib python3-sympy python3-tifffile python3-tk python3-tz
+  python3-ufolib2 python3-wheel pythonpython3.11-dev python3.11-minimal
+  readline-common rpcsvc-proto tk8.6-bltunicode-data x11-common zlib1g-dev
+0 upgraded, 170 newly installed, 0 to remove and 0 not upgraded.
+Need to get 212 MB of archives.
+After this operation, 962 MB of additional disk space will be used.
+E: You don't have enough free space in /var/cache/apt/archives/.
+ERROR: process "/bin/sh -c apt-get update -qq && apt-get install -y --no-install-recommends     python3-setuptools     python3-wheel     python3-pip     python3-numpy     python3-nibabel     python3-matplotlib     python3-imageio     python3-skimage" did not complete successfully: exit code: 100```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```# -------- base ---------
+FROM buildpack-deps:jammy AS base
+
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y \
+    python3-dev=3.10.6-1~22.04 \
+    python3-scipy=1.8.0-1exp2ubuntu1 \
+    python3-matplotlib=3.5.1-2build1 \
+    python3-pytest=6.2.5-1ubuntu2 \
+    python3-pip=22.0.2+dfsg-1 \
+    python3-pandas=1.3.5+dfsg-3 \
+    python3-h5py=3.6.0-2build1 \
+    cython3=0.29.28-1ubuntu3 \
+    cmake=3.22.1-1ubuntu1.22.04.1 \
+    bison=2:3.8.2+dfsg-1build1 \
+    flex=2.6.4-8build2 \
+    libmpich-dev=4.0-3 \
+    libncurses-dev=6.3-2 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10 && \
+    update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
+
+# --- Install LFPy ----
+RUN pip install --no-cache-dir mpi4py==3.1.4 && \
+  pip install --no-cache-dir jupyterlab==3.5.1 && \
+  pip install --no-cache-dir git+https://github.com/LFPy/LFPy@master#egg=LFPy && \
+  pip cache purge
+```
+
+## Example Build Error
+```> [2/4] RUN apt-get update &&     apt-get install --no-install-recommends -y     python3-dev=3.10.6-1~22.04     python3-scipy=1.8.0-1exp2ubuntu1     python3-matplotlib=3.5.1-2build1     python3-pytest=6.2.5-1ubuntu2     python3-pip=22.0.2+dfsg-1     python3-pandas=1.3.5+dfsg-3     python3-h5py=3.6.0-2build1     cython3=0.29.28-1ubuntu3     cmake=3.22.1-1ubuntu1.22.04.1     bison=2:3.8.2+dfsg-1build1     flex=2.6.4-8build2     libmpich-dev=4.0-3     libncurses-dev=6.3-2     && apt-get clean     && rm -rf /var/lib/apt/lists/*:
+[2/4] RUN apt-get update &&     apt-get install --no-install-recommends -y     python3-dev=3.10.6-1~    python3-scipy=1.8.0-1exp2ubuntu1     python3-matplotlib=3.5.1-2build1     python3-pytest=6.2.5-1ubuntu2     python3-pip=22.0.2+dfsg-1     python3-pandas=1.3.5+dfsg-3     python3-h5py=3.6.0-2build1     cython3=0.29.28-1ubuntu3     cmake=3.22.1-1ubuntu1.22.    bison=2:3.8.2+dfsg-1build1     flex=2.6.4-8build2     libmpich-dev=4.0-3     libncurses-dev=6.3-2     && apt-get clean     && rm -rf /var/lib/apt/lists/*
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+The following packages have unmet dependencies:
+ libncurses-dev : Depends: libtinfo6 (= 6.3-2) but 6.3-2ubuntuis to be installed
+                  Depends: libncurses6 (= 6.3-2) but 6.3-2ubuntuis to be installed
+                  Depends: libncursesw6 (= 6.3-2) but 6.3-2ubuntuis to be installed
+E: Unable to correct problems, you have held broken packages.
+ERROR: process "/bin/sh -c apt-get update &&     apt-get install --no-install-recommends -y     python3-dev=3.10.6-1~    python3-scipy=1.8.0-1exp2ubuntu1     python3-matplotlib=3.5.1-2build1     python3-pytest=6.2.5-1ubuntu2     python3-pip=22.0.2+dfsg-1     python3-pandas=1.3.5+dfsg-3     python3-h5py=3.6.0-2build1     cython3=0.29.28-1ubuntu3     cmake=3.22.1-1ubuntu1.22.    bison=2:3.8.2+dfsg-1build1     flex=2.6.4-8build2     libmpich-dev=4.0-3     libncurses-dev=6.3-2     && apt-get clean     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100```
+
+## Example Repair
+
+### Repair 1
+```# -------- base ---------
+FROM buildpack-deps:jammy AS base
+
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y \
+    python3-dev=3.10.6-1~22.04 \
+    python3-scipy=1.8.0-1exp2ubuntu1 \
+    python3-matplotlib=3.5.1-2build1 \
+    python3-pytest=6.2.5-1ubuntu2 \
+    python3-pip=22.0.2+dfsg-1 \
+    python3-pandas=1.3.5+dfsg-3 \
+    python3-h5py=3.6.0-2build1 \
+    cython3=0.29.28-1ubuntu3 \
+    cmake \
+    bison=2:3.8.2+dfsg-1build1 \
+    flex=2.6.4-8build2 \
+    libmpich-dev=4.0-3 \
+    libncurses-dev=6.3-2ubuntu0.1 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10 && \
+    update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
+
+# --- Install LFPy ----
+RUN pip install --no-cache-dir mpi4py==3.1.4 && \
+  pip install --no-cache-dir jupyterlab==3.5.1 && \
+  pip install --no-cache-dir git+https://github.com/LFPy/LFPy@master#egg=LFPy && \
+  pip cache purge```
+
+
+# Example 2
+## Example Dockerfile
+```FROM python:3-slim-stretch
+
+LABEL name="HTTP client for GitHub Actions"
+LABEL version="1.0.3"
+LABEL repository="http://github.com/swinton/httpie.action"
+LABEL homepage="http://github.com/swinton/httpie.action"
+
+LABEL maintainer="Steve Winton <stevewinton@gmail.com>"
+LABEL com.github.actions.name="HTTP client"
+LABEL com.github.actions.description="A general purpose HTTP client for GitHub Actions providing human-friendly interactions with third-party web services."
+LABEL com.github.actions.icon="send"
+LABEL com.github.actions.color="gray-dark"
+
+WORKDIR /
+
+COPY "entrypoint.sh" "Pipfile" "Pipfile.lock" /
+COPY "config.json" /.httpie/
+
+RUN apt-get update -y && \
+  apt-get install -y --no-install-recommends jq && \
+  rm -rf /var/lib/apt/lists/* && \
+  pip install --upgrade pip && \
+  pip install --upgrade pipenv && \
+  pipenv install --deploy --system
+
+ENV HTTPIE_CONFIG_DIR /.httpie
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["--help"]
+
+```
+
+## Example Build Error
+```> [4/5] RUN apt-get update -y &&   apt-get install -y --no-install-recommends jq &&   rm -rf /var/lib/apt/lists/* &&   pip install --upgrade pip &&   pip install --upgrade pipenv &&   pipenv install --deploy --system:
+Err:8 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+  404  Not Found
+Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+  404  Not Found
+Err:12 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+  404  Not Found
+Reading package lists...
+W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+ERROR: process "/bin/sh -c apt-get update -y &&   apt-get install -y --no-install-recommends jq &&   rm -rf /var/lib/apt/lists/* &&   pip install --upgrade pip &&   pip install --upgrade pipenv &&   pipenv install --deploy --system" did not complete successfully: exit code: 100```
+
+## Example Repair
+
+### Repair 1
+```FROM python:3-slim-stretch
+
+
+
+LABEL name="HTTP client for GitHub Actions"
+LABEL version="1.0.3"
+LABEL repository="http://github.com/swinton/httpie.action"
+LABEL homepage="http://github.com/swinton/httpie.action"
+
+LABEL maintainer="Steve Winton <stevewinton@gmail.com>"
+LABEL com.github.actions.name="HTTP client"
+LABEL com.github.actions.description="A general purpose HTTP client for GitHub Actions providing human-friendly interactions with third-party web services."
+LABEL com.github.actions.icon="send"
+LABEL com.github.actions.color="gray-dark"
+
+WORKDIR /
+
+COPY "entrypoint.sh" "Pipfile" "Pipfile.lock" /
+COPY "config.json" /.httpie/
+
+RUN apt-get update -y && \
+  apt-get install -y --no-install-recommends jq && \
+  rm -rf /var/lib/apt/lists/* && \
+  pip install --upgrade pip && \
+  pip install --upgrade pipenv && \
+  pipenv install --deploy --system
+
+ENV HTTPIE_CONFIG_DIR /.httpie
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["--help"]
+
+```
+
+
+### Repair 2
+```FROM python:3-slim-bullseye
+
+LABEL name="HTTP client for GitHub Actions"
+LABEL version="1.0.3"
+LABEL repository="http://github.com/swinton/httpie.action"
+LABEL homepage="http://github.com/swinton/httpie.action"
+
+LABEL maintainer="Steve Winton <stevewinton@gmail.com>"
+LABEL com.github.actions.name="HTTP client"
+LABEL com.github.actions.description="A general purpose HTTP client for GitHub Actions providing human-friendly interactions with third-party web services."
+LABEL com.github.actions.icon="send"
+LABEL com.github.actions.color="gray-dark"
+
+WORKDIR /
+
+COPY "entrypoint.sh" "Pipfile" "Pipfile.lock" /
+COPY "config.json" /.httpie/
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+
+RUN apt-get update -y && \
+  apt-get install -y --no-install-recommends jq && \
+  rm -rf /var/lib/apt/lists/* && \
+  pip install --upgrade pip && \
+  pip install --upgrade pipenv && \
+  pipenv install --deploy --system
+
+ENV HTTPIE_CONFIG_DIR /.httpie
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["--help"]
+
+```
+
+
+# Example 3
+## Example Dockerfile
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+MAINTAINER Dockerfiles
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor && \
+	python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --upgrade pip setuptools && \
+    rm -r /root/.cache && \
+    pip3 install --upgrade pip setuptools && \
+    rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip3 install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip3 install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+## Example Build Error
+```> [ 3/11] RUN apk add bash 	git 	openssh 	python3 	python3-dev 	gcc 	build-base 	linux-headers 	pcre-dev 	postgresql-dev 	musl-dev 	libxml2-dev 	libxslt-dev 	nginx 	curl 	supervisor && 	python3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache:
+error: externally-managed-environment
+× This environment is externally managed
+╰─> 
+    The system-wide python installation should be maintained using the system
+    package manager (apk) only.
+    
+    If the package in question is not packaged already (and hence installable via
+    "apk add py3-somepackage"), please consider installing it inside a virtual
+    environment, e.g.:
+    
+    python3 -m venv /path/to/venv
+    . /path/to/venv/bin/activate
+    pip install mypackage
+    
+    To exit the virtual environment, run:
+    
+    deactivate
+    
+    The virtual environment is not deleted, and can be re-entered by re-sourcing
+    the activate file.
+    
+    To automatically manage virtual environments, consider using pipx (from the
+    pipx package).
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/lib/python3.11/ensurepip/__main__.py", line 5, in <module>
+    sys.exit(ensurepip._main())
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 286, in _main
+    return _bootstrap(
+           ^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 202, in _bootstrap
+    return _run_pip([*args, *_PACKAGE_NAMES], additional_paths)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 103, in _run_pip
+    return subprocess.run(cmd, check=True).returncode
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '-W', 'ignore::DeprecationWarning', '-c', '\nimport runpy\nimport sys\nsys.path = [\'/tmp/tmprolh5n5a/setuptools-65.5.0-py3-none-any.whl\', \'/tmp/tmprolh5n5a/pip-23.2.1-py3-none-any.whl\'] + sys.path\nsys.argv[1:] = [\'install\', \'--no-cache-dir\', \'--no-index\', \'--find-links\', \'/tmp/tmprolh5n5a\', \'setuptools\', \'pip\']\nrunpy.run_module("pip", run_name="__main__", alter_sys=True)\n']' returned non-zero exit status 1.
+ERROR: process "/bin/sh -c apk add bash \tgit \topenssh \tpython3 \tpython3-dev \tgcc \tbuild-base \tlinux-headers \tpcre-dev \tpostgresql-dev \tmusl-dev \tlibxml2-dev \tlibxslt-dev \tnginx \tcurl \tsupervisor && \tpython3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor
+
+RUN python3 -m venv /venv
+ENV VIRTUAL_ENV=/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+RUN pip install --upgrade pip setuptools && \
+	rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+
+### Repair 2
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor
+
+RUN rm /usr/lib/python*/EXTERNALLY-MANAGED && \
+	python3 -m ensurepip && \
+	rm -r /usr/lib/python*/ensurepip && \
+	pip3 install --upgrade pip setuptools && \
+	rm -r /root/.cache && \
+	pip3 install --upgrade pip setuptools && \
+	rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip3 install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip3 install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

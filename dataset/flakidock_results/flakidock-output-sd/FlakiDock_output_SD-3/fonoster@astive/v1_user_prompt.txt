@@ -1,0 +1,48 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM alpine
+
+ENV ASTIVE_VERSION 1.0.9
+ENV ASTIVE_HOME=/opt/astive
+ENV ASTIVE_APPS=/opt/astive/apps
+
+WORKDIR /tmp
+
+RUN wget https://github.com/fonoster/astive/archive/v$ASTIVE_VERSION.tar.gz \
+    && apk update \
+    && apk add openjdk8 \
+    && apk add maven \
+    && tar xvf v$ASTIVE_VERSION.tar.gz \
+    && cd astive-$ASTIVE_VERSION \
+    && ./assembly \
+    && cd dist \
+    && tar xvf astive-server-$ASTIVE_VERSION.tar.gz \
+    && mkdir -p $ASTIVE_HOME \
+    && mv astive-server-$ASTIVE_VERSION/* /opt/astive \
+    && apk del maven \
+    && apk del openjdk8 \
+    && apk add openjdk8-jre-base \
+    && rm -rf /var/cache/apk/* /tmp/astive*
+
+WORKDIR $ASTIVE_HOME
+
+EXPOSE 4573
+EXPOSE 4200
+EXPOSE 4202
+
+CMD ["/bin/sh", "-c", "./bin/astived start"]```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/4] RUN wget https://github.com/fonoster/astive/archive/v1.0.9.tar.gz     && apk update     && apk add openjdk8     && apk add maven     && tar xvf v1.0.9.tar.gz     && cd astive-1.0.9     && ./assembly     && cd dist     && tar xvf astive-server-1.0.9.tar.gz     && mkdir -p /opt/astive     && mv astive-server-1.0.9/* /opt/astive     && apk del maven     && apk del openjdk8     && apk add openjdk8-jre-base     && rm -rf /var/cache/apk/* /tmp/astive*:
+[3/4] RUN wget https://github.com/fonoster/astive/archive/v1.0.9.tar.gz     && apk update     && apk add openjdk8     && apk add maven     && tar xvf v1.0.9.tar.gz     && cd astive-1.    && ./assembly     && cd dist     && tar xvf astive-server-1.0.9.tar.gz     && mkdir -p /opt/astive     && mv astive-server-1.0.9/* /opt/astive     && apk del maven     && apk del openjdk8     && apk add openjdk8-jre-base     && rm -rf /var/cache/apk/* /tmp/astive*
+Connecting to github.com (140.82.112.3:443)
+wget: server returned error: HTTP/404 Not Found
+ERROR: process "/bin/sh -c wget https://github.com/fonoster/astive/archive/v$ASTIVE_VERSION.tar.gz     && apk update     && apk add openjdk8     && apk add maven     && tar xvf v$ASTIVE_VERSION.tar.gz     && cd astive-$ASTIVE_VERSION     && ./assembly     && cd dist     && tar xvf astive-server-$ASTIVE_VERSION.tar.gz     && mkdir -p $ASTIVE_HOME     && mv astive-server-$ASTIVE_VERSION/* /opt/astive     && apk del maven     && apk del openjdk8     && apk add openjdk8-jre-base     && rm -rf /var/cache/apk/* /tmp/astive*" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

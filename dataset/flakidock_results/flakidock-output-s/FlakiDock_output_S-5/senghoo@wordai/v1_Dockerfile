@@ -1,0 +1,41 @@
+# Dockerfile
+FROM python:3.7
+
+# Install Node.js and other dependencies
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt-get update && \
+    apt-get install -y build-essential libpq-dev nodejs nginx-extras && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV NODE_PATH /usr/lib/node_modules
+
+# Install Python dependencies
+RUN pip install --no-cache-dir uwsgi
+
+WORKDIR /usr/src/app
+
+# Copy and install Python requirements
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy and install Node.js dependencies
+COPY ui/package.json ./ui/
+WORKDIR /usr/src/app/ui
+RUN npm install
+
+# Copy the rest of the application code
+COPY . /usr/src/app
+
+# Set environment variable and build the UI
+ENV NODE_ENV production
+RUN npm run build
+
+# Configure Nginx
+WORKDIR /usr/src/app
+COPY nginx.conf /etc/nginx/
+COPY nginx-server.conf /etc/nginx/sites-enabled/default
+
+# Expose port and set the command to run the application
+EXPOSE 80
+CMD ["./start.sh"]

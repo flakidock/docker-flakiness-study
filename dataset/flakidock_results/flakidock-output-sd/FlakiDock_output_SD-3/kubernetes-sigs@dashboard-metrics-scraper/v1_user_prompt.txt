@@ -1,0 +1,79 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```# Accept the Go version for the image to be set as a build argument.
+ARG GO_VERSION=1.18
+
+# First stage: build the executable.
+FROM --platform=$BUILDPLATFORM golang:${GO_VERSION}-stretch AS builder
+
+# Expose global args
+ARG TARGETARCH
+ARG TARGETOS
+
+# What arch is it?
+ARG GOARCH=$TARGETARCH
+ARG GOOS=$TARGETOS
+
+# Install the Certificate-Authority certificates for the app to be able to make
+# calls to HTTPS endpoints.
+RUN apt-get update && \
+    apt-get install -y ca-certificates git gcc libc-dev libncurses5-dev sqlite3
+
+# Set the working directory outside $GOPATH to enable the support for modules.
+WORKDIR /src
+
+# Import the code from the context.
+COPY ./ ./
+
+# Build the executable to `/app`. Mark the build as statically linked.
+RUN echo "Building for $GOARCH" \
+    && mkdir -p ${GOPATH}/src/github.com/kubernetes-sigs \
+    && ln -sf `pwd` ${GOPATH}/src/github.com/kubernetes-sigs/dashboard-metrics-scraper \
+    && GOARCH=${GOARCH} hack/build.sh 
+
+# Create a nonroot user for final image
+RUN useradd -u 10001 nonroot 
+
+# Final stage: the running container.
+FROM scratch AS final
+
+# Import the compiled executable from the second stage.
+COPY --from=builder /metrics-sidecar /metrics-sidecar
+
+# Copy nonroot user
+COPY --from=builder /etc/passwd /etc/passwd
+
+# Declare the port on which the webserver will be exposed.
+EXPOSE 8080
+USER nonroot
+
+# Run the compiled binary.
+ENTRYPOINT ["/metrics-sidecar"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder 2/6] RUN apt-get update &&     apt-get install -y ca-certificates git gcc libc-dev libncurses5-dev sqlite3:
+Err:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages
+  404  Not Found
+Err:9 http://deb.debian.org/debian stretch/main amd64 Packages
+  404  Not Found
+Err:11 http://deb.debian.org/debian stretch-updates/main amd64 Packages
+  404  Not Found
+Ign:12 http://deb.debian.org/debian stretch-updates/main all Packages
+Reading package lists...
+W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+ERROR: process "/bin/sh -c apt-get update &&     apt-get install -y ca-certificates git gcc libc-dev libncurses5-dev sqlite3" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

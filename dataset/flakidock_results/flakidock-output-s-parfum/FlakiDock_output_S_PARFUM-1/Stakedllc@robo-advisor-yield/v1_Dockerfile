@@ -1,0 +1,21 @@
+# Start with node 10.15.0
+FROM node:lts-stretch-slim
+RUN apt-get update && apt-get install -y --no-install-recommends --assume-yes git python curl dnsutils build-essential && rm -rf /var/lib/apt/lists/*;
+
+ARG buildtime_settings=local_docker
+ENV SETTINGS_ENV=$buildtime_settings
+
+RUN mkdir /source
+
+WORKDIR /source
+
+COPY package.json /source/
+COPY yarn.lock /source/
+
+RUN yarn install --frozen-lockfile --ignore-optional --non-interactive && yarn cache clean;
+RUN yarn global add truffle@5.0.2
+
+COPY . /source/
+
+ENTRYPOINT ["/source/docker-entrypoint.sh"]
+CMD ["none"]

@@ -1,0 +1,43 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ghcr.io/hyperledger/solang-llvm:ci as builder
+
+COPY . src
+WORKDIR /src/stdlib/
+RUN make
+
+RUN rustup default 1.64.0
+
+WORKDIR /src
+RUN cargo build --release
+
+FROM ubuntu:20.04
+COPY --from=builder /src/target/release/solang /usr/bin/solang
+
+LABEL org.opencontainers.image.title="Solang Solidity Compiler" \
+	org.opencontainers.image.licenses="Apache-2.0"
+
+ENTRYPOINT ["/usr/bin/solang"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder 7/7] RUN cargo build --release:
+  Downloaded regex-syntax v0.8.4
+  Downloaded unicode-width v0.1.13
+  Downloaded regex-automata v0.4.7
+  Downloaded petgraph v0.6.5
+  Downloaded libc v0.2.155
+  Downloaded tokio v1.39.2
+  Downloaded sha3 v0.10.8
+  Downloaded linux-raw-sys v0.4.14
+  Downloaded secp256k1-sys v0.8.1
+error: package `regex v1.10.5` cannot be built because it requires rustc or newer, while the currently active rustc version is 1.64.0
+ERROR: process "/bin/sh -c cargo build --release" did not complete successfully: exit code: 101```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

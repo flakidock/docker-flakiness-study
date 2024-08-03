@@ -1,0 +1,346 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM golang:1.11.3-alpine3.8 AS builder
+
+RUN apk upgrade \
+    && apk add git \
+    && go get -ldflags '-w -s' \
+        github.com/ihciah/go-shadowsocks-magic
+
+FROM alpine:3.8
+
+LABEL maintainer="ihciah <ihciah@gmail.com>"
+
+RUN apk upgrade \
+    && apk add bash tzdata \
+    && rm -rf /var/cache/apk/*
+
+COPY --from=builder /go/bin/go-shadowsocks-magic /usr/bin/shadowsocks
+
+ENTRYPOINT ["shadowsocks"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder 2/2] RUN apk upgrade     && apk add git     && go get -ldflags '-w -s'         github.com/ihciah/go-shadowsocks-magic:
+OK: 5 MiB in 14 packages
+(1/6) Installing nghttp2-libs (1.39.2-r0)
+(2/6) Installing libssh2 (1.9.0-r1)
+(3/6) Installing libcurl (7.61.1-r3)
+(4/6) Installing expat (2.2.8-r0)
+(5/6) Installing pcre2 (10.31-r0)
+(6/6) Installing git (2.18.4-r0)
+Executing busybox-1.28.4-r3.trigger
+OK: 19 MiB in 20 packages
+package golang.org/x/sys/cpu: C source files not allowed when not using cgo or SWIG: cpu_gccgo_x86.c
+ERROR: process "/bin/sh -c apk upgrade     && apk add git     && go get -ldflags '-w -s'         github.com/ihciah/go-shadowsocks-magic" did not complete successfully: exit code: 1```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```FROM xataz/node:7-onbuild
+MAINTAINER xataz <https://github.com/xataz>
+
+ENV GID=991 \
+    UID=991 \
+    USERNAME="t411" \
+    PASSWORD="t411" \
+    ONLYVERIFIED=true \
+    DEBUGVERIFIED=false
+
+ADD startup /usr/local/bin/startup
+RUN chmod +x /usr/local/bin/startup
+
+EXPOSE 9876
+
+CMD ["/usr/local/bin/startup"]
+
+```
+
+## Example Build Error
+```> [3/3] RUN PKG_BUILD="git make gcc g++ python linux-headers" 	&& apk upgrade -U 	&& apk add ${PKG_BUILD} 	&& if [ -e /usr/src/app/package.json ]; then 		npm install; 	fi && if [ -e /usr/src/app/bower.js ]; then 		npm install -g bower && bower install; 	fi && if [ -e /usr/src/app/gulpfile.js ]; then 		npm install -g gulp && gulp; 	fi && if [ -e /usr/src/app/Gruntfile.js ]; then 		npm install -g grunt && grunt; 	fi 	&& npm cache clean /root/.npm 	&& apk del ${PKG_BUILD} 	&& rm -rf /var/cache/apk/*:
+T411-torznab@0./usr/src/app
+npm ERR! Linux 3.10.0-1127.el7.x86_64
+npm ERR! argv "/usr/bin/node" "/usr/bin/npm" "install"
+npm ERR! node v7.10.0
+npm ERR! npm  v3.10.10
+npm ERR! path /usr/src/app/node_modules/.staging/@types/triple-beam-c220f220/package.json
+npm ERR! code ENOTDIR
+npm ERR! errno -20
+npm ERR! syscall open
+npm ERR! ENOTDIR: not a directory, open '/usr/src/app/node_modules/.staging/@types/triple-beam-c220f220/package.json'
+npm ERR! 
+npm ERR! If you need help, you may report this error at:
+npm ERR!     <https://github.com/npm/npm/issues>
+npm ERR! Please include the following file with any support request:
+npm ERR!     /usr/src/app/npm-debug.log
+ERROR: process "/bin/sh -c PKG_BUILD=\"git make gcc g++ python linux-headers\" \t&& apk upgrade -U \t&& apk add ${PKG_BUILD} \t&& if [ -e /usr/src/app/package.json ]; then \t\tnpm install; \tfi && if [ -e /usr/src/app/bower.js ]; then \t\tnpm install -g bower && bower install; \tfi && if [ -e /usr/src/app/gulpfile.js ]; then \t\tnpm install -g gulp && gulp; \tfi && if [ -e /usr/src/app/Gruntfile.js ]; then \t\tnpm install -g grunt && grunt; \tfi \t&& npm cache clean /root/.npm \t&& apk del ${PKG_BUILD} \t&& rm -rf /var/cache/apk/*" did not complete successfully: exit code: 236```
+
+## Example Repair
+
+### Repair 1
+```FROM node:16-alpine
+MAINTAINER xataz <https://github.com/xataz>
+
+ENV GID=991 \
+    UID=991 \
+    USERNAME="t411" \
+    PASSWORD="t411" \
+    ONLYVERIFIED=true \
+    DEBUGVERIFIED=false
+
+ADD startup /usr/local/bin/startup
+RUN chmod +x /usr/local/bin/startup
+
+RUN PKG_BUILD="git make gcc g++ python3 linux-headers" \
+    && apk upgrade -U \
+    && apk add --no-cache ${PKG_BUILD} \
+    && if [ -e /usr/src/app/package.json ]; then \
+        npm cache clean --force \
+        && rm -rf node_modules \
+        && npm install; \
+    fi \
+    && if [ -e /usr/src/app/bower.js ]; then \
+        npm install -g bower && bower install; \
+    fi \
+    && if [ -e /usr/src/app/gulpfile.js ]; then \
+        npm install -g gulp && gulp; \
+    fi \
+    && if [ -e /usr/src/app/Gruntfile.js ]; then \
+        npm install -g grunt && grunt; \
+    fi \
+    && npm cache clean --force \
+    && apk del ${PKG_BUILD} \
+    && rm -rf /var/cache/apk/*
+
+EXPOSE 9876
+
+CMD ["/usr/local/bin/startup"]
+```
+
+
+# Example 2
+## Example Dockerfile
+```FROM composer:1.10
+
+RUN apk add --no-cache \
+    curl \
+    curl-dev \
+    libcurl \
+    libssl1.1 \
+    libxml2-dev \
+    libzip-dev \
+    && rm -rf /var/cache/apk/*
+
+RUN docker-php-ext-install pdo \
+    pdo_mysql \
+    curl \
+    xml \
+    zip \
+    posix
+
+RUN composer global require --prefer-dist hirak/prestissimo --no-interaction
+RUN composer global require --prefer-dist laravel/envoy offline/oc-bootstrapper --no-interaction
+
+RUN ln -s /composer/vendor/bin/october /usr/bin/october
+RUN ln -s /composer/vendor/bin/envoy /usr/bin/envoy
+
+ENV PATH=${PATH}:/tmp/vendor/bin
+
+WORKDIR /app
+
+ENTRYPOINT []
+CMD ["/composer/vendor/bin/october"]
+
+```
+
+## Example Build Error
+```> [2/8] RUN apk add --no-cache     curl     curl-dev     libcurl     libssl1.1     libxml2-dev     libzip-dev     && rm -rf /var/cache/apk/*:
+[2/8] RUN apk add --no-cache     curl     curl-dev     libcurl     libssl    libxml2-dev     libzip-dev     && rm -rf /var/cache/apk/*
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+ERROR: unable to select packages:
+  libssl(no such package):
+    required by: world[libssl1.1]
+ERROR: process "/bin/sh -c apk add --no-cache     curl     curl-dev     libcurl     libssl    libxml2-dev     libzip-dev     && rm -rf /var/cache/apk/*" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```FROM composer:1.10
+
+RUN apk add --no-cache \
+    curl \
+    curl-dev \
+    libcurl \
+    libssl3 \
+    libxml2-dev \
+    libzip-dev \
+    && rm -rf /var/cache/apk/*
+
+RUN docker-php-ext-install pdo \
+    pdo_mysql \
+    curl \
+    xml \
+    zip \
+    posix
+
+RUN composer global require --prefer-dist hirak/prestissimo --no-interaction
+RUN composer global require --prefer-dist laravel/envoy offline/oc-bootstrapper --no-interaction
+
+RUN ln -s /composer/vendor/bin/october /usr/bin/october
+RUN ln -s /composer/vendor/bin/envoy /usr/bin/envoy
+
+ENV PATH=${PATH}:/tmp/vendor/bin
+
+WORKDIR /app
+
+ENTRYPOINT []
+CMD ["/composer/vendor/bin/october"]
+
+```
+
+
+# Example 3
+## Example Dockerfile
+```FROM alpine:3.10
+
+LABEL description "Simple DNS authoritative server with DNSSEC support" \
+      maintainer="Hardware <contact@meshup.net>"
+
+ARG NSD_VERSION=4.2.1
+
+# https://pgp.mit.edu/pks/lookup?search=0x7E045F8D&fingerprint=on&op=index
+# pub  4096R/7E045F8D 2011-04-21 W.C.A. Wijngaards <wouter@nlnetlabs.nl>
+ARG GPG_SHORTID="0x7E045F8D"
+ARG GPG_FINGERPRINT="EDFA A3F2 CA4E 6EB0 5681  AF8E 9F6F 1C2D 7E04 5F8D"
+ARG SHA256_HASH="d17c0ea3968cb0eb2be79f2f83eb299b7bfcc554b784007616eed6ece828871f"
+
+ENV UID=991 GID=991
+
+RUN apk add --no-cache --virtual build-dependencies \
+      gnupg \
+      build-base \
+      libevent-dev \
+      openssl-dev \
+      ca-certificates \
+ && apk add --no-cache \
+      ldns \
+      ldns-tools \
+      libevent \
+      openssl \
+      tini \
+ && cd /tmp \
+ && wget -q https://www.nlnetlabs.nl/downloads/nsd/nsd-${NSD_VERSION}.tar.gz \
+ && wget -q https://www.nlnetlabs.nl/downloads/nsd/nsd-${NSD_VERSION}.tar.gz.asc \
+ && echo "Verifying both integrity and authenticity of nsd-${NSD_VERSION}.tar.gz..." \
+ && CHECKSUM=$(sha256sum nsd-${NSD_VERSION}.tar.gz | awk '{print $1}') \
+ && if [ "${CHECKSUM}" != "${SHA256_HASH}" ]; then echo "ERROR: Checksum does not match!" && exit 1; fi \
+ && ( \
+    gpg --keyserver ha.pool.sks-keyservers.net --recv-keys ${GPG_SHORTID} || \
+    gpg --keyserver keyserver.pgp.com --recv-keys ${GPG_SHORTID} || \
+    gpg --keyserver pgp.mit.edu --recv-keys ${GPG_SHORTID} \
+    ) \
+ && FINGERPRINT="$(LANG=C gpg --verify nsd-${NSD_VERSION}.tar.gz.asc nsd-${NSD_VERSION}.tar.gz 2>&1 \
+  | sed -n "s#Primary key fingerprint: \(.*\)#\1#p")" \
+ && if [ -z "${FINGERPRINT}" ]; then echo "ERROR: Invalid GPG signature!" && exit 1; fi \
+ && if [ "${FINGERPRINT}" != "${GPG_FINGERPRINT}" ]; then echo "ERROR: Wrong GPG fingerprint!" && exit 1; fi \
+ && echo "All seems good, now unpacking nsd-${NSD_VERSION}.tar.gz..." \
+ && tar xzf nsd-${NSD_VERSION}.tar.gz && cd nsd-${NSD_VERSION} \
+ && ./configure \
+    CFLAGS="-O2 -flto -fPIE -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fstack-protector-strong -Wformat -Werror=format-security" \
+    LDFLAGS="-Wl,-z,now -Wl,-z,relro" \
+ && make && make install \
+ && apk del build-dependencies \
+ && rm -rf /var/cache/apk/* /tmp/* /root/.gnupg
+
+COPY bin /usr/local/bin
+VOLUME /zones /etc/nsd /var/db/nsd
+EXPOSE 53 53/udp
+CMD ["run.sh"]
+
+```
+
+## Example Build Error
+```> [2/3] RUN apk add --no-cache --virtual build-dependencies       gnupg       build-base       libevent-dev       openssl-dev       ca-certificates  && apk add --no-cache       ldns       ldns-tools       libevent       openssl       tini  && cd /tmp  && wget -q https://www.nlnetlabs.nl/downloads/nsd/nsd-4.2.1.tar.gz  && wget -q https://www.nlnetlabs.nl/downloads/nsd/nsd-4.2.1.tar.gz.asc  && echo "Verifying both integrity and authenticity of nsd-4.2.1.tar.gz..."  && CHECKSUM=$(sha256sum nsd-4.2.1.tar.gz | awk '{print $1}')  && if [ "${CHECKSUM}" != "d17c0ea3968cb0eb2be79f2f83eb299b7bfcc554b784007616eed6ece828871f" ]; then echo "ERROR: Checksum does not match!" && exit 1; fi  && (     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 0x7E045F8D ||     gpg --keyserver keyserver.pgp.com --recv-keys 0x7E045F8D ||     gpg --keyserver pgp.mit.edu --recv-keys 0x7E045F8D     )  && FINGERPRINT="$(LANG=C gpg --verify nsd-4.2.1.tar.gz.asc nsd-4.2.1.tar.gz 2>&1   | sed -n "s#Primary key fingerprint: (.*)#1#p")"  && if [ -z "${FINGERPRINT}" ]; then echo "ERROR: Invalid GPG signature!" && exit 1; fi  && if [ "${FINGERPRINT}" != "EDFA A3F2 CA4E 6EB0 5681  AF8E 9F6F 1C2D 7E04 5F8D" ]; then echo "ERROR: Wrong GPG fingerprint!" && exit 1; fi  && echo "All seems good, now unpacking nsd-4.2.1.tar.gz..."  && tar xzf nsd-4.2.1.tar.gz && cd nsd-4.2.1  && ./configure     CFLAGS="-O2 -flto -fPIE -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fstack-protector-strong -Wformat -Werror=format-security"     LDFLAGS="-Wl,-z,now -Wl,-z,relro"  && make && make install  && apk del build-dependencies  && rm -rf /var/cache/apk/* /tmp/* /root/.gnupg:
+[2/3] RUN apk add --no-cache --virtual build-dependencies       gnupg       build-base       libevent-dev       openssl-dev       ca-certificates  && apk add --no-cache       ldns       ldns-tools       libevent       openssl       tini  && cd /tmp  && wget -q https://www.nlnetlabs.nl/downloads/nsd/nsd-4.2.1.tar.gz  && wget -q https://www.nlnetlabs.nl/downloads/nsd/nsd-4.2.1.tar.gz.asc  && echo "Verifying both integrity and authenticity of nsd-4.2.1.tar.gz..."  && CHECKSUM=$(sha256sum nsd-4.2.1.tar.gz | awk '{print $1}')  && if [ "${CHECKSUM}" != "d17c0ea3968cb0eb2be79f2f83eb299b7bfcc554b784007616eed6ece828871f" ]; then echo "ERROR: Checksum does not match!" && exit 1; fi  && (     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 0x7E045F8D ||     gpg --keyserver keyserver.pgp.com --recv-keys 0x7E045F8D ||     gpg --keyserver pgp.mit.edu --recv-keys 0x7E045F8D     )  && FINGERPRINT="$(LANG=C gpg --verify nsd-4.2.1.tar.gz.asc nsd-4.2.1.tar.gz 2>&1   | sed -n "s#Primary key fingerprint: (.*)#1#p")"  && if [ -z "${FINGERPRINT}" ]; then echo "ERROR: Invalid GPG signature!" && exit 1; fi  && if [ "${FINGERPRINT}" != "EDFA A3F2 CA4E 6EB0 5681  AF8E 9F6F 1C2D 7E04 5F8D" ]; then echo "ERROR: Wrong GPG fingerprint!" && exit 1; fi  && echo "All seems good, now unpacking nsd-4.2.1.tar.gz..."  && tar xzf nsd-4.2.1.tar.gz && cd nsd-4. && ./configure     CFLAGS="-O2 -flto -fPIE -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fstack-protector-strong -Wformat -Werror=format-security"     LDFLAGS="-Wl,-z,now -Wl,-z,relro"  && make && make install  && apk del build-dependencies  && rm -rf /var/cache/apk/* /tmp/* /root/.gnupg
+(4/5) Installing openssl (1.1.1k-r0)
+(5/5) Installing tini (0.18.0-r0)
+Executing busybox-1.30.1-r5.trigger
+OK: 245 MiB in 75 packages
+Verifying both integrity and authenticity of nsd-4.2.1.tar.gz...
+gpg: directory '/root/.gnupg' created
+gpg: keybox '/root/.gnupg/pubring.kbx' created
+gpg: keyserver receive failed: Server indicated a failure
+gpg: keyserver receive failed: Operation timed out
+gpg: keyserver receive failed: No keyserver available
+ERROR: process "/bin/sh -c apk add --no-cache --virtual build-dependencies       gnupg       build-base       libevent-dev       openssl-dev       ca-certificates  && apk add --no-cache       ldns       ldns-tools       libevent       openssl       tini  && cd /tmp  && wget -q https://www.nlnetlabs.nl/downloads/nsd/nsd-${NSD_VERSION}.tar.gz  && wget -q https://www.nlnetlabs.nl/downloads/nsd/nsd-${NSD_VERSION}.tar.gz.asc  && echo \"Verifying both integrity and authenticity of nsd-${NSD_VERSION}.tar.gz...\"  && CHECKSUM=$(sha256sum nsd-${NSD_VERSION}.tar.gz | awk '{print $1}')  && if [ \"${CHECKSUM}\" != \"${SHA256_HASH}\" ]; then echo \"ERROR: Checksum does not match!\" && exit 1; fi  && (     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys ${GPG_SHORTID} ||     gpg --keyserver keyserver.pgp.com --recv-keys ${GPG_SHORTID} ||     gpg --keyserver pgp.mit.edu --recv-keys ${GPG_SHORTID}     )  && FINGERPRINT=\"$(LANG=C gpg --verify nsd-${NSD_VERSION}.tar.gz.asc nsd-${NSD_VERSION}.tar.gz 2>&1   | sed -n \"s#Primary key fingerprint: \\(.*\\)#\\1#p\")\"  && if [ -z \"${FINGERPRINT}\" ]; then echo \"ERROR: Invalid GPG signature!\" && exit 1; fi  && if [ \"${FINGERPRINT}\" != \"${GPG_FINGERPRINT}\" ]; then echo \"ERROR: Wrong GPG fingerprint!\" && exit 1; fi  && echo \"All seems good, now unpacking nsd-${NSD_VERSION}.tar.gz...\"  && tar xzf nsd-${NSD_VERSION}.tar.gz && cd nsd-${NSD_VERSION}  && ./configure     CFLAGS=\"-O2 -flto -fPIE -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fstack-protector-strong -Wformat -Werror=format-security\"     LDFLAGS=\"-Wl,-z,now -Wl,-z,relro\"  && make && make install  && apk del build-dependencies  && rm -rf /var/cache/apk/* /tmp/* /root/.gnupg" did not complete successfully: exit code: 2```
+
+## Example Repair
+
+### Repair 1
+```FROM alpine:3.10
+
+LABEL description="Simple DNS authoritative server with DNSSEC support" \
+      maintainer="Hardware <contact@meshup.net>"
+
+ARG NSD_VERSION=4.2.1
+
+# https://pgp.mit.edu/pks/lookup?search=0x7E045F8D&fingerprint=on&op=index
+# pub  4096R/7E045F8D 2011-04-21 W.C.A. Wijngaards <wouter@nlnetlabs.nl>
+ARG GPG_SHORTID="0x7E045F8D"
+ARG GPG_FINGERPRINT="EDFA A3F2 CA4E 6EB0 5681  AF8E 9F6F 1C2D 7E04 5F8D"
+ARG SHA256_HASH="d17c0ea3968cb0eb2be79f2f83eb299b7bfcc554b784007616eed6ece828871f"
+
+ENV UID=991 GID=991
+
+RUN apk add --no-cache --virtual build-dependencies \
+      gnupg \
+      build-base \
+      libevent-dev \
+      openssl-dev \
+      ca-certificates \
+ && apk add --no-cache \
+      ldns \
+      ldns-tools \
+      libevent \
+      openssl \
+      tini \
+ && cd /tmp \
+ && wget -q https://www.nlnetlabs.nl/downloads/nsd/nsd-${NSD_VERSION}.tar.gz \
+ && wget -q https://www.nlnetlabs.nl/downloads/nsd/nsd-${NSD_VERSION}.tar.gz.asc \
+ && echo "Verifying both integrity and authenticity of nsd-${NSD_VERSION}.tar.gz..." \
+ && CHECKSUM=$(sha256sum nsd-${NSD_VERSION}.tar.gz | awk '{print $1}') \
+ && if [ "${CHECKSUM}" != "${SHA256_HASH}" ]; then echo "ERROR: Checksum does not match!" && exit 1; fi \
+ && ( \
+    gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ${GPG_SHORTID} || \
+    gpg --keyserver hkp://pgp.surfnet.nl --recv-keys ${GPG_SHORTID} || \
+    gpg --keyserver hkp://pgp.mit.edu:80 --recv-keys ${GPG_SHORTID} \
+    ) \
+ && FINGERPRINT="$(LANG=C gpg --verify nsd-${NSD_VERSION}.tar.gz.asc nsd-${NSD_VERSION}.tar.gz 2>&1 \
+  | sed -n "s#Primary key fingerprint: \(.*\)#\1#p")" \
+ && if [ -z "${FINGERPRINT}" ]; then echo "ERROR: Invalid GPG signature!" && exit 1; fi \
+ && if [ "${FINGERPRINT}" != "${GPG_FINGERPRINT}" ]; then echo "ERROR: Wrong GPG fingerprint!" && exit 1; fi \
+ && echo "All seems good, now unpacking nsd-${NSD_VERSION}.tar.gz..." \
+ && tar xzf nsd-${NSD_VERSION}.tar.gz && cd nsd-${NSD_VERSION} \
+ && ./configure \
+    CFLAGS="-O2 -flto -fPIE -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fstack-protector-strong -Wformat -Werror=format-security" \
+    LDFLAGS="-Wl,-z,now -Wl,-z,relro" \
+ && make && make install \
+ && apk del build-dependencies \
+ && rm -rf /var/cache/apk/* /tmp/* /root/.gnupg
+
+COPY bin /usr/local/bin
+VOLUME /zones /etc/nsd /var/db/nsd
+EXPOSE 53 53/udp
+CMD ["run.sh"]
+
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

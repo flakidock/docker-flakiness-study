@@ -1,0 +1,12 @@
+parent_directory: "<path to the parent directory of this repo>" # fill in
+working_directory: "dockerfile-flakiness-study/"
+input_file: "dataset/shipwright/shipwright_repos.txt"
+input_dir: "repositories/"
+output_dir: "build-logs-"
+timeout: 5400
+clean_rate: 1
+input_checker_file: "dataset/init_build_results/round1_updated.txt"
+cleanup_file: "scripts/cleanup_docker_env.sh"
+num_processes: 4
+is_resume: False
+resume_output_dir: build-logs-20xx

@@ -1,0 +1,2 @@
+FROM ababy/python-deepnude
+RUN apt-get update && apt-get install --no-install-recommends ffmpeg -y && pip install --no-cache-dir ffmpeg-python && rm -rf /var/lib/apt/lists/*;

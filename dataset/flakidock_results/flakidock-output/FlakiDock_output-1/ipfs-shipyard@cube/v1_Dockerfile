@@ -1,0 +1,17 @@
+FROM clojure:openjdk-8-lein-2.8.3
+
+WORKDIR /usr/src/app
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list && \
+    curl -sL https://deb.nodesource.com/setup_11.x | bash -
+
+RUN apt-get update && apt-get install --yes build-essential nodejs
+
+COPY project.clj /usr/src/app
+RUN lein deps
+
+COPY . /usr/src/app
+RUN make
+
+CMD ["lein", "run"]

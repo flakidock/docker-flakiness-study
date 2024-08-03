@@ -1,0 +1,66 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ruby:2.6-alpine
+
+# Environment variables:
+ENV RACK_ENV ''
+ENV GOOGLE_AUTH_DOMAIN ''
+ENV SESSION_SECRET ''
+ENV OAUTH_ID ''
+ENV OAUTH_SECRET ''
+ENV DB_ADAPTER ''
+ENV DB_HOSTNAME ''
+ENV DB_PORT 5432
+ENV DB_USERNAME ''
+ENV DB_PASSWORD ''
+ENV DB_NAME ''
+ENV READ_DATABASES ''
+ENV MISC_DEFAULT false
+ENV MISC_DBLISTMATCH false
+
+RUN apk --update add postgresql-client libstdc++
+
+# Rubygems and bundler
+RUN gem update --system --no-document
+RUN gem install bundler --no-document
+
+RUN mkdir /app
+
+ADD Gemfile /app/
+ADD Gemfile.lock /app/
+
+WORKDIR /app
+
+RUN apk --update add --virtual build-dependencies g++ musl-dev make \
+  postgresql-dev && \
+  bundle config set deployment 'true' && \
+  bundle install && \
+  apk del build-dependencies
+
+ADD . /app
+
+RUN chown -R nobody:nogroup /app
+USER nobody
+
+CMD /app/docker_runner.rb
+
+EXPOSE 3000
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 3/11] RUN gem update --system --no-document:
+ERROR:  Error installing rubygems-update:
+	There are no versions of rubygems-update (= 3.5.16) compatible with your Ruby & RubyGems
+	rubygems-update requires Ruby version >= 3.0.0. The current ruby version is 2.6.10.210.
+ERROR:  While executing gem ... (NoMethodError)
+    undefined method `version' for nil:NilClass
+Updating rubygems-update
+ERROR: process "/bin/sh -c gem update --system --no-document" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,50 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM mhart/alpine-node:6.3.0
+
+MAINTAINER tobilg@gmail.com
+
+# Setup of the prerequisites
+RUN apk add --no-cache git && \
+    apk add --no-cache ca-certificates openssl && \
+    mkdir -p /mnt/mesos/sandbox/logs && \
+    npm set progress=false
+
+# Set application name
+ENV APP_NAME mesos-framework-boilerplate
+
+# Set application directory
+ENV APP_DIR /usr/local/${APP_NAME}
+
+# Set node env to production, so that npm install doesn't install the devDependencies
+ENV NODE_ENV production
+
+# Add application
+ADD . ${APP_DIR}
+
+# Change the workdir to the app's directory
+WORKDIR ${APP_DIR}
+
+# Setup of the application
+RUN npm install --silent && \
+    npm install bower -g && \
+    bower install --allow-root
+
+CMD ["sh", "./get_creds.sh"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [5/5] RUN npm install --silent &&     npm install bower -g &&     bower install --allow-root:
+mesos-framework-boilerplate@0./usr/local/mesos-framework-boilerplate
+/usr/bin/bower -> /usr/lib/node_modules/bower/bin/bower
+/usr/lib
+bower jquery#1.  CERT_HAS_EXPIRED Request to https://registry.bower.io/packages/jquery failed: certificate has expired
+ERROR: process "/bin/sh -c npm install --silent &&     npm install bower -g &&     bower install --allow-root" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

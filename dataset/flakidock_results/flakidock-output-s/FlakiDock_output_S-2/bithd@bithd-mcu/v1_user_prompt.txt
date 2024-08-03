@@ -1,0 +1,24 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+# initialize from the image
+
+FROM debian:9
+
+# install build tools and dependencies
+
+RUN apt-get update && apt-get install -y \
+    build-essential git python python-ecdsa gcc-arm-none-eabi curl
+RUN apt-get install -y unzip python-pip
+
+ENV PROTOBUF_VERSION=3.4.0
+RUN curl -LO "https://github.com/google/protobuf/releases/download/v${PROTOBUF_VERSION}/protoc-${PROTOBUF_VERSION}-linux-x86_64.zip"
+RUN unzip "protoc-${PROTOBUF_VERSION}-linux-x86_64.zip" -d /usr
+RUN pip2 install "protobuf==${PROTOBUF_VERSION}"
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

@@ -1,0 +1,24 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+# Use the official Docker images
+# https://registry.hub.docker.com/_/node/
+#
+FROM node:9.3.0-stretch
+
+RUN apt-get update
+
+RUN apt-get install -y python3-pip python3-dev
+
+RUN pip3 install --upgrade cffi
+RUN pip3 install httpbin gunicorn
+
+
+RUN npm install crawler -g
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

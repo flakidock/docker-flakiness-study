@@ -1,0 +1,8 @@
+FROM golang:1.4
+
+COPY . /go/src/github.com/remind101/newrelic
+
+WORKDIR /go/src/github.com/remind101/newrelic
+
+RUN go get -v -d -tags newrelic_enabled ./...
+RUN go install -tags newrelic_enabled ./...

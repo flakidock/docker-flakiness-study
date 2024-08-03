@@ -1,0 +1,11 @@
+FROM bvlc/caffe:cpu
+
+ADD ./app /code
+WORKDIR /code
+
+# Upgrade pip to the latest version to avoid compatibility issues
+RUN pip install --upgrade pip
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "app.py"]

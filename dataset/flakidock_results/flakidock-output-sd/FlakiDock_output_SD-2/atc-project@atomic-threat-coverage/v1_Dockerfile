@@ -1,0 +1,22 @@
+FROM alpine
+COPY ./ /app
+WORKDIR /app
+
+RUN apk update && \
+    apk add --update \
+    python3 \
+    python3-dev \
+    py3-pip \
+    gcc \
+    musl-dev \
+    bash && \
+    python3 -m venv /app/venv && \
+    . /app/venv/bin/activate && \
+    pip install -r requirements.txt && \
+    apk del python3-dev \
+    gcc \
+    musl-dev && \
+    rm -rf /var/cache/apk/* && \
+    rm -rf Atomic_Threat_Coverage
+
+CMD ["/bin/bash", "-c", ". /app/venv/bin/activate && exec /app/docker-entrypoint.sh"]

@@ -1,0 +1,23 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM mhart/alpine-node:9
+
+WORKDIR /app
+COPY . /app
+
+RUN rm -f package-lock.json \
+    ; rm -rf .idea \
+    ; rm -rf node_modules \
+    ; npm config set registry "https://registry.npm.taobao.org/" \
+    && npm install
+
+EXPOSE 3001
+CMD ["npm", "run", "dev"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

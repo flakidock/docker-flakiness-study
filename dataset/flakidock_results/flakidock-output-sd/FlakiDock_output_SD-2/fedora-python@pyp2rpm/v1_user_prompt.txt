@@ -1,0 +1,39 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM fedora:rawhide
+
+ENV PIP_NO_CACHE_DIR=off \
+    LC_ALL=C.UTF-8 \
+    LANG=C.UTF-8
+
+LABEL summary="Image for running automatic tests of pyp2rpm in Travis CI" \
+      name="pyp2rpm-tests" \
+      maintainer="Michal Cyprian <mcyprian@redhat.com>"
+
+RUN INSTALL_PKGS="gcc tox python3.6 python3.7 python3.8 python3.9 python3.10 \
+                  python3-setuptools python3-pip" && \
+    dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs \
+                   --setopt=deltarpm=false $INSTALL_PKGS && \
+    dnf clean all
+
+CMD ["/usr/bin/tox"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/2] RUN INSTALL_PKGS="gcc tox python3.6 python3.7 python3.8 python3.9 python3.10                   python3-setuptools python3-pip" &&     dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs                    --setopt=deltarpm=false $INSTALL_PKGS &&     dnf clean all:
+[2/2] RUN INSTALL_PKGS="gcc tox pythonpythonpythonpythonpython                  python3-setuptools python3-pip" &&     dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs                    --setopt=deltarpm=false $INSTALL_PKGS &&     dnf clean all
+Updating and loading repositories:
+Repositories loaded.
+Failed to resolve the transaction:
+No match for argument: python3.7
+You can try to add to command line:
+  --skip-unavailable to skip unavailable packages
+ERROR: process "/bin/sh -c INSTALL_PKGS=\"gcc tox pythonpythonpythonpythonpython                  python3-setuptools python3-pip\" &&     dnf -y install --setopt=install_weak_deps=false --setopt=tsflags=nodocs                    --setopt=deltarpm=false $INSTALL_PKGS &&     dnf clean all" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,9 @@
+FROM bhomnick/python-multi
+ENV PYTHONUNBUFFERED 1
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list && \
+    apt-get update -yy && apt-get install -q -y --allow-unauthenticated pandoc
+RUN mkdir /src
+WORKDIR /src
+COPY requirements.txt /src/
+RUN pip3.6 install --trusted-host pypi.python.org -r requirements.txt

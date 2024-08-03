@@ -1,0 +1,12 @@
+# Dockerfile
+FROM vault:latest
+
+WORKDIR /usr/src
+
+RUN apk update && apk add --no-cache bash curl jq
+RUN mkdir /env
+
+COPY src/* /usr/src/
+RUN chmod u+x /usr/src/*.sh
+
+CMD ["/usr/src/init-token.sh"]

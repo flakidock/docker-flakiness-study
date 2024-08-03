@@ -1,0 +1,20 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM python:3.7
+ARG WORKDIR=/code
+RUN mkdir $WORKDIR
+ADD ./examples/ $WORKDIR/examples
+WORKDIR $WORKDIR
+RUN pip install git+https://github.com/toluaina/pgsync.git
+COPY ./docker/wait-for-it.sh wait-for-it.sh
+COPY ./docker/runserver.sh runserver.sh
+RUN chmod +x wait-for-it.sh
+RUN chmod +x runserver.sh
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

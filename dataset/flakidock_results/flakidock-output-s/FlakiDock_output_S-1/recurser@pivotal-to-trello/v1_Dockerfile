@@ -1,0 +1,17 @@
+# Dockerfile
+FROM ruby:2.6
+
+LABEL maintainer="Dave Perrett <https://github.com/Dockerfile>"
+
+RUN gem install bundler
+
+# Prepare
+RUN mkdir /app
+COPY . /app
+
+# Install dependencies
+WORKDIR /app
+RUN bundle install --without development
+
+# And run
+ENTRYPOINT ["bundle", "exec", "/app/bin/pivotal-to-trello"]

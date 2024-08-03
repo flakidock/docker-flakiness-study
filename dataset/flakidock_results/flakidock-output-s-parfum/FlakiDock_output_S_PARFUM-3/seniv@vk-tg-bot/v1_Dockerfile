@@ -1,0 +1,21 @@
+FROM node:10-slim as base
+
+RUN mkdir /bot
+
+WORKDIR /bot
+
+COPY package.json /bot/package.json
+COPY package-lock.json /bot/package-lock.json
+COPY config.json /bot/config.json
+
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y jq && \
+    npm install --production && \
+    rm -rf /var/lib/apt/lists/* && npm cache clean --force;
+
+FROM base
+
+COPY src /bot/src
+ADD start.sh /bot/start.sh
+
+CMD ["sh", "start.sh"]

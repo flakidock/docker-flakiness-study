@@ -1,0 +1,27 @@
+# Dockerfile
+FROM ghcr.io/hyperledger/solang-llvm:ci as builder
+
+# Ensure the rustup toolchain is up-to-date
+RUN rustup update
+
+COPY . src
+WORKDIR /src/stdlib/
+RUN make
+
+# Specify the rust toolchain version explicitly
+RUN rustup default 1.64.0
+
+WORKDIR /src
+RUN cargo build --release
+
+FROM ubuntu:20.04
+
+# Install necessary dependencies
+RUN apt-get update && apt-get install -y libssl-dev
+
+COPY --from=builder /src/target/release/solang /usr/bin/solang
+
+LABEL org.opencontainers.image.title="Solang Solidity Compiler" \
+	org.opencontainers.image.licenses="Apache-2.0"
+
+ENTRYPOINT ["/usr/bin/solang"]

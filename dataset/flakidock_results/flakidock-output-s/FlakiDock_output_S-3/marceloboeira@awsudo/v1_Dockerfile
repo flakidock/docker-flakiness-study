@@ -1,0 +1,9 @@
+# Dockerfile
+# DISCLAIMER: This docker image is only for testing purposes
+FROM rust:1.31
+
+# Update the package index and install necessary dependencies
+RUN apt-get update && apt-get install -y pkg-config libssl-dev
+
+# Installs file watcher
+RUN cargo install funzzy

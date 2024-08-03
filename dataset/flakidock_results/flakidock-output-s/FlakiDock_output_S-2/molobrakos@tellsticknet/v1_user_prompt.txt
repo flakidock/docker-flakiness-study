@@ -1,0 +1,36 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM python:3.7-slim-stretch
+
+WORKDIR /app
+
+RUN set -x \
+&& apt-get update \
+&& apt-get -y --no-install-recommends install dumb-init libsodium18 \
+&& apt-get -y autoremove \
+&& apt-get -y clean \
+&& rm -rf /var/lib/apt/lists/* \
+&& rm -rf /tmp/* \
+&& rm -rf /var/tmp/* \
+&& useradd -M --home-dir /app tellstick \
+  ;
+
+COPY requirements.txt ./
+
+RUN pip --no-cache-dir --trusted-host pypi.org install --upgrade -r requirements.txt pip coloredlogs libnacl \
+  && rm requirements.txt \
+  ;
+
+USER tellstick
+
+COPY . ./
+
+ENTRYPOINT ["dumb-init", "--", "python3", "-m", "tellsticknet", "mqtt"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

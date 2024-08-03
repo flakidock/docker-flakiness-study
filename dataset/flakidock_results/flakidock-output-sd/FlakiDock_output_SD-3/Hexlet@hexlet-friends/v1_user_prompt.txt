@@ -1,0 +1,61 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM python:3.11-alpine as builder
+
+ENV PYTHONFAULTHANDLER=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=on \
+    POETRY_VERSION=1.2.2 \
+    POETRY_NO_INTERACTION=1 \
+    POETRY_VIRTUALENVS_CREATE=false \
+    POETRY_CACHE_DIR='/var/cache/pypoetry' \
+    PATH="$PATH:/root/.local/bin"
+
+RUN apk add --no-cache \
+    gcc \
+    musl-dev \
+    postgresql-dev \
+    libffi-dev \
+    openssl-dev \
+    cargo \
+    curl \
+    gettext \
+    git \
+    make 
+
+RUN curl -sSL https://install.python-poetry.org | python3 - \
+    && poetry --version
+
+WORKDIR /project/
+
+COPY pyproject.toml poetry.lock ./
+
+RUN poetry install --extras psycopg2-binary
+
+WORKDIR /usr/local/src/hexlet-friends
+
+CMD ["make", "start"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [6/7] RUN poetry install --extras psycopg2-binary:
+24.13   Failed to install /var/cache/pypoetry/artifacts/e5/57/8c/2d4a584ae8d468ddca661a2b283da64eddf788a4a2748cf1290953bb5a/PyYAML-6.0.tar.gz
+24.13 
+24.13   at ~/.local/share/pypoetry/venv/lib/python3.11/site-packages/poetry/utils/pip.py:51 in pip_install
+24.13        47│ 
+24.13        48│     try:
+24.13        49│         return environment.run_pip(*args)
+24.13        50│     except EnvCommandError as e:
+24.13     →  51│         raise PoetryException(f"Failed to install {path.as_posix()}") from e
+24.13        52│ 
+24.13
+ERROR: process "/bin/sh -c poetry install --extras psycopg2-binary" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

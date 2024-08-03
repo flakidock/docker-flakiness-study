@@ -1,0 +1,30 @@
+FROM debian:stable-slim
+
+ADD . /code
+WORKDIR /code
+ENV DEBIAN_FRONTEND noninteractive
+
+# try to provide binary packages for requirements.txt, amend this list if necessary
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+    python3-setuptools \
+    python3-wheel \
+    python3-pip \
+    python3-numpy \
+    python3-nibabel \
+    python3-matplotlib \
+    python3-imageio \
+    python3-skimage \
+    python3-venv
+
+# create a virtual environment and install dependencies
+RUN python3 -m venv /code/venv && \
+    . /code/venv/bin/activate && \
+    pip install --upgrade pip && \
+    pip install --upgrade-strategy only-if-needed .
+
+# minor cleanup
+RUN apt-get clean && \
+    rm -rf /var/lib/apt && \
+    rm -rf /code/gifs
+
+ENTRYPOINT ["/code/venv/bin/gif_your_nifti"]

@@ -1,0 +1,43 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ruby:2.6
+
+RUN apt-get update -y && apt-get install -y \
+    rake rubygems ruby-sqlite3 libxslt-dev libxml2-dev libsqlite3-dev swig flex bison \
+    && rm -rf /var/lib/apt/lists/* && \
+    gem update --system && gem update
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+COPY Gemfile /usr/src/app/
+RUN bundle install
+
+COPY . /usr/src/app
+
+EXPOSE 2500
+
+CMD ["./instiki"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/7] RUN apt-get update -y && apt-get install -y     rake rubygems ruby-sqlite3 libxslt-dev libxml2-dev libsqlite3-dev swig flex bison     && rm -rf /var/lib/apt/lists/* &&     gem update --system && gem update:
+Setting up libruby2.7:amd64 (2.7.4-1+deb11u1) ...
+Setting up ruby-sqlite3 (1.4.2-3) ...
+Processing triggers for fontconfig (2.13.1-4.2) ...
+Processing triggers for libc-bin (2.31-13+deb11u3) ...
+ERROR:  Error installing rubygems-update:
+	There are no versions of rubygems-update (= 3.5.16) compatible with your Ruby & RubyGems
+	rubygems-update requires Ruby version >= 3.0.0. The current ruby version is 2.6.10.210.
+ERROR:  While executing gem ... (NoMethodError)
+    undefined method `version' for nil:NilClass
+Updating rubygems-update
+ERROR: process "/bin/sh -c apt-get update -y && apt-get install -y     rake rubygems ruby-sqlite3 libxslt-dev libxml2-dev libsqlite3-dev swig flex bison     && rm -rf /var/lib/apt/lists/* &&     gem update --system && gem update" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

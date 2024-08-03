@@ -1,0 +1,20 @@
+# Dockerfile
+FROM funkyfuture/nest-of-serpents
+
+WORKDIR /src
+
+RUN apt-get update && apt-get install -y python3.7 python3-pip \
+ && pip3 install black flake8 pre-commit pytest tox PyYAML Sphinx \
+ && mkdir /home/tox \
+ && mv /root/.cache /home/tox/
+
+RUN useradd -m tox \
+ && chown -R tox.tox /home/tox/.cache
+
+ADD . .
+RUN mkdir .tox \
+ && chown -R tox.tox .tox
+
+USER tox
+
+ENTRYPOINT ["tox"]

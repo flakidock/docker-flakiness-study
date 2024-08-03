@@ -1,0 +1,30 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ubuntu:16.04
+MAINTAINER James Turnbull "james@example.com"
+ENV REFRESHED_AT 2016-06-01
+RUN apt-get update
+RUN apt-get -y install ruby rake
+RUN gem install --no-rdoc --no-ri rspec ci_reporter_rspec
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/4] RUN gem install --no-rdoc --no-ri rspec ci_reporter_rspec:
+ERROR:  Error installing ci_reporter_rspec:
+	strscan requires Ruby version >= 2.4.0.
+Successfully installed diff-lcs-1.5.1
+Successfully installed rspec-support-3.13.1
+Successfully installed rspec-mocks-3.13.1
+Successfully installed rspec-expectations-3.13.1
+Successfully installed rspec-core-3.13.0
+Successfully installed rspec-3.13.0
+6 gems installed
+ERROR: process "/bin/sh -c gem install --no-rdoc --no-ri rspec ci_reporter_rspec" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

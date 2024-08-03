@@ -1,0 +1,21 @@
+FROM golang:1.20.1-buster
+
+# hadolint ignore=DL3027
+RUN apt-get update \
+    && apt install apt-transport-https build-essential curl gnupg2 jq lintian rsync rubygems-integration ruby-dev ruby software-properties-common sudo -qy \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install a newer version of Ruby
+RUN apt-get update \
+    && apt-get install -y software-properties-common \
+    && apt-add-repository ppa:brightbox/ruby-ng \
+    && apt-get update \
+    && apt-get install -y ruby2.7 ruby2.7-dev \
+    && update-alternatives --set ruby /usr/bin/ruby2.7 \
+    && update-alternatives --set gem /usr/bin/gem2.7 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# hadolint ignore=DL3028
+RUN gem install --no-document rake fpm package_cloud

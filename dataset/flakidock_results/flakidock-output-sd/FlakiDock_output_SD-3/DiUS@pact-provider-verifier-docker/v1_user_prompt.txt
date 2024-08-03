@@ -1,0 +1,39 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ruby:2-alpine
+
+COPY Gemfile /app/
+COPY Gemfile.lock /app/
+RUN apk add --no-cache --virtual build-dependencies build-base && \
+    gem install bundler && \
+    cd /app; bundle install && \
+    apk del build-dependencies build-base && \
+    rm -r ~/.bundle/ /usr/local/bundle/cache
+COPY src/ /app/
+
+WORKDIR /app
+
+CMD bundle exec rake verify_pacts
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/6] RUN apk add --no-cache --virtual build-dependencies build-base &&     gem install bundler &&     cd /app; bundle install &&     apk del build-dependencies build-base &&     rm -r ~/.bundle/ /usr/local/bundle/cache:
+(15/18) Installing fortify-headers (1.1-r1)
+(16/18) Installing patch (2.7.6-r7)
+(17/18) Installing build-base (0.5-r3)
+(18/18) Installing build-dependencies (20240801.060239)
+Executing busybox-1.35.0-r17.trigger
+OK: 199 MiB in 53 packages
+ERROR:  Error installing bundler:
+	The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with `gem install bundler -v 2.4.22`
+	bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.8.225.
+Could not locate Gemfile
+ERROR: process "/bin/sh -c apk add --no-cache --virtual build-dependencies build-base &&     gem install bundler &&     cd /app; bundle install &&     apk del build-dependencies build-base &&     rm -r ~/.bundle/ /usr/local/bundle/cache" did not complete successfully: exit code: 10```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

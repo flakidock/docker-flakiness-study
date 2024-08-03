@@ -1,0 +1,30 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM bvlc/caffe:cpu
+ADD ./app /code
+WORKDIR /code
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [4/4] RUN pip install -r requirements.txt:
+    Complete output from command python setup.py egg_info:
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-build-OyFB8X/sklearn/setup.py", line 8, in <module>
+        with open("README.md", encoding="utf-8") as f:
+    TypeError: 'encoding' is an invalid keyword argument for this function
+    
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-OyFB8X/sklearn/
+You are using pip version 9.0.3, however version is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+ERROR: process "/bin/sh -c pip install -r requirements.txt" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

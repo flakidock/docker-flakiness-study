@@ -1,0 +1,67 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM postgres:13-alpine
+
+ARG APGDIFF_VERSION=2.6.7
+ARG WORKBENCH_VERSION=127
+ENV TZ=Europe/Berlin
+ENV PATH=/usr/local/bin:$PATH
+
+    
+RUN echo "installing dependencies" \
+    && set -x \
+    && apk update \
+    && apk add --no-cache bash coreutils python3 cmd:pip3 ca-certificates \
+    && update-ca-certificates \
+    && apk add --no-cache --virtual .build-deps \
+        build-base perl-dev gnupg curl wget python3-dev \
+    && apk add --update --no-cache \
+        git \
+        tzdata \
+        perl \
+        openjdk8-jre \
+        nodejs npm \
+    && cd /tmp \
+    && curl -OSL https://github.com/subzerocloud/apgdiff/releases/download/${APGDIFF_VERSION}-subzero/apgdiff-${APGDIFF_VERSION}-subzero.jar \
+    && mv apgdiff-${APGDIFF_VERSION}-subzero.jar /usr/local/bin/apgdiff.jar \
+    && curl -sSL https://jdbc.postgresql.org/download/postgresql-42.2.18.jar \
+		 -o postgresql-42.2.18.jar \
+	&& mv postgresql-42.2.18.jar /usr/local/lib/ \
+    && curl -OSL https://www.sql-workbench.eu/Workbench-Build${WORKBENCH_VERSION}.zip \
+    && mkdir -p /workbench && unzip Workbench-Build${WORKBENCH_VERSION}.zip -d /workbench \
+    && pip3 install --upgrade --no-cache-dir pip\
+    && pip3 install --no-cache-dir psycopg2-binary migra\
+    && curl -L https://cpanmin.us | perl - App::cpanminus \
+    && cpanm --verbose --no-interactive --no-man-pages --notest DBD::Pg App::Sqitch \
+    && apk del .build-deps python3-dev \
+    rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
+
+VOLUME ["/src"]
+WORKDIR /src
+
+
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/3] RUN echo "installing dependencies"     && set -x     && apk update     && apk add --no-cache bash coreutils python3 cmd:pip3 ca-certificates     && update-ca-certificates     && apk add --no-cache --virtual .build-deps         build-base perl-dev gnupg curl wget python3-dev     && apk add --update --no-cache         git         tzdata         perl         openjdk8-jre         nodejs npm     && cd /tmp     && curl -OSL https://github.com/subzerocloud/apgdiff/releases/download/2.6.7-subzero/apgdiff-2.6.7-subzero.jar     && mv apgdiff-2.6.7-subzero.jar /usr/local/bin/apgdiff.jar     && curl -sSL https://jdbc.postgresql.org/download/postgresql-42.2.18.jar 		 -o postgresql-42.2.18.jar 	&& mv postgresql-42.2.18.jar /usr/local/lib/     && curl -OSL https://www.sql-workbench.eu/Workbench-Build127.zip     && mkdir -p /workbench && unzip Workbench-Build127.zip -d /workbench     && pip3 install --upgrade --no-cache-dir pip    && pip3 install --no-cache-dir psycopg2-binary migra    && curl -L https://cpanmin.us | perl - App::cpanminus     && cpanm --verbose --no-interactive --no-man-pages --notest DBD::Pg App::Sqitch     && apk del .build-deps python3-dev     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*:
+100  151k  100  151k    0     0   225k      0 --:--:-- --:--:-- --:--:-- 49.3M
++ mv apgdiff-2.6.7-subzero.jar /usr/local/bin/apgdiff.jar
++ curl -sSL https://jdbc.postgresql.org/download/postgresql-42.2.18.jar -o postgresql-42.2.18.jar
++ mv postgresql-42.2.18.jar /usr/local/lib/
++ curl -OSL https://www.sql-workbench.eu/Workbench-Build127.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1271  100  1271    0     0   1687      0 --:--:-- --:--:-- --:--:--  1687
++ mkdir -p /workbench
++ unzip Workbench-Build127.zip -d /workbench
+Archive:  Workbench-Build127.zip
+unzip: short read
+ERROR: process "/bin/sh -c echo \"installing dependencies\"     && set -x     && apk update     && apk add --no-cache bash coreutils python3 cmd:pip3 ca-certificates     && update-ca-certificates     && apk add --no-cache --virtual .build-deps         build-base perl-dev gnupg curl wget python3-dev     && apk add --update --no-cache         git         tzdata         perl         openjdk8-jre         nodejs npm     && cd /tmp     && curl -OSL https://github.com/subzerocloud/apgdiff/releases/download/${APGDIFF_VERSION}-subzero/apgdiff-${APGDIFF_VERSION}-subzero.jar     && mv apgdiff-${APGDIFF_VERSION}-subzero.jar /usr/local/bin/apgdiff.jar     && curl -sSL https://jdbc.postgresql.org/download/postgresql-42.2.18.jar \t\t -o postgresql-42.2.18.jar \t&& mv postgresql-42.2.18.jar /usr/local/lib/     && curl -OSL https://www.sql-workbench.eu/Workbench-Build${WORKBENCH_VERSION}.zip     && mkdir -p /workbench && unzip Workbench-Build${WORKBENCH_VERSION}.zip -d /workbench     && pip3 install --upgrade --no-cache-dir pip    && pip3 install --no-cache-dir psycopg2-binary migra    && curl -L https://cpanmin.us | perl - App::cpanminus     && cpanm --verbose --no-interactive --no-man-pages --notest DBD::Pg App::Sqitch     && apk del .build-deps python3-dev     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

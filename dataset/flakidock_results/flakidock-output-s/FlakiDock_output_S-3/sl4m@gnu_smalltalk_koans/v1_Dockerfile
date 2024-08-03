@@ -1,0 +1,9 @@
+# Dockerfile
+FROM debian:stretch-slim
+MAINTAINER skim <skimla@gmail.com>
+
+ENV HOME /root
+
+RUN apt-get update && apt-get -y upgrade && apt-get install -y --no-install-recommends gnu-smalltalk && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /koans

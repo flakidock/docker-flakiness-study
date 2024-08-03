@@ -1,0 +1,39 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM node:11
+
+RUN mkdir -p /tmp
+WORKDIR /tmp/client
+
+## Run these together otherwise we have to remember to run it with --no-cache
+#  occasionally
+RUN apt update && \
+      apt install -y git build-essential
+
+
+RUN apt autoremove -y
+
+# RUN git clone https://github.com/minimalchat/client.git /tmp/client
+COPY . .
+
+ENV REMOTE_HOST "localhost:8000"
+
+# ENV DIGITAL_OCEAN_SPACES_KEY
+# ENV CLIENT_KEY
+
+
+# TODO: Is this the best way to go about supplying the theme details?
+# ENV CLIENT_THEME_PRIMARY_COLOUR
+
+# Build the scripts
+RUN make dependencies
+
+CMD ["make", "compile"]
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

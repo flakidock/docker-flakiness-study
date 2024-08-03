@@ -1,0 +1,18 @@
+FROM circleci/ruby:2.3.8
+
+USER root
+
+# Update the base image to use a supported Debian version
+RUN sed -i 's/stretch/buster/g' /etc/apt/sources.list
+
+RUN apt-get update && apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev
+
+RUN mkdir /alpr
+RUN chown -R circleci:circleci /alpr
+
+USER circleci
+WORKDIR /alpr
+
+COPY . /alpr
+RUN bundle install
+COPY . /alpr

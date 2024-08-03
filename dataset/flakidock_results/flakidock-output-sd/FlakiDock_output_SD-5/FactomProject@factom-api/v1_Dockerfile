@@ -1,0 +1,11 @@
+FROM bhomnick/python-multi
+ENV PYTHONUNBUFFERED 1
+
+# Use a more recent Debian version to avoid repository issues
+RUN sed -i 's/stretch/buster/g' /etc/apt/sources.list
+
+RUN apt-get update -yy && apt-get install -q -y pandoc
+RUN mkdir /src
+WORKDIR /src
+COPY requirements.txt /src/
+RUN bash -lc "pip3.6 install -r requirements.txt"

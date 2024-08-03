@@ -1,0 +1,32 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM debian
+RUN apt-get -y update && \
+    apt-get -y install zip build-essential autoconf bison python vim git && \
+    apt-get clean
+WORKDIR /opt
+COPY bash2py-3.5.zip /opt
+RUN unzip /opt/bash2py-3.5.zip 
+WORKDIR /opt/bash2py-3.5
+RUN mkdir /root/bin
+RUN sh install
+CMD /bin/bash
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/8] RUN apt-get -y update &&     apt-get -y install zip build-essential autoconf bison python vim git &&     apt-get clean:
+Package python is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  python-is-python3 2to3
+E: Package 'python' has no installation candidate
+ERROR: process "/bin/sh -c apt-get -y update &&     apt-get -y install zip build-essential autoconf bison python vim git &&     apt-get clean" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

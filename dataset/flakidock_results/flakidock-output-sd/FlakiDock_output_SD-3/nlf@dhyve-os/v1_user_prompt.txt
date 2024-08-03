@@ -1,0 +1,55 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM debian
+
+RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections && \
+    echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections && \
+    apt-get -q update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
+    wget \
+    build-essential \
+    libncurses-dev \
+    rsync \
+    unzip \
+    bc \
+    gnupg \
+    python \
+    libc6-i386 \
+    cpio \
+    locales \
+    git-core
+
+COPY rootfs /tmp/rootfs
+
+ENV BUILDROOT_VERSION 2016.02
+RUN wget -qO- http://buildroot.uclibc.org/downloads/buildroot-$BUILDROOT_VERSION.tar.bz2 | tar xj && \
+    mv buildroot-$BUILDROOT_VERSION /tmp/buildroot
+
+RUN mkdir -p /tmp/rootfs/usr/bin && \
+    cd /tmp; wget -qO- https://get.docker.io/builds/Linux/x86_64/docker-latest.tgz | tar xz && \
+    mv docker/* /tmp/rootfs/usr/bin/
+
+RUN ln -s /tmp/config/buildroot /tmp/buildroot/.config
+
+WORKDIR /tmp/buildroot
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/7] RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections &&     echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections &&     apt-get -q update &&     DEBIAN_FRONTEND=noninteractive apt-get install -q -y     wget     build-essential     libncurses-dev     rsync     unzip     bc     gnupg     python     libc6-i386     cpio     locales     git-core:
+Building dependency tree...
+Reading state information...
+Package python is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  python-is-python3 2to3
+E: Package 'python' has no installation candidate
+ERROR: process "/bin/sh -c echo \"locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8\" | debconf-set-selections &&     echo \"locales locales/default_environment_locale select en_US.UTF-8\" | debconf-set-selections &&     apt-get -q update &&     DEBIAN_FRONTEND=noninteractive apt-get install -q -y     wget     build-essential     libncurses-dev     rsync     unzip     bc     gnupg     python     libc6-i386     cpio     locales     git-core" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

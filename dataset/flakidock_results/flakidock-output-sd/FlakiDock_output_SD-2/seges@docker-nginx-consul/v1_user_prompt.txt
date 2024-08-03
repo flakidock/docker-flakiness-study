@@ -1,0 +1,44 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM nginx:1.14.0
+
+MAINTAINER Ladislav Gazo <gazo@seges.sk>
+MAINTAINER Nikita Zhevnitskiy <nikita.zhevnitskiy@gmail.com>
+
+RUN DEBIAN_FRONTEND=noninteractive \
+    apt-get update -qq && \
+    apt-get -y install wget runit unzip && \
+    rm -rf /var/lib/apt/lists/*
+
+# vim - debug purposes
+RUN apt-get update && apt-get -y install vim
+RUN wget https://releases.hashicorp.com/consul-template/0.19.5/consul-template_0.19.5_linux_amd64.zip
+# install consul-template
+RUN unzip -d /usr/local/bin consul-template_0.19.5_linux_amd64.zip && rm consul-template_0.19.5_linux_amd64.zip
+
+ADD nginx.service /etc/service/nginx/run
+ADD consul-template.service /etc/service/consul-template/run
+
+RUN mkdir /etc/consul-template && chmod +x /etc/service/nginx/run && chmod +x /etc/service/consul-template/run
+
+CMD ["/usr/bin/runsvdir", "/etc/service"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/8] RUN DEBIAN_FRONTEND=noninteractive     apt-get update -qq &&     apt-get -y install wget runit unzip &&     rm -rf /var/lib/apt/lists/*:
+W: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+W: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+E: Failed to fetch http://security.debian.org/debian-security/dists/stretch/updates/main/binary-amd64/Packages  404  Not Found [IP: 151.101.80]
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch/main/binary-amd64/Packages  404  Not Found
+E: Failed to fetch http://deb.debian.org/debian/dists/stretch-updates/main/binary-amd64/Packages  404  Not Found
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+ERROR: process "/bin/sh -c DEBIAN_FRONTEND=noninteractive     apt-get update -qq &&     apt-get -y install wget runit unzip &&     rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,40 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM rhlobo/base-bigtempo
+
+MAINTAINER Roberto Lobo <rhlobo@gmail.com>
+
+# Setting environment variables
+ENV HOME /root
+ENV DEBIAN_FRONTEND noninteractive
+
+# Disabling SSH access
+RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
+
+# Use baseimage-docker's init system.
+# CMD ["/sbin/my_init"]
+
+# APP SETUP
+ADD . /home/docker/files/
+
+# APP CONFIGURATION
+ENV PATH /home/docker/files/bin:$PATH
+
+# Service Initialization
+# Service Exposure
+
+# Clean up APT
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [internal] load metadata for docker.io/rhlobo/base-bigtempo:latest:
+ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

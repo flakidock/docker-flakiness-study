@@ -1,0 +1,54 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ubuntu:latest
+
+# Download/Install Foundry Licensing Tools
+RUN apt-get -qq update
+RUN apt-get install wget -y
+RUN wget http://thefoundry.s3.amazonaws.com/tools/FLT/7.1v1/FLT7.1v1-linux-x86-release-64.tgz
+RUN tar xzf FLT7.1v1-linux-x86-release-64.tgz
+RUN rm FLT7.1v1-linux-x86-release-64.tgz
+RUN cd /FLT_7.1v1_linux-x86-release-64RH/ && echo yes | /bin/sh install.sh
+
+# Update Reprise to latest version
+RUN wget http://www.reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz
+RUN tar xvf x64_l1.admin.tar.gz
+RUN rm x64_l1.admin.tar.gz
+RUN cp /x64_l1.admin/rlm /usr/local/foundry/LicensingTools7.1/bin/RLM/rlm.foundry
+
+VOLUME /opt/rlm/licenses
+
+# rlm server
+EXPOSE 5053
+# admin gui
+EXPOSE 5054
+# isv server
+EXPOSE 4101
+
+# Add startup script
+COPY ./start.sh /opt/start.sh
+RUN chmod +x /opt/start.sh
+
+# Run the startup script
+CMD ["/opt/start.sh"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [ 8/13] RUN wget http://www.reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz:
+FLEXnet Licensing error:-1,212.  System Error: 2 "No such file or directory"
+For further information, refer to the FLEXnet Licensing documentation,
+available at "www.acresso.com".
+Location: https://reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz [following]
+--2024-08-01 04:40:32--  https://reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz
+Resolving reprisesoftware.com (reprisesoftware.com)... 198.12.241.167
+Connecting to reprisesoftware.com (reprisesoftware.com)|198.12.241.167|:443... connected.
+2024-08-01 04:40:33 ERROR 404: Not Found.
+ERROR: process "/bin/sh -c wget http://www.reprisesoftware.com/license_admin_kits/x64_l1.admin.tar.gz" did not complete successfully: exit code: 8```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

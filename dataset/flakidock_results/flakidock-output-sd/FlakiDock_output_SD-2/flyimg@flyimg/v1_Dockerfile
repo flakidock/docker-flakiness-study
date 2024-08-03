@@ -1,0 +1,23 @@
+FROM flyimg/base-image:1.2.1
+
+# Update the base image to use a supported Debian version
+RUN sed -i 's/stretch/buster/g' /etc/apt/sources.list
+
+# Install other file processors
+RUN apt update && \
+    apt install -y \
+    ghostscript \
+    ffmpeg \
+    --no-install-recommends && \
+    pip3 install pillow && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY . /var/www/html
+
+# Add www-data user and create necessary directories
+RUN usermod -u 1000 www-data && \
+    mkdir -p /var/www/html/var web/uploads/.tmb var/cache/ var/log/ && \
+    chown -R www-data:www-data var/ web/uploads/ && \
+    chmod 777 -R var/ web/uploads/
+
+RUN composer install --no-dev --optimize-autoloader

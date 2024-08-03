@@ -1,0 +1,25 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM python:3.7-slim-stretch
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN build_deps='gcc libc6-dev make' && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends git ${build_deps} && \
+    pip install -r requirements.txt && \
+    apt-get purge -y --auto-remove ${build_deps} && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY . .
+RUN python setup.py install
+
+ENTRYPOINT ["kelly_criterion"]
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

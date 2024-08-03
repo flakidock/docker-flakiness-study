@@ -1,0 +1,10 @@
+# Dockerfile
+FROM golang:1.9 as gobuild
+WORKDIR /go/src/github.com/bitnami-labs/helm-crd/
+COPY . .
+RUN go mod tidy && go mod vendor && make controller-static
+
+FROM bitnami/minideb:stretch
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+COPY --from=gobuild /go/src/github.com/bitnami-labs/helm-crd/controller-static /controller
+CMD ["/controller"]

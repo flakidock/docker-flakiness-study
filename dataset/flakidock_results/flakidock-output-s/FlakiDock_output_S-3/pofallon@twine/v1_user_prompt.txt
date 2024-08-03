@@ -1,0 +1,16 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM node:carbon-slim
+ARG version
+RUN apt-get -qq update && \
+    apt-get install -y --no-install-recommends libsecret-1-0 && \
+    rm -rf /var/lib/apt/lists/*
+RUN npm install --unsafe-perm=true -g "@pofallon/twine@$version"
+ENTRYPOINT [ "twine" ]
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

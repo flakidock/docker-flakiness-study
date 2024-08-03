@@ -1,0 +1,50 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM ruby:2.5.8 as builder
+WORKDIR /app
+
+ARG GITHUB_OAUTH_TOKEN=notset
+
+COPY . .
+
+RUN git describe --always --dirty --tags | tee VERSION
+RUN git rev-parse --short HEAD | tee BUILD_SLUG_COMMIT
+RUN rm -rf .git
+RUN bundle install --frozen --deployment --without='development test' --clean
+RUN bundle exec rake assets:precompile GITHUB_OAUTH_TOKEN=$GITHUB_OAUTH_TOKEN
+RUN tar -cjf public.tar.bz2 public && rm -rf public
+
+FROM ruby:2.5.8-slim
+LABEL maintainer Travis CI GmbH <support+travis-build-docker-images@travis-ci.com>
+WORKDIR /app
+
+ENV TRAVIS_BUILD_DUMP_BACKTRACE true
+ENV PORT 4000
+
+COPY --from=builder /app /app
+COPY --from=builder /usr/local/bundle/config /usr/local/bundle/config
+
+HEALTHCHECK --interval=5s CMD script/healthcheck
+EXPOSE 4000/tcp
+CMD ["script/server"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder 7/9] RUN bundle install --frozen --deployment --without='development test' --clean:
+Fetching https://github.com/joshk/jemalloc-rb
+fatal: could not read Username for 'https://github.com': No such device or address
+Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (2/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.fatal: could not read Username for 'https://github.com': No such device or address
+Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (3/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.fatal: could not read Username for 'https://github.com': No such device or address
+Retrying `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` due to error (4/4): Bundler::Source::Git::GitCommandError Git error: command `git clone 'https://github.com/joshk/jemalloc-rb' "/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4" --bare --no-hardlinks --quiet` in directory /app has failed.fatal: could not read Username for 'https://github.com': No such device or address
+Git error: command `git clone 'https://github.com/joshk/jemalloc-rb'
+"/app/vendor/bundle/ruby/2.5.0/cache/bundler/git/jemalloc-rb-a5d47c559439ea2733f6d38ba816713b433f99f4"
+--bare --no-hardlinks --quiet` in directory /app has failed.
+ERROR: process "/bin/sh -c bundle install --frozen --deployment --without='development test' --clean" did not complete successfully: exit code: 11```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

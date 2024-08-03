@@ -1,0 +1,14 @@
+The build error indicates that the Go code is using features that are not available in the Go version specified in the Dockerfile (Go 1.8.4). The `io.NopCloser`, `io.Discard`, and `io.ReadAll` functions, as well as the `http.NewResponseController` method, were introduced in later versions of Go. To fix this, we need to update the Go version in the Dockerfile to a more recent version that includes these features.
+
+Here is the repaired Dockerfile:
+
+
+FROM golang:1.17-alpine3.14
+RUN apk -U add lsof git aria2
+WORKDIR /go
+ENV GOPATH=/go
+RUN go get -v github.com/hanjm/file_download_proxy/...
+WORKDIR /go/src/github.com/hanjm/file_download_proxy
+RUN go build -o fdp
+EXPOSE 8080
+CMD ["./fdp","-limit","100"]

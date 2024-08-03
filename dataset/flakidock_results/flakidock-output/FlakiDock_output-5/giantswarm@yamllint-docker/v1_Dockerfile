@@ -1,0 +1,15 @@
+FROM python:2.7-alpine3.9
+ENV PYTHON_UNBUFFERED 1
+
+RUN apk add --no-cache --update \
+    build-base \
+    libffi-dev \
+    libxml2-dev \
+    libxslt-dev \
+    openssl-dev
+
+RUN pip install --upgrade pip
+RUN pip install yamllint
+
+WORKDIR /workdir
+ENTRYPOINT ["yamllint"]

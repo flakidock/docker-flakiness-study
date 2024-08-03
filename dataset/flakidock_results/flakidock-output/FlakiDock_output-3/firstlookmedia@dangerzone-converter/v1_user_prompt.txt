@@ -1,0 +1,551 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM alpine:latest
+
+# Install dependencies
+RUN apk -U upgrade && \
+    apk add \
+    ghostscript \
+    graphicsmagick \
+    libreoffice \
+    openjdk8 \
+    poppler-utils \
+    py3-magic \
+    py3-pillow \
+    sudo \
+    tesseract-ocr \
+    tesseract-ocr-data-afr \
+    tesseract-ocr-data-ara \
+    tesseract-ocr-data-aze \
+    tesseract-ocr-data-bel \
+    tesseract-ocr-data-ben \
+    tesseract-ocr-data-bul \
+    tesseract-ocr-data-cat \
+    tesseract-ocr-data-ces \
+    tesseract-ocr-data-chi_sim \
+    tesseract-ocr-data-chi_tra \
+    tesseract-ocr-data-chr \
+    tesseract-ocr-data-dan \
+    tesseract-ocr-data-deu \
+    tesseract-ocr-data-ell \
+    tesseract-ocr-data-enm \
+    tesseract-ocr-data-epo \
+    tesseract-ocr-data-equ \
+    tesseract-ocr-data-est \
+    tesseract-ocr-data-eus \
+    tesseract-ocr-data-fin \
+    tesseract-ocr-data-fra \
+    tesseract-ocr-data-frk \
+    tesseract-ocr-data-frm \
+    tesseract-ocr-data-glg \
+    tesseract-ocr-data-grc \
+    tesseract-ocr-data-heb \
+    tesseract-ocr-data-hin \
+    tesseract-ocr-data-hrv \
+    tesseract-ocr-data-hun \
+    tesseract-ocr-data-ind \
+    tesseract-ocr-data-isl \
+    tesseract-ocr-data-ita \
+    tesseract-ocr-data-ita_old \
+    tesseract-ocr-data-jpn \
+    tesseract-ocr-data-kan \
+    tesseract-ocr-data-kat \
+    tesseract-ocr-data-kor \
+    tesseract-ocr-data-lav \
+    tesseract-ocr-data-lit \
+    tesseract-ocr-data-mal \
+    tesseract-ocr-data-mkd \
+    tesseract-ocr-data-mlt \
+    tesseract-ocr-data-msa \
+    tesseract-ocr-data-nld \
+    tesseract-ocr-data-nor \
+    tesseract-ocr-data-pol \
+    tesseract-ocr-data-por \
+    tesseract-ocr-data-ron \
+    tesseract-ocr-data-rus \
+    tesseract-ocr-data-slk \
+    tesseract-ocr-data-slv \
+    tesseract-ocr-data-spa \
+    tesseract-ocr-data-spa_old \
+    tesseract-ocr-data-sqi \
+    tesseract-ocr-data-srp \
+    tesseract-ocr-data-swa \
+    tesseract-ocr-data-swe \
+    tesseract-ocr-data-tam \
+    tesseract-ocr-data-tel \
+    tesseract-ocr-data-tgl \
+    tesseract-ocr-data-tha \
+    tesseract-ocr-data-tur \
+    tesseract-ocr-data-ukr \
+    tesseract-ocr-data-vie
+
+# Install pdftk
+RUN \
+    wget https://gitlab.com/pdftk-java/pdftk/-/jobs/924565145/artifacts/raw/build/libs/pdftk-all.jar && \
+    mv pdftk-all.jar /usr/local/bin && \
+    chmod +x /usr/local/bin/pdftk-all.jar && \
+    echo '#!/bin/sh' > /usr/local/bin/pdftk && \
+    echo '/usr/bin/java -jar "/usr/local/bin/pdftk-all.jar" "$@"' >> /usr/local/bin/pdftk && \
+    chmod +x /usr/local/bin/pdftk
+
+COPY scripts/* /usr/local/bin/
+
+# Add the unprivileged user
+RUN adduser -h /home/user -s /bin/sh -D user
+
+# /tmp/input_file is where the first convert expects the input file to be, and
+# /tmp where it will write the pixel files
+#
+# /dangerzone is where the second script expects files to be put by the first one
+#
+# /safezone is where the wrapper eventually moves the sanitized files.
+VOLUME /dangerzone /tmp/input_file /safezone
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/5] RUN apk -U upgrade &&     apk add     ghostscript     graphicsmagick     libreoffice     openjdk8     poppler-utils     py3-magic     py3-pillow     sudo     tesseract-ocr     tesseract-ocr-data-afr     tesseract-ocr-data-ara     tesseract-ocr-data-aze     tesseract-ocr-data-bel     tesseract-ocr-data-ben     tesseract-ocr-data-bul     tesseract-ocr-data-cat     tesseract-ocr-data-ces     tesseract-ocr-data-chi_sim     tesseract-ocr-data-chi_tra     tesseract-ocr-data-chr     tesseract-ocr-data-dan     tesseract-ocr-data-deu     tesseract-ocr-data-ell     tesseract-ocr-data-enm     tesseract-ocr-data-epo     tesseract-ocr-data-equ     tesseract-ocr-data-est     tesseract-ocr-data-eus     tesseract-ocr-data-fin     tesseract-ocr-data-fra     tesseract-ocr-data-frk     tesseract-ocr-data-frm     tesseract-ocr-data-glg     tesseract-ocr-data-grc     tesseract-ocr-data-heb     tesseract-ocr-data-hin     tesseract-ocr-data-hrv     tesseract-ocr-data-hun     tesseract-ocr-data-ind     tesseract-ocr-data-isl     tesseract-ocr-data-ita     tesseract-ocr-data-ita_old     tesseract-ocr-data-jpn     tesseract-ocr-data-kan     tesseract-ocr-data-kat     tesseract-ocr-data-kor     tesseract-ocr-data-lav     tesseract-ocr-data-lit     tesseract-ocr-data-mal     tesseract-ocr-data-mkd     tesseract-ocr-data-mlt     tesseract-ocr-data-msa     tesseract-ocr-data-nld     tesseract-ocr-data-nor     tesseract-ocr-data-pol     tesseract-ocr-data-por     tesseract-ocr-data-ron     tesseract-ocr-data-rus     tesseract-ocr-data-slk     tesseract-ocr-data-slv     tesseract-ocr-data-spa     tesseract-ocr-data-spa_old     tesseract-ocr-data-sqi     tesseract-ocr-data-srp     tesseract-ocr-data-swa     tesseract-ocr-data-swe     tesseract-ocr-data-tam     tesseract-ocr-data-tel     tesseract-ocr-data-tgl     tesseract-ocr-data-tha     tesseract-ocr-data-tur     tesseract-ocr-data-ukr     tesseract-ocr-data-vie:
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+OK: 8 MiB in 14 packages
+ERROR: unable to select packages:
+  tesseract-ocr-data-ell (no such package):
+    required by: world[tesseract-ocr-data-ell]
+ERROR: process "/bin/sh -c apk -U upgrade &&     apk add     ghostscript     graphicsmagick     libreoffice     openjdk8     poppler-utils     py3-magic     py3-pillow     sudo     tesseract-ocr     tesseract-ocr-data-afr     tesseract-ocr-data-ara     tesseract-ocr-data-aze     tesseract-ocr-data-bel     tesseract-ocr-data-ben     tesseract-ocr-data-bul     tesseract-ocr-data-cat     tesseract-ocr-data-ces     tesseract-ocr-data-chi_sim     tesseract-ocr-data-chi_tra     tesseract-ocr-data-chr     tesseract-ocr-data-dan     tesseract-ocr-data-deu     tesseract-ocr-data-ell     tesseract-ocr-data-enm     tesseract-ocr-data-epo     tesseract-ocr-data-equ     tesseract-ocr-data-est     tesseract-ocr-data-eus     tesseract-ocr-data-fin     tesseract-ocr-data-fra     tesseract-ocr-data-frk     tesseract-ocr-data-frm     tesseract-ocr-data-glg     tesseract-ocr-data-grc     tesseract-ocr-data-heb     tesseract-ocr-data-hin     tesseract-ocr-data-hrv     tesseract-ocr-data-hun     tesseract-ocr-data-ind     tesseract-ocr-data-isl     tesseract-ocr-data-ita     tesseract-ocr-data-ita_old     tesseract-ocr-data-jpn     tesseract-ocr-data-kan     tesseract-ocr-data-kat     tesseract-ocr-data-kor     tesseract-ocr-data-lav     tesseract-ocr-data-lit     tesseract-ocr-data-mal     tesseract-ocr-data-mkd     tesseract-ocr-data-mlt     tesseract-ocr-data-msa     tesseract-ocr-data-nld     tesseract-ocr-data-nor     tesseract-ocr-data-pol     tesseract-ocr-data-por     tesseract-ocr-data-ron     tesseract-ocr-data-rus     tesseract-ocr-data-slk     tesseract-ocr-data-slv     tesseract-ocr-data-spa     tesseract-ocr-data-spa_old     tesseract-ocr-data-sqi     tesseract-ocr-data-srp     tesseract-ocr-data-swa     tesseract-ocr-data-swe     tesseract-ocr-data-tam     tesseract-ocr-data-tel     tesseract-ocr-data-tgl     tesseract-ocr-data-tha     tesseract-ocr-data-tur     tesseract-ocr-data-ukr     tesseract-ocr-data-vie" did not complete successfully: exit code: 1```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```FROM composer:1.10
+
+RUN apk add --no-cache \
+    curl \
+    curl-dev \
+    libcurl \
+    libssl1.1 \
+    libxml2-dev \
+    libzip-dev \
+    && rm -rf /var/cache/apk/*
+
+RUN docker-php-ext-install pdo \
+    pdo_mysql \
+    curl \
+    xml \
+    zip \
+    posix
+
+RUN composer global require --prefer-dist hirak/prestissimo --no-interaction
+RUN composer global require --prefer-dist laravel/envoy offline/oc-bootstrapper --no-interaction
+
+RUN ln -s /composer/vendor/bin/october /usr/bin/october
+RUN ln -s /composer/vendor/bin/envoy /usr/bin/envoy
+
+ENV PATH=${PATH}:/tmp/vendor/bin
+
+WORKDIR /app
+
+ENTRYPOINT []
+CMD ["/composer/vendor/bin/october"]
+
+```
+
+## Example Build Error
+```> [2/8] RUN apk add --no-cache     curl     curl-dev     libcurl     libssl1.1     libxml2-dev     libzip-dev     && rm -rf /var/cache/apk/*:
+[2/8] RUN apk add --no-cache     curl     curl-dev     libcurl     libssl    libxml2-dev     libzip-dev     && rm -rf /var/cache/apk/*
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+ERROR: unable to select packages:
+  libssl(no such package):
+    required by: world[libssl1.1]
+ERROR: process "/bin/sh -c apk add --no-cache     curl     curl-dev     libcurl     libssl    libxml2-dev     libzip-dev     && rm -rf /var/cache/apk/*" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```FROM composer:1.10
+
+RUN apk add --no-cache \
+    curl \
+    curl-dev \
+    libcurl \
+    libssl3 \
+    libxml2-dev \
+    libzip-dev \
+    && rm -rf /var/cache/apk/*
+
+RUN docker-php-ext-install pdo \
+    pdo_mysql \
+    curl \
+    xml \
+    zip \
+    posix
+
+RUN composer global require --prefer-dist hirak/prestissimo --no-interaction
+RUN composer global require --prefer-dist laravel/envoy offline/oc-bootstrapper --no-interaction
+
+RUN ln -s /composer/vendor/bin/october /usr/bin/october
+RUN ln -s /composer/vendor/bin/envoy /usr/bin/envoy
+
+ENV PATH=${PATH}:/tmp/vendor/bin
+
+WORKDIR /app
+
+ENTRYPOINT []
+CMD ["/composer/vendor/bin/october"]
+
+```
+
+
+# Example 2
+## Example Dockerfile
+```FROM alpine:3.16.2
+
+MAINTAINER https://github.com/zhangliqiang/fabric8-java-alpine-openjdk8-jre
+
+USER root
+
+RUN mkdir -p /deployments \
+ && apk add tzdata \
+ && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \ 
+ && echo "Asia/Shanghai" > /etc/timezone
+
+# JAVA_APP_DIR is used by run-java.sh for finding the binaries
+ENV JAVA_APP_DIR=/deployments \
+    JAVA_MAJOR_VERSION=8 \
+    JAVA_OPTIONS=-Dfile.encoding=utf-8 \
+    LOG4J_FORMAT_MSG_NO_LOOKUPS=true
+
+# /dev/urandom is used as random source, which is perfectly safe
+# according to http://www.2uo.de/myths-about-urandom/
+RUN apk add --update \
+    curl \
+    openjdk8-jre-base=8.345.01-r0 \
+ && apk add --no-cache nss  \
+ && rm /var/cache/apk/* \
+ && echo "securerandom.source=file:/dev/urandom" >> /usr/lib/jvm/default-jvm/jre/lib/security/java.security
+
+# Add run script as /deployments/run-java.sh and make it executable
+COPY run-java.sh /deployments/
+RUN chmod 755 /deployments/run-java.sh
+
+CMD [ "/deployments/run-java.sh" ]
+
+```
+
+## Example Build Error
+```> [3/5] RUN apk add --update     curl     openjdk8-jre-base=8.345.01-r0  && apk add --no-cache nss   && rm /var/cache/apk/*  && echo "securerandom.source=file:/dev/urandom" >> /usr/lib/jvm/default-jvm/jre/lib/security/java.security:
+ERROR: unable to select packages:
+  openjdk8-jre-base-8.362.09-r1:
+    breaks: world[openjdk8-jre-base=8.345.01-r0]
+ERROR: process "/bin/sh -c apk add --update     curl     openjdk8-jre-base=8.345.01-r0  && apk add --no-cache nss   && rm /var/cache/apk/*  && echo \"securerandom.source=file:/dev/urandom\" >> /usr/lib/jvm/default-jvm/jre/lib/security/java.security" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```FROM alpine:3.16.2
+
+MAINTAINER https://github.com/zhangliqiang/fabric8-java-alpine-openjdk8-jre
+
+USER root
+
+RUN mkdir -p /deployments \
+ && apk add tzdata \
+ && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \ 
+ && echo "Asia/Shanghai" > /etc/timezone
+
+# JAVA_APP_DIR is used by run-java.sh for finding the binaries
+ENV JAVA_APP_DIR=/deployments \
+    JAVA_MAJOR_VERSION=8 \
+    JAVA_OPTIONS=-Dfile.encoding=utf-8 \
+    LOG4J_FORMAT_MSG_NO_LOOKUPS=true
+
+# /dev/urandom is used as random source, which is perfectly safe
+# according to http://www.2uo.de/myths-about-urandom/
+RUN apk add --update \
+    curl \
+    openjdk8-jre-base \
+ && apk add --no-cache nss  \
+ && rm /var/cache/apk/* \
+ && echo "securerandom.source=file:/dev/urandom" >> /usr/lib/jvm/default-jvm/jre/lib/security/java.security
+
+# Add run script as /deployments/run-java.sh and make it executable
+COPY run-java.sh /deployments/
+RUN chmod 755 /deployments/run-java.sh
+
+CMD [ "/deployments/run-java.sh" ]
+
+```
+
+
+# Example 3
+## Example Dockerfile
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+MAINTAINER Dockerfiles
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor && \
+	python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --upgrade pip setuptools && \
+    rm -r /root/.cache && \
+    pip3 install --upgrade pip setuptools && \
+    rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip3 install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip3 install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+## Example Build Error
+```> [ 3/11] RUN apk add bash 	git 	openssh 	python3 	python3-dev 	gcc 	build-base 	linux-headers 	pcre-dev 	postgresql-dev 	musl-dev 	libxml2-dev 	libxslt-dev 	nginx 	curl 	supervisor && 	python3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache:
+error: externally-managed-environment
+× This environment is externally managed
+╰─> 
+    The system-wide python installation should be maintained using the system
+    package manager (apk) only.
+    
+    If the package in question is not packaged already (and hence installable via
+    "apk add py3-somepackage"), please consider installing it inside a virtual
+    environment, e.g.:
+    
+    python3 -m venv /path/to/venv
+    . /path/to/venv/bin/activate
+    pip install mypackage
+    
+    To exit the virtual environment, run:
+    
+    deactivate
+    
+    The virtual environment is not deleted, and can be re-entered by re-sourcing
+    the activate file.
+    
+    To automatically manage virtual environments, consider using pipx (from the
+    pipx package).
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/lib/python3.11/ensurepip/__main__.py", line 5, in <module>
+    sys.exit(ensurepip._main())
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 286, in _main
+    return _bootstrap(
+           ^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 202, in _bootstrap
+    return _run_pip([*args, *_PACKAGE_NAMES], additional_paths)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/ensurepip/__init__.py", line 103, in _run_pip
+    return subprocess.run(cmd, check=True).returncode
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '-W', 'ignore::DeprecationWarning', '-c', '\nimport runpy\nimport sys\nsys.path = [\'/tmp/tmprolh5n5a/setuptools-65.5.0-py3-none-any.whl\', \'/tmp/tmprolh5n5a/pip-23.2.1-py3-none-any.whl\'] + sys.path\nsys.argv[1:] = [\'install\', \'--no-cache-dir\', \'--no-index\', \'--find-links\', \'/tmp/tmprolh5n5a\', \'setuptools\', \'pip\']\nrunpy.run_module("pip", run_name="__main__", alter_sys=True)\n']' returned non-zero exit status 1.
+ERROR: process "/bin/sh -c apk add bash \tgit \topenssh \tpython3 \tpython3-dev \tgcc \tbuild-base \tlinux-headers \tpcre-dev \tpostgresql-dev \tmusl-dev \tlibxml2-dev \tlibxslt-dev \tnginx \tcurl \tsupervisor && \tpython3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache &&     pip3 install --upgrade pip setuptools &&     rm -r /root/.cache" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor
+
+RUN python3 -m venv /venv
+ENV VIRTUAL_ENV=/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+RUN pip install --upgrade pip setuptools && \
+	rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+
+### Repair 2
+```# Copyright 2013 Thatcher Peskens
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM alpine:latest
+
+
+# Install required packages and remove the apt packages cache when done.
+#apk update && apk upgrade && \
+RUN apk update 
+RUN apk add bash \
+	git \
+	openssh \
+	python3 \
+	python3-dev \
+	gcc \
+	build-base \
+	linux-headers \
+	pcre-dev \
+	postgresql-dev \
+	musl-dev \
+	libxml2-dev \
+	libxslt-dev \
+	nginx \
+	curl \
+	supervisor
+
+RUN rm /usr/lib/python*/EXTERNALLY-MANAGED && \
+	python3 -m ensurepip && \
+	rm -r /usr/lib/python*/ensurepip && \
+	pip3 install --upgrade pip setuptools && \
+	rm -r /root/.cache && \
+	pip3 install --upgrade pip setuptools && \
+	rm -r /root/.cache
+
+# install uwsgi now because it takes a little while
+RUN pip3 install uwsgi
+
+# setup all the configfiles
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+
+# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
+# to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip3 install -r /home/docker/code/app/requirements.txt
+
+# add (the rest of) our code
+COPY . /home/docker/code/
+
+# install django, normally you would remove this step because your project would already
+# be installed in the code/app/ directory
+# RUN django-admin.py startproject website /home/docker/code/app/
+
+WORKDIR /home/docker/
+EXPOSE 8113
+CMD ["supervisord", "-n", "-c", "/home/docker/code/supervisor-app.conf"]
+
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

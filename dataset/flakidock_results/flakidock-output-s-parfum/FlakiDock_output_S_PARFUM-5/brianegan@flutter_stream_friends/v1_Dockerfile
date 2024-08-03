@@ -1,0 +1,11 @@
+FROM johnpryan/dart-content-shell-docker
+
+MAINTAINER brian@brianegan.com
+
+RUN apt-get update && apt-get install --no-install-recommends -y lcov git-core libglu1 && rm -rf /var/lib/apt/lists/*;
+
+WORKDIR /
+RUN git clone https://github.com/flutter/flutter.git
+RUN /flutter/bin/flutter
+
+ENV PATH $PATH:/usr/lib/dart/bin:/flutter/bin

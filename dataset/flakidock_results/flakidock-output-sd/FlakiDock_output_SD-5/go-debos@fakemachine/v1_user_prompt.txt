@@ -1,0 +1,49 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM debian:stretch-slim
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+ENV HOME=/scratch
+
+# Always install procps in case the docker file gets used in jenkins
+RUN apt update && apt-get install  --no-install-recommends -y procps
+
+# Bits needed to run fakemachine
+RUN apt-get update  && \
+    apt-get install --no-install-recommends -y qemu-system-x86 \
+                                               qemu-user-static \
+                                               busybox \
+                                               linux-image-amd64 \
+                                               systemd \
+                                               dbus
+
+# Bits needed to build fakemachine
+RUN apt-get update  && \
+    apt-get install --no-install-recommends -y golang-go git ca-certificates
+
+WORKDIR /scratch
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [2/5] RUN apt update && apt-get install  --no-install-recommends -y procps:
+Err:3 http://deb.debian.org/debian stretch Release
+  404  Not Found
+Err:4 http://deb.debian.org/debian stretch-updates Release
+  404  Not Found
+Ign:5 http://security.debian.org/debian-security stretch/updates InRelease
+Err:6 http://security.debian.org/debian-security stretch/updates Release
+  404  Not Found [IP: 151.101.80]
+Reading package lists...
+E: The repository 'http://deb.debian.org/debian stretch Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' does not have a Release file.
+E: The repository 'http://security.debian.org/debian-security stretch/updates Release' does not have a Release file.
+ERROR: process "/bin/sh -c apt update && apt-get install  --no-install-recommends -y procps" did not complete successfully: exit code: 100```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,31 @@
+config.py
+docker_project_config.py
+
+non-flaky-repos
+
+# Ignore all folders with names like part<k>-1k/
+raw_build_logs/*/part*-1k/
+
+# But do not ignore zip files with names like part<k>-1k.tar.gz
+raw_build_logs/*/!part*-1k.tar.gz
+
+temp
+
+error_detection/data/dockerfile_embeddings-titan.pkl
+
+!error_detection/data/dockerfile_embeddings-titan.pkl.zip
+
+
+*.pyc
+
+temp
+
+# .env
+.env
+env
+
+possible-flaky-repos
+
+!parfum/**/*.Dockerfile
+
+!error_repair/flakiDock/repaired_dockerfiles/*.Dockerfile

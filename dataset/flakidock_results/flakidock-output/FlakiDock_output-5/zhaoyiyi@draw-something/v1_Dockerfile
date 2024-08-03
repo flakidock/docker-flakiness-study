@@ -1,0 +1,10 @@
+FROM node:12
+ENV PORT=${PORT}
+ADD . /app
+WORKDIR /app
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list && \
+    apt-get update \
+    && apt-get install -qq build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+RUN npm install
+CMD ["npm", "start"]

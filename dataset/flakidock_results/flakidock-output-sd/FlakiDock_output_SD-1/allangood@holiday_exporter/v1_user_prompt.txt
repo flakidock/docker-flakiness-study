@@ -1,0 +1,86 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM python:3.8.1-alpine3.11
+
+COPY includes/requirements.txt /
+RUN apk add --no-cache tzdata \
+    && pip install -r /requirements.txt \
+    && addgroup -g 1000 holiday \
+    && adduser -D -u 1000 -G holiday holiday \ 
+    && rm requirements.txt
+
+COPY includes/*.py /usr/bin/
+COPY includes/*.yaml /etc
+USER holiday
+
+ENTRYPOINT ["python", "/usr/bin/holiday_exporter.py"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [3/5] RUN apk add --no-cache tzdata     && pip install -r /requirements.txt     && addgroup -g 1000 holiday     && adduser -D -u 1000 -G holiday holiday     && rm requirements.txt:
+  Getting requirements to build wheel: finished with status 'error'
+  ERROR: Command errored out with exit status 1:
+   command: /usr/local/bin/python /usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpo59v0ah9
+       cwd: /tmp/pip-install-9b3lwaau/pyyaml
+  Complete output (48 lines):
+  running egg_info
+  writing lib3/PyYAML.egg-info/PKG-INFO
+  writing dependency_links to lib3/PyYAML.egg-info/dependency_links.txt
+  writing top-level names to lib3/PyYAML.egg-info/top_level.txt
+  Traceback (most recent call last):
+    File "/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py", line 257, in <module>
+      main()
+    File "/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py", line 240, in main
+      json_out['return_val'] = hook(**hook_input['kwargs'])
+    File "/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py", line 91, in get_requires_for_build_wheel
+      return hook(config_settings)
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 327, in get_requires_for_build_wheel
+      return self._get_build_requires(config_settings, requirements=[])
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 297, in _get_build_requires
+      self.run_setup()
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 313, in run_setup
+      exec(code, locals())
+    File "<string>", line 271, in <module>
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/__init__.py", line 108, in setup
+      return distutils.core.setup(**attrs)
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/_distutils/core.py", line 184, in setup
+      return run_commands(dist)
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/_distutils/core.py", line 200, in run_commands
+      dist.run_commands()
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/_distutils/dist.py", line 970, in run_commands
+      self.run_command(cmd)
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/dist.py", line 945, in run_command
+      super().run_command(command)
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/_distutils/dist.py", line 989, in run_command
+      cmd_obj.run()
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 310, in run
+      self.find_sources()
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 318, in find_sources
+      mm.run()
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 539, in run
+      self.add_defaults()
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/command/egg_info.py", line 577, in add_defaults
+      sdist.add_defaults(self)
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/command/sdist.py", line 102, in add_defaults
+      super().add_defaults()
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/_distutils/command/sdist.py", line 250, in add_defaults
+      self._add_defaults_ext()
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/_distutils/command/sdist.py", line 335, in _add_defaults_ext
+      self.filelist.extend(build_ext.get_source_files())
+    File "<string>", line 201, in get_source_files
+    File "/tmp/pip-build-env-4hn9r32u/overlay/lib/python3.8/site-packages/setuptools/_distutils/cmd.py", line 107, in __getattr__
+      raise AttributeError(attr)
+  AttributeError: cython_sources
+  ----------------------------------------
+ERROR: Command errored out with exit status 1: /usr/local/bin/python /usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/_in_process.py get_requires_for_build_wheel /tmp/tmpo59v0ah9 Check the logs for full command output.
+WARNING: You are using pip version 20.0.2; however, version is available.
+You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+ERROR: process "/bin/sh -c apk add --no-cache tzdata     && pip install -r /requirements.txt     && addgroup -g 1000 holiday     && adduser -D -u 1000 -G holiday holiday     && rm requirements.txt" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,44 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM ekidd/rust-musl-builder as builder
+
+USER rust
+
+COPY . /home/rust/src
+
+# Need to have the rust user own our copied source files
+RUN sudo chown -R rust . &&\
+    cargo build --release --verbose
+
+FROM alpine
+
+ARG VCS_REF
+ARG CA_CERT
+ARG BUILD_DATE
+
+LABEL org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/lloydmeta/rusqbin" \
+      org.label-schema.build-date=$BUILD_DATE
+
+COPY $CA_CERT /etc/ssl/certs/
+COPY --from=builder /home/rust/src/target/x86_64-unknown-linux-musl/release/rusqbin /rusqbin
+COPY entry.sh /entry.sh
+
+RUN addgroup -S rusqbinuser &&\
+    adduser -S -g rusqbinuser rusqbinuser &&\
+    chown -R rusqbinuser /etc/ssl/certs/ &&\
+    chown rusqbinuser /rusqbin &&\
+    chown rusqbinuser /entry.sh
+
+USER rusqbinuser
+
+EXPOSE 9999
+
+ENTRYPOINT ["/entry.sh", "/rusqbin"]
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>

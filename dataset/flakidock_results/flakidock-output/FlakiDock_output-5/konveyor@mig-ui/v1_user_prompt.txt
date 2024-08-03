@@ -1,0 +1,570 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM registry.access.redhat.com/ubi8/nodejs-16 as builder
+COPY . /mig-ui
+WORKDIR /mig-ui
+USER root
+RUN dnf config-manager --add-repo https://dl.yarnpkg.com/rpm/yarn.repo && \
+    dnf -y install yarn && yarn && yarn build && yarn install --production
+
+FROM registry.access.redhat.com/ubi8/nodejs-16
+COPY --from=builder /mig-ui/dist /opt/app-root/src/staticroot
+COPY --from=builder /mig-ui/public/favicon.ico /opt/app-root/src/staticroot
+COPY --from=builder /mig-ui/public/crane_favicon.ico /opt/app-root/src/staticroot
+COPY --from=builder /mig-ui/public/index.ejs /opt/app-root/src/staticroot
+COPY --from=builder /mig-ui/deploy/main.js /opt/app-root/src
+COPY --from=builder /mig-ui/node_modules /opt/app-root/src/node_modules
+
+ENV MIGMETA_FILE="/etc/mig-ui/migmeta.json"
+ENV VIEWS_DIR=/opt/app-root/src/staticroot
+ENV STATIC_DIR=/opt/app-root/src/staticroot
+ENV NODE_TLS_REJECT_UNAUTHORIZED="0"
+
+USER 65534:65534
+ENTRYPOINT ["node", "/opt/app-root/src/main.js"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder 4/4] RUN dnf config-manager --add-repo https://dl.yarnpkg.com/rpm/yarn.repo &&     dnf -y install yarn && yarn && yarn build && yarn install --production:
+error Error: https://registry.yarnpkg.com/@patternfly/react-tokens/-/react-tokens-4.11.8.tgz: ESOCKETTIMEDOUT
+    at ClientRequest.<anonymous> (/usr/share/yarn/lib/cli.js:142037:19)
+    at Object.onceWrapper (node:events:627:28)
+    at ClientRequest.emit (node:events:513:28)
+    at TLSSocket.emitRequestTimeout (node:_http_client:839:9)
+    at Object.onceWrapper (node:events:627:28)
+    at TLSSocket.emit (node:events:525:35)
+    at TLSSocket.Socket._onTimeout (node:net:550:8)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+ERROR: process "/bin/sh -c dnf config-manager --add-repo https://dl.yarnpkg.com/rpm/yarn.repo &&     dnf -y install yarn && yarn && yarn build && yarn install --production" did not complete successfully: exit code: 1```
+
+Below are a few examples of dockerfiles and their build errors alongside their repairs. These examples are provided to help you understand the task better.
+
+# Example 1
+## Example Dockerfile
+```### Dependency Cacher
+### -------------------------
+FROM endeveit/docker-jq:latest as deps
+
+# To prevent cache invalidation from changes in fields other than dependencies
+# https://stackoverflow.com/a/59606373
+COPY package.json /tmp
+RUN jq '{ dependencies, devDependencies, resolutions }' < /tmp/package.json > /tmp/deps.json
+
+
+### Fat Build
+### -------------------------
+FROM node:16.14.0 AS builder
+
+WORKDIR /usr/Spoke
+
+# Cache dependencies
+COPY --from=deps /tmp/deps.json ./package.json
+COPY yarn.lock ./
+RUN yarn install
+
+# Configure build environment
+ARG PHONE_NUMBER_COUNTRY=US
+ENV NODE_ENV="production" \
+  NODE_OPTIONS=--max_old_space_size=2048 \
+  PORT=3000 \
+  OUTPUT_DIR="./build" \
+  PUBLIC_DIR="./build/client" \
+  ASSETS_DIR="./build/client/assets" \
+  ASSETS_MAP_FILE="assets.json" \
+  PHONE_NUMBER_COUNTRY=$PHONE_NUMBER_COUNTRY
+
+# Copy application codebase
+COPY . .
+RUN yarn run build
+
+### Slim Deploy
+### -------------------------
+FROM node:16.14.0
+
+WORKDIR /usr/Spoke
+
+# Install and cache production dependencies
+COPY --from=deps /tmp/deps.json ./package.json
+COPY yarn.lock ./
+RUN yarn install --production
+
+# Copy only the built source
+COPY --from=builder /usr/Spoke/build ./build
+
+ARG SPOKE_VERSION="no-version"
+ARG PHONE_NUMBER_COUNTRY=US
+ENV NODE_ENV="production" \
+  NODE_OPTIONS=--max_old_space_size=2048 \
+  PORT=3000 \
+  OUTPUT_DIR="./build" \
+  PUBLIC_DIR="./build/client" \
+  ASSETS_DIR="./build/client/assets" \
+  ASSETS_MAP_FILE="assets.json" \
+  VAN_BASE_URL="https://api.securevan.com/v4" \
+  VAN_EXPORT_TYPE="8" \
+  PHONE_NUMBER_COUNTRY=$PHONE_NUMBER_COUNTRY \
+  SPOKE_VERSION=$SPOKE_VERSION
+
+COPY package.json knexfile.env.js ./
+COPY migrations ./migrations
+COPY seeds ./seeds
+
+# Run the production compiled code
+EXPOSE 3000
+CMD [ "node", "--no-deprecation", "./build/src/server" ]
+
+```
+
+## Example Build Error
+```> [stage-2 5/9] RUN yarn install --production:
+> [builder 5/7] RUN yarn install:
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+error An unexpected error occurred: "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.11.3.tgz: ESOCKETTIMEDOUT".
+info If you think this is a bug, please open a bug report with the information provided in "/usr/Spoke/yarn-error.log".
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+error An unexpected error occurred: "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.11.3.tgz: ESOCKETTIMEDOUT".
+info If you think this is a bug, please open a bug report with the information provided in "/usr/Spoke/yarn-error.log".
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+ERROR: process "/bin/sh -c yarn install --production" did not complete successfully: exit code: 1
+ERROR: process "/bin/sh -c yarn install" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```### Dependency Cacher
+### -------------------------
+FROM endeveit/docker-jq:latest as deps
+
+# To prevent cache invalidation from changes in fields other than dependencies
+# https://stackoverflow.com/a/59606373
+COPY package.json /tmp
+RUN jq '{ dependencies, devDependencies, resolutions }' < /tmp/package.json > /tmp/deps.json
+
+
+### Fat Build
+### -------------------------
+FROM node:16.14.0 AS builder
+
+WORKDIR /usr/Spoke
+
+# Cache dependencies
+COPY --from=deps /tmp/deps.json ./package.json
+COPY yarn.lock ./
+RUN yarn config set network-timeout 600000
+RUN yarn install
+
+# Configure build environment
+ARG PHONE_NUMBER_COUNTRY=US
+ENV NODE_ENV="production" \
+  NODE_OPTIONS=--max_old_space_size=2048 \
+  PORT=3000 \
+  OUTPUT_DIR="./build" \
+  PUBLIC_DIR="./build/client" \
+  ASSETS_DIR="./build/client/assets" \
+  ASSETS_MAP_FILE="assets.json" \
+  PHONE_NUMBER_COUNTRY=$PHONE_NUMBER_COUNTRY
+
+# Copy application codebase
+COPY . .
+RUN yarn run build
+
+### Slim Deploy
+### -------------------------
+FROM node:16.14.0
+
+WORKDIR /usr/Spoke
+
+# Install and cache production dependencies
+COPY --from=deps /tmp/deps.json ./package.json
+COPY yarn.lock ./
+RUN yarn config set network-timeout 600000
+RUN yarn install --production
+
+# Copy only the built source
+COPY --from=builder /usr/Spoke/build ./build
+
+ARG SPOKE_VERSION="no-version"
+ARG PHONE_NUMBER_COUNTRY=US
+ENV NODE_ENV="production" \
+  NODE_OPTIONS=--max_old_space_size=2048 \
+  PORT=3000 \
+  OUTPUT_DIR="./build" \
+  PUBLIC_DIR="./build/client" \
+  ASSETS_DIR="./build/client/assets" \
+  ASSETS_MAP_FILE="assets.json" \
+  VAN_BASE_URL="https://api.securevan.com/v4" \
+  VAN_EXPORT_TYPE="8" \
+  PHONE_NUMBER_COUNTRY=$PHONE_NUMBER_COUNTRY \
+  SPOKE_VERSION=$SPOKE_VERSION
+
+COPY package.json knexfile.env.js ./
+COPY migrations ./migrations
+COPY seeds ./seeds
+
+# Run the production compiled code
+EXPOSE 3000
+CMD [ "node", "--no-deprecation", "./build/src/server" ]
+
+```
+
+
+# Example 2
+## Example Dockerfile
+```FROM node:14.15.1 as base
+WORKDIR /app
+COPY package.json ./package.json
+COPY yarn.lock ./
+RUN yarn --production
+
+FROM base as builder
+ARG NEXT_PUBLIC_API
+ARG NEXT_PUBLIC_GRAPHQL
+ARG NEXT_PUBLIC_GRAPHQL_WS
+ARG NEXT_PUBLIC_UPLOAD
+ARG NEXT_PUBLIC_FILES
+ARG NEXT_PUBLIC_PARSER
+ARG NEXT_PUBLIC_INDEX
+ARG NEXT_PUBLIC_NAME
+ARG NEXT_PUBLIC_SLOGAN
+ARG NEXT_PUBLIC_DESCRIPTION
+ARG NEXT_PUBLIC_KEYWORDS
+ARG NEXT_PUBLIC_ONE_SIGNAL_APP_ID
+ARG NEXT_PUBLIC_PRODUCT_ID
+ARG NEXT_PUBLIC_BAIDU_TONGJI
+ARG NEXT_PUBLIC_CLOSE_TIP
+
+RUN if [ "$NEXT_PUBLIC_API" != "" ]; \
+  then export NEXT_PUBLIC_API=$NEXT_PUBLIC_API; \
+  fi; \
+  if [ "$NEXT_PUBLIC_GRAPHQL" != "" ]; \
+  then export NEXT_PUBLIC_GRAPHQL=$NEXT_PUBLIC_GRAPHQL; \
+  fi; \
+  if [ "$NEXT_PUBLIC_GRAPHQL_WS" != "" ]; \
+  then export NEXT_PUBLIC_GRAPHQL_WS=$NEXT_PUBLIC_GRAPHQL_WS; \
+  fi; \
+  if [ "$NEXT_PUBLIC_UPLOAD" != "" ]; \
+  then export NEXT_PUBLIC_UPLOAD=$NEXT_PUBLIC_UPLOAD; \
+  fi; \
+  if [ "$NEXT_PUBLIC_FILES" != "" ]; \
+  then export NEXT_PUBLIC_FILES=$NEXT_PUBLIC_FILES; \
+  fi; \
+  if [ "$NEXT_PUBLIC_PARSER" != "" ]; \
+  then export NEXT_PUBLIC_PARSER=$NEXT_PUBLIC_PARSER; \
+  fi; \
+  if [ "$NEXT_PUBLIC_INDEX" != "" ]; \
+  then export NEXT_PUBLIC_INDEX=$NEXT_PUBLIC_INDEX; \
+  fi; \
+  if [ "$NEXT_PUBLIC_NAME" != "" ]; \
+  then export NEXT_PUBLIC_NAME=$NEXT_PUBLIC_NAME; \
+  fi; \
+  if [ "$NEXT_PUBLIC_SLOGAN" != "" ]; \
+  then export NEXT_PUBLIC_SLOGAN=$NEXT_PUBLIC_SLOGAN; \
+  fi; \
+  if [ "$NEXT_PUBLIC_DESCRIPTION" != "" ]; \
+  then export NEXT_PUBLIC_DESCRIPTION=$NEXT_PUBLIC_DESCRIPTION; \
+  fi; \
+  if [ "$NEXT_PUBLIC_KEYWORDS" != "" ]; \
+  then export NEXT_PUBLIC_KEYWORDS=$NEXT_PUBLIC_KEYWORDS; \
+  fi; \
+  if [ "$NEXT_PUBLIC_ONE_SIGNAL_APP_ID" != "" ]; \
+  then export NEXT_PUBLIC_ONE_SIGNAL_APP_ID=$NEXT_PUBLIC_ONE_SIGNAL_APP_ID; \
+  fi; \
+  if [ "$NEXT_PUBLIC_PRODUCT_ID" != "" ]; \
+  then export NEXT_PUBLIC_PRODUCT_ID=$NEXT_PUBLIC_PRODUCT_ID; \
+  fi; \
+  if [ "$NEXT_PUBLIC_BAIDU_TONGJI" != "" ]; \
+  then export NEXT_PUBLIC_BAIDU_TONGJI=$NEXT_PUBLIC_BAIDU_TONGJI; \
+  fi; \
+  if [ "$NEXT_PUBLIC_CLOSE_TIP" != "" ]; \
+  then export NEXT_PUBLIC_CLOSE_TIP=$NEXT_PUBLIC_CLOSE_TIP; \
+  fi;
+WORKDIR /app
+RUN yarn
+COPY . .
+RUN yarn possible-types
+RUN yarn build
+
+FROM base
+WORKDIR /app
+COPY . .
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public/service-worker.js ./public/service-worker.js
+EXPOSE 3000
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
+CMD ["yarn", "start"]
+
+```
+
+## Example Build Error
+```> [base 5/5] RUN yarn --production:
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info If you think this is a bug, please open a bug report with the information provided in "/app/yarn-error.log".
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+error An unexpected error occurred: "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz: ESOCKETTIMEDOUT".
+ERROR: process "/bin/sh -c yarn --production" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```FROM node:14.15.1 as base
+WORKDIR /app
+COPY package.json ./package.json
+COPY yarn.lock ./
+RUN yarn --production --network-timeout 600000
+
+FROM base as builder
+ARG NEXT_PUBLIC_API
+ARG NEXT_PUBLIC_GRAPHQL
+ARG NEXT_PUBLIC_GRAPHQL_WS
+ARG NEXT_PUBLIC_UPLOAD
+ARG NEXT_PUBLIC_FILES
+ARG NEXT_PUBLIC_PARSER
+ARG NEXT_PUBLIC_INDEX
+ARG NEXT_PUBLIC_NAME
+ARG NEXT_PUBLIC_SLOGAN
+ARG NEXT_PUBLIC_DESCRIPTION
+ARG NEXT_PUBLIC_KEYWORDS
+ARG NEXT_PUBLIC_ONE_SIGNAL_APP_ID
+ARG NEXT_PUBLIC_PRODUCT_ID
+ARG NEXT_PUBLIC_BAIDU_TONGJI
+ARG NEXT_PUBLIC_CLOSE_TIP
+
+RUN if [ "$NEXT_PUBLIC_API" != "" ]; \
+  then export NEXT_PUBLIC_API=$NEXT_PUBLIC_API; \
+  fi; \
+  if [ "$NEXT_PUBLIC_GRAPHQL" != "" ]; \
+  then export NEXT_PUBLIC_GRAPHQL=$NEXT_PUBLIC_GRAPHQL; \
+  fi; \
+  if [ "$NEXT_PUBLIC_GRAPHQL_WS" != "" ]; \
+  then export NEXT_PUBLIC_GRAPHQL_WS=$NEXT_PUBLIC_GRAPHQL_WS; \
+  fi; \
+  if [ "$NEXT_PUBLIC_UPLOAD" != "" ]; \
+  then export NEXT_PUBLIC_UPLOAD=$NEXT_PUBLIC_UPLOAD; \
+  fi; \
+  if [ "$NEXT_PUBLIC_FILES" != "" ]; \
+  then export NEXT_PUBLIC_FILES=$NEXT_PUBLIC_FILES; \
+  fi; \
+  if [ "$NEXT_PUBLIC_PARSER" != "" ]; \
+  then export NEXT_PUBLIC_PARSER=$NEXT_PUBLIC_PARSER; \
+  fi; \
+  if [ "$NEXT_PUBLIC_INDEX" != "" ]; \
+  then export NEXT_PUBLIC_INDEX=$NEXT_PUBLIC_INDEX; \
+  fi; \
+  if [ "$NEXT_PUBLIC_NAME" != "" ]; \
+  then export NEXT_PUBLIC_NAME=$NEXT_PUBLIC_NAME; \
+  fi; \
+  if [ "$NEXT_PUBLIC_SLOGAN" != "" ]; \
+  then export NEXT_PUBLIC_SLOGAN=$NEXT_PUBLIC_SLOGAN; \
+  fi; \
+  if [ "$NEXT_PUBLIC_DESCRIPTION" != "" ]; \
+  then export NEXT_PUBLIC_DESCRIPTION=$NEXT_PUBLIC_DESCRIPTION; \
+  fi; \
+  if [ "$NEXT_PUBLIC_KEYWORDS" != "" ]; \
+  then export NEXT_PUBLIC_KEYWORDS=$NEXT_PUBLIC_KEYWORDS; \
+  fi; \
+  if [ "$NEXT_PUBLIC_ONE_SIGNAL_APP_ID" != "" ]; \
+  then export NEXT_PUBLIC_ONE_SIGNAL_APP_ID=$NEXT_PUBLIC_ONE_SIGNAL_APP_ID; \
+  fi; \
+  if [ "$NEXT_PUBLIC_PRODUCT_ID" != "" ]; \
+  then export NEXT_PUBLIC_PRODUCT_ID=$NEXT_PUBLIC_PRODUCT_ID; \
+  fi; \
+  if [ "$NEXT_PUBLIC_BAIDU_TONGJI" != "" ]; \
+  then export NEXT_PUBLIC_BAIDU_TONGJI=$NEXT_PUBLIC_BAIDU_TONGJI; \
+  fi; \
+  if [ "$NEXT_PUBLIC_CLOSE_TIP" != "" ]; \
+  then export NEXT_PUBLIC_CLOSE_TIP=$NEXT_PUBLIC_CLOSE_TIP; \
+  fi;
+WORKDIR /app
+RUN yarn
+COPY . .
+RUN yarn possible-types
+RUN yarn build
+
+FROM base
+WORKDIR /app
+COPY . .
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public/service-worker.js ./public/service-worker.js
+EXPOSE 3000
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
+CMD ["yarn", "start"]
+
+```
+
+
+# Example 3
+## Example Dockerfile
+```# building frontend
+FROM node:16.14 as frontend
+WORKDIR /app/frontend
+COPY web ./
+
+# fix docker not following symlinks
+COPY doc/getting-started.md ./src/assets/
+
+RUN yarn install --frozen-lockfile
+RUN yarn lint
+
+# fix test not exiting by default
+ARG CI=true
+RUN yarn test
+
+RUN yarn build
+
+# setup Python
+FROM python:3.11-slim AS backend
+
+# configure docker container
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    # make poetry create the virtual environment in the project's root
+    # it gets named `.venv`
+    POETRY_VIRTUALENVS_IN_PROJECT=true \
+    # do not ask any interactive question
+    POETRY_NO_INTERACTION=1
+
+RUN python -m pip install --upgrade pip
+RUN python -m pip install poetry==1.3.2
+COPY /docat/pyproject.toml /docat/poetry.lock /app/
+
+# Install the application
+WORKDIR /app/docat
+RUN poetry install --no-root --no-ansi --only main
+
+# production
+FROM python:3.11-slim
+
+# set up the system
+RUN apt update && \
+    apt install --yes nginx dumb-init libmagic1 && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /var/docat/doc
+
+# install the application
+RUN mkdir -p /var/www/html
+COPY --from=frontend /app/frontend/build /var/www/html
+COPY docat /app/docat
+WORKDIR /app/docat
+
+RUN cp docat/nginx/default /etc/nginx/sites-enabled/default
+
+# Copy the build artifact (.venv)
+COPY --from=backend /app /app/docat
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+CMD ["sh", "-c", "nginx && .venv/bin/python -m uvicorn --host 0.0.0.0 --port 5000 docat.app:app"]
+
+```
+
+## Example Build Error
+```> [frontend 5/8] RUN yarn install --frozen-lockfile:
+Downloading jsonschema_specifications-2023.7.1-py3-none-any.whl (17 kB)
+Downloading msgpack-1.0.7-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (557 kB)
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+error An unexpected error occurred: "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.11.0.tgz: ESOCKETTIMEDOUT".
+info If you think this is a bug, please open a bug report with the information provided in "/app/frontend/yarn-error.log".
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+ERROR: process "/bin/sh -c yarn install --frozen-lockfile" did not complete successfully: exit code: 1```
+
+## Example Repair
+
+### Repair 1
+```# building frontend
+FROM node:16.14 as frontend
+WORKDIR /app/frontend
+COPY web ./
+
+# fix docker not following symlinks
+COPY doc/getting-started.md ./src/assets/
+
+RUN yarn install --frozen-lockfile --network-timeout 700000
+RUN yarn lint
+
+# fix test not exiting by default
+ARG CI=true
+RUN yarn test
+
+RUN yarn build
+
+# setup Python
+FROM python:3.11-slim AS backend
+
+# configure docker container
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    # make poetry create the virtual environment in the project's root
+    # it gets named `.venv`
+    POETRY_VIRTUALENVS_IN_PROJECT=true \
+    # do not ask any interactive question
+    POETRY_NO_INTERACTION=1
+
+RUN python -m pip install --upgrade pip
+RUN python -m pip install poetry==1.3.2
+COPY /docat/pyproject.toml /docat/poetry.lock /app/
+
+# Install the application
+WORKDIR /app/docat
+RUN poetry install --no-root --no-ansi --only main
+
+# production
+FROM python:3.11-slim
+
+# set up the system
+RUN apt update && \
+    apt install --yes nginx dumb-init libmagic1 && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /var/docat/doc
+
+# install the application
+RUN mkdir -p /var/www/html
+COPY --from=frontend /app/frontend/build /var/www/html
+COPY docat /app/docat
+WORKDIR /app/docat
+
+RUN cp docat/nginx/default /etc/nginx/sites-enabled/default
+
+# Copy the build artifact (.venv)
+COPY --from=backend /app /app/docat
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+CMD ["sh", "-c", "nginx && .venv/bin/python -m uvicorn --host 0.0.0.0 --port 5000 docat.app:app"]
+
+```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided alongside the examples provided for you for as demonstrations. To solve the problem, and based on the information provided, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

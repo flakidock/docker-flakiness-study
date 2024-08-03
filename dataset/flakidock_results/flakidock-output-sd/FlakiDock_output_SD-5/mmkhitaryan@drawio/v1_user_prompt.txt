@@ -1,0 +1,43 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM node:12.20.0-alpine3.11 as front
+WORKDIR /home/go/app
+COPY ./app .
+RUN npm install
+RUN npm run build
+
+FROM golang:1.13.4-alpine as builder
+RUN apk add --update --no-cache bash tzdata git
+RUN go get -u github.com/mmkhitaryan/drawio
+WORKDIR $GOPATH/src/github.com/mmkhitaryan/drawio
+RUN go install
+RUN mkdir -p /home/go/app
+RUN mkdir -p /usr/local/go/lib/time
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-w -s" -o /home/go/app/drawio main.go
+
+FROM scratch
+COPY --from=builder /home/go/app /home/go/app
+WORKDIR /home/go/app
+COPY --from=builder /home/go/app/drawio /home/go/app/drawio
+COPY --from=front /home/go/app/dist /home/go/app/web
+EXPOSE 80
+ENTRYPOINT ["/home/go/app/drawio"]```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder 3/8] RUN go get -u github.com/mmkhitaryan/drawio:
+# github.com/gorilla/websocket
+src/github.com/gorilla/websocket/client.go:386:15: undefined: io.NopCloser
+src/github.com/gorilla/websocket/client.go:404:14: undefined: io.NopCloser
+src/github.com/gorilla/websocket/client.go:426:19: tlsConn.HandshakeContext undefined (type *tls.Conn has no field or method HandshakeContext)
+src/github.com/gorilla/websocket/conn.go:801:25: undefined: io.Discard
+src/github.com/gorilla/websocket/conn.go:1102:11: undefined: io.ReadAll
+src/github.com/gorilla/websocket/server.go:175:23: undefined: http.NewResponseController
+ERROR: process "/bin/sh -c go get -u github.com/mmkhitaryan/drawio" did not complete successfully: exit code: 2```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

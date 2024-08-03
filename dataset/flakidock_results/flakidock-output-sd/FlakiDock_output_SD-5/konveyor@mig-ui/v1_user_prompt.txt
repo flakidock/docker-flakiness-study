@@ -1,0 +1,51 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+```FROM registry.access.redhat.com/ubi8/nodejs-16 as builder
+COPY . /mig-ui
+WORKDIR /mig-ui
+USER root
+RUN dnf config-manager --add-repo https://dl.yarnpkg.com/rpm/yarn.repo && \
+    dnf -y install yarn && yarn && yarn build && yarn install --production
+
+FROM registry.access.redhat.com/ubi8/nodejs-16
+COPY --from=builder /mig-ui/dist /opt/app-root/src/staticroot
+COPY --from=builder /mig-ui/public/favicon.ico /opt/app-root/src/staticroot
+COPY --from=builder /mig-ui/public/crane_favicon.ico /opt/app-root/src/staticroot
+COPY --from=builder /mig-ui/public/index.ejs /opt/app-root/src/staticroot
+COPY --from=builder /mig-ui/deploy/main.js /opt/app-root/src
+COPY --from=builder /mig-ui/node_modules /opt/app-root/src/node_modules
+
+ENV MIGMETA_FILE="/etc/mig-ui/migmeta.json"
+ENV VIEWS_DIR=/opt/app-root/src/staticroot
+ENV STATIC_DIR=/opt/app-root/src/staticroot
+ENV NODE_TLS_REJECT_UNAUTHORIZED="0"
+
+USER 65534:65534
+ENTRYPOINT ["node", "/opt/app-root/src/main.js"]
+```
+
+And below is the build error that occurred when trying to build the Dockerfile:
+# Build Error
+```> [builder 4/4] RUN dnf config-manager --add-repo https://dl.yarnpkg.com/rpm/yarn.repo &&     dnf -y install yarn && yarn && yarn build && yarn install --production:
+error Error: https://registry.yarnpkg.com/@patternfly/react-tokens/-/react-tokens-4.11.8.tgz: ESOCKETTIMEDOUT
+    at ClientRequest.<anonymous> (/usr/share/yarn/lib/cli.js:142037:19)
+    at Object.onceWrapper (node:events:627:28)
+    at ClientRequest.emit (node:events:513:28)
+    at TLSSocket.emitRequestTimeout (node:_http_client:839:9)
+    at Object.onceWrapper (node:events:627:28)
+    at TLSSocket.emit (node:events:525:35)
+    at TLSSocket.Socket._onTimeout (node:net:550:8)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+ERROR: process "/bin/sh -c dnf config-manager --add-repo https://dl.yarnpkg.com/rpm/yarn.repo &&     dnf -y install yarn && yarn && yarn build && yarn install --production" did not complete successfully: exit code: 1```
+
+Your task is to repair the Dockerfile based on the Dockerfile and its build error provided. To solve the problem, first, you should diagnose which part is causing the flakiness and why. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+    <<<<<
+    Dockerfile content 
+    >>>>>

@@ -1,0 +1,22 @@
+The build error indicates that there is an issue with the specific version of Node.js and npm being used. The error `ENOTDIR: not a directory` often occurs due to issues with the npm version or the way dependencies are being handled. Updating the Node.js and npm versions to more recent and stable versions can resolve this issue.
+
+Here is the repaired Dockerfile:
+
+
+FROM node:14
+
+# Install location
+ENV dir /opt/ldf-client
+
+# Copy the client files
+ADD . ${dir}
+
+# Install the node module
+WORKDIR ${dir}
+RUN npm install
+
+# Run base binary
+ENTRYPOINT ["node", "bin/ldf-client"]
+
+# Default command
+CMD ["--help"]

@@ -1,0 +1,9 @@
+# Dockerfile
+FROM debian:stable-slim
+MAINTAINER Neil Chambers <n3llyb0y.uk@gmail.com>
+
+RUN apt-get update && apt-get install -y --no-install-recommends netcat && rm -rf /var/lib/apt/lists/*
+
+ADD wait /wait
+
+CMD ["/wait"]

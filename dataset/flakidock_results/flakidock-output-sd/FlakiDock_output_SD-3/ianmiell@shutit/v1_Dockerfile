@@ -1,0 +1,10 @@
+FROM alpine
+
+# ShutIt in a container.
+
+RUN apk add --update py3-pip
+RUN python3 -m venv /shutit_env
+RUN . /shutit_env/bin/activate && pip install shutit
+RUN echo ". /shutit_env/bin/activate" >> /etc/profile
+
+CMD ["/bin/sh"]

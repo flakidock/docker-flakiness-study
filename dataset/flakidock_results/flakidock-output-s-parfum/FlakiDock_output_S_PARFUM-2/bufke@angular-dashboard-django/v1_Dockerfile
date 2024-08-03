@@ -1,0 +1,8 @@
+FROM python:3.4
+ENV PYTHONUNBUFFERED 1
+RUN apt-get update -qq && apt-get install --no-install-recommends -y sqlite3 && rm -rf /var/lib/apt/lists/*;
+RUN mkdir /code
+WORKDIR /code
+COPY requirements.txt /code/
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . /code/

@@ -1,0 +1,22 @@
+FROM node:12
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update sources.list to use archive.debian.org for stretch
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+
+# Install netcat, and mysql/postgres so we can create additional DBs
+RUN apt-get update && \
+    apt-get -y install netcat build-essential postgresql mysql-server --allow-unauthenticated && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /patio
+COPY package.json .
+RUN npm install -g grunt-cli && \
+    npm install
+COPY . .
+
+ENTRYPOINT ["./docker-entrypoint.sh"]
+CMD ["test"]

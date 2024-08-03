@@ -1,0 +1,17 @@
+The build error indicates that there is an issue with the npm install command, which is likely due to the outdated Node.js and npm versions. Updating the Node.js version to a more recent LTS version should resolve the issue.
+
+Here is the repaired Dockerfile:
+
+
+FROM node:14
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD [ "npm", "start" ]

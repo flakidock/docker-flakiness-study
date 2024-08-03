@@ -1,0 +1,28 @@
+
+Below is the flaky Dockerfile:
+
+# Dockerfile
+FROM "ubuntu:18.04"
+MAINTAINER "M2kar<m2kar.cn@gmail.com>"
+ARG EMAGNET_VERSION=3.4
+RUN apt update \
+    && apt-get install -y --no-install-recommends \
+        inetutils-ping \
+        wget \
+        curl \
+        screen \
+        ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+RUN curl https://codeload.github.com/wuseman/EMAGNET/tar.gz/${EMAGNET_VERSION} > /tmp/emagnet.tar.gz \
+    && tar -xzv -f /tmp/emagnet.tar.gz -C / \
+    && ln -s /EMAGNET-${EMAGNET_VERSION} /EMAGNET
+WORKDIR  /EMAGNET
+CMD ["/EMAGNET/emagnet","--emagnet"]
+
+
+
+
+Your task is to repair the Dockerfile based on Dockerfile provided. To solve the problem, first, you should diagnose which part is causing the flakiness. Anything that can cause a Dockerfile show flaky behaviour during build procedure should be considered. Then, according to the characteristics of that flakiness, repair the Dockerfile. the output Dockerfile must be within five angle brackets:
+<<<<<
+Dockerfile content 
+>>>>>
