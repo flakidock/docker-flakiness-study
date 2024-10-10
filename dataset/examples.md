@@ -45,9 +45,8 @@ The debian repository in the base image is deprecated, resulted in retrieval fai
 ```Dockerfile
 FROM node:lts-stretch
 
-RUN echo "deb <mirror address> stretch main" > /etc/apt/sources.list \
-  && echo "deb <mirror address> stretch-updates main" >> /etc/apt/sources.list \
-  && echo "deb <mirror address> stretch/updates main" >> /etc/apt/sources.list
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
 
 RUN set -ex \
   && apt-get update \
