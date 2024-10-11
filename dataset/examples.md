@@ -218,3 +218,36 @@ EXPOSE ...
 
 ### Environment Errors
 An example of this category alongside its repair is mentioned in Motivation section (Listing 2.1) as well as inside a figure (Figure 2) in the manuscript.
+
+## Example of Project-Specific Error
+
+#### Example
+**Dockerfile**:
+```Dockerfile
+FROM python:3.6.9-slim
+
+RUN apt-get update -y && \
+    apt-get install -y \
+     apt-transport-https \
+     build-essential \
+     curl \
+     git \
+     libaio1
+
+RUN ...
+
+COPY ...
+
+# error line
+RUN pip install -r requirements.txt
+```
+
+**Build Error**
+```log
+Error: pg_config executable not found.
+If you prefer to avoid building psycopg2 from source, please install the PyPI
+    'psycopg2-binary' package instead.
+```
+
+**Cause of Error**
+Internal Issues within one of the dependencies mentioned in requirements.txt
