@@ -1,0 +1,27 @@
+--ignore-platform-reqs &&     php artisan df:env --db_connection=sqlite --df_install=Docker &&     chown -R www-data:www-data /opt/dreamfactory &&     rm /etc/nginx/sites-enabled/default:
+In Functions.php line 17:
+                                                                 
+  [ParseError]                                                   
+  syntax error, unexpected '|', expecting variable (T_VARIABLE)  
+                                                                 
+Exception trace:
+  at /opt/dreamfactory/vendor/nunomaduro/termwind/src/Functions.php:17
+ composerRequiree227225c107973008fcb408ed76d461c() at /opt/dreamfactory/vendor/composer/autoload_real.php:36
+ ComposerAutoloaderInite227225c107973008fcb408ed76d461c::getLoader() at /opt/dreamfactory/vendor/autoload.php:12
+ require_once() at /opt/dreamfactory/vendor/laravel/framework/src/Illuminate/Foundation/ComposerScripts.php:43
+ Illuminate\Foundation\ComposerScripts::postAutoloadDump() at phar:///usr/local/bin/composer/src/Composer/EventDispatcher/EventDispatcher.php:398
+ Composer\EventDispatcher\EventDispatcher->executeEventPhpScript() at phar:///usr/local/bin/composer/src/Composer/EventDispatcher/EventDispatcher.php:248
+ Composer\EventDispatcher\EventDispatcher->doDispatch() at phar:///usr/local/bin/composer/src/Composer/EventDispatcher/EventDispatcher.php:125
+ Composer\EventDispatcher\EventDispatcher->dispatchScript() at phar:///usr/local/bin/composer/src/Composer/Autoload/AutoloadGenerator.php:432
+ Composer\Autoload\AutoloadGenerator->dump() at phar:///usr/local/bin/composer/src/Composer/Installer.php:341
+ Composer\Installer->run() at phar:///usr/local/bin/composer/src/Composer/Command/InstallCommand.php:137
+ Composer\Command\InstallCommand->execute() at phar:///usr/local/bin/composer/vendor/symfony/console/Command/Command.php:298
+ Symfony\Component\Console\Command\Command->run() at phar:///usr/local/bin/composer/vendor/symfony/console/Application.php:1024
+ Symfony\Component\Console\Application->doRunCommand() at phar:///usr/local/bin/composer/vendor/symfony/console/Application.php:299
+ Symfony\Component\Console\Application->doRun() at phar:///usr/local/bin/composer/src/Composer/Console/Application.php:335
+ Composer\Console\Application->doRun() at phar:///usr/local/bin/composer/vendor/symfony/console/Application.php:171
+ Symfony\Component\Console\Application->run() at phar:///usr/local/bin/composer/src/Composer/Console/Application.php:130
+ Composer\Console\Application->run() at phar:///usr/local/bin/composer/bin/composer:88
+ require() at /usr/local/bin/composer:29
+install [--prefer-source] [--prefer-dist] [--prefer-install PREFER-INSTALL] [--dry-run] [--dev] [--no-suggest] [--no-dev] [--no-autoloader] [--no-progress] [--no-install] [-v|vv|vvv|--verbose] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--apcu-autoloader] [--apcu-autoloader-prefix APCU-AUTOLOADER-PREFIX] [--ignore-platform-req IGNORE-PLATFORM-REQ] [--ignore-platform-reqs] [--] [<packages>...]
+ERROR: process "/bin/sh -c composer install --no-dev --ignore-platform-reqs &&     php artisan df:env --db_connection=sqlite --df_install=Docker &&     chown -R www-data:www-data /opt/dreamfactory &&     rm /etc/nginx/sites-enabled/default" did not 
